@@ -1,0 +1,30 @@
+<table id="wltao_popup_mfd_table" class="wltao_ship_table wltao_popup_mfd_table">
+	<tr>
+		<th class="td_ship_num" width="30%">订单号</th>
+		<th class="td_ship_st" width="25%">添加时间</th>
+		<th class="td_up_time" width="15%">物流状态</th>
+		<th class="td_op" width="30%">操作</th>
+	</tr>
+	{{#orderList}}
+	<tr oid="{{orderid}}">
+		<td class="td_ship_num">
+			{{orderid}}
+		</td>
+		<td class="td_ship_st">
+			{{addtime}}
+		</td>
+		<td class="td_up_time">
+			{{ship_status}}
+		</td>
+		<!--操作-->
+		<td class="td_del">
+			<a href="{{order_link}}" target="_blank">{{other_op}}</a> <a href="{{pic_link}}" target="_blank" style="display:{{piclink_show}};">|{{other_op1}}</a> <a href="javascript:void(0);" class="td_dellink" oid="{{orderid}}">|删除</a>
+		</td>
+	</tr>
+	{{/orderList}}
+	<tr>
+		<td class="td_del" colspan="4" style="padding-left: 580px;">
+			<a href="http://dai.walatao.com/my.html" target="_blank" style="font-size: 13px">更多记录&gt;&gt;</a>
+		</td>
+	</tr>
+</table>

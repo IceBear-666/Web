@@ -1,0 +1,170 @@
+<include file="Public/header" /> 
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/ot-customize.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/testresume.css">
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/tabstyles.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/flat-ui.min.css" />
+<script src="/Public/Home/js/modernizr.custom.js"></script>
+<script src="/Public/Home/js/cbpFWTabs.js"></script>
+<script src="/Public/Home/js/classise.js"></script>
+<div id="body"> 
+  
+  <div id="container">
+  
+    <div class="clearfixs mr_created container" id="tab1">
+        <div class="section-top">
+            <div class="section-top-container" id="section-top-container">
+                <div>
+                    <a class="lt-title" href="{:U('Resume/editresume')}">一键闪填</a>
+                    <a class="rt-title">｜&nbsp;&nbsp;&nbsp;开放性问题(OQ)</a>
+                    <div class="triangle-up-2"></div>
+                </div>
+               
+            </div>
+        </div>
+        <section>
+          <div class="tabs tabs-style-fillup">
+            <div class="resumebg-left" id="resumebg-left">
+              <nav>
+                <ul>
+                  <li><a href="__URL__/customize" class="icon-resume icon-otuser"><span>我的</span></a></li>
+                  <li id="section-edu" ><a href="#section-underline-2" class="icon-resume icon-otkeys"><span>题库</span></a></li>
+                </ul>
+              </nav>
+              </div>
+              <div class="content-wrap">
+                <div class="swich-container">
+
+                </div>
+                <section id="su1">
+                  <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+                    <div id="ot-add">修改</div>
+                    <div class="cbp-vm-options">
+                      <a href="#" class="icon-resumebold icon-otgrid cbp-vm-selected" data-view="cbp-vm-view-grid"></a>
+                      <a href="#" class="icon-resumebold icon-otmenu" data-view="cbp-vm-view-list"></a>
+                    </div>
+					<foreach name = "editdb" item = "vo">
+					<form action = "__URL__/doadd" method="post">
+					
+                    <div id="ot-addform" class="myr_info_list" style="display: none">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+                      <tr>
+                          <th class="pt10"><label>标题</label></th>
+                          <td>
+                            <div class="myr_input_div_l">
+							<input type='hidden' name='id' value="{$vo.id}"/>
+
+                                <input type="text" id="ot_title" name="title" value="{$vo.title}" class="ed_name form-control" >
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th class="pt10"><label>内容</label></th>
+                          <td class="tb_textarea">
+                            <textarea class="resumetextarea form-control" id="ot_content" name="content">{$vo.content}</textarea>   
+                            </td>
+                      </tr>
+                      </table>
+                       <div class="btn-group">
+                        <input type="submit" class="btn-resumeac mr_save" value="保存" />
+                        <a type="reset" class="btn-resumeac" onclick="cancel();">取消</a>
+                       
+                    </div>
+                    </div>
+					</form>
+					 </foreach>
+					
+                  
+                </div> 
+                
+                    
+              </section>
+              <section id="section-underline-2">
+                <div class="cbp-vm-options">
+                </div>
+                <div id="ot-questions">
+                  <img src="/Public/Home/images/myresume/ot-questions.png">
+                </div>
+              </section>
+            
+            
+            </div><!-- /content -->
+          </div><!-- /tabs -->
+        </section>
+        <div class="clear"></div>
+      </div>     
+    </div>
+
+
+
+
+  </div>
+  <!-- end #container --> 
+  
+  
+</div>
+<!-- end #body --> 
+<script type="text/javascript">
+  $("#ot-add").click(function(){
+    $("#ot-addform").css("display","block");
+    $("#ot-add").addClass("hn");
+    $(".cbp-vm-options").addClass("hn");
+    $("#ot-empty").css("display","none");
+  });
+  function cancel(){
+    $("#ot-addform").css("display","none");
+    $("#ot-empty").css("display","block");
+    $("#ot-add").removeClass("hn");
+    $(".cbp-vm-options").removeClass("hn");
+  }
+
+  // $(".cbp-vm-title").hover(function(){
+  //   $("#ot-righticon").css("display","block");
+  // });
+  $(".cbp-vm-title").mouseover( function() {
+      $(this).addClass("ot-current");
+   }).mouseout( function(){
+      $(this).removeClass("ot-current");
+   });
+   $("#ot-righticon").mouseover( function() {
+       $(this).addClass("ot-current");
+   }).mouseout( function(){
+      $(this).removeClass("ot-current");
+   });
+ 
+   (function() {
+      [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+        new CBPFWTabs( el );
+      });
+
+      var container = document.getElementById( 'cbp-vm' ),
+        optionSwitch = Array.prototype.slice.call( container.querySelectorAll( 'div.cbp-vm-options > a' ) );
+
+      function init() {
+        optionSwitch.forEach( function( el, i ) {
+          el.addEventListener( 'click', function( ev ) {
+            ev.preventDefault();
+            _switch( this );
+          }, false );
+        } );
+      }
+
+      function _switch( opt ) {
+        // remove other view classes and any any selected option
+        optionSwitch.forEach(function(el) { 
+          classie.remove( container, el.getAttribute( 'data-view' ) );
+          classie.remove( el, 'cbp-vm-selected' );
+        });
+        // add the view class for this option
+        classie.add( container, opt.getAttribute( 'data-view' ) );
+        // this option stays selected
+        classie.add( opt, 'cbp-vm-selected' );
+      }
+
+      init();
+
+    })();
+
+</script>
+
+
+<include file="Public/footer" />

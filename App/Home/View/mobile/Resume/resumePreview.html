@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta charset="UTF-8">
+<title>简历预览</title>
+
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/mcss/common.css" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/mcss/reset.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/myresume.css"/>
+<script type="text/javascript" src="/Public/Home/js/jquery.1.10.1.min.js" ></script>
+<script type="text/javascript" src="/Public/Home/js/jquery.lib.min.js"></script>
+<include file="Public/var"/>
+
+
+</head>
+
+<body>
+
+    <div class="tilhed2">
+       <a class="golevel" href="/User"></a>
+       <div class="mbtitle">我的简历</div>
+       <a class="gohome" href="/"></a>
+    </div>
+    
+<table class="qhjianli" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a class="cur" href="/Resume/myresume.html">在线</a></td>
+    <td><a href="/Resume/otherResume.html">附件</a></td>
+  </tr>
+</table>
+    
+<div class="mr_created mbbox">
+  <div>
+  
+    <div id="mr_mr_head">
+          <div class="mr_top_bg" id="baseinfo">
+           <img id="userpic"  src='<if condition="$info.pic neq '' ">{$info.pic}<else />/Public/Home/images/default_headpic.png</if>'  alt="头像" class="mr_headimg"/> 
+          </div>
+          
+          <div class="txtct pdt10 f16 mt30">{$info.realname}</div>
+          
+      </div>
+      
+    <div class="metil mt10">基本资料</div>
+      <div class="infopl">
+         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="76" class="col999">最高学历：</td>
+            <td>{$info.edu}</td>
+          </tr>
+          <tr>
+            <td class="col999">工作年限：</td>
+            <td>{$info.workyear}</td>
+          </tr>
+          <tr>
+            <td class="col999">所在城市：</td>
+            <td>{$info.city}</td>
+          </tr>
+          <tr>
+            <td class="col999">联系电话：</td>
+            <td>{$info.phone}</td>
+          </tr>
+          <tr>
+            <td class="col999">联系邮箱：</td>
+            <td>{$info.email}</td>
+          </tr>
+        </table>
+
+    </div>
+    
+    
+    <div class="metil mt10">工作经历</div>   
+    <div class="infopl">
+       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+       <volist name="exp_list" id="v">
+          <tr>
+            <td class="col999">{$v.startDate} - {$v.endDate}</td>
+          </tr>
+          <tr>
+            <td>{$v.companyName}</td>
+          </tr>
+          <tr>
+            <td class="col999">{$v.positionName}</td>
+          </tr>
+         </volist>
+      </table>
+    </div>  
+    
+    
+    
+     <div class="metil mt10">教育经历</div>   
+    <div class="infopl">
+       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <volist name="edu_list" id="v">
+          <tr>
+            <td class="col999">{$v.endYear}年毕业</td>
+          </tr>
+          <tr>
+            <td>{$v.schoolName}</td>
+          </tr>
+          <tr>
+            <td class="col999">{$v.education} · {$v.professional}</td>
+          </tr>
+         </volist>
+      </table>
+    </div>  
+    
+    
+    
+     <div class="metil mt10">项目经验</div>   
+    <div class="infopl">
+       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <volist name="pro_list" id="v">
+          <tr>
+            <td class="col999">{$v.startDate} - {$v.endDate}</td>
+          </tr>
+          <tr>
+            <td>项目名称：{$v.projectName}</td>
+          </tr>
+          <tr>
+            <td class="col999">我的职责：{$v.positionName}</td>
+          </tr>
+          <tr>
+            <td style="padding-bottom:10px; padding-left:15px;">{$v.projectRemark}</td>
+          </tr>
+          
+         </volist>
+      </table>
+    </div> 
+    
+    
+    
+    
+    <div class="metil mt10">作品展示</div> 
+     <div class="infopl">
+      <volist name="work_list" id="v">
+                <div class="mr_wo_show">
+                  <div class="mr_self_site"> 
+                    <a class="mr_self_sitelink" href="{$v.url}" target="_blank"> {$v.url} </a> 
+                  </div>
+                  <div class="mr_wo_preview">
+                    <p>{$v.workName}</p>
+                  </div>
+                </div>
+                </volist>
+     </div>  
+    
+
+
+    
+    
+    <div class="metil mt10">技能评价</div> 
+     <div id="skillsAssess"  class="infopl">
+     
+       <div class="mr_moudle_content">
+           <div class="me_skill_list">
+              
+            <php>foreach($skill_list as $kk=>$vv){</php>
+                <div class="mr_skill_con" data-grade="{$vv.skillPercent}" data-skill-id="{$vv.sid}">
+                    <span class="mr_skill_name" title="{$vv.skillName}">{$vv.skillName}</span>
+                    <span class="mr_skill_plan"><em></em></span>
+                    <span class="mr_skill_delete"></span>
+                    <span class="mr_skill_level">{$vv.masterLevel}</span>
+                    <i class="mr_skill_circle"><em>{$vv.masterLevel}</em></i>
+                </div>
+            <php>}</php>
+
+            </div>
+         </div>
+     </div>
+     
+     
+ 
+ 
+   <div class="metil mt10">自我描述</div> 
+   <div class="infopl">
+      <div style="padding-left:14px; line-height:22px;">
+      {$info.remark}
+     </div>
+   </div>
+   
+ 
+ <!-- 自定义 -->        
+	<php>if($custom_model){</php>   
+      <div class="metil mt10">{$custom_model.titleName}</div> 
+   <div class="infopl">
+      <div style="line-height:22px;">
+      {$custom_model.titleContent}
+     </div>
+   </div>
+ <php>}</php>    
+   
+ 
+        <div class="bgf9 txtct f16" style="padding:10px 0px; margin:10px 0px;"> {$info.workstatus}</div>
+          
+        
+    
+    
+  </div>
+</div>
+
+</div>
+<div class="h20"></div>
+<!--end #previewWrapper--> 
+
+    <script type="text/javascript" src="/Public/Home/js/tinymce/jscripts/tiny_mce/jquery.tinymce.js"></script> 
+    <script>
+	// 设置全局变量
+	window.globals =  {
+		resumeId: '{$info.uid}',
+		initRatio: '{$info.resume_score}',
+		token: '3ad1ea0ea3794947ade65710418b25bd',
+		refreshTime: '{$info.update_time}',
+		skillScore: '{$info.score_jineng}',
+		projectExperienceScore: '{$info.score_xiangmu}',
+		workShowScore: '{$info.score_zuopin}',
+		//expectJobsScore: '{$info.score_qiwang}',
+		myRemarkScore: '{$info.score_ziwo}',
+		hasProjectExperiences: true,
+		hasWorkShows: false,
+		hasSelf: true,
+		//hasExpectJobs: true,
+		hasSkillEvaluates: true,
+		hasUserDefines: true,
+		personIdFlag:'',
+		qrImgSrc:'/Public/qr/qrcode.jpg?qrSource=myResume',
+		isOpenResume:'{$info.isOpenMyResume}',
+		isFirstOpen:false
+	};
+	</script> 
+    <script type="text/javascript" src="/Public/Home/js/common.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/json.min.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/jquery-migrate-1.1.1.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/jquery-ui-1.8.custom.min.js"></script> 
+    
+    <script type="text/javascript" src="/Public/Home/js/jquery.cropzoom.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/components.js?v=1.5.6_2015051318"></script> 
+    <script type="text/javascript" src="/Public/Home/js/new_myresume.js"></script> 
+    
+</body>
+</html>
+

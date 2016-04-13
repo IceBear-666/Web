@@ -1,0 +1,574 @@
+{
+    "usatransship":{
+        "shipCompany": {
+            "walatj":{
+                "id":"walatj",
+                "name":"海淘1号仓",
+                "lines": [{
+                    "defaultShip": "selected",
+                    "id": "walatj1",
+                    "name": "波特兰免税仓库",
+                    "url": "http://www.1hcang.com/?fid=182",
+                    "singlePrice": "36",
+                    "singleWeight": "1",
+                    "extendPrice": "36",
+                    "extendWeight": "1",
+                    "exchangeRate": "1",
+                    "minWeight": "2",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "速度快，会员成长运费更低"
+                }]
+            },            
+            "zysf": {
+                "id": "zysf",
+                "name": "转运四方",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "zysf1",
+                    "name": "俄勒冈免税州仓",
+                    "url": "http://tr.4px.com/price.html?",
+                    "singlePrice": "9",
+                    "singleWeight": "1",
+                    "extendPrice": "4.5",
+                    "extendWeight": "1",
+                    "exchangeRate": "6.4",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "全部品类(禁运品除外)",
+                    "suitableCateDetail": "免消费税，美中专线可以发普通货物，新加坡专线可以发电子产品",
+                    "promptText": ""
+                }, {
+                    "defaultShip": "",
+                    "id": "zysf2",
+                    "name": "加州仓",
+                    "url": "http://tr.4px.com/price.html?",
+                    "singlePrice": "9",
+                    "singleWeight": "1",
+                    "extendPrice": "4.5",
+                    "extendWeight": "1",
+                    "exchangeRate": "6.4",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "奶粉、食品",
+                    "suitableCateDetail": "只能选择USPS发货，时效3-5个工作日，费用高",
+                    "promptText": ""
+                }]
+            },              
+			"zyb": {
+                "id": "zyb",
+                "name": "转运邦",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "zyb1",
+                    "name": "波特兰免税仓库",
+                    "url": "http://www.zhuanyunbang.com",
+                    "singlePrice": "39.2",
+                    "singleWeight": "1",
+                    "extendPrice": "7",
+                    "extendWeight": "0.22",
+                    "exchangeRate": "1",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "全部品类(禁运品除外)",
+                    "suitableCateDetail": "免消费税,现8折优惠",
+                    "promptText": ""
+                }, {
+                    "defaultShip": "",
+                    "id": "zyb2",
+                    "name": "特拉华免税仓库",
+                    "url": "http://www.zhuanyunbang.com",
+                    "singlePrice": "39.2",
+                    "singleWeight": "1",
+                    "extendPrice": "7",
+                    "extendWeight": "0.22",
+                    "exchangeRate": "1",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "全部品类(禁运品除外)",
+                    "suitableCateDetail": "免消费税,现8折优惠",
+                    "promptText": ""
+                }]
+            },		
+            "sfsy":{
+                "id":"sfsy",
+                "name":"海购丰运(顺丰)",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "sfsy1",
+                    "name": "特拉华州免税仓",
+                    "url": "https://www.sfbuy.com/service?type=3",
+                    "singlePrice": "36",
+                    "singleWeight": "1",
+                    "extendPrice": "36",
+                    "extendWeight": "1",
+                    "exchangeRate": "1",
+                    "minWeight": "2",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "速度快，会员成长运费更低"
+                }]
+            },
+			"zyzg":{
+    			"id":"zyzg",
+    			"name":"转运中国",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "zyzg1",
+                    "name": "俄勒冈免税州仓",
+                    "url": "http://www.uszcn.com/price",
+                    "singlePrice": "49",
+                    "singleWeight": "1",
+                    "extendPrice": "6.9",
+                    "extendWeight": "0.22",
+                    "exchangeRate": "1",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "会员运费更低"
+                }]
+    		},
+			"zyhwg":{
+    			"id":"zyhwg",
+    			"name":"EMS海外购",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "zyhwg",
+                    "name": "特拉华免税州仓",
+                    "url": "http://buy.ems.com.cn/",
+                    "singlePrice": "50",
+                    "singleWeight": "1",
+                    "extendPrice": "35",
+                    "extendWeight": "1",
+                    "exchangeRate": "1",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "会员运费更低"
+                }]
+    		},
+    		"aotian": {
+                "id": "aotian",
+                "name": "傲天转运",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "aotian1",
+                    "name": "俄勒冈免税州仓",
+                    "url": "http://www.ats-ex.com/",
+                    "singlePrice": "6",
+                    "singleWeight": "1",
+                    "extendPrice": "6",
+                    "extendWeight": "1",
+                    "exchangeRate": "6.2",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "全部品类(禁运品、奶粉除外)",
+                    "suitableCateDetail": "免消费税,可以合箱",
+                    "promptText": ""
+                }, {
+                    "defaultShip": "",
+                    "id": "aotian2",
+                    "name": "洛杉矶仓库",
+                    "url": "http://www.ats-ex.com/",
+                    "singlePrice": "4",
+                    "singleWeight": "1",
+                    "extendPrice": "4",
+                    "extendWeight": "1",
+                    "exchangeRate": "6.2",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "普货类",
+                    "suitableCateDetail": "特惠线,转运时效:发货后7-10个工作日",
+                    "promptText": "特惠线"
+                }]
+            },            
+            "mgsd":{
+                "id":"mgsd",
+                "name":"芒果速递",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "mgsd1",
+                    "name": "芝加哥物流中心",
+                    "url": "http://www.mangoex.cn/WebPage/Services.aspx",
+                    "singlePrice": "8",
+                    "singleWeight": "1",
+                    "extendPrice": "5",
+                    "extendWeight": "1",
+                    "exchangeRate": "6.3",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "EMS线路支持所有品类商品(禁运品除外)"
+                }]
+            },
+    		"bnkd":{
+                "id": "bnkd",
+                "name": "笨鸟快递",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "bnkd1",
+                    "name": "俄勒冈免税州仓",
+                    "url": "http://www.birdex.cn/warehouse.html",
+                    "singlePrice": "30",
+                    "singleWeight": "1",
+                    "extendPrice": "30",
+                    "extendWeight": "1",
+                    "exchangeRate": "1",
+                    "minWeight": "2",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": ""
+                }]
+            }
+		}
+    },
+    "europetransship":{
+        "shipCompany": {
+            "walatj":{
+                "id":"walatj",
+                "name":"海淘1号仓",
+                "lines": [{
+                    "defaultShip": "selected",
+                    "id": "walatj1",
+                    "name": "德国仓库",
+                    "url": "http://www.1hcang.com/?fid=182",
+                    "singlePrice": "165",
+                    "singleWeight": "2.2",
+                    "extendPrice": "22",
+                    "extendWeight": "2.2",
+                    "exchangeRate": "1",
+                    "minWeight": "2.2",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "会员收费更低"
+                }]
+            },            
+			"zysf":{
+                "id":"zysf",
+                "name":"转运四方",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "zysf1",
+                    "name": "德国仓库",
+                    "url": "http://tr.4px.com/price.html",
+                    "singlePrice": "10",
+                    "singleWeight": "1",
+                    "extendPrice": "5",
+                    "extendWeight": "1",
+                    "exchangeRate": "6.4",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "时效中等，稳定，最高理赔$100"
+                }]
+            },	            		
+			"aouzhou":{
+                "id":"aouzhou",
+                "name":"爱欧洲",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "aouzhou1",
+                    "name": "德国仓库",
+                    "url": "http://www.love-eu.com/index.php/Index/newsdetail/class/70/id/37",
+                    "singlePrice": "195",
+                    "singleWeight": "2.2",
+                    "extendPrice": "25",
+                    "extendWeight": "2.2",
+                    "exchangeRate": "1",
+                    "minWeight": "2.2",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "会员收费更低"
+                }]
+            },
+            "ouzhougo":{
+                "id":"ouzhougo",
+                "name":"欧洲go",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "ouzhougo1",
+                    "name": "德国仓库",
+                    "url": "http://www.eur-go.com/price-service-313-eurgo.aspx",
+                    "singlePrice": "243",
+                    "singleWeight": "2.2",
+                    "extendPrice": "20",
+                    "extendWeight": "2.2",
+                    "exchangeRate": "1",
+                    "minWeight": "2.2",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "小于30公斤"
+                }]
+            },
+            "beiyigou":{
+                "id":"beiyigou",
+                "name":"贝易购",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "beiyigou1",
+                    "name": "德国仓库",
+                    "url": "http://www.byeco.cn/user",
+                    "singlePrice": "160",
+                    "singleWeight": "2.2",
+                    "extendPrice": "20",
+                    "extendWeight": "2.2",
+                    "exchangeRate": "1",
+                    "minWeight": "2.2",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "可发30公斤"
+                }]
+            },
+			"egousd":{
+                "id":"egousd",
+                "name":"E购速递",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "egousd1",
+                    "name": "英国伦敦仓库",
+                    "url": "http://www.egouexpress.com/estimates.aspx",
+                    "singlePrice": "400",
+                    "singleWeight": "7",
+                    "extendPrice": "40",
+                    "extendWeight": "1",
+                    "exchangeRate": "1",
+                    "minWeight": "7",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "会员收费更低"
+                }]
+			},			
+            "dydy":{
+                "id":"dydy",
+                "name":"DY德运",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "beiyigou1",
+                    "name": "DHL经济线",
+                    "url": "http://www.byeco.cn/user",
+                    "singlePrice": "180",
+                    "singleWeight": "2.2",
+                    "extendPrice": "24",
+                    "extendWeight": "2.2",
+                    "exchangeRate": "1",
+                    "minWeight": "2.2",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "可发30公斤"
+                }]
+            }
+        }
+    },
+    "jptransship":{
+        "shipCompany": {
+            "walatj":{
+                "id":"walatj",
+                "name":"海淘1号仓",
+                "lines": [{
+                    "defaultShip": "selected",
+                    "id": "walatj1",
+                    "name": "东京都仓库",
+                    "url": "http://www.1hcang.com/?fid=182",
+                    "singlePrice": "70",
+                    "singleWeight": "2.2",
+                    "extendPrice": "7",
+                    "extendWeight": "0.22",
+                    "exchangeRate": "1",
+                    "minWeight": "2.2",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": " 会员收费更低"
+                }]
+            },             
+            "zysf":{
+                "id":"zysf",
+                "name":"转运四方",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "zysf1",
+                    "name": "东京都仓库",
+                    "url": "http://www.transrush.com",
+                    "singlePrice": "68",
+                    "singleWeight": "1",
+                    "extendPrice": "8",
+                    "extendWeight": "0.2",
+                    "exchangeRate": "1",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": " 1KG以内走EMS速度快"
+                }]
+            },			
+            "lfzy":{
+                "id":"lfzy",
+                "name":"立夫转运",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "lfzy1",
+                    "name": "埼玉県仓库",
+                    "url": "http://www.liveinjp.cn/",
+                    "singlePrice": "49.7",
+                    "singleWeight": "0.66",
+                    "extendPrice": "7",
+                    "extendWeight": "0.22",
+                    "exchangeRate": "1",
+                    "minWeight": "0.66",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "可累积积分"
+                }]
+            }, 
+            "lyf":{
+                "id":"lyf",
+                "name":"乐一番",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "lyf1",
+                    "name": "东京都仓库",
+                    "url": "https://www.leyifan.com",
+                    "singlePrice": "47.2",
+                    "singleWeight": "0.66",
+                    "extendPrice": "5.7",
+                    "extendWeight": "0.22",
+                    "exchangeRate": "1",
+                    "minWeight": "0.66",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": " 1KG以内走EMS速度快"
+                }]
+            },                         
+             
+            "rbzy":{
+                "id":"rbzy",
+                "name":"日本转运",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "rbzy1",
+                    "name": "东京都仓库",
+                    "url": "https://www.jpdeliver.com/mypage/",
+                    "singlePrice": "70",
+                    "singleWeight": "1",
+                    "extendPrice": "40",
+                    "extendWeight": "1",
+                    "exchangeRate": "1",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "可累积积分"
+                }]
+            },
+            "tenso":{
+                "id":"tenso",
+                "name":"Tenso转运",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "tenso1",
+                    "name": "东京都仓库",
+                    "url": "http://www.tenso.com/chs/guide/fee/index.html",
+                    "singlePrice": "78",
+                    "singleWeight": "1",
+                    "extendPrice": "18",
+                    "extendWeight": "1",
+                    "exchangeRate": "1",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "采用EMS邮递"
+                }]
+            },
+				
+            "hwgo":{
+                "id":"hwgo",
+                "name":"海外go",
+                "lines": [{
+                    "defaultShip": "",
+                    "id": "hwgo1",
+                    "name": "东京都仓库",
+                    "url": "http://www.hw-go.net/article.php?id=85",
+                    "singlePrice": "58",
+                    "singleWeight": "0.6",
+                    "extendPrice": "10",
+                    "extendWeight": "0.2",
+                    "exchangeRate": "1",
+                    "minWeight": "1",
+                    "specialProm": "",
+                    "wltaoText": "",
+                    "isWalaDiscount": "false",
+                    "suitableCate": "禁运物品除外",
+                    "suitableCateDetail": "禁运物品除外",
+                    "promptText": "EMS速度较快"
+                }]
+            }
+        }
+    }    
+
+}

@@ -1,0 +1,76 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/reset.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/myresume.css"/>
+<style>
+li{ list-style:none;}
+</style>
+<script>
+$(function(){
+    $(".btn_showprogress").click(function(){
+          $(this).find("i").toggleClass("transform");
+		  $(this).parent("div").siblings(".progress_status").slideToggle(200);
+    });
+});
+</script>
+
+
+<div class="tilhed">
+   <a class="golevel" href="/User"></a>
+   <div class="mbtitle">投递记录</div>
+   <a class="gohome" href="/"></a>
+</div>
+
+<table class="sctab" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="/User/myinterview/isover/2.html" {$amenu[2]}>将面试</a></td>
+    <td><a  href="/User/myinterview/isover/1.html" {$amenu[1]}>已面试</a></td>
+  </tr>
+</table>
+
+ <php>if(!$list)echo '<div class="mbbox mt14"><div class="nocenter"><span><img src="/Public/Home/images/empty.png" />暂时没有记录哦~</span></div></div>';</php>
+            
+<table class="mymianshi" width="100%" border="0" cellspacing="0" cellpadding="0">
+
+<volist name="list" id="v">
+	<php>
+	$mianshi_log = $v['apply_log'][0];
+	if($mianshi_log && $mianshi_log['type']==4){
+		$ext_data = unserialize($mianshi_log['ext_data']);
+	}
+	</php>
+  <tr>
+    <td class="onebg">{$v.interviewTime|getInterViewDate=###}<!-- 5月 4日 （周六） 08.30 --></td>
+  </tr>
+  <tr>
+    <td height="8"></td>
+  </tr>
+  <tr>
+    <td><span><a href="/Jobs/info/id/{$v.jid}.html?source=rec">{$v.zhiwei_mingcheng}</a></span>（{$v.yuexin_min}k-{$v.yuexin_max}k）</td>
+  </tr>
+  <tr>
+    <td>{$v.company_short_name}</td>
+  </tr>
+  <tr>
+    <td>姓名：{$ext_data.name}</td>
+  </tr>
+  <tr>
+    <td>地址：{$ext_data.address}</td>
+  </tr>
+  <tr>
+    <td>联系电话：<span>{$ext_data.phone}</span></td>
+  </tr>
+  <tr>
+    <td>补充内容：{$ext_data.memo}</td>
+  </tr>
+  <tr>
+    <td height="8"></td>
+  </tr>
+  
+</volist>  
+  
+  
+  
+  
+</table>
+   
+

@@ -1,0 +1,155 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/mcss/reg.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/external.min.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/popup.css"/>
+<style>
+#xieyi{ height:200px; line-height:24px; margin-bottom:10px; overflow-y:scroll}
+
+</style>
+<div class="mbbox">
+  <input type="hidden" id="resubmitToken" value=""/>
+  <div class="login_box">
+  
+    <form id="registerForm"  action="__SELF__" method="post" name="forms">
+    
+      <ul class="register_radio clearfix">
+        <li id="regjob" class="current">找工作<input name="type" type="radio" value="0" checked="checked"/></li>
+        <li id="regcom">招人<input type="radio" value="1" name="type"/></li>
+      </ul>
+
+<div id="dncom">   
+   
+     <div class="loginForm">
+      <input type="text" id="email" ajaxurl="/member/checkUserEmailUnique.html" errormsg="请填写正确格式的邮箱" nullmsg="请填写邮箱" datatype="e" name="email" tabindex="1" placeholder="邮箱"/>
+
+
+      <div style="position:relative;">
+         <div id="editipt"> 
+           <input type="password" oncut="return false" onpaste="return false" id="password" name="password" tabindex="2" placeholder="密码" errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"/>
+         </div>
+         <div id="editpw"><a class="offpw" href="javascript:showps()"></a></div>
+       </div>
+       
+    </div>
+    
+      <span class="error" style="display:none;" id="beError"></span>
+       <div class="clr"></div>
+      <label class="registerJianJu" for="checkbox">
+        <input type="checkbox" id="web_rule" name="web_rule" checked class="checkbox valid"/>
+        我已阅读并同意<a class="colac inline"  href="#xieyi" title="乔麦网用户协议">《乔麦网用户协议》</a> </label>
+      <input type="submit" id="submitLogin" class="mybtn f20 mt20" value="注 册"/>
+      <input type="hidden" id="callback" name="callback" value=""/>
+      <input type="hidden" id="authType" name="authType" value=""/>
+      <input type="hidden" id="signature" name="signature" value=""/>
+      <input type="hidden" id="timestamp" name="timestamp" value=""/>
+      
+</div>      
+      
+    </form>
+    
+    <div id="noregcom" class="dn">
+       <span>目前手机版还没有开放企业端注册哦，</span><br />
+       <span class="noreg2">请前往网页版注册吧</span>
+    </div>
+
+    <div class="txtct pdt20">已有账号？<a class="sty colac"  href="{:U('User/login')}">立即登录</a></div>
+    
+    
+  </div>
+  
+  
+  <div class="login_box_btm"></div>
+</div>
+
+ <div style="display:none;">
+     <div id="xieyi" class="popup">
+        {$webRule}
+        <br />
+
+      </div>
+</div>
+
+<!-- <script type="text/javascript" src="/Public/Home/js/jquery.validate.js" ></script>
+<script type="text/javascript" src="/Public/Home/js/main.js" ></script>  -->
+
+<script type="text/javascript" src="/Public/Home/js/popup.js"></script>
+
+<!-- 眼镜显示隐藏密码 -->
+<script language="JavaScript">
+	  function showps(){
+		  if (this.forms.password.type="password") {
+			  document.getElementById("editipt").innerHTML="<input type=\"text\" name=\"password\" oncut=\"return false\" onpaste=\"return false\"  id=\"password\" placeholder=\"请输入密码\" errormsg=\"密码为6-20位\" nullmsg=\"请填写密码\" datatype=\"*6-20\" tabindex=\"2\" value="+this.forms.password.value+">";
+			  document.getElementById("editpw").innerHTML="<a class=\"onpw\" href=\"javascript:hideps()\"></a>"
+		  }
+	  }
+	  function hideps(){
+		  if (this.forms.password.type="text") {
+			  document.getElementById("editipt").innerHTML="<input type=\"password\" name=\"password\" id=\"password\"  oncut=\"return false\" onpaste=\"return false\" placeholder=\"请输入密码\" errormsg=\"密码为6-20位\" nullmsg=\"请填写密码\" datatype=\"*6-20\" tabindex=\"2\" value="+this.forms.password.value+">";
+			  document.getElementById("editpw").innerHTML="<a class=\"offpw\" href=\"javascript:showps()\"></a>"
+		  }
+	  }
+</script>
+
+
+<script type="text/javascript">
+
+  $("#regjob").click(function(){
+	  $("#email").attr('placeholder','请输入常用邮箱地址');
+	   $("#dncom").show();
+	   $("#noregcom").hide();
+  })
+  $("#regcom").click(function(){
+	  $("#dncom").hide();
+	  $("#noregcom").show();
+  })
+
+	$(document).ready(function() {
+		$(".register_radio li input").click(function() {
+			$(this).parent("li").addClass("current").append("<em></em>").siblings().removeClass("current").find("em").remove()
+		})
+
+	})
+
+   	$(document)
+    	.ajaxStart(function(){
+    		$("#submitLogin").addClass("log-in").attr("disabled", true);
+    	})
+    	.ajaxStop(function(){
+    		$("#submitLogin").removeClass("log-in").attr("disabled", false);
+    	});
+
+
+   	$("form").submit(function(){
+   		$("#beError").hide();
+   		var self = $(this);
+   		$.post(self.attr("action"), self.serialize(), success, "json");
+   		return false;
+
+   		function success(data){
+   			if(data.status){
+   				window.location.href = data.url; //"/Home/User/";//
+   			} else {
+   				//self.find(".Validform_checktip").text(data.info);
+   				$("#beError").show();
+   				$("#beError").text(data.info);
+   				//刷新验证码
+   				//$(".reloadverify").click();
+   			}
+   		}
+   	});
+
+	$(function(){
+		var verifyimg = $(".verifyimg").attr("src");
+           $(".reloadverify").click(function(){
+               if( verifyimg.indexOf('?')>0){
+                   $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+               }else{
+                   $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+               }
+           });
+	});
+</script>
+
+
+<include file="Public/footer" />

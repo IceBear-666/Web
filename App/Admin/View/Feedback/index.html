@@ -1,0 +1,120 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>意见反馈</h2>
+    </div>
+
+    <!-- <div class="cf">
+        <a class="btn" href="{:U('add')}">新 增</a>
+        <button class="btn ajax-post confirm" url="{:U('del')}" target-form="ids">删 除</button>
+         -->
+		<!-- 高级搜索 
+        <div class="search-form fr cf">
+            <div class="sleft">
+                <input type="text" name="title" class="search-input" value="{:I('title')}" placeholder="请输入关键词">
+                <a class="sch-btn" href="javascript:;" id="search" url="__SELF__"><i class="btn-search"></i></a>
+            </div>
+        </div>
+    </div>-->
+
+    <div class="data-table table-striped">
+        <form class="ids">
+            <table>
+                <thead>
+                    <tr>
+                        <!-- <th class="row-selected">
+                            <input class="checkbox check-all" type="checkbox">
+                        </th> -->
+                        <th>ID</th>
+                        <th>反馈人</th>
+                        <th>手机</th>
+                        <th>邮箱</th> 
+                        <!-- <th>状态</th>  -->  
+                        <th>内容</th>            
+                        <th>时间</th>                      
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+				<notempty name="list">
+                <volist name="list" id="v">
+                    <tr>
+                        <!-- <td><input class="ids row-selected" type="checkbox" name="id[]" value="{$v.fid}"></td> -->
+                        <td>{$v.fid}</td>
+                        <td>
+                        <php>if($v['uid']){</php>
+                        	<a  target="_bank" href="/User/index/uid/{$v.uid}"><php>if($v['realname'])echo $v['realname'];else echo $v['company_name'];</php></a>
+                        <php>}else{</php>
+                        	{$v.name}
+                        <php>}</php>
+                        </td>                      
+                        <td>{$v.mobile}</td>
+                        <td>{$v.email}</td>
+                        <!-- <td>{$v.status|getFeedbackStatus=###}</td> -->                        
+                        <td>{$v.content|msubstr=###,0,100}</td>
+                        <td>{$v.addtime|showDate=###}</td> 
+                        <td>
+                            <a title="查看" href="/Admin/Feedback/show/id/{$v.fid}">详情</a> 
+                            <a class="confirm ajax-get" title="删除" href="{:U('del?id='.$v['fid'])}">删除</a>
+                        </td>
+                    </tr>
+                </volist>
+				<else/>
+				<td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td>
+				</notempty>
+                </tbody>
+            </table>
+        </form>
+        <!-- 分页 -->
+        <div class="page">
+			{$_page}
+        </div>
+    </div>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        $(function() {
+            //搜索功能
+            $("#search").click(function() {
+                var url = $(this).attr('url');
+                var query = $('.search-form').find('input').serialize();
+                query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g, '');
+                query = query.replace(/^&/g, '');
+                if (url.indexOf('?') > 0) {
+                    url += '&' + query;
+                } else {
+                    url += '?' + query;
+                }
+                window.location.href = url;
+            });
+            //回车搜索
+            $(".search-input").keyup(function(e) {
+                if (e.keyCode === 13) {
+                    $("#search").click();
+                    return false;
+                }
+            });
+            //导航高亮
+            highlight_subnav('{:U('index')}');
+            //点击排序
+        	$('.list_sort').click(function(){
+        		var url = $(this).attr('url');
+        		var ids = $('.ids:checked');
+        		var param = '';
+        		if(ids.length > 0){
+        			var str = new Array();
+        			ids.each(function(){
+        				str.push($(this).val());
+        			});
+        			param = str.join(',');
+        		}
+
+        		if(url != undefined && url != ''){
+        			window.location.href = url + '/ids/' + param;
+        		}
+        	});
+        });
+    </script>
+</block>

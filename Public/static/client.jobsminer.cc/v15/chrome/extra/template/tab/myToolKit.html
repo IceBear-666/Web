@@ -1,0 +1,68 @@
+	<div id="wltao_sidebar" class="wltao_font" style="display: block;">
+		
+		<div class="wltao_sidebar_top wltao-stat" data-stat="web.help.top"></div>
+		
+		<div class="wltao_sidebar_panel">
+			{{#isShow}}
+			<div class="wltao_sidebar_intro">
+				<div class="wltao_si_sub_title">此商家可信任，支持以下服务：</div>
+				<div class="wltao_si_item wltao_si_card" tip="{{cardsupport}}"><i></i>支付</div>
+				<div class="wltao_si_item wltao_si_fee" tip="{{shiptip}}"><i></i>邮费</div>
+				<div class="wltao_si_item wltao_si_tax" tip="{{taxtip}}"><i></i>消费税</div>
+				<div class="wltao_si_tip wltao_si_tip_card">{{cardsupport}}</div>
+				<div class="wltao_si_tip wltao_si_tip_fee">{{shiptip}}</div>
+				<div class="wltao_si_tip wltao_si_tip_tax">{{taxtip}}</div>
+			</div>
+			{{/isShow}}
+			<div class="wltao_sidebar_oper">
+				<label>
+					<div class="haiao_chk_text">划词翻译</div>
+					<div class="wltao_chk wltao_switch_trans wltao-stat {{#isTranslate}}wltao_chk_checked{{/isTranslate}}" data-stat="web.help.fanyi">
+						<div class="wltao_chk_circle"></div>
+					</div>
+				</label>
+				<label style="display:;">
+					<div class="haiao_chk_text">页面提示</div>
+					<div class="wltao_chk wltao_switch_tips wltao-stat {{#isShowTips}}wltao_chk_checked{{/isShowTips}}" data-stat="web.help.xinxi">
+						<div class="wltao_chk_circle"></div>
+					</div>
+				</label>
+				<label>
+					<div class="haiao_chk_text">桌面提醒</div>
+					<div class="wltao_chk wltao_switch_pushnotify wltao-stat {{#isShowPushNotify}}wltao_chk_checked{{/isShowPushNotify}}" data-stat="web.help.pushnotify">
+						<div class="wltao_chk_circle"></div>
+					</div>
+				</label>
+				<label>
+					<div class="haiao_chk_text">底部工具条</div>
+					<div class="wltao_chk wltao_switch_downbar wltao-stat {{#isShowDownBar}}wltao_chk_checked{{/isShowDownBar}}" data-stat="web.help.showDownBar">
+						<div class="wltao_chk_circle"></div>
+					</div>
+				</label>
+				<label>
+					<div class="haiao_chk_text">穿越购物</div>
+					<div class="wltao_chk wltao_switch_proxy wltao-stat {{#isProxy}}wltao_chk_checked{{/isProxy}}" data-stat="web.help.showDownBar">
+						<div class="wltao_chk_circle"></div>
+					</div>
+					<a class="link-proxy" href="{{popupurl}}?id=4" target="_blank"></a>
+				</label>
+				<p style="margin:10px 0 0; font-size: 12px; font-family: 'microsoft yahei';">（注：设置后需刷新方可生效）</p>
+			</div>
+			<div class="wltao_sidebar_help wltao-clearfix" style="display: none;">				
+<!-- 				<label class="wltao_chima_lable"><a href="{{popupurl}}" class="wltao_chima wltao-stat" data-stat="web.help.chima" target="_blank"><i></i>尺码转换</a>
+				</label>
+				<label class="wltao_newuser_lable"><a href="{{popupurl}}" class="wltao_newuser wltao-stat" data-stat="web.help.zhidao" target="_blank"><i></i>下单教程</a>
+				</label> -->
+			</div>
+			<div class="wltao_sidebar_help wltao-clearfix">
+				
+			</div>		
+			<div class="wltao_sidebar_help wltao-clearfix">
+				<label class="wltao_qq_lable">
+					<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=6598d49c4f558adef94a02007916a85862818a23abbfecae033e74d37dcbf922"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="瓦拉淘" title="瓦拉淘"></a>
+				</label>
+				<label class="wltao_email_lable"><a href="javascript:void(0);" class="wltao_transPage wltao-stat" data-stat="web.help.transPage" style="cursor:default"><i></i>反馈邮箱:  fankui@iwala.net</a>
+				</label>
+			</div>			
+		</div>
+	</div>

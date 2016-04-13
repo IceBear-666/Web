@@ -1,0 +1,803 @@
+{
+    "select":[
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 请选择 ",
+            "subclass": " 请选择主分类"
+        }
+    ],
+    "grocery": [
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 食品 ",
+            "subclass": " 咖啡"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0.1 ",
+            "duty": " 0.1 ",
+            "alias": " 食品 ",
+            "subclass": " 饮料/保健品/其他食品"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 食品 ",
+            "subclass": " 茶叶"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 食品 ",
+            "subclass": " 其他"
+        }
+    ],
+    "apparel": [
+        {
+            "price": " 300 ",
+            "rate": " 0.2 ",
+            "duty": " 60 ",
+            "alias": " 服饰 ",
+            "subclass": " 外衣/衣服/冲锋衣"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 服饰 ",
+            "subclass": " 外裤/裤子/衬衫/衬衣/T恤"
+        },
+        {
+            "price": " 0.2 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 服饰 ",
+            "subclass": " 内衣/内裤"
+        },
+        {
+            "price": " 100 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 服饰 ",
+            "subclass": " 配饰（帽子/围巾/丝巾/头巾/领带/腰带/手套）"
+        },
+        {
+            "price": " 400 ",
+            "rate": " 0.2 ",
+            "duty": " 80 ",
+            "alias": " 服饰 ",
+            "subclass": " 毛毯/被子/床罩/睡袋"
+        },
+        {
+            "price": " 2000 ",
+            "rate": " 0.1 ",
+            "duty": " 200 ",
+            "alias": " 服饰 ",
+            "subclass": " 皮大衣"
+        },
+        {
+            "price": " 1500 ",
+            "rate": " 0.1 ",
+            "duty": " 150 ",
+            "alias": " 服饰 ",
+            "subclass": " 皮上衣"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 服饰 ",
+            "subclass": " 皮帽"
+        },
+        {
+            "price": " 1000 ",
+            "rate": " 0.1 ",
+            "duty": " 100 ",
+            "alias": " 服饰 ",
+            "subclass": " 皮背心/皮裤/皮裙"
+        },
+        {
+            "price": " 100 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 服饰 ",
+            "subclass": " 皮带/皮手套"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 服饰 ",
+            "subclass": " 其他"
+        }
+    ],
+    "shoes": [
+        {
+            "price": " 300 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 鞋,箱包 ",
+            "subclass": " 皮鞋"
+        },
+        {
+            "price": " 400 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 鞋,箱包 ",
+            "subclass": " 皮靴/靴子"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 鞋,箱包 ",
+            "subclass": " 运动鞋/徒步鞋/涉水鞋/登山鞋/远足鞋"
+        },
+        {
+            "price": " 500 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 鞋,箱包 ",
+            "subclass": " 箱/行李箱/旅行箱/手提箱"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 鞋,箱包 ",
+            "subclass": " 挎包/背包/提包/邮差包/双肩包/单肩包"
+        },
+        {
+            "price": " 100 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 鞋,箱包 ",
+            "subclass": " 钱包/钥匙包"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 鞋,箱包 ",
+            "subclass": " 其他"
+        }
+    ],
+    "watches": [
+        {
+            "price": " 200 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 手表 ",
+            "subclass": " 石英表（电子表）"
+        },
+        {
+            "price": " 500 ",
+            "rate": " 0.2 ",
+            "duty": " 100 ",
+            "alias": " 手表 ",
+            "subclass": " 机械表"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0.3 ",
+            "duty": " 0.3 ",
+            "alias": " 手表 ",
+            "subclass": " 高档手表（审定价格在人民币10000元及以上）"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 手表 ",
+            "subclass": " 其他"
+        }
+    ],
+    "kitchen": [
+        {
+            "price": " 20 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 厨房,餐厅 ",
+            "subclass": " 餐具/刀具"
+        },
+        {
+            "price": " 100 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 厨房,餐厅 ",
+            "subclass": " 炊具/锅"
+        },
+        {
+            "price": " 500 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 厨房,餐厅 ",
+            "subclass": " 净水器（含滤芯）"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 厨房,餐厅 ",
+            "subclass": " 净水器过滤芯"
+        },
+        {
+            "price": " 500 ",
+            "rate": " 0.2 ",
+            "duty": " 100 ",
+            "alias": " 厨房,餐厅 ",
+            "subclass": " 电饭煲"
+        },
+        {
+            "price": " 600 ",
+            "rate": " 0.2 ",
+            "duty": " 120 ",
+            "alias": " 厨房,餐厅 ",
+            "subclass": " 微波炉"
+        },
+        {
+            "price": " 100 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 厨房,餐厅 ",
+            "subclass": " 电动榨汁机"
+        },
+        {
+            "price": " 4000 ",
+            "rate": " 0.2 ",
+            "duty": " 800 ",
+            "alias": " 厨房,餐厅 ",
+            "subclass": " 咖啡机"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 厨房,餐厅 ",
+            "subclass": " 其他"
+        }
+    ],
+    "home-garden": [
+        {
+            "price": " 500 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 家电 ",
+            "subclass": " 吸尘器"
+        },
+        {
+            "price": " 400 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 家电 ",
+            "subclass": " 电风扇"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 家电 ",
+            "subclass": " 电熨斗"
+        },
+        {
+            "price": " 1500 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 家电 ",
+            "subclass": " 增/除湿机/增除湿一体机"
+        },
+        {
+            "price": " 500 ",
+            "rate": " 0.2 ",
+            "duty": " 100 ",
+            "alias": " 家电 ",
+            "subclass": " 地板打蜡机"
+        },
+        {
+            "price": " 2000 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 家电 ",
+            "subclass": " 电动缝纫机/编织机"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 家电 ",
+            "subclass": " 其他"
+        }
+    ],
+    "hpc": [
+        {
+            "price": " 200 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 个人护理 ",
+            "subclass": " 电动剃须刀"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 个人护理 ",
+            "subclass": " 红外线耳探热针/耳温枪"
+        },
+        {
+            "price": " 500 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 个人护理 ",
+            "subclass": " 血压计/血糖计"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 个人护理 ",
+            "subclass": " 电吹风机"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 个人护理 ",
+            "subclass": " 电动牙刷"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 个人护理 ",
+            "subclass": " 其他"
+        }
+    ],
+    "beauty": [
+        {
+            "price": " 150 ",
+            "rate": " 0.5 ",
+            "duty": " 75 ",
+            "alias": " 美容 ",
+            "subclass": " 防晒露/防晒霜/防晒乳液"
+        },
+        {
+            "price": " 50 ",
+            "rate": " 0.5 ",
+            "duty": " 0 ",
+            "alias": " 美容 ",
+            "subclass": " 护手霜"
+        },
+        {
+            "price": " 150 ",
+            "rate": " 0.5 ",
+            "duty": " 75 ",
+            "alias": " 美容 ",
+            "subclass": " 唇膏"
+        },
+        {
+            "price": " 100 ",
+            "rate": " 0.5 ",
+            "duty": " 0 ",
+            "alias": " 美容 ",
+            "subclass": " 洗面奶（洁面霜）"
+        },
+        {
+            "price": " 300 ",
+            "rate": " 0.5 ",
+            "duty": " 150 ",
+            "alias": " 美容 ",
+            "subclass": " 香水"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.5 ",
+            "duty": " 100 ",
+            "alias": " 美容 ",
+            "subclass": " 眼霜/面霜/乳液"
+        },
+        {
+            "price": " 300 ",
+            "rate": " 0.5 ",
+            "duty": " 150 ",
+            "alias": " 美容 ",
+            "subclass": " 精华液/精华素/肌底液"
+        },
+        {
+            "price": " 20 ",
+            "rate": " 0.5 ",
+            "duty": " 0 ",
+            "alias": " 美容 ",
+            "subclass": " 面膜"
+        },
+        {
+            "price": " 150 ",
+            "rate": " 0.5 ",
+            "duty": " 75 ",
+            "alias": " 美容 ",
+            "subclass": " 爽肤水"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.5 ",
+            "duty": " 100 ",
+            "alias": " 美容 ",
+            "subclass": " 粉底/粉底液"
+        },
+        {
+            "price": " 100 ",
+            "rate": " 0.5 ",
+            "duty": " 0 ",
+            "alias": " 美容 ",
+            "subclass": " 睫毛膏/睫毛液"
+        },
+        {
+            "price": " 20 ",
+            "rate": " 0.5 ",
+            "duty": " 0 ",
+            "alias": " 美容 ",
+            "subclass": " 润唇膏"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 美容 ",
+            "subclass": " 其他"
+        }
+    ],
+    "wireless": [
+        {
+            "price": " 1000 ",
+            "rate": " 0.1 ",
+            "duty": " 100 ",
+            "alias": " 手机及配件 ",
+            "subclass": " 键盘式手机"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0.1 ",
+            "duty": " 0.1 ",
+            "alias": " 手机及配件 ",
+            "subclass": " 触屏手机"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 手机及配件 ",
+            "subclass": " 其他"
+        }
+    ],
+    "office-products": [
+        {
+            "price": " 1500 ",
+            "rate": " 0.2 ",
+            "duty": " 300 ",
+            "alias": " 办公用品 ",
+            "subclass": " 便携式复印机"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 办公用品 ",
+            "subclass": " 其他"
+        }
+    ],
+    "photo": [
+        {
+            "price": " 2000 ",
+            "rate": " 0.1 ",
+            "duty": " 200 ",
+            "alias": " 照相机,摄像机 ",
+            "subclass": " 数码相机/卡片机/DC"
+        },
+        {
+            "price": " 5000 ",
+            "rate": " 0.1 ",
+            "duty": " 500 ",
+            "alias": " 照相机,摄像机 ",
+            "subclass": " 数码照相机机身/单反机身/微单机身"
+        },
+        {
+            "price": " 2000 ",
+            "rate": " 0.1 ",
+            "duty": " 200 ",
+            "alias": " 照相机,摄像机 ",
+            "subclass": " 数码照相机镜头/单反镜头/微单镜头"
+        },
+        {
+            "price": " 4000 ",
+            "rate": " 0.1 ",
+            "duty": " 400 ",
+            "alias": " 照相机,摄像机 ",
+            "subclass": " 便捷式摄录一体机/家用摄像机/DV"
+        },
+        {
+            "price": " 500 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 照相机,摄像机 ",
+            "subclass": " 闪光灯"
+        },
+        {
+            "price": " 300 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 照相机,摄像机 ",
+            "subclass": " 支架"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 照相机,摄像机 ",
+            "subclass": " 其他"
+        }
+    ],
+    "electronics": [
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 电子数码 ",
+            "subclass": " 游戏机遥控器/控制器/手柄/摇杆/方向盘"
+        },
+        {
+            "price": " 500 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 电子数码 ",
+            "subclass": " 数码相框"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 电子数码 ",
+            "subclass": " 录音笔/录音机/收音机"
+        },
+        {
+            "price": " 100 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 电子数码 ",
+            "subclass": " MP3播放器"
+        },
+        {
+            "price": " 500 ",
+            "rate": " 0.2 ",
+            "duty": " 100 ",
+            "alias": " 电子数码 ",
+            "subclass": " MP4播放器"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 电子数码 ",
+            "subclass": " 电话机/座机/无绳电话"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 电子数码 ",
+            "subclass": " 电子计算器"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 电子数码 ",
+            "subclass": " 储存卡8GB及以上"
+        },
+        {
+            "price": " 50 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 电子数码 ",
+            "subclass": " 储存卡8GB及以下"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 电子数码 ",
+            "subclass": " 其他"
+        }
+    ],
+    "videogames": [
+        {
+            "price": " 1000 ",
+            "rate": " 0.1 ",
+            "duty": " 100 ",
+            "alias": " 游戏机/游戏碟 ",
+            "subclass": " 便携式游戏机"
+        },
+        {
+            "price": " 60 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 游戏机/游戏碟 ",
+            "subclass": " 游戏碟/游戏盘/游戏卡"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 游戏机/游戏碟 ",
+            "subclass": " 其他"
+        }
+    ],
+    "musical-instruments": [
+        {
+            "price": " 0 ",
+            "rate": " 0.2 ",
+            "duty": " 0.2 ",
+            "alias": " 音响 ",
+            "subclass": " 音箱（音响设备）"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 音响 ",
+            "subclass": " 其他"
+        }
+    ],
+    "pc": [
+        {
+            "price": " 2000 ",
+            "rate": " 0.1 ",
+            "duty": " 200 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 笔记本电脑/含平板电脑"
+        },
+        {
+            "price": " 300 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 内存条4G以上"
+        },
+        {
+            "price": " 300 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 功能卡/声卡/显卡等"
+        },
+        {
+            "price": " 50 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 鼠标"
+        },
+        {
+            "price": " 80 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 键盘"
+        },
+        {
+            "price": " 50 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 音箱（计算机外设）"
+        },
+        {
+            "price": " 5000 ",
+            "rate": " 0.1 ",
+            "duty": " 500 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 投影仪"
+        },
+        {
+            "price": " 300 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 存储器/移动硬盘1T及以下"
+        },
+        {
+            "price": " 500 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 移动硬盘1T-2T（含2T）"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0.1 ",
+            "duty": " 0.1 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 移动硬盘2T以上"
+        },
+        {
+            "price": " 50 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 优盘/U盘/闪存盘"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0.1 ",
+            "duty": " 0.1 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 其他存储器/固态硬盘/SSD"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 个人电脑 ",
+            "subclass": " 其他"
+        }
+    ],
+    "digital-text": [
+        {
+            "price": " 800 ",
+            "rate": " 0.1 ",
+            "duty": " 80 ",
+            "alias": " 电子书设备 ",
+            "subclass": " Kindle/电纸书/电子书/e-ink"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 电子书设备 ",
+            "subclass": " 其他"
+        }
+    ],
+    "toys-and-games": [
+        {
+            "price": " 0 ",
+            "rate": " 0.2 ",
+            "duty": " 0.1 ",
+            "alias": " 玩具 ",
+            "subclass": " 玩具"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 玩具 ",
+            "subclass": " 其他"
+        }
+    ],
+    "baby-products": [
+        {
+            "price": " 200 ",
+            "rate": " 0.1 ",
+            "duty": " 0 ",
+            "alias": " 婴儿用品 ",
+            "subclass": " 奶粉"
+        },
+        {
+            "price": " 200 ",
+            "rate": " 0.2 ",
+            "duty": " 0 ",
+            "alias": " 婴儿用品 ",
+            "subclass": " 童车"
+        },
+        {
+            "price": " 0 ",
+            "rate": " 0 ",
+            "duty": " 0 ",
+            "alias": " 婴儿用品 ",
+            "subclass": " 其他"
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+<div id="wltao_shipCompare_wrapper">
+	<div id="wltao_shipCompare_head">
+		<table class="wltao_table wltao_shipCompare_table">
+			<tr>
+				<th class="wltao_shipCompare_comp">转运商家</th>
+				<th class="wltao_shipCompare_warehouse">商家仓库</th>
+				<th class="wltao_shipCompare_suitCate">适合品类</th>
+				<th class="wltao_shipCompare_price">
+					<span>转运费
+						<input class="wltao_update_weight" type="input" maxlength="6" value="{{weight}}">磅</span>
+				</th>
+			</tr>
+		</table>
+	</div>
+	<div id="wltao_shipCompare_detail">
+		<table class="wltao_table wltao_shipCompare_table">
+			{{#shipList}}
+			{{#if(isFirst==true)}}
+			<tr class="empty_tr"></tr>
+			<tr data-id="{{id}}">
+				<td class="wltao_shipCompare_comp">
+					<span class="wltao_shipIcon wltao_shipIcon111_{{compId}}"></span>
+					<span class="wltao_ship_name">
+						<a class="wltao_ship_name_url" target="_blank" href="{{compHomeUrl}}">{{compName}}
+						</a>
+					</span>
+					{{#if(id==walatj1)}}
+					<img src="http://js.client.walatao.com/v9/godimage/4px.png" style="height: 20px;">
+					{{/if(id==walatj1)}}
+					{{#if(id==zysf1)}}
+					<img src="http://js.client.walatao.com/v9/godimage/4px.png" style="height: 20px;">
+					{{/if(id==zysf1)}}
+				</td>
+				<td class="wltao_shipCompare_warehouse">{{name}}</td>
+				<td class="wltao_shipCompare_suitCate">
+					<span class="wltao_si_item">{{suitableCate}}</span>
+					<div class="wltao_si_tip">{{suitableCateDetail}}</div>
+				</td>
+				<td class="wltao_shipCompare_price">￥{{shippingCompanyPrice}}</td>
+			</tr>
+			{{/if(isFirst==true)}}
+			{{#if(isFirst==false)}}
+			<tr data-id="{{id}}">
+				<td class="wltao_shipCompare_comp empty_td">&nbsp;</td>
+				<td class="wltao_shipCompare_warehouse">{{name}}</td>
+				<td class="wltao_shipCompare_suitCate">
+					<span class="wltao_si_item">{{suitableCate}}</span>
+					<div class="wltao_si_tip">{{suitableCateDetail}}</div>
+				</td>
+				<td class="wltao_shipCompare_price">￥{{shippingCompanyPrice}}</td>
+			</tr>
+			{{/if(isFirst==false)}}
+		{{/shipList}}
+		</table>
+	</div>
+	<div class="ft">
+		<a target="_blank" href="http://we.walatao.com">如何使用瓦拉淘?</a>
+	</div>
+</div>

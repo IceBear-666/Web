@@ -1,0 +1,304 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/external.min.css"/>
+<script type="text/javascript" src="/Public/Home/js/additional-methods2.js"></script>
+
+<div class="w960 mt30">
+
+
+<!-- 左侧开始 -->
+<include file="Public/user_left" />
+
+
+<!-- 右侧开始 -->    
+<div class="rw680">
+
+	<input type="hidden" value="1" id="hasSidebar" />
+
+	<div class="usinfo">
+		<h2>通知模板设置</h2>
+		<div class="clr"></div>
+		<div class="temxx"></div>
+		
+		<php>if($type=="refuse"){</php> 
+		
+			<input type="hidden" id="noticeType" value="1" />
+		
+			<dl class="comtemplate">
+             <dd class="notice_dd unqualified">
+              <div class="notice_con">
+              
+                <ul class="clearfixs notice_head">
+                  <li><a href="/User/template.html?type=interview">面试通知模板</a></li>
+                  <li class="bordernone"><span class="line"></span></li>
+                  <li class="active"><a href="/User/template.html?type=refuse">不合适通知模板</a></li>
+                </ul>
+                
+                <div class="notice_main">
+                  <div class="notice_add"> <span href="javascript:;" id="addTmp"><i>+</i>添加模板 ({$count}/5)</span> </div>
+                  
+                  
+                  <!-- <div class="template_list"  data-temid="61352">
+                    <div class="list_head">
+                      <div class="list_head_m clearfixs">
+                        <div class="list_head_l fl"> <strong>系统模版</strong><span class="default show_inline">默认模板</span> </div>
+                        <div class="list_head_r fr"> <span  class="updateTmp" id="updateTmp"  data-temid="61352">修改</span><span>|</span><a href="javascript:;"  class="delTmp" data-temid="61352">删除</a> </div>
+                      </div>
+                    </div>
+                    <div class="list_con">
+                      <ul>
+                        <li> <span class="tip"> 非常荣幸收到你的简历，招聘方经过评估，认为你与该职位的条件不太匹配，无法进入面试阶段。相信更好的机会一定还在翘首期盼着你，赶快调整心态，做好充足的准备重新出发吧！ </span> </li>
+                      </ul>
+                    </div>
+                  </div> -->
+                  
+                  <volist name="list" id="v">
+                  	
+                  	<div class="template_list"  data-temid="{$v.tid}">
+	                    <div class="list_head">
+	                      <div class="list_head_m clearfixs">
+	                        <div class="list_head_l fl"> <strong>{$v.title}</strong>
+	                        
+	                        <php>if($v['isdefault']){</php>
+	                        
+	                        <span class="default show_inline">默认模板</span> 
+	                        
+	                        <php>}else{</php>
+	                        
+	                        <a data-temid="{$v.tid}" class="set_default show_inline" href="javascript:;" style="display: none;">设为默认模板</a>
+	                        
+	                        <php>}</php>
+	                        
+	                        </div>
+	                        <div class="list_head_r fr"> <span  class="updateTmp" id="updateTmp"  data-temid="{$v.tid}">修改</span><span>|</span><a href="javascript:;"  class="delTmp" data-temid="{$v.tid}">删除</a> </div>
+	                      </div>
+	                    </div>
+	                    <div class="list_con">
+	                      <ul>
+	                        <li> <span class="tip">{$v.content} </span> </li>
+	                      </ul>
+	                    </div>
+	                  </div>
+	                  
+	                  </volist>
+                  
+                  
+                  <!-- <div class="template_list"  data-temid="118429">
+                    <div class="list_head">
+                      <div class="list_head_m clearfixs">
+                        <div class="list_head_l fl"><strong>不合适1</strong><a href="javascript:;" class="set_default show_inline" data-temid="118429">设为默认模板</a></div>
+                        <div class="list_head_r fr"> <span  class="updateTmp" id="updateTmp"  data-temid="61352">修改</span><span>|</span><a href="javascript:;"  class="delTmp" data-temid="61352">删除</a> </div>
+                      </div>
+                    </div>
+                    <div class="list_con">
+                      <ul>
+                        <li> <span class="tip"> 非常荣幸收到你的简历，招聘方经过评估，认为你与该职位的条件不太匹配，无法进入面试阶段。相信更好的机会一定还在翘首期盼着你，赶快调整心态，做好充足的准备重新出发吧！ </span> </li>
+                      </ul>
+                    </div>
+                  </div> -->
+                  
+                  
+                  
+                </div>
+              </div>
+            </dd>
+
+          </dl>
+		
+		<php>}else{</php>   
+		
+			<input type="hidden" id="noticeType" value="0" />
+		
+			<dl class="comtemplate">
+              <dd class="notice_dd interview">
+              <div class="notice_con">
+                  <ul class="clearfixs notice_head">
+                      <li class="active"><a href="/User/template.html?type=interview">面试通知模板</a></li>
+                      <li class="bordernone"><span class="line"></span></li>
+                      <li><a href="/User/template.html?type=refuse">不合适通知模板</a></li>
+                  </ul>
+                  
+                 <div class="notice_main">
+                 
+                      <div class="notice_add">
+                          <span id="addTmp"><i>+</i>添加模板 ({$count}/5)</span>
+                      </div>
+                      
+                      
+                      <volist name="list" id="v">
+                     
+                     <div class="template_list" data-temid="{$v.tid}">
+                         <div class="list_head">
+                             <div class="list_head_m clearfixs">
+                                 <div class="list_head_l fl">
+                                     <strong>{$v.title}</strong>
+                                     
+                                     <php>if($v['isdefault']){</php>
+	                        
+			                        <span class="default show_inline">默认模板</span> 
+			                        
+			                        <php>}else{</php>
+			                        
+			                        <a data-temid="{$v.tid}" class="set_default show_inline" href="javascript:;" style="display: none;">设为默认模板</a>
+			                        
+			                        <php>}</php>
+	                        
+                                 </div>
+                                 <div class="list_head_r fr">
+                                     <span class="updateTmp" id="updateTmp" data-temid="{$v.tid}">修改</span><span>|</span><a href="javascript:;" class="delTmp" data-temid="{$v.tid}">删除</a>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="list_con">
+                             <ul>
+                                 <li><label>面试地点 ：</label><span>{$v.link_address}</span></li>
+                                 <li><label>联系人 ：</label><span>{$v.link_name}</span></li>
+                                 <li><label>联系电话 ：</label><span>{$v.link_phone}</span></li>
+                                 <li><span class="tip">{$v.content}</span></li>
+                             </ul>
+                         </div>
+                     </div>
+                     
+                     </volist>
+                     
+                      
+                      <!-- <div class="template_list" data-temid="113609">
+                          <div class="list_head">
+                              <div class="list_head_m clearfixs">
+                                  <div class="list_head_l fl">
+                                      <strong>通知1</strong><span class="default show_inline">默认模板</span>
+                                  </div>
+                                  <div class="list_head_r fr">
+                                      <span class="updateTmp" id="updateTmp" data-temid="113609">修改</span><span>|</span><a href="javascript:;" class="delTmp" data-temid="113609">删除</a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="list_con">
+                              <ul>
+                                  <li><label>面试地点 ：</label><span>腾讯科技大厦</span></li>
+                                  <li><label>联系人 ：</label><span></span></li>
+                                  <li><label>联系电话 ：</label><span>18588235006</span></li>
+                                  <li><span class="tip"></span></li>
+                              </ul>
+                          </div>
+                      </div> -->
+                      
+                      <!-- <div class="template_list" data-temid="113615">
+                          <div class="list_head">
+                              <div class="list_head_m clearfixs">
+                                  <div class="list_head_l fl">
+                                      <strong>模板一</strong><a href="javascript:;" class="set_default show_inline" data-temid="113615">设为默认模板</a>
+                                  </div>
+                                  <div class="list_head_r fr">
+                                      <span class="updateTmp" id="updateTmp" data-temid="113615">修改</span><span>|</span><a href="javascript:;" class="delTmp" data-temid="113615">删除</a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="list_con">
+                              <ul>
+                                  <li><label>面试地点 ：</label><span>腾讯科技大厦</span></li>
+                                  <li><label>联系人 ：</label><span>lee</span></li>
+                                  <li><label>联系电话 ：</label><span>18789900000</span></li>
+                                  <li><span class="tip">带上简历</span></li>
+                              </ul>
+                          </div>
+                      </div> -->
+                      
+                      
+                  </div>
+              </div>
+              </dd>
+          </dl>
+		
+		<php>}</php>   
+		
+		
+          
+       </div>
+       
+    </div>
+    
+    <!-- 右侧结束 -->
+    
+    <php>if($type=="refuse"){</php>     
+
+	<div id="add_template">
+		<form id="addForm">
+			<div class="add_div">
+			    <ul>
+			    	<li><label for="tmpname"><span class="bitian">*</span>模板名</label><input type="text" id="tmpname" name="tmpname"  placeholder="15个字以内，不会发送给用户，仅用来选择模板使用" /></li>
+			    	<li><label></label><textarea id="tmpTip" name="tmpTipRefuse"></textarea></li>
+			    	<li class="margin0"><label></label><a href="javascript:;" class="save_a"><input class="save" type="submit" value="保存模板"/></a><a href="javascript:;" id="cancel" class="cancel">取消添加</a></li>
+			    </ul>								
+			</div>
+		</form>
+	</div>
+	
+	<php>}else{</php>     
+	
+	
+	<div id="add_template">
+		<form id="">
+			<div class="add_div">
+			    <ul>                                                         
+			    	<li><label for="tmpname"><span class="bitian">*</span>模板名</label><input type="text" id="tmpname" name="tmpname" placeholder="15个字以内，不会发送给用户，仅用来选择模板使用" /></li>
+			    	<li><label for="site">面试地点</label><input type="text" id="site" name="site" /></li>
+			    	<li><label for="linkman">联系人</label><input type="text" id="linkman" name="linkman"/></li>
+			    	<li><label for="mobile">联系电话</label><input type="text" id="mobile" name="mobile" /></li>
+			    	<li><label for="tmpTip" class="labelCon">补充内容</label><textarea id="tmpTip" name="tmpTip"></textarea></li>
+			    	<li class="margin0"><label></label><a href="javascript:;" class="save_a"><input class="save" type="submit" value="保存模板"/></a><a href="javascript:;" id="cancel" class="cancel"></a></li>
+			    </ul>								
+			</div>
+		</form>
+	</div>
+	
+	
+    <php>}</php>  
+    
+           
+</div>
+
+<!------------------------------------- 弹窗lightbox ----------------------------------------->
+<div style="display:none;">
+	<!-- 删除默认模板  -->
+    <div id="deleteDefault" class="popup" style="overflow:auto;">
+	    <p class="pop_tip">该模板为默认模板，要先设定其他默认模板后才可以删除哦</p>
+	    <div>
+	    	<a href="javascript:;" class="del_know" id="del_know">我知道了</a>
+	    </div>
+    </div>
+    <!-- 删除普通模板  -->
+    <div id="deleteNormal" class="popup" style="overflow:auto;">
+	    <p class="pop_tip">模板删除后将无法恢复，你确认要删除吗？</p>
+	    <div class="clearfixs del_label">
+	    	<label class="checkbox">
+			    <input type="checkbox" />
+			    <i style="display: inline;"></i>
+			</label>
+			<label class="textTip">不再提示</label>
+			<a href="javascript:;" class="del_sure" id="del_sure">确定</a>
+	    </div>
+    </div>    
+</div>	
+<div style="display:none;">
+	<!-- 面试通知模板与不合格模板    防止未保存弹窗 -->
+	<div id="templateTip" class="popup" style="overflow:hidden">
+		<p class="pop_tip">您当前编辑的内容尚未保存，确定不保存吗？</p>
+		<p class="pop_tip txtcenter">
+			<a href="javascript:;" class="btn" id="confirm_leave">确定</a>	   
+    		<a href="javascript:;" class="cancel" id="cancel_leave">取 消</a>		
+    	</p>	
+	</div>
+</div>
+
+<script type="text/javascript" src="/Public/Home/js/core.min.js"></script>
+<script type="text/javascript" src="/Public/Home/js/setting.js"></script> 
+<!-- 修改通知核心js -->
+<script type="text/javascript" src="/Public/Home/js/noticetemplate.min.js"></script> 
+<!-- 修改通知核心js结束 -->
+
+
+<script type="text/javascript" src="/Public/Home/js/popup.min.js"></script> 
+
+
+<include file="Public/footer" />

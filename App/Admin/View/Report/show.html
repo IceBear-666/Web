@@ -1,0 +1,44 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>意见反馈详情</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        
+        <div class="form-item">
+            <label class="item-label">Email<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.email}
+            </div>
+        </div>
+                
+        <div class="form-item">
+            <label class="item-label">时间<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.addtime|showDate=###}
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">反馈内容<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.content}
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <input type="hidden" name="vid" value="{$info.fid|default=''}">
+            <!-- <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+             --><button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">        
+        //Think.setValue("status", {$info.status|default = 0});
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+    </script>
+</block>

@@ -1,0 +1,47 @@
+<div id="search_box">
+     <form id="searchForm" name="searchForm" action="{$Think.WEB_URL}Jobs/index" method="get">
+       <ul id="searchType">
+         <li data-searchtype="1" class="type_selected">职位</li>
+         <li style="display: none;" data-searchtype="4">公司</li>
+       </ul>
+       <div class="searchtype_arrow"></div>
+       <span class="ui-helper-hidden-accessible" aria-live="polite" role="status"></span>
+       <input autocomplete="off" class="ui-autocomplete-input" id="search_input" name="kd" tabindex="1" placeholder="请输入职位名称，如：产品经理" value="{$kd}" type="text">
+       <input name="spc" id="spcInput" value="{$spc}" type="hidden">
+       <input name="pl" id="plInput" value="{$pl}" type="hidden">
+       <input name="gj" id="gjInput" value="{$gj}" type="hidden">
+       <input name="xl" id="xlInput" value="{$xl}" type="hidden">
+       <input name="yx" id="yxInput" value="{$yx}" type="hidden">
+       <input name="gx" id="gxInput" value="{$gx}" type="hidden">
+       <input name="st" id="stInput" value="{$st}" type="hidden">
+       <input name="labelWords" id="labelWords" value="{$labelWords}" type="hidden">
+       <input name="lc" id="lc" value="{$lc}" type="hidden">
+       <input name="workAddress" id="workAddress" value="{$workAddress}" type="hidden">
+       <input name="city" id="cityInput" value="{$city}" type="hidden">
+       <input name="requestId" id="requestId" value="" type="hidden">
+       <input id="search_button" value="搜索" type="submit">
+     </form>
+     <input id="search_py" value="" type="hidden">
+</div>
+<style>
+.ui-autocomplete{width:488px;background:#fafafa !important;position: relative;z-index:10;border: 2px solid #91cebe;}
+.ui-autocomplete-category{font-size:16px;color:#999;width:50px;position: absolute;z-index:11; right: 0px;/*top: 6px; */text-align:center;border-top: 1px dashed #e5e5e5;padding:5px 0;}
+.ui-menu-item{ *width:439px;vertical-align: middle;position: relative;margin: 0px;margin-right: 50px !important;background:#fff;border-right: 1px dashed #ededed;}
+.ui-menu-item a{display:block;overflow:hidden;}
+</style>
+
+<script type="text/javascript" src="__PUBLIC__/Js/search.js"></script>
+   
+<dl class="hotSearch">
+     <dt>热门搜索：</dt>
+     <dd><a href="{$Think.WEB_URL}Jobs/index/kd/Java" <if condition="$kd eq 'Java' ">class="current"</if> >Java</a></dd>
+     <dd><a href="{$Think.WEB_URL}Jobs/index/kd/PHP" <if condition="$kd eq 'PHP' ">class="current"</if>>PHP</a></dd>
+     <dd><a href="{$Think.WEB_URL}Jobs/index/kd/Android" <if condition="$kd eq 'Android' ">class="current"</if>>Android</a></dd>
+     <dd><a href="{$Think.WEB_URL}Jobs/index/kd/iOS" <if condition="$kd eq 'iOS' ">class="current"</if>>iOS</a></dd>
+     <dd><a href="{$Think.WEB_URL}Jobs/index/kd/qianduan" <if condition="$kd eq '前端' ">class="current"</if>>前端</a></dd>
+     <dd><a href="{$Think.WEB_URL}Jobs/index/kd/chanpinjingli1" <if condition="$kd eq '产品经理' ">class="current"</if>>产品经理</a></dd>
+     <dd><a href="{$Think.WEB_URL}Jobs/index/kd/UI" <if condition="$kd eq 'UI' ">class="current"</if>>UI</a></dd>
+     <dd><a href="{$Think.WEB_URL}Jobs/index/kd/yunying1" <if condition="$kd eq '运营' ">class="current"</if>>运营</a></dd>
+     <dd><a href="{$Think.WEB_URL}Jobs/index/kd/BD" <if condition="$kd eq 'BD' ">class="current"</if>>BD</a></dd>
+     <dd><a href="{$Think.WEB_URL}Jobs/index/gx/实习/city/{$city}">实习</a></dd>
+</dl>

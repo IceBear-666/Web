@@ -1,0 +1,753 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/index.css" />
+    <style type="text/css">
+       
+        h1.jm_plugin_title {
+            text-align: center;
+            font-size: 30px;
+            color: #222222;
+        }
+        h2.jm_plugin_subtitle {
+            font-size: 30px;
+            color: #222222;
+        }
+        p.jm_plugin_subintro {
+            font-size: 20px;
+            color: #4a4a4a;
+        }
+        /*.container-text {
+            width: 50%;  
+            height: 50%;  
+            overflow: auto;  
+            margin: auto;  
+            position: absolute;  
+            top: 0; left: 0; bottom: 0; right: 0;  
+        }
+        */    
+        dl.jm_plugin_install dt{
+            border-left: 2px solid #8f4c7e;
+            /*//padding-left: 15px;*/
+            color: #8f4c7e;
+            padding: 0 0 0 15px;
+            margin: 20px 0 ;
+        }
+        dl.jm_plugin_install dd {
+            padding: 0;
+            margin: 0;
+        }
+
+        .jm_companylist_l {
+            background-color: #f9f9f9;
+        }
+
+        .jm_companylist_l h3 {
+            font-size: 20px;
+            padding: 10px 0 10px 40px;
+            font-weight: 500;
+        }
+        .jm_companylist_l ul {
+            list-style: none;
+            background-color: #f9f9f9;
+        }
+        .jm_companylist_l a{
+            display: block;
+            color: #222222;
+            font-size: 15px;
+            padding: 14px 0px 14px 40px;
+            /*border-left: 4px solid #f9f9f9;*/
+        }
+
+        .jm_companylist_l a:hover{
+            /*border-left: 4px solid #ac6198;*/
+            background: #f6f6f6;
+            color: #222222;
+        }
+        .jm_companylist_r {
+            line-height: 30px;
+        }
+        .jm_companylist_r h3 {
+            font-size: 20px;
+            padding: 10px 0 20px 0;
+        }
+
+        .jm_companylist_container {
+            position: relative;
+        }
+        .jm_companylist_tb {
+            width: 100%;
+        }
+        .jm_companylist_tb tr:first-child(){
+            border-top: 4px solid #6492c7;
+        }
+
+        .jm_companylist_tb tr
+        {       
+            height: 50px;
+            line-height: 50px;
+            background-color: #fff;   
+        }
+        .jm_companylist_tb tr:nth-child(2n)
+        {
+            background-color: #f9f9f9;   
+        }
+        .jm_companylist_tb tr td {padding-left:20px }
+
+        .jm_companylist_section {
+            margin-bottom: 50px;
+        }
+        .jm_inter a {
+            color: #6492c7;
+        }
+        .jm_build a {
+            color: #82b547;
+        }
+        .jm_finance a {
+            color: #f5a623;
+        }
+        .jm_comm a {
+            color: #ac6198 ;
+        }
+        .jm_consumable a {
+            color: #f4475c ;
+        }
+        .icon-inter-title {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: 60px -15px;
+            width: 55px;
+            height: 45px;
+            float: left;  
+        }
+        .icon-build-title {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: -170px -63px;
+            width: 55px;
+            height: 45px;
+            float: left;
+        }
+       
+        .icon-finance-title {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: -173px -108px;
+            width: 55px;
+            height: 45px;
+            float: left;
+        }
+        
+         .icon-comm-title {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: -171px -152px;
+            width: 55px;
+            height: 45px;
+            float: left;
+        }
+        
+        .icon-consumable-title {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: -174px -205px;
+            width: 55px;
+            height: 45px;
+            float: left;
+        }
+        
+        .icon-other-title {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: -170px 60px;
+            width: 55px;
+            height: 45px;
+            float: left;
+        }
+        
+        h3.jm_support_title {
+            background-color: #f9f9f9;
+            padding-left: 20px;
+        }
+        
+        h3.jm_cl_blue {
+            border-top: 4px solid #6492c7;
+            color: #6492c7;
+        }
+
+        h3.jm_cl_green {
+            border-top: 4px solid #82b547;
+            color: #82b547;
+        }
+        h3.jm_cl_orange {
+            border-top: 4px solid #f5a623;
+            color: #f5a623;
+        }
+        h3.jm_cl_purple {
+            border-top: 4px solid #ac6198;
+            color: #ac6198;
+        }
+        h3.jm_cl_red {
+            border-top: 4px solid #f4475c;
+            color: #f4475c;
+        }
+        h3.jm_cl_darkgreen {
+            border-top: 4px solid #53b09b;
+            color: #53b09b;
+        }
+        .active .nav_cl_blue {
+            background-color: #6492c7 !important;
+            color: #fff !important;
+        }
+        .active .nav_cl_green {
+            background-color: #82b547 !important;
+            color: #fff !important;
+        }
+        .active .nav_cl_orange {
+            background-color: #f5a623 !important;
+            color: #fff !important;
+        }
+        .active .nav_cl_purple {
+            background-color: #ac6198 !important;
+            color: #fff !important;
+        }
+        .active .nav_cl_red {
+            background-color: #f4475c !important;
+            color: #fff !important;
+        }
+        .active .nav_cl_darkgreen {
+            background-color: #53b09b !important;
+            color: #fff !important;
+        }
+        .jm_companylist_l .affix {
+            width: 240px;
+            top: 20px;
+            position: fixed;
+        }
+        .jm_companylist_l .affix-top {
+            top:200px;
+        }
+        .active {
+            background-color: #6492c7;
+            color: #fff;
+        }
+        .jm_companylist_l ul.nav li {
+            position: relative;
+        }
+        .icon-inter {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: 145px -6px;
+            width: 55px;
+            height: 45px;
+            float: left;
+        }
+        .active .icon-inter {
+            background-position: -10px -6px;
+        }
+        .icon-build {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: -86px -55px;
+            width: 55px;
+            height: 45px;
+            float: left;
+        }
+        .active .icon-build {
+            background-position: -10px -55px;
+        }
+        .icon-finance {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: -86px -100px;
+            width: 55px;
+            height: 45px;
+            float: left;
+        }
+        .active .icon-finance {
+            background-position: -10px -100px;
+        }
+         .icon-comm {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: -86px -145px;
+            width: 55px;
+            height: 45px;
+            float: left;
+        }
+        .active .icon-comm {
+            background-position: -10px -145px;
+        }
+        .icon-consumable {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: -86px -195px;
+            width: 55px;
+            height: 45px;
+            float: left;
+        }
+        .active .icon-consumable {
+            background-position: -10px -195px;
+        }
+        .icon-other {
+            background-image: url(/Uploads/Plugin/icons.png);
+            background-position: -86px 73px;
+            width: 55px;
+            height: 45px;
+            float: left;
+        }
+        .active .icon-other {
+            background-position: -10px 73px;
+        }
+        .active .nav_cl_blue .triangle-blue{
+            height: 20px;
+            position: absolute;
+            right: -7px;
+            width: 13px;
+            top: 15px;
+            z-index: -1;
+            background-image: url(/Uploads/Plugin/triangle-blue.png);
+        }
+        .active .nav_cl_darkgreen .triangle-darkgreen{
+            height: 20px;
+            position: absolute;
+            right: -7px;
+            width: 13px;
+            top: 15px;
+            z-index: -1;
+            background-image: url(/Uploads/Plugin/triangle-darkgreen.png);
+        }
+        .active .nav_cl_green .triangle-green{
+            height: 20px;
+            position: absolute;
+            right: -7px;
+            width: 13px;
+            top: 15px;
+            z-index: -1;
+            background-image: url(/Uploads/Plugin/triangle-green.png);
+        }
+        .active .nav_cl_orange .triangle-orange{
+            height: 20px;
+            position: absolute;
+            right: -7px;
+            width: 13px;
+            top: 15px;
+            z-index: -1;
+            background-image: url(/Uploads/Plugin/triangle-orange.png);
+        }
+        .active .nav_cl_purple .triangle-purple{
+            height: 20px;
+            position: absolute;
+            right: -7px;
+            width: 13px;
+            top: 15px;
+            z-index: -1;
+            background-image: url(/Uploads/Plugin/triangle-purple.png);
+        }
+        .active .nav_cl_red .triangle-red{
+            height: 20px;
+            position: absolute;
+            right: -7px;
+            width: 13px;
+            top: 15px;
+            z-index: -1;
+            background-image: url(/Uploads/Plugin/triangle-red.png);
+        }
+        .text-disabled {
+            color: #9b9b9b;
+
+        }
+
+        </style>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="10" style="position: relative;">
+<div class="w960 mt30 jm_companylist_container">
+    <div class="lw240 jm_companylist_l affix-top" id="myScrollspy">
+        <nav id="companyaffix">
+        <ul class="nav nav-tabs nav-stacked" >
+            <li class="active"><i class="icon-inter"></i><a class="nav_cl_blue" href="#section-1">互联网/游戏/软件<i class="triangle-blue"></i></a></li>
+            <li><i class="icon-build"></i><a class="nav_cl_green" href="#section-2">房地产/建筑/物业<i class="triangle-green"></i></a></li>
+            <li><i class="icon-finance"></i><a class="nav_cl_orange" href="#section-3">金融<i class="triangle-orange"></i></a></li>
+            <li><i class="icon-comm"></i><a class="nav_cl_purple" href="#section-4">电子/通信/硬件<i class="triangle-purple"></i></a></li>
+            <li><i class="icon-consumable"></i><a class="nav_cl_red" href="#section-5">消费品<i class="triangle-red"></i></a></li>
+            <!-- <li><i class="icon-other"></i><a class="nav_cl_darkgreen" href="#section-6">其他<i class="triangle-darkgreen"></i></a></li> -->
+        </ul>
+        </nav>
+    </div>
+
+    <div class="rw680">
+    
+        <!-- 浏览器列表开始-->
+        <div class="jm_companylist_r" style="margin:0;position: relative;">
+            <div id="section-1" class="jm_companylist_section jm_inter">
+            <h3 class="jm_support_title jm_cl_blue"><i class="icon-inter-title"></i>互联网/游戏/软件</h3>
+            <table class="jm_companylist_tb">
+                <tr>
+                    <td width="220">4399</td>
+                    <td width="220"><a target="_blank" href="http://web.4399.com/campus/">web.4399.com/campus</a></td>
+                    <td width="240">已开始 (10月9日 截止)</td>
+                </tr>
+                <tr>
+                    <td>欢聚时代</td>
+                    <td><a target="_blank" href="http://hr.yy.com/">hr.yy.com</a></td>
+                    <td >已开始 (10月10日 截止)</td>
+                </tr>
+                <tr>
+                    <td>网易游戏</td>
+                    <td><a target="_blank" href="http://campus.163.com/#/home">campus.163.com/#/home</a></td>
+                    <td >已开始 (10月15日 截止)</td>
+                </tr>
+                <tr>
+                    <td>搜狗</td>
+                    <td><a target="_blank" href="http://jobs.sogou.ourats.com/">jobs.sogou.ourats.com</a></td>
+                    <td >已开始 (10月15日 截止)</td>
+                </tr>
+                 <tr>
+                    <td>平安科技</td>
+                    <td><a target="_blank" href="http://www.dajie.com/corp/1035665/joinus">www.dajie.com/corp/1035665/joinus</a></td>
+                    <td >已开始 (10月23日 截止)</td>
+                </tr>
+                 <tr>
+                    <td>完美世界</td>
+                    <td><a target="_blank" href="http://campus.wanmei.com/">campus.wanmei.com</a></td>
+                    <td >已开始 (12月31日 截止)</td>
+                </tr>
+                <tr>
+                    <td>京东</td>
+                    <td><a target="_blank" href="http://campus.jd.com/">campus.jd.com</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>猎豹移动</td>
+                    <td><a target="_blank" href="http://hr.cmcm.com/campus">hr.cmcm.com/campus</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>豆瓣</td>
+                    <td><a target="_blank" href="http://jobs.douban.com/campus/">jobs.douban.com/campus</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>新浪</td>
+                    <td><a target="_blank" href="http://career.sina.com.cn/">career.sina.com.cn</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>百度</td>
+                    <td><a target="_blank" href="http://talent.baidu.com/">talent.baidu.com</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>搜狐</td>
+                    <td><a target="_blank" href="http://hr.sohu.com/">hr.sohu.com</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>去哪儿</td>
+                    <td><a target="_blank" href="http://star.qunar.com/">star.qunar.com</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>爱奇艺</td>
+                    <td><a target="_blank" href="http://campus.iqiyi.com/">campus.iqiyi.com</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>美团</td>
+                    <td><a target="_blank" href="http://campus.meituan.com/">campus.meituan.com</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>大众点评</td>
+                    <td><a target="_blank" href="http://campus.dianping.com">campus.dianping.com</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>奇虎360</td>
+                    <td><a target="_blank" href="http://campus.360.cn/">campus.360.cn</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>淘米</td>
+                    <td><a target="_blank" href="http://campus.taomee.com/2016/position.html#meishu_au">campus.taomee.com</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>巨人网络</td>
+                    <td><a target="_blank" href="http://campus.51job.com/ztgame/">campus.51job.com</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>搜房网</td>
+                    <td><a target="_blank" href="http://campus.fang.com/index.html">campus.fang.com</a></td>
+                    <td >已开始</td>
+                </tr>
+                <tr>
+                    <td>阿里</td>
+                    <td><a target="_blank" href="http://hr.yy.com/">hr.yy.com</a></td>
+                    <td class="text-disabled">已截止</td>
+                </tr>
+            </table>
+            </div>
+            <div id="section-2" class="jm_companylist_section jm_build">
+            <h3 class="jm_support_title jm_cl_green"><i class="icon-build-title"></i>房地产/建筑/物业</h3>
+            <table class="jm_companylist_tb">
+                <tr>
+                    <td width="220">万达集团</td>
+                    <td width="220"><a target="_blank" href="http://job.wanda.com.cn/">job.wanda.com.cn</a></td>
+                    <td width="240">已开始</td>
+                </tr>
+                <tr>
+                    <td>龙湖集团</td>
+                    <td><a target="_blank" href="http://www.zhaopin.longfor.com/AddResume.aspx?flag=0">www.zhaopin.longfor.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>龙湖地产</td>
+                    <td><a target="_blank" href="http://www.zhaopin.longfor.com/AddResume.aspx?flag=0">www.zhaopin.longfor.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>华润置地</td>
+                    <td><a target="_blank" href="http://careers.crland.com.hk/">careers.crland.com.hk</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>万科集团</td>
+                    <td><a target="_blank" href="http://vankejob.zhiye.com/xyzp">vankejob.zhiye.com</a></td>
+                    <td>已开始</td>
+                </tr>
+            </table>
+            </div>
+            <div id="section-3" class="jm_companylist_section jm_finance">
+            <h3 class="jm_support_title jm_cl_orange"><i class="icon-finance-title"></i>金融</h3>
+            <table class="jm_companylist_tb">
+                <tr>
+                    <td width="220">招商银行</td>
+                    <td width="220"><a target="_blank" href="http://career.cmbchina.com/">career.cmbchina.com</a></td>
+                    <td width="240">已开始 (10月18日 截止)</td>
+                </tr>
+                <tr>
+                    <td>渣打银行</td>
+                    <td><a target="_blank" href="https://www.sc.com/graduates/">www.sc.com</a></td>
+                    <td>已开始 (10月18日 截止)</td>
+                </tr>
+                <tr>
+                    <td>德勤</td>
+                    <td><a target="_blank" href="http://www2.deloitte.com/">www2.deloitte.com</a></td>
+                    <td>已开始 (10月25日 截止)</td>
+                </tr>
+                <tr>
+                    <td>平安银行</td>
+                    <td><a target="_blank" href="http://job.pingan.com/">job.pingan.com</a></td>
+                    <td>已开始 (12月31日 截止)</td>
+                </tr>
+                <tr>
+                    <td>中国平安</td>
+                    <td><a target="_blank" href="http://job.pingan.com/searchSchoolJob.screen;jsessionid=WL3chJBR7vLJs914tZJQwGfXXQSMb75zzWhkt9zFxsTkwLSN82Dr!-1344171356?rmSession=advancedSearchPagedData&jobChannel=50">job.pingan.com</a></td>
+                    <td>已开始 (12月31日 截止)</td>
+                </tr>
+                <tr>
+                    <td>J.P.Morgan</td>
+                    <td><a target="_blank" href="http://careers.jpmorgan.com/careers">careers.jpmorgan.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>毕马威</td>
+                    <td><a target="_blank" href="https://hr.kpmg.com.cn/AppForm/ApplicationForm/graduates/login.aspx">hr.kpmg.com.cn</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>汇丰银行</td>
+                    <td><a target="_blank" href="http://campus.51job.com/hsbc/">campus.51job.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>华泰</td>
+                    <td><a target="_blank" href="http://job.htsc.com.cn/recruitment/html/html/_/xzym">job.htsc.com.cn</a></td>
+                    <td>已开始</td>
+                </tr>
+            </table>
+            </div>
+            <div id="section-4" class="jm_companylist_section jm_comm">
+            <h3 class="jm_support_title jm_cl_purple"><i class="icon-comm-title"></i>电子/通信/硬件</h3>
+            <table class="jm_companylist_tb">
+
+                <tr>
+                    <td width="220">英特尔</td>
+                    <td width="220"><a target="_blank" href="http://intel2016.hirede.com/CareerSite/IntelIndex">intel2016.hirede.com</a></td>
+                    <td width="240">已开始 (10月7日 截止)</td>
+                </tr>
+                <tr>
+                    <td>三星（中国）</td>
+                    <td><a target="_blank" href="http://www.dearsamsung.com.cn/">www.dearsamsung.com.cn</a></td>
+                    <td>已开始 (10月11日 截止)</td>
+                </tr>
+               <tr>
+                    <td>联想中国</td>
+                    <td><a target="_blank" href="http://career.lenovo.com.cn/default.shtml">career.lenovo.com.cn</a></td>
+                    <td>已开始 (10月11日 截止)</td>
+                </tr>
+                <tr>
+                    <td>海信集团</td>
+                    <td><a target="_blank" href="http://hisense.zhiye.com">hisense.zhiye.com</a></td>
+                    <td>已开始 (11月5日 截止)</td>
+                </tr>
+                <tr>
+                    <td>中国移动</td>
+                    <td><a target="_blank" href="http://job.10086.cn/">job.10086.cn</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>华为</td>
+                    <td><a target="_blank" href="http://career.huawei.com/recruitment/">career.huawei.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>微软</td>
+                    <td><a target="_blank" href="http://www.joinms.com/cn_c/index.html">www.joinms.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>思科</td>
+                    <td><a target="_blank" href="http://www.cisco.com/web/about/ac40/about_cisco_careers_home.html">www.cisco.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>酷派</td>
+                    <td><a target="_blank" href="http://campus.coolpad.com/index.php?c=schoolRecruitment&f=jobPosition">campus.coolpad.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>京东方</td>
+                    <td><a target="_blank" href="http://campus.boe.com/zwsq">campus.boe.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>大唐电信</td>
+                    <td><a target="_blank" href="http://www.xingtangzp.com/">www.xingtangzp.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>创维集团</td>
+                    <td><a target="_blank" href="http://campus.coolpad.com/index.php?c=schoolRecruitment&f=jobPosition">campus.coolpad.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>创维集团</td>
+                    <td><a target="_blank" href="http://xyzp.skyallhere.com/">xyzp.skyallhere.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>中兴</td>
+                    <td><a target="_blank" href="http://job.zte.com.cn/newjob/cn/xyzp/">job.zte.com.cn</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>oppo</td>
+                    <td><a target="_blank" href="http://campus.oppo.com/">campus.oppo.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>阿尔卡特朗讯</td>
+                    <td><a target="_blank" href="http://campus.chinahr.com/2015/pages/alcatellucent2015/flow.asp">campus.chinahr.com</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>恒生电子</td>
+                    <td><a target="_blank" href="http://job.ahau.edu.cn/zxzpxx/68683.htm">job.ahau.edu.cn</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>环旭电子</td>
+                    <td><a target="_blank" href="http://campus.51job.com/usi/job.htm">campus.51job.com/usi</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>TP-LINK</td>
+                    <td><a target="_blank" href="http://hr.tp-link.com.cn/">hr.tp-link.com.cn</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>中国电信</td>
+                    <td><a target="_blank" href="http://hr.gdtel.com.cn/forward_companyView.html?id=1">hr.gdtel.com.cn</a></td>
+                    <td class="text-disabled">已截止</td>
+                </tr>
+               
+            </table>
+            </div>
+            <div id="section-5" class="jm_companylist_section jm_consumable">
+            <h3 class="jm_support_title jm_cl_red"><i class="icon-consumable-title"></i>消费品</h3>
+            <table class="jm_companylist_tb">
+                <tr>
+                    <td width="220">高露洁</td>
+                    <td width="220"><a target="_blank" href="http://campus.51job.com/colgate2016/2-2.htm">campus.51job.com/colgate2016</a></td>
+                    <td width="240">已开始 (10月18日 截止)</td>
+                </tr>
+                <tr>
+                    <td>强生</td>
+                    <td><a target="_blank" href="http://loading.dajie.com/jnj/index.html">loading.dajie.com/jnj</a></td>
+                    <td >已开始 (10月20日 截止)</td>
+                </tr>
+                <tr>
+                    <td>可口可乐管培生</td>
+                    <td><a target="_blank" href="http://campus.chinahr.com/2016/pages/cocacola2016/index.html">campus.chinahr.com/2016</a></td>
+                    <td>已开始 (10月25日 截止)</td>
+                </tr>
+                <tr>
+                    <td>雀巢</td>
+                    <td><a target="_blank" href="http://campus.51job.com/nestle/job.htm">campus.51job.com/nestle</a></td>
+                    <td>已开始 (12月31日 截止)</td>
+                </tr>
+                <tr>
+                    <td>苏宁</td>
+                    <td><a target="_blank" href="http://campus.51job.com/suning/">campus.51job.com/suning</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>联合利华</td>
+                    <td><a target="_blank" href="http://campus.chinahr.com/2016/pages/unilever/index.asp">campus.chinahr.com/2016/pages/unilever</a></td>
+                    <td>已开始</td>
+                </tr>
+                <tr>
+                    <td>宝洁</td>
+                    <td><a target="_blank" href="http://china.pgcareers.com/">china.pgcareers.com</a></td>
+                    <td>已开始</td>
+                </tr>
+            </table>
+            </div>
+           <!--  <div id="section-6" class="jm_companylist_section">
+            <h3 class="jm_support_title jm_cl_darkgreen"><i class="icon-other-title"></i>其他</h3>
+            <table class="jm_companylist_tb">
+                <tr>
+                     <td width="220">腾讯</td>
+                    <td width="220">www.tengxun.com</td>
+                    <td width="240">已开始（11月01日截止）</td>
+                </tr>  
+            </table>
+            </div> -->
+        </div>
+        <!-- 职位列表结束-->
+    </div>
+    <div class="clr"></div>
+</div>
+</body>
+<script language="JavaScript" type="text/javascript"> 
+
+    $(document).ready(function(){
+        $("#companyaffix").affix({
+            offset: { 
+                top: 50 
+            }
+        });
+        
+        $(".jm_companylist_l .nav li").click(function(){
+            $(this).addClass("active").siblings().removeClass("active")
+        });
+
+       // $('[data-spy="scroll"]').each(function () {
+       //    var $spy = $(this).scrollspy('refresh')
+       //  })
+
+       // $("#myScrollspy").scrollspy();
+
+       // $(".jm_companylist_l .nav li").first().addClass("active");
+
+       // window.onload=function(){
+       //  $(".jm_companylist_l .nav li").last().removeClass("active");
+       // }
+    });
+    
+</script> j
+<script type="text/javascript" src="/Public/Home/js/query.1.10.1.min.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/affix.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/scrollspy.js"></script>  
+<!-- <script type="text/javascript" src="/Public/Home/js/bootstrap.min.js"></script>  --> 
+
+<include file="Public/footer" />        

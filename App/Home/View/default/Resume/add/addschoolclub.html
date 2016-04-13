@@ -1,0 +1,254 @@
+<div class="baseinfo-top">
+<h3>社团经历</h3>
+</div>
+<div id="schoolClub" class="item_container_target">
+<!--<div class="list_show">
+
+<php>if($schoolclub_list){</php>
+        <div class="clearfixs mb46 mr_jobe_list">
+        <table>
+          <tr><th width="200px">社团名称</th><th width="200px">担任职务</th><th width="200px">时间</th><th width="200px">编辑</th></tr>
+          <volist name="schoolclub_list" id="v">
+          <tr><td>{$v.schClubName}</td><td>{$v.positionName}</td><td>{$v.startDate} - {$v.endDate}</td><td><div class="mr_edit mr_c_r_t" data-schoolclubid="{$v.id}" data-schclubname="{$v.schClubName}" data-posname="{$v.positionName}" data-schclublevel="{$v.schClubLevel}" data-enddate="{$v.endDate}" data-startdate="{$v.startDate}" data-workdes="{$v.workDes}"> <i></i><em>编辑</em> </div></td></tr>
+          </volist>
+        </table>
+        </div>
+      <php>}</php>
+    </div>-->
+<div class="mr_moudle_head clearfixs">
+
+  <div class="mr_moudle_content" id="edu_update">
+    <form class="eduExpForm" id="addSchClubForm">
+      <!-- <input type="hidden" id="eduId" name="eduId" value="" /> -->
+	  
+	  
+       <div class="myr_info_list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+            <tr>
+              <th class="pt10"><label>社团名称</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <input type="text" name="schClubName" class="form-control">
+                </div>
+              </td>
+            </tr>
+           <tr>
+              <th class="pt10"><label>社团等级</label></th>
+              <td>
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="schclublevel_text" />
+                <input type="button" class="mr_button" name="schClubLevel" id="schClubLevel" />
+                <div class="xl_list dn">
+                  <ul class="ul_schclublevel">
+                    <li>团委</li>
+                    <li>校学生会</li>
+                    <li>学生社团</li>
+                    <li>班级</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="pt10"><label>担任职务</label></th>
+              <td>
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="positionname_text" />
+                <input type="button" class="mr_button" name="positionName" id="positionName" />
+                <div class="xl_list dn">
+                  <ul class="ul_positionname">
+                    <li>学生会主席</li>
+                    <li>学生会副主席</li>
+                    <li>学生会部长</li>
+                    <li>学生会干事</li>
+                    <li>班干部</li>
+                    <li>班长团支书</li>
+                    <li>社团主席</li>
+                    <li>社团副主席</li>
+                    <li>社团干事</li>
+                    <li>其他职务</li>
+                    <li>未担任</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+            </tr>
+           <tr>
+          <th class="pt10"><label>工作职责</label></th>
+                  <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="workDes"></textarea>
+                   <span class="tiprighttext icon-resume icon-business_bulb" title="工作职责"></span> 
+                </td>
+            </tr>
+             <tr>
+              <th class="pt10"><label>开始时间</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                  
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button"  readonly class="text input date" placeholder="选择时间" name="startDate"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+                </div>
+              </td>
+            </tr>
+             <tr>
+              <th class="pt10"><label>结束时间</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button"  readonly class="text input date" placeholder="选择时间" name="endDate"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+                </div>
+              </td>
+            </tr>
+           
+          </table>
+        </div>
+    <!--添加-->
+     <div class="myr_info_list" >
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo"  id="tt" style="display: none" onMouseout="hidden();">
+            <tr>
+              <th class="pt10"><label>社团名称</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <input type="text" name="schClubName" class="form-control">
+                </div>
+              </td>
+            </tr>
+           <tr>
+              <th class="pt10"><label>社团等级</label></th>
+              <td>
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="schclublevel_text" />
+                <input type="button" class="mr_button" name="schClubLevel" id="schClubLevel" />
+                <div class="xl_list dn">
+                  <ul class="ul_schclublevel">
+                    <li>团委</li>
+                    <li>校学生会</li>
+                    <li>学生社团</li>
+                    <li>班级</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="pt10"><label>担任职务</label></th>
+              <td>
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="positionname_text" />
+                <input type="button" class="mr_button" name="positionName" id="positionName" />
+                <div class="xl_list dn">
+                  <ul class="ul_positionname">
+                    <li>学生会主席</li>
+                    <li>学生会副主席</li>
+                    <li>学生会部长</li>
+                    <li>学生会干事</li>
+                    <li>班干部</li>
+                    <li>班长团支书</li>
+                    <li>社团主席</li>
+                    <li>社团副主席</li>
+                    <li>社团干事</li>
+                    <li>其他职务</li>
+                    <li>未担任</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+            </tr>
+           <tr>
+          <th class="pt10"><label>工作职责</label></th>
+                  <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="workDes"></textarea>
+                   <span class="tiprighttext icon-resume icon-business_bulb" title="工作职责"></span> 
+                </td>
+            </tr>
+             <tr>
+              <th class="pt10"><label>开始时间</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                  
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button"  readonly class="text input date" placeholder="选择时间" name="startDate"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+                </div>
+              </td>
+            </tr>
+             <tr>
+              <th class="pt10"><label>结束时间</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button"  readonly class="text input date" placeholder="选择时间" name="endDate"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+                </div>
+              </td>
+            </tr>
+           
+          </table>
+        </div>
+		
+        <div class="mr_ope clearfixs btn-group">
+          <input type="submit" class="mr_save btn-resumeac" value="保存" />
+         <!--  <a href="javascript:;" class="mr_cancel btn-resumeac">取消</a> --> 
+          <input type=button value="保存并下一项"  class="btn-resumeac mr_next" onclick="submitSchClubFrom(); tonext();">
+         </div>
+		  <div class="mr_head_l">
+			<input name="name" type="button" onClick="show();" value="添加">
+		</div> 
+      </div>
+    </form>
+      <!-- <div class="mr_head_l">
+		<div class="mr_head_r"> <i></i><em>添加</em> </div>
+	</div> -->        
+</div>
+</div>
+  <script type="text/javascript">
+  function submitSchClubFrom(){
+  $('#addSchClubForm').submit();
+  }
+    function show(){
+document.getElementById("tt").style.display="";
+//alert(document.getElementById("div").style.display)
+}
+function hidden(){
+document.getElementById("tt").style.display="none";
+//alert(document.getElementById("div").style.display)
+}
+</script>

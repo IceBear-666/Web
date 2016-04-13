@@ -1,0 +1,77 @@
+<include file="Public/header" />
+
+<body>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/hrstyle.css">
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+	    <div class="clearfix">
+	      <div class="content_l">
+	        <dl class="c_collections">
+	          <dt>
+	            <h1><em></em>我收藏的职位</h1>
+	          </dt>
+	          <dd>
+	            <form id="collectionsForm">
+	              <ul class="reset my_collections">
+	              
+	              <if condition="$list neq '' ">
+	              	<volist name="list" id="v">
+	              
+	                <li data-id="{$v.jid}"> <a href="{$Think.WEB_URL}Company/info/id/{$v.uid}" target="_blank" title="{$v.zhiwei_mingcheng}"> <img src="{$v.logo}" alt="{$v.zhiwei_mingcheng}"> </a>
+	                  <div class="co_item">
+	                    <h2 title="{$v.zhiwei_mingcheng}"> <a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}" target="_blank"> <em>{$v.zhiwei_mingcheng}</em> <span>（{$v.yuexin_min}k-{$v.yuexin_max}k）</span> </a> </h2>
+	                    <span class="co_time">发布时间：<?php echo date("Y-m-d H:i:s",$v['addtime']);?></span>
+	                    <div class="co_cate">{$v.company_name} / {$v.gongzuo_chengshi} / {$v.gongzuo_jingyan} / {$v.xueli}</div>
+	                    <span class="co_youhuo c7">{$v.zhiwei_youhuo}</span> <a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}" target="_blank" class="collection_link">投个简历</a> <i></i> <a href="javascript:;" class="collectionCancel collection_link collected"> 取消收藏 <span>已取消收藏</span> </a> </div>
+	                </li>
+	                
+	                </volist>
+	                
+	                <else />
+	                 <li>暂无收藏记录</li>
+	                </if>
+	                
+	              </ul>
+	            </form>
+	          </dd>
+	        </dl>
+	      </div>
+	      <div class="content_r">
+	        <div id="myInfo" class="mycenterR">
+	          <h2>我的信息</h2>
+	          <a href="{$Think.WEB_URL}Jobs/collections">我收藏的职位</a> <br>
+	          <a href="{$Think.WEB_URL}Jobs/subscribe" target="_blank">我订阅的职位</a> </div>
+	        <!--end #myInfo-->
+	        <!-- 
+	        <div class="greybg qrcode mt20"> <img src="shoucang_files/qr_delivery.png" alt="钢铁侠微信公众号二维码" height="242" width="242"> <span class="c7">扫描钢铁侠二维码，微信轻松搜工作</span> </div>
+	      	 -->
+	      </div>
+	    </div>
+	    <script src="/Public/Js/collections.js"></script> 
+	    <script>
+			/* $(function(){
+				$('.Pagination').pager({
+				      currPage: 1,
+				      pageNOName: "pageNo",
+				      form: "collectionsForm",
+				      pageCount: 1,
+				      pageSize:  5
+				});
+			}); */
+		</script>
+	    <div class="clear"></div>
+	    <input id="resubmitToken" value="" type="hidden">
+	    <a style="display: none;" id="backtop" title="回到顶部" rel="nofollow"></a>
+	</div>
+  <!-- end #container --> 
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

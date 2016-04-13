@@ -1,0 +1,156 @@
+/**********************************************
+* background:#666666;             灰 背景色
+* background:#fadc62;             黄 按钮
+* background:#F9CC1C;             黄 按钮 current
+* color:#fadc62;                  黄 字体
+* background:#AC6198;             深紫色
+
+* color:#5C5C46;                  链接灰黑 字体
+* color:#AC6198;                  hover紫 字体
+**********************************************/
+@font-face {
+  font-family: 'Nucleo Outline';
+  src:url('../fonts/nucleo-outline/nucleo-outline.eot');
+  src:url('../fonts/nucleo-outline/nucleo-outline.eot') format('embedded-opentype'),
+    url('../fonts/nucleo-outline/nucleo-outline.woff2') format('woff2'),
+    url('../fonts/nucleo-outline/nucleo-outline.woff') format('woff'),
+    url('../fonts/nucleo-outline/nucleo-outline.ttf') format('truetype'),
+    url('../fonts/nucleo-outline/nucleo-outline.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.icon-user::before {
+	z-index: 10;
+	display: inline-block;
+	margin: 0 20px 0 20px;
+	vertical-align: middle;
+	text-transform: none;
+	font-weight: normal;
+	font-variant: normal;
+	font-style: normal;
+	font-size: 1.5em;
+	font-family: 'Nucleo Outline';
+	line-height: 1;
+	speak: none;
+	-webkit-backface-visibility: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.design_phone:before {
+    content: "\e8ad";
+    position: absolute;
+	padding-top: 10px;
+	left: 0px;
+	border-right: 1px solid #fff;
+	padding-right: 10px;
+	height: 42px;
+}
+.ui-1_eye-17:before {
+  content: "\e689";
+}
+.ui-1_eye-ban-20:before {
+  content: "\e68c";
+}
+.email-icon:before {
+  content: "\e687";
+   position: absolute;
+	padding-top: 10px;
+	left: 0px;
+	border-right: 1px solid #fff;
+	padding-right: 10px;
+	height: 42px;
+}
+body{font-size:14px;background:#FADC62}
+.w1024{width:1024px;margin:0 auto}
+.logo{padding-top:2px;float:left}
+a{color:#5C5C46}
+a:hover{text-decoration:none;color:#AC6198;}
+
+.login_logo{ text-align:center; padding-bottom:20px;}
+
+span.error{display:block;margin:5px 0 10px;font-size:14px;color:#ff6a6a;text-align:left;background:url(../images/error.png) 0 3px no-repeat;padding-left:20px;line-height:22px}
+.clearfix:after{content:"";height:0;clear:both;visibility:hidden}
+.clearfix{display:inline-block}
+h1,h2,h3,h4,h5{font-weight:400}
+input[type=text],input[type=password]{border:2px solid #f1f1f1;outline:0;font-size:20px;width:600px;height:30px;padding:6px 10px;margin-top:20px;transition:border .2s ease-in 0}
+input[type=button],input[type=submit]{outline:0;cursor:pointer;border:0}
+input[type=text]:focus,input[type=password]:focus{border:2px solid #d4e2e4}
+.triangle{height:0;width:0;overflow:hidden;font-size:0;line-height:0;border-width:6px 5px 0;border-style:solid dashed;border-color:#00b38a transparent transparent;-webkit-transition:all .4s ease 0;-moz-transition:all .4s ease 0;-ms-transition:all .4s ease 0;transition:all .4s ease 0}
+.triangle.transform{-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg);-webkit-transition:all .4s ease 0;-moz-transition:all .4s ease 0;-ms-transition:all .4s ease 0;transition:all .4s ease 0}
+#login_bg{background:#00b38a url(../images/bgwall.png) center 100px no-repeat;overflow:hidden}
+
+.login_wrapper{width:650px;margin:0 auto;color:#5C5C46; padding-top:80px}
+.login_wrapper{width:460px;margin:0 auto;color:#482929; padding-top:80px}
+.login_header{position:relative;margin-bottom:20px}
+.login_header img{margin:0 0 0 20px}
+.logoRegist{display:block;color:#fadc62;border:0;width:285px;height:62px;font-size:24px}
+.logoRegist font{font-size:17px}
+#cloud_s{position:absolute;left:375px;top:15px}
+#cloud_m{position:absolute;left:470px;top:-35px}
+
+#editpw{ position:absolute; right:66px; top:4px;}
+#editpw a{display:block; width:40px; height:40px;}
+#editpw .onpw:before{ content: "\e689";font-size: 27px;position: absolute;right: -65px;top: 7px;/*background:url(../images/icopw.png) center -74px no-repeat;*/}
+#editpw .offpw:before{ content: "\e68c";font-size: 27px;position: absolute;right: -65px;top: 7px;/*background:url(../images/icopw.png) center 12px no-repeat;*/}
+
+
+.login_box{overflow:hidden;margin-top:40px; background:#fff; padding:40px 46px;}
+/*.loginForm{width:380px;margin:0;border-right:1px dashed #999;float:left}*/
+.loginForm{margin:0;}
+.loginForm input#phone{width:344px;font-size:14px;color:#777;height:30px;line-height:30px;border:2px solid #eee;}
+.loginForm input#nickname {width: 345px;font-size: 14px;color: #777;height: 30px;line-height: 30px;border: 2px solid #eee;}
+.loginForm input#email{width:344px;font-size:14px;color:#777;height:30px;line-height:30px;border:2px solid #eee;}
+.loginForm input#password{width:344px;font-size:14px;color:#777;height:30px;line-height:30px;border:2px solid #eee;}
+.loginForm input:focus{border:2px solid #D3B8CC !important;}
+.loginForm .rt{margin-right:45px}
+.loginForm label{vertical-align:top; line-height:20px;}
+.loginForm label a{ color:#AC6198}
+.loginForm label a:hover{ text-decoration:underline;}
+
+a.btn-phone{width: 100%;height: 42px;display: block;background-color: #482929;color: #fff;line-height: 42px;text-align: center;margin-top: 20px;position: relative;}
+a.btn-phone:hover{color: #fff;}  
+a.btn-email{width: 100%;height: 42px;display: block;background-color: #90531d;color: #fff;line-height: 42px;text-align: center;margin-top: 20px;position: relative;}
+a.btn-email:hover{color: #fff;}  
+
+#submitLogin{width:368px;height:46px; clear:both;float:left;}
+
+.login_right{*width:170px;float:left;margin:0px 0 0 25px;line-height:30px}
+.registor_now{ display:block; width:150px;height:37px; line-height:34px; border-radius:3px;}
+.login_others{clear:both; text-align:center; padding:10px 0px;}
+
+.iconlogin a{ display:block; margin-bottom:10px;}
+.icon_wb{width:150px;height:37px; background:url(../images/wbqq.png) no-repeat;margin:0 10px 0 0}
+.icon_qq{width:151px;height:37px; background:url(../images/wbqq.png) 0px -37px no-repeat;margin:0 10px 0 0}
+.icon_weixin{width:151px;height:37px; background:url(../images/wbqq.png) 0px -74px no-repeat}
+
+.login_wrapper input[type=text],.login_wrapper input[type=password]{margin:0 0 20px;border:0}
+.login_wrapper span.error{margin:-10px 0 10px 0}
+.loginForm input[type=text],.loginForm input[type=password]{margin:0 0 20px}
+.loginForm span.error{margin:-10px 0 10px 0}
+.login_box h1{font-size:24px;font-weight:400;color:#555;margin:0 0 20px}
+.login_box h2{font-size:18px;font-weight:400;color:#555;margin:0 0 15px}
+.login_box h3{font-size:20px;font-weight:400;color:#555;margin:0 0 25px}
+.register_radio{list-style:none;margin:0 0 20px;padding:0}
+.register_radio li{width:128px;height:42px; padding-right:20px; background:#fff url(../images/r_choose.png) 10px 12px no-repeat;font-size:18px;color:#555;text-align:right;line-height:42px;float:left;margin:0 14px 0 0;border:2px solid #eee;cursor:pointer;position:relative}
+.register_radio li:hover{border:2px solid #AC6198}
+.register_radio li.current{border:2px solid #AC6198;background:url(../images/r_choose.png) 10px -72px no-repeat;}
+.register_radio li em{ display:none; background:url(../images/r_choose.png) no-repeat;width:31px;height:32px;position:absolute;right:-1px;top:-1px}
+.register_radio li input[type=radio]{cursor:pointer;position:absolute;left:-2px;top:-2px;margin:0;width:152px;height:46px;filter:alpha(Opacity=0);-moz-opacity:0;opacity:0}
+.login_box .typeBtn{float:left;width:160px;font-size:18px;text-align:center;color:#fff;background:#00b38a;padding:10px 0;margin:0 30px 20px 2px}
+.choosetype_l{width:390px;border-right:1px dashed #c4d5d4;padding-top:10px;overflow:hidden}
+.errorMessage{margin:60px 0 0;text-align:center;font-size:18px;line-height:32px}
+@media only screen and (-o-min-device-pixel-ratio:2/1),only screen and (min--moz-device-pixel-ratio:2),only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-resolution:240dpi),only screen and (min-resolution:2dppx){.logoRegist{background-image:url(../images/logo_white@2x.png);background-size:285px 62px}
+}
+.find_psw{padding:45px 90px;background:#eafffd url(../images/login_btm.png) left bottom repeat-x;margin-bottom:20px;overflow:hidden}
+.find_psw img{margin:0 0 30px 30px}
+.pswForm{margin-left:48px}
+.find_psw input[type=text],.find_psw input[type=password]{width:310px;font-size:16px;color:#777}
+.find_psw input[type=text]:focus,.find_psw input[type=password]:focus{-webkit-box-shadow:0 0 4px #b5f0e7;-moz-box-shadow:0 0 4px #b5f0e7;box-shadow:0 0 4px #b5f0e7}
+.sendemail{font-size:14px;text-align:center}
+.sendemail span{font-size:18px;display:block;margin-bottom:20px}
+.sendemail a{color:#019875}
+.find_psw a#submitLogin{margin:20px 0 0 150px}
+.email_address{margin:0 0 20px 50px;font-size:18px}
+.email_address a{color:#019875}
+#tip{border:1px solid #cbcbcb;padding:3px 10px;float:left;margin:10px 0 0 40px;background:#fff}
+

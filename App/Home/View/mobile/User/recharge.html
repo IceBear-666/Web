@@ -1,0 +1,174 @@
+<include file="Public/bbs_header" />
+
+<style>
+
+#simgarea {
+    background: url("{$Think.WEB_URL}Public/Images/simgarea.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    min-height: 180px;
+    width: 280px;
+}
+
+div.tagsinput div {
+    display: block;
+    float: left;
+}
+
+div.tagsinput input {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0);
+    color: #757575;
+    font-size: 13px;
+    margin: 0;
+    outline: 0 none;
+    padding: 8px 5px;
+    text-indent: 0;
+    width: auto;
+}
+.pnitem input, .pnitem textarea {
+    color: #757575;
+    font-family: "微软雅黑",Arial;
+}
+
+div.tagsinput div {
+    display: block;
+    float: left;
+}
+.tags_clear {
+    clear: both;
+    height: 0;
+    width: 100%;
+}
+
+div.tagsinput {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DBE2E6;
+    height: 100px;
+    overflow-y: auto;
+    padding: 2px;
+    width: 300px;
+}
+
+#simageupload {
+    float: left;
+    margin-left: 30px;
+    margin-top: 60px;
+}
+
+.pnitem {
+    color: #757575;
+    font-size: 14px;
+}
+
+
+
+.uploadifive-button {
+    background: none repeat scroll 0 0 #9F9F9F;
+    color: #FFFFFF;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 120px;
+}
+
+.uploadifive-button input {
+    height: 100%;
+}
+.pnitem input, .pnitem textarea {
+    color: #757575;
+    font-family: "微软雅黑",Arial;
+}
+input {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+}
+
+
+#postbtn, #removebtn {
+    background: none repeat scroll 0 0 #70CA10;
+    color: #FFFFFF;
+    display: inline-block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 120px;
+}
+
+</style>
+
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Js/Editor/kindeditor.js"></script>
+<script type="text/javascript">
+    KE.show({
+        id : 'content' //TEXTAREA输入框的ID
+   });
+</script>
+  
+  <div id="somoreitem">
+    <div class="automw">
+      <div id="smicontent" class="autocw"></div>
+    </div>
+  </div>
+  
+  <!--[if lt IE 10]><script type="text/javascript">window.location.href="{$Think.WEB_URL}update_browser.html";</script><![endif]-->
+  
+  <div id="container" class="automw">
+  
+      <div class="contentfw nosoo">
+	      <ul id="umnav">
+	        <li id="umnactive"><a href="javascript:void(0);">VIP充值<img src="{$Think.WEB_URL}Public/Images/nn.gif" width="9" height="9" style="float:none;left:10px; top:-5px; position:relative" /></a></li>
+	      </ul>
+	      
+	      
+	      <form action="{$Think.WEB_URL}Users/pay/" method="post" name="myform" id="form1" enctype="multipart/form-data">
+	      
+	      <div id="postnew" data-id="" data-cid="4">
+	        
+	        <div id="pntitle" class="pnitem"  style="font-size:14px;"><font color="#FF0000">一次性充值10个月送两个月</font><span> </span></div>
+	        
+	        <div class="pnitem">
+	          <div class="pnlabel" style="width:90px;"><span class="inputmust">*</span>充值周期：</div>
+	          <span style="height: 40px;  line-height: 40px;">
+	          	<select name="pid" style="height: 30px;  line-height: 30px;font-size:16px; padding-top:5px;">
+	          	<volist name="price_arr" id="v" >
+	          		<option value="{$key}">{$key}个月{$v}元</option>
+	          	</volist>
+	          </select>
+	          </span>	          
+	        </div>
+	        
+	        <div class="pnitem">
+	          <div class="pnlabel" style="width:90px;"><span class="inputmust">*</span>付款方式：</div>
+	          <span style="height: 40px;  line-height: 40px;"><input type="radio" name="pay_type" value="1" checked /> <img alt="支付宝  " style="height:33px;width:100px;border:0px;vertical-align:middle; float:none;" src="{$Think.WEB_URL}Public/Images/zhifubao.png"></span>
+	        </div>
+	        
+	        <div class="pnitem">
+	          <div class="pnlabel" style="width:90px;"><span class="inputmust">*</span>备注说明：</div>
+	          <span style="height: 40px;  line-height: 40px;"><textarea name="memo" cols="30" style="width: 300px;" rows="3"></textarea></span>
+	        </div>
+	        
+	        <div id="pnfoot">
+	        	<input type="submit" id="postbtn" style="background-color:#da251c;" value=" 提　交　 "  name="submit_btn">
+	        	
+	          <p id="loadedmsg">已经更新。<a href="">查看作品</a></p>
+	         
+	        </div>
+	      </div>
+	      
+	      </form>
+	      
+	    </div>
+      
+      
+      <div class="clear"></div>
+      
+             
+    
+  </div>
+  
+  
+  <include file="Public/bbs_footer" />
+  
+
+
+<include file="Public/footer" />

@@ -1,0 +1,451 @@
+<include file="Public/header" />
+<style type="text/css">
+        .w960 {
+            width: 960px;
+            margin: 0 auto;
+            clear: both;
+        }
+        .w1000 {
+            width: 1000px;
+            margin: 0 auto;
+            clear: both;
+        }
+        .l460 {
+            width: 450px;
+            float: left;
+            height: 350px;
+            position: relative;
+        }
+        .r460 {
+            width: 450px;
+            float: right;
+            height: 350px;
+            position: relative;
+
+        }
+        .jm_intro_container {
+            height: 380px;
+        }
+        .jm_plugin_container {
+            position: relative;
+            height: 535px;
+        }
+        .jm_plugin_img {
+            max-width: 100%;
+            vertical-align: middle;
+
+        }
+        h1.jm_plugin_title {
+            text-align: center;
+            font-size: 30px;
+            padding: 40px;
+            color: #222222;
+        }
+        h2.jm_plugin_subtitle {
+            font-size: 30px;
+            padding-left: 60px;
+            height: 56px;
+            position: relative;
+            font-weight: 500;
+            line-height: 52px;
+            color: #222222;
+        }
+        p.jm_plugin_subintro {
+            font-size: 20px;
+            color: #4a4a4a;
+        }
+        .container-img {
+            display: table-cell;
+            vertical-align:middle;
+            display: table-cell; 
+            vertical-align:middle; 
+            /*设置水平居中*/ 
+            text-align:center; 
+            /* 针对IE的Hack */ 
+            *display: block; 
+            *font-size: 368px;/*约为高度的0.873，200*0.873 约为175*/ 
+            *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/ 
+            width:460px; 
+            height:350px; 
+        }
+        .container-box {
+            width: 100%;  
+            height: 50%;  
+            overflow: auto;  
+            margin: auto;  
+            position: absolute;  
+            top: 0; left: 0; bottom: 0; right: 0;  
+        }
+        .jm_plugin_icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 55px;
+            height: 47px;
+            display: inline-block;
+
+        }
+        .icon_flash {
+            background-image: url(/Uploads/Plugin/icon.png);
+            background-position: 0;
+        }
+        .icon_mouse {
+            background-image: url(/Uploads/Plugin/icon.png);
+            background-position: -68px 0;
+        }
+        .icon_dashboard {
+            background-image: url(/Uploads/Plugin/icon.png);
+            background-position: 80px 0;
+        }
+        .jm_plugin_banner {
+            height: 480px;
+            width: 960px;
+            margin: 0 auto;  
+            position: relative;       
+        }
+        .jm_plugin_banner .banner_computer{
+            padding: 60px 0;
+        }
+        .jm_plugin_banner_title {
+            position: absolute;
+            top: 0;
+            width: 960px;
+            height: 480px;
+        }
+        .jm_plugin_banner_title h1{
+            position: absolute;
+            top: 23%;
+            right: 5%;
+            font-size: 30px;
+            font-weight: 500;
+            color: #482929;
+            z-index: 5;
+        }
+        .jm_plugin_banner_title p{
+            position: absolute;
+            top: 34%;
+            right: 2%;
+            color: #482929;
+            z-index: 5;
+            font-size: 20px;
+            line-height: 35px;
+            text-align: center;
+            
+        }
+        .jm_plugin_banner_overlay {
+            width: 100%;
+            height: 480px;
+            background-color: #ffd733;
+            /*opacity: 0.8;*/
+            position: absolute;
+            bottom: 0;
+        }
+        .jm_plugin_banner_container {
+            position: relative;
+            height: 480px;
+        }
+
+        .btn-plugin-download{
+            position: absolute;
+            top: 285px;
+            right: 40px;
+            color: #fff;
+            width: 210px;
+            background-color: #6769c9;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 30px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .btn-plugin-download:hover{
+            color: #fff;
+            text-decoration: underline;
+        }
+        .btn-plugin-view {
+            position: absolute;
+            top: 43%;
+            left: 28%;
+            width: 152px;
+            height: 44px;
+            background-image: url(/Uploads/Plugin/button-view.png);
+            z-index: 10;
+        }
+        .btn-plugin-view:hover{
+            background-image: url(/Uploads/Plugin/button-view-hover.png);
+        }
+        .jm_plugin_linktotimetable {
+            width: 229px;
+            height: 49px;
+            background-image: url(/Uploads/Plugin/button-time.png);
+            display: inline-block;
+            margin: 25px 0;
+        }
+        .jm_plugin_hot {
+            width: 31px;
+            height: 28px;
+            background-image: url(/Uploads/Plugin/hot-icon.png);
+            margin: 34px 20px;
+            display: inline-block;
+        }
+        a.btn-disabled:hover {cursor: default;color: #555;}
+
+        .pluginbox #cboxContent img {border: 1px solid #B1AFAF;}
+        .pluginbox #cboxContent #cboxTitle{ left: 155px;  z-index: 2; line-height:45px; color: #ac6198}
+        .pluginbox #cboxContent #cboxCurrent{    left: 0; line-height:45px;}
+        .pluginbox #cboxContent #cboxClose {z-index: 3}
+        .jm_intro_order{list-style: none;  padding: 60px 0;}
+        .jm_intro_order li{    
+            position: relative;
+            display: inline-block;
+            width: 315px;
+            height: 100px;}
+        .jm_intro_order li span.num{
+            width: 48px;
+            height: 118px;
+            font-size: 100px;
+            line-height: 120px;
+            font-weight: 600;
+            color: #482929;
+            font-style: oblique;
+            position: absolute;
+            top: 0;
+            left: 0;}
+        .jm_intro_order li p.jm_intro_subtitle{
+            height: 32px;
+            font-size: 23px;
+            letter-spacing: 1px;
+            color: #482929;
+            position: absolute;
+            top: 20px;
+            left: 85px;
+        }
+        .jm_intro_order li p.jm_intro_subtitle span{
+            color: #686dc5;
+            text-decoration: underline;
+        }
+        .jm_intro_order li p.jm_intro_content{    
+            font-size: 14px;
+            letter-spacing: 0.6px;
+            color: #aa9c9c;
+            position: absolute;
+            top: 60px;
+            left: 85px;}
+        .jm_intro_title{
+            font-size: 23px;
+            width: 315px;
+            padding: 15px 0;
+            margin-top: 20px;
+            color: #482929;
+            letter-spacing: 1px;
+            border-bottom: 4px solid #ffd733;
+        }
+        .yellow-bg {background:#ffd733; }
+        .section-img-rt {    
+            position: absolute;
+            top: 45px;
+            right: 0;}
+        .section-title-lt h3{
+            position: absolute;
+            top: 195px;
+            left: 0;
+        }
+        .section-title-lt p{
+            position: absolute;
+            top: 270px;
+            left: 0;
+        }
+        .section-img-lt {
+            position: absolute;
+            top: 45px;
+            left: 0;
+        }
+        .section-title-rt h3{
+            position: absolute;
+            top: 195px;
+            right: 0;
+        }
+        .section-title-rt p{
+            position: absolute;
+            top: 270px;
+            right: 0;
+        }
+        .jm_plugin_container .subtite{
+            font-size: 24px;
+            color: #482929;
+            font-weight: 600;
+        }
+        .jm_plugin_container .subcontent{
+            font-size: 18px;
+            line-height: 30px;
+            color: #482929;
+            width: 240px;
+            word-wrap: break-word;
+        }
+        .browser-list  {
+            list-style: none;
+            margin-top: 45px;
+        }
+        .browser-list li{
+            display: inline-block;
+            width: 235px;
+            height: 225px;
+            text-align: center;
+            margin-right: 140px;
+            border: solid 1px #e5e5e5;
+        }
+        .browser-list li:hover{
+            border: solid 1px #ffd733;
+        }
+        .browser-list li a{
+            display: inline-block;
+            width: 235px;
+            height: 225px;
+        }
+         .browser-list li:last-child{
+            margin-right: 0;
+         }
+        .browser-list li .browser-title{display: block; color: #4a4a4a; font-size: 18px; margin-top: 40px;}
+        .browser{
+            background: url(/Uploads/Plugin/browser.png);
+            display: inline-block;
+            height: 75px;
+            width: 75px;
+            margin-top: 35px;
+            overflow: hidden;}
+        .browser-chrome {
+            background-position: -150px -95px;
+        }
+        .browser-liebao {
+            background-position: -375px -95px;
+        }
+        .browser-jisu {
+            background-position: -75px -95px;
+        }
+        .browser-anquan {
+            background-position: 0 -95px;
+        }
+        .browser-aoyou {
+            background-position: -450px -95px;
+        }
+        .browser-qq{
+            background: url(/Uploads/Plugin/qq-browser.png);
+            display: inline-block;
+            height: 70px;
+            width: 66px;
+            margin-top: 40px;
+            overflow: hidden;
+        }
+        .dl-icon{
+            background: url(/Uploads/Plugin/download-icon.png);
+            width: 14px;
+            height: 19px;
+        }
+
+</style>
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/company.css" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/external.min.css" />
+
+
+<div class="jm_plugin_banner_container">
+    <div class="jm_plugin_banner_overlay"></div>
+    <div class="jm_plugin_banner">
+        <img class="banner_computer" src="/Uploads/Plugin/new_computer.png">
+        <!-- <a href="#pluginvideo" class="btn btn-plugin-view inline cboxElement"></a> -->
+        <p><a class="btn btn-plugin-view helpgroup" href="/Uploads/Plugin/callout.gif" title="轻松召唤小助手"></a></p>
+        <p  style="display:none"><a class="helpgroup" href="/Uploads/Plugin/drag.gif" title="如何实现信息拖拽"></a></p>
+        <p style="display:none"><a class="helpgroup" href="/Uploads/Plugin/write.gif" title="如何一键填写"></a></p>
+        <p style="display:none"><a class="helpgroup" href="/Uploads/Plugin/lock.gif" title="如何锁定界面"></a></p>
+        <div class="jm_plugin_banner_title"> 
+            <h1>白熊求职助手</h1>
+            <p>全新网申体验，专为学生打造<br/>告别繁琐填写，支持百家名企</p>
+            <a  class="btn-plugin-download tofooter"><i class="dl-icon"></i>立即下载</a>
+        </div>
+    </div> 
+    
+</div>
+
+<div id="chajianintro">
+    <div class="w1000 jm_intro_container">
+       <h2 class="jm_intro_title">如何开启不一样的网申体验？</h2>
+       <ul class="jm_intro_order">
+           <li>
+               <span class="num">1</span>
+               <p class="jm_intro_subtitle">下载助手 > <span class="">安装教程</span></p>
+               <p class="jm_intro_content">选择自己常用的浏览器版本，并注册寻鹿网求职帐号。</p>
+           </li>
+           <li>
+               <span class="num">2</span>
+               <p class="jm_intro_subtitle">完善简历 > <span>网申简历</span></p>
+               <p class="jm_intro_content">繁杂信息只需填写一次，开放性问题记录在自定义项目中随时备用。</p>
+           </li>
+           <li>
+               <span class="num">3</span>
+               <p class="jm_intro_subtitle">开始闪填 > <span>网申列表</span></p>
+               <p class="jm_intro_content">在网申列表中点击心仪的公司网申，求职助手自动就会出现啦！</p>
+           </li>
+       </ul>
+    </div>
+
+    <div class="yellow-bg">
+       <div class="w1000 jm_plugin_container">
+            <div class="section-title-lt"> 
+                <h3 class="subtite">网申简历，一键闪填</h3>
+                <p class="subcontent">完善一次简历，闪填百家名企<br/>现已支持XX家企业网申</p>
+            </div>
+            <img class="section-img-rt" src="/Uploads/Plugin/profile-img.png">
+        </div>
+    </div>
+
+    <div class="w1000 jm_plugin_container">
+        <img class="section-img-lt" src="/Uploads/Plugin/openq-img.png">
+        <div class="section-title-rt"> 
+            <h3 class="subtite">开放问题，轻松拖拽</h3>
+            <p class="subcontent">填过的开放性问题，只需直接拖拽填写，还有海量题库等你</p>
+        </div>
+    </div>
+    <div class="w1000 jm_plugin_foot_container" id="plugindownload">
+        <h2 class="jm_intro_title">选择你常用的游览器版本</h2>
+        <ul class="browser-list">
+            <li><a href="#"><span class="browser-img browser browser-chrome"></span><span class="browser-title">chrome</span></a></li>
+            <li><a><span class="browser-img  browser-qq"></span><span class="browser-title">QQ浏览器</span></a></li>
+            <li><a><span class="browser-img browser browser-liebao"></span><span class="browser-title">猎豹浏览器</span></a></li>
+        </ul>
+        <ul class="browser-list">
+            <li><a><span class="browser-img browser browser-jisu"></span><span class="browser-title">360极速浏览器</span></a></li>
+            <li><a><span class="browser-img browser browser-anquan"></span><span class="browser-title">360安全浏览器</span></a></li>
+            <li><a><span class="browser-img browser browser-aoyou"></span><span class="browser-title">遨游浏览器</span></a></li>
+        </ul>
+    </div>
+
+</div>
+
+
+<!-- <script type="text/javascript" src="/Public/Home/js/company/jobs.js"></script>   -->      
+<script type="text/javascript" src="/Public/Home/js/company/company.js"></script>         
+<script type="text/javascript" src="/Public/Home/js/core.min.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/popup.js"></script>   
+<!-- <script type="text/javascript" src="/Public/Home/js/jquery.colorbox-help.js"></script>   --> 
+<script>
+    $(document).ready(function(){
+        //Examples of how to assign the Colorbox event to elements
+        $(".helpgroup").colorbox({
+            rel:'helpgroup',  
+            width:680, 
+            height:500,
+            loop:false,
+            previous:"上一步",
+            next:"下一步",
+            current:"网申助手教程 {current}/{total} ",
+            className:"pluginbox"
+        });
+    });
+</script>   
+<script>
+$('.tofooter').click(function(){
+    $('html,body').animate({scrollTop:$('.jm_plugin_foot_container').offset().top}, 800);
+    al
+}); 
+</script>   
+<include file="Public/footer" />        
+

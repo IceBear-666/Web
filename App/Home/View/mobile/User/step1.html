@@ -1,0 +1,73 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">
+	
+	
+	<include file="Public/menu" />
+
+  
+	<div id="container">
+	    <div class="content_mid"> 
+	      <!--form-->
+	      <dl class="c_section c_section_service">
+	        <dt>
+	          <h2><em></em>开通招聘服务</h2>
+	        </dt>
+	        <dd>
+	          <div class="os_step_1"></div>
+	          <form id="bindForm" class="corp_form">
+	            <input id="resubmitToken" value="aca8887f61a64bf4b05cb3cbb1c7154b" type="hidden">
+	            <h3><em class="redstar">*</em>联系电话 <span>（请填写真实有效的电话号码，方便系统校验使用）</span></h3>
+	            <input id="tel" name="tel" maxlength="30" placeholder="请输入你的手机号码或座机号码" value="{$myinfo.phone}" type="text">
+	            <h3><em class="redstar">*</em>接收简历邮箱 <span>（该邮箱为公司邮箱，审核通过后不可更改）</span></h3>
+	            <input id="email" name="email" placeholder="请输入你的公司邮箱作为接收简历邮箱" value="{$myinfo.email_jianli}" type="text">
+	            <span class="error" style="display:none;" id="beError"></span>
+	            <input id="bindSubmit" value="下一步" type="submit">
+	          </form>
+	          <div class="contactus">
+	            <table>
+	              <tbody>
+	                <tr>
+	                  <td colspan="2">常见问题：</td>
+	                </tr>
+	                <tr>
+	                  <td valign="top">问：</td>
+	                  <td>填写个人邮箱可以么？</td>
+	                </tr>
+	                <tr>
+	                  <td valign="top">答：</td>
+	                  <td>不可以。为了保证每个职位的真实性，钢铁侠网严格要求招聘方必须提供公司邮箱。（公司邮箱是指以你的公司网址为后缀的免费公司邮箱，例如钢铁侠网的公司邮箱后缀是@lagou.com）即使是初创公司也必须提供公司邮箱才允许开通招聘。</td>
+	                </tr>
+	                <tr>
+	                  <td valign="top">问：</td>
+	                  <td>公司没有公司邮箱怎么办？</td>
+	                </tr>
+	                <tr>
+	                  <td valign="top">答：</td>
+	                  <td>钢铁侠网推荐使用免费、稳定的腾讯企业邮箱（网址：<a href="http://exmail.qq.com/">http://exmail.qq.com</a>），根据邮箱申请指南进行操作，很快就可以拥有以你的公司网址为后缀的免费公司邮箱。</td>
+	                </tr>
+	                <tr>
+	                  <td colspan="2"><br>
+	                    如有其它问题，请发送问题到<a href="mailto:vivi@lagou.com">vivi@lagou.com</a>，我们会尽快为你解决。</td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>
+	        </dd>
+	      </dl>
+	    </div>
+	    <script type="text/javascript" src="__PUBLIC__/Js/services.js?v={$rand}"></script>
+	    <div class="clear"></div>
+	    <!-- <input id="resubmitToken" value="e626ce20b99b4d7eac7f0b64aecbbb20" type="hidden"> -->
+	    <a id="backtop" title="回到顶部" rel="nofollow"></a>
+
+	</div>
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

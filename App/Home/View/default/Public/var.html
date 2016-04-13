@@ -1,0 +1,22 @@
+<script type="text/javascript">
+(function(){
+	var ThinkPHP = window.Think = {
+		"ROOT"   : "__ROOT__", //当前网站地址
+		"APP"    : "__APP__", //当前项目地址
+		"PUBLIC" : "__PUBLIC__", //项目公共目录地址
+		"DEEP"   : "{:C('URL_PATHINFO_DEPR')}", //PATHINFO分割符
+		"MODEL"  : ["{:C('URL_MODEL')}", "{:C('URL_CASE_INSENSITIVE')}", "{:C('URL_HTML_SUFFIX')}"],
+		"VAR"    : ["{:C('VAR_MODULE')}", "{:C('VAR_CONTROLLER')}", "{:C('VAR_ACTION')}"]
+	}
+})();
+//var ctx = "__ROOT__";
+
+var ctx = "{$Think.WEB_URL}";
+var rctx = "{$Think.WEB_URL}";
+var pctx = "{$Think.WEB_URL}";
+
+/* var frontLogin = "http://www.xxxxx.com/frontLogin.do";
+var frontLogout = "http://www.xxxxx.com/frontLogout.do";
+var frontRegister = "http://www.xxxxx.com/frontRegister.do"; */
+
+</script>

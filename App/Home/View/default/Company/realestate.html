@@ -1,0 +1,216 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/companylist.css" />
+<script type="text/javascript" src="/Public/Home/js/jquery.fancybox.pack.js"></script> 
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/jquery.fancybox.css" />
+<script type="text/javascript" src="/Public/Home/js/jquery-labelauty.js"></script> 
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/jquery-labelauty.css" />
+<style type="text/css">
+   
+</style>
+        
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="10" style="position: relative;">
+    <div class="section-top">
+        <div class="section-top-contrainer">
+            <h3 class="pull-left top-title">已支持一键填写网申列表</h3>
+            <div class="pull-right">
+                <ul class="top-cat">
+                    <li><a class="lt-title current" href="">实习</a> 
+                   </li>
+                    <li>|</li>
+                    <li><a class="rt-title" href="">全职</a></li>
+                </ul>
+                <div class="triangle-up"></div>
+            </div>
+        </div>
+    </div>
+    <div class="w960 jm_companylist_container">  
+        <div class="lw240 jm_companylist_l affix-top" id="myScrollspy">
+            <nav id="companyaffix">
+            <h3>已支持一键填写网申列表</h3>
+            <ul class="nav nav-tabs nav-stacked" >
+                <li class="active"><i class="icon-inter"></i><a class="nav_cl_blue" href="__URL__/companylist1">互联网/游戏/软件<i class="triangle-blue"></i></a></li>
+                <li><i class="icon-build"></i><a class="nav_cl_green" href="__URL__/realestate">房地产/建筑/物业<i class="triangle-green"></i></a></li>
+                <li><i class="icon-finance"></i><a class="nav_cl_orange" href="__URL__/finance">金融<i class="triangle-orange"></i></a></li>
+                <li><i class="icon-comm"></i><a class="nav_cl_purple" href="__URL__/electronics">电子/通信/硬件<i class="triangle-purple"></i></a></li>
+                <li><i class="icon-consumable"></i><a class="nav_cl_red" href="__URL__/consumer">消费品<i class="triangle-red"></i></a></li>
+                <li><i class="icon-other"></i><a class="nav_cl_darkgreen" href="__URL__/other">其他<i class="triangle-darkgreen"></i></a></li>
+            </ul>
+           <a class="choose-edit" id="choosebox" href="#chooseworkcat"><i class="icon-resume icon-edit"></i></a>
+            </nav>
+             
+        </div>
+          
+
+        <div class="rw680">
+        
+            <!-- 浏览器列表开始-->
+            <div class="jm_companylist_r" style="margin:0;position: relative;">
+                <div id="section-2" class="jm_companylist_section jm_build">
+                <h3 class="jm_support_title jm_cl_green"><i class="icon-build-title"></i>房地产/建筑/物业</h3>
+                <table class="jm_companylist_tb">
+                     <volist name="info" id="v">
+                     <if condition="$v.cid eq 41">
+                        <?php  $now = strtotime(date('y-m-d',time()));  $end_date = strtotime($v['end_time']);?>
+                        
+                        <?php if ($now <= $end_date ) :?>
+                            <tr>
+                                <td width="250"><img src="{$v['path']}" style="height:50px;width:56px;"/>{$v.company_name}</td>
+                                <td width="210"><a target="_blank" href="{$v.url_link}">{$v.link}</a></td>
+                                <td width="220">已开始 ({$end_date|date="Y年m月",### } 截止)</td>
+								<td width="40">
+                                 <li class='keep-wrap'  style="position: relative;list-style-type:none">
+                                        <span class='keep' wid='{$v.id}'>收藏<if condition='$v["keep"]'></if></span>
+                                    <div class='keep-up hidden' style=" position: absolute;width: 80px;height: 24px;line-height: 24px; text-align: center;border: 1px solid #088CD2;border-radius: 4px; background:#D7EEFB; color: #71CD6A; left: -25px;top: 30px;"></div>
+                                     </li>
+                                </td>
+                               <!--  <td width="40"><div id="jobCollection" class="jd_col"><i class="icon-resumebold icon-favourite"></i><span class="dn" id="collection_jd">收藏</span><i class="dn collection_jd_trangle"></i></div></td> -->
+                            </tr>
+                        <?php elseif ($v['end_time'] == "0000-00-00 00:00:00") : ?>
+                             <tr>
+                               <td width="250"><img src="{$v['path']}" style="height:50px;width:56px;"/>{$v.company_name}</td>
+                                <td width="210"><a target="_blank" href="{$v.url_link}">{$v.link}</a></td>
+                                <td width="220">已开始</td>
+								<td width="40">
+                                 <li class='keep-wrap'  style="position: relative;list-style-type:none">
+                                        <span class='keep' wid='{$v.id}'>收藏<if condition='$v["keep"]'></if></span>
+                                    <div class='keep-up hidden' style=" position: absolute;width: 80px;height: 24px;line-height: 24px; text-align: center;border: 1px solid #088CD2;border-radius: 4px; background:#D7EEFB; color: #71CD6A; left: -25px;top: 30px;"></div>
+                                     </li>
+                                </td>
+                               <!--  <td width="40"><div id="jobCollection" class="jd_col"><i class="icon-resumebold icon-favourite"></i><span class="dn" id="collection_jd">收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                            </tr> -->
+                        <?php endif;?>   
+                     </if>   
+                    </volist>
+                    <volist name="info" id="v">
+                    <if condition="$v.cid eq 41">
+                        <?php  $now = strtotime(date('y-m-d',time()));  $end_date = strtotime($v['end_time']);?>
+                        
+                        <?php if ( $now > $end_date && $v['end_time'] != "0000-00-00 00:00:00") :?>  
+                            <tr>
+                                <td width="250"><img src="{$v['path']}" style="height:50px;width:56px;"/>{$v.company_name}</td>
+                                <td width="210"><a target="_blank" href="{$v.url_link}">{$v.link}</a></td>
+                                <td width="220">已开始 ({$end_date|date="Y年m月",### } 截止)</td>
+								<td width="40">
+                                 <li class='keep-wrap'  style="position: relative;list-style-type:none">
+                                        <span class='keep' wid='{$v.id}'>收藏<if condition='$v["keep"]'></if></span>
+                                    <div class='keep-up hidden' style=" position: absolute;width: 80px;height: 24px;line-height: 24px; text-align: center;border: 1px solid #088CD2;border-radius: 4px; background:#D7EEFB; color: #71CD6A; left: -25px;top: 30px;"></div>
+                                     </li>
+                                </td>
+                               <!--  <td width="40"><div id="jobCollection" class="jd_col"><i class="icon-resumebold icon-favourite"></i><span class="dn" id="collection_jd">收藏</span><i class="dn collection_jd_trangle"></i></div></td> -->
+                            </tr>
+                        <?php endif;?>   
+                     </if>
+                    </volist>
+                </table>
+                </div>
+                <div style="display: none" id="chooseworkcat">
+                    <div style="padding: 0 20px">
+                        <p>选择你感兴趣的行业，拥有专属你的网申列表！</p>
+                        <span class="tip">（至少选择一个）</span>
+                        <ul class="chooseworkcat">
+                            <li><input type="checkbox" name="checkbox" data-labelauty="互联网/游戏/软件"><i class="icon-inter"></i></li>
+                            <li><input type="checkbox" name="checkbox" data-labelauty="房地产/建筑/物业"><i class="icon-build"></i></li>
+                            <li><input type="checkbox" name="checkbox" data-labelauty="金融"><i class="icon-finance"></i></li>
+                            <li><input type="checkbox" name="checkbox" data-labelauty="电子/通信/硬件"><i class="icon-comm"></i></li>
+                            <li><input type="checkbox" name="checkbox" data-labelauty="消费品"><i class="icon-consumable"></i></li>
+                            <li><input type="checkbox" name="checkbox" data-labelauty="其他"><i class="icon-other"></i></li>
+
+                        </ul>   
+                        <a class="btn choose-btn">完成</a>
+                    </div>
+                </div>
+                <br/><br/><br/>
+            </div>
+            <!-- 职位列表结束-->
+        </div>
+        <div class="clr"></div>
+    </div>
+   
+</body>
+<script language="JavaScript" type="text/javascript"> 
+
+    $(document).ready(function(){
+        $("#companyaffix").affix({
+            offset: { 
+                top: 180 
+            }
+        });
+        
+       
+    });
+	
+	/**
+	 * 收藏
+	 */
+	$('.keep').click(function () {
+        //alert(11111);
+        var wid =$(this).attr('wid');
+        var keepUP = $(this).next();
+       var msg ='';
+        $.post(URL,{ wid : wid}, function(data){
+             //alert('data');
+           if (data == 1) {
+                msg = '收藏成功';
+           }
+            
+           if (data == -1) {
+                msg = '已收藏';
+           }
+
+            if (data == 0) {
+                msg = '收藏失败';
+            }
+            keepUP.html(msg).fadeIn();
+                setTimeout(function () {
+                keepUP.fadeOut();
+            }, 3000);
+          
+        },'json');
+       
+	});
+	
+     $(".jd_col").bind("mouseover",
+      function() {
+          var a = $(this).find("span#collection_jd");
+          $(this).addClass("collection_hover"),
+          $(this).hasClass("collected") ? (a.text("已收藏"), a.removeClass("dn")) : (a.text("收藏"), a.removeClass("dn"))
+      }),
+      $(".jd_col").bind("mouseout",
+      function() {
+          $(this).find("span#collection_jd").addClass("dn"),
+          $(this).removeClass("collection_hover")
+      });
+      $(".jd_col").bind("mouseover",
+      function() {
+          var a = $(this).find("i.collection_jd_trangle");
+          a.removeClass("dn")
+      }),
+      $(".jd_col").bind("mouseout",
+      function() {
+          $(this).find("i.collection_jd_trangle").addClass("dn"),
+          $(this).removeClass("collection_hover")
+        });
+
+      
+    $('.chooseworkcat :input').labelauty();
+    $("#choosebox").fancybox({
+        helpers : {
+            overlay : {
+                locked: false,
+                css : {
+                    'background' : 'rgba(152, 147, 194, 0.9)',
+                    'overlayOpacity'    : 0.9
+                }
+            }
+        }
+    });
+	
+	
+</script> 
+<script type="text/javascript" src="/Public/Home/js/query.1.10.1.min.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/affix.js"></script> 
+ <script type="text/javascript" src="/Public/Home/js/scrollspy.js"></script>  
+<!--<script type="text/javascript" src="/Public/Home/js/bootstrap.min.js"></script>  --> 
+
+<include file="Public/footer" />        

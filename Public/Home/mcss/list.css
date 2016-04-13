@@ -1,0 +1,82 @@
+@charset "utf-8";
+/*********************************************
+B端企业样式表
+**********************************************/
+.navbg{ background:#f9f9f9; padding:16px;}
+.navbg h2{ font-size:20px; color:#ac6198; cursor:pointer; padding-bottom:10px;}
+.navbg h2 i{ float:right; margin-top:10px;}
+
+.minmr{ color:#999; position:relative; margin-top:6px;}
+.minmr i{position: absolute; top:10px; left:40px}
+
+.mygsxz{ padding-top:10px;}
+.mygsxz a{ display:block; height:30px; font-size:15px;}
+ul,ol,li{list-style:none;}
+
+
+
+/* 头部搜索 */
+.setop{ width:100%; height:44px; background:#F9F9F9; position:relative;  z-index:9999}
+.mgotop{ position:fixed; top:0; border-top:4px solid #FFDA44; z-index:9999}
+.setop .mcity{ width:96px; position:relative; font-size:15px;}
+.setop .mcity em{ display:block; height:44px; line-height:44px; padding-left:20px; background:#E6E6E6 url(../images/smxl.png) 70px center no-repeat;}
+.setop .mcity .licity{ background:#fff;width:96px; border:1px solid #eee; position:absolute;}
+.setop .mcity .licity a{ display:block;  padding:8px 0px 8px 24px;}
+.setop .mcity .licity a:active{ background:#E8D9E4; color:#ac6198;}
+
+/* 搜索下面筛选 */
+.shaixuan{ font-size:16px; padding-top:18px;}
+.shaixuan span{ display:block; float:left; width:100px;}
+.shaixuan a{ display:block; float:left; padding:0px 10px; line-height:22px;}
+.shaixuan a.cur{ background:#ac6198; color:#fff;}
+.shaixuan em{ display:block; float:left; font-size:14px; padding:0px 10px;}
+.shaixuan i{ display:none;}
+
+
+/* 职位列表 */
+.listjob{ margin-top:10px;overflow:hidden;}
+.listjob ul{ margin-top:-1px;}
+.listjob ul li{  clear:both; border-top:1px solid #eee; padding:12px 18px;  position:relative;}
+.listjob ul li a{ display:block; clear:both;}
+.listjob ul li img{ width:64px; height:64px; float:left; margin-right:14px; box-shadow:0px 0px 5px #999;}
+.listjob ul li .info{ float:left;  line-height:22px; color:#666; overflow:hidden}
+.listjob ul li .info h5{ float:left; font-weight:bold; font-size:15px; display:block;}
+.listjob ul li .info span{ display:block; background:url(../images/gps.png) left no-repeat;  padding-left:14px; background-size:11px 14px;}
+.listjob ul li .info i{ display:block; float:left; margin-top:4px; margin-left:8px; background:url(../images/mbrz2.png) no-repeat;background-size:86%; width:16px; height:14px;}
+.listjob ul li .info .cur{background:url(../images/mbrz1.png) no-repeat !important;background-size:86% !important; width:16px; height:14px;}
+
+.listjob ul li .til{ color:#ac6198; font-size:16px; padding-right:10px;}
+
+.listjob ul li .shenq{ float:right; width:90px; font-size:16px; text-align:right;}
+.listjob ul li .shenq .mgzjy{background:url(../images/gzjy.png) left no-repeat; padding-left:18px; font-size:14px; float:right;margin-top:20px; color:#999;  background-size:14px 13px;}
+.mgzjy2{background:url(../images/gzjy.png) left no-repeat; padding-left:18px; font-size:14px; color:#999; margin-left:14px; background-size:14px 13px;}
+.mbqxsc{ position:absolute; background:url(../images/mstar.png) no-repeat; width:20px; height:20px; top:14px; right:22px;}
+
+ /* 公司列表几个不同 */
+.mconinfo{width:72%; }
+.numzhiwei{ position:absolute; right:16px; bottom:12px; background:url(../images/gzjy.png) left no-repeat; padding-left:18px; font-size:14px; float:right;margin-top:20px; color:#999;background-size:14px 13px; }
+.mcomhy{ background:url(../images/icoxz.png) left no-repeat; padding-left:16px; height:22px; background-size:12px 12px; overflow:hidden}
+
+.mbottol a{ display:block; text-align:center; padding:12px 0px;}
+
+/* 翻页 */
+
+.mypage{ margin:20px 0px; text-align:center;}
+.mypage a{ background:#E8D9E4; padding:4px 12px; margin:0px 4px;}
+.mypage a:hover{ background:#ac6198; color:#fff;-webkit-transition:all 0.4s ease 0s;-moz-transition:all 0.4s ease 0s;-ms-transition:all 0.4s ease 0s;transition:all 0.4s ease 0s;}
+.mypage a.cur{ background:#ac6198; color:#fff;}
+
+
+.Pagination{margin:20px 0; overflow:hidden;line-height:30px;}
+.Pagination a,.Pagination span{height:30px; line-height:30px;margin:0 10px 10px 0; float:left;padding:0 10px; color:#666; background:#E8D9E4;-webkit-transition: .2s;-moz-transition: .2s;transition: .2s;}
+.Pagination a:hover,.Pagination span:hover{background:#ac6198;-webkit-transition: .2s;-moz-transition: .2s;transition: .2s; color:#fff;}
+.Pagination a.current,.Pagination span.current,.Pagination span.disabled{background:#ac6198;cursor:pointer;color:#fff;}
+.Pagination input{border:1px solid #cbcbcb;margin:0 5px; height:28px;font-size:16px;line-height:28px;}
+
+
+
+
+
+
+
+

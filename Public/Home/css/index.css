@@ -1,0 +1,83 @@
+
+
+/* scroll window */
+.num_box{position:relative;}
+.num{position:relative;}
+/*.num ul{width:100%;position:absolute;left:0;top:0;height:100%;}
+.num ul li{float:left;height:100%;position:relative;}*/
+#num_0{background:#f9f9f9;}
+#num_1{background:#fff;}
+
+
+.header1{ width:100%; height:60px; background:#eee}
+.header1 .nav{ float:left; margin-left:90px;}
+.header1 .nav a{ display:block; float:left; color:#666; padding:15px 2px; font-size:20px; margin-left:30px; }
+.header1 .nav a:hover{ color:#000;}
+.header1 .nav .current{border-bottom:3px solid #8C4A7C; color:#000}
+
+.header1 .login{ float:right; padding-top:12px;}
+.header1 .login .rili{ display:block; float:left; margin-right:10px;}
+.header1 .login .sty{ display:block; float:left; padding:4px 10px; margin-top:4px;}
+.header1 .login .sty:hover{ background:#fff}
+
+
+
+/* banner */
+.listfocus { width:960px; height:330px; margin-top:20px; position: relative; overflow:hidden;}
+.listfocus  li{ list-style:none;}
+.listfocus ul li img{width:960px; height:330px;}
+.listfocus .num { overflow:hidden; height: 25px; position: absolute; left:50%; width:400px; margin-left:-200px; bottom:6px; text-align:center; right:40px; zoom:1; z-index:3 }
+.listfocus .num a {display:inline-block; text-align:center; width: 12px; height: 12px; background: #fff; cursor:pointer; margin-right:6px; border-radius:18px;}
+.listfocus .num a {*display:inline}
+.listfocus .num a.on { background: #FADC62; }
+.listfocus .prev,
+.listfocus .next { display: none; width: 40px; height: 40px; background: url(../images/fsbtn.gif) no-repeat; position: absolute; top: 140px;}
+.listfocus .prev { left: 0; }
+.listfocus .next { right: 0; background-position: right }
+
+
+.centbox{ padding-top:20px;}
+.centbox .lbox{ float:left; width:306px;}
+.centbox .lbox dl{ padding:0px 20px 20px 20px; clear:both;}
+.centbox .lbox dl dt{ font-size:18px; padding-bottom:26px; width:260px;}
+.centbox .lbox dl dd{ float:left; margin:0px 20px 12px 0px;}
+.centbox .lbox dl dd a{ color:#ac6198; font-size:16px;}
+.centbox .rbox{ float:right; width:626px;}
+
+/*Search*/
+#search_box{border:2px solid #ac6198;height:44px; position:relative; border-radius:2px;}
+#search_input{width:420px; height:30px; line-height:30px;float:left;font-size:16px;padding:7px 8px 7px 10px;margin:0 0 0 124px;border:0;}
+#search_button{height:44px;width:50px; color:#444; font-size:18px;border:none;background:url(../images/ssbg.gif) center no-repeat;float:right; cursor:pointer;}
+#searchType{cursor:pointer;position:absolute;list-style:none;padding:0;margin:0;background:#fff;left:-2px;top:0; color:#fff; border-radius:2px 0px 0px 2px; overflow:hidden}
+#searchType li{font-size:16px; width:76px; height:30px;line-height:30px; font-size:18px; background:#ac6198;padding:7px 22px; border-top:1px dashed #BC7EAB;display:none;}
+#searchType li:hover{ background:#B775A5}
+#searchType li.type_selected {width:76px; height:30px; border:none; background:#ac6198; display:block;}
+.searchtype_arrow{ height:0;width:0;overflow: hidden;top:20px;left:92px;font-size: 0;line-height: 0; border-width:5px 5px 0; border-style:solid dashed; border-color:#fff transparent transparent;-webkit-transition:all 0.4s ease 0s;-moz-transition:all 0.4s ease 0s;-ms-transition:all 0.4s ease 0s;transition:all 0.4s ease 0s; position:absolute; }
+.searchtype_arrow.transform{-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-ms-transform:rotate(180deg);transform: rotate(180deg);-webkit-transition:all 0.4s ease 0s;-moz-transition:all 0.4s ease 0s;-ms-transition:all 0.4s ease 0s;transition:all 0.4s ease 0s;}
+
+/* 热门企业 */
+.hotcom{width:626px; overflow:hidden;}
+.hotcom ul{ width:760px;}
+.hotcom a{ display:block; float:left; border:2px solid #ddd; margin:26px 19px 0px 0px;}
+.hotcom a:hover{border:2px solid #D3B8CC;-webkit-transition:all 0.4s ease 0s;-moz-transition:all 0.4s ease 0s;-ms-transition:all 0.4s ease 0s;transition:all 0.4s ease 0s;}
+.hotcom a img{ width:106px; height:106px; display:block;}
+
+/* 职位列表 */
+.listjob{ margin-top:20px; margin-bottom:80px; width:960px; overflow:hidden;}
+.listjob .jxjob{ font-size:20px; padding-left:10px; padding-bottom:10px; border-bottom:1px solid #eee; margin-bottom:20px;}
+.listjob ul { width:1100px;}
+.listjob ul li{ width:450px; height:150px; margin-right:54px;  float:left; list-style:none;}
+.listjob ul li img{ width:60px; height:60px; float:left; margin:20px;}
+.listjob ul li .info{ float:left; padding-top:18px; line-height:24px; color:#666;}
+.listjob ul li .til{ color:#ac6198; font-size:16px; padding-right:10px;}
+.listjob ul li span{ display:block; padding-top:14px;}
+.listjob ul li .shenq{ float:right; margin-top:20px; padding:6px 14px; font-size:16px;}
+
+/*hotSearch*/
+.hotSearch{overflow:hidden; margin-top:20px;}
+.hotSearch dt,.hotSearch dd{float:left;}
+.hotSearch dt{width:70px;font-size:14px;}
+.hotSearch dd{margin-right:20px;}
+.hotSearch dd a.current{color:#fadc62;}
+.hotSearch dd a:hover{text-decoration:underline;}
+.breakline{height:10px; background: url(../images/breakline.gif) repeat-x;margin-bottom:15px; }

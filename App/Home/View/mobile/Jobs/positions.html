@@ -1,0 +1,106 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+	    
+		<include file="Public/left" />
+	    <!-- end .sidebar --> 
+	    
+	    
+	    <div class="content">
+	      <dl class="company_center_content">
+	        <dt>
+	        	<if condition="$list eq ''">
+	        		<h1> <em></em> {$stitle}职位 </h1>
+	        	<else />
+	        		<h1> <em></em> {$stitle}职位 <span>（共<i id="positionNumber" style="color:#fff;font-style:normal">{$total}</i>个）</span></h1>
+	        	</if>
+	          
+	        </dt>
+	        <dd>
+	        
+	        	<if condition="$list eq ''">
+	        	
+	        		<if condition="$all_count eq 0">
+	        			<div class="addnew"> 你还没有发布职位呢<br>
+			            	发布需要的人才信息，让伯乐和千里马尽快相遇……<br>
+			            	<a href="{$Think.WEB_URL}Jobs/createPost">+发布新职位</a>
+					   </div>
+	        		<else />
+	        		
+						<div class="no_resume_tip no_resume_home">你已经没有{$stitle}的职位了哦</div>
+						<div class="unHandle_links">
+	                      	<div>共发布<span>{$all_count}</span>个职位 </div>
+	                      	<a href="{$Think.WEB_URL}Jobs/positions/type/Publish">有效职位（{$Publish_count}）</a> 
+							<a href="{$Think.WEB_URL}Jobs/positions/type/Expired">已下线职位（{$Expired_count}）</a>
+							<a href="{$Think.WEB_URL}Jobs/positions/type/yet">待审核职位（{$count_2}）</a>
+							<a href="{$Think.WEB_URL}Jobs/positions/type/fail">未通过审核职位（{$count_3}）</a>
+						</div>
+				   
+				   </if>
+				   
+			    <else />
+			    
+			    	<form id="searchForm">
+			            <input type="hidden" name="type" value="Publish">
+			            <ul class="reset my_jobs">
+			            
+			              <volist name="list" id="v">
+				              <li data-id="{$v.jid}">
+				                <h3> <a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}" title="Android" target="_blank">{$v.zhiwei_mingcheng}</a> <span>[{$v.gongzuo_chengshi}]</span> </h3>
+				                <span class="receivedResumeNo"><a href="{$Think.WEB_URL}Users/interview/type/unhandle/jid/{$v.jid}">应聘简历</a></span>
+				                <div>{$v.gongzuo_xingzhi} / {$v.yuexin_min}k-{$v.yuexin_max}k / {$v.gongzuo_jingyan} / {$v.xueli}</div>
+				                <div class="c9">
+								      <if condition="$type eq 'Expired'">          
+								            	下线时间： {$v.offline_time|showDay=###}
+								      <else />
+								      	 	发布时间： {$v.job_addtime|showDay=###}
+								      </if>
+				                </div>
+				                <div class="links">
+				                	<if condition="$type eq 'Expired'">
+				                	
+				                		<a href="{$Think.WEB_URL}Jobs/createPost/jid/{$v.jid}" class="job_edit" target="_blank">再发布</a> 
+															                	
+									<elseif condition="$type eq 'Publish'" />
+									
+				                		<a href="javascript:void(0)" class="job_refresh">刷新<span>每个职位7天内只能刷新一次</span></a> 
+					                	<a href="{$Think.WEB_URL}Jobs/createPost/jid/{$v.jid}" class="job_edit" target="_blank">编辑</a> 
+					                	<a href="javascript:void(0)" class="job_offline">下线</a>
+				               			                	
+				                	</if>
+				                	
+				                	<a href="javascript:void(0)" class="job_del">删除</a> 
+				                </div>
+				              </li>
+			              </volist>
+			              
+			            </ul>
+			        </form>
+
+				</if>          
+			  
+	        </dd>
+	        
+	        
+	      </dl>
+	    </div>
+	    <!-- end .content --> 
+	    <script type="text/javascript" src="/Public/js/job_list.min.js"></script>
+	   
+	    
+
+	</div>	    
+  	<!-- end #container -->
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

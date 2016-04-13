@@ -1,0 +1,221 @@
+<include file="Public/header" /> 
+
+<script type="text/javascript">
+var ctx = "{$Think.WEB_URL}";
+var ctx_new = "{$Think.WEB_URL}";
+var rctx = "{$Think.WEB_URL}";
+var pctx = "{$Think.WEB_URL}";
+
+/* var frontLogin = "http://www.lagou.com/frontLogin.do";
+var frontLogout = "http://www.lagou.com/frontLogout.do";
+var frontRegister = "http://www.lagou.com/frontRegister.do"; */
+</script>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/ot-customize.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/testresume.css">
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/tabstyles.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/flat-ui.min.css" />
+<script src="/Public/Home/js/modernizr.custom.js"></script>
+<script src="/Public/Home/js/cbpFWTabs.js"></script>
+<script src="/Public/Home/js/classise.js"></script>
+<script src="/Public/Home/js/jquery-1.4.4.min.js"></script>
+<script src="/Public/Home/js/customize.js"></script>
+<div id="body"> 
+  
+  <div id="container">
+  
+    <div class="clearfixs mr_created container" id="tab1">
+        <div class="section-top">
+            <div class="section-top-container" id="section-top-container">
+                <div>
+                    <a class="lt-title" href="{:U('Resume/editresume')}">一键闪填</a>
+                    <a class="rt-title">｜&nbsp;&nbsp;&nbsp;开放性问题(OQ)</a>
+                    <div class="triangle-up-2"></div>
+                </div>
+               
+            </div>
+        </div>
+        <section>
+          <div class="tabs tabs-style-fillup">
+            <div class="resumebg-left" id="resumebg-left">
+              <nav>
+                <ul>
+                  <li><a href="#su1" class="icon-resume icon-otuser"><span>我的</span></a></li>
+                  <li id="section-edu" ><a href="#section-underline-2" class="icon-resume icon-otkeys"><span>题库</span></a></li>
+                </ul>
+              </nav>
+              </div>
+              <div class="content-wrap">
+                <div class="swich-container">
+
+                </div>
+                <section id="su1">
+                  <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+                    <div id="ot-add"><a class="icon-resume icon-otcricleadd">新建</a></div>
+                    <div class="cbp-vm-options">
+                      <a href="#" class="icon-resumebold icon-otgrid cbp-vm-selected" data-view="cbp-vm-view-grid"></a>
+                      <a href="#" class="icon-resumebold icon-otmenu" data-view="cbp-vm-view-list"></a>
+                    </div>
+					
+          				
+          					<form id="addCustomForm" method="post">
+					
+                    <div id="ot-addform" class="myr_info_list" style="display: none">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+                      <tr>
+                          <th class="pt10"><label>标题</label></th>
+                          <td>
+                            <div class="myr_input_div_l">
+                                <input type="text" id="ot_title" name="title" class="ed_name form-control" >
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th class="pt10"><label>内容</label></th>
+                          <td class="tb_textarea">
+                            <textarea class="ot_textarea form-control" id="ot_content" name="content"></textarea>   
+                          </td>
+                      </tr>
+                      </table>
+                       <div class="btn-group">
+                        <input type="submit" class="btn-resumeac mr_save" value="保存" />
+                        <a type="reset" class="btn-resumeac btn_cancel">取消</a>
+                        <input name="customid" value="0"  type="hidden" />
+                    </div>
+                    </div>
+					
+					         </form>
+
+                   <form id="upCustomForm" method="post" class="dn">
+          
+                    <div id="ot-upform" class="myr_info_list">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+                      <tr>
+                          <th class="pt10"><label>标题</label></th>
+                          <td>
+                            <div class="myr_input_div_l">
+                                <input type="text" id="ot_uptitle" name="title" class="ed_name form-control" >
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th class="pt10"><label>内容</label></th>
+                          <td class="tb_textarea">
+                            <textarea class="ot_textarea form-control" id="ot_upcontent" name="content"></textarea>   
+                            </td>
+                      </tr>
+                      </table>
+                       <div class="btn-group">
+                        <input type="submit" class="btn-resumeac mr_save" value="保存" />
+                        <a type="reset" class="btn-resumeac btn_cancel">取消</a>
+                        <input name="customid" value=""  type="hidden" />
+                    </div>
+                    </div>
+          
+                   </form>
+          
+					
+			
+                  <div class="cuslist_contrainer" >
+                  <ul id="customize_list" <empty name="arr">class="dn" <else /></empty>>
+				  
+				     <foreach name = "arr" item = "vo">
+                    <li class="z_i">
+                      <h3 class="cbp-vm-title">{$vo.title}
+                         <div id="ot-righticon" data-customid="{$vo.id}" data-title="{$vo.title}"  data-content="{$vo.content}">
+						              <a class="icon-resume icon-ottrush ot-delete"></a>
+                          <a class="icon-resume icon-otedit" ></a>
+                        </div>
+                      </h3>
+                     
+                      <div class="cbp-vm-details">
+                        <pre>{$vo.content}</pre>
+                      </div>
+                    
+                    </li>
+					 
+					<!--{$page}-->
+                      </foreach>
+                  </ul>
+                  </div>
+				
+                  <div id="ot-empty" <empty name="arr">style="display:block" <else />style="display:none"</empty>>
+                    <img src="/Public/Home/images/myresume/ot-none.png">
+                  </div>
+				 
+                </div> 
+                <div  class="ot_delete_pop dn">
+                      <p class="text">确认删除</p>
+                      <p class="text ot_delete_title"></p>
+                      <div style="margin-top: 10px;"> <span class="ot_del_cancel">取消</span><span class="ot_del_ok" data-id="">确认</span> </div>
+                </div>
+                  
+              </section>
+              <section id="section-underline-2">
+                <div class="cbp-vm-options">
+                </div>
+                <div id="ot-questions">
+                  <img src="/Public/Home/images/myresume/ot-questions.png">
+                </div>
+              </section>
+            
+            
+            </div><!-- /content -->
+          </div><!-- /tabs -->
+        </section>
+        <div class="clear"></div>
+      </div>     
+    </div>
+
+
+
+
+  </div>
+  <!-- end #container --> 
+  
+  
+</div>
+
+
+
+<script type="text/javascript">
+   (function() {
+      [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+        new CBPFWTabs( el );
+      });
+
+
+
+    })();
+
+    function gridlist(){
+      var container = document.getElementById( 'cbp-vm' ),
+        optionSwitch = Array.prototype.slice.call( container.querySelectorAll( 'div.cbp-vm-options > a' ) );
+
+      function init() {
+        optionSwitch.forEach( function( el, i ) {
+          el.addEventListener( 'click', function( ev ) {
+            ev.preventDefault();
+            _switch( this );
+          }, false );
+        } );
+      }
+
+      function _switch( opt ) {
+        // remove other view classes and any any selected option
+        optionSwitch.forEach(function(el) { 
+          classie.remove( container, el.getAttribute( 'data-view' ) );
+          classie.remove( el, 'cbp-vm-selected' );
+        });
+        // add the view class for this option
+        classie.add( container, opt.getAttribute( 'data-view' ) );
+        // this option stays selected
+        classie.add( opt, 'cbp-vm-selected' );
+      }
+      
+      init();
+    }
+
+</script>
+
+
+<include file="Public/footer" />

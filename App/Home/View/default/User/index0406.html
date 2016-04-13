@@ -1,0 +1,278 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/external.min.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+
+<div class="w960 mt30">
+
+<!-- 左侧开始 -->
+<include file="Public/user_left" />
+
+
+
+<!-- 右侧开始 -->    
+    <div class="rw680">
+    
+    
+    	<php>if($type=="pwd"){</php>
+    	
+    	
+    	<!-- 修改密码 -->
+		<div class="usinfo">
+         <h2>修改密码</h2>
+         <div class="clr"></div>
+             <div class="edpw">
+               <form class="registerform" action="#" method="post" name="forms" id="updatePswForm">   
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    
+                      <tr>
+                        <td width="90">登录邮箱</td>
+                        <td>{$info.email}</td>
+                      </tr>
+                      
+                      <tr>
+                        <td style="padding-top:14px;" valign="top" width="90">当前密码</td>
+                        <td> <input type="password" class="myipt" name="oldpassword" id="oldpassword" placeholder="请输入当前密码" errormsg="密码为6-20位" nullmsg="请输入当前密码" datatype="*6-20"/>
+                        <span id="updatePwd_beError" style="" class="error"></span>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td style="padding-top:14px;" valign="top" >新密码</td>
+                        <td>
+                          <div class="newpw">
+                             <div id="editipt"><input type="password" id="newpassword" class="myipt" name="newpassword"  placeholder="请输入新密码" errormsg="密码为6-20位" nullmsg="请输入新密码" datatype="*6-20"/></div>
+                             <div id="ueditpw"><a class="offpw" href="javascript:showps()"></a></div>
+                         </div>
+                           </td>
+                      </tr>
+                      
+                      <tr>
+                        <td colspan="2"><input type="submit" class="mybtn1 f16" value="保存"/></td>
+                      </tr>
+                      
+                    </table>
+                 </form>
+             </div>
+       </div>
+       
+       
+       <php>}elseif($type=="email"){</php>
+  
+       
+			<!-- 修改常用邮箱 -->
+	       <div class="usinfo">
+	         <h2>修改常用邮箱</h2>
+	         <div class="clr"></div>
+	             <div class="medemail">
+	              
+	                <div class="mbg">
+	                  <div class="meminfo">常用邮箱，如与公司邮箱不一致，则简历将同时发送到你的两个邮箱</div>
+	               <form class="registerform1"  method="post" id="upEmailForm">   
+	                    <table width="90%"  style="margin:0 auto;" border="0" cellspacing="0" cellpadding="0">
+	                    
+	                      <tr>
+	                        <td colspan="2">当前接收简历邮箱<span style="padding-left:20px;">{$info.email_jianli}</span></td>
+	                      </tr>
+	                      
+	                      <tr>
+	                        <td width="100" valign="top" style="padding-top:14px;">新接历邮箱</td>
+	                        <td> 
+	                        <input type="text" id="newemail" class="myipt" name="newemail" errormsg="请输入正确格式的接收简历邮箱！" nullmsg="请输入正确格式的接收简历邮箱！" datatype="e"/>
+	                        &nbsp;&nbsp;&nbsp;<input type="submit" id="newemail_sub" class="mybtn1 f16" value="保存"/>
+	                        <div class="h10"></div>
+	                       	<span for="newemail" generated="true" class="error" style="margin: 5px 0px 10px 0px;display:none;">请输入正确格式的接收简历邮箱！</span>
+	                        
+	                       </td>
+	                      </tr>
+	                    </table>
+	                 </form>
+	                </div>
+	             </div>
+	       </div>
+	       
+	       
+	      
+           
+		
+		<php>}else{</php>
+  
+       
+		<!-- 账号绑定 和 解除绑定-->
+		<div class="usinfo">
+         <h2>账号绑定</h2>
+         <div class="clr"></div>
+             <div class="bangding">
+               <span>
+                  	当前登录帐号：{$info.email} <br />
+                  	绑定后，你可以同时使用以下方式登录
+               </span>
+                 
+                 <!-- 未绑定 和 已绑定，2个状态，切换状态是给class添加dn-->
+                 
+                 <li class="sina <php>if($info['sina_open_id'])echo 'dn';</php>"><a href="/Public/otherLogin/type/sina" >绑定新浪账号</a></li>
+                 <li class="sina <php>if(!$info['sina_open_id'])echo 'dn';</php>"><i>已绑定新浪帐号</i><i>{$info.sina_name}</i><a href="/Public/cancelotherLogin/type/sina" >解除绑定</a></li>
+                 
+                 
+              <!--                 
+                  <li class="qq <php>if($info['qq_open_id'])echo 'dn';</php>"><a href="/Public/otherLogin/type/qq" >绑定QQ账号</a></li>
+                 <li class="qq <php>if(!$info['qq_open_id'])echo 'dn';</php>"> <i>已绑定QQ帐号</i><i>{$info.qq_name}</i> <a href="/Public/cancelotherLogin/type/sina" >解除绑定</a><
+               /li>-->
+                 
+                 
+                 <li class="weixin <php>if($info['wx_open_id'])echo 'dn';</php>"><a href="/Public/otherLogin/type/wx">绑定微信账号</a></li>
+                 <li class="weixin <php>if(!$info['wx_open_id'])echo 'dn';</php>"> <i>已绑定微信帐号</i><i>{$info.wx_name}</i> <a href="/Public/cancelotherLogin/type/sina" >解除绑定</a></li>
+                 
+                 
+             </div>
+       </div>       
+       
+      
+       
+       <php>}</php>
+       
+       
+		
+     
+       <!-- 修改常用邮箱,成功-->
+       <div class="usinfo dn">
+         <h2>修改常用邮箱</h2>
+         <div class="clr"></div>
+             <div class="medemailok">
+               <div class="mbg">
+                 <div class="meminfo">
+                  <h5>验证邮箱，完成修改</h5>
+                     我们已将验证邮件发送至邮箱：<span>quentin2@015guan.com</span><br />
+                     点击邮件内的链接即可完成接收简历邮箱修改，并可用修改后的邮箱接收简历
+                  </div>
+                  没有收到验证邮件，怎么办？<br />
+                  邮箱填写错误？  <a href="#">换个邮箱</a> <br />
+                  看看是否在邮箱的垃圾邮件、广告邮件目录里<br />
+                  稍等几分钟，若还未收到验证邮件，  <a href="#">重新发送验证邮件</a>
+               </div>
+             </div>
+       </div>
+         
+    </div> <!-- 右侧结束 -->
+
+
+        
+</div>
+
+
+
+<!-- 眼镜显示隐藏密码 -->
+<script language="JavaScript">
+	  function showps(){ 
+		  if (this.forms.newpassword.type="password") {
+			  document.getElementById("editipt").innerHTML="<input type=\"text\" name=\"newpassword\" class=\"myipt\" id=\"newpassword\" placeholder=\"请输入新密码\" errormsg=\"密码为6-20位\" nullmsg=\"请输入新密码\" datatype=\"*6-20\"  value="+this.forms.newpassword.value+">"; 
+			  document.getElementById("ueditpw").innerHTML="<a class=\"onpw\" href=\"javascript:hideps()\"></a>"
+		  }
+	  } 
+	  function hideps(){ 
+		  if (this.forms.newpassword.type="text") {
+			  document.getElementById("editipt").innerHTML="<input type=\"password\" name=\"newpassword\" class=\"myipt\" id=\"newpassword\" placeholder=\"请输入新密码\" errormsg=\"密码为6-20位\" nullmsg=\"请输入新密码\" datatype=\"*6-20\"  value="+this.forms.newpassword.value+">"; 
+			  document.getElementById("ueditpw").innerHTML="<a class=\"offpw\" href=\"javascript:showps()\"></a>"
+		  } 
+	  } 
+</script>
+
+<!-- <script type="text/javascript" src="/Public/Home/js/Validform_v5.3.2_min.js"></script>   
+<script type="text/javascript">
+$(function(){	
+	$(".registerform:eq(0)").Validform({
+		tiptype:3,
+		showAllError:true,
+
+	});
+   $(".registerform1:eq(0)").Validform({
+		tiptype:3,
+		showAllError:true,
+
+	});
+});
+</script> -->
+
+
+<!-- ==================== 弹窗  ==================== -->
+
+<!-- 修改密码成功 -->
+ <div style="display:none;">
+    <script type="text/javascript" src="/Public/Home/js/setting.js"></script> 
+	<div id="updatePassword" class="popup" style="overflow:hidden">
+		<h3>修改密码成功，请重新登录</h3>
+		<h4><span>5</span>秒后将自动退出</h4>
+		<a href="/User/logout" class="btn">直接退出</a>
+	</div>
+ </div>
+ 
+ 
+  <script>
+			(function(){
+				//校验
+				$('#upEmailForm').validate({
+				    onkeyup:false, 
+			        rules: {
+			        	newemail : {
+			    	   		required:true,
+			    	   		email:true,
+			    	   		//forwardEmailFormat:true,
+			    	   		//forwardSame:true,
+			    	   		maxlength:100
+			    		}
+			    	},
+			    	messages: {
+			    		newemail: {
+			    			required:"请输入正确格式的接收简历邮箱！",
+			    	   		email:"请输入正确的邮箱格式",
+			    	   		//forwardEmailFormat:"邮箱后缀不同，解绑对当前公司的招聘服务才可绑定其他公司邮箱接收简历",
+			    	   		//forwardSame:"请输入与当前接收简历邮箱不同的邮箱地址",
+			    	   		maxlength:"请输入正确格式的接收简历邮箱！"
+			    	   	}
+			    	},
+			    	errorPlacement:function(label, element){
+			    		label.appendTo($(element).parent());
+			    		$(".c_section span.error").css("margin","5px 0 10px 10px");
+			    	},
+			    	submitHandler:function(form){
+			    		var newemail = $("#newemail").val();
+			    		var obj = {receiveEmail:newemail};
+			    		$.ajax({
+				   			 type:'POST',
+				   			 url:ctx+"User/updateEmail",
+				   			 data:obj,
+				   			 dataType:'json'
+				   		 }).done(function(result){
+				   			if(result.state == "1"){
+				   				alert("修改成功");
+				   				top.location.href=ctx+"User/index.html?type=email";
+				   				//top.location.href=ctx+"/baseinfo/receiveEmail/verifyEmail.html?recordId=" + result.content.data.record;
+				   			}else{
+					   			 switch (result.state)
+					                {
+					                case 301:
+									  alert("邮箱为空");		                  
+					                  break;
+					                case 302:
+					                  alert("邮箱和之前的相同");
+					                  
+					                  break;
+					                case 303:
+					                	alert("邮箱后缀不一致");
+					                 
+					                  break;
+					                case 304:
+					                	alert("该邮箱被占用");
+					                 
+					                  break;
+					                default:
+					                	alert("邮箱格式不对");
+					                }
+				   			}
+				   		 });	    		
+			    	}
+				});		
+				
+			})();
+			</script>
+ 
+<include file="Public/footer" />

@@ -1,0 +1,155 @@
+<div class="baseinfo-top">
+<h3>证书</h3>
+</div>
+<div id="certificate" class="item_container_target">
+<div class="list_show">
+<php>if($certificate_list){</php>
+      <volist name="certificate_list" id="v">
+        <div class="clearfixs mb46 mr_jobe_list">
+        <table>
+          <tr><th width="200px">证书名称</th><th width="200px">获得时间</th><th width="200px">颁发机构</th><th width="200px">编辑</th></tr>
+          <tr><td>{$v.certificateName}</td><td>{$v.getDate}</td><td>{$v.issuing}</td><td><div class="mr_edit mr_c_r_t" data-certiid="{$v.id}" data-certiname="{$v.certificateName}" data-getdate="{$v.getDate}" data-issuing="{$v.issuing}" data-certides="{$v.certificateDes}"> <i></i><em>编辑</em> </div></td></tr>
+        </table>
+        </div>
+        </volist>
+      <php>}</php>
+    </div>
+<div class="mr_moudle_head clearfixs">
+
+  <div class="mr_moudle_content" id="edu_update">
+    <form class="eduExpForm" id="addCertificateForm">
+      <!-- <input type="hidden" id="eduId" name="eduId" value="" /> -->
+       <div class="myr_info_list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+            <tr>
+              <th class="pt10"><label>证书名称</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <input type="text" name="certificateName" class="form-control">
+                     <span class="tipright icon-resume icon-business_bulb" title="证书名称"></span> 
+                </div>
+              </td>
+            </tr>
+           <tr>
+              <th class="pt10"><label>获得时间</label></th>
+              <td> 
+                <div class="myr_input_div_l">
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button"  readonly class="text input date" placeholder="选择时间" name="getDate"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+                </div>
+                
+              
+              </td>
+            </tr>
+            <tr>
+              <th class="pt10"><label>证书描述</label></th>
+              <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="certificateDes" style="width:520px;height:148px;"></textarea>
+                   <span class="tiprighttext icon-resume icon-business_bulb" title="证书描述"></span> 
+                </td>
+            </tr>
+           
+             <tr>
+              <th class="pt10"><label>颁发机构</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <input type="text" name="issuing" class="form-control">
+                </div>
+              </td>
+            </tr>
+           
+          </table>
+        </div>
+
+		<!--添加-->
+		<div class="myr_info_list "   id="div1" style="display: none" onMouseout="hidden();">
+		
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+            <tr>
+              <th class="pt10"><label>证书名称</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <input type="text" name="certificateName" class="form-control">
+                     <span class="tipright icon-resume icon-business_bulb" title="证书名称"></span> 
+                </div>
+              </td>
+            </tr>
+           <tr>
+              <th class="pt10"><label>获得时间</label></th>
+              <td> 
+                <div class="myr_input_div_l">
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button"  readonly class="text input date" placeholder="选择时间" name="getDate"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+                </div>
+                
+              
+              </td>
+            </tr>
+            <tr>
+              <th class="pt10"><label>证书描述</label></th>
+              <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="certificateDes" style="width:520px;height:148px;"></textarea>
+                   <span class="tiprighttext icon-resume icon-business_bulb" title="证书描述"></span> 
+                </td>
+            </tr>
+           
+             <tr>
+              <th class="pt10"><label>颁发机构</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <input type="text" name="issuing" class="form-control">
+                </div>
+              </td>
+            </tr>
+           
+          </table>
+		
+        </div>
+
+     
+         <div class="mr_ope clearfixs btn-group">
+          <input type="submit" class="mr_save btn-resumeac" value="保存" />
+          <!-- <a href="javascript:;" class="mr_cancel btn-resumeac">取消</a> --> 
+           <input type=button value="保存并下一项"  class="btn-resumeac mr_next" onclick="submitCertiFrom(); tonext();">
+          </div>
+		   <div class="mr_head_l">
+		<input name="name" type="button" onClick="show();" value="添加">
+	</div>
+      </div>
+	  
+    </form>
+             
+</div>
+</div>
+  <script type="text/javascript">
+  function submitCertiFrom(){
+  $('#addCertificateForm').submit();
+  }
+  
+function show(){
+document.getElementById("div1").style.display="";
+//alert(document.getElementById("div").style.display)
+}
+function hidden(){
+document.getElementById("div1").style.display="none";
+//alert(document.getElementById("div").style.display)
+}
+  
+  
+</script>

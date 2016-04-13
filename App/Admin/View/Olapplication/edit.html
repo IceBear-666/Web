@@ -1,0 +1,197 @@
+<extend name="Public/base"/>
+
+
+<block name="body">
+    <div class="main-title">
+        <h2>网申时间管理</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        
+		
+       <div class="form-item">
+            <label class="item-label">公司Logo<span class="check-tips"> </span></label>
+
+            <div class="controls">
+				<input type="file" id="upload_picture_pic">
+				<input type="hidden" name="path" id="cover_id_path" value="{$info.path}"/>
+				<div class="upload-img-box">
+				<notempty name="info.path">
+					<div class="upload-pre-item"><img src="{$info['path']}"/></div>
+				</notempty>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+			//上传图片
+		    /* 初始化上传插件 */
+			$("#upload_picture_pic").uploadify({
+		        "height"          : 50,
+                "width"           : 50,
+		        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+		        "fileObjName"     : "download",
+		        "buttonText"      : "上传图片",
+		        "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+		        'removeTimeout'	  : 1,
+		        'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
+		        "onUploadSuccess" : uploadPictures,
+		        'onFallback' : function() {
+		            alert('未检测到兼容版本的Flash.');
+		        }
+		    });
+			function uploadPictures(file, data){
+		    	var data = $.parseJSON(data);
+		    	var src = '';
+		        if(data.status){
+		        	$("#cover_id_path").val(data.path);
+		        	src = data.url || '__ROOT__' + data.path
+		        	$("#cover_id_path").parent().find('.upload-img-box').html(
+		        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
+		        	);
+		        } else {
+		        	updateAlert(data.info);
+		        	setTimeout(function(){
+		                $('#top-alert').find('button').click();
+		                $(that).removeClass('disabled').prop('disabled',false);
+		            },1500);
+		        }
+		    }
+			</script>
+
+        </div>
+        <div class="form-item">
+            <label class="item-label">公司名称<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="company_name" value="{$info.company_name|default=''}">
+            </div>
+        </div>
+        
+         
+        <div class="form-item">
+            <label class="item-label">行业分类<span class="check-tips"> </span></label>
+            <div class="controls">
+                <select name="cid"  id="category" onchange="setcity(this)">
+                    <option >--选择行业分类--</option>
+
+                    <php>foreach($category as $key=>$value){
+                            $b[$key]=$value['id'];
+                            $c[$key]=$value['title'];
+                        }
+                        for ($i=0; $i < count($b); $i++) { 
+                    </php>
+                    <option value="{$b[$i]}" <php>if($b[$i]== $info[cid] )echo 'selected';</php> >{$c[$i]} </option>
+                    <php>}</php>
+                </select>
+               <!--  &nbsp;&nbsp;
+                <select name="city"   id="city">
+                  <option value="0">--选择二级行业分类--</option>
+                </select> -->
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">网站显示链接<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="link" value="{$info.link|default=''}">
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">网站跳转链接<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="url_link" value="{$info.url_link|default=''}">
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">开始日期/时间<span class="check-tips"></span></label>
+            <!-- <div class="controls"> -->
+                <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                    <input size="16" type="text" value="{$info.start_time}" readonly class="text input date" placeholder="选择时间" name="start_time" data-date-format="yyyy-mm-dd">
+                    <span class="add-on"><i class="icon-remove"></i></span>
+                    <span class="add-on"><i class="icon-calendar"></i></span>
+                </div>
+                <!-- <input type="text" class="text input date" placeholder="选择时间" name="date_time"  value="{$info.date_time}" > -->
+            <!-- </div> -->
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">截止日期/时间<span class="check-tips"></span></label>
+            <!-- <div class="controls"> -->
+                <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                    <input size="16" type="text" value="{$info.end_time}" readonly class="text input date" placeholder="选择时间" name="end_time"  data-date-format="yyyy-mm-dd">
+                    <span class="add-on"><i class="icon-remove"></i></span>
+                    <span class="add-on"><i class="icon-calendar"></i></span>
+                </div>
+                <!-- <input type="text" class="text input date" placeholder="选择时间" name="date_time"  value="{$info.date_time}" > -->
+            <!-- </div> -->
+        </div>
+		
+		
+		  <div class="form-item">
+            <label class="item-label"><span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" name="position" value="2" <if condition='$info["position"] == "2" || $info["position"] ==""'>checked='checked'</if>/>实习</label>
+                <label class="radio"><input type="radio" name="position" value="3" <if condition='$info["position"] == "3"'>checked='checked'</if>/>全职</label>
+            </div>
+        </div>
+		
+        <div class="form-item">
+            <label class="item-label">状态<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" name="status" value="1">启用</label>
+                <label class="radio"><input type="radio" name="status" value="0">禁用</label>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <input type="hidden" name="id" value="{$info.id|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+        <foreach name="oclist" item="oclist" >
+            <input value="{$oclist['id']}" name="ocid" type="hidden" />
+        </foreach>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        Think.setValue("status", {$info.status|default = 1});
+		 Think.setValue("position", {$info.position|default = '全职'});
+		 
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+    </script>
+
+
+    <link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+    <php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+    <link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+    <script type="text/javascript">
+    //Think.setValue("status", {$info.status|default = 0});
+    //导航高亮
+    //highlight_subnav('{:U('index')}');
+
+    $(function(){
+      
+        $(".form_oldatetime").datetimepicker({
+            format: "yyyy-mm-dd",
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+
+        });
+
+       showTab();
+    });
+    //alert($category);
+    </script>
+
+</block>

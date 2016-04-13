@@ -1,0 +1,42 @@
+<table id="wltao_ship_table" class="wltao_ship_table">
+	<tr>
+		<!-- <th class="td_ship_num" colspan="2">商品名/运单号</th> -->
+		<th class="td_ship_num">商品名/运单号</th>
+		<th class="td_ship_st">包裹状态</th>
+		<th class="td_up_time">添加时间</th>
+		<th class="td_remark">备注</th>
+		<th class="td_op">操作</th>
+	</tr>
+	{{#trackList}}
+	<tr shipNum={{shipNum}} transShipStatus={{transShipStatus}}>
+<!-- 		<td class="td_ship_icon">
+			{{#if(shipComp==fedex)}}<i class="icon_fedex"></i>{{/if(shipComp==fedex)}}
+			{{#if(shipComp==usps)}}<i class="icon_usps"></i>{{/if(shipComp==usps)}}
+			{{#if(shipComp==ups)}}<i class="icon_ups"></i>{{/if(shipComp==ups)}}
+			{{#if(shipComp==dhl)}}<i class="icon_dhl"></i>{{/if(shipComp==dhl)}}
+			{{#if(shipComp==dhlde)}}<i class="icon_dhl"></i>{{/if(shipComp==dhlde)}}
+			{{#if(shipComp==bpost)}}<i class="icon_bpost"></i>{{/if(shipComp==bpost)}}
+			{{#if(shipComp==apex)}}<i class="icon_apex"></i>{{/if(shipComp==apex)}}
+		</td> -->
+		<td class="td_ship_num">
+			<a href="{{chaUrl}}" target="_blank" class="shiplink" title="{{shipNum}}">{{proOrShip}}</a>
+		</td>
+		<td class="td_ship_st">
+			<!-- <a href="javascript:void(0);" class="shiplink" title="{{shipStatusText}}">{{shipStatusShort}}</a> -->
+			<!-- <a href="http://cha.walatao.com/express/get/{{shipComp}}/{{shipNum}}" target="_blank" class="shiplink" title="包裹详情点击查看">{{shipStatusShort}}</a> -->
+			<a href="{{chaUrl}}" target="_blank" class="shiplink" title="包裹详情点击查看">{{statusShort}}</a>
+		</td>
+		<!--更新时间-->
+		<td class="td_up_time">
+			{{addDateTime}}
+		</td>
+		<!--备注-->
+		<td class="td_remark">{{trackRemark}}</td>
+		<!--操作-->
+		<td class="td_del">
+			<div class="wltao_del wltao-stat" data-stat="icon.ship.delete"></div>
+			<div class="wltao_edit wltao-stat" data-stat="icon.ship.delete" data-edit="{{editStr}}"></div>
+		</td>
+	</tr>
+	{{/trackList}}
+</table>

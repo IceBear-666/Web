@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>页面提示</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv='Refresh' content='{$waitSecond};URL={$jumpUrl}'>
+<link rel="stylesheet" type="text/css" href ="../Public/css/style.css" />
+</head>
+<body>
+<div style="width:100%;height:80%;margin:auto;">
+<TABLE class="message"  cellpadding=0 cellspacing=0 style="margin:auto;width:400px;" >
+	<tr>
+		<td height='20'  class="topTd" ></td>
+	</tr>
+	<TR class="row" >
+		<th class="tCenter space">错误提示：</th>
+	</TR>
+	
+	<!-- <TR class="row">
+		<TD style="color:red">{$message}</TD>
+	</TR> -->
+	
+	<TR class="row" >
+		<td  class="tCenter red"><IMG SRC='{$Think.WEB_URL}Public/Images/update.gif' class='img' align='absmiddle' BORDER='0'> 
+		<if condition="$message neq ''">{$message}<else/>{$error|htmlspecialchars|nl2br}</if></td>
+	</TR>
+	
+	<present name="closeWin" >
+		<TR class="row">
+		<TD>系统将在 <span style="color:blue;font-weight:bold">{$waitSecond}</span> 秒后自动关闭，如果不想等待,直接点击 <A HREF="{$jumpUrl}">这里</A> 关闭</TD>
+	</TR>
+	<else/>
+	<TR class="row">
+		<TD>系统将在 <span style="color:blue;font-weight:bold">{$waitSecond}</span> 秒后自动跳转,<br />
+		如果不想等待,直接点击 <A HREF="{$jumpUrl}">这里</A> 跳转</TD>
+	</TR>
+	</present>
+	
+	<tr>
+		<td height='15' class="bottomTd"></td>
+	</tr>
+	
+	</TABLE>
+</div>
+</body>
+</html>

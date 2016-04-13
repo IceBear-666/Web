@@ -1,0 +1,413 @@
+<include file="Public/header" />
+
+<script type="text/javascript" src="/Public/Home/js/company/spsd.js"></script>
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/xuanjiang.css" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/list.css" />
+
+
+<script>
+ window.onload= function(){
+	 var mygethy = $("li[cid='<php>echo $_GET['hy'];</php>']").html();
+	 var mygetgs = $("li[xzid='<php>echo $_GET['gs'];</php>']").html();
+	 <php>if(!empty($_GET['hy'])){</php>
+	   $('#select_category').val(mygethy);
+	 <php>}</php>
+	  <php>if(!empty($_GET['gs'])){</php>
+	    $('#select_gs').val(mygetgs);
+	  <php>}</php>
+ };
+</script>
+
+
+<!-- banner开始 -->
+<div class="xjfsbg">
+   <div class="w960">
+    <div class="listfocusxj">
+        <ul class="tihspic">
+        
+            <li>
+              <div class="xjinfo">
+                 <a href="/Company">
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;从创立之初，百度便将“让人们最平等、便捷地获取信息，找到所求”作为自己的使命，成立以来，公司秉承“以用户为导向”的理念，不断坚持技术创新，致力于为用户提供“简
+                   单，可依赖”的互联网搜索产品及服务，其中包括：以网络搜索为主的功能性搜索。<br />
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以贴吧为主的社区搜索，针对各区域、行业所需的垂直搜索，M
+                   p3搜索，以及门户频道、IM等，全面覆盖了中文网络世界所有的搜索需求，根据第三方权威数据，百度在中国的搜索份额超过80%。
+                 </a>
+                 <em></em>
+               </div>
+              <img src="/Uploads/Banner/01.jpg" />
+            </li>
+            
+            
+            <li>
+              <div class="xjinfo">
+                 <a href="/Company">
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;从创立之初，百度便将“让人们最平等、便捷地获取信息，找到所求”作为自己的使命，成立以来，公司秉承“以用户为导向”的理念，不断坚持技术创新，致力于为用户提供“简
+                   单，可依赖”的互联网搜索产品及服务，其中包括：以网络搜索为主的功能性搜索。<br />
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以贴吧为主的社区搜索，针对各区域、行业所需的垂直搜索，M
+                   p3搜索，以及门户频道、IM等，全面覆盖了中文网络世界所有的搜索需求，根据第三方权威数据，百度在中国的搜索份额超过80%。
+                 </a>
+                 <em></em>
+               </div>
+              <img src="/Uploads/Banner/02.jpg" />
+            </li>
+            
+            
+            <li>
+              <div class="xjinfo">
+                 <a href="/Company">
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;从创立之初，百度便将“让人们最平等、便捷地获取信息，找到所求”作为自己的使命，成立以来，公司秉承“以用户为导向”的理念，不断坚持技术创新，致力于为用户提供“简
+                   单，可依赖”的互联网搜索产品及服务，其中包括：以网络搜索为主的功能性搜索。<br />
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以贴吧为主的社区搜索，针对各区域、行业所需的垂直搜索，M
+                   p3搜索，以及门户频道、IM等，全面覆盖了中文网络世界所有的搜索需求，根据第三方权威数据，百度在中国的搜索份额超过80%。
+                 </a>
+                 <em></em>
+               </div>
+              <img src="/Uploads/Banner/03.jpg" />
+            </li>
+            
+            
+        </ul>
+        <a class="prev" href="javascript:void(0)"></a>
+        <a class="next" href="javascript:void(0)"></a>
+        <div class="num">
+            <ul></ul>
+        </div>
+    </div>
+    <script>
+          $(".listfocusxj").hover(function(){$(this).find(".prev,.next").fadeTo("show",0.5)},function(){$(this).find(".prev,.next").hide()})
+          $(".tihspic li").hover(function(){$(this).find(".xjinfo").fadeTo("show",1)},function(){$(this).find(".xjinfo").hide()})
+          $(".prev,.next").hover(function(){$(this).fadeTo("show",0.8);},function(){$(this).fadeTo("show",0.5);})
+          $(".listfocusxj").slide({ titCell:".num ul" , mainCell:".tihspic" , effect:"left", autoPlay:true, delayTime:800 ,interTime:4000,autoPage:"<a></a>" });
+     </script>
+   
+    </div>
+</div>
+ <!-- banner结束 --> 
+ 
+ 
+ 
+
+ <!-- 搜索开始 -->
+<div class="xjsoubg">
+ <div class="w960">
+    <!-- 搜索开始-->
+    <form class="myform" name="searchForm" action="#" method="get" >
+     <div class="lf">
+          <input type="hidden" name="hy" value="<php>echo $_GET['hy'];</php>" id="positionType" />
+         <div id="select_bg"><input type="button" class="slhyly"  id="select_category"  value="行业领域"  /></div>
+         <div id="box_job" class="dn">
+            <dl>
+              <dt>互联网/游戏/软件</dt>
+              <dd>
+                <ul class="reset job_main">
+                  <li cid="1">互联网/移动互联网/电子商务</li>
+                  <li cid="2">计算机软件</li>
+                  <li cid="3">网络游戏</li>
+                  <li cid="4">IT服务/系统集成</li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>电子/通信/硬件</dt>
+              <dd>
+                <ul class="reset job_main">
+                  <li cid="5">电子技术/半导体/集成电路</li>
+                  <li cid="6">计算机硬件/网络设备</li>
+                  <li cid="7">通信设备/运营/增值</li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>房地产/建筑/物业</dt>
+              <dd>
+                <ul class="reset job_main">
+                  <li cid="8">房地产开发/建筑/建材/工程</li>
+                  <li cid="9">物业管理/地产经纪</li>
+                  <li cid="10">规划/设计/装潢</li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>金融</dt>
+              <dd>
+                <ul class="reset job_main">
+                  <li cid="11">银行</li>
+                  <li cid="12">基金/证券/期货/投资</li>
+                  <li cid="13">信托/担保/拍卖/典当</li>
+                  <li cid="14">保险</li>
+                  <li cid="15">会计/审计</li>
+                </ul>
+              </dd>
+            </dl>
+        </div>
+    </div>
+    
+    
+    <div class="lf" style="margin-left:14px;">
+        <input type="hidden" name="gs" id="gongsi_xingzhi" value="<php>echo $_GET['gs'];</php>" >
+       <div id="select_bg2"><input type="button" class="slhyly" id="select_gs" value="公司性质" ></div>
+        <div id="box_sca2" class="selectBox2 dn">
+          <ul class="reset">
+            <li xzid="1">国企</li>
+            <li xzid="2">外企</li>
+            <li xzid="3">民企</li>
+            <li xzid="4">公务员/事业单位</li>
+          </ul>
+        </div>
+    </div>
+    
+
+     <div class="xjsoubox">
+              <input type="text" class="stxt" name = "kd"  tabindex="1" value="<php>echo $_GET['kd'];</php>"  placeholder="搜索你感兴趣公司的宣讲会"  />
+              <input type="submit" class="sbtn" value="搜索" />
+         <div class="clr"></div>
+     </div>
+     
+     <a class="xjlsbtn" href="#">校园宣讲会行程表</a>
+     
+  </form>    
+     
+ </div>
+   <div class="clr"></div>
+ </div>
+<!-- 搜索结束 -->
+ 
+
+<div class="w960">
+    <div class="slidexjbox">
+    
+      <div class="hd">
+        <ul>
+          <li>热门</li>
+          <li>最新</li>
+        </ul>
+      </div>
+      
+      <div class="bd">
+        <ul>
+        
+           <li>
+              <em>腾讯</em><i></i>
+              <div class="dianji">208</div>
+              <div class="shijian">32:00</div>
+                 <a class="max" href="#"><img src="/Public/Home/images/qbs.jpg" /></a>
+              <div class="xjinfo">
+                 <a class="xjtil lf" href="#">腾讯2015宣讲会</a>
+                 <div class="xjdata rt">06/23</div>
+              </div>
+           </li>
+           
+           
+           <li>
+              <em>腾讯</em><i></i>
+              <div class="dianji">208</div>
+              <div class="shijian">32:00</div>
+                 <a class="max" href="#"><img src="/Public/Home/images/qbs.jpg" /></a>
+              <div class="xjinfo">
+                 <a class="xjtil lf" href="#">腾讯2015宣讲会</a>
+                 <div class="xjdata rt">06/23</div>
+              </div>
+           </li>
+           
+           <li>
+              <em>腾讯</em><i></i>
+              <div class="dianji">208</div>
+              <div class="shijian">32:00</div>
+                 <a class="max" href="#"><img src="/Public/Home/images/qbs.jpg" /></a>
+              <div class="xjinfo">
+                 <a class="xjtil lf" href="#">腾讯2015宣讲会</a>
+                 <div class="xjdata rt">06/23</div>
+              </div>
+           </li>
+           
+           <li>
+              <em>腾讯</em><i></i>
+              <div class="dianji">208</div>
+              <div class="shijian">32:00</div>
+                 <a class="max" href="#"><img src="/Public/Home/images/qbs.jpg" /></a>
+              <div class="xjinfo">
+                 <a class="xjtil lf" href="#">腾讯2015宣讲会</a>
+                 <div class="xjdata rt">06/23</div>
+              </div>
+           </li>
+           
+           <li>
+              <em>腾讯</em><i></i>
+              <div class="dianji">208</div>
+              <div class="shijian">32:00</div>
+                 <a class="max" href="#"><img src="/Public/Home/images/qbs.jpg" /></a>
+              <div class="xjinfo">
+                 <a class="xjtil lf" href="#">腾讯2015宣讲会</a>
+                 <div class="xjdata rt">06/23</div>
+              </div>
+           </li>
+           
+           <li>
+              <em>腾讯</em><i></i>
+              <div class="dianji">208</div>
+              <div class="shijian">32:00</div>
+                 <a class="max" href="#"><img src="/Public/Home/images/qbs.jpg" /></a>
+              <div class="xjinfo">
+                 <a class="xjtil lf" href="#">腾讯2015宣讲会</a>
+                 <div class="xjdata rt">06/23</div>
+              </div>
+           </li>
+           
+           
+           
+        </ul>
+        
+        
+        
+        <ul>
+        
+           <li>
+              <em>腾讯</em><i></i>
+              <div class="dianji">208</div>
+              <div class="shijian">32:00</div>
+                 <a class="max" href="#"><img src="/Public/Home/images/qbs.jpg" /></a>
+              <div class="xjinfo">
+                 <a class="xjtil lf" href="#">腾讯2015宣讲会</a>
+                 <div class="xjdata rt">06/23</div>
+              </div>
+           </li>
+           
+           
+           <li>
+              <em>腾讯</em><i></i>
+              <div class="dianji">208</div>
+              <div class="shijian">32:00</div>
+                 <a class="max" href="#"><img src="/Public/Home/images/qbs.jpg" /></a>
+              <div class="xjinfo">
+                 <a class="xjtil lf" href="#">腾讯2015宣讲会</a>
+                 <div class="xjdata rt">06/23</div>
+              </div>
+           </li>
+           
+           <li>
+              <em>腾讯</em><i></i>
+              <div class="dianji">208</div>
+              <div class="shijian">32:00</div>
+                 <a class="max" href="#"><img src="/Public/Home/images/qbs.jpg" /></a>
+              <div class="xjinfo">
+                 <a class="xjtil lf" href="#">腾讯2015宣讲会</a>
+                 <div class="xjdata rt">06/23</div>
+              </div>
+           </li>
+           
+           <li>
+              <em>腾讯</em><i></i>
+              <div class="dianji">208</div>
+              <div class="shijian">32:00</div>
+                 <a class="max" href="#"><img src="/Public/Home/images/qbs.jpg" /></a>
+              <div class="xjinfo">
+                 <a class="xjtil lf" href="#">腾讯2015宣讲会</a>
+                 <div class="xjdata rt">06/23</div>
+              </div>
+           </li>
+           
+           <li>
+              <em>腾讯</em><i></i>
+              <div class="dianji">208</div>
+              <div class="shijian">32:00</div>
+                 <a class="max" href="#"><img src="/Public/Home/images/qbs.jpg" /></a>
+              <div class="xjinfo">
+                 <a class="xjtil lf" href="#">腾讯2015宣讲会</a>
+                 <div class="xjdata rt">06/23</div>
+              </div>
+           </li>
+           
+           
+           
+        </ul>
+        
+      </div>
+      
+      <script type="text/javascript">jQuery(".slidexjbox").slide({effect:"fade",trigger:"click"});</script> 
+    </div>
+ 
+  <div class="h20"></div>   
+       <!-- 翻页-->
+       <div class="mypage">
+          <a href="#">上一页</a>
+          <a href="#">1</a>
+          <a class="cur" href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">下一页</a>
+       </div>
+  <div class="h20"></div>  
+ 
+      
+</div>
+
+
+<script>
+   $(document).ready(function(){
+   $(".max").hover(function() {
+	$(this).css({'z-index' : '10'});
+	$(this).find('img').addClass("hover").stop()
+	.animate({marginTop: '-10px', marginLeft: '-10px', width: '320px', height: '170px',}, 300);
+	} , function() {
+	$(this).css({'z-index' : '0'});
+	$(this).find('img').removeClass("hover").stop()
+	.animate({marginTop: '0', marginLeft: '0',width: '300px', height: '150px', }, 300);
+	});
+  });
+</script>
+
+
+<script>
+   /* 选行业*/
+	$(document).click(function(){
+		$('#box_job').hide();
+		$('#select_bg').removeClass('selectrFocus');
+		$('#box_sca2').hide();
+		$('#select_bg2').removeClass('selectrFocus');
+	});
+		
+   $('#select_bg').bind('click',function(e){
+		e.stopPropagation();
+		$(this).addClass('selectrFocus');
+		$('#box_job').show();
+		$('#box_sca2').hide();
+		$('#select_bg2').removeClass('selectrFocus');
+	});
+		
+	$('#box_job').on('click','.job_main li',function(e){
+		e.stopPropagation();
+		var category = $(this).text();
+		var mycid = $(this).attr('cid');
+		var mynum = $(this).parents('dl').index();
+		var category_id = $(this).attr("id");
+		$('#select_category').val(category);
+		$('#positionType').val(mycid);
+		$('#select_bg').removeClass('selectrFocus');
+		$('#box_job').hide();
+	});
+</script>
+
+<script>
+   /* 选性质*/
+	$('#select_bg2').bind('click',function(e){
+		$('#box_job').hide();
+		$('#select_bg').removeClass('selectrFocus');
+		e.stopPropagation();
+		$(this).addClass('selectrFocus');
+		$('#box_sca2').show();
+		$('#stageform .selectBoxShort').hide();
+	});
+	$('#box_sca2').on('click','ul li',function(e){
+		e.stopPropagation();
+		var sca = $(this).text();
+		var sca2 = $(this).attr('xzid');
+		$('#select_gs').val(sca);
+		$('#gongsi_xingzhi').val(sca2);
+		$('#select_bg2').removeClass('selectrFocus');
+		$('#box_sca2').hide();
+	});
+</script>
+ 
+<include file="Public/footer" />

@@ -1,0 +1,76 @@
+<table id="wltao_ship_table">
+	<tr>
+ 
+		<th class="td_num"></th>
+		<th class="td_ship_num" colspan="2">境外运单号</th>
+		<th class="td_ship_st">境外运单状态</th>
+		<th class="td_trans_company">转运公司</th>
+		<th class="td_trans_num">转运单号</th>
+		<th class="td_trans_st">转运状态</th>
+		<th class="td_remark">物品备注</th>
+		<th class="td_del">删除</th>
+	</tr>
+	{{#trackList}}
+	<tr shipNum={{shipNum}} shipStatus={{shipStatus}} transShipStatus={{transShipStatus}}>
+		<td class="td_num">{{orderNum}}<i class="{{new_statu_class}}"></i></td>
+		<td class="td_ship_icon">
+			{{#if(shipComp==fedex)}}<i class="icon_fedex"></i>{{/if(shipComp==fedex)}}
+			{{#if(shipComp==usps)}}<i class="icon_usps"></i>{{/if(shipComp==usps)}}
+			{{#if(shipComp==ups)}}<i class="icon_ups"></i>{{/if(shipComp==ups)}}
+			{{#if(shipComp==dhl)}}<i class="icon_dhl"></i>{{/if(shipComp==dhl)}}
+			{{#if(shipComp==dhlde)}}<i class="icon_dhl"></i>{{/if(shipComp==dhlde)}}
+			{{#if(shipComp==bpost)}}<i class="icon_bpost"></i>{{/if(shipComp==bpost)}}
+		</td>
+		<td class="td_ship_num">
+			{{#if(shipComp==fedex)}}
+				<a target="_blank" href="https://www.fedex.com/fedextrack/index.html?tracknumbers={{shipNum}}&cntry_code=cn" data-stat="icon.ship.tracking1" class="shiplink wltao-stat">{{shipNum}}</a>
+			{{/if(shipComp==fedex)}}
+			{{#if(shipComp==usps)}}
+				<a target="_blank" href="https://tools.usps.com/go/TrackConfirmAction?qtc_tLabels1={{shipNum}}" data-stat="icon.ship.tracking1" class="shiplink wltao-stat">{{shipNum}}</a>
+			{{/if(shipComp==usps)}}
+			{{#if(shipComp==ups)}}
+				<a target="_blank" href="http://wwwapps.ups.com/WebTracking/track?HTMLVersion=5.0&loc=zh_CN&Requester=UPSHome&WBPM_lid=homepage%2Fct1.html_pnl_trk&trackNums={{shipNum}}&track.x=%E8%BF%BD%E8%B8%AA" data-stat="icon.ship.tracking1" class="shiplink wltao-stat">{{shipNum}}</a>
+			{{/if(shipComp==ups)}}
+			{{#if(shipComp==dhl)}}
+				<a target="_blank" href="http://www.cn.dhl.com/content/cn/zh/express/tracking.shtml?brand=DHL&AWB={{shipNum}}%0D%0A" data-stat="icon.ship.tracking1" class="shiplink wltao-stat">{{shipNum}}</a>
+			{{/if(shipComp==dhl)}}
+			{{#if(shipComp==dhlde)}}
+				<a target="_blank" href="http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc={{shipNum}}&rfn=&extendedSearch=true" data-stat="icon.ship.tracking1" class="shiplink wltao-stat">{{shipNum}}</a>
+			{{/if(shipComp==dhlde)}}	
+			{{#if(shipComp==bpost)}}
+				<a target="_blank" href="http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc={{shipNum}}&rfn=&extendedSearch=true" data-stat="icon.ship.tracking1" class="shiplink wltao-stat">{{shipNum}}</a>
+			{{/if(shipComp==bpost)}}					
+		</td>
+		<td class="td_ship_st">
+			<a href="javascript:void(0);" class="shipLimit" title="{{shipStatusText}}">{{shipStatusShort}}</a>
+			{{#if(shipStatusRemind==forecast)}}
+			<span class="oper_reminder oper_reminder_forecast" transcomp="{{transComp}}"></span>
+			{{/if(shipStatusRemind==forecast)}}
+			{{#if(shipStatusRemind==delivery)}}
+			<span class="oper_reminder oper_reminder_delivery" transcomp="{{transComp}}"></span>
+			{{/if(shipStatusRemind==delivery)}}
+		</td>
+		<td class="td_trans_company">
+		 {{transCompanyName}}
+		</td>
+		<td class="td_trans_num">
+			<span><a target="_blank" href="http://cha.walatao.com/#cid={{transComp}}&eid={{transShipNum}}" class="shiplink wltao-stat" data-stat="icon.ship.tracking3">{{transShipNum}}</a></span>
+		</td>
+		<td class="td_trans_st">
+			{{#if(iswltaoke==true)}}
+				<a target="_blank" href="http://app.walatao.com/aop/detail.htm?pageKey=10115_001&appKey=10115"  data-stat="icon.ship.tracking2" class="shiplink wltao-stat">点击查看</a>
+			{{/if(iswltaoke==true)}}
+			{{#if(iswltaoke==false)}}
+				<a href="javascript:void(0);" class="shipLimit" title="{{transShipStatusText}}">{{transShipStatusShort}}</a>
+			{{/if(iswltaoke==false)}}
+			{{#if(shipStatusRemind==clear)}}
+				<span class="oper_reminder oper_reminder_clear"></span>
+			{{/if(shipStatusRemind==clear)}}
+		</td>
+		<td class="td_remark">{{trackRemark}}</td>
+		<td class="td_del">
+			<div class="wltao_del wltao-stat" data-stat="icon.ship.delete"></div>
+		</td>
+	</tr>
+	{{/trackList}}
+</table>

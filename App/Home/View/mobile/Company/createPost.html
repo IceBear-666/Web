@@ -1,0 +1,417 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/create.css" />
+<script type="text/javascript" src="/Public/Home/js/timeCountDown.js"></script>
+<script type="text/javascript" src="/Public/Home/js/additional-methods.js"></script>
+
+<!--后台给出的变量天数》0-->
+<script>
+    var cd = {
+            $: function(id){
+                return document.getElementById(id);    
+            },
+            futureDate: -6512378303,
+            obj: function(){
+                return {
+                    sec: cd.$("activity_minute"),
+                    mini: cd.$("activity_hour"),
+                    hour: cd.$("activity_day")
+                }
+            }
+        };
+        fnTimeCountDown(cd.futureDate, cd.obj());
+</script>
+
+  <div id="container">
+  
+  
+	<include file="Public/left" />    
+    
+    <div class="content">
+      <dl class="company_center_content">
+        <dt>
+          <h1><em></em><php>if($job) echo '编辑';else echo '发布新';</php>职位</h1>
+        </dt>
+        <dd> 
+          
+          <!-- 引导职位发布者填写个人信息 -->
+          
+          <form id="jobForm" method="post" action="/Comapny/preview.html">
+            <input type="hidden" name="id" value="{$job.jid}" />
+            <input type="hidden" name="preview" value="create" />
+            <input type="hidden" name="companyId" value="{$job.uid}" />
+            <input type="hidden" name="resubmitToken" value="80c4e1cc6baf4de0a73f1a567b8050cc" />
+            <table class="btm">
+              <tr>
+                <td width="20"><span class="redstar">*</span></td>
+                <td width="85">行业领域</td>
+                <td><input type="hidden" name="positionType" value="{$job.cid}" id="positionType" />
+                  <input type="button" class="selectr selectr_380" id="select_category" value="<php>if($job['hangye_lingyu']) echo $job['hangye_lingyu'];else echo '请选择行业领域'; </php>"  placeholder="请选择行业领域"  />
+                  <div id="box_job" class="dn">
+                    <volist name="webCat" id="v">
+                      <dl>
+                        <dt>{$v.title}</dt>
+                        <dd>
+                          <ul class="reset job_main">
+                            <volist name="v.sub" id="vv">
+                              <li id="{$vv.id}">{$vv.title}</li>
+                            </volist>
+                          </ul>
+                        </dd>
+                      </dl>
+                    </volist>
+                  </div></td>
+              </tr>
+              <tr>
+                <td width="20"><span class="redstar">*</span></td>
+                <td width="85">职位类别</td>
+                <td><input type="hidden" name="jobcate" value="{$job.zid}" id="jobcate" />
+                  <input type="hidden" name="nojobcate" value="" id="nojobcate" />
+                  <input type="button" class="selectr selectr_380" id="select_jobcate" value="<php>if($job['zhiwei_leibie']) echo $job['zhiwei_leibie'];else echo '请选择职位类别'; </php>"   placeholder="请选择职位类别"  />
+                  <div id="box_jobcate" class="boxUpDown boxUpDown_380 dn">
+                    <volist name="webCat" id="v">
+                      <ul>
+                        <volist name="v.zhiwei_leibie" id="vv">
+                          <li id="{$vv.id}">{$vv.title}</li>
+                        </volist>
+                      </ul>
+                    </volist>
+                  </div>
+                  <span id="nocate" for="jobcate" generated="true" class="dn">请先选择行业领域</span>
+                  <input type="hidden" id="pdnocate" value="no" /></td>
+              </tr>
+              <tr>
+                <td><span class="redstar">*</span></td>
+                <td>职位名称</td>
+                <td><input type="text" id="positionName" name="positionName" value="{$job.zhiwei_mingcheng}" placeholder="请输入职位名称，如：产品经理" />
+                  <input type="hidden" id="positionThreeType" name="positionThreeType" value="" /></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>所属部门</td>
+                <td><input type="text" id="department" name="department" value="{$job.suoshu_bumen}" placeholder="请输入所属部门" /></td>
+              </tr>
+            </table>
+            <table class="btm">
+              <tr>
+                <td width="20"><span class="redstar">*</span></td>
+                <td width="85">工作性质</td>
+                <td><ul class="profile_radio clearfix reset">
+                    <li <php>if($job['gongzuo_xingzhi']=="全职")echo 'class="current"';</php>>全职 <em></em>
+                      <input type="radio" <php>if($job['gongzuo_xingzhi']=="全职")echo 'class="valid" checked';</php> value="全职" name="jobNature"/>
+                    </li>
+                    <li <php>if($job['gongzuo_xingzhi']=="兼职")echo 'class="current" ';</php>>兼职 <em></em>
+                      <input type="radio" <php>if($job['gongzuo_xingzhi']=="兼职")echo 'class="valid"  checked';</php> value="兼职" name="jobNature"/>
+                    </li>
+                    <li <php>if($job['gongzuo_xingzhi']=="实习")echo 'class="current" ';</php>>实习 <em></em>
+                      <input type="radio" <php>if($job['gongzuo_xingzhi']=="实习")echo 'class="valid"  checked';</php> value="实习" name="jobNature"/>
+                    </li>
+                  </ul></td>
+              </tr>
+              <tr>
+                <td><span class="redstar">*</span></td>
+                <td>月薪范围</td>
+                <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
+                <td><div class="salary_range">
+                    <div>
+                      <input type="text" name="salaryMin" id="salaryMin"  value="{$job.yuexin_min}"  placeholder="最低月薪" />
+                      <span>k</span> </div>
+                    <div>
+                      <input type="text" name="salaryMax" id="salaryMax"  value="{$job.yuexin_max}"  placeholder="最高月薪" />
+                      <span>k</span> </div>
+                    <span>只能输入整数，如：9</span> </div></td>
+              </tr>
+              <tr>
+                <td><span class="redstar">*</span></td>
+                <td>工作城市</td>
+                <td><input type="text" id="workAddress" name="workAddress" value="{$job.gongzuo_chengshi}" placeholder="请输入工作城市，如：北京" /></td>
+              </tr>
+            </table>
+            <table class="btm">
+              <tr>
+                <td width="20"><span class="redstar">*</span></td>
+                <td width="85">工作经验</td>
+                <td><input type="hidden" name="workYear" value="{$job.gongzuo_jingyan}" id="experience" />
+                  <input type="button" class="selectr selectr_380" id="select_experience" value="<php>if($job['gongzuo_jingyan']) echo $job['gongzuo_jingyan'];else echo '请选择工作经验'; </php>"  placeholder="请选择工作经验"  />
+                  <div id="box_experience" class="boxUpDown boxUpDown_380 dn">
+                    <ul >
+                      <li>不限</li>
+                      <li>应届毕业生</li>
+                      <li>1年以下</li>
+                      <li>1-3年</li>
+                      <li>3-5年</li>
+                      <li>5-10年</li>
+                      <li>10年以上</li>
+                    </ul>
+                  </div></td>
+              </tr>
+              <tr>
+                <td><span class="redstar">*</span></td>
+                <td>学历要求</td>
+                <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
+                <td><input type="hidden" name="education" value="{$job.xueli}" id="education" />
+                  <input type="button" class="selectr selectr_380" id="select_education" value="<php>if($job['xueli']) echo $job['xueli'];else echo '请选择学历要求'; </php>" placeholder="请选择学历要求"  />
+                  <div id="box_education" class="boxUpDown boxUpDown_380 dn">
+                    <ul>
+                      <li>不限</li>
+                      <li>大专</li>
+                      <li>本科</li>
+                      <li>硕士</li>
+                      <li>博士</li>
+                    </ul>
+                  </div></td>
+              </tr>
+            </table>
+            <table class="btm">
+              <tr>
+                <td width="20"><span class="redstar">*</span></td>
+                <td width="85">职位诱惑</td>
+                <td><input type="text" id="positionAdvantage" class="input_520"  name="positionAdvantage" value="{$job.zhiwei_youhuo}" placeholder="20字描述该职位的吸引力，如：福利待遇、发展前景等" /></td>
+              </tr>
+              <tr>
+                <td><span class="redstar">*</span></td>
+                <td>职位描述</td>
+                <td><span class="c9 f14">(建议分条描述工作职责等。请勿输入公司邮箱、联系电话及其他外链，否则将自动删除)</span>
+                  <textarea class="tinymce" id="positionDetail" name="positionDetail"  placeholder="请输入岗位职责、任职要求等，建议尽量使用短句并分条列出">{$job.descrip}</textarea></td>
+              </tr>
+              <tr>
+                <td><span class="redstar">*</span></td>
+                <td>工作地址</td>
+                <td><input type="text" id="positionAddress" class="input_520" name="positionAddress" value="{$job.gongzuo_dizhi}" placeholder="请输入详细的工作地址" />
+                  <input type="hidden" id="lng" name="positionLng" value="{$job.lng}" />
+                  <input type="hidden" id="lat" name="positionLat" value="{$job.lat}" />
+                  <div class="work_place f14">我们将在职位详情页以地图方式精准呈现给用户 <a href="javascript:;" id="mapPreview">预览地图</a></div></td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <td width="20"><span class="redstar">*</span></td>
+                <td colspan="2"> 接收简历邮箱： <span id="receiveEmailVal">{$info.email_jianli}</span>
+                  <input type="hidden" name="email" id="receiveEmail" value="{$info.email_jianli}" /></td>
+              </tr>
+              <tr style="display:none;">
+                <td width="20"></td>
+                <td colspan="2"> 同时简历自动发送至邮箱（仅一个）
+                  <input type="text" name="forwardEmail" id="forwardEmail" value="{$info.email}" />
+                  <span class="error" id="beError" style="display:none"></span></td>
+              </tr>
+              <tr>
+                <td width="20"></td>
+                <td colspan="2"><input type="submit" class="btn_32" id="jobPreview" value="预览" />
+                  <input type="button" class="btn_32" id="formSubmit" value="发布" /></td>
+              </tr>
+            </table>
+          </form>
+        </dd>
+      </dl>
+    </div>
+    <!-- end .content --> 
+    
+    
+    
+    <!-- old --> 
+    <script type="text/javascript" src="/Public/Home/js/tinymce/jscripts/tiny_mce/jquery.tinymce.js"></script> 
+    <script>
+	$(function(){
+			
+		/***********************************************
+		** textarea 编辑器
+		*/
+		$('textarea.tinymce').tinymce({
+			// Location of TinyMCE script
+			script_url : ctx+'Public/Home/js/tinymce/jscripts/tiny_mce/tiny_mce.js',
+	
+			// General options
+			theme : "advanced",
+			language : "zh-cn",
+			plugins : "paste,autolink,lists,style,layer,save,advhr,advimage,advlink,iespell,inlinepopups,preview,media,searchreplace,contextmenu,fullscreen,noneditable,visualchars,nonbreaking",
+	
+			// Theme options
+			// theme_advanced_buttons1 : "bold,italic,underline,|,justifyleft,justifycenter,justifyright,|,bullist,numlist,|,outdent,indent,|,undo,redo,|,link,unlink,|,hr,fullscreen,image",
+			theme_advanced_buttons1 : "bold,italic,underline,|,justifyleft,justifycenter,justifyright,|,bullist,numlist,|,outdent,indent,|,undo,redo,|,hr,fullscreen",
+			theme_advanced_toolbar_location : "top",
+			theme_advanced_toolbar_align : "left",
+			theme_advanced_statusbar_location : "none",//定义输入框下方是否显示状态栏，默认不显示
+			theme_advanced_resizing : false,
+			paste_auto_cleanup_on_paste: true,
+			paste_as_text: true,
+			auto_cleanup_word:true,
+			paste_remove_styles: true,
+			contextmenu: "copy cut paste",
+	        force_br_newlines: true,
+	        force_p_newlines: false,
+	        apply_source_formatting: false,
+	        remove_linebreaks: false,
+	        convert_newlines_to_brs: true,
+	
+			// Example content CSS (should be your site CSS)
+			content_css : ctx+"/js/tinymce/examples/css/content.css",
+	
+			// Drop lists for link/image/media/template dialogs
+			template_external_list_url : "lists/template_list.js",
+			external_link_list_url : "lists/link_list.js",
+	
+			// Replace values for the template plugin
+			template_replace_values : {
+				username : "Some User",
+				staffid : "991234"
+			},
+			onchange_callback: function(editor){
+		        tinyMCE.triggerSave();
+		        var editorContent = tinyMCE.get(editor.id).getContent();
+			    if(editorContent.length > 20){
+					$("#" + editor.id).valid();
+			    }
+		    } 
+		});
+		
+		$('#workAddress').focus(function(){
+			$('#beError').hide();
+		});
+	});
+	</script> 
+    <!-- end old --> 
+    
+    <script type="text/javascript" src="/Public/Home/js/company/jobs.js"></script> 
+    
+    
+    <include file="Public/map" />
+    
+    
+    <div class="clear"></div>
+    <script>
+		// 关闭
+		//3s tips消失
+		//var global = {}
+		//global.email = "quentin@015guan.com";
+		//global.usertoken = $.cookie('user_trace_token');
+	</script>
+	
+</div>
+  <!-- end #container --> 
+
+
+<!--
+  <script type="text/javascript" src="http://www.lagou.com/js/core.min.js?v=1.5.6_2015052215"></script>
+  <script type="text/javascript" src="http://www.lagou.com/js/popup.js?v=1.5.6_2015052215"></script>
+  <script type="text/javascript" src="http://www.lagou.com/js/libs/tongji.js?v=1.5.6_2015052215"></script>
+  <script type="text/javascript" src="http://www.lagou.com/js/libs/analytics.js?v=1.5.6_2015052215"></script>
+--> 
+
+<!--copy账号系统的passport.html--> 
+<script type="text/javascript">
+	/* function noticeInit(){
+        var userId = "996061";
+        var urls = {
+            //调用B端简历管理nav的数字
+            queryTipsNums : "http://hr.lagou.com/recruitment/queryTipsNums.json",
+            //调用B端简历管理Notice Tip
+            queryNotice : "http://hr.lagou.com/notice/queryNotice.json",
+            //调用C端用户的notice数字
+            getPushNoticeOfC : "http://www.lagou.com/common/getPushNoticeOfC.json",
+            //清空C端用户的notice
+            clearPushNoticeOfC : "http://www.lagou.com/common/clearPushNoticeOfC.json",
+            //清空B端用户的notice
+            clearAll : "http://hr.lagou.com/notice/clearAll.json"
+        }
+        
+                //调用简历管理nav的数字
+        PASSPORT.util.rpc({
+            params:{},
+            url: urls.queryTipsNums,
+            succ:function(data){
+                if(data.state == "1"){
+                    var result = data.content.data;
+
+                    var unhandleNum = $("#navheader b.unhandleNum");
+                    if(result.unTreateNum && result.unTreateNum > 99 ){
+                        unhandleNum.text("99+");
+                    }else if(result.unTreateNum && result.unTreateNum > 0 ){
+                        unhandleNum.text(result.unTreateNum);
+                    }else{
+                        unhandleNum.text("");
+                    }
+                }
+            },
+            fail:function(data){
+                console.log('fail:' + data);
+            }
+        });
+
+        //调用简历管理Notice Tip
+        PASSPORT.util.rpc({
+            params:{userId:userId},
+            url:urls.queryNotice,
+            succ:function(data){
+                var result = data.content.data;
+                if(data.state == "1" && result.pushNoticeEntity.isShowPushNotice){
+                    var headerNoticeObj = $('#header .wrapper');
+                    var counters = result.pushNoticeEntity.counters;
+                    var noticeDotObj = $("#noticeDot");
+                    var noticePopTip = ['<div id="noticeTip">','<span class="bot"></span>','<span class="top"></span>','<a href="javascript:;" class="closeNT"></a>'];
+                    
+                    if(counters.WILL_BE_REJECTED && counters.WILL_BE_REJECTED != 0 ){
+                        noticePopTip.push('<a href="http://hr.lagou.com/interview/unHandlelist.html?autoRefuseDay=1&nt_flag=0&headTip=1" target="_blank" class="notice_tip" data-type="1"><strong>'+counters.WILL_BE_REJECTED+'</strong> 份简历1天内将被自动回绝！</a>');
+                    }
+                    if(counters.REJECTED && counters.REJECTED != 0 ){
+                        noticePopTip.push('<a href="http://hr.lagou.com/interview/haveRefuselist.html?nt_flag=2" target="_blank" class="notice_tip"  data-type="3">已帮你自动回绝了 <strong>'+counters.REJECTED+'</strong>份简历！</a>');
+                    }
+                    //弹出tip和红点
+                    noticeDotObj.removeClass("dn");
+                    headerNoticeObj.append(noticePopTip.join(''));
+                    
+                    //全部已读
+                    $('#noticeTip a.closeNT').click(function(){
+                        //与后台交互，消息标识为已读
+                        clearNoticeTip(urls.clearAll); 
+                    });
+                    
+                    //B端消息绑定单击事件
+                    var notice_tip = $("#noticeTip .notice_tip");
+                    notice_tip.bind("click",function(){
+                        var _this = $(this);
+                        //获取当前点击的消息类型
+                        var type = _this.data("type");
+                        //告诉后台哪种类型的消息一经被查看
+                        PASSPORT.util.rpc({
+                            params:{nt:type},
+                            url:'http://hr.lagou.com/notice/clear.json',
+                            succ:function(data){
+                                _this.remove();
+                                if($("#noticeTip .notice_tip")){
+                                    $('#noticeTip').remove();
+                                    noticeDotObj.addClass("dn");
+                                }
+                            },
+                            fail:function(data){
+                                 console.log('fail:' + data);
+                            }
+                        });
+                    });
+                }
+            },
+            fail:function(data){
+                console.log('fail:' + data);
+            }
+        });
+        
+        	}
+    
+    
+    // 全部清空notice
+    
+    function clearNoticeTip(url){
+        PASSPORT.util.rpc({
+            params:{},
+            url:url,
+            succ:function(data){
+                $('#noticeTip').remove();
+                $("#noticeDot").addClass("dn");
+            },
+            fail:function(data){
+                 console.log('fail:' + data);
+            }
+        });
+    }  */
+</script> 
+<include file="Public/footer" />

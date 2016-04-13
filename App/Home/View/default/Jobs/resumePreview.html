@@ -1,0 +1,176 @@
+<include file="Public/header" />
+
+<body>
+
+<script type="text/javascript" src="{$Think.WEB_URL}Public/Js/jquery.colorbox-min.js"></script>
+<script>
+$(function(){
+	 $("body").on("click","a.btn_s",function(){
+		$.colorbox.close();
+		parent.jQuery.colorbox.close();
+	});
+	$(".inline").colorbox({
+		inline:true
+	});
+});
+</script>
+
+<div id="previewWrapper">
+  <div class="preview_header">
+    <h1 title="{$myinfo.resume_name}">{$myinfo.resume_name}</h1>
+    <if condition="$return eq 0 and $isview eq 0">
+    <a href="#downloadOnlineResume" class="inline cboxElement" title="下载简历">下载该简历</a> 
+    </if>
+  </div>
+  <div class="preview_content">
+    <div id="basicInfo" class="profile_box">
+      <h2>基本信息</h2>
+      <div class="basicShow">
+      	<span>
+      	{$myinfo.realname} | 
+       	 <if condition="$myinfo.sex eq 2">女<else />男</if> |  {$myinfo.edu} | {$myinfo.workyear}工作经验    | {$myinfo.city}<br>
+		<!-- {$myinfo.position_name}  |  {$myinfo.salarys}<br> -->
+        {$myinfo.phone} | {$myinfo.email}<br>
+		{$myinfo.workstatus}
+		</span>
+        <div class="m_portrait">
+          <div></div>
+          <img src="{$Think.WEB_URL}{$myinfo.pic}" alt="{$myinfo.realname}" height="120" width="120"> </div>
+      </div>
+      <!--end .basicShow--> 
+    </div>
+    <!--end #basicInfo-->
+    
+    <div id="expectJob" class="profile_box">
+      <h2>期望工作</h2>
+      <div class="expectShow"> {$myinfo.city}，{$myinfo.position_type}，月薪{$myinfo.salarys} </div>
+      <!--end .expectShow--> 
+    </div>
+    <!--end #expectJob-->
+    
+    <div id="workExperience" class="profile_box">
+      <h2>工作经历</h2>
+      <div class="experienceShow">
+        <ul class="wlist clearfix">
+        
+		  <volist name="work_arr" id="v" >
+        
+          <li <?php if($key%2==0){?>class="clear" <?php }?> > <span class="c9">{$v.startYear}.{$v.startMonth}-{$v.endYear}.{$v.endMonth}</span>
+            <div> <img src="{$Think.WEB_URL}{$v.companyLogo}" alt="{$v.companyName}" height="56" width="56">
+              <h3>{$v.positionName} </h3>
+              <h4>{$v.companyName}</h4>
+            </div>
+          </li>
+          
+          </volist>
+          
+        </ul>
+      </div>
+      <!--end .experienceShow--> 
+    </div>
+    <!--end #workExperience-->
+    
+    <div id="projectExperience" class="profile_box">
+      <h2>项目经验</h2>
+      <div class="projectShow">
+        <ul class="plist clearfix">
+        
+          <volist name="pro_arr" id="v" >
+        
+          <li class="noborder">
+            <div class="projectList">
+              <div class="f16 mb10">{$v.projectName}，{$v.positionName} <span class="c9"> （{$v.startYear}.{$v.startMonth}-{$v.endYear}.{$v.endMonth}） </span> </div>
+              <div class="dl1">{$v.projectRemark}</div>
+            </div>
+          </li>
+          
+          </volist>
+          
+        </ul>
+      </div>
+      <!--end .projectShow--> 
+    </div>
+    <!--end #projectExperience-->
+    
+    <div id="educationalBackground" class="profile_box">
+      <h2>教育背景</h2>
+      <div class="educationalShow">
+        <ul class="elist clearfix">
+        
+        <volist name="edu_arr" id="v" >
+          <li <?php if($key%2==0){?>class="clear" <?php }?> >
+			<span class="c9">{$v.startYear}-{$v.endYear}</span>
+            <div>
+              <h3>{$v.schoolName}</h3>
+              <h4>{$v.professional}，{$v.education}</h4>
+            </div>
+          </li>
+        </volist>  
+          
+        </ul>
+      </div>
+      <!--end .educationalShow--> 
+    </div>
+    <!--end #educationalBackground-->
+    
+    <div id="selfDescription" class="profile_box">
+      <h2>自我描述</h2>
+      <div class="descriptionShow"> {$myinfo.remark} </div>
+      <!--end .descriptionShow--> 
+    </div>
+    <!--end #selfDescription-->
+    
+    <div id="worksShow" class="profile_box">
+      <h2>作品展示</h2>
+      <div class="workShow">
+        <ul class="slist clearfix">
+        
+        <volist name="show_arr" id="v" >
+          <li class="noborder">
+            <div class="workList c7">
+              <div class="f16">网址：<a href="{$v.url}" target="_blank">{$v.url}</a></div>
+              <p>{$v.workName} </p>
+            </div>
+          </li>
+        </volist>  
+          
+        </ul>
+      </div>
+      <!--end .workShow--> 
+    </div>
+    <!--end #worksShow--> 
+  </div>
+  <!--end .preview_content--> 
+</div>
+<!--end #previewWrapper--> 
+
+
+<if condition="$return eq 0">
+
+<!-------------------------------------弹窗lightbox ----------------------------------------->
+<div style="display:none;"> 
+  <!-- 下载简历 -->
+  <div id="downloadOnlineResume" class="popup">
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td class="c5 f18">请选择下载简历格式：</td>
+        </tr>
+        <tr>
+          <td>
+          <a href="{$Think.WEB_URL}Jobs/downloadResume/uid/{$fuid}/key/{$downkey}/type/1" class="btn_s">word格式</a> 
+          <a href="{$Think.WEB_URL}Jobs/downloadResume/uid/{$fuid}/key/{$downkey}/type/2" class="btn_s">html格式</a> 
+          <!-- <a href="{$Think.WEB_URL}Jobs/downloadResume/uid/{$fuid}/key/{$downkey}/type/3" class="btn_s">pdf格式</a> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--/#downloadOnlineResume--> 
+</div>
+<!------------------------------------- end -----------------------------------------> 
+
+</if>
+
+</body>
+</html>

@@ -1,0 +1,1019 @@
+[ 2016-04-13T13:47:50+08:00 ] 113.99.103.121 /User/getOtherinfo
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.000720s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008947s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000693s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000416s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000592s ]
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000593s ]
+SQL: SELECT um.id,um.username,um.password,um.email,um.mobile,m.*,c.* FROM ez_ucenter_member um left JOIN ez_member m on um.id = m.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( m.uid='100494' ) LIMIT 1   [ RunTime:0.000683s ]
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2427 行.
+SQL: SHOW COLUMNS FROM `ez_work_experience` [ RunTime:0.000861s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `ez_edu_experience` [ RunTime:0.000774s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000726s ]
+SQL: SHOW COLUMNS FROM `ez_pro_experience` [ RunTime:0.000700s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `ez_work_show` [ RunTime:0.000509s ]
+SQL: SELECT * FROM `ez_work_show` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000307s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2877 行.
+SQL: SHOW COLUMNS FROM `ez_work_skill` [ RunTime:0.001309s ]
+SQL: SELECT * FROM `ez_work_skill` WHERE ( `uid` = 100494 )  [ RunTime:0.000334s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2559 行.
+SQL: SHOW COLUMNS FROM `ez_custom_model` [ RunTime:0.000527s ]
+SQL: SELECT * FROM `ez_custom_model` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000373s ]
+NOTIC: [8] Undefined index: titleContents /var/www/html/App/Common/Common/function.php 第 2910 行.
+NOTIC: [8] Undefined index: isDel /var/www/html/App/Common/Common/function.php 第 2916 行.
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2434 行.
+SQL: SHOW COLUMNS FROM `ez_resume_offline` [ RunTime:0.000751s ]
+SQL: SELECT * FROM `ez_resume_offline` WHERE ( `uid` = 100494 ) ORDER BY oid desc  [ RunTime:0.000417s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2957 行.
+SQL: SHOW COLUMNS FROM `ez_school_practice` [ RunTime:0.000740s ]
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000326s ]
+NOTIC: [8] Undefined index: schoolName /var/www/html/App/Common/Common/function.php 第 2718 行.
+NOTIC: [8] Undefined index: professional /var/www/html/App/Common/Common/function.php 第 2719 行.
+SQL: SHOW COLUMNS FROM `ez_school_club` [ RunTime:0.000553s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000316s ]
+SQL: SHOW COLUMNS FROM `ez_school_awards` [ RunTime:0.000549s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000325s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2762 行.
+SQL: SHOW COLUMNS FROM `ez_certificate` [ RunTime:0.000502s ]
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000294s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2786 行.
+SQL: SHOW COLUMNS FROM `ez_training_experience` [ RunTime:0.000594s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000342s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2809 行.
+SQL: SHOW COLUMNS FROM `ez_other_info` [ RunTime:0.000650s ]
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000336s ]
+SQL: SHOW COLUMNS FROM `ez_gongkai` [ RunTime:0.000705s ]
+SQL: SELECT * FROM `ez_gongkai` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000356s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2856 行.
+SQL: SHOW COLUMNS FROM `ez_member` [ RunTime:0.002938s ]
+SQL: SELECT * FROM `ez_member` WHERE ( `uid` = 100494 )  [ RunTime:0.000707s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000733s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000740s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000661s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000383s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2431 行.
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000364s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000360s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000318s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2472 行.
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000314s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2484 行.
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000346s ]
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list /var/www/html/App/Home/Controller/UserController.class.php 第 2444 行.
+NOTIC: [8] Undefined variable: year /var/www/html/App/Home/Controller/UserController.class.php 第 2445 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2446 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2447 行.
+SQL: SHOW COLUMNS FROM `ez_subscribe` [ RunTime:0.001363s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ez_subscribe` WHERE ( `uid` = 100494 ) LIMIT 1   [ RunTime:0.000343s ]
+NOTIC: [8] Undefined variable: province_city /var/www/html/App/Home/Controller/UserController.class.php 第 2451 行.
+NOTIC: [8] Undefined variable: hotcity /var/www/html/App/Home/Controller/UserController.class.php 第 2452 行.
+NOTIC: [8] Undefined index: resubmitToken /var/www/html/App/Home/Controller/HomeController.class.php 第 515 行.
+NOTIC: [8] Undefined index: requestId /var/www/html/App/Home/Controller/HomeController.class.php 第 516 行.
+
+[ 2016-04-13T13:47:50+08:00 ] 113.99.103.121 /User/getOtherinfo
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.008776s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008971s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000961s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000484s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000865s ]
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000890s ]
+SQL: SELECT um.id,um.username,um.password,um.email,um.mobile,m.*,c.* FROM ez_ucenter_member um left JOIN ez_member m on um.id = m.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( m.uid='100494' ) LIMIT 1   [ RunTime:0.000795s ]
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2427 行.
+SQL: SHOW COLUMNS FROM `ez_work_experience` [ RunTime:0.001234s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000967s ]
+SQL: SHOW COLUMNS FROM `ez_edu_experience` [ RunTime:0.001113s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `ez_pro_experience` [ RunTime:0.000966s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `ez_work_show` [ RunTime:0.000701s ]
+SQL: SELECT * FROM `ez_work_show` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000328s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2877 行.
+SQL: SHOW COLUMNS FROM `ez_work_skill` [ RunTime:0.000603s ]
+SQL: SELECT * FROM `ez_work_skill` WHERE ( `uid` = 100494 )  [ RunTime:0.000379s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2559 行.
+SQL: SHOW COLUMNS FROM `ez_custom_model` [ RunTime:0.000575s ]
+SQL: SELECT * FROM `ez_custom_model` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000367s ]
+NOTIC: [8] Undefined index: titleContents /var/www/html/App/Common/Common/function.php 第 2910 行.
+NOTIC: [8] Undefined index: isDel /var/www/html/App/Common/Common/function.php 第 2916 行.
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2434 行.
+SQL: SHOW COLUMNS FROM `ez_resume_offline` [ RunTime:0.000687s ]
+SQL: SELECT * FROM `ez_resume_offline` WHERE ( `uid` = 100494 ) ORDER BY oid desc  [ RunTime:0.000390s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2957 行.
+SQL: SHOW COLUMNS FROM `ez_school_practice` [ RunTime:0.000908s ]
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000371s ]
+NOTIC: [8] Undefined index: schoolName /var/www/html/App/Common/Common/function.php 第 2718 行.
+NOTIC: [8] Undefined index: professional /var/www/html/App/Common/Common/function.php 第 2719 行.
+SQL: SHOW COLUMNS FROM `ez_school_club` [ RunTime:0.000581s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ez_school_awards` [ RunTime:0.000544s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000345s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2762 行.
+SQL: SHOW COLUMNS FROM `ez_certificate` [ RunTime:0.000565s ]
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000316s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2786 行.
+SQL: SHOW COLUMNS FROM `ez_training_experience` [ RunTime:0.000668s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000320s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2809 行.
+SQL: SHOW COLUMNS FROM `ez_other_info` [ RunTime:0.000526s ]
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000324s ]
+SQL: SHOW COLUMNS FROM `ez_gongkai` [ RunTime:0.000518s ]
+SQL: SELECT * FROM `ez_gongkai` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000306s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2856 行.
+SQL: SHOW COLUMNS FROM `ez_member` [ RunTime:0.002114s ]
+SQL: SELECT * FROM `ez_member` WHERE ( `uid` = 100494 )  [ RunTime:0.000708s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000752s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000838s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000445s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000328s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2431 行.
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000355s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000326s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000316s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2472 行.
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000327s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2484 行.
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000339s ]
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list /var/www/html/App/Home/Controller/UserController.class.php 第 2444 行.
+NOTIC: [8] Undefined variable: year /var/www/html/App/Home/Controller/UserController.class.php 第 2445 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2446 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2447 行.
+SQL: SHOW COLUMNS FROM `ez_subscribe` [ RunTime:0.000643s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ez_subscribe` WHERE ( `uid` = 100494 ) LIMIT 1   [ RunTime:0.000308s ]
+NOTIC: [8] Undefined variable: province_city /var/www/html/App/Home/Controller/UserController.class.php 第 2451 行.
+NOTIC: [8] Undefined variable: hotcity /var/www/html/App/Home/Controller/UserController.class.php 第 2452 行.
+NOTIC: [8] Undefined index: resubmitToken /var/www/html/App/Home/Controller/HomeController.class.php 第 515 行.
+NOTIC: [8] Undefined index: requestId /var/www/html/App/Home/Controller/HomeController.class.php 第 516 行.
+
+[ 2016-04-13T13:47:50+08:00 ] 113.99.103.121 /User/getOtherinfo
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.000744s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000964s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000682s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000434s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.004170s ]
+SQL: SELECT um.id,um.username,um.password,um.email,um.mobile,m.*,c.* FROM ez_ucenter_member um left JOIN ez_member m on um.id = m.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( m.uid='100494' ) LIMIT 1   [ RunTime:0.000691s ]
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2427 行.
+SQL: SHOW COLUMNS FROM `ez_work_experience` [ RunTime:0.000865s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `ez_edu_experience` [ RunTime:0.000770s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000766s ]
+SQL: SHOW COLUMNS FROM `ez_pro_experience` [ RunTime:0.000780s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000471s ]
+SQL: SHOW COLUMNS FROM `ez_work_show` [ RunTime:0.000530s ]
+SQL: SELECT * FROM `ez_work_show` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000327s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2877 行.
+SQL: SHOW COLUMNS FROM `ez_work_skill` [ RunTime:0.000570s ]
+SQL: SELECT * FROM `ez_work_skill` WHERE ( `uid` = 100494 )  [ RunTime:0.000346s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2559 行.
+SQL: SHOW COLUMNS FROM `ez_custom_model` [ RunTime:0.000590s ]
+SQL: SELECT * FROM `ez_custom_model` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000350s ]
+NOTIC: [8] Undefined index: titleContents /var/www/html/App/Common/Common/function.php 第 2910 行.
+NOTIC: [8] Undefined index: isDel /var/www/html/App/Common/Common/function.php 第 2916 行.
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2434 行.
+SQL: SHOW COLUMNS FROM `ez_resume_offline` [ RunTime:0.000572s ]
+SQL: SELECT * FROM `ez_resume_offline` WHERE ( `uid` = 100494 ) ORDER BY oid desc  [ RunTime:0.000394s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2957 行.
+SQL: SHOW COLUMNS FROM `ez_school_practice` [ RunTime:0.000617s ]
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000338s ]
+NOTIC: [8] Undefined index: schoolName /var/www/html/App/Common/Common/function.php 第 2718 行.
+NOTIC: [8] Undefined index: professional /var/www/html/App/Common/Common/function.php 第 2719 行.
+SQL: SHOW COLUMNS FROM `ez_school_club` [ RunTime:0.000582s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000341s ]
+SQL: SHOW COLUMNS FROM `ez_school_awards` [ RunTime:0.000521s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000322s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2762 行.
+SQL: SHOW COLUMNS FROM `ez_certificate` [ RunTime:0.000504s ]
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000339s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2786 行.
+SQL: SHOW COLUMNS FROM `ez_training_experience` [ RunTime:0.000553s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000367s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2809 行.
+SQL: SHOW COLUMNS FROM `ez_other_info` [ RunTime:0.000523s ]
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000322s ]
+SQL: SHOW COLUMNS FROM `ez_gongkai` [ RunTime:0.000530s ]
+SQL: SELECT * FROM `ez_gongkai` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000318s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2856 行.
+SQL: SHOW COLUMNS FROM `ez_member` [ RunTime:0.001845s ]
+SQL: SELECT * FROM `ez_member` WHERE ( `uid` = 100494 )  [ RunTime:0.000661s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000693s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000743s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000422s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000326s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2431 行.
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000359s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000323s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000307s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2472 行.
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000300s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2484 行.
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000326s ]
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list /var/www/html/App/Home/Controller/UserController.class.php 第 2444 行.
+NOTIC: [8] Undefined variable: year /var/www/html/App/Home/Controller/UserController.class.php 第 2445 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2446 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2447 行.
+SQL: SHOW COLUMNS FROM `ez_subscribe` [ RunTime:0.000612s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ez_subscribe` WHERE ( `uid` = 100494 ) LIMIT 1   [ RunTime:0.000300s ]
+NOTIC: [8] Undefined variable: province_city /var/www/html/App/Home/Controller/UserController.class.php 第 2451 行.
+NOTIC: [8] Undefined variable: hotcity /var/www/html/App/Home/Controller/UserController.class.php 第 2452 行.
+NOTIC: [8] Undefined index: resubmitToken /var/www/html/App/Home/Controller/HomeController.class.php 第 515 行.
+NOTIC: [8] Undefined index: requestId /var/www/html/App/Home/Controller/HomeController.class.php 第 516 行.
+
+[ 2016-04-13T13:47:50+08:00 ] 113.99.103.121 /User/getOtherinfo
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.006733s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006947s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000831s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000491s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000582s ]
+SQL: SELECT um.id,um.username,um.password,um.email,um.mobile,m.*,c.* FROM ez_ucenter_member um left JOIN ez_member m on um.id = m.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( m.uid='100494' ) LIMIT 1   [ RunTime:0.000616s ]
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2427 行.
+SQL: SHOW COLUMNS FROM `ez_work_experience` [ RunTime:0.000841s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000607s ]
+SQL: SHOW COLUMNS FROM `ez_edu_experience` [ RunTime:0.001014s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000885s ]
+SQL: SHOW COLUMNS FROM `ez_pro_experience` [ RunTime:0.000991s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `ez_work_show` [ RunTime:0.000649s ]
+SQL: SELECT * FROM `ez_work_show` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000372s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2877 行.
+SQL: SHOW COLUMNS FROM `ez_work_skill` [ RunTime:0.000666s ]
+SQL: SELECT * FROM `ez_work_skill` WHERE ( `uid` = 100494 )  [ RunTime:0.000378s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2559 行.
+SQL: SHOW COLUMNS FROM `ez_custom_model` [ RunTime:0.000626s ]
+SQL: SELECT * FROM `ez_custom_model` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000446s ]
+NOTIC: [8] Undefined index: titleContents /var/www/html/App/Common/Common/function.php 第 2910 行.
+NOTIC: [8] Undefined index: isDel /var/www/html/App/Common/Common/function.php 第 2916 行.
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2434 行.
+SQL: SHOW COLUMNS FROM `ez_resume_offline` [ RunTime:0.000787s ]
+SQL: SELECT * FROM `ez_resume_offline` WHERE ( `uid` = 100494 ) ORDER BY oid desc  [ RunTime:0.000431s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2957 行.
+SQL: SHOW COLUMNS FROM `ez_school_practice` [ RunTime:0.000711s ]
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000363s ]
+NOTIC: [8] Undefined index: schoolName /var/www/html/App/Common/Common/function.php 第 2718 行.
+NOTIC: [8] Undefined index: professional /var/www/html/App/Common/Common/function.php 第 2719 行.
+SQL: SHOW COLUMNS FROM `ez_school_club` [ RunTime:0.000892s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000351s ]
+SQL: SHOW COLUMNS FROM `ez_school_awards` [ RunTime:0.000643s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000335s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2762 行.
+SQL: SHOW COLUMNS FROM `ez_certificate` [ RunTime:0.000629s ]
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000341s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2786 行.
+SQL: SHOW COLUMNS FROM `ez_training_experience` [ RunTime:0.000860s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000351s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2809 行.
+SQL: SHOW COLUMNS FROM `ez_other_info` [ RunTime:0.000643s ]
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000350s ]
+SQL: SHOW COLUMNS FROM `ez_gongkai` [ RunTime:0.000686s ]
+SQL: SELECT * FROM `ez_gongkai` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000335s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2856 行.
+SQL: SHOW COLUMNS FROM `ez_member` [ RunTime:0.002938s ]
+SQL: SELECT * FROM `ez_member` WHERE ( `uid` = 100494 )  [ RunTime:0.000729s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000893s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000936s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000506s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000330s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2431 行.
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000352s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000355s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000333s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2472 行.
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000319s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2484 行.
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000406s ]
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list /var/www/html/App/Home/Controller/UserController.class.php 第 2444 行.
+NOTIC: [8] Undefined variable: year /var/www/html/App/Home/Controller/UserController.class.php 第 2445 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2446 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2447 行.
+SQL: SHOW COLUMNS FROM `ez_subscribe` [ RunTime:0.001045s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ez_subscribe` WHERE ( `uid` = 100494 ) LIMIT 1   [ RunTime:0.000375s ]
+NOTIC: [8] Undefined variable: province_city /var/www/html/App/Home/Controller/UserController.class.php 第 2451 行.
+NOTIC: [8] Undefined variable: hotcity /var/www/html/App/Home/Controller/UserController.class.php 第 2452 行.
+NOTIC: [8] Undefined index: resubmitToken /var/www/html/App/Home/Controller/HomeController.class.php 第 515 行.
+NOTIC: [8] Undefined index: requestId /var/www/html/App/Home/Controller/HomeController.class.php 第 516 行.
+
+[ 2016-04-13T13:47:50+08:00 ] 113.99.103.121 /User/getOtherinfo
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.000751s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000948s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000754s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000511s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000696s ]
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000602s ]
+SQL: SELECT um.id,um.username,um.password,um.email,um.mobile,m.*,c.* FROM ez_ucenter_member um left JOIN ez_member m on um.id = m.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( m.uid='100494' ) LIMIT 1   [ RunTime:0.000726s ]
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2427 行.
+SQL: SHOW COLUMNS FROM `ez_work_experience` [ RunTime:0.000829s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000713s ]
+SQL: SHOW COLUMNS FROM `ez_edu_experience` [ RunTime:0.000785s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000727s ]
+SQL: SHOW COLUMNS FROM `ez_pro_experience` [ RunTime:0.000696s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000459s ]
+SQL: SHOW COLUMNS FROM `ez_work_show` [ RunTime:0.000515s ]
+SQL: SELECT * FROM `ez_work_show` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000326s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2877 行.
+SQL: SHOW COLUMNS FROM `ez_work_skill` [ RunTime:0.000540s ]
+SQL: SELECT * FROM `ez_work_skill` WHERE ( `uid` = 100494 )  [ RunTime:0.000349s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2559 行.
+SQL: SHOW COLUMNS FROM `ez_custom_model` [ RunTime:0.000520s ]
+SQL: SELECT * FROM `ez_custom_model` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000343s ]
+NOTIC: [8] Undefined index: titleContents /var/www/html/App/Common/Common/function.php 第 2910 行.
+NOTIC: [8] Undefined index: isDel /var/www/html/App/Common/Common/function.php 第 2916 行.
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2434 行.
+SQL: SHOW COLUMNS FROM `ez_resume_offline` [ RunTime:0.000567s ]
+SQL: SELECT * FROM `ez_resume_offline` WHERE ( `uid` = 100494 ) ORDER BY oid desc  [ RunTime:0.000378s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2957 行.
+SQL: SHOW COLUMNS FROM `ez_school_practice` [ RunTime:0.000558s ]
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000332s ]
+NOTIC: [8] Undefined index: schoolName /var/www/html/App/Common/Common/function.php 第 2718 行.
+NOTIC: [8] Undefined index: professional /var/www/html/App/Common/Common/function.php 第 2719 行.
+SQL: SHOW COLUMNS FROM `ez_school_club` [ RunTime:0.000537s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `ez_school_awards` [ RunTime:0.000522s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000312s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2762 行.
+SQL: SHOW COLUMNS FROM `ez_certificate` [ RunTime:0.000505s ]
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000304s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2786 行.
+SQL: SHOW COLUMNS FROM `ez_training_experience` [ RunTime:0.000548s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000316s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2809 行.
+SQL: SHOW COLUMNS FROM `ez_other_info` [ RunTime:0.000502s ]
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000327s ]
+SQL: SHOW COLUMNS FROM `ez_gongkai` [ RunTime:0.000535s ]
+SQL: SELECT * FROM `ez_gongkai` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000336s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2856 行.
+SQL: SHOW COLUMNS FROM `ez_member` [ RunTime:0.002831s ]
+SQL: SELECT * FROM `ez_member` WHERE ( `uid` = 100494 )  [ RunTime:0.000716s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000710s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000724s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000421s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000304s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2431 行.
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000318s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000336s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000312s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2472 行.
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000299s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2484 行.
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000306s ]
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list /var/www/html/App/Home/Controller/UserController.class.php 第 2444 行.
+NOTIC: [8] Undefined variable: year /var/www/html/App/Home/Controller/UserController.class.php 第 2445 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2446 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2447 行.
+SQL: SHOW COLUMNS FROM `ez_subscribe` [ RunTime:0.000630s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ez_subscribe` WHERE ( `uid` = 100494 ) LIMIT 1   [ RunTime:0.000301s ]
+NOTIC: [8] Undefined variable: province_city /var/www/html/App/Home/Controller/UserController.class.php 第 2451 行.
+NOTIC: [8] Undefined variable: hotcity /var/www/html/App/Home/Controller/UserController.class.php 第 2452 行.
+NOTIC: [8] Undefined index: resubmitToken /var/www/html/App/Home/Controller/HomeController.class.php 第 515 行.
+NOTIC: [8] Undefined index: requestId /var/www/html/App/Home/Controller/HomeController.class.php 第 516 行.
+
+[ 2016-04-13T13:47:50+08:00 ] 113.99.103.121 /User/getOtherinfo
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.000801s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000328s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000682s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000414s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000596s ]
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000584s ]
+SQL: SELECT um.id,um.username,um.password,um.email,um.mobile,m.*,c.* FROM ez_ucenter_member um left JOIN ez_member m on um.id = m.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( m.uid='100494' ) LIMIT 1   [ RunTime:0.000704s ]
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2427 行.
+SQL: SHOW COLUMNS FROM `ez_work_experience` [ RunTime:0.000843s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `ez_edu_experience` [ RunTime:0.000789s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000727s ]
+SQL: SHOW COLUMNS FROM `ez_pro_experience` [ RunTime:0.000719s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `ez_work_show` [ RunTime:0.000605s ]
+SQL: SELECT * FROM `ez_work_show` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000360s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2877 行.
+SQL: SHOW COLUMNS FROM `ez_work_skill` [ RunTime:0.000693s ]
+SQL: SELECT * FROM `ez_work_skill` WHERE ( `uid` = 100494 )  [ RunTime:0.000388s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2559 行.
+SQL: SHOW COLUMNS FROM `ez_custom_model` [ RunTime:0.000643s ]
+SQL: SELECT * FROM `ez_custom_model` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000342s ]
+NOTIC: [8] Undefined index: titleContents /var/www/html/App/Common/Common/function.php 第 2910 行.
+NOTIC: [8] Undefined index: isDel /var/www/html/App/Common/Common/function.php 第 2916 行.
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2434 行.
+SQL: SHOW COLUMNS FROM `ez_resume_offline` [ RunTime:0.000562s ]
+SQL: SELECT * FROM `ez_resume_offline` WHERE ( `uid` = 100494 ) ORDER BY oid desc  [ RunTime:0.000371s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2957 行.
+SQL: SHOW COLUMNS FROM `ez_school_practice` [ RunTime:0.000559s ]
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000327s ]
+NOTIC: [8] Undefined index: schoolName /var/www/html/App/Common/Common/function.php 第 2718 行.
+NOTIC: [8] Undefined index: professional /var/www/html/App/Common/Common/function.php 第 2719 行.
+SQL: SHOW COLUMNS FROM `ez_school_club` [ RunTime:0.000530s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000336s ]
+SQL: SHOW COLUMNS FROM `ez_school_awards` [ RunTime:0.000524s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000319s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2762 行.
+SQL: SHOW COLUMNS FROM `ez_certificate` [ RunTime:0.000500s ]
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000323s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2786 行.
+SQL: SHOW COLUMNS FROM `ez_training_experience` [ RunTime:0.000550s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000317s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2809 行.
+SQL: SHOW COLUMNS FROM `ez_other_info` [ RunTime:0.000516s ]
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000309s ]
+SQL: SHOW COLUMNS FROM `ez_gongkai` [ RunTime:0.000543s ]
+SQL: SELECT * FROM `ez_gongkai` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000355s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2856 行.
+SQL: SHOW COLUMNS FROM `ez_member` [ RunTime:0.001889s ]
+SQL: SELECT * FROM `ez_member` WHERE ( `uid` = 100494 )  [ RunTime:0.000639s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000709s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000732s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000587s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000315s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2431 行.
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000319s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000322s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000292s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2472 行.
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000287s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2484 行.
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000293s ]
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list /var/www/html/App/Home/Controller/UserController.class.php 第 2444 行.
+NOTIC: [8] Undefined variable: year /var/www/html/App/Home/Controller/UserController.class.php 第 2445 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2446 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2447 行.
+SQL: SHOW COLUMNS FROM `ez_subscribe` [ RunTime:0.000601s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ez_subscribe` WHERE ( `uid` = 100494 ) LIMIT 1   [ RunTime:0.000290s ]
+NOTIC: [8] Undefined variable: province_city /var/www/html/App/Home/Controller/UserController.class.php 第 2451 行.
+NOTIC: [8] Undefined variable: hotcity /var/www/html/App/Home/Controller/UserController.class.php 第 2452 行.
+NOTIC: [8] Undefined index: resubmitToken /var/www/html/App/Home/Controller/HomeController.class.php 第 515 行.
+NOTIC: [8] Undefined index: requestId /var/www/html/App/Home/Controller/HomeController.class.php 第 516 行.
+
+[ 2016-04-13T13:47:50+08:00 ] 113.99.103.121 /User/getOtherinfo
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.006765s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006967s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000829s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000444s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000827s ]
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000752s ]
+SQL: SELECT um.id,um.username,um.password,um.email,um.mobile,m.*,c.* FROM ez_ucenter_member um left JOIN ez_member m on um.id = m.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( m.uid='100494' ) LIMIT 1   [ RunTime:0.000746s ]
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2427 行.
+SQL: SHOW COLUMNS FROM `ez_work_experience` [ RunTime:0.001062s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000914s ]
+SQL: SHOW COLUMNS FROM `ez_edu_experience` [ RunTime:0.001131s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000874s ]
+SQL: SHOW COLUMNS FROM `ez_pro_experience` [ RunTime:0.000834s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000518s ]
+SQL: SHOW COLUMNS FROM `ez_work_show` [ RunTime:0.000530s ]
+SQL: SELECT * FROM `ez_work_show` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000306s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2877 行.
+SQL: SHOW COLUMNS FROM `ez_work_skill` [ RunTime:0.000550s ]
+SQL: SELECT * FROM `ez_work_skill` WHERE ( `uid` = 100494 )  [ RunTime:0.000334s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2559 行.
+SQL: SHOW COLUMNS FROM `ez_custom_model` [ RunTime:0.000513s ]
+SQL: SELECT * FROM `ez_custom_model` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000339s ]
+NOTIC: [8] Undefined index: titleContents /var/www/html/App/Common/Common/function.php 第 2910 行.
+NOTIC: [8] Undefined index: isDel /var/www/html/App/Common/Common/function.php 第 2916 行.
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2434 行.
+SQL: SHOW COLUMNS FROM `ez_resume_offline` [ RunTime:0.000562s ]
+SQL: SELECT * FROM `ez_resume_offline` WHERE ( `uid` = 100494 ) ORDER BY oid desc  [ RunTime:0.000369s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2957 行.
+SQL: SHOW COLUMNS FROM `ez_school_practice` [ RunTime:0.000568s ]
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000321s ]
+NOTIC: [8] Undefined index: schoolName /var/www/html/App/Common/Common/function.php 第 2718 行.
+NOTIC: [8] Undefined index: professional /var/www/html/App/Common/Common/function.php 第 2719 行.
+SQL: SHOW COLUMNS FROM `ez_school_club` [ RunTime:0.000524s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `ez_school_awards` [ RunTime:0.003738s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.002723s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2762 行.
+SQL: SHOW COLUMNS FROM `ez_certificate` [ RunTime:0.000516s ]
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000293s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2786 行.
+SQL: SHOW COLUMNS FROM `ez_training_experience` [ RunTime:0.000571s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000317s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2809 行.
+SQL: SHOW COLUMNS FROM `ez_other_info` [ RunTime:0.000540s ]
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000305s ]
+SQL: SHOW COLUMNS FROM `ez_gongkai` [ RunTime:0.000525s ]
+SQL: SELECT * FROM `ez_gongkai` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000304s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2856 行.
+SQL: SHOW COLUMNS FROM `ez_member` [ RunTime:0.002143s ]
+SQL: SELECT * FROM `ez_member` WHERE ( `uid` = 100494 )  [ RunTime:0.000665s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000724s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000762s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000655s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000312s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2431 行.
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000340s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000307s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000305s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2472 行.
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000303s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2484 行.
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000301s ]
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list /var/www/html/App/Home/Controller/UserController.class.php 第 2444 行.
+NOTIC: [8] Undefined variable: year /var/www/html/App/Home/Controller/UserController.class.php 第 2445 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2446 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2447 行.
+SQL: SHOW COLUMNS FROM `ez_subscribe` [ RunTime:0.000628s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ez_subscribe` WHERE ( `uid` = 100494 ) LIMIT 1   [ RunTime:0.000323s ]
+NOTIC: [8] Undefined variable: province_city /var/www/html/App/Home/Controller/UserController.class.php 第 2451 行.
+NOTIC: [8] Undefined variable: hotcity /var/www/html/App/Home/Controller/UserController.class.php 第 2452 行.
+NOTIC: [8] Undefined index: resubmitToken /var/www/html/App/Home/Controller/HomeController.class.php 第 515 行.
+NOTIC: [8] Undefined index: requestId /var/www/html/App/Home/Controller/HomeController.class.php 第 516 行.
+
+[ 2016-04-13T13:47:50+08:00 ] 113.99.103.121 /User/getOtherinfo
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.000761s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000960s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000651s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000419s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000566s ]
+SQL: SELECT um.id,um.username,um.password,um.email,um.mobile,m.*,c.* FROM ez_ucenter_member um left JOIN ez_member m on um.id = m.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( m.uid='100494' ) LIMIT 1   [ RunTime:0.000660s ]
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2427 行.
+SQL: SHOW COLUMNS FROM `ez_work_experience` [ RunTime:0.000812s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000704s ]
+SQL: SHOW COLUMNS FROM `ez_edu_experience` [ RunTime:0.000754s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000705s ]
+SQL: SHOW COLUMNS FROM `ez_pro_experience` [ RunTime:0.000685s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000496s ]
+SQL: SHOW COLUMNS FROM `ez_work_show` [ RunTime:0.000497s ]
+SQL: SELECT * FROM `ez_work_show` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000301s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2877 行.
+SQL: SHOW COLUMNS FROM `ez_work_skill` [ RunTime:0.000517s ]
+SQL: SELECT * FROM `ez_work_skill` WHERE ( `uid` = 100494 )  [ RunTime:0.000334s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2559 行.
+SQL: SHOW COLUMNS FROM `ez_custom_model` [ RunTime:0.000525s ]
+SQL: SELECT * FROM `ez_custom_model` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000334s ]
+NOTIC: [8] Undefined index: titleContents /var/www/html/App/Common/Common/function.php 第 2910 行.
+NOTIC: [8] Undefined index: isDel /var/www/html/App/Common/Common/function.php 第 2916 行.
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2434 行.
+SQL: SHOW COLUMNS FROM `ez_resume_offline` [ RunTime:0.000553s ]
+SQL: SELECT * FROM `ez_resume_offline` WHERE ( `uid` = 100494 ) ORDER BY oid desc  [ RunTime:0.000746s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2957 行.
+SQL: SHOW COLUMNS FROM `ez_school_practice` [ RunTime:0.001079s ]
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000360s ]
+NOTIC: [8] Undefined index: schoolName /var/www/html/App/Common/Common/function.php 第 2718 行.
+NOTIC: [8] Undefined index: professional /var/www/html/App/Common/Common/function.php 第 2719 行.
+SQL: SHOW COLUMNS FROM `ez_school_club` [ RunTime:0.000664s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000352s ]
+SQL: SHOW COLUMNS FROM `ez_school_awards` [ RunTime:0.000524s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000305s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2762 行.
+SQL: SHOW COLUMNS FROM `ez_certificate` [ RunTime:0.000491s ]
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000295s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2786 行.
+SQL: SHOW COLUMNS FROM `ez_training_experience` [ RunTime:0.000547s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000315s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2809 行.
+SQL: SHOW COLUMNS FROM `ez_other_info` [ RunTime:0.000609s ]
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000311s ]
+SQL: SHOW COLUMNS FROM `ez_gongkai` [ RunTime:0.000521s ]
+SQL: SELECT * FROM `ez_gongkai` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000296s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2856 行.
+SQL: SHOW COLUMNS FROM `ez_member` [ RunTime:0.001838s ]
+SQL: SELECT * FROM `ez_member` WHERE ( `uid` = 100494 )  [ RunTime:0.000629s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000693s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000710s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000573s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000299s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2431 行.
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000310s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000298s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000283s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2472 行.
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000294s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2484 行.
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000295s ]
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list /var/www/html/App/Home/Controller/UserController.class.php 第 2444 行.
+NOTIC: [8] Undefined variable: year /var/www/html/App/Home/Controller/UserController.class.php 第 2445 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2446 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2447 行.
+SQL: SHOW COLUMNS FROM `ez_subscribe` [ RunTime:0.000602s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ez_subscribe` WHERE ( `uid` = 100494 ) LIMIT 1   [ RunTime:0.000277s ]
+NOTIC: [8] Undefined variable: province_city /var/www/html/App/Home/Controller/UserController.class.php 第 2451 行.
+NOTIC: [8] Undefined variable: hotcity /var/www/html/App/Home/Controller/UserController.class.php 第 2452 行.
+NOTIC: [8] Undefined index: resubmitToken /var/www/html/App/Home/Controller/HomeController.class.php 第 515 行.
+NOTIC: [8] Undefined index: requestId /var/www/html/App/Home/Controller/HomeController.class.php 第 516 行.
+
+[ 2016-04-13T13:47:50+08:00 ] 113.99.103.121 /User/getOtherinfo
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.000744s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000960s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.003852s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003900s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000613s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000448s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000791s ]
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000730s ]
+SQL: SELECT um.id,um.username,um.password,um.email,um.mobile,m.*,c.* FROM ez_ucenter_member um left JOIN ez_member m on um.id = m.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( m.uid='100494' ) LIMIT 1   [ RunTime:0.000634s ]
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2427 行.
+SQL: SHOW COLUMNS FROM `ez_work_experience` [ RunTime:0.000792s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000696s ]
+SQL: SHOW COLUMNS FROM `ez_edu_experience` [ RunTime:0.000753s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `ez_pro_experience` [ RunTime:0.000903s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000550s ]
+SQL: SHOW COLUMNS FROM `ez_work_show` [ RunTime:0.000663s ]
+SQL: SELECT * FROM `ez_work_show` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000366s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2877 行.
+SQL: SHOW COLUMNS FROM `ez_work_skill` [ RunTime:0.000658s ]
+SQL: SELECT * FROM `ez_work_skill` WHERE ( `uid` = 100494 )  [ RunTime:0.000376s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2559 行.
+SQL: SHOW COLUMNS FROM `ez_custom_model` [ RunTime:0.000643s ]
+SQL: SELECT * FROM `ez_custom_model` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000375s ]
+NOTIC: [8] Undefined index: titleContents /var/www/html/App/Common/Common/function.php 第 2910 行.
+NOTIC: [8] Undefined index: isDel /var/www/html/App/Common/Common/function.php 第 2916 行.
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2434 行.
+SQL: SHOW COLUMNS FROM `ez_resume_offline` [ RunTime:0.000699s ]
+SQL: SELECT * FROM `ez_resume_offline` WHERE ( `uid` = 100494 ) ORDER BY oid desc  [ RunTime:0.000413s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2957 行.
+SQL: SHOW COLUMNS FROM `ez_school_practice` [ RunTime:0.000736s ]
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000355s ]
+NOTIC: [8] Undefined index: schoolName /var/www/html/App/Common/Common/function.php 第 2718 行.
+NOTIC: [8] Undefined index: professional /var/www/html/App/Common/Common/function.php 第 2719 行.
+SQL: SHOW COLUMNS FROM `ez_school_club` [ RunTime:0.000644s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000368s ]
+SQL: SHOW COLUMNS FROM `ez_school_awards` [ RunTime:0.000632s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000329s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2762 行.
+SQL: SHOW COLUMNS FROM `ez_certificate` [ RunTime:0.000617s ]
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000311s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2786 行.
+SQL: SHOW COLUMNS FROM `ez_training_experience` [ RunTime:0.000733s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000351s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2809 行.
+SQL: SHOW COLUMNS FROM `ez_other_info` [ RunTime:0.000631s ]
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `ez_gongkai` [ RunTime:0.000685s ]
+SQL: SELECT * FROM `ez_gongkai` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000324s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2856 行.
+SQL: SHOW COLUMNS FROM `ez_member` [ RunTime:0.002600s ]
+SQL: SELECT * FROM `ez_member` WHERE ( `uid` = 100494 )  [ RunTime:0.000645s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000701s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000730s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000582s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000301s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2431 行.
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000341s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000295s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000284s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2472 行.
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000307s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2484 行.
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000289s ]
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list /var/www/html/App/Home/Controller/UserController.class.php 第 2444 行.
+NOTIC: [8] Undefined variable: year /var/www/html/App/Home/Controller/UserController.class.php 第 2445 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2446 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2447 行.
+SQL: SHOW COLUMNS FROM `ez_subscribe` [ RunTime:0.000625s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ez_subscribe` WHERE ( `uid` = 100494 ) LIMIT 1   [ RunTime:0.000282s ]
+NOTIC: [8] Undefined variable: province_city /var/www/html/App/Home/Controller/UserController.class.php 第 2451 行.
+NOTIC: [8] Undefined variable: hotcity /var/www/html/App/Home/Controller/UserController.class.php 第 2452 行.
+NOTIC: [8] Undefined index: resubmitToken /var/www/html/App/Home/Controller/HomeController.class.php 第 515 行.
+NOTIC: [8] Undefined index: requestId /var/www/html/App/Home/Controller/HomeController.class.php 第 516 行.
+
+[ 2016-04-13T13:47:50+08:00 ] 113.99.103.121 /User/getBaseinfo
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.001047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000880s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000426s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000594s ]
+SQL: SELECT um.id,um.username,um.password,um.email,um.mobile,m.*,c.* FROM ez_ucenter_member um left JOIN ez_member m on um.id = m.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( m.uid='100494' ) LIMIT 1   [ RunTime:0.000718s ]
+NOTIC: [8] Undefined index: resubmitToken /var/www/html/App/Home/Controller/HomeController.class.php 第 515 行.
+NOTIC: [8] Undefined index: requestId /var/www/html/App/Home/Controller/HomeController.class.php 第 516 行.
+
+[ 2016-04-13T13:47:51+08:00 ] 113.99.103.121 /User/getOtherinfo
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.000854s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000641s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000403s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `ez_ucenter_member` [ RunTime:0.000581s ]
+SQL: SELECT um.id,um.username,um.password,um.email,um.mobile,m.*,c.* FROM ez_ucenter_member um left JOIN ez_member m on um.id = m.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( m.uid='100494' ) LIMIT 1   [ RunTime:0.000614s ]
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2427 行.
+SQL: SHOW COLUMNS FROM `ez_work_experience` [ RunTime:0.001080s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000904s ]
+SQL: SHOW COLUMNS FROM `ez_edu_experience` [ RunTime:0.001056s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000879s ]
+SQL: SHOW COLUMNS FROM `ez_pro_experience` [ RunTime:0.000711s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000535s ]
+SQL: SHOW COLUMNS FROM `ez_work_show` [ RunTime:0.000545s ]
+SQL: SELECT * FROM `ez_work_show` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000309s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2877 行.
+SQL: SHOW COLUMNS FROM `ez_work_skill` [ RunTime:0.000884s ]
+SQL: SELECT * FROM `ez_work_skill` WHERE ( `uid` = 100494 )  [ RunTime:0.000391s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2559 行.
+SQL: SHOW COLUMNS FROM `ez_custom_model` [ RunTime:0.000686s ]
+SQL: SELECT * FROM `ez_custom_model` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000383s ]
+NOTIC: [8] Undefined index: titleContents /var/www/html/App/Common/Common/function.php 第 2910 行.
+NOTIC: [8] Undefined index: isDel /var/www/html/App/Common/Common/function.php 第 2916 行.
+NOTIC: [8] Undefined variable: info /var/www/html/App/Home/Controller/UserController.class.php 第 2434 行.
+SQL: SHOW COLUMNS FROM `ez_resume_offline` [ RunTime:0.000696s ]
+SQL: SELECT * FROM `ez_resume_offline` WHERE ( `uid` = 100494 ) ORDER BY oid desc  [ RunTime:0.000450s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2957 行.
+SQL: SHOW COLUMNS FROM `ez_school_practice` [ RunTime:0.000816s ]
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000355s ]
+NOTIC: [8] Undefined index: schoolName /var/www/html/App/Common/Common/function.php 第 2718 行.
+NOTIC: [8] Undefined index: professional /var/www/html/App/Common/Common/function.php 第 2719 行.
+SQL: SHOW COLUMNS FROM `ez_school_club` [ RunTime:0.000670s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000356s ]
+SQL: SHOW COLUMNS FROM `ez_school_awards` [ RunTime:0.000650s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000333s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2762 行.
+SQL: SHOW COLUMNS FROM `ez_certificate` [ RunTime:0.000651s ]
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000324s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2786 行.
+SQL: SHOW COLUMNS FROM `ez_training_experience` [ RunTime:0.000685s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000344s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2809 行.
+SQL: SHOW COLUMNS FROM `ez_other_info` [ RunTime:0.000688s ]
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `ez_gongkai` [ RunTime:0.000681s ]
+SQL: SELECT * FROM `ez_gongkai` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000352s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2856 行.
+SQL: SHOW COLUMNS FROM `ez_member` [ RunTime:0.004606s ]
+SQL: SELECT * FROM `ez_member` WHERE ( `uid` = 100494 )  [ RunTime:0.000682s ]
+SQL: SELECT * FROM `ez_work_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000730s ]
+SQL: SELECT * FROM `ez_edu_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000714s ]
+SQL: SELECT * FROM `ez_pro_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000620s ]
+SQL: SELECT * FROM `ez_training_experience` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000338s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2431 行.
+SQL: SELECT * FROM `ez_school_practice` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000365s ]
+SQL: SELECT * FROM `ez_school_club` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000358s ]
+SQL: SELECT * FROM `ez_school_awards` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000413s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2472 行.
+SQL: SELECT * FROM `ez_certificate` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000362s ]
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/html/App/Common/Common/function.php 第 2484 行.
+SQL: SELECT * FROM `ez_other_info` WHERE ( `uid` = 100494 ) ORDER BY id desc  [ RunTime:0.000343s ]
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list_arr /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [2] array_sum() expects parameter 1 to be array, null given /var/www/html/App/Common/Common/function.php 第 2297 行.
+NOTIC: [8] Undefined variable: list /var/www/html/App/Home/Controller/UserController.class.php 第 2444 行.
+NOTIC: [8] Undefined variable: year /var/www/html/App/Home/Controller/UserController.class.php 第 2445 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2446 行.
+NOTIC: [8] Undefined variable: rili /var/www/html/App/Home/Controller/UserController.class.php 第 2447 行.
+SQL: SHOW COLUMNS FROM `ez_subscribe` [ RunTime:0.000718s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ez_subscribe` WHERE ( `uid` = 100494 ) LIMIT 1   [ RunTime:0.000293s ]
+NOTIC: [8] Undefined variable: province_city /var/www/html/App/Home/Controller/UserController.class.php 第 2451 行.
+NOTIC: [8] Undefined variable: hotcity /var/www/html/App/Home/Controller/UserController.class.php 第 2452 行.
+NOTIC: [8] Undefined index: resubmitToken /var/www/html/App/Home/Controller/HomeController.class.php 第 515 行.
+NOTIC: [8] Undefined index: requestId /var/www/html/App/Home/Controller/HomeController.class.php 第 516 行.
+
+[ 2016-04-13T13:48:44+08:00 ] 66.249.66.121 /robots.txt
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.000714s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000947s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000319s ]
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+NOTIC: [8] Undefined index: uid /var/www/html/App/Home/Controller/HomeController.class.php 第 128 行.
+NOTIC: [8] Undefined index: status /var/www/html/App/Home/Controller/HomeController.class.php 第 129 行.
+NOTIC: [8] Undefined index: type /var/www/html/App/Home/Controller/HomeController.class.php 第 130 行.
+NOTIC: [8] Undefined index: nickname /var/www/html/App/Home/Controller/HomeController.class.php 第 131 行.
+NOTIC: [8] Undefined index: username /var/www/html/App/Home/Controller/HomeController.class.php 第 132 行.
+NOTIC: [8] Undefined index: email /var/www/html/App/Home/Controller/HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined index: user_status /var/www/html/App/Home/Controller/HomeController.class.php 第 134 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000746s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000425s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004192s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004245s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000079s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000145s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000278s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000337s ]
+
+[ 2016-04-13T13:48:45+08:00 ] 66.249.66.119 /
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.000778s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000993s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000395s ]
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+NOTIC: [8] Undefined index: uid /var/www/html/App/Home/Controller/HomeController.class.php 第 128 行.
+NOTIC: [8] Undefined index: status /var/www/html/App/Home/Controller/HomeController.class.php 第 129 行.
+NOTIC: [8] Undefined index: type /var/www/html/App/Home/Controller/HomeController.class.php 第 130 行.
+NOTIC: [8] Undefined index: nickname /var/www/html/App/Home/Controller/HomeController.class.php 第 131 行.
+NOTIC: [8] Undefined index: username /var/www/html/App/Home/Controller/HomeController.class.php 第 132 行.
+NOTIC: [8] Undefined index: email /var/www/html/App/Home/Controller/HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined index: user_status /var/www/html/App/Home/Controller/HomeController.class.php 第 134 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000699s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000412s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+SQL: SHOW COLUMNS FROM `ez_company` [ RunTime:0.000816s ]
+SQL: SHOW COLUMNS FROM `ez_company` [ RunTime:0.000772s ]
+SQL: SELECT m.*,c.* FROM ez_company c left JOIN ez_member m on c.cuid = m.uid  WHERE ( c.tj_index = 1 ) ORDER BY c.sn asc,c.hits desc LIMIT 0,5   [ RunTime:0.001008s ]
+SQL: SHOW COLUMNS FROM `ez_jobs` [ RunTime:0.000893s ]
+NOTIC: [8] Undefined index: only_get_count /var/www/html/App/Home/Controller/HomeController.class.php 第 1288 行.
+SQL: SHOW COLUMNS FROM `ez_jobs` [ RunTime:0.000846s ]
+SQL: SELECT j.*,j.addtime as job_addtime,m.*,um.email,c.* FROM ez_jobs j left JOIN ez_ucenter_member um on j.uid = um.id left JOIN ez_member m on m.uid = j.uid left JOIN ez_company c on m.com_id = c.com_id  WHERE ( j.status = 1 ) AND ( j.tj_index = 1 ) ORDER BY j.sn asc,j.hits desc LIMIT 0,20   [ RunTime:0.000645s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004451s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000078s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000122s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000331s ]
+
+[ 2016-04-13T13:49:12+08:00 ] 151.80.31.172 /Company/index/76-3-138-1-0?kd=
+INFO: [ app_init ] --START--
+INFO: Run Common\Behavior\InitHook [ RunTime:0.000743s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000968s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::checkUser() should be compatible with that of Home\Controller\HomeController::checkUser() /var/www/html/App/Home/Controller/UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: hash /var/www/html/App/Home/Controller/HomeController.class.php 第 51 行.
+NOTIC: [8] Undefined index:  /var/www/html/App/Common/Common/custom.php 第 24 行.
+NOTIC: [8] Undefined index: uid /var/www/html/App/Home/Controller/HomeController.class.php 第 128 行.
+NOTIC: [8] Undefined index: status /var/www/html/App/Home/Controller/HomeController.class.php 第 129 行.
+NOTIC: [8] Undefined index: type /var/www/html/App/Home/Controller/HomeController.class.php 第 130 行.
+NOTIC: [8] Undefined index: nickname /var/www/html/App/Home/Controller/HomeController.class.php 第 131 行.
+NOTIC: [8] Undefined index: username /var/www/html/App/Home/Controller/HomeController.class.php 第 132 行.
+NOTIC: [8] Undefined index: email /var/www/html/App/Home/Controller/HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined index: user_status /var/www/html/App/Home/Controller/HomeController.class.php 第 134 行.
+SQL: SHOW COLUMNS FROM `ez_config` [ RunTime:0.000931s ]
+SQL: SELECT `type`,`name`,`value` FROM `ez_config` WHERE ( `status` = 1 )  [ RunTime:0.000446s ]
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 185 行.
+NOTIC: [2] mkdir(): No such file or directory /var/www/html/App/Home/Controller/HomeController.class.php 第 187 行.
+NOTIC: [8] Use of undefined constant IS_WAP_FACT - assumed 'IS_WAP_FACT' /var/www/html/App/Home/Controller/HomeController.class.php 第 161 行.
+

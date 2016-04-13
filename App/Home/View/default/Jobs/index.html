@@ -1,0 +1,517 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/list.css"/>
+<script>
+/* 显示对应的职位 */
+ window.onload= function(){
+	 var myindex=$(this).index()+<php>echo $_GET['sj'];</php>;
+	 $('#box_jobcate dl dd').eq(myindex).show();}
+</script>
+
+<div class="w960 mt30">
+   <!-- 左侧菜单开始-->
+   <div class="lw240">
+     <div class="navbg">
+      <h2 class="shownav">行业领域<i class="btnsj <php>if(!empty($_GET['bigid'])){echo 'btnsjhv';}elseif(!empty($_GET['hy'])){echo 'btnsjhv';}</php>"></i></h2>
+            <php>geturl('领域','bigid');</php>
+            <php>geturl('行业','hy');</php>
+        <div class="mod-menu <php>if(!empty($_GET['hy'])){echo 'dn';}elseif(!empty($_GET['bigid'])){echo 'dn';}</php>">
+
+
+          <!-- 一级分类 -->
+          <ul id="bigid" class="menu-item">
+
+            <volist name="hangye_lingyu" id="v" key="kk">
+            <li><em class="dn">{$v.id}</em>{$v.title}</li>
+
+            <php>if($kk==5)echo '<div class="mr-item dn">';</php>
+
+            </volist>
+
+            <php>if($kk>4){</php>
+
+            </div>
+            <a class="shownavmr minmr" href="javascript:void(0)">更多<i class="btnsj1"></i></a>
+
+            <php>}</php>
+
+          </ul>
+
+
+          <!-- 二级分类 -->
+         <div id="box_job" class="menu-cont">
+
+         	<volist name="hangye_lingyu" id="v" key="kk">
+
+            <ul>
+               <volist name="v.sub" id="m" key="mm">
+               <li><em>{$m.id}</em>{$m.title}</li>
+               </volist>
+               <div class="clr"></div>
+             </ul>
+
+             </volist>
+
+
+          </div>
+
+        </div>
+
+         <h2 class="shownav1 fgxian <php>if(empty($_GET['sj'])) echo 'dn';</php>">职位<i class="btnsj <php>if(!empty($_GET['zw'])) echo 'btnsjhv';</php>"></i></h2>
+         <php>geturl('职位','zw');</php>
+        <div id="box_jobcate" class="<php>if(!empty($_GET['zw'])) echo 'dn';</php> <php>if(empty($_GET['sj'])) echo 'dn';</php>">
+          <dl>
+
+           <volist name="hangye_lingyu" id="vv" key="kk">
+
+            <dd>
+              <volist name="vv.zhiwei_leibie" id="m" key="mm">
+              <div zwid="{$m.id}">{$m.title}</div>
+              </volist>
+            </dd>
+
+            </volist>
+
+
+          </dl>
+        </div>
+
+
+        <div id="options" class="greybg">
+
+          <dl class="<php>showsty('yx','show1');</php>">
+            <dt>月薪范围<em  class="<php>showsty('yx','show2');</php>"></em></dt>
+            <php>geturl('月薪范围','yx');</php>
+            <dd class="<php>showsty('yx')</php>">
+              <div>2k以下</div>
+              <div>2k-5k</div>
+              <div>5k-10k</div>
+              <div>10k以上</div>
+            </dd>
+          </dl>
+
+          <dl class="<php>showsty('gs','show1');</php>">
+            <dt>公司性质<em  class="<php>showsty('gs','show2');</php>"></em></dt>
+            <php>geturl('公司性质','gs');</php>
+            <dd class="<php>showsty('gs')</php>">
+              <volist name="gongsi_xingzhi" key="k" id="v">
+              <div gsid='{$k}'>{$v}</div>
+              </volist>
+            </dd>
+          </dl>
+
+
+          <dl class="<php>showsty('xl','show1');</php>">
+            <dt>学历要求<em  class="<php>showsty('xl','show2');</php>"></em></dt>
+            <php>geturl('学历要求','xl');</php>
+            <dd class="<php>showsty('xl')</php>">
+              <div>不限</div>
+              <div>大专</div>
+              <div>本科</div>
+              <div>硕士</div>
+              <div>博士</div>
+            </dd>
+          </dl>
+
+         <dl class="<php>showsty('gx','show1');</php>">
+            <dt>工作性质<em  class="<php>showsty('gx','show2');</php>"></em></dt>
+            <php>geturl('工作性质','gx');</php>
+            <dd class="<php>showsty('gx')</php>">
+              <div>全职</div>
+              <div>兼职</div>
+              <div>实习</div>
+            </dd>
+          </dl>
+
+
+          <dl class="<php>showsty('gj','show1');</php>">
+            <dt>工作经历<em  class="<php>showsty('gj','show2');</php>"></em></dt>
+            <php>geturl('工作经历','gj');</php>
+            <dd class="<php>showsty('gj')</php>">
+				<div>在校学生</div>
+              <div>应届毕业生</div>
+              <div>1年以下</div>
+              <div>1-3年</div>
+              <div>3年以上</div>              
+            </dd>
+          </dl>
+
+        </div>
+
+
+
+     </div>
+     </div>
+
+  <!-- 右侧列表开始-->
+   <div class="rw680">
+
+     <!-- 搜索开始-->
+     <div class="soubox">
+
+
+     <form id="searchForm" name="searchForm" action="/Jobs/index.html" method="get">
+        <input type="text" class="stxt" id="search_input" name = "kd"  tabindex="1" value="{$kd}"  placeholder="搜索你感兴趣的职位"  />
+        <input type="hidden" name="spc" id="spcInput" value="1"/>
+        <input type="hidden" name="bigid" id="bigInput" value="<php>echo $_GET['bigid']</php>"/>
+        <input type="hidden" name="pl" id="plInput" value="<php>echo $_GET['pl']</php>"/>
+        <input type="hidden" name="hy" id="hyInput" value="<php>echo $_GET['hy']</php>"/>
+        <input type="hidden" name="zw" id="zwInput" value="<php>echo $_GET['zw']</php>"/>
+        <input type="hidden" name="gj" id="gjInput" value="<php>echo $_GET['gj']</php>"/>
+        <input type="hidden" name="xl" id="xlInput" value="<php>echo $_GET['xl']</php>"/>
+        <input type="hidden" name="yx" id="yxInput" value="<php>echo $_GET['yx']</php>"/>
+        <input type="hidden" name="gs" id="gsInput" value="<php>echo $_GET['gs']</php>" />
+        <input type="hidden" name="gx" id="gxInput" value="<php>echo $_GET['gx']</php>" />
+        <input type="hidden" name="px" id="pxInput" value="<php>echo $_GET['px']</php>" />
+        <input type="hidden" name="sj" id="sjInput" value="<php>echo $_GET['sj']</php>"/>
+        <input type="hidden" name="labelWords" id="labelWords" value="label" />
+        <input type="hidden" name="lc" id="lc" value="" />
+        <!-- <input type="hidden" name="workAddress" id="workAddress" value=""/> -->
+        <input type="hidden" name="city" id="cityInput" value="<php>echo $_GET['city']</php>"/>
+        <!-- <input type="hidden" name="requestId" id="requestId" value=""/> -->
+        <input type="submit" class="sbtn" id="search_button" value="搜索" />
+    </form>
+         <div class="clr"></div>
+     </div>
+
+     <div id="mycity" class="shaixuan">
+       <span>工作地点：</span>
+       
+       <a href="#" class="<php>showsx('city','不限');if(!$city)echo ' cur';</php>">不限</a><em>|</em>
+
+       <php>$cnum = count($city_list);$find=0;$ci=0;foreach($city_list as $k=>$v){ $ci++; if($v['name']==$city)$find=1;</php>
+       		<a href="#" class="<php>showsx('city',$v['name'])</php>" >{$v.name}</a><php>if($cnum!=$ci) echo'<em>|</em>';</php>
+       <php>}</php>
+       
+       <php>if(!$find && $city){</php>
+       <em>|</em><a href="#" class="<php>showsx('city',$city)</php>" >{$city}</a>
+       <php>}</php>
+       
+       <em>|</em><div id="cityqt" class="cityqt">更多<i class="btnsj btnsjhv"></i></div>
+       
+       <div class="clr"></div>
+       
+<!--第三期 其他城市-->  
+     
+       <div id="morecity" class="morecity dn">
+       
+	       <php>$cnum = count($city_list_other);$ci=0;foreach($city_list_other as $k=>$v){ $ci++; if(!$find && $city==$v['name']){continue;}</php>
+	       		<a href="#" class="<php>showsx('city',$v['name'])</php>" >{$v.name}</a><php>if($cnum!=$ci) echo'<em>|</em>';</php>
+	       <php>}</php>
+
+       </div>
+       
+     </div>
+
+     <div id="paixu" class="shaixuan">
+       <span>排序：</span>
+       <a href="#" class="<php>showsx('px','1');if($px<2 )echo ' cur';</php>"><i>1</i>人气</a><em>|</em>
+       <a href="#" class="<php>showsx('px','2')</php>"><i>2</i>最新更新</a>
+       <div class="clr"></div>
+     </div>
+
+
+<script>
+ $("#cityqt").click(function(){
+	    $("#cityqt i").toggleClass("btnsjhv"); //当前按钮样式
+		$(".morecity").slideToggle(100).toggleClass("domshow");//需要展开的内容
+		return false;
+    });
+	
+
+$(document).click(function(event){
+	if($("#morecity").hasClass("domshow")){
+		$("#cityqt i").toggleClass("btnsjhv");
+        $(".morecity").slideToggle(100);
+		$("#morecity").removeClass("domshow");
+		return false;
+	}
+});
+	
+	
+ </script>
+     <!-- 职位列表开始-->
+     <div class="listjob">
+       <ul>
+       
+       <volist name="list"  id="v" >
+       
+          <li <php>if($key%2==0) echo 'class="bgf9"';</php> >
+           <a href="/Company/info/id/{$v.uid}" target="_blank"><img src="{$v.logo}" /></a>
+           <div class="info">
+             <a href="/Jobs/info/id/{$v.jid}" target="_blank" class="til">{$v.zhiwei_mingcheng}</a><font class="f16">[{$v.gongzuo_chengshi}]</font><br />
+             月薪：{$v.yuexin_min}-{$v.yuexin_max} k&nbsp;&nbsp;&nbsp;经验：{$v.gongzuo_jingyan}&nbsp;&nbsp;&nbsp;学历要求：{$v.xueli}<br />
+             职位诱惑：{$v.zhiwei_youhuo}
+             <span><a class="til" href="/Company/info/id/{$v.uid}" target="_blank">{$v.company_short_name}</a> - {$v.hangye}</span>
+           </div>
+           
+			<php>if($cuser_type){}else{</php>
+            	<a href="/Jobs/info/id/{$v.jid}" class="mybtn shenq">申请职位</a>
+            <php>}</php>
+            
+          </li>
+          
+       </volist>   
+       
+       <php>if(!$list)echo '<div class="nocenter"><span><img src="/Public/Home/images/empty.png" />未找到符合要求的记录</span></div>';</php>
+          
+
+       </ul>
+     </div>
+     <!-- 职位列表结束-->
+
+
+     <!-- 翻页-->
+    <div class="Pagination"></div>
+
+   </div>
+
+<div class="clr" style="height:50px;"></div>
+
+</div>
+
+<script type="text/javascript" src="/Public/Home/js/core.min.js"></script>
+
+<script>
+$(function(){
+    $(".shownav").click(function(){
+		$(this).find("i").toggleClass("btnsjhv");
+         $('.mod-menu').slideToggle(200);//需要展开的内容
+    });
+	 $(".shownav1").click(function(){
+		$(this).find("i").toggleClass("btnsjhv");
+        $('#box_jobcate').slideToggle(200);//需要展开的内容
+    });
+
+	 $(".shownavmr").click(function(){
+		$(this).find("i").toggleClass("btnsjhv1");
+        $(this).prev().slideToggle(200);//需要展开的内容
+		$(".menu-cont").hide();
+    });
+
+	$(".shownavmr").hover(function(){
+		$(".menu-cont").hide();
+		$(".menu-item li").removeClass("mouse-bg");
+		$(".mr-item li").removeClass("mouse-bg");
+    });
+	 $("#options dl dt").click(function(){
+		// if($(this).parent().hasClass("slideUp")==''){
+		   $(this).children("em").toggleClass("transform");
+		   $(this).parent().children("dd").slideToggle(200);
+		// }
+		
+    });
+
+});
+
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	var mod_menu=$(".mod-menu");//导航模块区
+	var menu=function(){
+		var menuItem=$(".menu-item li");//选择导航列表
+		var mrItem=$(".mr-item li");//选择导航列表
+		menuItem.each(function(){
+			var _index=$(this).index();//获取当前选择菜单列表的索引
+			$(this).mouseenter(function(){
+				var y = $(this).position().top+1;//获取当前鼠标滑过的列表的顶部坐标
+				$(".menu-cont").show();
+				$(".menu-cont").css("top",y);//需要显示的对应索引内容
+				$(this).addClass("mouse-bg").siblings().removeClass("mouse-bg");
+				$(".menu-cont>ul").eq(_index).show().siblings().hide();
+				mrItem.removeClass("mouse-bg");
+			});
+		});
+
+		mrItem.each(function(){
+			var _index=$(this).index()+5;//获取当前选择菜单列表的索引
+			$(this).mouseenter(function(){
+				var y = $(this).position().top+1;
+				$(".menu-cont").show();
+				$(".menu-cont").css("top",y);
+				$(this).addClass("mouse-bg").siblings().removeClass("mouse-bg");
+				$(".menu-cont>ul").eq(_index).show().siblings().hide();
+				$(this).parent().siblings('li').removeClass("mouse-bg");
+			});
+		});
+		/*导航菜单菜单*/
+		$(".mod-menu").mouseleave(function(){
+			$(".menu-cont").hide();
+			menuItem.removeClass("mouse-bg");
+		})
+	}//展开二级菜单
+	menu();//执行展开二级菜单函
+});
+</script>
+
+
+
+<script>
+$(function(){
+	/***************************
+ 	 * 分页
+ 	 */
+ 	 
+ 	 <php>if($totalRows>0){</php>
+ 	 
+	 var getpn='<php>echo $currPage;</php>';
+	 $('.Pagination').pager({
+	      currPage: getpn,//阿丁，这里获取地址栏参数
+	      pageNOName: "pn",
+	      form: "searchForm",
+	      pageCount: {$page_count},
+	      pageSize:  {$listRows}
+	});
+	 
+	<php>}</php>
+
+	$(".workplace dd").not('.more').children('a').click(function(){
+		var cityVal = $(this).text();
+		var cityjob = $('#box_expectCity').attr("data-cityjob");
+		if(cityjob == 'true'){
+			return true;
+		}else{
+			$('#lc').val(1);
+			editForm("cityInput" , cityVal);
+			return false;
+		}
+	});
+
+	$("#box_expectCity dd a").click(function(){
+		var cityjob = $('#box_expectCity').attr("data-cityjob");
+		var cityVal = $(this).text();
+		if(cityjob == 'true'){
+			return true;
+		}else{
+			$('#lc').val(1);
+			editForm("cityInput" , cityVal);
+			return false;
+		}
+	});
+
+	$('#options dd div').click(function(){
+		var firstName = $(this).parents('dl').children('dt').text();
+		var fn = $.trim(firstName);
+		//alert(fn);
+		if (fn=="月薪范围"){
+			editForm("yxInput" , $(this).html());
+		}
+		else if(fn=="工作经历"){
+			editForm("gjInput" , $(this).html());
+		}
+		else if(fn=="学历要求"){
+			editForm("xlInput" , $(this).html());
+		}
+		else if(fn=="工作性质"){
+			editForm("gxInput" , $(this).html());
+		}
+		else if(fn=="公司性质"){
+			editForm("gsInput" , $(this).attr("gsid"));
+		}
+	});
+
+
+
+
+	$('#box_job ul li').click(function(){
+		var mynum = $(this).parents('ul').index()+1;
+		editForm("hyInput" , $(this).find('em').html());
+		editForm("sjInput" , mynum);
+		editForm("zwInput" , "");
+		editForm("bigInput" ,'');
+	});
+	
+	$('#bigid li').click(function(){
+		var mynum = $(this).index()+1;
+		editForm("sjInput" , mynum);
+	});
+	
+	$('#bigid li').click(function(){
+		editForm("bigInput" , $(this).find('em').html());
+		editForm("hyInput" ,'');
+	});
+
+	 $('#box_jobcate dd div').click(function(){
+		 //editForm("zwInput" , $(this).html());
+		  editForm("zwInput" , $(this).attr("zwid"));
+	});
+	 $('#mycity a').click(function(){
+		 editForm("cityInput" , $(this).html());
+	});
+	 $('#paixu a').click(function(){
+		 editForm("pxInput" , $(this).find('i').html());
+	});
+
+
+
+	$('.selected').delegate('.select_remove','click',function(event){
+		var firstName = $(this).siblings('strong').text();
+		var fn = $.trim(firstName);
+		if (fn=="月薪范围")
+			editForm("yxInput" , "");
+		else if(fn=="工作经历")
+			editForm("gjInput" , "");
+		else if(fn=="学历要求")
+			editForm("xlInput" , "");
+		else if(fn=="工作性质")
+			editForm("gxInput" , "");
+		else if(fn=="公司性质")
+			editForm("gsInput" , "");
+		else if(fn=="职位")
+			editForm("zwInput" , "");
+	    else if(fn=="领域"){
+			editForm("bigInput" , "");
+			editForm("sjInput" , "");
+		}
+	    else if(fn=="行业"){
+			editForm("hyInput" , "");
+			editForm("sjInput" , "");
+		}
+	});
+
+
+
+	//end
+
+
+    //展示类数据接口
+    (function($){
+        var resList = $('.hot_pos').children('li');
+        var arr = [];
+        resList.each(function(){
+            var me = $(this);
+            arr.push( me.attr('data-jobId'));
+        });
+        var z = Math.random();
+        var jids = arr.join(',');
+        var v = $('#version').val();
+        var currUrl = encodeURIComponent( document.URL );
+        var params = {
+            v:v,
+            dl:currUrl,
+            jids:jids,
+            z:z
+        }
+        postoA(params);
+    })(jQuery)
+});
+
+function editForm(inputId,inputValue){
+	$("#"+inputId).val(inputValue);
+	var keyword = $.trim($('#search_input').val());
+	var reg =  /[`~!@\$%\^\&\*\(\)_<>\?:"\{\},\\\/;'\[\]]/ig;
+	var re = /#/g;
+	var r = /\./g;
+	var kw = keyword.replace(reg," ");
+	if(kw == ''){
+		$('#searchForm').attr('action','?/Jobs/index.html').submit();
+	}else{
+		kw = kw.replace(re,'井');
+		kw = kw.replace(r,'。');
+		$('#searchForm').attr('action','?/Jobs/index.html?kw='+kw).submit();
+	}
+	//$("#searchForm").submit();
+}
+</script>
+
+<include file="Public/footer" />

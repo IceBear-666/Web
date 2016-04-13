@@ -1,0 +1,69 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+	    <div class="content_mid"> 
+	      <!--form-->
+	      <dl class="c_section c_section_mid">
+	        <dt>
+	          <h2><em></em>填写公司信息</h2>
+	          <a href="{$Think.WEB_URL}Jobs/createPost" class="c_addjob"><i></i>发布新职位</a>
+	        </dt>
+	        
+	        <dd>
+	          <div class="c_text">展示强劲的创始团队，让求职者跟随而来吧！</div>
+	          <img src="__PUBLIC__/Images/step3.png" alt="第三步" class="c_steps" height="56" width="668">
+	          <form id="memberForm" action="{$Think.WEB_URL}Users/founder" method="post">
+	            <input name="resubmitToken" value="6fd118192ee143eeb7a0e76a9357bbeb" type="hidden">
+	            <input value="{$myinfo.uid}" name="companyId" id="companyId" type="hidden">
+	            <div id="memberDiv">
+	              <div class="formWrapper">
+	                <input name="leaderInfos[0][companyId]" value="{$myinfo.uid}" type="hidden">
+	                <div class="new_portrait">
+	                  <div id="portraitNo0" class="portrait_upload"> <span>上传创始人头像</span> </div>
+	                  <div id="portraitShow0" class="portraitShow dn"> <img src="" height="120" width="120"> <span>更换头像</span> </div>
+	                  <input class="myfiles" id="myfiles0" name="myfiles" onchange="img_check(this,'{$Think.WEB_URL}Users/uploadLeadHead',120,120,5,'myfiles0','myfiles0_error','portraitNo0','portraitShow0','type0','leaderInfos0');" title="支持jpg、jpeg、gif、png格式，文件小于5M" value="" type="file">
+	                  <input id="type0" name="type" value="7" type="hidden">
+	                  <input id="leaderInfos0" name="leaderInfos[0][photo]" type="hidden">
+	                  <em> 尺寸：120*120px <br>
+	                  大小：小于5M </em> <span class="error" id="myfiles0_error" style="display:none;"></span> </div>
+	                <h3>创始人姓名</h3>
+	                <input class="s_input1" id="name0" name="leaderInfos[0][name]" placeholder="请输入创始人姓名" type="text">
+	                <h3>当前职位</h3>
+	                <input class="s_input1" id="position0" name="leaderInfos[0][position]" placeholder="请输入创始人当前职位" type="text">
+	                <h3>新浪微博</h3>
+	                <input id="weibo0" name="leaderInfos[0][weibo]" placeholder="请输入创始人新浪微博地址" type="text">
+	                <h3>创始人简介</h3>
+	                <textarea class="valid" id="description0" name="leaderInfos[0][remark]" maxlength="1000" placeholder="请输入创始人个人简介"></textarea>
+	                <div class="word_count">你还可以输入 <span>500</span> 字</div>
+	              </div>
+	            </div>
+	            <!-- <a href="javascript:void(0)" class="add_member" id="addMember"><i></i>继续添加创始团队</a> -->
+	            <div class="clear"></div>
+	            <input class="btn_big fr" id="step3Submit" value="保存，下一步" type="submit">
+	            <a href="{$Think.WEB_URL}Users/product" class="btn_cancel fr">跳过</a>
+	          </form>
+	        </dd>
+	        
+	      </dl>
+	    </div>
+	   
+	    <script type="text/javascript" src="__PUBLIC__/Js/step3.js"></script>       
+		<div class="clear"></div>
+		<input id="resubmitToken" value="" type="hidden">
+	    <a style="display: none;" id="backtop" title="回到顶部" rel="nofollow"></a>
+
+	</div>	    
+  	<!-- end #container -->
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

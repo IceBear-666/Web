@@ -1,0 +1,72 @@
+<dt> 
+	<!--  <h2 class="fl">热门公司</h2> -->
+  <ul class="workplace reset fr" id="workplaceSelect">
+  
+  	<li> <a href="{$Think.WEB_URL}Company/index/0-{$jd}-{$hy}" <if condition="$ct eq 0">class="current"</if>>全国</a> | </li>
+  	<volist name="city_list" id="v">
+  		<if condition="$v.ishot eq 1">
+  			<li> <a href="{$Think.WEB_URL}Company/index/{$v.aid}-{$jd}-{$hy}" <if condition="$v.aid eq $ct">class="current"</if> >{$v.name}</a> | </li>
+  		</if>
+  	</volist> 
+    
+    <li class="more"> <a href="javascript:;">其他</a>
+      <div class="triangle citymore_arrow"></div>
+    </li>
+    <li id="box_expectCity" class="searchlist_expectCity dn"> <span class="bot"></span> <span class="top"></span>
+      <dl>
+        <dt>ABCDEF</dt>
+        <dd>
+        	<volist name="city_list" id="v">
+        	<?php if(!in_array($v['first_letter'],array('A','B','C','D','E','F'))) continue; ?>
+			<a href="{$Think.WEB_URL}Company/index/{$v.aid}-{$jd}-{$hy}" <if condition="$v.aid eq $ct">class="current"</if>>{$v.name}</a>
+			</volist>
+		</dd>
+      </dl>
+      <dl>
+        <dt>GHIJ</dt>
+        <dd>
+        	<volist name="city_list" id="v">
+        	<?php if(!in_array($v['first_letter'],array('G','H','I','J'))) continue; ?>
+			<a href="{$Think.WEB_URL}Company/index/{$v.aid}-{$jd}-{$hy}" <if condition="$v.aid eq $ct">class="current"</if>>{$v.name}</a>
+			</volist>
+		</dd>
+      </dl>
+      <dl>
+        <dt>KLMN</dt>
+        <dd>
+        	<volist name="city_list" id="v">
+        	<?php if(!in_array($v['first_letter'],array('K','L','M','N'))) continue; ?>
+			<a href="{$Think.WEB_URL}Company/index/{$v.aid}-{$jd}-{$hy}" <if condition="$v.aid eq $ct">class="current"</if>>{$v.name}</a>
+			</volist>
+		</dd>
+      </dl>
+      <dl>
+        <dt>OPQR</dt>
+        <dd>
+			<volist name="city_list" id="v">
+        	<?php if(!in_array($v['first_letter'],array('O','P','Q','R'))) continue; ?>
+			<a href="{$Think.WEB_URL}Company/index/{$v.aid}-{$jd}-{$hy}" <if condition="$v.aid eq $ct">class="current"</if>>{$v.name}</a>
+			</volist>
+		</dd>
+      </dl>
+      <dl>
+        <dt>STUV</dt>
+        <dd>
+			<volist name="city_list" id="v">
+        	<?php if(!in_array($v['first_letter'],array('S','T','U','V'))) continue; ?>
+			<a href="{$Think.WEB_URL}Company/index/{$v.aid}-{$jd}-{$hy}" <if condition="$v.aid eq $ct">class="current"</if>>{$v.name}</a>
+			</volist>
+		</dd>
+      </dl>
+      <dl>
+        <dt>WXYZ</dt>
+        <dd>
+        	<volist name="city_list" id="v">
+        	<?php if(!in_array($v['first_letter'],array('W','X','Y','Z'))) continue; ?>
+			<a href="{$Think.WEB_URL}Company/index/{$v.aid}-{$jd}-{$hy}" <if condition="$v.aid eq $ct">class="current"</if>>{$v.name}</a>
+			</volist>
+		</dd>
+      </dl>
+    </li>
+  </ul>
+</dt>

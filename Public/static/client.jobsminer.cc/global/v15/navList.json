@@ -1,0 +1,282 @@
+{
+    "data": {
+        "hot": [
+            {
+                "name": "amazon",
+                "label": "完美支持,综合,可直邮",
+                "raiders": "http://we.walatao.com/article/1",
+                "website": "http://go.walatao.com/jump.php?id=aHR0cDovL3d3dy5hbWF6b24uY29tLw==&from=1.3"
+            },
+            {
+                "name": "amazon_de",
+                "label": "完美支持,综合",
+                "raiders": "http://we.walatao.com/question/11",
+                "website": "http://www.amazon.de"
+            },
+            {
+                "name": "amazon_jp",
+                "label": "完美支持,综合",
+                "raiders": "http://we.walatao.com/question/10",
+                "website": "http://www.amazon.co.jp/"
+            },
+            {
+                "name": "ashford",
+                "label": "完美支持,中文页面,名表",
+                "raiders": "http://we.walatao.com/question/16",
+                "website": "http://www.ashford.com/us"
+            },
+            {
+                "name": "sixpm",
+                "label": "完美支持,鞋包折扣",
+                "raiders": "http://we.walatao.com/question/30",
+                "website": "http://www.6pm.com/"
+            },
+            {
+                "name": "rakuten",
+                "label": "完美支持,综合,支付宝",
+                "raiders": "http://we.walatao.com/article/94",
+                "website": "http://www.rakuten.co.jp/"
+            },
+            {
+                "name": "Drugstore",
+                "label": "完美支持,母婴,保健",
+                "raiders": "http://we.walatao.com/question/22",
+                "website": "http://www.drugstore.com/"
+            },
+            {
+                "name": "iherb",
+                "label": "完美支持,母婴,保健",
+                "raiders": "http://we.walatao.com/question/21",
+                "website": "http://www.iherb.com/"
+            }
+        ],
+        "complex": [
+            {
+                "name": "amazon",
+                "label": "完美支持,综合,可直邮",
+                "raiders": "http://we.walatao.com/article/1",
+                "website": "http://go.walatao.com/jump.php?id=aHR0cDovL3d3dy5hbWF6b24uY29tLw==&from=1.3"
+            },
+            {
+                "name": "amazon_de",
+                "label": "完美支持,综合",
+                "raiders": "http://we.walatao.com/question/11",
+                "website": "http://www.amazon.de"
+            },
+            {
+                "name": "amazon_jp",
+                "label": "完美支持,综合",
+                "raiders": "http://we.walatao.com/question/10",
+                "website": "http://www.amazon.co.jp/"
+            },
+            {
+                "name": "SaksFifthAvenue",
+                "label": "精品百货",
+                "raiders": "http://we.walatao.com/question/49",
+                "website": "http://www.saksfifthavenue.com/"
+            },
+            {
+                "name": "rakuten",
+                "label": "完美支持,综合,支付宝",
+                "raiders": "http://we.walatao.com/article/94",
+                "website": "http://www.rakuten.co.jp/"
+            },
+            {
+                "name": "macys",
+                "label": "完美支持,精品百货",
+                "raiders": "http://we.walatao.com/question/54",
+                "website": "http://www.macys.com/"
+            }
+        ],
+        "baby": [
+            {
+                "name": "albeebaby",
+                "label": "婴幼用品",
+                "raiders": "http://we.walatao.com/article/14",
+                "website": "http://www.albeebaby.com/"
+            },
+            {
+                "name": "diapers",
+                "label": "婴幼用品",
+                "raiders": "http://we.walatao.com/question/61",
+                "website": "http://www.diapers.com/"
+            },
+            {
+                "name": "Drugstore",
+                "label": "完美支持,母婴,保健",
+                "raiders": "http://we.walatao.com/question/22",
+                "website": "http://www.drugstore.com/"
+            },
+            {
+                "name": "GNC",
+                "label": "完美支持,保健品",
+                "raiders": "http://we.walatao.com/question/38",
+                "website": "http://www.gnc.com/home/index.jsp"
+            },
+            {
+                "name": "iherb",
+                "label": "完美支持,母婴,保健",
+                "raiders": "http://we.walatao.com/question/21",
+                "website": "http://www.iherb.com/"
+            },
+            {
+                "name": "puritanspride",
+                "label": "保健品",
+                "raiders": "http://we.walatao.com/question/41",
+                "website": "http://www.puritan.com/",
+                "proxy": true
+            },
+            {
+                "name": "walgreens",
+                "label": "保健品",
+                "raiders": "http://we.walatao.com/question/66",
+                "website": "http://www.walgreens.com/"
+            }
+        ],
+        "beautiful": [
+            {
+                "name": "lush",
+                "label": "完美支持,天然护理",
+                "raiders": "http://we.walatao.com/article/265",
+                "website": "http://www.lushjapan.com"
+            }
+        ],
+        "package": [
+            {
+                "name": "sixpm",
+                "label": "完美支持,鞋包折扣",
+                "raiders": "http://we.walatao.com/question/30",
+                "website": "http://www.6pm.com/"
+            },
+            {
+                "name": "asos",
+                "label": "时尚",
+                "raiders": "http://we.walatao.com/article/145",
+                "website": "http://www.asos.cn/"
+            },
+            {
+                "name": "gymboree",
+                "label": "童装",
+                "raiders": "http://we.walatao.com/article/12",
+                "website": "http://www.gymboree.com/"
+            },
+            {
+                "name": "nordstrom",
+                "label": "完美支持,时尚",
+                "raiders": "http://we.walatao.com/question/73",
+                "website": "http://shop.nordstrom.com/",
+                "proxy": true
+            },
+            {
+                "name": "net-a-porter",
+                "label": "奢侈品",
+                "raiders": "http://we.walatao.com/question/81",
+                "website": "http://www.net-a-porter.com/"
+            },
+            {
+                "name": "victoriassecret",
+                "label": "完美支持,直邮,内衣",
+                "raiders": "http://we.walatao.com/article/167",
+                "website": "http://www.victoriassecret.com"
+            }
+        ],
+        "watches": [
+            {
+                "name": "ashford",
+                "label": "完美支持,中文页面,名表",
+                "raiders": "http://we.walatao.com/question/16",
+                "website": "http://www.ashford.com/us"
+            },
+            {
+                "name": "jomashop",
+                "label": "完美支持,名表",
+                "raiders": "http://we.walatao.com/question/89",
+                "website": "http://www.jomashop.com/"
+            }
+        ],
+        "sport": [
+            {
+                "name": "rei",
+                "label": "户外",
+                "raiders": "http://we.walatao.com/article/220",
+                "website": "http://www.rei.com/"
+            },
+            {
+                "name": "SierraTradingPost",
+                "label": "户外",
+                "raiders": "http://we.walatao.com/article/113",
+                "website": "http://www.sierratradingpost.com/"
+            },
+            {
+                "name": "NBoutlet",
+                "label": "完美支持,鞋子",
+                "raiders": "http://we.walatao.com/article/263",
+                "website": "http://www.joesnewbalanceoutlet.com/"
+            }
+        ],
+        "digital": [
+            {
+                "name": "bh",
+                "label": "电子产品",
+                "raiders": "unknow",
+                "website": "http://www.bhphotovideo.com/"
+            },
+            {
+                "name": "newegg",
+                "label": "电子产品",
+                "raiders": "http://we.walatao.com/article/114",
+                "website": "http://www.newegg.com"
+            }
+        ],
+        "australia": [
+            {
+                "name": "babyToToddler",
+                "label": "母婴,直邮",
+                "raiders": "unknow",
+                "website": "http://babytotoddler.com.au/"
+            },
+            {
+                "name": "Coles",
+                "label": "日用品",
+                "raiders": "unknow",
+                "website": "http://www.coles.com.au/"
+            },
+            {
+                "name": "ChemistDirect",
+                "label": "直邮,奶粉",
+                "raiders": "unknow",
+                "website": "http://www.chemistdirect.com.au/"
+            },
+            {
+                "name": "littleorganics",
+                "label": "直邮",
+                "raiders": "unknow",
+                "website": "http://www.littleorganics.com.au"
+            },
+            {
+                "name": "PharmacyOnline",
+                "label": "直邮,奶粉",
+                "raiders": "unknow",
+                "website": "http://www.pharmacyonline.com.au/"
+            },
+            {
+                "name": "Priceline",
+                "label": "奶粉",
+                "raiders": "unknow",
+                "website": "https://www.priceline.com.au/"
+            },
+            {
+                "name": "PharmacyCentral",
+                "label": "直邮,奶粉",
+                "raiders": "unknow",
+                "website": "http://pharmacycentral.com.au/"
+            },
+            {
+                "name": "Woolworths",
+                "label": "日用品",
+                "raiders": "unknow",
+                "website": "http://www.woolworths.com.au/"
+            }
+        ]
+    }
+}

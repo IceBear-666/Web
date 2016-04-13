@@ -1,0 +1,190 @@
+<include file="Public/header" />
+
+
+<div class="w960 mt30">
+
+<!-- 左侧开始 -->
+    <div class="lw240 usnav">
+        <a href="#" class="iunav1 cur">账号绑定</a>
+        <a href="#" class="iunav2">修改密码</a>
+        <a href="#" class="iunav3">修改通知面板</a>
+        <a href="#" class="iunav4">修改接收简历</a>
+    </div>
+
+
+
+<!-- 右侧开始 -->    
+    <div class="rw680">
+    
+      <!-- 账号绑定 和 解除绑定-->
+       <div class="usinfo">
+         <h2>账号绑定</h2>
+         <div class="clr"></div>
+             <div class="bangding">
+               <span>
+                  当前登录帐号：870653736@qq.com <br />
+                  绑定后，你可以同时使用以下方式登录
+               </span>
+                 
+                 <!-- 未绑定 和 已绑定，2个状态，切换状态是给class添加dn-->
+                 
+                 <li class="sina"><a href="#" >绑定新浪账号</a></li>
+                 <li class="sina"><i>已绑定新浪帐号</i><i>小伟</i><a href="#" >解除绑定</a></li>
+                 
+                 
+                 <li class="qq"><a href="#" >绑定QQ账号</a></li>
+                 <li class="qq"> <i>已绑定QQ帐号</i><i>小伟</i> <a href="#" >解除绑定</a></li>
+                 
+                 
+                 <li class="weixin"><a href="#">绑定微信账号</a></li>
+                 <li class="weixin"> <i>已绑定微信帐号</i><i>小伟</i> <a href="#" >解除绑定</a></li>
+                 
+                 
+             </div>
+       </div>
+       
+  
+  
+       
+       
+      <!-- 修改密码 -->
+       <div class="usinfo">
+         <h2>修改密码</h2>
+         <div class="clr"></div>
+             <div class="edpw">
+               <form class="registerform" action="#" method="post" name="forms" id="updatePswForm">   
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    
+                      <tr>
+                        <td width="90">登录邮箱</td>
+                        <td>870653736@qq.com</td>
+                      </tr>
+                      
+                      <tr>
+                        <td width="90">当前密码</td>
+                        <td> <input type="password" class="myipt" name="password1"  placeholder="请输入当前密码" errormsg="密码为6-20位" nullmsg="请输入当前密码" datatype="*6-20"/></td>
+                      </tr>
+                      
+                      <tr>
+                        <td>新密码</td>
+                        <td>
+                          <div class="newpw">
+                             <div id="editipt"><input type="password" id="password" class="myipt" name="password"  placeholder="请输入新密码" errormsg="密码为6-20位" nullmsg="请输入新密码" datatype="*6-20"/></div>
+                             <div id="ueditpw"><a class="offpw" href="javascript:showps()"></a></div>
+                         </div>
+                           </td>
+                      </tr>
+                      
+                      <tr>
+                        <td colspan="2"><input type="submit" class="mybtn1 f16" value="保存"/></td>
+                      </tr>
+                      
+                    </table>
+                 </form>
+             </div>
+       </div>
+       
+       
+       
+     <!-- 修改接收简历邮箱 -->
+       <div class="usinfo">
+         <h2>修改接收简历邮箱</h2>
+         <div class="clr"></div>
+             <div class="medemail">
+              
+                <div class="mbg">
+                  <div class="meminfo">修改完成后，新收到的简历都将发送到新的接收简历邮箱中录</div>
+               <form class="registerform1" action="#" method="post">   
+                    <table width="90%"  style="margin:0 auto;" border="0" cellspacing="0" cellpadding="0">
+                    
+                      <tr>
+                        <td colspan="2">当前接收简历邮箱<span style="padding-left:20px;">870653736@qq.com</span></td>
+                      </tr>
+                      
+                      <tr>
+                        <td width="100" valign="top" style="padding-top:14px;">新接历邮箱</td>
+                        <td> 
+                        <input type="text" class="myipt" name="myemail" errormsg="请输入正确格式的接收简历邮箱！" nullmsg="请输入正确格式的接收简历邮箱！" datatype="e"/>
+                        &nbsp;&nbsp;&nbsp;<input type="submit" class="mybtn1 f16" value="保存"/><div class="h10"></div>
+                       </td>
+                      </tr>
+                    </table>
+                 </form>
+                </div>
+             </div>
+       </div>
+       
+     
+       <!-- 修改接收简历邮箱,成功-->
+       <div class="usinfo">
+         <h2>修改接收简历邮箱</h2>
+         <div class="clr"></div>
+             <div class="medemailok">
+               <div class="mbg">
+                 <div class="meminfo">
+                  <h5>验证邮箱，完成修改</h5>
+                     我们已将验证邮件发送至邮箱：<span>quentin2@015guan.com</span><br />
+                     点击邮件内的链接即可完成接收简历邮箱修改，并可用修改后的邮箱接收简历
+                  </div>
+                  没有收到验证邮件，怎么办？<br />
+                  邮箱填写错误？  <a href="#">换个邮箱</a> <br />
+                  看看是否在邮箱的垃圾邮件、广告邮件目录里<br />
+                  稍等几分钟，若还未收到验证邮件，  <a href="#">重新发送验证邮件</a>
+               </div>
+             </div>
+       </div>
+         
+    </div> <!-- 右侧结束 -->
+
+
+        
+</div>
+
+
+
+<!-- 眼镜显示隐藏密码 -->
+<script language="JavaScript">
+	  function showps(){ 
+		  if (this.forms.password.type="password") {
+			  document.getElementById("editipt").innerHTML="<input type=\"text\" name=\"password\" class=\"myipt\" id=\"password\" placeholder=\"请输入新密码\" errormsg=\"密码为6-20位\" nullmsg=\"请输入新密码\" datatype=\"*6-20\"  value="+this.forms.password.value+"><span class=\"Validform_checktip Validform_wrong\">请输入新密码</span>"; 
+			  document.getElementById("ueditpw").innerHTML="<a class=\"onpw\" href=\"javascript:hideps()\"></a>"
+		  }
+	  } 
+	  function hideps(){ 
+		  if (this.forms.password.type="text") {
+			  document.getElementById("editipt").innerHTML="<input type=\"password\" name=\"password\" class=\"myipt\" id=\"password\" placeholder=\"请输入新密码\" errormsg=\"密码为6-20位\" nullmsg=\"请输入新密码\" datatype=\"*6-20\"  value="+this.forms.password.value+"><span class=\"Validform_checktip Validform_wrong\">请输入新密码</span>"; 
+			  document.getElementById("ueditpw").innerHTML="<a class=\"offpw\" href=\"javascript:showps()\"></a>"
+		  } 
+	  } 
+</script>
+
+<script type="text/javascript" src="/Public/Home/js/Validform_v5.3.2_min.js"></script>   
+<script type="text/javascript">
+$(function(){	
+	$(".registerform:eq(0)").Validform({
+		tiptype:3,
+		showAllError:true,
+
+	});
+   $(".registerform1:eq(0)").Validform({
+		tiptype:3,
+		showAllError:true,
+
+	});
+});
+</script>
+
+
+<!-- ==================== 弹窗  ==================== -->
+
+<!-- 修改密码成功 -->
+ <div style="display:none;">
+    <script type="text/javascript" src="/Public/Home/js/setting.js"></script> 
+	<div id="updatePassword" class="popup" style="overflow:hidden">
+		<h3>修改密码成功，请重新登录</h3>
+		<h4><span>5</span>秒后将自动退出</h4>
+		<a href="http://account.lagou.com/frontLogout.do" class="btn">直接退出</a>
+	</div>
+ </div>
+ 
+<include file="Public/footer" />

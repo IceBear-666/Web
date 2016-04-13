@@ -1,0 +1,71 @@
+<dl class="workplace" id="workplaceSelect">
+    <dt class="fl">工作地点：</dt>
+    <dd> <a href="{$Think.WEB_URL}Jobs/index/city/all{$city_key}" <if condition="$city eq '' or $city eq 'all'">class="current"</if> >全国</a> | </dd>
+    <dd> <a href="{$Think.WEB_URL}Jobs/index/city/beijing{$city_key}" <if condition="$city eq 'beijing' ">class="current"</if>>北京</a> | </dd>
+    <dd> <a href="{$Think.WEB_URL}Jobs/index/city/shanghai{$city_key}" <if condition="$city eq 'shanghai' ">class="current"</if>>上海</a> | </dd>
+    <dd> <a href="{$Think.WEB_URL}Jobs/index/city/guangzhou{$city_key}" <if condition="$city eq 'guangzhou' ">class="current"</if>>广州</a> | </dd>
+    <dd> <a href="{$Think.WEB_URL}Jobs/index/city/shenzhen{$city_key}" <if condition="$city eq 'shenzhen' ">class="current"</if>>深圳</a> | </dd>
+    <dd> <a href="{$Think.WEB_URL}Jobs/index/city/chengdu{$city_key}" <if condition="$city eq 'chengdu' ">class="current"</if>>成都</a> | </dd>
+    <dd> <a href="{$Think.WEB_URL}Jobs/index/city/hangzhou{$city_key}" <if condition="$city eq 'hangzhou' ">class="current"</if>>杭州</a> | </dd>
+    <dd> <a href="{$Think.WEB_URL}Jobs/index/city/wuhan{$city_key}" <if condition="$city eq 'wuhan' ">class="current"</if>>武汉</a> | </dd>
+    <dd> <a href="{$Think.WEB_URL}Jobs/index/city/nanjing{$city_key}" <if condition="$city eq 'nanjing' ">class="current"</if>>南京</a> | </dd>
+    <dd class="more"> <a href="javascript:;">其他</a>
+      <div class="triangle citymore_arrow"></div>
+    </dd>
+    <dd id="box_expectCity" class="searchlist_expectCity dn" data-cityjob="true"> <span class="bot"></span> <span class="top"></span>
+      <dl>
+        <dt>ABCDEF</dt>
+        <dd>
+        	<volist name="city_list" id="v">
+		        		<?php if(!in_array($v['first_letter'],array('A','B','C','D','E','F'))) continue; ?>
+				<a href="{$Think.WEB_URL}Jobs/index/city/{$v.pinyin}{$city_key}" <if condition="$city eq $v.pinyin ">class="current"</if> >{$v.name}</a>
+			</volist>
+		</dd>
+       </dl>
+       <dl>
+         <dt>GHIJ</dt>
+         <dd>
+			<volist name="city_list" id="v">
+		         		<?php if(!in_array($v['first_letter'],array('G','H','I','J'))) continue; ?>
+				<a href="{$Think.WEB_URL}Jobs/index/city/{$v.pinyin}{$city_key}" <if condition="$city eq $v.pinyin ">class="current"</if>>{$v.name}</a>
+			</volist>
+		</dd>
+       </dl>
+       <dl>
+         <dt>KLMN</dt>
+         <dd>
+			<volist name="city_list" id="v">
+		         		<?php if(!in_array($v['first_letter'],array('K','L','M','N'))) continue; ?>
+				<a href="{$Think.WEB_URL}Jobs/index/city/{$v.pinyin}{$city_key}" <if condition="$city eq $v.pinyin ">class="current"</if>>{$v.name}</a>
+			</volist>
+		</dd>
+       </dl>
+       <dl>
+         <dt>OPQR</dt>
+         <dd>
+			<volist name="city_list" id="v">
+		         		<?php if(!in_array($v['first_letter'],array('O','P','Q','R'))) continue; ?>
+				<a href="{$Think.WEB_URL}Jobs/index/city/{$v.pinyin}{$city_key}" <if condition="$city eq $v.pinyin ">class="current"</if>>{$v.name}</a>
+			</volist>
+		</dd>
+       </dl>
+       <dl>
+         <dt>STUV</dt>
+         <dd>
+			<volist name="city_list" id="v">
+		         		<?php if(!in_array($v['first_letter'],array('S','T','U','V'))) continue; ?>
+				<a href="{$Think.WEB_URL}Jobs/index/city/{$v.pinyin}{$city_key}" <if condition="$city eq $v.pinyin ">class="current"</if>>{$v.name}</a>
+			</volist>
+		</dd>
+       </dl>
+       <dl>
+         <dt>WXYZ</dt>
+         <dd>
+			<volist name="city_list" id="v">
+		         		<?php if(!in_array($v['first_letter'],array('W','X','Y','Z'))) continue; ?>
+				<a href="{$Think.WEB_URL}Jobs/index/city/{$v.pinyin}{$city_key}" <if condition="$city eq $v.pinyin ">class="current"</if>>{$v.name}</a>
+			</volist>
+		</dd>
+       </dl>
+     </dd>
+</dl>

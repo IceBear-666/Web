@@ -1,0 +1,255 @@
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/schoolselect.css">
+<div class="baseinfo-top">
+	<h3>教育经历</h3>
+</div>
+<div id="skillsAssess" class="item_container_target">
+  <div class="list_show">
+		<php>if($skill_list){</php>
+         
+            <div class="clearfixs mb46 mr_jobe_list">
+            <table>
+            	<tr><th width="200px">学校</th><th width="200px">学历</th><th width="200px">专业</th><th width="200px">编辑</th></tr>
+            	 <volist name="edu_list" id="v">
+            	<tr><td>{$v.schoolName}</td><td>{$v.education}</td><td>{$v.professional}</td><td><div class="mr_edit mr_c_r_t" data-eduid="{$v.id}" data-schoolname="{$v.schoolName}" data-edu="{$v.education}" data-pro="{$v.professional}" data-date="{$v.endYear}" data-startdate="{$v.startYear}" data-schoolcity="{$v.school_city}" data-degree="{$v.degree}" data-academy="{$v.academy}" data-major="{$v.major}" data-gpa="{$v.gpa_score}" data-prorank="{$v.professional_ranking}" data-classrank="{$v.class_ranking}" data-prodes="{$v.professional_describe}" data-tutorname="{$v.tutor_name}" data-tutorphone="{$v.tutor_phone}"> <i></i><em>编辑</em> </div></td></tr>
+            	</volist>
+            </table>
+            </div>
+            
+        <php>}</php>
+    </div>
+<div class="mr_moudle_head clearfixs">
+  
+    <div class="mr_moudle_content" id="edu_update">
+      <form class="eduExpForm" id="addSkillForm">
+        <!-- <input type="hidden" id="eduId" name="eduId" value="" /> -->
+         <div class="myr_info_list myr_skill_list">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+                <tr>
+                    <th class="pt10"><label>大学英语等级</label></th>
+                    <td>
+                        <div class="myr_input_div_l form_wrap normal_s" style="*z-index:3;">
+                          <input name="skillEngLevel[]" type="text" class="mr_button form_select skillEngLevel" value=""/>
+                          <i class="mr_sj"></i>
+                          <div class="skillEngL_list dn">
+                            <ul>
+                              <li>大学英语四级</li>
+                              <li>大学英语八级</li>
+                              <li>专业四级</li>
+                              <li>专业八级</li>
+                            </ul>
+                          </div>
+                        </div>
+                    </td>
+                </tr>
+                 <tr>
+                    <th class="pt10"><label>大学英语等级-成绩</label></th>
+                    <td>
+                      <div class="myr_input_div_l">
+                          <input type="text" name="skillEngSorce[]" class="ed_name valid form-control">
+                      </div>
+                 
+                    </td>
+                </tr>
+         
+            </table>
+            
+        </div>
+        <div class=" myr_skill_add_button" ><span>添加一行</span></div>
+         <div class="myr_info_list myr_otherEngSkill_list">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+                <tr>
+                    <th class="pt10"><label>其他英语考试</label></th>
+                    <td>
+                     <div class="myr_input_div_l form_wrap normal_s" style="*z-index:3;">
+                          <input name="otherSkillEngLevel[]" type="text" class="mr_button form_select otherSkillEngLevel" value=""/>
+                          <i class="mr_sj"></i>
+                          <div class="otherSkillEngL_list dn">
+                            <ul>
+                              <li>雅思</li>
+                              <li>托福</li>
+                              <li>GRE</li>
+                              <li>GMAT</li>
+                              <li>托业</li>
+                              <li>剑桥商务英语证书1级</li>
+                              <li>剑桥商务英语证书2级</li>
+                              <li>剑桥商务英语证书3级</li>
+                              <li>剑桥英语入门考试</li>
+                              <li>剑桥初级英语考试</li>
+                              <li>剑桥第一英语证书考试</li>
+                              <li>全国公共英语等级考试</li>
+                              <li>通用英语初级</li>
+                              <li>通用英语中级</li>
+                              <li>中级口译证书</li>
+                              <li>高级口译证书</li>
+                              <li>博思A1</li>
+                              <li>博思A2</li>
+                              <li>博思B1</li>
+                              <li>博思B2</li>
+                              <li>博思C1</li>
+
+                            </ul>
+                          </div>
+                        </div>
+                    </td>
+                </tr>
+                 <tr>
+                    <th class="pt10"><label>其他英语考试-成绩</label></th>
+                    <td>
+                    <div class="myr_input_div_l form_wrap normal_s" style="*z-index:3;">
+                          <input name="otherSkillEngSorce[]" type="text" class="mr_button form_select otherSkillEngSorce" value=""/>
+                          <i class="mr_sj"></i>
+                          <div class="otherSkillEngSorce_list dn">
+                            <ul>
+                              <li>日语</li>
+                              <li>法语</li>
+                              <li>德语</li>
+                              <li>俄语</li>
+                              <li>韩语</li>
+                              <li>西班牙语</li>
+                              <li>葡萄牙语</li>
+                              <li>阿拉伯语</li>
+                              <li>意大利语</li>
+                              <li>朝鲜语</li>
+                              <li>粤语</li>
+                              <li>上海话</li>
+                              <li>闽南话</li>
+                            </ul>
+                          </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+          
+        </div>
+        <div class=" myr_otherEngSkill_add_button" ><span>添加一行</span></div>
+
+          <div class="myr_info_list myr_otherskill_list">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+                <tr>
+                    <th class="pt10"><label>其他外语</label></th>
+                    <td>
+                        <div class="myr_input_div_l form_wrap normal_s" style="*z-index:3;">
+                          <input name="otherLang[]" type="text" class="mr_button form_select otherLang" value=""/>
+                          <i class="mr_sj"></i>
+                          <div class="otherLang dn">
+                            <ul>
+                              <li>精通</li>
+                              <li>熟练</li>
+                              <li>一般</li>
+                              <li>了解</li>
+                            </ul>
+                          </div>
+                        </div>
+                    </td>
+                </tr>
+                 <tr>
+                    <th class="pt10"><label>掌握程度</label></th>
+                    <td>
+                    <div class="myr_input_div_l form_wrap normal_s" style="*z-index:3;">
+                          <input name="graspLevel[]" type="text" class="mr_button form_select graspLevel" value=""/>
+                          <i class="mr_sj"></i>
+                          <div class="graspLevel dn">
+                            <ul>
+                              <li>精通</li>
+                              <li>熟练</li>
+                              <li>一般</li>
+                              <li>了解</li>
+                            </ul>
+                          </div>
+                        </div>
+                     
+                 
+                    </td>
+                </tr>
+                 <tr>
+                    <th class="pt10"><label>听说能力</label></th>
+                    <td>
+                        <div class="myr_input_div_l form_wrap normal_s" style="*z-index:3;">
+                          <input name="listenLevel[]" type="text" class="mr_button form_select listenLevel" value=""/>
+                          <i class="mr_sj"></i>
+                          <div class="listenLevel dn">
+                            <ul>
+                              <li>精通</li>
+                              <li>熟练</li>
+                              <li>一般</li>
+                              <li>了解</li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    </td>
+                </tr>
+                 <tr>
+                    <th class="pt10"><label>读写能力</label></th>
+                    <td>
+                      <div class="myr_input_div_l form_wrap normal_s" style="*z-index:3;">
+                          <input name="writeLevel[]" type="text" class="mr_button form_select writeLevel" value=""/>
+                          <i class="mr_sj"></i>
+                          <div class="writeLevel dn">
+                            <ul>
+                              <li>精通</li>
+                              <li>熟练</li>
+                              <li>一般</li>
+                              <li>了解</li>
+                            </ul>
+                          </div>
+                        </div>
+                    </td>
+                </tr>
+         
+            </table>
+          
+        </div>
+        <div class=" myr_otherskill_add_button" ><span>添加一行</span></div>   
+          <div class="mr_skill_opera">
+            <div class="mr_ope clearfixs"> <span class="error" style="display:none;">error</span>
+              <input type="submit" class="mr_save" value="保存">
+              <a href="javascript:;" class="mr_cancel">取消</a> </div>
+          </div>
+        </div>
+      </form>
+			
+</div>
+</div>
+ 
+
+<script type="text/javascript">
+  function submitEduFrom(){
+  $('#addEduForm').submit();
+  }
+
+  $('.myr_skill_add_button span').click(function(){
+     var b = $(".myr_skill_list"),
+      c = $(".myr_skill_list").eq(b.length - 1),
+      d = c.clone(!0);
+      c.after(d);
+  });
+  $('.mr_save').click(function(){
+    var data = $('#addSkillForm').serialize();
+     $.ajax({
+          type:"POST",
+          url:ctx + "Resume/skill",
+          data:data,
+          success:function(data) {
+            alert(data);
+          }
+        });
+     return false;
+  });
+
+    $('.myr_otherEngSkill_add_button span').click(function(){
+     var b = $(".myr_otherEngSkill_list"),
+      c = $(".myr_otherEngSkill_list").eq(b.length - 1),
+      d = c.clone(!0);
+      c.after(d);
+  });
+
+    $('.myr_otherskill_add_button span').click(function(){
+     var b = $(".myr_otherskill_list"),
+      c = $(".myr_otherskill_list").eq(b.length - 1),
+      d = c.clone(!0);
+      c.after(d);
+  });
+
+</script>
+

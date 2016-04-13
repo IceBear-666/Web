@@ -1,0 +1,776 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<link rel="stylesheet" type="text/css" href="{$Think.WEB_URL}Public/Css/hrstyle.css">
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+	    
+		<include file="Public/left" />
+	    <!-- end .sidebar --> 
+	    
+	    
+	    <!-- 简历管理重大改版 start -->
+	    <div class="major_revision fr"> <a href="{$Think.WEB_URL}" target="_blank"></a> </div>
+	    
+	    <!-- 简历管理重大改版end-->
+	    <div class="content">
+	      <input id="pageType" value="2" type="hidden">
+	      <dl class="company_center_content">
+	      
+	        <dt id="autofiletitle">
+	          <h1> <em></em> {$stitle} </h1>
+	        </dt>
+	        
+	        <if condition="$type eq 'arranged'">
+	        
+	        	<br />
+            	<form action="{$Think.WEB_URL}interview/arranged.html" method="get" id="filterForm">
+            	 	<input type="hidden" value="2014-10-12 21:15:58" id="nowTime">
+            	 	<input type="hidden" value="2014-10" id="nowTimeYm">
+            	 	<input type="hidden" value="2014-10-12" id="nowTimeYmDd">
+                    <input type="hidden" value="0" name="totalCount" id="totalCount">
+                    <input type="hidden" value="" name="d" id="d">
+                    <input type="hidden" value="" name="r" id="r">
+                    <input type="hidden" value="15" name="s" id="s">
+                    <input type="hidden" value="" name="q_flag" id="q_flag">
+                    <input type="hidden" value="" name="positionId" id="positionId">
+                    
+                    
+                    <dd>
+                    
+	                    <if condition="$list neq array() and $list neq ''">
+			            
+				            <ul class="resume_lists">
+				            
+				            	<volist id="v" name="list">
+				            
+							    <li data-flag="{$v.jid}"> <span class="resume_header2"><span class="time">{$v.addtime|showDay=###}</span>
+							      <label class="checkbox">
+							        <input type="checkbox" />
+							        <i></i> </label>
+							      <!-- 职位点击跳转到职位详情页面,发布者点击跳转到大账号给发布者发送邮件,需要后台返回发布者的邮箱 --> 
+							      <!-- <span  class="employee">应聘：<a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}" class="employee_position" title="java高级工程师" target="_blank">java高级工程师</a></span><span class="resume_publisher" target="_blank">发布者：<a href="javascript:;" title="java">java</a></span> --> 
+							      <span class="employee">应聘：<a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}" class="employee_position" title="{$v.zhiwei_mingcheng}"  target="_blank">{$v.zhiwei_mingcheng}</a></span> <span class="resume_feedback resume_publisher" style="display:none">线下安排面试，待确认</span> <span class="dn offline_tips_con " style="display:none">求职者确认后，简历会进入已安排面试中，释放一个待定简历名额，超过7日求职者未确认，系统会处理为已确认</span><em class="offline_tips" style="display:none"></em> </span>
+							      <div class="resume_show">
+							      <a href="{$Think.WEB_URL}Jobs/resumePreview/uid/{$v.uid}" class="resumeImg" target="_blank" title="预览在线简历"> <img src="{$Think.WEB_URL}{$v.pic}" width="69" height="69" /> </a> <a href="{$Think.WEB_URL}Jobs/resumePreview/uid/{$v.uid}/isview/1" target="_blank" class="hotspace">
+							      <div class="resume_intro" data-flag="{$v.uid}"> {$v.realname} 
+							       / <if condition="$v['sex'] eq 2">女<else />男</if> <br/>
+								  {$v.edu}
+									/ {$v.workyear} <em  class="read" ></em>
+							        <!-- 软件工程师  	· 科技有限公司 <br/>
+							        工程技术大学   · 计算机科学与技术  		 --></div>
+							      </a>
+							      
+							      <div class="resume_link look_resume_link pt20">
+                         				<a class="phone" title="{$v.phone}" href="javascript:;">{$v.phone}</a>
+                         				<a title="{$v.email}" class="resume_color phone" href="javascript:;">{$v.email}</a>
+                         		  </div>
+                         		  
+							      <div class="resume_fit look_resume_fit" style="padding: 32px 0;">
+							      <!-- <a href="javascript:;" class="resume_forward" data-resumeName="{$v.realname}的简历" data-deliverId = "{$v.aid}" data-positionName = "{$v.zhiwei_mingcheng}"  data-forwardCount="0">转发 </a> 
+					 				 -->
+							      </div>
+							      
+							      <div class="resume_fit send_notice dn">
+	                             		<div class="send_notice2">
+	                             			<span data-email="" data-deliverid="{$v.aid}" data-name="{$v.realname}" data-positionname="{$v.zhiwei_mingcheng}" class="send_interview resume_notice">发面试通知</span>
+	                             			<span class="arr click_bf"><em data-flag="{$v.aid}" class="up_tip"></em></span>
+	                             		</div>
+	                             		<div id="send_notice_con" class="send_notice_con">
+	                             			<a data-deliverid="{$v.aid}" class="resume_refuse" href="javascript:;">不合适</a>
+	                             			<!-- <a data-forwardcount="0" data-positionname="{$v.zhiwei_mingcheng}" data-deliverid="{$v.aid}" data-resumename="{$v.realname}的简历" class="resume_forward" href="javascript:;" style="z-index: 6;">转发 </a>
+	                            			 -->
+	                            			</div>
+	                            		 	<div class="send_notice_tips dn" style="display: none;">
+	                            				<div class="send_notice2">
+	                              			<span data-email="" data-deliverid="{$v.aid}" data-name="{$v.aid}" data-positionname="{$v.zhiwei_mingcheng}" class="send_interview resume_notice">发面试通知</span>
+	                              			<span class="arr arr2 click_af"><em data-flag="{$v.aid}" class="dw_tip"></em></span>
+	                              		</div>
+	                            				<a data-deliverid="{$v.aid}" data-flag="flag" class="has_notice" href="javascript:;">已安排面试</a>
+	                            			</div>
+	                              </div>
+							      <!-- 
+							      <div class="resume_fit resume_fit_forward dn"><a href="javascript:;" class="resume_forward" data-deliverId = "{$v.uid}" data-positionName="{$v.zhiwei_mingcheng}"  data-forwardCount="0">转发 </a>
+							        <div class="resume_fit resume_contact dn"><a href="{$Think.WEB_URL}Index/about.html" target="_blank">联系客服</a></div>
+							      </div>
+							       -->
+							    </li>
+							    
+							    </volist>
+							    
+						    </ul>
+						    
+						                    
+                    <else />
+                    
+                    	    <div class="no_resume_tip pt35">
+                            	暂时没有符合该搜索条件的简历<br>
+                            	<span>请重新修改搜索条件后再进行搜索</span>
+                        	</div>
+                    </if>
+                                       	
+                    </dd>    
+                 </form>                
+                
+	        
+        	<elseif condition="$type eq 'refuselist'" />
+        	
+	        	<dd>
+	        	
+	        		<if condition="$list neq array() and $list neq ''">
+			            
+				            <ul class="resume_lists">
+				            
+				            	<volist id="v" name="list">
+				            
+							    <li data-flag="{$v.jid}"> <span class="resume_header2"><span class="time">{$v.addtime|showDay=###}</span>
+							      <label class="checkbox">
+							        <input type="checkbox" />
+							        <i></i> </label>
+							      <!-- 职位点击跳转到职位详情页面,发布者点击跳转到大账号给发布者发送邮件,需要后台返回发布者的邮箱 --> 
+							      <!-- <span  class="employee">应聘：<a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}" class="employee_position" title="java高级工程师" target="_blank">java高级工程师</a></span><span class="resume_publisher" target="_blank">发布者：<a href="javascript:;" title="java">java</a></span> --> 
+							      <span class="employee">应聘：<a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}" class="employee_position" title="{$v.zhiwei_mingcheng}"  target="_blank">{$v.zhiwei_mingcheng}</a></span> <span class="resume_feedback resume_publisher" style="display:none">线下安排面试，待确认</span> <span class="dn offline_tips_con " style="display:none">求职者确认后，简历会进入已安排面试中，释放一个待定简历名额，超过7日求职者未确认，系统会处理为已确认</span><em class="offline_tips" style="display:none"></em> </span>
+							      <div class="resume_show">
+							      <a href="{$Think.WEB_URL}Jobs/resumePreview/uid/{$v.uid}" class="resumeImg" target="_blank" title="预览在线简历"> <img src="{$Think.WEB_URL}{$v.pic}" width="69" height="69" /> </a> <a href="{$Think.WEB_URL}Jobs/resumePreview/uid/{$v.uid}/isview/1" target="_blank" class="hotspace">
+							      <div class="resume_intro" data-flag="{$v.uid}"> {$v.realname} 
+							       / <if condition="$v['sex'] eq 2">女<else />男</if> <br/>
+								  {$v.edu}
+									/ {$v.workyear} <em  class="read" ></em>
+							        <!-- 软件工程师  	· 科技有限公司 <br/>
+							        工程技术大学   · 计算机科学与技术  		 --></div>
+							      </a>
+							      
+							      <div class="resume_link look_resume_link pt20">
+                         				<a class="phone" title="{$v.phone}" href="javascript:;">{$v.phone}</a>
+                         				<a title="{$v.email}" class="resume_color phone" href="javascript:;">{$v.email}</a>
+                         		  </div>
+                         		  
+							      <div class="resume_fit look_resume_fit" style="padding: 32px 0;">
+							      <!-- <a href="javascript:;" class="resume_forward" data-resumeName="{$v.realname}的简历" data-deliverId = "{$v.aid}" data-positionName = "{$v.zhiwei_mingcheng}"  data-forwardCount="0">转发 </a> 
+					 				 -->
+							      </div>
+							      
+							      <div class="resume_fit send_notice dn">
+	                             		<div class="send_notice2">
+	                             			<span data-email="" data-deliverid="{$v.aid}" data-name="{$v.realname}" data-positionname="{$v.zhiwei_mingcheng}" class="send_interview resume_notice">发面试通知</span>
+	                             			<span class="arr click_bf"><em data-flag="{$v.aid}" class="up_tip"></em></span>
+	                             		</div>
+	                             		<div id="send_notice_con" class="send_notice_con">
+	                             			<a data-deliverid="{$v.aid}" class="resume_refuse" href="javascript:;">不合适</a>
+	                             			<!-- <a data-forwardcount="0" data-positionname="{$v.zhiwei_mingcheng}" data-deliverid="{$v.aid}" data-resumename="{$v.realname}的简历" class="resume_forward" href="javascript:;" style="z-index: 6;">转发 </a>
+	                            			 -->
+	                            			</div>
+	                            		 	<div class="send_notice_tips dn" style="display: none;">
+	                            				<div class="send_notice2">
+	                              			<span data-email="" data-deliverid="{$v.aid}" data-name="{$v.aid}" data-positionname="{$v.zhiwei_mingcheng}" class="send_interview resume_notice">发面试通知</span>
+	                              			<span class="arr arr2 click_af"><em data-flag="{$v.aid}" class="dw_tip"></em></span>
+	                              		</div>
+	                            				<a data-deliverid="{$v.aid}" data-flag="flag" class="has_notice" href="javascript:;">已安排面试</a>
+	                            			</div>
+	                              </div>
+							      <!-- 
+							      <div class="resume_fit resume_fit_forward dn"><a href="javascript:;" class="resume_forward" data-deliverId = "{$v.uid}" data-positionName="{$v.zhiwei_mingcheng}"  data-forwardCount="0">转发 </a>
+							        <div class="resume_fit resume_contact dn"><a href="{$Think.WEB_URL}Index/about.html" target="_blank">联系客服</a></div>
+							      </div>
+							       -->
+							    </li>
+							    
+							    </volist>
+							    
+						    </ul>
+						    
+						                    
+                    <else />
+                    
+                    	    <form action="{$Think.WEB_URL}interview/haveRefuselist.html" method="get" id="filterForm">
+			             		 <div class="no_resume_tip no_resume_home">你暂时还没有拒绝过任何人哦~</div>
+			                </form>
+                    </if>
+	        	
+	            	
+	            </dd>
+        	
+        	<elseif condition="$type eq 'autoFilter'" />
+        	
+        		<dd>
+				  <form id="filterForm" method="get" action="{$Think.WEB_URL}interview/autoFilterlist.html">
+				    <div class="process_instruction">
+				      <dl style="display:table">
+				        <dt class="auto_filter_holiday"><img src="{$Think.WEB_URL}images/corp/process_introduction.png" width="74" height="67" alt="处理须知"/></dt>
+				        <dd> 系统将自动过滤<span>学历</span>、<span>城市</span>、<span>工作年限</span> 不符合 要求的简历
+				          <div>1）钢铁侠会自动帮你回绝<span>7天内未查看联系方式</span>的简历；</div>
+				          <div>2）一旦你<span>查看了简历的联系方式</span>，则该简历不受上一条约束；</div>
+				          <div class="isVacation"> <!-- <a class="holiday_how"  href="javascript:;" id="holiday_how"><em></em>个人休假怎么办</a> --> 3）7天时限内如果包含<span>法定节假日，时间会自动顺延~</span> </div>
+				        </dd>
+				      </dl>
+				      <div class="select_holiday_time dn" id="select_holiday_time"> 不要说钢铁侠君太有情怀，你休假我帮你暂停时间：<span>休假期间“7天的自动回绝”功能将暂停计时，但一个自然年只可使用一次休假功能，开始时间可选择明天及以后的任意一天，时长不超过15天，休假虽好，可不要贪心哦~</span>
+				        <div class="holidayBtn"> <a href="javascript:;" class="select_holiday_timeBtn" id="select_holiday_timeBtn">选择休假时间</a> <a href="javascript:;" class="holiday_cancel" id="holiday_cancle">取消</a> </div>
+				      </div>
+				      <div class="select_holiday_time dn" id="holiday_time">
+				        <div id="holiday_time_form"> <span>选择休假起止时间</span><!-- <input type="hidden" name="holiday_begintime"/> -->
+				          <input type="text" readonly class="selectr" id="holiday_begintime" />
+				          <input type="text" readonly  class="selectr" id="holiday_endtime"/>
+				          <div  class="holidayBtn"> <a href="javascript:;" class="select_holiday_timeBtn" id="holiday_begintimeBtn">开始休假</a> <a href="javascript:;" class="holiday_cancel" id="cancle_holiday_select">取消</a> </div>
+				        </div>
+				      </div>
+				      <div class="select_holiday_time dn" id="confirm_htime">
+				        <div class="decisiton"><span class="begin_day">2014.9.12</span><span>~</span><span class="end_day">2014.10.8</span>休假<span class="cha">15</span>天，就这么愉快的决定了吗？</div>
+				        <div  class="holidayBtn"> <a href="javascript:;" class="select_holiday_timeBtn" id="happy_decision">愉快决定</a> <a href="javascript:;" class="holiday_cancel" id="cancle_happy_decision">取消</a> </div>
+				      </div>
+				      <!-- 已经设定休假 -->
+				      <div class="select_holiday_time dn" id="setVacation">
+				        <div class="decisiton"> <span class="begin_day"></span>~ <span class="end_day"></span>休假 <span class="cha">0</span>天 </div>
+				        <div class="decisiton vacation_status"> <span>状态：</span> <strong>未开始</strong> </div>
+				        <div  class="holidayBtn"> <a href="javascript:;" class="select_holiday_timeBtn" id="cancleVacation">取消休假</a> </div>
+				      </div>
+				    </div>
+				    <!-- <div class="filter_actions "> -->
+				    <div class="filter_actions">
+				      <label class="checkbox">
+				        <input type="checkbox" />
+				        <i></i> </label>
+				      <span class="mf12">全选</span> <a href="javascript:;" class="mark_nofit" id="resumeRefuseAll">不合适</a>
+				      <ul class="filter_btn reset">
+				        <li id="filter_btn2"  ><span>筛选简历</span><i ></i></li>
+				      </ul>
+				    </div>
+				    <!-- end .filter_actions -->
+				    <div class="filter_options" >
+				      <dl>
+				        <input type="hidden" name="defaultCondition" value="true" id="defaultCondition"/>
+				        <dt>简历状态：</dt>
+				        <dd> <a  class="current"  rel="-1">不限</a> <a  rel="1">未阅读</a> <a  rel="2">已阅读</a> <a  rel="3">已转发</a> <a  rel="4">待确认</a> <a  rel="5">反馈未收到面试</a>
+				          <input type="hidden" name="statusFilter" value="-1" />
+				        </dd>
+				      </dl>
+				      <dl>
+				        <dt>工作经验：</dt>
+				        <dd> <a   class="current"   rel="0">不限</a> <a    rel="1">应届毕业生</a> <a    rel="2">1年以下</a> <a    rel="3">1-3年</a> <a    rel="4">3-5年</a> <a    rel="5">5-10年</a> <a    rel="6">10年以上</a>
+				          <input type="hidden" name="workExp" value="0" />
+				        </dd>
+				      </dl>
+				      <dl>
+				        <dt>最低学历：</dt>
+				        <dd> <a  class="current"  rel="-1">不限</a> <a  rel="1">大专及以上</a> <a  rel="2">本科及以上</a> <a  rel="3">硕士及以上</a> <a  rel="4">博士及以上</a>
+				          <input type="hidden" name="eduCode" value="-1" />
+				        </dd>
+				      </dl>
+				      <input type="hidden" id="positionId" name="positionId" value="" />
+				    </div>
+				    <!-- end .filter_options -->
+				    <ul class="resume_lists">
+				    <li data-flag="2807940"> <span class="resume_header2"><span class="time">2014-10-08 17:23</span>
+				      <label class="checkbox">
+				        <input type="checkbox" />
+				        <i></i> </label>
+				      <!-- 职位点击跳转到职位详情页面,发布者点击跳转到大账号给发布者发送邮件,需要后台返回发布者的邮箱 --> 
+				      <!-- <span  class="employee">应聘：<a href="{$Think.WEB_URL}jobs/2807940.html" class="employee_position" title="java高级工程师" target="_blank">java高级工程师</a></span><span class="resume_publisher" target="_blank">发布者：<a href="javascript:;" title="java">java</a></span> --> 
+				      <span class="employee">应聘：<a href="{$Think.WEB_URL}jobs/244924.html" class="employee_position" title="Android"  target="_blank">Android</a></span> <span class="resume_feedback resume_publisher" style="display:none">线下安排面试，待确认</span> <span class="dn offline_tips_con " style="display:none">求职者确认后，简历会进入已安排面试中，释放一个待定简历名额，超过7日求职者未确认，系统会处理为已确认</span><em class="offline_tips" style="display:none"></em> </span>
+				      <div class="resume_show">
+				      <a href="{$Think.WEB_URL}corpResume/resumeView.html?deliverId=2807940" class="resumeImg" target="_blank" title="预览在线简历"> <img src=" {$Think.WEB_URL}upload/headpic/cca18348f9aa4d14b59a8038efbd0de4.png " width="69" height="69" /> </a> <a href="{$Think.WEB_URL}corpResume/resumeView.html?deliverId=2807940" target="_blank" class="hotspace">
+				      <div class="resume_intro" data-flag="2807940"> 黄泽林  				                                    	 / 男  				                                    	 / 应届毕业生  				                                    	  / 北京 <em  class="read" ></em><br/>
+				        软件工程师  			                                    		· 葫芦岛华慧科技有限公司 <br/>
+				        辽宁工程技术大学  				                                    	 · 计算机科学与技术  				                                    	 · 本科 </div>
+				      </a>
+				      <div  class="resume_link look_resume_link" > <span  data-flag="flag" data-deliverId = "2807940">查看联系方式 </span> </div>
+				      <div class="resume_fit look_resume_fit"> <span class="resume_refuse" data-deliverId = "2807940">不合适</span> <a href="javascript:;" class="resume_forward" data-resumeName="黄泽林的简历" data-deliverId = "2807940" data-positionName = "Android"  data-forwardCount="0">转发 </a> 
+				        <!-- <a href="javascript:;" class="resume_forward"  data-deliverId="2807940">转发（<span>3</span>）</a> --> 
+				      </div>
+				      <div class="resume_fit send_notice dn">
+				        <div  class=" send_notice2"> <span class="send_interview resume_notice" data-positionName="Android" data-name="黄泽林" data-deliverId="2807940"  data-email ="">发面试通知</span> <span class="arr click_bf"><em class="up_tip" data-flag="2807940"></em></span> </div>
+				        <div class="send_notice_con"> <a href="javascript:;" class="resume_refuse" data-deliverId = "2807940">不合适</a> <a href="javascript:;" class="resume_forward" data-deliverId = "2807940" data-positionName="Android" data-deliverId = "2807940"  data-forwardCount="0">转发 </a> </div>
+				        <div class="send_notice_tips dn">
+				          <div class="send_notice2"> <span class="send_interview resume_notice" data-positionName="Android" data-name="黄泽林" data-deliverId="2807940"  data-email ="">发面试通知</span> <span class="arr arr2 click_af"><em class="dw_tip" data-flag="2807940"></em></span> </div>
+				          <a href="javascript:;" class="has_notice" data-flag="flag" data-deliverId="2807940">已安排面试</a> </div>
+				      </div>
+				      <div class="resume_fit resume_fit_forward dn"><a href="javascript:;" class="resume_forward" data-deliverId = "2807940" data-positionName="Android"  data-forwardCount="0">转发 </a>
+				        <div class="resume_fit resume_contact dn"><a href="{$Think.WEB_URL}about.html" target="_blank">联系客服</a></div>
+				      </div>
+				    </li>
+				    </ul>
+				  </form>
+				</dd>
+        	
+        	<else />
+        		        
+		        <dd>
+		          <form id="filterForm" method="get" action="{$Think.WEB_URL}Jobs/interview/type/unhandle">
+		            <div class="process_instruction">
+		              <dl style="display:table">
+		                <dt><img src="/Public/Images/process_introduction.png" alt="处理须知" height="67" width="74"></dt>
+		                <dd>
+		                  <div>1）钢铁侠会自动帮你回绝<span>7天内未查看联系方式</span>的简历；</div>
+		                  <div>2）一旦你<span>查看了简历的联系方式</span>，则该简历不受上一条约束；</div>
+		                  <div class="isVacation"> <a class="holiday_how" href="javascript:;" id="holiday_how"><!-- <em></em>个人休假怎么办 --></a> 3）7天时限内如果包含<span>法定节假日，时间会自动顺延~</span></div>
+		                </dd>
+		              </dl>
+		              <div class="select_holiday_time dn" id="select_holiday_time"> 不要说钢铁侠君太有情怀，你休假我帮你暂停时间：<span> 休假期间“7天的自动回绝”功能将暂停计时，但一个自然年只可使用一次休假功能，开始时间可选择明天及以后的任意一天，时长不超过15天，休假虽好，可不要贪心哦~</span>
+		                <div class="holidayBtn"> <a href="javascript:;" class="select_holiday_timeBtn" id="select_holiday_timeBtn">选择休假时间</a> <a href="javascript:;" class="holiday_cancel" id="holiday_cancle">取消</a> </div>
+		              </div>
+		              
+		              <div class="select_holiday_time dn" id="holiday_time">
+		                <div id="holiday_time_form"> <span>选择休假起止时间</span><!-- <input type="hidden" name="holiday_begintime"/> -->
+		                  <input value="2014-09-22" readonly class="selectr hasDatepicker" id="holiday_begintime" type="text">
+		                  <input value="2014-09-29" readonly class="selectr hasDatepicker" id="holiday_endtime" type="text">
+		                  <div class="holidayBtn"> <a href="javascript:;" class="select_holiday_timeBtn" id="holiday_begintimeBtn">开始休假</a> <a href="javascript:;" class="holiday_cancel" id="cancle_holiday_select">取消</a> </div>
+		                </div>
+		              </div>
+		              
+		              <div class="select_holiday_time dn" id="confirm_htime">
+		                <div class="decisiton"> <span class="begin_day">2014.9.12</span>~<span class="end_day">2014.10.8</span> 休假<span class="cha">15</span>天，就这么愉快的决定了吗？ </div>
+		                <div class="holidayBtn"> <a href="javascript:;" class="select_holiday_timeBtn" id="happy_decision">愉快决定</a> <a href="javascript:;" class="holiday_cancel" id="cancle_happy_decision">取消</a> </div>
+		              </div>
+		              
+		              <!-- 已经设定休假 -->
+		              <div class="select_holiday_time dn" id="setVacation">
+		                <div class="decisiton"> <span class="begin_day"></span>~<span class="end_day"></span>休假 <span class="cha">0</span>天 </div>
+		                <div class="decisiton vacation_status"> <span>状态：</span> <strong>未开始</strong> </div>
+		                <div class="holidayBtn"> <a href="javascript:;" class="select_holiday_timeBtn" id="cancleVacation">取消休假</a> </div>
+		              </div>
+		              
+		            </div>
+		            
+		            <if condition="$list neq array() and $list neq ''">
+		            
+			            <ul class="resume_lists">
+			            
+			            	<volist id="v" name="list">
+			            
+						    <li data-flag="{$v.jid}"> <span class="resume_header2"><span class="time">{$v.addtime|showDay=###}</span>
+						      <label class="checkbox">
+						        <input type="checkbox" />
+						        <i></i> </label>
+						      <!-- 职位点击跳转到职位详情页面,发布者点击跳转到大账号给发布者发送邮件,需要后台返回发布者的邮箱 --> 
+						      <!-- <span  class="employee">应聘：<a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}" class="employee_position" title="java高级工程师" target="_blank">java高级工程师</a></span><span class="resume_publisher" target="_blank">发布者：<a href="javascript:;" title="java">java</a></span> --> 
+						      <span class="employee">应聘：<a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}" class="employee_position" title="{$v.zhiwei_mingcheng}"  target="_blank">{$v.zhiwei_mingcheng}</a></span> <span class="resume_feedback resume_publisher" style="display:none">线下安排面试，待确认</span> <span class="dn offline_tips_con " style="display:none">求职者确认后，简历会进入已安排面试中，释放一个待定简历名额，超过7日求职者未确认，系统会处理为已确认</span><em class="offline_tips" style="display:none"></em> </span>
+						      <div class="resume_show">
+						      <a href="{$Think.WEB_URL}Jobs/resumePreview/uid/{$v.uid}" class="resumeImg" target="_blank" title="预览在线简历"> <img src="{$Think.WEB_URL}{$v.pic}" width="69" height="69" /> </a> <a href="{$Think.WEB_URL}Jobs/resumePreview/uid/{$v.uid}/isview/1" target="_blank" class="hotspace">
+						      <div class="resume_intro" data-flag="{$v.uid}"> {$v.realname} 
+						       / <if condition="$v['sex'] eq 2">女<else />男</if> <br/>
+							  {$v.edu}
+								/ {$v.workyear} <em  class="read" ></em>
+						        <!-- 软件工程师  	· 科技有限公司 <br/>
+						        工程技术大学   · 计算机科学与技术  		 --></div>
+						      </a>
+						      <div  class="resume_link look_resume_link" > <span  data-flag="flag" data-deliverId = "{$v.uid}">查看联系方式 </span> </div>
+						      
+						      <div class="resume_fit look_resume_fit" style="padding: 32px 0;"> <span class="resume_refuse" data-deliverId = "{$v.aid}">不合适</span> 
+						      <!-- <a href="javascript:;" class="resume_forward" data-resumeName="{$v.realname}的简历" data-deliverId = "{$v.aid}" data-positionName = "{$v.zhiwei_mingcheng}"  data-forwardCount="0">转发 </a> 
+				 				 -->
+				 				 <a data-deliverid="{$v.aid}" data-flag="flag" class="has_notice" href="javascript:;">已安排面试</a>
+						      </div>
+						      
+						      <div class="resume_fit send_notice dn">
+                             		<div class="send_notice2">
+                             			<span data-email="" data-deliverid="{$v.aid}" data-name="{$v.realname}" data-positionname="{$v.zhiwei_mingcheng}" class="send_interview resume_notice">发面试通知</span>
+                             			<span class="arr click_bf"><em data-flag="{$v.aid}" class="up_tip"></em></span>
+                             		</div>
+                             		<div id="send_notice_con" class="send_notice_con">
+                             			<a data-deliverid="{$v.aid}" class="resume_refuse" href="javascript:;">不合适</a>
+                             			<!-- <a data-forwardcount="0" data-positionname="{$v.zhiwei_mingcheng}" data-deliverid="{$v.aid}" data-resumename="{$v.realname}的简历" class="resume_forward" href="javascript:;" style="z-index: 6;">转发 </a>
+                            			 -->
+                            			</div>
+                            		 	<div class="send_notice_tips dn" style="display: none;">
+                            				<div class="send_notice2">
+                              			<span data-email="" data-deliverid="{$v.aid}" data-name="{$v.aid}" data-positionname="{$v.zhiwei_mingcheng}" class="send_interview resume_notice">发面试通知</span>
+                              			<span class="arr arr2 click_af"><em data-flag="{$v.aid}" class="dw_tip"></em></span>
+                              		</div>
+                            				<a data-deliverid="{$v.aid}" data-flag="flag" class="has_notice" href="javascript:;">已安排面试</a>
+                            			</div>
+                              </div>
+						      <!-- 
+						      <div class="resume_fit resume_fit_forward dn"><a href="javascript:;" class="resume_forward" data-deliverId = "{$v.uid}" data-positionName="{$v.zhiwei_mingcheng}"  data-forwardCount="0">转发 </a>
+						        <div class="resume_fit resume_contact dn"><a href="{$Think.WEB_URL}Index/about.html" target="_blank">联系客服</a></div>
+						      </div>
+						       -->
+						    </li>
+						    
+						    </volist>
+						    
+					    </ul>
+					    
+					<else />    
+		            
+		            <div class="no_resume_tip pt35"> 你暂时还没有收到简历呢，需要继续努力哦~ <br>
+		              <span>进入“<a href="{$Think.WEB_URL}Jobs/positions/type/Publish">我发布的职位</a>”将职位信息填写得更加诱人吧！</span>
+					</div>
+					
+					</if>
+					
+		            <input name="showContract" value="false" id="showContract" type="hidden">
+		          </form>
+		          <div style="display: block;" class="resume_number noWhiteBg"> <span class="resume_look">0</span> <span class="resume_total">20</span> </div>
+		        </dd>
+	        
+	        </if>
+	        
+	        <!-- 新手引导效果 -->
+	        <div id="guide_all" style="display:none">
+	          <div class="un_star1"></div>
+	          <div class="hide_contact">
+	            <div class="hide_contact_border">
+	              <div class="hide_contact_content">
+	                <p>联系方式被隐藏，想联系时再查看~</p>
+	                <a href="javascript:;" title="我知道了">我知道了</a> </div>
+	              <i class="un_delete"></i> </div>
+	          </div>
+	          <div class="un_star2"></div>
+	          <!-- write by Darren -->
+	          <div class="contact_number">
+	            <div class="contact_number_border">
+	              <div class="contact_number_content">
+	                <p>查看了联系方式的简历会占用待定简历的名额，上限为20份哦，处理待定简历就会释放名额~</p>
+	                <a href="javascript:;" title="我知道了">我知道了</a> </div>
+	              <i class="un_delete"></i> </div>
+	          </div>
+	          <!-- write by Darren -->
+	          
+	          <div class="un_star3"></div>
+	          <!-- write by Darren -->
+	          <div class="deal_know">
+	            <div class="deal_know_border">
+	              <div class="deal_know_content">
+	                <p>未查看联系方式的简历，七天后钢铁侠帮你做回绝~</p>
+	                <a href="javascript:;" title="我知道了">我知道了</a> </div>
+	              <i class="un_delete"></i> </div>
+	          </div>
+	          <div id="mask"></div>
+	        </div>
+	        
+	      </dl>
+	      <!-- end .company_center_content --> 
+	    </div>
+	    <!-- end .content -->
+	    <input value="{$myinfo.company_name}" id="noticeCompanyName" type="hidden">
+    
+    
+	    <!------------------------------------- 弹窗lightbox ----------------------------------------->
+	    <div style="display:none;"> 
+	      <!-- 当达到20时，再次点击查看联系方式 -->
+	      <div id="reached_limit" class="popup" style="overflow:auto;">
+	        <div>待定简历太多，请先去处理一些吧~→_→</div>
+	        <a href="javascript:;" class="i_konw">我知道了</a> </div>
+	      <div id="big_reached_limit" class="popup">
+	        <div><span>banlon</span>，待定简历太多，先去处理一些吧~</div>
+	        <a href="javascript:;" class="i_konw">我知道了</a> </div>
+	      <!-- 待定简历到达上限 -->
+	      <div id="reachLimit" class="popup">
+	        <table class="f16" width="100%">
+	          <tbody>
+	            <tr>
+	              <td class="f16" align="center"> 待定简历数量已达到上限，暂时无法查看~ </td>
+	            </tr>
+	            <tr>
+	              <td align="center"><input class="btn" value="我知道了" type="button"></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	      <!-- 简历状态发生改变 -->
+	      <div id="statusChange" class="popup">
+	        <table class="f16" width="100%">
+	          <tbody>
+	            <tr>
+	              <td class="f16" align="center"> 简历状态已经发生变化，无法进行当前操作~ </td>
+	            </tr>
+	            <tr>
+	              <td align="center"><input class="btn" value="确定" type="button"></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	      <!-- 已经安排为线下面试 -->
+	      <div id="hasOfflineNotice" class="popup" style="width:440px;height:330px;">
+	        <div>如果您已通过电话或者邮件方式通知求职者面试了，在钢铁侠这里可以将简历标为“已安排面试”的状态，需要您提供面试的时间，待求职者确认收到面试通知后，简历会进入“已安排面试”中的相应位置</div>
+	        <form id="hasOfflineNoticeForm">
+	          <table>
+	            <tbody>
+	              <tr>
+	                <td><span class="redstar" style="margin-left:0;">*</span></td>
+	                <td><span>面试时间</span></td>
+	                <td><input id="mianshiYear" name="noticeTime"  class="selectr hasDatepicker" type="text"></td>
+	              </tr>
+	            </tbody>
+	          </table>
+	          <input id="offlineDeliverId" type="hidden">
+	          <div class="confirm_remark">您确认将简历标注为已安排面试吗？</div>
+	          <div class="noticeTips">注意：如行为不属实，会影响您查看其他简历的联系方式</div>
+	          <div class="remark_button"> 
+	            <!-- <a href="javascript:;" class="confirm_remarkBtn" data-flag="data-deliverId">确认</a> -->
+	            <input value="确认" class="confirm_remarkBtn" data-flag="data-deliverId" type="submit">
+	            <a href="javascript::" class="cancel">取消</a></div>
+	        </form>
+	      </div>
+	      
+	      <!--通知面试弹窗-->
+	      <div id="noticeInterview" class="popup" style="height:545px;">
+	        <form id="noticeInterviewForm">
+	          <table class="f16" width="100%">
+	            <tbody>
+	              <tr>
+	                <td class="c9" align="right" width="20%">收件人 </td>
+	                <td width="80%"><span id="receiveEmail" class="c9"></span>
+	                  <input name="email" readonly class="receiveEmail" type="text"></td>
+	              </tr>
+	              <tr>
+	                <td align="right"><span class="redstar">*</span>主题</td>
+	                <td><input name="subject" placeholder="公司：职位名称面试通知" type="text"></td>
+	              </tr>
+	              <tr>
+	                <td align="right"><span class="redstar">*</span>面试时间</td>
+	                <td><input class="hasDatepicker" name="interTime" id="datetimepicker" readonly type="text"></td>
+	              </tr>
+	              <tr class="select_templete">
+	                <td align="right"><span>可选模板</span></td>
+	                <td><!-- <input type="text" name="selectTemplate" readonly="readonly" id="notice_select_templete" placeholder="系统模板（默认模板）" class="profile_select_265 profile_select_normal"/> --> 
+	                  <span class="notice_templete" style="margin-left:0;">
+	                  <input name="selectTemplate" readonly id="notice_select_templete" placeholder="系统模板（默认模板）" class="profile_select_265 profile_select_normal" type="text">
+	                  </span>
+	                  <div class="boxUpDown dn">
+	                    <ul class="reset">
+	                    </ul>
+	                  </div>
+	                  <a target="_blank" href="{$Think.WEB_URL}templates/InterviewTemplateManagement.html" class="templete_manage">模板管理</a></td>
+	              </tr>
+	              <tr>
+	                <td align="right"><span class="redstar">*</span>面试地点</td>
+	                <td><input name="interAdd" type="text"></td>
+	              </tr>
+	              <tr>
+	                <td align="right">联系人</td>
+	                <td><input name="linkMan" type="text"></td>
+	              </tr>
+	              <tr>
+	                <td align="right"><span class="redstar">*</span>联系电话</td>
+	                <td><input name="linkPhone" type="text"></td>
+	              </tr>
+	              <tr>
+	                <td align="right" valign="top">补充内容</td>
+	                <td><textarea name="content"></textarea></td>
+	              </tr>
+	              <tr align="right">
+	                <td></td>
+	                <td class="effect">编辑内容仅针对本次发送，不会影响模板</td>
+	              </tr>
+	              <tr>
+	                <td></td>
+	                <td><input class="btn" value="发送" type="submit">
+	                  <a href="javascript:;" class="emailPreview">预览</a></td>
+	              </tr>
+	            </tbody>
+	          </table>
+	          <input name="name" value="" type="hidden">
+	          <input name="positionName" value="" type="hidden">
+	          <input name="companyName" value="" type="hidden">
+	          <input name="deliverId" id="deliverId" type="hidden">
+	        </form>
+	      </div>
+	      <!--/#noticeInterview--> 
+	      
+	      <!--预览通知面试弹窗-->
+	      <div id="noticeInterviewPreview" class="popup">
+	        <div class="f18">钢铁侠网：产品经理面试通知 </div>
+	        <div class="c9">发给：<span>vivi@hushan.com</span></div>
+	        <div id="emailText"></div>
+	        <input class="btn fl" value="提交" type="button">
+	        <a href="#noticeInterview" class="inline fl cboxElement" title="通知面试">返回修改</a> </div>
+	      <!--/#noticeInterviewPreview--> 
+	      
+	      <!--通知面试成功弹窗-->
+	      <div id="noticeInterviewSuccess" class="popup">
+	        <table class="f16" width="100%">
+	          <tbody>
+	            <tr>
+	              <td class="f16" align="center"> 面试通知已发送成功<br>
+	                该简历已进入“已安排面试”列表 </td>
+	            </tr>
+	            <tr>
+	              <td align="center"><input class="btn" value="确认" type="button"></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	      <!--/#noticeInterviewSuccess--> 
+	      
+	      <!--转发简历弹窗-->
+	      <div id="forwardResume" class="popup">
+	        <form id="forwardResumeForm">
+	          <table class="f16" width="100%">
+	            <tbody>
+	              <tr>
+	                <td align="right" nowrap="nowrap" width="20%">收件人</td>
+	                <td width="80%"><input name="recipients" id="recipients" placeholder="最多可添加两个邮箱，用“；”隔开" type="text">
+	                  <span class="beError" style="display:none" id="forwardResumeError"></span></td>
+	              </tr>
+	              <tr>
+	                <td align="right">主题</td>
+	                <td><input name="title" type="text"></td>
+	              </tr>
+	              <tr>
+	                <td align="right" valign="top">正文</td>
+	                <td><textarea name="content"></textarea>
+	                  <span class="beError error" style="display:none;"></span></td>
+	              </tr>
+	              <tr>
+	                <td></td>
+	                <td><input class="btn" value="发送" type="submit">
+	                  <a href="javascript:;" class="emial_cancel">取消</a></td>
+	              </tr>
+	            </tbody>
+	          </table>
+	          <input name="resumeKey" value="" type="hidden">
+	          <input name="forwardKey" value="" type="hidden">
+	          <input name="positionId" value="" type="hidden">
+	          <input name="deliverId" value="" type="hidden">
+	          <input name="positionName" value="" type="hidden">
+	        </form>
+	      </div>
+	      <!--/#forwardResume--> 
+	      
+	      <!--转发简历成功弹窗-->
+	      <div id="forwardResumeSuccess" class="popup">
+	        <table class="f16" width="100%">
+	          <tbody>
+	            <tr>
+	              <td class="f16" align="center">简历已转发成功 </td>
+	            </tr>
+	            <tr>
+	              <td align="center"><input class="btn" value="确认" type="button"></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	      <!--/#forwardResumeSuccess--> 
+	      
+	      <!--确认不合适弹窗-->
+	      <div id="confirmRefuse" class="popup" style="height:500px;">
+	        <form id="refuseMailForm">
+	          <table width="100%">
+	            <tbody>
+	              <tr>
+	                <td><div class="refuse_icon">
+	                    <h3><em></em>确认这份简历不合适吗？</h3>
+	                    <span>确认后，系统将自动发送不合适通知邮件至用户邮箱</span> </div></td>
+	              </tr>
+	              <tr class="select_templete select_templete2">
+	                <td><span>可选模板</span><span class="selectRefuse">
+	                  <input class="profile_select_265 profile_select_normal" readonly placeholder="系统模板（默认模板）" id="refuse_select_templete" type="text">
+	                  </span>
+	                  <div class="boxUpDown dn">
+	                    <ul class="reset">
+	                    </ul>
+	                  </div>
+	                  <a target="_blank" href="{$Think.WEB_URL}templates/RefuseTemplateManagement.html" class="templete_manage">模板管理</a></td>
+	              </tr>
+	              <tr>
+	                <td><textarea name="content">非常荣幸收到您的简历，在我们仔细阅读您的简历之后，却不得不很遗憾的通知您：
+	您的简历与该职位的定位有些不匹配，因此无法进入面试。
+	
+	但您的信息已录入我司人才储备库，当有合适您的职位开放时我们将第一时间联系您，希望在未来我们有机会成为一起拼搏的同事；
+	再次感谢您投递AAA公司，感谢您对我们的信任；
+	
+	祝您早日找到满意的工作。
+	</textarea></td>
+	              </tr>
+	              <tr align="right">
+	                <td class="effect">编辑内容仅针对本次发送，不会影响模板</td>
+	              </tr>
+	              <tr>
+	                <td><input class="btn" value="确认不合适" type="submit">
+	                  <a href="javascript:;" class="emial_cancel">取消</a></td>
+	              </tr>
+	            </tbody>
+	          </table>
+	          <input name="deliverId" value="" type="hidden">
+	        </form>
+	      </div>
+	      <!--/#confirmRefuse--> 
+	      
+	      <!--拒绝email成功弹窗-->
+	      <div id="refuseMailSuccess" class="popup">
+	        <table class="f16" width="100%">
+	          <tbody>
+	            <tr>
+	              <td class="f16" align="center"> 不合适通知已发送成功<br>
+	                该简历已进入“不合适简历”列表 </td>
+	            </tr>
+	            <tr>
+	              <td align="center"><input class="btn" value="确认" type="button"></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	      <!--/#refuseMailSuccess--> 
+	    </div>
+	    <!------------------------------------- end -----------------------------------------> <!-------------------------------------弹窗lightbox  ----------------------------------------->
+	    
+	    <div style="display:none;">
+	      <div id="weixinQR" class="popup" style="width:500px;*height:220px;">
+	        <table width="100%">
+	          <tbody>
+	            <tr class="weixinQR">
+	              <td><div class="weixin">
+	                  <div class="qr"> <img src="" height="100" width="100">
+	                    <div>[仅限本人使用]</div>
+	                  </div>
+	                  <div class="qr_text">
+	                    <h3>关注微信服务号，可随时获取接收简历的通知 </h3>
+	                    关注方式：<br>
+	                    <span>打开微信 </span> <img src="/Public/Images/wx1.png" height="30" width="30"><span> →发现 </span> 
+	                    <img src="/Public/Images/wx2.png" height="30" width="31"><span> →扫一扫左侧二维码</span> </div>
+	                </div></td>
+	            </tr>
+	            <tr>
+	              <td align="center"><a href="javascript:;" class="btn_s">我已关注</a> <a href="javascript:;" class="qr_cancel f18">下次再关注</a></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	      <!--/#weixinQR--> 
+	    </div>
+	    
+	    <img id="guide_line" class="dn" src="/Public/Images/tipsarr.png" alt="引导线" height="50" width="150"> 
+	    
+	    <!------------------------------------- end -----------------------------------------> 
+	    <script type="text/javascript" src="/Public/Js/jquery.ui.datetimepicker.min.js"></script> 
+	    <script type="text/javascript" src="/Public/Js/new_received_resumes.js"></script> 
+	    <script>
+			$(function(){
+						
+				var resumeLength = $('.resume_lists li').length;
+				/* var href = L.trim(ctx);
+				if(href.substr(href.length-1)== 'm' ){
+					href = href.substr(href.length-10);
+				} */
+				if(L.cookie('functionMask') == null && resumeLength > 0){
+					L('#guide_all').show();
+			 		L.cookie('functionMask', '1', {expires:365});
+				}else{
+					L('#guide_all').hide();
+					//var cookie = parseInt(L.cookie('functionMask')) + 1;
+					//L.cookie('functionMask', '2', options );
+				}
+			})
+		
+		</script>
+		
+	    <div class="clear"></div>
+	    <input id="resubmitToken" value="" type="hidden">
+	    <a style="display: none;" id="backtop" title="回到顶部" rel="nofollow"></a>
+
+	</div>	    
+  	<!-- end #container -->
+  
+</div>
+<!-- end #body -->
+
+
+
+
+<include file="Public/footer" />

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta charset="UTF-8">
+
+<title><php>if($page_title) echo $page_title;else echo C('WEB_SITE_TITLE');</php> </title>
+<meta name="keywords" content="{:C('WEB_SITE_KEYWORD')}">
+<meta name="description" content="{:C('WEB_SITE_DESCRIPTION')}">
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/mcss/common.css" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/mcss/reset.css" />
+
+<script type="text/javascript" src="/Public/Home/js/jquery.1.10.1.min.js" ></script>
+<script type="text/javascript" src="/Public/Home/js/jquery.lib.mobile.js"></script>
+<script src="/Public/Home/js/ajaxfileupload.js" type="text/javascript"></script>
+
+<include file="Public/var"/>
+
+
+</head>
+
+
+<body>
+
+<if condition="$show_nav eq 1">
+
+<div class="num_box">
+	<div class="num" id="num_00">
+    
+      <div class="header">
+          <a class="golevel" href="#"></a>
+          <div class="logo"><a href="/index.html"><img src="/Public/Home/images/logo.png" /></a></div>
+          <a class="gohome" href="<php>if(getUsersSession('type')==1) echo '/user/';else echo'/';</php>"></a>
+          <div class="clr"></div>
+        </div>
+        
+        
+      
+	</div>
+
+</div>	  
+
+</if>

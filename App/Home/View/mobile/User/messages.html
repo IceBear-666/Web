@@ -1,0 +1,82 @@
+<include file="Public/bbs_header" />
+
+
+ 
+  <div id="somoreitem">
+    <div class="automw">
+      <div id="smicontent" class="autocw"></div>
+    </div>
+  </div>
+  
+  <!--[if lt IE 10]><script type="text/javascript">window.location.href="{$Think.WEB_URL}update_browser.html";</script><![endif]-->
+  
+  <div id="container" class="automw">
+  
+      
+   	<div class="contentfw nosoo">
+    
+      <ul id="umnav">
+        <!-- <li><a href="#">系统消息</a></li> -->
+        <li {$cmenu.comment}><a href="{$Think.WEB_URL}Users/messages/type/comment">查看评论</a></li>
+        <li {$cmenu.reply}><a href="{$Think.WEB_URL}Users/messages/type/reply">查看回复</a></li>
+        <!-- <li><a href="#">查看私信</a></li>
+        <li><a href="#">发私信</a></li> -->
+      </ul>
+      
+      <script type="text/html" id="html_umitem"><div class="umitem"><a class="umtx"  target="_blank" title="${nickname}" href="${userurl}"><img src="${userimage}" width="60" height="60" /></a><div><p><a href="${userurl}" class="muname" target="_blank">${nickname}</a> : {{html content}}<span class="umidate">${postdate}</span></p></div><span data-id="${id}" class="umic"></span></div></script>
+      
+      <div id="umbody">
+      
+      	<if condition="$list neq Null ">
+      	
+      	<else />
+	      		<div class="umitem">暂无记录</div>
+	    </if>
+      
+      	<if condition="$type neq 'reply' ">
+      	
+      		<volist id="v" name="list">
+	      	
+		        <div class="umitem">
+		        	<a class="umtx"  target="_blank" title="{$v.r_nickname}" href="{$Think.WEB_URL}Users/index/uid/{$v.r_uid}"><img src="{$Think.WEB_URL}{$v.pic}" width="60" height="60" /></a>
+		          <div>
+		            <p><a href="{$Think.WEB_URL}Users/index/uid/{$v.uid}" class="muname" target="_blank">{$v.nickname}</a> : 
+		            	评论了我的 <a href="{$Think.WEB_URL}Bbs/info/id/{$v.pid}" target="_blank">{$v.title}</a> <br />
+		              {$v.content}<span class="umidate">{$v.addtime|showDay=###}</span></p>
+		          </div>
+		          <span data-id="{$v.mid}" class="umic"></span>
+		        </div>
+	        
+	        </volist>
+      	
+      	<else />
+      
+	      	<volist id="v" name="list">
+	      	
+		        <div class="umitem">
+		        	<a class="umtx"  target="_blank" title="{$v.r_nickname}" href="{$Think.WEB_URL}Users/index/uid/{$v.r_uid}"><img src="{$Think.WEB_URL}{$v.pic}" width="60" height="60" /></a>
+		          <div>
+		            <p><a href="{$Think.WEB_URL}Users/index/uid/{$v.r_uid}" class="muname" target="_blank">{$v.r_nickname}</a>
+		            	回复了我在<a href="{$Think.WEB_URL}Bbs/info/id/{$v.pid}" target="_blank">{$v.title}</a>的评论 : <br />
+		              {$v.r_content}<span class="umidate">{$v.addtime}</span></p>
+		          </div>
+		          <span data-id="{$v.mid}" class="umic"></span>
+		        </div>
+	        
+	        </volist>	      	
+      	
+      	</if>
+      	
+          
+      </div>
+      
+      <div class="clear"></div>
+      
+    </div>
+  
+  
+  	<include file="Public/bbs_footer" />
+  
+
+
+<include file="Public/footer" />

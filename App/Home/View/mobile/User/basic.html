@@ -1,0 +1,128 @@
+<include file="Public/header" />
+
+
+
+	<script type="text/javascript" src="__PUBLIC__/Js/profile.min.js?v={$rand}"></script>
+	
+  
+	  <div id="container">
+	    <div class="clearfix">
+	      <div class="content_l">
+	        <dl class="mybasic">
+	          <dt>
+	            <h1><em></em>我的职名片</h1>
+	          </dt>
+	          <dd>
+	            <form id="profileForm">
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" id="name" name="name" value="{$info.realname}" placeholder="姓名"></td>
+	                    <td valign="top"></td>
+	                    <td><ul class="profile_radio clearfix reset">
+	                        <li <if condition="$info.sex eq 1">class="current"</if> > 男<em></em>
+	                          <input type="radio" value="男" name="gender">
+	                        </li>
+	                        <li <if condition="$info.sex eq 2">class="current"</if>> 女<em></em>
+	                          <input type="radio" value="女" name="gender">
+	                        </li>
+	                      </ul></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="hidden" name="topDegree" value="{$info.edu}" id="topDegree" >
+	                      <input type="button" class="profile_select_190 profile_select_normal" id="select_topDegree" <if condition="$info.edu neq '' ">value="{$info.edu}"<else />value="最高学历"</if> >
+	                      <div id="box_topDegree" class="boxUpDown boxUpDown_190 dn">
+	                        <ul>
+	                          <li>大专</li>
+	                          <li>本科</li>
+	                          <li>硕士</li>
+	                          <li>博士</li>
+	                          <li>其他</li>
+	                        </ul>
+	                      </div></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="hidden" name="workyear" value="{$info.workyear}" id="workyear">
+	                      <input type="button" class="profile_select_190 profile_select_normal" id="select_workyear" <if condition="$info.edu neq '' ">value="{$info.workyear}"<else />value="工作年限"</if>>
+	                      <div id="box_workyear" class="boxUpDown boxUpDown_190 dn">
+	                        <ul>
+	                          <li>应届毕业生</li>
+	                          <li>1年</li>
+	                          <li>2年</li>
+	                          <li>3年</li>
+	                          <li>4年</li>
+	                          <li>5年</li>
+	                          <li>6年</li>
+	                          <li>7年</li>
+	                          <li>8年</li>
+	                          <li>9年</li>
+	                          <li>10年</li>
+	                          <li>10年以上</li>
+	                        </ul>
+	                      </div></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td colspan="3"><input type="text" id="tel" name="tel" placeholder="手机" value="{$info.phone}"></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td colspan="3"><input type="text" id="email" name="email" value="{$info.email}" placeholder="请输入接收面试通知的常用邮箱"></td>
+	                  </tr>
+	                  <tr>
+	                    <td></td>
+	                    <td colspan="3"><input type="submit" class="btn_profile_save" value="下一步：继续完成职业信息"></td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	            </form>
+	            <!--end #profileForm-->
+	            <div class="new_portrait">
+	              <div id="portraitNo" class="portrait_upload" style="background-color: rgb(231, 231, 231);"> <span>上传自己的头像</span> </div>
+	              <div id="portraitShow" <if condition="$info.pic neq ''">class="portraitShow"<else />class="portraitShow dn"</if> > <img src="{$Think.WEB_URL}{$info.pic}" width="120" height="120"> <span>更换头像</span> </div>
+	              <input type="file" class="myfiles" id="headPic" name="headPic" onchange="img_check(this,&#39;{$Think.WEB_URL}Users/uploadPhoto&#39;,&#39;headPic&#39;);" title="支持jpg、jpeg、gif、png格式，文件小于5M" value="">
+	              <!-- <input type="hidden" id="headPicHidden" /> --> 
+	              <em> 尺寸：120*120px <br>
+	              大小：小于5M </em> <span class="error" id="headPic_error" style="display:none;"></span> </div>
+	            <!--end .new_portrait-->
+	            <input type="hidden" value="0" id="pageType">
+	          </dd>
+	        </dl>
+	      </div>
+	      <div class="content_r">
+	        <div class="subscribe_side mb20 c5">
+	          <div class="why">选择本站的<span>理由</span></div>
+	          <ul class="reset">
+	            <li class="reason1">专业，只做互联网，心无旁骛，实现行业内精准细分。</li>
+	            <li class="reason2">高效，优秀人才与企业招聘部门点对点直达、高效率。</li>
+	            <li class="reason3">靠谱，严格的企业审查，避免垃圾企业和垃圾职位，只提供靠谱工作。</li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div>
+	    
+	    <script>
+			$(function(){
+				var isLeave=false;
+				window.onbeforeunload = function(){
+					if(isLeave){
+						return;
+					}else{
+						return "内容还未保存，确认离开该页面吗？ ";	
+					}
+				 }
+				$('#profileForm .btn_profile_save').click(function(){
+					isLeave=true;
+				});
+			});
+		</script>
+	    <div class="clear"></div>
+	    <input type="hidden" id="resubmitToken" value="4553778ee8d">
+	    <a id="backtop" title="回到顶部" rel="nofollow"></a>
+	
+	</div>
+  <!-- end #container --> 
+
+
+<include file="Public/footer" />

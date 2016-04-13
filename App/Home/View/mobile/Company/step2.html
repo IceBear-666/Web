@@ -1,0 +1,62 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/fuwu.css" />
+
+	<div class="fuwubox"> 
+    <div class="login_logo"> <a href="/"><img src="/Public/Home/images/uslogo.png" /></a></div> 
+	   <div class="fwbox">
+         <div class="toptl">开通招聘服务</div> 
+         <div class="os_step_2"></div>
+         
+           <div class="stform">
+            <form class="registerform" action="/Company/openZhaopin/" method="post">
+             <li>
+              <h3>公司名称<em>(请输入公司名称并确保与公司执照一致)</em></h3>
+              <input style="width:430px;" class="myipt" type="text" name="company_name" id="company_name" value="{$myinfo.company_name}" datatype="*4-20" placeholder="请输入公司名称并确保与公司执照一致，一经填写无法修改" nullmsg="请输入公司名称" errormsg="请输入4-20个字以内"/> 
+             </li>
+             
+             <div class="error" style="display:none;color:#ff6a6a" id="beError"></div>
+              <input type="hidden" id="step" name="step" value="2"/>
+              <input type="submit" class="mybtn1 f18"  value="下一步" />&nbsp;&nbsp;&nbsp;&nbsp;<a class="f16" href="/Company/openZhaopin/step/1">返回修改邮箱地址</a>
+            </form> 
+             <div class="myask">
+               如有问题，请发送到：service@jobsminer.cc,我们会尽快为您解决。
+             </div>
+          </div>
+          
+	   </div> 
+  </div> 
+
+<script type="text/javascript" src="/Public/Home/js/Validform_v5.3.2_min.js"></script>   
+<script type="text/javascript">
+$(function(){	
+	$(".registerform:eq(0)").Validform({
+		tiptype:3,
+		showAllError:true,
+
+	});
+	
+	$("form").submit(function(){
+   		$("#beError").hide();
+   		var self = $(this);
+   		$.post(self.attr("action"), self.serialize(), success, "json");
+   		return false;
+
+   		function success(data){
+   			if(data.status){
+   				window.location.href = "/Company/openZhaopin/step/3";//data.url; message/stype/1
+   			} else {
+   				//self.find(".Validform_checktip").text(data.info);
+   				$("#beError").show();
+   				$("#beError").text(data.info);
+   				//刷新验证码
+   				//$(".reloadverify").click();
+   			}
+   		}
+   	});
+	
+});
+</script>
+
+
+<include file="Public/footer" />

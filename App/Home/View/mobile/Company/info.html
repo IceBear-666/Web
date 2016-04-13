@@ -1,0 +1,229 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/mcss/list.css" />
+<script type="text/javascript" src="/Public/Home/js/jquery.min.js" ></script>
+<script>
+ window.onload= function(){$("#getht").css("height","");$("#gtetabs").val(1);}
+</script>
+
+<script src="/Public/Home/js/slider-pp.min.js"></script>
+<!--
+如果手机不兼容win时间，就开启监听div
+<script type="text/javascript" src="/Public/Home/js/jianting.js"></script>
+-->
+
+<div class="tilhed">
+   <a class="golevel" href="<php>if(getUsersSession('type')==1) echo '/user/';else echo'/';</php>"></a>
+   <div class="mbtitle"> <php>if(getUsersSession('type')==1) echo '我的公司';else echo'公司详情';</php></div>
+   <a class="gohome" href="<php>if(getUsersSession('type')==1) echo '/user/';else echo'/';</php>"></a>
+</div>
+
+<div class="mbbox2">
+  
+      <div class="infocom" style="position:relative;">
+        <img src="{$info.logo}" alt="{$info.company_name}" />
+          <div class="sping lf">
+             <div><h5>{$info.company_short_name}</h5> <i <php>if($company['isv']==2)echo 'class="cur"';</php> ></i></div>
+             <div class="clr"><em>“</em>{$info.descri}<em>”</em></div>
+           </div>
+        <div class="clr"></div>
+        
+          <php>if($cuser_type){}elseif(!in_array($info['uid'],$cids)){</php>
+           	<div class="mbscpos mbcang1" title="添加收藏" onclick="return user_collection({$info.uid},1,2,1)"></div>
+           <php>}else{</php>
+           	<div class="mbscpos mbcang2" title="取消收藏" onclick="return user_collection({$info.uid},0,2,1)"></div>
+           <php>}</php>
+           
+   </div>
+ 
+ <table class="mbcmico" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30%"><div class="cominfo1"><i></i>{$info.company_city}</div></td>
+    <td><div class="cominfo2"><i></i>{$info.hangye}</div></td>
+  </tr>
+  <tr>
+    <td><div class="cominfo3"><i></i>{$gongsi_xingzhi[$info['gongsi_xingzhi']]}</div></td>
+    <td><div class="cominfo4"><i></i>{$info.guimu}</div></td>
+  </tr>
+</table>
+      
+   
+<table class="mbtab1 mt10" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a id="tabtxt" class="cur" href="javascript:">公司介绍</a></td>
+    <td><a id="tabpic" href="javascript:">公司相册</a></td>
+  </tr>
+</table>   
+
+<div id="getht" style="position:relative;">
+<!-- 公司介绍 -->
+  <div id="showcinfo"> 
+   <div id="cominfo" class="comytxt">
+         <span>{$info.content}</span>
+          <div id="mymr" class="myzkmr">.......</div>
+        </div>
+        <div id="zhankai" class="zhankai"></div>
+  
+   </div>
+
+
+
+<!-- 公司图片 -->
+<php>if($photos){</php>
+<div class="sdpicbox">
+    <section id="tgbox" class="vb">
+    <div class="touchslider">
+          <div class="touchslider-viewport">
+                <php>foreach($photos as $k=>$v){</php>
+                    <div class="touchslider-item"><img src="{$v.url}"></div>
+                <php>}</php>
+          </div>
+             <div class="touchslider-navtag">
+              <php>foreach($photos as $k=>$v){</php>
+                    <span class="touchslider-nav-item <php>if($k==0) echo 'touchslider-nav-item-current';</php>"></span>
+                  <php>}</php>
+              </div>
+    </div>
+    </section>
+</div>
+<php>}</php>
+
+</div>
+<input id="gtetabs" type="hidden" value="1" /> 
+    
+        
+    <style>
+	.jobtil{ padding-bottom:6px;}
+	</style>  
+    
+     <dd class="job_bt mt20">
+          <div class="bgf9" style="padding:2px 0px;"><h3 class="description">招聘职位</h3></div>
+     </dd>  
+        
+      <!-- 职位列表开始-->
+     <div class="listjob">
+       <ul>
+       
+       <volist name="joblist" id="v">
+       
+        <li>
+         <a href="/Jobs/info/id/{$v.jid}">
+           
+           <div class="info">
+               <div class="jobtil f16">{$v.zhiwei_mingcheng}</div>
+               <span class="lf">{$v.gongzuo_chengshi}</span>
+               <div class="mgzjy2 lf">{$v.gongzuo_jingyan}</div>
+           </div>
+           
+           <div class="shenq">
+              <div class="colac">{$v.yuexin_min}-{$v.yuexin_max}k</div>
+              
+            </div>
+            
+           <div class="clr"></div> 
+         </a>
+        </li>
+          
+       </volist>   
+       
+
+       </ul>
+     </div>
+     <!-- 职位列表结束-->
+ <table class="mbottol bgf9" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a id="mbgotop" href="javascript:">回到顶部</a></td>
+    <td class="bgfff" width="1"></td>
+    <td><a href="javascript:">加载更多</a></td>
+  </tr>
+</table>
+<div class="txtct pdt10 col999 f12">{:C('COPYRIGHT')} </div>    
+                
+<script>
+$("#mbgotop").click(function(){$("html,body").animate({scrollTop :0}, 300);return false;});
+</script>
+
+<script>
+
+$("#tabpic").click(function(){
+        $("#tabtxt").removeClass('cur');
+	    $(this).addClass("cur");
+		$("#showcinfo").addClass('vb');
+		$("#tgbox").removeClass('vb');
+		$("#gtetabs").val(2);
+		$("#getht").height($(".sdpicbox img").height()+20);
+		//$(".sdpicbox").height($(".sdpicbox img").height());
+});
+
+$("#tabtxt").click(function(){
+        $("#tabpic").removeClass('cur');
+	    $(this).addClass("cur");
+		$("#tgbox").addClass('vb');
+		$("#showcinfo").removeClass('vb');
+		$("#gtetabs").val(1);
+		$("#getht").css("height","");
+});
+
+
+$("#zhankai").click(function(){
+        $("#cominfo").toggleClass("highlight");
+		$("#mymr").toggleClass("dn");
+	    $(this).toggleClass("zkcur");
+});
+	
+	
+
+    var mygao1 = $("#cominfo span").height();
+	if(mygao1>=180){
+		$("#cominfo").height(180);
+			$("#zhankai").show();
+		$("#mymr").show();
+	}else{
+		$("#cominfo").height(mygao);
+		$("#zhankai").hide();
+		$("#mymr").hide();
+	}
+
+
+	
+		
+jQuery(function($) {
+	$(window).resize(function(){
+		
+	var mygao = $("#cominfo span").height();
+	var gtetabs = $("#gtetabs").val();
+	if(gtetabs==2){
+	  setTimeout(function(){
+        $("#getht").height($(".sdpicbox").height());
+      },300);
+	}else{
+		$("#getht").css("height","");
+	}
+	//alert(mygao);
+	
+	if(mygao>=180){
+		$("#cominfo").height(180);
+		$("#zhankai").show();
+		$("#mymr").removeClass('dn');
+	}else{
+		$("#cominfo").height(mygao);
+		$("#zhankai").hide();
+		$("#cominfo").removeClass('highlight');
+		$("#zhankai").removeClass('zkcur');
+		$("#mymr").addClass('dn');
+	}
+	
+	
+	var width=$('#tgbox').width();
+		$('.touchslider-item a').css('width',width);
+		$('.touchslider-viewport').css('height',340*(width/640));
+		$('.touchslider-viewport img').css('height',340*(width/640));
+	}).resize();	
+	$(".touchslider").touchSlider({mouseTouch: true, autoplay:false});
+
+});
+</script> 
+
+
+<style>#comfooter{ display:none;}</style>
+<include file="Public/footer" />

@@ -1,0 +1,72 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+	    <div class="content_mid"> 
+	      <!--form-->
+	      <dl class="c_section c_section_mid">
+	        <dt>
+	          <h2><em></em>填写公司信息</h2>
+	          <a href="{$Think.WEB_URL}Jobs/createPost" class="c_addjob"><i></i>发布新职位</a>
+	        </dt>
+	        
+	        <dd>
+	          <div class="c_text">目标明确、前途光明的产品是吸引求职者的制胜法宝哦！</div>
+	          <img src="__PUBLIC__/Images/step4.png" alt="第四步" class="c_steps" height="56" width="668">
+	          <form id="productForm" action="{$Think.WEB_URL}Users/Product" method="post">
+	            <input name="resubmitToken" value="9a322c0ec65c4f8e8e886841e5584f21" type="hidden">
+	            <input value="{$myinfo.uid}" name="companyId" id="companyId" type="hidden">
+	            <div id="productDiv">
+	              <div class="formWrapper">
+	                <input name="productInfos[0][companyId]" value="{$myinfo.uid}" type="hidden">
+	                <h3>产品海报</h3>
+	                <div class="new_product mt20">
+	                  <div class="product_upload" id="productNo0">
+	                    <div style="background-color: rgb(147, 183, 187);"> <span>上传产品图片</span> <br>
+	                      尺寸：380*220px  	大小：小于5M </div>
+	                  </div>
+	                  <div class="product_upload dn productShow" id="productShow0"> <img src="" height="220" width="380"> <span>更换产品图片<br>
+	                    380*220px 小于5M</span> </div>
+	                  <input id="myfiles0" name="myfiles" onchange="img_check(this,'{$Think.WEB_URL}Users/uploadLeadHead',380,220,5,'myfiles0','myfiles0_error','productNo0','productShow0','type0','productInfos0');" title="支持jpg、jpeg、gif、png格式，文件小于5M" type="file">
+	                  <input id="type0" name="productInfos[0][type]" value="3" type="hidden">
+	                  <input id="productInfos0" name="productInfos[0][productPicUrl]" type="hidden">
+	                </div>
+	                <span class="error" id="myfiles0_error" style="display:none;"></span>
+	                <h3>产品名称</h3>
+	                <input id="name0" name="productInfos[0][product]" placeholder="请输入产品名称" type="text">
+	                <h3>产品地址</h3>
+	                <input id="address0" name="productInfos[0][productUrl]" placeholder="请输入产品主页或产品下载地址" type="text">
+	                <h3>产品简介</h3>
+	                <textarea id="description0" name="productInfos[0][productProfile]" maxlength="1000" placeholder="请简短描述该产品定位、产品特色、用户群体等"></textarea>
+	                <div class="word_count">你还可以输入 <span>500</span> 字</div>
+	              </div>
+	            </div>
+	            <!-- <a href="javascript:void(0)" class="add_member" id="addMember"><i></i>继续添加公司产品</a> -->
+	            <div class="clear"></div>
+	            <input class="btn_big fr" id="step4Submit" value="保存，下一步" type="submit">
+	            <a href="{$Think.WEB_URL}Users/intro" class="btn_cancel fr">跳过</a>
+	          </form>
+	        </dd>
+	        
+	      </dl>
+	    </div>
+	   
+	    <script type="text/javascript" src="__PUBLIC__/Js/step4.js"></script>       
+		<div class="clear"></div>
+		<input id="resubmitToken" value="" type="hidden">
+	    <a style="display: none;" id="backtop" title="回到顶部" rel="nofollow"></a>
+
+	</div>	    
+  	<!-- end #container -->
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

@@ -1,0 +1,51 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>{:isset($info['lid'])?'编辑':'新增'}友情链接</h2>
+    </div>
+    <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <form action="" method="post" class="form-horizontal">
+
+        <div class="form-item">
+            <label class="item-label">标题<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">链接<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="link" value="{$info.link}">
+            </div>
+        </div>
+
+
+        <div class="form-item">
+            <label class="item-label">排序<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="sn" value="{$info.sn}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <input type="hidden" name="lid" value="{$info.lid|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+
+	    $('#submit').click(function(){
+	    	$('#form').submit();
+	    });
+
+        //Think.setValue("status", {$info.status|default = 0});
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+    </script>
+</block>

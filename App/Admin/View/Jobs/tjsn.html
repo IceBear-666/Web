@@ -1,0 +1,34 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>推荐职位排序</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+    	
+    	<volist name="list" id="vv">
+    	<div class="form-item">
+            <!-- <label class="item-label"><span class="check-tips"></span></label> -->
+            <div class="controls">
+                <span style="width:300px;height:25px;line-height:25px;display:inline-block;">{$vv.zhiwei_mingcheng}</span>
+                <input type="text" class="text input-small" name="sn[{$vv.jid}]" value="{$vv.sn}">
+            </div>
+        </div>
+        </volist>
+        
+        
+        
+        
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('User/index')}');
+    </script>
+</block>

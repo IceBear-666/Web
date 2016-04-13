@@ -1,0 +1,142 @@
+<include file="Public/header" />
+
+<body>
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+	
+	<div id="container">
+    <div class="clearfix">
+      <div class="content_l">
+        <form id="companyListForm" name="companyListForm" method="get" action="{$Think.WEB_URL}Company/index/209-0-0">
+          <dl class="hc_tag">
+            
+            <include file="Public/gongsi_city" />            
+            
+            <dd>
+              <dl>
+                <dt>发展阶段：</dt>
+                <dd>
+                	<volist name="fazhan_jieduan" id="v" >
+						<a href="{$Think.WEB_URL}Company/index/{$ct}-{$key}-{$hy}" data-fs="{$key}" <if condition="$key eq $jd">class="current"</if>>{$v}</a>
+					</volist>
+				</dd>
+              </dl>
+              <dl>
+                <dt>行业领域：</dt>
+                <dd>
+					<volist name="hangye_lingyu" id="v">
+	                  	 <a href="{$Think.WEB_URL}Company/index/{$ct}-{$jd}-{$key}" <if condition="$key eq $hy">class="current"</if> data-ifs="{$key}">{$v}</a>
+	                  	</volist>
+				</dd>
+              </dl>
+            </dd>
+          </dl>
+          
+          <ul class="hc_list reset">
+            
+            <volist name="list" id="v">
+            
+	            <li <?php if( ($key+1)%3==0  ) echo 'style="clear:both;"'; ?> >
+	            
+					<a href="{$Think.WEB_URL}Company/info/id/{$v.uid}" target="_blank">
+		              <h3 title="{$v.company_short_name}">{$v.company_short_name}</h3>
+		              <div class="comLogo">
+		              	<if condition="$v.logo neq ''">
+							<img src="{$v.logo}" alt="{$v.company_short_name}" height="190" width="190">
+						<else />
+							<img src="/Public/Images/logo_default.png" alt="{$v.company_short_name}" height="190" width="190">
+						</if>
+		                <ul>
+		                  <li>{$v.hangye}</li>
+		                  <li>{$v.company_city}，{$v.jieduan}</li>
+		                </ul>
+		              </div>
+	              	</a>
+	              	
+	              	<volist name="v.products_arr" id="vv">
+						<a href="{$Think.WEB_URL}Jobs/info/id/{$vv.jid}/source/company_list" class="cl_job" target="_blank"> {$vv.zhiwei_mingcheng}</a>
+					</volist>
+	              	
+	              	<ul class="reset ctags">
+		                <li>{$v.jieduan}</li>
+		                
+		                <volist name="v.tags_arr" id="vv">
+		                	<li>{$vv}</li>
+		                </volist>
+	              	</ul>
+	              	
+	            </li>
+            
+            </volist>
+            
+            
+          </ul>
+          <div class="Pagination myself">
+          {$page}
+          </div>
+        </form>
+      </div>
+      
+      <div class="content_r">
+      
+        <div class="subscribe_side"> <a href="{$Think.WEB_URL}Users/subscribe" target="_blank" rel="nofollow">
+          <div class="subpos"><span>订阅</span> 职位</div>
+          <div class="c7">钢铁侠网会根据你的筛选条件，定期将符合你要求的职位信息发给你 </div>
+          <div class="count">已有 
+          <volist name="all_str" id="vv">
+          	<em>{$vv}</em> 
+          </volist>
+                         人订阅 </div>
+          <i>我也要订阅职位</i> </a>
+		</div>
+        
+        
+        
+        <!-- 广告位：主站--公司列表页 --> 
+        <img width="280" height="135" border="0" alt="三体迷跳槽专场" title="三体迷跳槽专场" src="/Public/Images/ad/ad1.jpg">
+        
+	  </div>
+		
+    </div>
+    <input value="{$myinfo.uid}" name="userid" id="userid" type="hidden">
+    
+    <if condition="$page_count gt 0">
+    
+	    <script>
+		$(function(){
+			/*分页 */
+		 	$('.Pagination').pager({
+			      currPage: "{$currPage}",
+			      pageNOName: "pn",
+			      form: "searchForm",
+			      pageCount: "{$page_count}",
+			      pageSize:  5
+			});
+			
+			//统计到职位详情的来源脚本 add by Vee ｜2014-7-3
+			/* $('.hc_list a.cl_job').click(function(e){
+				e.preventDefault();
+				var href=$(this).attr("href");
+				window.location.href=href+"?source=company_list"; //公司列表页
+			}); */
+			//end
+		})
+		</script>
+	
+	</if>
+	
+    <div class="clear"></div>
+    <input id="resubmitToken" value="" type="hidden">
+    <a id="backtop" title="回到顶部" rel="nofollow"></a>
+
+	</div>
+  <!-- end #container -->  
+  
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

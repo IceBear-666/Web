@@ -1,0 +1,80 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+	    <div class="clearfix">
+	      <div class="content_l recommend_list">
+	        <h2>钢铁侠网根据你的个人简历为你推荐以下职位： <a href="{$Think.WEB_URL}Jobs/myresume" class="more">修改简历信息&gt;&gt;</a></h2>
+	        
+	        <ul class="hot_pos reset">
+	        
+	        	<if condition="$list neq '' ">
+	        
+	        	  <volist name="list" id="v" empty="暂时没有数据">
+	        	
+		          <li class="clearfix">
+		            <div class="hot_pos_l">
+		              <div class="mb10"> <a href="{$Think.WEB_URL}jobs/181623.html?source=rec" target="_blank">Java</a> &nbsp; <span class="c9">[杭州]</span> </div>
+		              <span><em class="c7">月薪：</em> 30k-40k</span> <span><em class="c7">经验：</em> 5-10年</span> <span><em class="c7">最低学历：</em> 本科</span> <br>
+		              <span><em class="c7">职位诱惑：</em> 16薪 阿里巴巴集团招聘 有期权</span> <br>
+		              <span>2014-08-04</span> 
+		              <!-- <a href="#" class="wb">分享到微博</a> --> 
+		            </div>
+		            <div class="hot_pos_r">
+		              <div class="mb10 recompany"><a href="{$Think.WEB_URL}Company/29310.html" target="_blank">hopingwise</a></div>
+		              <span><em class="c7">领域：</em> 电子商务</span> <span><em class="c7">创始人：</em> Lisa.Ye</span> <br>
+		              <span><em class="c7">阶段：</em> 初创型(未融资)</span> <span><em class="c7">规模：</em> 2000人以上</span>
+		              <ul class="companyTags reset">
+		                <li>节日礼物</li>
+		                <li>技能培训</li>
+		                <li>绩效奖金</li>
+		              </ul>
+		            </div>
+		            <div class="recommend"> 92% <span>该职位与你的简历匹配度是92% </span> </div>
+		          </li>
+		          
+		          </volist>
+	          
+	          <else />
+	          	<li class="clearfix">
+	          		暂时没有数据
+	          	</li>
+	          </if>	          
+	          
+	        </ul>
+	        <form id="searchForm">
+	        </form>
+	        <div class="Pagination myself">
+				
+			</div>
+	      </div>
+	      
+	      <!-- <div class="content_r">
+	        <div class="subscribe_side"> <a href="{$Think.WEB_URL}s/subscribe.html" target="_blank">
+	          <div class="subpos"><span>订阅</span> 职位</div>
+	          <div class="c7">钢铁侠网会根据你的筛选条件，定期将符合你要求的职位信息发给你 </div>
+	          <div class="count">已有 <em>5</em> <em>1</em> <em>1</em> <em>3</em> <em>8</em> 人订阅 </div>
+	          <i>我也要订阅职位</i> </a> </div>
+	        <div class="greybg qrcode mt20"> <img src="tuijian_files/qrcode.jpg" alt="钢铁侠微信公众号二维码" height="242" width="242"> <span class="c7">扫描钢铁侠二维码，微信轻松搜工作</span> </div>
+	      </div> -->
+	      
+	    </div>
+	    <input value="" name="userid" id="userid" type="hidden">
+	    
+	    <div class="clear"></div>
+	    <input id="resubmitToken" value="" type="hidden">
+	    <a style="display: none;" id="backtop" title="回到顶部" rel="nofollow"></a> 
+    </div>
+  <!-- end #container --> 
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

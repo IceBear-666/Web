@@ -1,0 +1,89 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>{:isset($info['id'])?'编辑':'新增'}菜单</h2>
+    </div>
+
+    <form action="{:U()}" method="post" class="form-horizontal">
+
+        <div class="form-item">
+            <label class="item-label">菜单名称<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">状态<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" name="status" value="1" <php>if($info['status']!=0)echo 'checked';</php> >启用</label>
+                <label class="radio"><input type="radio" name="status" value="0" <php>if($info['status']==0)echo 'checked';</php> >禁用</label>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">上一级菜单<span class="check-tips"> </span></label>
+            <div class="controls">
+                <select name="pid" id="pid">
+                	<option value="0" >无</option>
+                	<php>foreach($top_arr as $kk=>$vv){</php>
+                	<option value="{$vv['id']}" <php>if($info['pid']==$vv['id'])echo 'selected';</php> >{$vv['title']}</option>
+                	<php>}</php>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">菜单类型<span class="check-tips"> </span></label>
+            <div class="controls">
+                <select name="type" id="type">
+                	<php>foreach($type_arr as $kk=>$vv){</php>
+                	<option value="{$kk}" <php>if($info['type']==$kk)echo 'selected';</php> >{$vv}</option>
+                	<php>}</php>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">链接<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="url" value="{$info.url}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">关键词<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="keyword" value="{$info.keyword}">
+            </div>
+        </div>
+
+
+		<div class="form-item">
+            <label class="item-label">排序<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="sort" value="{$info.sort}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <input type="hidden" name="id" value="{$info.id|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+
+	    $('#submit').click(function(){
+	    	$('#form').submit();
+	    });
+
+        Think.setValue("status", {$info.status|default = 0});
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+    </script>
+</block>

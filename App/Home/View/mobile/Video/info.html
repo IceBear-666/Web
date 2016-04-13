@@ -1,0 +1,221 @@
+<include file="Public/header" />
+
+<script type="text/javascript" src="/Public/Home/js/company/spsd.js"></script>
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/xuanjiang.css" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/list.css" />
+
+
+
+
+<!-- 视频开始 -->
+<div class="xjfsbg">
+   <div class="w960">
+       <div style="height:500px; overflow:hidden;"><!-- &tiny=0&auto=0 -->
+         <iframe frameborder="0" width="960" height="496" src="{$info.url}" allowfullscreen></iframe>
+       </div>
+    </div>
+</div>
+ <!-- 视频结束 --> 
+ 
+ 
+ 
+
+
+<div class="w960 bgf9">
+
+<div class="xjsinfo">
+  <h2>宣讲会简介</h2>
+  <div class="clr"></div>
+ 
+  
+  <div class="lfinfo">
+  
+  	<if condition="$company.logo neq ''">
+		<img src="{$company.logo}" alt="{$company.company_name}" style="width:120px;height:120px;">
+	<else />
+		<img src="/Public/Home/images/logo_default.png" alt="{$company.company_name}" style="width:120px;height:120px;">
+	</if>
+	
+      <div class="mininfo">
+        <span>
+           <div class="lf">{$company_short_name}</div>
+           <i <php>if($company['isv']==2)echo 'class="cur"';</php> ></i> <!-- 如果企业通过认证，给<i>标签添加：class="cur" -->
+         </span>
+        <em>{$company.company_name}</em>
+        <div id="cominfo" class="comytxt">
+        {$info.content|strip_tags=###}
+          <div id="mymr" class="myzkmr">.......</div>
+        </div>
+        <div id="zhankai" class="zhankai"></div>
+      </div>
+      <div class="clr"></div>
+  </div>
+ 
+ 
+ <php>if($info['attach']){</php>
+  <div class="rtinfo">
+    <font>没有时间看视频？</font>
+    <a href="{$info['attach']}" target="_blank">文字版宣讲会</a>
+  </div>
+  <php>}</php>
+  
+  
+  <div class="clr"></div>
+</div>
+
+
+<!-- 相关推荐开始 -->
+<div class="ztmbox">
+   <div class="xtjtil">相关推荐</div>
+		<div class="picScroll-left">
+			<div class="bd">
+            <a class="next"></a>
+            <a class="prev"></a>
+				<ul class="picList">
+                
+                
+                <volist name="the_same" id="v">
+                   <li>
+                      <em>{$v.related}</em><i></i>
+                      <div class="dianji">{$v.hits}</div>
+                      <div class="shijian">{$v.shichang}</div>
+                         <a class="max" href="/Video/info/id/{$v.vid}"><img src="{$v.thumb}" /></a>
+                      <div class="xjinfo">
+                         <a class="xjtil lf" href="/Video/info/id/{$v.vid}">{$v.title}</a>
+                         <div class="xjdata rt">{$v.addtime|showDay=###,"d/m"}</div>
+                      </div>
+                   </li>             
+                 </volist>  
+                   
+                   
+				</ul>
+			</div>
+		</div>
+</div>
+<script type="text/javascript">
+		jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",vis:4});
+</script>
+<!-- 相关推荐结束 -->
+ 
+
+<!-- 评论开始 --> 
+<div class="xjmsg">
+   <h2>发表评论</h2>
+    <form class="registerform" action="/Video/addReview" method="post" >
+      <textarea id="content" placeholder="发表你的真知灼见，说不定被HR看上噢~" datatype="*2-200" nullmsg="请填写评论内容" errormsg="2-200字噢~"/></textarea>
+      <div class="tolmsg rt"><input type="button" id="btn_add" class="mybtn1 f16" value="确认发表" /></div>
+   		<input id="vid" value="{$info.vid}" type="hidden">
+   </form>
+    <div class="clr"></div>
+</div>
+ 
+   <div class="listmsg">
+     <ul>
+     
+	     <volist name="view_list" id="v" >
+	       
+	       <li>
+	         <div class="msgtop"><span><php>if($v['niming'])echo '匿名';else echo $v['realname'];</php> </span><em>{$v.addtime|showDay=###}</em></div>
+	         <div>{$v.content}</div>
+	       </li>
+       
+       </volist>
+       
+     </ul>
+   </div>
+   
+     <div class="h20"></div>   
+       <!-- 翻页-->
+       {$page}
+  <div class="h20"></div>  
+  
+ </div>
+
+
+
+
+<script>
+$(function(){
+    $("#zhankai").click(function(){
+        $("#cominfo").toggleClass("highlight");
+		$("#mymr").toggleClass("dn");
+	    $(this).toggleClass("zkcur");
+    });
+});
+</script> 
+<script>
+   $(document).ready(function(){
+   $(".max").hover(function() {
+	$(this).css({'z-index' : '10'});
+	$(this).find('img').addClass("hover").stop()
+	.animate({marginTop: '-10px', marginLeft: '-10px', width: '220px', height: '120px',}, 300);
+	} , function() {
+	$(this).css({'z-index' : '0'});
+	$(this).find('img').removeClass("hover").stop()
+	.animate({marginTop: '0', marginLeft: '0',width: '200px', height: '100px', }, 300);
+	});
+  });
+</script>
+
+<script type="text/javascript" src="/Public/Home/js/Validform_v5.3.2_min.js"></script>   
+<script type="text/javascript">
+$(function(){	
+	$(".registerform:eq(0)").Validform({
+		tiptype:3,
+		showAllError:true,
+
+	});
+});
+
+
+
+$("#btn_add").click(function(){ 
+    
+    var content = $("#content").val();
+    var vid = $("#vid").val();
+    
+    $("#btn_add").attr('disabled',"true");
+    
+    if(content==''){
+        alert("内容不能为空");
+        $("#btn_add").removeAttr("disabled");
+        return false;
+    }
+    
+    $.ajax({
+        type:"POST",
+        url:ctx +"Video/addReview",
+        data:{content:content,vid:vid},
+        dataType:'json',
+        beforeSend:function(){
+        },          
+        success:function(data){
+        	//data = $.parseJSON( data );
+            if(data.status==1){
+            	
+                $("#content").val("");	
+                alert(data.info);
+                window.location.reload();
+            }
+            else alert(data.info);
+            $("#btn_add").removeAttr("disabled");  
+        }   ,
+        //调用执行后调用的函数
+        complete: function(XMLHttpRequest, textStatus){
+        	$("#btn_add").removeAttr("disabled");
+        },
+        //调用出错执行的函数
+        error: function(){
+        	$("#btn_add").removeAttr("disabled");
+            alert("评论失败，请稍后再试");
+        }        
+     });
+
+      
+});
+
+</script>
+
+
+ 
+<include file="Public/footer" />

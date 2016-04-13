@@ -1,0 +1,102 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/mcss/company.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/popup.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/external.min.css"/>
+<script type="text/javascript" src="/Public/Home/js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="/Public/Home/js/timeCountDown.js"></script>
+<script type="text/javascript" src="/Public/Home/js/additional-methods.js"></script>
+<script type="text/javascript" src="/Public/Home/js/callTimeCountDown.js"></script>
+ <style>
+   #colorbox{ width:88% !important;}
+ </style>
+
+<!--后台给出的变量天数》0-->
+<script>
+    var cd = {
+            $: function(id){
+                return document.getElementById(id);
+            },
+            futureDate: '-7680251632',
+            obj: function(){
+                return {
+                    sec: cd.$("activity_minute"),
+                    mini: cd.$("activity_hour"),
+                    hour: cd.$("activity_day")
+                }
+            }
+        };
+        fnTimeCountDown(cd.futureDate, cd.obj());
+</script>
+
+<div class="tilhed">
+   <a class="golevel" href="/User"></a>
+   <div class="mbtitle">面试管理</div>
+   <a class="gohome" href="/"></a>
+</div>
+
+<table class="sctab" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="#" class="cur">将面试</a></td>
+    <td><a  href="#" <if condition="$type eq 'prepare'">class="cur"</if>>已面试</a></td>
+  </tr>
+</table>
+
+<div class="mbbox mt14">
+    
+
+
+<!-- 待沟通模板，需要套程序 --> 
+ 
+   <div class="zwyuan">               
+        <table class="myjianli" width="100%" border="0" cellspacing="0" cellpadding="0">
+        
+              <tr>
+                <td class="toplk">
+                <a href="#">产品经理</a>
+                  <php>if($type!="autoFilter" && $type!="refuselist"){</php>
+	                    <a href="javascript:;" class="star <php>if($v['biaoshi']) echo 'collect';</php>"  data-deliverId="{$v.aid}"></a>
+	              <php>}</php>
+                  </td>
+              </tr>
+              
+              <tr>
+                <td class="botlk">
+                 <a href="#">小伟的在线简历</a>
+                </td>
+              </tr>
+              
+              <tr>
+                <td><i class="zwico1"></i>实验中心 · 计算机 · 本科 </td>
+              </tr>
+              
+              <tr>
+                <td><i class="zwico4"></i>应届毕业生</td>
+              </tr>
+              
+              <tr>
+                <td class="botlk1"><i></i>myemail@163.com</td>
+              </tr>
+              
+              <tr>
+                <td class="botlk2"><i></i>13969973911</td>
+              </tr>
+              
+        
+         </table>
+      </div>
+      
+                       
+    
+</div>
+
+ 
+ 
+
+<!-- end #body --> 
+
+<script type="text/javascript" src="/Public/Home/js/core.min.js?v=1.5.6_2015060418"></script> 
+<script type="text/javascript" src="/Public/Home/js/popup.min.js?v=1.5.6_2015060418"></script> 
+
+
+<include file="Public/footer" />

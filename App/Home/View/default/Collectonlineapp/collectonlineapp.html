@@ -1,0 +1,163 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/companylist.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/flat-ui.min.css" />
+<style type="text/css">
+ 
+</style>
+<div class="w960 mt30 jm_companylist_container">
+    <div class="lw240 jm_companylist_l">
+        <ul class="nav" >
+            <li class="active">
+              <a class="icon-resume icon-file-archive nav_cl_yl">我收藏的网申</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="rw680">
+    
+        <!-- 浏览器列表开始-->
+        <div  class="jm_companylist_r" style="margin:0;position: relative;">
+            <div id="collectapp" class="jm_companylist_section jm_inter">
+            <h3 class="jm_support_title">
+              <div class="pull-right">
+                <label class="radio">
+                  <input type="radio" name="optype" id="internship" value="实习" data-toggle="radio" class="custom-radio" checked=""><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                  实习 
+               </label>&nbsp;&nbsp;&nbsp;
+               <label class="radio">
+                  <input type="radio" name="optype" id="fulltime" value="全职" data-toggle="radio" class="custom-radio" ><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                  全职 
+               </label>
+              </div>
+            </h3>
+			
+			
+			
+            <table class="jm_companylist_tb">
+              <tr>
+                  <td width="210"><img src="/Public/Home/images/qq.png">腾讯</td>
+                  <td width="210"><a target="_blank" href="">123123123</a></td>
+                  <td width="220">已开始</td>
+                  <td width="40"><div id="jobCollection" class="jd_col"><i class="icon-resumebold icon-favourite"></i><span class="dn" id="collection_jd">收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+              </tr>
+        
+               <tr>
+                  <td width="210"><img src="/Public/Home/images/qq.png">腾讯</td>
+                  <td width="210"><a target="_blank" href="">123123123</a></td>
+                  <td width="220">已开始</td>
+                  <td width="40"><div id="jobCollection" class="jd_col collected"><i class="icon-resumebold icon-favourite"></i><span class="dn" id="collection_jd">收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+              </tr>
+            </table>
+			
+			
+            </div>
+        </div>
+        <!-- 职位列表结束-->
+    </div>
+    <div class="clr"></div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $("#ot-add").click(function(){
+        $("#ot-addform").css("display","block");
+        $("#ot-add").addClass("hn");
+        $(".cbp-vm-options").addClass("hn");
+        $("#ot-empty").css("display","none");
+      });
+
+      function g(a, c) {
+        var j = 0,
+        g = $("#jobid").val();
+        if (null == c || void 0 == c) var c = $("#resubmitToken").val(); {
+            var k = a.children(".jd_collection_success");
+            a.find("span#collection_jd")
+        }
+        j = a.hasClass("collected") ? 0 : 1,
+        $.ajax({
+            url: GLOBAL_DOMAIN.ctx + "/mycenter/collectPositoin.json",
+            type: "POST",
+            async: !1,
+            data: {
+                positionId: g,
+                type: j,
+                resubmitToken: c
+            },
+            dataType: "json"
+        }).done(function(c) {
+            null != c.resubmitToken && "" != c.resubmitToken && $("#resubmitToken").val(c.resubmitToken),
+            c.success && (1 == c.content.showStts ? (a.removeClass("collection_hover"), a.removeClass("collected"), k.find("span").text("已取消该收藏，"), k.find("a.jd_collection_page").text("查看全部收藏"), k.show(), k.hover(function() {
+                var a = $(this);
+                _(a)
+            },
+            function() {
+                var a = $(this);
+                C(a)
+            }), b(k), A = !1, $(".allmarch_jd_collect .btn_collect").removeClass("disabled").html("立即收藏")) : (a.addClass("collected"), k.find("span").text("已收藏该职位，"), k.find("a.jd_collection_page").text("查看全部收藏"), k.show(), k.hover(function() {
+                var a = $(this);
+                _(a)
+            },
+            function() {
+                var a = $(this);
+                C(a)
+            }), b(k), A = !0, L && ($.colorbox({
+                inline: !0,
+                href: $("#collectSuccess"),
+                title: "收藏成功"
+            }), L = !1), $(".allmarch_jd_collect .btn_collect").addClass("disabled").html("已收藏"))),
+            null == c.content && (a.removeClass("collection_hover"), alert(c.msg), v(a)),
+            $("#jobCollection").on("click",
+            function(e) {
+                var a = $(this),
+                c = this,
+                v = a.find("span#collection_jd");
+                v.addClass("dn"),
+                a.unbind("mouseover"),
+                a.unbind("mouseout"),
+                w(h, [e, a, c], null, 500)
+            }),
+            $(".jd_collection_page").on("click",
+            function(e) {
+                e.stopPropagation()
+            })
+        })
+    }
+
+      $("a.jd_col").hover(function() {
+        var a = $(this).find("span#collection_pos");
+        a.removeClass("dn")
+      },
+      function() {
+          var a = $(this).find("span#collection_pos");
+          a.addClass("dn")
+      }),
+      $(".jd_col").bind("mouseover",
+      function() {
+          var a = $(this).find("span#collection_jd");
+          $(this).addClass("collection_hover"),
+          $(this).hasClass("collected") ? (a.text("已收藏"), a.removeClass("dn")) : (a.text("收藏"), a.removeClass("dn"))
+      }),
+      $(".jd_col").bind("mouseout",
+      function() {
+          $(this).find("span#collection_jd").addClass("dn"),
+          $(this).removeClass("collection_hover")
+      });
+       $(".jd_col").bind("mouseover",
+      function() {
+          var a = $(this).find("i.collection_jd_trangle");
+          a.removeClass("dn")
+      }),
+      $(".jd_col").bind("mouseout",
+      function() {
+          $(this).find("i.collection_jd_trangle").addClass("dn"),
+          $(this).removeClass("collection_hover")
+      });
+
+  });
+</script>
+<script src="/Public/Home/js/modernizr.custom.js"></script>
+<script src="/Public/Home/js/flat-ui.min.js"></script>
+<script src="/Public/Home/js/flat-application.js"></script>
+<!-- <script type="text/javascript" src="/Public/Home/js/bootstrap.min.js"></script>  --> 
+
+<include file="Public/footer" />        

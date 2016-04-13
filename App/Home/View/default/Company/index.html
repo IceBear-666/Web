@@ -1,0 +1,276 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/list.css"/>
+
+
+<div class="w960 mt30">
+
+
+   <!-- 左侧菜单开始-->
+   <div class="lw240">
+     <div class="navbg">
+      <h2 class="shownav">行业领域<i class="btnsj <php>if(!empty($bigid)){echo 'btnsjhv';}elseif(!empty($hy)){echo 'btnsjhv';}</php>"></i></h2>
+         <php>geturl2('领域',$bigid,'bigid');</php>
+          <php>geturl2('行业',$hy,'hy');</php>
+        <div class="mod-menu  <php>if(!empty($hy)){echo 'dn';}elseif(!empty($bigid)){echo 'dn';}</php>">
+
+
+          <!-- 一级分类 -->
+          <ul class="menu-item">
+
+            <volist name="hangye_lingyu" id="v" key="kk">
+
+            	<li><a href="/Company/index/{$ct}-{$xz}-0-{$order}-{$v.id}?kd={$kd}" >{$v.title}</a></li>
+            	<php>if($kk==5)echo '<div class="mr-item dn">';</php>
+
+            </volist>
+
+            <php>if($kk>4){</php>
+
+            </div>
+            <a class="shownavmr minmr" href="javascript:void(0)">更多<i class="btnsj1"></i></a>
+
+            <php>}</php>
+
+          </ul>
+          <!-- 二级分类 -->
+
+
+         <div class="menu-cont">
+
+         	<volist name="hangye_lingyu" id="v" key="kk">
+
+	            <div class="menu-cont-list">
+
+	               <volist name="v.sub" id="m" key="mm">
+
+	               	<a href="/Company/index/{$ct}-{$xz}-{$m.id}-{$order}-0?kd={$kd}" <if condition="$mm eq $hy">class="current"</if> data-ifs="{$mm}" >{$m.title}</a>
+
+	               </volist>
+
+	               <div class="clr"></div>
+	             </div>
+
+             </volist>
+
+          </div>
+
+
+        </div>
+        <div class="fgxian"></div>
+
+
+         <h2 class="shownav">公司性质<i class="btnsj <php>if(!empty($xz))echo 'btnsjhv';</php>"></i></h2>
+          <php>geturl2('公司性质',$xz,'gs');</php>
+
+         <div class="mygsxz  <php>if(!empty($xz)){echo 'dn';}</php>">
+             <volist name="gongsi_xingzhi" key="k" id="v">
+             	<a href="/Company/index/{$ct}-{$k}-{$hy}-{$order}-{$bigid}?kd={$kd}" data-fs="{$k}" <if condition="$k eq $xz">class="current"</if>>{$v}</a>
+             </volist>
+         </div>
+
+     </div>
+  </div>
+
+
+
+  <!-- 右侧列表开始-->
+   <div class="rw680">
+
+     <!-- 搜索开始-->
+     <div class="soubox">
+      <form class="myform" name="searchForm" action="" method="get" >
+              <input type="text" class="stxt" name = "kd"  tabindex="1" value="{$kd}"  placeholder="搜索你感兴趣的公司"  />
+              <input type="submit" class="sbtn" value="搜索" />
+          </form>
+         <div class="clr"></div>
+     </div>
+
+     <div class="shaixuan">
+       <span>工作地点：</span>
+
+       <a href="/Company/index/0-{$xz}-{$hy}-{$order}?kd={$kd}" <if condition="$ct eq 0">class="cur"</if>>不限</a><em>|</em>
+
+       <php>$cnum = count($city_list);$ci=0;foreach($city_list as $k=>$v){ $ci++; </php>
+       		<a href="/Company/index/{$k}-{$xz}-{$hy}-{$order}?kd={$kd}" <if condition="$ct eq $k">class="cur"</if> >{$v.name}</a><php>if($cnum!=$ci) echo'<em>|</em>';</php>
+       <php>}</php>
+       <div class="clr"></div>
+     </div>
+
+     <div class="shaixuan">
+       <span>排序：</span>
+       <a href="/Company/index/{$ct}-{$xz}-{$hy}-0?kd={$kd}" <if condition="$order eq 0">class="cur"</if> >人气</a><em>|</em>
+       <a href="/Company/index/{$ct}-{$xz}-{$hy}-1?kd={$kd}" <if condition="$order eq 1">class="cur"</if>>最新更新</a>
+       <div class="clr"></div>
+     </div>
+
+
+     <!-- 公司列表开始-->
+     <div class="listbox">
+     <php>if(!$list) echo '<div class="nocenter"><span><img src="/Public/Home/images/empty.png" />未找到符合要求的记录</span></div>';</php>
+       <ul>
+
+       	<volist name="list" id="v" >
+
+          <li <if condition="$key%3== '0'"> class="clr"</if >>
+               <h5>
+                  <a class="comtl lf" href="/Company/info/id/{$v.com_id}" target="_blank">{$v.company_short_name}</a>
+                  <a class="rt" href="/Company/info/id/{$v.com_id}" target="_blank">[{$v.company_city}]</a>
+                  <div class="clr"></div>
+               </h5>
+               <a  href="/Company/info/id/{$v.com_id}" target="_blank" class="comlogo">
+                  <if condition="$v.logo neq ''">
+                      <img src="{$v.logo}" alt="{$v.company_short_name}" height="190" width="190">
+                  <else />
+                      <img src="/Public/Home/images/logo_default.png" alt="{$v.company_short_name}" height="190" width="190">
+                  </if>
+                  <em></em>
+                  <h4>{$v.hangye}</h4>
+               </a>
+               <div class="zhiwei">
+                 <volist name="v.jobs_arr" id="vv">
+                  <a href="/Jobs/info/id/{$vv.jid}/source/company_list" target="_blank">{$vv.zhiwei_mingcheng}</a>
+                 </volist>
+               </div>
+          </li>
+
+          </volist>
+
+
+       </ul>
+     </div>
+     <!-- 公司列表结束-->
+
+
+     <!-- 翻页-->
+     <div class="mypage">
+     {$page}
+        <!-- <a href="#">上一页</a>
+        <a href="#">1</a>
+        <a class="cur" href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">下一页</a> -->
+     </div>
+
+
+   </div>
+
+<div class="clr" style="height:100px;"></div>
+
+</div>
+
+
+<input value="{$myinfo.uid}" name="userid" id="userid" type="hidden">
+
+<if condition="$page_count gt 0">
+
+ <script>
+$(function(){
+	/*分页 */
+ 	$('.Pagination').pager({
+	      currPage: "{$currPage}",
+	      pageNOName: "pn",
+	      form: "searchForm",
+	      pageCount: "{$page_count}",
+	      pageSize:  5
+	});
+
+	//统计到职位详情的来源脚本 add by Vee ｜2014-7-3
+	/* $('.hc_list a.cl_job').click(function(e){
+		e.preventDefault();
+		var href=$(this).attr("href");
+		window.location.href=href+"?source=company_list"; //公司列表页
+	}); */
+	//end
+})
+</script>
+
+</if>
+
+<script>
+$(function(){
+    $(".shownav").click(function(){
+		$(this).find("i").toggleClass("btnsjhv");
+        $(this).next().slideToggle(200);//需要展开的内容
+    });
+
+	 $(".shownavmr").click(function(){
+		$(this).find("i").toggleClass("btnsjhv1");
+        $(this).prev().slideToggle(200);//需要展开的内容
+		$(".menu-cont").hide();
+    });
+
+	$(".shownavmr").hover(function(){
+		$(".menu-cont").hide();
+		$(".menu-item li").removeClass("mouse-bg");
+		$(".mr-item li").removeClass("mouse-bg");
+    });
+
+});
+
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	var mod_menu=$(".mod-menu");//导航模块区
+	var menu=function(){
+		var menuItem=$(".menu-item li");//选择导航列表
+		var mrItem=$(".mr-item li");//选择导航列表
+		menuItem.each(function(){
+			var _index=$(this).index();//获取当前选择菜单列表的索引
+			$(this).mouseenter(function(){
+				var y = $(this).position().top+1;//获取当前鼠标滑过的列表的顶部坐标
+				$(".menu-cont").show();
+				$(".menu-cont").css("top",y);//需要显示的对应索引内容
+				$(this).addClass("mouse-bg").siblings().removeClass("mouse-bg");
+				$(".menu-cont>div").eq(_index).show().siblings().hide();
+				mrItem.removeClass("mouse-bg");
+			});
+		});
+
+		mrItem.each(function(){
+			var _index=$(this).index()+5;//获取当前选择菜单列表的索引
+			$(this).mouseenter(function(){
+				var y = $(this).position().top+1;
+				$(".menu-cont").show();
+				$(".menu-cont").css("top",y);
+				$(this).addClass("mouse-bg").siblings().removeClass("mouse-bg");
+				$(".menu-cont>div").eq(_index).show().siblings().hide();
+				$(this).parent().siblings('li').removeClass("mouse-bg");
+			});
+		});
+		/*导航菜单菜单*/
+		$(".mod-menu").mouseleave(function(){
+			$(".menu-cont").hide();
+			menuItem.removeClass("mouse-bg");
+		})
+	}//展开二级菜单
+	menu();//执行展开二级菜单函
+});
+</script>
+
+<script>
+	$('.selected').delegate('.select_remove','click',function(event){
+		var firstName = $(this).siblings('strong').text();
+		var fn = $.trim(firstName);
+		if (fn=="月薪范围")
+			editForm("yxInput" , "");
+		else if(fn=="工作经历")
+			editForm("gjInput" , "");
+		else if(fn=="学历要求")
+			editForm("xlInput" , "");
+		else if(fn=="工作性质")
+			editForm("gxInput" , "");
+		else if(fn=="公司性质")
+			window.location.href='/Company/index/{$ct}-0-{$hy}-{$order}-{$bigid}?kd={$kd}';
+		else if(fn=="职位")
+			editForm("zwInput" , "");
+	    else if(fn=="领域")
+			window.location.href='/Company/index/{$ct}-{$xz}-{$hy}-{$order}-0?kd={$kd}';
+	    else if(fn=="行业")
+			window.location.href='/Company/index/{$ct}-{$xz}-0-{$order}-{$bigid}?kd={$kd}';
+	});
+</script>
+
+<include file="Public/footer" />

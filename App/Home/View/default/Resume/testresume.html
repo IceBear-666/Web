@@ -1,0 +1,467 @@
+<include file="Public/header" /> 
+
+<script type="text/javascript">
+var ctx = "{$Think.WEB_URL}";
+var ctx_new = "{$Think.WEB_URL}";
+var rctx = "{$Think.WEB_URL}";
+var pctx = "{$Think.WEB_URL}";
+
+/* var frontLogin = "http://www.lagou.com/frontLogin.do";
+var frontLogout = "http://www.lagou.com/frontLogout.do";
+var frontRegister = "http://www.lagou.com/frontRegister.do"; */
+</script>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/testresume.css">
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/tabstyles.css" />
+
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/flat-ui.min.css" />
+<!-- <link rel="stylesheet" type="text/css" href="/Public/Home/css/fontscss.css" /> -->
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/jBox.css" />
+
+
+<script src="/Public/Home/js/modernizr.custom.js"></script>
+<script src="/Public/Home/js/flat-ui.min.js"></script>
+<script src="/Public/Home/js/flat-application.js"></script>
+<script type="text/javascript" src="/Public/static/think.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="/Public/Home/css/myresume.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/tailoring.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/external.min.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+ -->
+ <script type="text/javascript" src="/Public/Home/js/timeCountDown.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/timeCountDown.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/additional-methods.js"></script> 
+<!-- <script type="text/javascript" src="/Public/Home/js/application.js"></script> 
+ -->
+ <script type="text/javascript" src="/Public/Home/js/jBox.js"></script> 
+<script>
+  /* function callback(response) {
+      if(response.success==true&&response.state==1){
+          $("#nowrap").parent().addClass('plus-vip');
+          $('#accountSetting')[0].href="http://hr.lagou.com/baseinfo/accountDetail.html";
+      }
+  }
+    jQuery.ajax({
+        url:"http://hr.lagou.com/plus/getVipTip.json",
+        dataType: 'jsonp',
+        jsonp: 'jsoncallback'
+    }).done(function (response) {
+        callback && callback(response);
+    }); */
+</script> 
+
+<!--后台给出的变量天数》0--> 
+<script>
+    var cd = {
+            $: function(id){
+                return document.getElementById(id);    
+            },
+            futureDate: -5768647956,
+            obj: function(){
+                return {
+                    sec: cd.$("activity_minute"),
+                    mini: cd.$("activity_hour"),
+                    hour: cd.$("activity_day")
+                }
+            }
+        };
+        fnTimeCountDown(cd.futureDate, cd.obj());
+</script>
+<style type="text/css">
+  .mr_up_grey {
+    cursor: default;
+    padding: 5px;
+    color: #ccc;
+    text-align: center;
+  }
+  .progressbar{
+    width: 240px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+</style>
+
+<div id="body"> 
+  
+  <!-- 数据展示类接口需要版本号 -->
+  <input type="hidden" id="version" value="1.5.6_2015051318">
+  
+  <div id="container">
+  
+    <input type="hidden" id="isShowDefault" value="1" />
+    <div class="clearfixs mr_created container" id="tab1">
+        <div class="section-top">
+            <div class="section-top-container" id="section-top-container">
+                <div>
+                    <a class="lt-title" >一键闪填</a>
+                    <a class="rt-title" href="{:U('Resume/customize')}">｜&nbsp;&nbsp;&nbsp;开放性问题(OQ)</a>
+                    <div class="triangle-up-1"></div>
+                </div>
+                <div class="rt-progress">
+                <span class="complete">完整度：</span>
+                  <div class="progress" id="progress-allresume" style=" width: 170px; ">
+                    <div class="progress-bar" style=" width:<?php $allnum = 170*$alllist[1]/$alllist[0]; echo sprintf("%.2f", $allnum);?>px"></div>
+                    <span class="counter" style="left:70px"><?php echo "$alllist[1]/$alllist[0]";?></span>
+                  </div>
+
+                  <div class="progress lowUse" id="progress-emptyresume" style=" width: 65px; ">
+                    <div class="progress-bar" style="width: <?php $lownum= 65*$low_num[1]/$low_num[0]; echo sprintf("%.2f", $lownum);?>px"></div><span class="counter" style="left:12px;"><?php echo "$low_num[1]/$low_num[0]";?></span>
+                  </div>
+                  <div class="blank lowUse"></div>
+                </div>
+            </div>
+        </div>
+    <section>
+      <div class="tabs tabs-style-underline">
+      <div class="resumebg-left" id="resumebg-left">
+      <div class="resume-button">
+         <!--  <button class="btn btn-block btn-resume"><span class="icon-resume icon-eyes">预览</span></button>
+          <button class="btn btn-resume"><span class="icon-resume icon-check">保存</span></button>       -->   
+           <a class="btn btn-resume" href="/Resume/myResumePreview.html">预览</a>
+          <button class="btn btn-resume">保存</button>         
+      </div>
+        <nav>
+          <ul>
+            <li><a href="#su1" class="icon-resume icon-home"><span>基本信息</span><span class="countNum" id="infoNum"><?php print_r(count(array_filter($resume_info[0])))?>/<?php print_r(count($resume_info[0]))?></span></a></li>
+            <li id="section-edu" ><a href="#section-underline-2" class="icon-resume icon-gift"><span>教育信息</span><span class="countNum" id="eduNum"><?php $edu_num= count($edu_list);for ($i=0; $i < $edu_num ; $i++) { $edu_arr[$i] = count(array_filter($edu_list[$i])); } $edu_num =$edu_num*3; $edu_arr = array_sum($edu_arr);print_r($edu_arr-$edu_num);?>/<?php $edu_tnum = count($edu_list, true); $edu_tarr = 9*count($edu_list); print_r($edu_tnum-$edu_tarr);?></span></a></li>
+            <li id="section-work"><a href="#section-underline-3" class="icon-resume icon-upload"><span>工作经历</span><span class="countNum" id="jobNum"><?php $exp_num= count($exp_list);for ($i=0; $i < $exp_num ; $i++) { $exp_arr[$i] = count(array_filter($exp_list[$i])); } $exp_num =$exp_num*2; $exp_arr = array_sum($exp_arr);print_r($exp_arr-$exp_num);?>/<?php $exp_tnum = count($exp_list, true); $exp_tarr = 6*count($exp_list); print_r($exp_tnum-$exp_tarr);?></span></a></li>
+            <li id="section-pro"><a href="#section-underline-4" class="icon-resume icon-coffee"><span>项目经历</span><span class="countNum" id="proNum"><?php $pro_num= count($pro_list);for ($i=0; $i < $pro_num ; $i++) { $pro_arr[$i] = count(array_filter($pro_list[$i])); } $pro_num =$pro_num*2; $pro_arr = array_sum($pro_arr);print_r($pro_arr-$pro_num);?>/<?php $pro_tnum = count($pro_list, true); $pro_tarr = 6*count($pro_list); print_r($pro_tnum-$pro_tarr);?> 
+            </span></a></li>
+             <li id="section-certi"><a href="#section-underline-5" class="icon-resume icon-certificate"><span>已获证书</span><span class="countNum" id="certiNum"><?php $certificate_num= count($certificate_list);for ($i=0; $i < $certificate_num ; $i++) { $certificate_arr[$i] = count(array_filter($certificate_list[$i])); } $certificate_num =$certificate_num*1; $certificate_arr = array_sum($certificate_arr);print_r($certificate_arr-$certificate_num);?>/<?php $certificate_tnum = count($certificate_list, true); $certificate_tarr = 2*count($certificate_list); print_r($certificate_tnum-$certificate_tarr);?></span></a></li>
+            <li id="section-schpra"><a href="#section-underline-6" class="icon-resume icon-config"><span>在校实践</span><span class="countNum" id="schpraNum"><?php $practice_num= count($practice_list);for ($i=0; $i < $practice_num ; $i++) { $practice_arr[$i] = count(array_filter($practice_list[$i])); } $practice_num =$practice_num*2; $practice_arr = array_sum($practice_arr);print_r($practice_arr-$practice_num);?>/<?php $practice_tnum = count($practice_list, true); $practice_tarr = 6*count($practice_list); print_r($practice_tnum-$practice_tarr);?></span></a></li>
+            <li id="section-schclub"><a href="#section-underline-7" class="icon-resume icon-schclub"><span>社团经历</span><span class="countNum" id="schclubNum"><?php $schoolclub_num= count($schoolclub_list);for ($i=0; $i < $schoolclub_num ; $i++) { $schoolclub_arr[$i] = count(array_filter($schoolclub_list[$i])); } $schoolclub_num =$schoolclub_num*1; $schoolclub_arr = array_sum($schoolclub_arr);print_r($schoolclub_arr-$schoolclub_num);?>/<?php $schoolclub_tnum = count($schoolclub_list, true); $schoolclub_tarr = 2*count($schoolclub_list); print_r($schoolclub_tnum-$schoolclub_tarr);?></span></a></li>
+            <li id="section-schaw"><a href="#section-underline-8" class="icon-resume icon-schawards"><span>获奖经历</span><span class="countNum" id="schawardNum"><?php $schoolawards_num= count($schoolawards_list);for ($i=0; $i < $schoolawards_num ; $i++) { $schoolawards_arr[$i] = count(array_filter($schoolawards_list[$i])); } $schoolawards_num =$schoolawards_num*1; $schoolawards_arr = array_sum($schoolawards_arr);print_r($schoolawards_arr-$schoolawards_num);?>/<?php $schoolawards_tnum = count($schoolawards_list, true); $schoolawards_tarr = 2*count($schoolawards_list); print_r($schoolawards_tnum-$schoolawards_tarr);?></span></a></li>
+             <li id="section-"><a href="#section-underline-9" class="icon-resume icon-language"><span>语言能力</span></a></li>
+           
+             <li id="section-train"><a href="#section-underline-10" class="icon-resume icon-training"><span>培训经历</span><span class="countNum" id="trainingNum"><?php $trainingexperience_num= count($trainingexperience_list);for ($i=0; $i < $trainingexperience_num ; $i++) { $trainingexperience_arr[$i] = count(array_filter($trainingexperience_list[$i])); } $trainingexperience_num =$trainingexperience_num*1; $trainingexperience_arr = array_sum($trainingexperience_arr);print_r($trainingexperience_arr-$trainingexperience_num);?>/<?php $trainingexperience_tnum = count($trainingexperience_list, true); $trainingexperience_tarr = 2*count($trainingexperience_list); print_r($trainingexperience_tnum-$trainingexperience_tarr);?></span></a></li>
+             <li id="section-otherinfo"><a href="#section-underline-11" class="icon-resume icon-otherinfo"><span>其他信息</span><span class="countNum" id="otherinfoNum"><?php print_r(count(array_filter($otherinfo_list[0]))-1)?>/<?php print_r(count($otherinfo_list[0])-1)?></span></a></li>
+          </ul>
+        </nav>
+                </div>
+        <div class="content-wrap">
+          <div class="swich-container">
+            <!--   <input type="checkbox" checked data-toggle="switch" id="info-switch" onchange="checkChange()"  data-on-text="全部" data-off-text="高频"/> -->
+
+               <div class="switch-resume switch-yellow">
+                <input type="radio" class="switch-input" name="resume-checked" value="high" id="high" checked="">
+                <label for="high" class="switch-label switch-label-off">高频</label>
+                <input type="radio" class="switch-input" name="resume-checked" value="all" id="all">
+                <label for="all" class="switch-label switch-label-on">全部</label>
+                <span class="switch-selection"></span>
+              </div>
+          </div>
+          <section id="su1">
+            <include file="./App/Home/View/default/Resume/add/addinfo.html" />
+          </section>
+          <section id="section-underline-2">
+            <include file="./App/Home/View/default/Resume/add/addedu.html" />
+          </section>
+          <section id="section-underline-3">
+            <include file="./App/Home/View/default/Resume/add/addwork.html" />
+          </section>
+          <section id="section-underline-4">
+            <include file="./App/Home/View/default/Resume/add/addproject.html" />
+          </section>
+           <section id="section-underline-5">
+              <include file="./App/Home/View/default/Resume/add/addCertificate.html" />
+          </section>
+          <section id="section-underline-6">
+            <include file="./App/Home/View/default/Resume/add/addschoolpra.html" />
+          </section>
+          <section id="section-underline-7">
+            <include file="./App/Home/View/default/Resume/add/addschoolclub.html" />
+          </section>
+          <section id="section-underline-8">
+              <include file="./App/Home/View/default/Resume/add/addSchoolAwards.html" />
+          </section>
+           <section id="section-underline-9">
+              <include file="./App/Home/View/default/Resume/add/addLanguageSkill.html" />
+          </section>
+           <section id="section-underline-10">
+              <include file="./App/Home/View/default/Resume/add/addTraining.html" />
+          </section>
+           <section id="section-underline-11">
+              <include file="./App/Home/View/default/Resume/add/addOtherInfo.html" />
+          </section>
+          <a href="javascript:" class="prev" id="prev1" style="display: none">
+           <!--    <img src="http://demo.litextension.com/le_demo/skin/frontend/default/default/le_itemslider/images/icon-prev.png"> -->
+          </a>
+
+          <a href="javascript:" class="next" id="next1" style="display: none">
+             <!--  <img src="http://demo.litextension.com/le_demo/skin/frontend/default/default/le_itemslider/images/icon-next.png"> -->
+          </a>
+        </div><!-- /content -->
+      </div><!-- /tabs -->
+    </section>
+        <div class="clear"></div>
+      </div>     
+    </div>
+
+  <include file="./App/Home/View/default/Resume/edit/editedu.html" />
+  <include file="./App/Home/View/default/Resume/edit/editwork.html" />
+  <include file="./App/Home/View/default/Resume/edit/editproject.html" />
+    <include file="./App/Home/View/default/Resume/edit/editschoolpra.html" /> 
+    <include file="./App/Home/View/default/Resume/edit/editschoolclub.html" /> 
+    <include file="./App/Home/View/default/Resume/edit/editSchoolAwards.html" /> 
+    <include file="./App/Home/View/default/Resume/edit/editCertificate.html" /> 
+    <include file="./App/Home/View/default/Resume/edit/editTraining.html" />  
+ 
+  <script src="/Public/Home/js/cbpFWTabs.js"></script>
+
+  <script>
+      $(document).ready(function() {
+
+      $("input[name=resume-checked]").click(function(){
+        checkChange();
+       });
+
+      $('.tipright').jBox('Tooltip', {
+        position: {
+          x: 'right',
+          y: 'center'
+        },
+        width:150,
+        outside: 'x' // Horizontal Tooltips need to change their outside position
+      });
+      $('.tiprighttext').jBox('Tooltip', {
+        position: {
+          x: 'right',
+          y: 'center'
+        },
+        width:150,
+        outside: 'x' // Horizontal Tooltips need to change their outside position
+      });
+
+        $(".form_oldatetime").datetimepicker({
+            format: "yyyy-mm-dd",
+            language: 'zh-CN',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+
+        });
+
+      //alert(window.location.pathname);
+      var realhash = window.location.hash;
+      //alert(realhash);
+      if (realhash == "#section-underline-2") {
+        $("#section-edu").click();
+      }else if (realhash == "#section-underline-3") {
+         $("#section-work").click();
+      }else if (realhash == "#section-underline-4") {
+         $("#section-pro").click();
+      }else if (realhash == "#section-underline-5") {
+         $("#section-certi").click();
+      }else if (realhash == "#section-underline-6") {
+         $("#section-schpra").click();
+      }else if (realhash == "#section-underline-7") {
+         $("#section-schclub").click();
+      }else if (realhash == "#section-underline-8") {
+         $("#section-schaw").click();
+      }else if (realhash == "#section-underline-9") {
+         $("#section-").click();
+      }else if (realhash == "#section-underline-10") {
+         $("#section-train").click();
+      }else if (realhash == "#section-underline-11") {
+         $("#section-otherinfo").click();
+      }else{
+      }
+   }); 
+    (function() {
+      [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+        new CBPFWTabs( el );
+      });
+    })();
+
+    var $t=new CBPFWTabs(document.getElementById( 'tab1' ) )
+    document.getElementById('prev1').onclick=function(){
+        var current=$t.current;
+        var count=$t.items.length;
+        current--;
+        if(current<0) current=count-1;
+        $t._show(current);
+    };
+
+    document.getElementById('next1').onclick=function(){
+        var current=$t.current;
+        var count=$t.items.length;
+        current++;
+        if(current>=count) current=0;
+        $t._show(current);
+    };
+
+    function tonext(){
+       document.getElementById('next1').click();
+    }
+  </script>
+
+    <!------------------------------------- end -----------------------------------------> 
+    
+    
+    
+    <script type="text/javascript" src="/Public/Home/js/tinymce/jscripts/tiny_mce/jquery.tinymce.js"></script> 
+    <script>
+  // 设置全局变量
+  window.globals =  {
+    resumeId: '{$info.uid}',
+    initRatio: '{$info.resume_score}',
+    token: '3ad1ea0ea3794947ade65710418b25bd',
+    refreshTime: '{$info.update_time}',
+    skillScore: '{$info.score_jineng}',
+    projectExperienceScore: '{$info.score_xiangmu}',
+    workShowScore: '{$info.score_zuopin}',
+    //expectJobsScore: '{$info.score_qiwang}',
+    myRemarkScore: '{$info.score_ziwo}',
+    hasProjectExperiences: true,
+    hasWorkShows: false,
+    hasSelf: true,
+    //hasExpectJobs: true,
+    hasSkillEvaluates: true,
+    hasUserDefines: true,
+    personIdFlag:'',
+    qrImgSrc:'/Public/qr/qrcode.jpg?qrSource=myResume',
+    isOpenResume:'{$info.isOpenMyResume}',
+    isFirstOpen:false
+  };
+  </script> 
+    <script type="text/javascript" src="/Public/Home/js/common.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/json.min.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/jquery-migrate-1.1.1.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/jquery-ui-1.8.custom.min.js"></script> 
+    
+    <script type="text/javascript" src="/Public/Home/js/jquery.cropzoom.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/components.js?v=1.5.6_2015051318"></script> 
+    <script type="text/javascript" src="/Public/Home/js/testresume.js"></script> 
+    <!------------------------------------- end ----------------------------------------->
+    
+    
+    
+    <div class="clear"></div>
+    <script>
+    // 关闭
+    //3s tips消失
+    var global = {}
+    global.email = "{$info.email}";
+    global.usertoken = $.cookie('user_trace_token');
+  </script>
+  
+  </div>
+  <!-- end #container --> 
+  
+  
+</div>
+<!-- end #body --> 
+
+<script type="text/javascript" src="/Public/Home/js/core.min.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/popup.js"></script> 
+
+
+<!--copy账号系统的passport.html--> 
+<script type="text/javascript">
+var userId = "{$info.uid}";
+  /* function noticeInit(){
+        var userId = "969363";
+        var urls = {
+            //调用B端简历管理nav的数字
+            queryTipsNums : "http://hr.lagou.com/recruitment/queryTipsNums.json",
+            //调用B端简历管理Notice Tip
+            queryNotice : "http://hr.lagou.com/notice/queryNotice.json",
+            //调用C端用户的notice数字
+            getPushNoticeOfC : "http://www.lagou.com/common/getPushNoticeOfC.json",
+            //清空C端用户的notice
+            clearPushNoticeOfC : "http://www.lagou.com/common/clearPushNoticeOfC.json",
+            //清空B端用户的notice
+            clearAll : "http://hr.lagou.com/notice/clearAll.json"
+        }
+        
+             
+        //调用C端用户的notice数字
+        PASSPORT.util.rpc({
+            params:{},
+            url: urls.getPushNoticeOfC,
+            succ:function(data){
+                var result = data.content.data;
+                if(data.state == "1"){
+                    var headerNoticeObj = $('#header .wrapper');
+                    var noticeDotObj = $("#noticeDot");
+                    var noticePopTip = ['<div id="noticeTip">','<span class="bot"></span>','<span class="top"></span>','<a href="javascript:;" class="closeNT"></a>'];
+                    
+                    //推送投递反馈数
+                    if(result.isShowPushNotice){
+                        var counters = result.pushNoticeEntity.statusList;
+                        if(counters && counters[0] >= 0 ){
+                            noticePopTip.push('<a href="http://www.lagou.com/mycenter/delivery.html?tag=0&r=0"  class="notice_tip" target="_blank"><strong>'+counters[0]+'</strong>条新投递反馈</a>');
+
+                            //下拉菜单中我投递的职位number
+                            $('#noticeNo').attr("href","http://www.lagou.com/mycenter/delivery.html?tag=0&r=0")
+                            .children("span").html("("+counters[0]+")").show();
+                        }
+                    }
+         
+                    noticePopTip.push('</div>');
+
+                    if(result.isShowPushNotice || result.isShowPlusTips){
+                        //弹出tip和红点
+                        noticeDotObj.removeClass("dn");
+                        headerNoticeObj.append(noticePopTip.join(''));
+                    }
+                    
+                    //全部已读
+                    $('#noticeTip a.closeNT').click(function(){
+                        //与后台交互，消息标识为已读
+                        clearNoticeTip(urls.clearPushNoticeOfC); 
+                        $('#noticeNo span').html('').hide();
+                    });
+                }
+            },
+            fail:function(data){
+                console.log('fail:' + data);
+            }
+        });
+          }
+    
+    //全部清空notice
+    
+    function clearNoticeTip(url){
+        PASSPORT.util.rpc({
+            params:{},
+            url:url,
+            succ:function(data){
+                $('#noticeTip').remove();
+                $("#noticeDot").addClass("dn");
+            },
+            fail:function(data){
+                 console.log('fail:' + data);
+            }
+        });
+    } */
+
+</script> 
+
+<script type="text/javascript">
+function checkChange() {
+     //  var checkbox = document.getElementById('info-switch');//
+     // // alert(checkbox.checked);//是否被选中
+     //  if(checkbox.checked){
+     //    $(".lowUse").css("display","");
+     //  }else{
+     //    $(".lowUse").css("display","none");
+     //  }
+    var rechecked = $("input[name='resume-checked']:checked").val();
+      if(rechecked == "all"){
+        $(".lowUse").css("display","table-row");
+      }else{
+        $(".lowUse").css("display","none");
+      }
+}
+
+</script>
+    <link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+<include file="Public/footer" />

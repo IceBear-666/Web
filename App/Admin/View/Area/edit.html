@@ -1,0 +1,72 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>{:isset($info['aid'])?'编辑':'新增'}地区</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">地区名称<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="name" value="{$info.name|default=''}">
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">上级地区<span class="check-tips"> </span></label>
+            <div class="controls">
+                <select name="pid">
+                    <volist name="Menus" id="menu">
+                        <option value="{$menu.aid}">{$menu.name}</option>
+                    </volist>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">状态<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" name="status" value="1">启用</label>
+                <label class="radio"><input type="radio" name="status" value="0">禁用</label>
+            </div>
+        </div>
+        
+        <php>if($info['type']>1){</php>
+        <div class="form-item">
+            <label class="item-label">所属区域<span class="check-tips"></span></label>
+            <div class="controls">
+                <select name="acid" id="acid">
+                	<option value="0">请选择</option>
+                	<php>foreach($ac_arr as $k=>$v){</php>
+                	<option value="{$k}" <php>if($k==$info['acid'])echo 'selected';</php> >{$v}</option>
+                	<php>}</php>
+                </select>
+            </div>
+        </div>
+        <php>}</php>
+        
+        <div class="form-item">
+            <label class="item-label">是否热门<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" name="ishot" value="1">是</label>
+                <label class="radio"><input type="radio" name="ishot" value="0">否</label>
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <input type="hidden" name="aid" value="{$info.aid|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        Think.setValue("pid", {$info.pid|default = 0});
+        Think.setValue("status", {$info.status|default = 0});
+        Think.setValue("ishot", {$info.ishot|default = 0});
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+    </script>
+</block>

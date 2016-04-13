@@ -1,0 +1,98 @@
+  <!--教育经历修改框  -->
+   <div  class="list_show">
+    <div id="schawards_update_hide" class="dn">
+      <form class="eduExpForm" id="upSchAwForm">
+        <input type="hidden" id="schoolawardsid" name="schoolawardsid" value="" />
+        <div class="mr_add_work">
+         <div class="myr_info_list">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+            <tr>
+              <th class="pt10"><label>获奖名称</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <input type="text" name="awardsName" class="form-control">
+                </div>
+              </td>
+            </tr>
+           <tr>
+              <th class="pt10"><label>获奖类型</label></th>
+              <td>
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="awardsType_text" />
+                <input type="button" class="mr_button" name="awardsType" id="awardsType" />
+                <div class="xl_list dn">
+                  <ul class="ul_awardsType">
+                      <li>国际级</li>
+                       <li>国家级</li>
+                       <li>省市级</li>
+                       <li>学校级</li>
+                       <li>院系级</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="pt10"><label>担任职务</label></th>
+              <td>
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="awardsLevel_text" />
+                <input type="button" class="mr_button" name="awardsLevel" id="awardsLevel" />
+                <div class="xl_list dn">
+                  <ul class="ul_awardsLevel">
+                    <li>特等奖</li>
+                    <li>一等奖</li>
+                    <li>二等奖</li>
+                    <li>三等奖</li>
+                    <li>其它</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+            </tr>
+             <tr>
+              <th class="pt10"><label>获奖时间</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button"  readonly class="text input date" placeholder="选择时间" name="awardsDate"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+                </div>
+               
+              </td>
+            </tr>
+           <tr>
+              <th class="pt10"><label>获奖描述</label></th>
+                <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="awardsDes" style="width:520px;height:148px;"></textarea>
+                  <span class="tiprighttext icon-resume icon-business_bulb" title="获奖描述"></span> 
+                </td>
+            </tr>
+          </table>
+        </div>
+          <div class="mr_ope clearfixs">
+           
+            <input type="submit" class="mr_save btn-resumeac" value="保存" />
+            <a href="javascript:;" class="mr_cancel btn-resumeac">取消</a> 
+             <div class="mr_delete">
+              <!-- <div class="mr_delete_pop dn">
+                <p>确定删除本条信息？</p>
+                <div> <span data-id="" class="mr_del_ok">删除</span> <span class="mr_del_cancel">取消</span> </div>
+              </div> -->
+              <span data-id="" class="mr_del_ok btn-resumeac">删除本条</span> </div>
+          </div>
+        </div>
+      </form>
+    </div>
+</div> 

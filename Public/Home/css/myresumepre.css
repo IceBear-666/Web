@@ -1,0 +1,247 @@
+
+@font-face {
+  font-family: 'Nucleo Outline';
+  src:url('../fonts/nucleo-outline/nucleo-outline.eot');
+  src:url('../fonts/nucleo-outline/nucleo-outline.eot') format('embedded-opentype'),
+    url('../fonts/nucleo-outline/nucleo-outline.woff2') format('woff2'),
+    url('../fonts/nucleo-outline/nucleo-outline.woff') format('woff'),
+    url('../fonts/nucleo-outline/nucleo-outline.ttf') format('truetype'),
+    url('../fonts/nucleo-outline/nucleo-outline.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*------------------------
+	base class definition
+-------------------------*/
+.myr-font::before  {
+	z-index: 10;
+	display: inline-block;
+	margin: 0;
+	vertical-align: middle;
+	text-transform: none;
+	font-weight: normal;
+	font-variant: normal;
+	font-size: 1em;
+	font-family: 'Nucleo Outline';
+	line-height: 1;
+	speak: none;
+	-webkit-backface-visibility: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.myr_w760 {
+	width:760px;
+	margin:0 auto;
+}
+.myr_preview{
+	border-top:4px solid #ffd733;
+	font-size: 13px;
+	color: #6f3400;
+}
+#resumeCompelete {
+	position: relative;
+	height: 80px;
+  background-color: #fff;
+  z-index: 2;
+}
+.myr_preview h2.myr_title {
+	 color: #6f3400;
+    font-weight: 600;
+    font-size: 16px;
+    border-bottom: 1px solid #e3d2c4;
+    padding-bottom: 13px;
+    margin-bottom: 15px;
+}
+h5.sub-title {
+	font-size: 13px;
+	color: #6f3400;
+	padding:15px 0;
+}
+h5.des-empty {
+	color: #4a90e2 !important;
+}
+.des-contrainer {
+	padding-bottom: 30px;
+}
+.myr_content table.myr_tb {
+	width: 100%;
+}
+.myr_content table.myr_tb tr{
+	height: 40px;
+}
+.myr_content table.myr_tb td{
+	width: 84px;
+}
+.myr_content table.myr_tb td.col_2{
+	width: 168px;
+}
+.myr_content table.myr_tb td.col_3{
+	width: 252px;
+}
+.myr_content table.myr_tb td.col_4{
+	width: 336px;
+}
+.myr_content table.myr_tb td.col_5{
+	width: 420px;
+}
+.myr_content table.myr_tb .empty{
+	color: #4a90e2;
+}
+
+
+/*progress*/
+.rt-progress {
+    position: absolute; 
+    top:12px;
+    left: 90px; 
+    /*width: 240px; */
+    height: 42px;
+    /* border: 1px solid #6f3400;*/
+}
+#progress-allresume {
+    position: relative;
+    font-size: 14px;
+    text-align: center;
+    height: 42px;
+    float: left;
+}
+#progress-emptyresume {
+    position: relative;
+    font-size: 14px;
+    text-align: center;
+    height: 42px;
+    float: right;
+}
+.progress-bar {
+    height: 42px;
+    background-color: #ffd733 !important;
+}
+.progress-bar-low {
+    background: #ffd733;
+    box-shadow: none;
+    height: 42px;
+    line-height: 42px;
+}
+#progress-allresume .counter,#progress-emptyresume .counter{
+    position: absolute;
+    top:11px;
+    color:#482929;
+    font-size: 14px;
+}
+
+.rt-progress .complete{
+    position: absolute;
+    top: 10px;
+    left: -90px;
+    font-size: 14px;
+}
+.rt-progress .blank{
+    width: 5px;
+    height: 42px;
+    background-color: #fff;
+    float: right;
+    visibility: visible;
+}
+
+/*radio*/
+.fill-contrainer {
+    position: absolute;
+    top: 22px;
+    right: 135px;
+}
+.swich-container{
+	position: absolute;
+    top: 20px;
+    right: 0;
+}
+.switch-resume {
+  position: relative;
+ /* margin: 20px auto;*/
+  height: 28px;
+  width: 96px;
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid #e3d2c4;
+}
+
+.switch-label {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 46px;
+  line-height: 28px;
+  font-size: 11px;
+  color: #482929;
+  /*color: rgba(255, 255, 255, 0.35);*/
+  text-align: center;
+  /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);*/
+  cursor: pointer;
+}
+.switch-label:active {
+  /*font-weight: bold;*/
+}
+
+.switch-label-off {
+  padding-left: 2px;
+}
+
+.switch-label-on {
+  padding-right: 2px;
+}
+
+.switch-input {
+  display: none;
+}
+.switch-input:checked + .switch-label {
+  color: #fff;
+ /* text-shadow: 0 1px rgba(255, 255, 255, 0.25);*/
+  -webkit-transition: 0.15s ease-out;
+  -moz-transition: 0.15s ease-out;
+  -o-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+}
+.switch-input:checked + .switch-label-on ~ .switch-selection {
+  left: 45px;
+  /* Note: left: 50% doesn't transition in WebKit */
+}
+
+.switch-selection {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 28px;
+  background: #6f3400;
+  color: #fff;
+  border-radius: 15px;
+
+  -webkit-transition: left 0.15s ease-out;
+  -moz-transition: left 0.15s ease-out;
+  -o-transition: left 0.15s ease-out;
+  transition: left 0.15s ease-out;
+}
+
+.switch-yellow .switch-selection {
+  background: #6f3400;
+  color: #fff;
+}
+/*.empty {
+   visibility:hidden;
+}*/
+
+.myr_contrainer {
+	padding-bottom: 35px;
+}
+.myr_hidden{
+	display: none;
+}
+
+a.icon-edit {
+	color: #6f3400;
+	float: right;
+}
+.icon-edit::before {
+  content: "\e681";
+}

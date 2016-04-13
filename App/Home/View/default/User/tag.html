@@ -1,0 +1,104 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+	    <div class="content_mid"> 
+	      <!--form-->
+	      <dl class="c_section c_section_mid">
+	        <dt>
+	          <h2><em></em>填写公司信息</h2>
+	          <a href="{$Think.WEB_URL}Jobs/createPost" class="c_addjob"><i></i>发布新职位</a>
+	        </dt>
+	        
+	        	<dd id="step2Form">
+                 <div class="c_text">简短明了的标签信息让求职者更加方便检索，更快找到你们！</div>
+                 	<img src="__PUBLIC__/Images/step2.png" alt="第二步" class="c_steps" height="56" width="668">
+                    
+                    <h3>已添加标签</h3>
+                    <ul id="labels" class="reset">
+                    </ul>
+                     
+                    <input id="label" name="label" placeholder="请输入自定义标签" type="text">	
+                    <input id="add_label" value="贴上" type="submit">
+                   	<div class="clear"></div>
+                    
+                    <div id="box_labels">
+                    		                        <dl>
+                            <dt>薪酬激励</dt>
+                            <dd>
+                                <ul class="reset">
+                                		                                    <li>年终分红</li>
+                                    	                                    <li>绩效奖金</li>
+                                    	                                    <li>股票期权</li>
+                                    	                                    <li>专项奖金</li>
+                                    	                                    <li>年底双薪</li>
+                                    	                                </ul>
+                            </dd>
+                        </dl>
+                        	                        <dl>
+                            <dt>员工福利</dt>
+                            <dd>
+                                <ul class="reset">
+                                		                                    <li>五险一金</li>
+                                    	                                    <li>通讯津贴</li>
+                                    	                                    <li>交通补助</li>
+                                    	                                    <li>带薪年假</li>
+                                    	                                </ul>
+                            </dd>
+                        </dl>
+                        	                        <dl>
+                            <dt>员工关怀</dt>
+                            <dd>
+                                <ul class="reset">
+                                		                                    <li>免费班车</li>
+                                    	                                    <li>节日礼物</li>
+                                    	                                    <li>年度旅游</li>
+                                    	                                    <li>弹性工作</li>
+                                    	                                    <li>定期体检</li>
+                                    	                                    <li>午餐补助</li>
+                                    	                                </ul>
+                            </dd>
+                        </dl>
+                        	                        <dl>
+                            <dt>其他</dt>
+                            <dd>
+                                <ul class="reset">
+                            		                                    <li>岗位晋升</li>
+                                	                                    <li>技能培训</li>
+                                	                                    <li>管理规范</li>
+                                	                                    <li>扁平管理</li>
+                                	                                    <li>领导好</li>
+                                	                                    <li>美女多</li>
+                                	                                    <li>帅哥多</li>
+                                	                                </ul>
+                            </dd>
+                        </dl>
+                        	                    </div>	
+                    <input value="{$myinfo}" name="companyId" id="companyId" type="hidden">
+                    <input class="btn_big fr" id="step2Submit" value="保存，下一步" type="button">
+                    <a href="{$Think.WEB_URL}Users/founder" class="btn_cancel fr">跳过</a>
+                  
+               </dd>
+	        
+	      </dl>
+	    </div>
+	   
+	    <script type="text/javascript" src="__PUBLIC__/Js/step2.js"></script>       
+		<div class="clear"></div>
+		<input id="resubmitToken" value="" type="hidden">
+	    <a style="display: none;" id="backtop" title="回到顶部" rel="nofollow"></a>
+
+	</div>	    
+  	<!-- end #container -->
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

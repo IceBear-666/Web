@@ -1,0 +1,192 @@
+<include file="Public/header" />
+
+<body id="login_bg">
+
+<script src="__PUBLIC__/Js/jquery.1.10.1.min.js?v={$rand}" type="text/javascript"></script>
+
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.lib.min.js?v={$rand}"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/core.min.js?v={$rand}"></script>
+
+<div class="login_wrapper" style="padding-top: 10px;">
+  <div class="login_header"> <a href="{$Think.WEB_URL}"><img src="__PUBLIC__/Images/logo_white.png" alt="钢铁侠招聘" height="62" width="285"></a>
+    <div id="cloud_s"><img src="__PUBLIC__/Images/cloud_s.png" alt="cloud" height="52" width="81"></div>
+    <div id="cloud_m"><img src="__PUBLIC__/Images/cloud_m.png" alt="cloud" height="95" width="136"></div>
+  </div>
+  <input id="resubmitToken" value="{$accesstoken}" type="hidden">
+  <div class="login_box">
+    <form id="loginForm">
+    	{__TOKEN__}
+      <ul class="register_radio clearfix">
+        <li> 找工作
+          <input value="0" name="type" type="radio">
+        </li>
+        <li> 招人
+          <input value="1" name="type" type="radio">
+        </li>
+      </ul>
+      <input id="email" name="email" tabindex="1" placeholder="请输入常用邮箱地址" type="text">
+      <span class="error" style="display:none;" id="beError"></span>
+      <input id="password" name="password" tabindex="2" placeholder="请输入密码" type="password">
+      <label class="fl registerJianJu" for="checkbox">
+        <input id="checkbox" name="checkbox" checked="checked" class="checkbox valid" type="checkbox">
+        我已阅读并同意<a href="{$Think.WEB_URL}privacy.html" target="_blank">《钢铁侠用户协议》</a> </label>
+      
+      <if condition="$is_callback eq 0 ">
+      <input id="submitLogin" value="注 &nbsp; &nbsp; 册" type="submit">
+      <else />
+      <input id="submitLogin" value="绑&nbsp; &nbsp; 定" type="submit">
+      </if>
+      
+      <input id="callback" name="callback" value="" type="hidden">
+      <input id="authType" name="authType" value="" type="hidden">
+      <input id="signature" name="signature" value="" type="hidden">
+      <input id="timestamp" name="timestamp" value="" type="hidden">
+    </form>
+    
+    <if condition="$is_callback eq 0 ">
+	    <div class="login_right">
+	      <div>已有钢铁侠帐号</div>
+	      <a href="{$Think.WEB_URL}Public/login" class="registor_now">直接登录</a>
+	      <div class="login_others">使用以下帐号直接登录:</div>
+	      <a href="{$Think.WEB_URL}Public/otherLogin/type/sina" target="_blank" class="icon_wb" title="使用新浪微博帐号登录"></a> <a href="{$Think.WEB_URL}Public/otherLogin/type/qq" class="icon_qq" target="_blank" title="使用腾讯QQ帐号登录"></a>
+		</div>	  
+	  
+	  </if>
+	  
+  	</div>
+  
+  <div class="login_box_btm"></div>
+</div>
+
+
+
+<script type="text/javascript">
+    
+    $(document).ready(function(e) {
+    	$('.register_radio li input').click(function(e){
+    		$(this).parent('li').addClass('current').append('<em></em>').siblings().removeClass('current').find('em').remove();
+    	});
+    	
+    	$('#email').focus(function(){
+    		$('#beError').hide();
+    	});
+    	//验证表单
+	    	 $("#loginForm").validate({
+	    	        rules: {
+	    	        	type:{
+	    	        		required: true
+	    	        	},
+			    	   	email: {
+			    	    	required: true,
+			    	    	email: true,
+			    	    	maxlength:100
+			    	   	},
+			    	   	password: {
+			    	    	required: true,
+			    	    	rangelength: [6,16]
+			    	   	},
+			    	   	checkbox:{required:true}
+			    	},
+			    	messages: {
+			    		type:{
+	    	        		required:"请选择使用目的"
+	    	        	},
+			    	 	email: {
+			    	    	required: "请输入常用邮箱地址",
+			    	    	email: "请输入有效的邮箱地址，如：vip@ironwork.com.cn",
+			    	    	maxlength:"请输入100字以内的邮箱地址"
+			    	   	},
+			    	   	password: {
+			    	    	required: "请输入密码", 
+			    	    	rangelength: "请输入6-16位密码，字母区分大小写"
+			    	   	},
+			    	   	checkbox: {
+			    	    	required: "请接受本站用户协议"
+			    	   	}
+			    	},
+			    	errorPlacement:function(label, element){/* 
+			    		if(element.attr("type") == "radio"){
+			    			label.insertAfter($(element).parents('ul')).css('marginTop','-20px');
+			    		}else if(element.attr("type") == "checkbox"){
+			    			label.inserresult.contenttAfter($(element).parent()).css('clear','left');
+			    		}else{
+			    			label.insertAfter(element);
+			    		} */			    		
+			    		/*modify nancy*/
+			    		if(element.attr("type") == "radio"){
+			    			label.insertAfter($(element).parents('ul')).css('marginTop','-20px');
+			    		}else if(element.attr("type") == "checkbox"){
+			    			label.insertAfter($(element).parent()).css('clear','left');
+			    		}else{
+			    			label.insertAfter(element);
+			    		};	
+			    	},
+			    	submitHandler:function(form){
+			    		var type =$('input[type="radio"]:checked',form).val();
+			    		var email = $.trim($('#email').val());
+			    		var password =$('#password').val();
+			    		var resubmitToken = $('#resubmitToken').val();
+			    		
+			    		var callback = $('#callback').val();
+			    		var authType = $('#authType').val();
+			    		var signature = $('#signature').val();
+			    		var timestamp = $('#timestamp').val();
+			    		
+			    		$(form).find(":submit").attr("disabled", true);
+
+			            $.ajax({
+			            	type:'POST',
+			            	data: {email:email,password:password,type:type,resubmitToken:resubmitToken, callback:callback, authType:authType, signature:signature, timestamp:timestamp},
+			            	url:ctx+'/Public/checkReg',
+			            	dataType:'json'
+			            }).done(function(result) {
+			            	/* if(null != result.resubmitToken && '' != result.resubmitToken){
+								$('#resubmitToken').val(result.resubmitToken);
+							} */
+		            		if(result.status){
+			            		window.location.href=result.url;			            		
+			            	}else{
+								$('#beError').text(result.info).show();
+			            	}
+			            	$(form).find(":submit").attr("disabled", false);			           		
+			            });
+			        }  
+	    	});
+    });
+    </script>
+    
+    
+    
+<div style="display: none;" id="cboxOverlay"></div>
+<div style="display: none;" tabindex="-1" role="dialog" class="" id="colorbox">
+  <div id="cboxWrapper">
+    <div>
+      <div style="float: left;" id="cboxTopLeft"></div>
+      <div style="float: left;" id="cboxTopCenter"></div>
+      <div style="float: left;" id="cboxTopRight"></div>
+    </div>
+    <div style="clear: left;">
+      <div style="float: left;" id="cboxMiddleLeft"></div>
+      <div style="float: left;" id="cboxContent">
+        <div style="float: left;" id="cboxTitle"></div>
+        <div style="float: left;" id="cboxCurrent"></div>
+        <button id="cboxPrevious" type="button"></button>
+        <button id="cboxNext" type="button"></button>
+        <button id="cboxSlideshow"></button>
+        <div style="float: left;" id="cboxLoadingOverlay"></div>
+        <div style="float: left;" id="cboxLoadingGraphic"></div>
+      </div>
+      <div style="float: left;" id="cboxMiddleRight"></div>
+    </div>
+    <div style="clear: left;">
+      <div style="float: left;" id="cboxBottomLeft"></div>
+      <div style="float: left;" id="cboxBottomCenter"></div>
+      <div style="float: left;" id="cboxBottomRight"></div>
+    </div>
+  </div>
+  <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+</div>
+
+
+</body>
+</html>

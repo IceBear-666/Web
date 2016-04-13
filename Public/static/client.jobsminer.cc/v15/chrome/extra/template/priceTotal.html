@@ -1,0 +1,49 @@
+<div id="wltao_totalPrice_tip" class="wltao_font wltao_triangle wltao_tips {{triangle}} {{unfold}}" style="{{pos}}:{{left}}px;top:{{top}}px;">
+	<div class="wltao_tips_title wltao-stat" data-stat="web.list.price">
+		<span class="wltao_tips_left">
+			订单总价约：<span class="wltao_yellow">￥<span class="haiao_totalPrice_GoodsPrice">{{chinaPrice}}</span></span>，到手价约：<span class="wltao_yellow">￥<span class="haiao_totalPrice_PlusShipPrice">{{totalPrice}}</span></span>
+		</span>
+		<span class="wltao_tips_right">
+			明细 <em></em>
+		</span>
+	</div>
+	<div class="wltao_tips_detail">
+		<div>
+			<table class="wltao_totalPrice_table wltao_table">
+				<tr>
+					<th class="wltao_name_td">商品名</th>
+					<th class="wltao_sinPrice_td">商品单价</th>
+					<th class="wltao_quantity_td">数量</th>
+					<th class="wltao_shipPrice_td">美国境内运费</th>
+					<th class="wltao_coupon_td">优惠劵</th>
+				</tr>
+				{{#goodList}}
+				<tr>
+					<td class="wltao_name_td"><div class="wltao_ellipsis">{{name}}</div></td>
+					<td class="wltao_sinPrice_td">${{singlePrice}}</td>
+					<td class="wltao_quantity_td">{{quantity}}</td>
+					<td class="wltao_shipPrice_td">${{shipPrice}}</td>
+					<td class="wltao_coupon_td">${{coupon}}</td>
+				</tr>
+				{{/goodList}}
+			</table>
+			<div class="wltao_detail_item">
+				<div class="wltao_trans_item">国际转运费：￥<span class="wltao_totalPrice_shipPrice">{{shippingCompanyCost}}</span></div>
+				<div class="wltao_trans_item wltao_trans_item_right">
+					<span class="wltao_bz_color">(按<span class="wltao_totalPrice_calShippingWeight">{{shippingCompanyWeight}}</span>磅算)</span>
+				</div>
+				<div class="wltao_trans_item wltao_trans_item_right">
+					<select id="wltao_total_ship_sel" class="wltao_sel">
+						{{#shipList}}
+							<option value="{{id}}" {{defaultShip}}>{{name}}</option>
+						{{/shipList}}
+					</select>
+				</div>
+				<div class="wltao_sel_transChannel wltao_trans_item_right"></div>
+				<div class="wltao_sel_transComp wltao_trans_item_right"></div>
+			</div>
+			<div class="wltao_detail_item">当前汇率：{{currentRate}}<span class="wltao_bz_color">（实时）</span></div>
+			<div class="wltao_detail_item">到手总价：<span class="wltao_bz_color">￥<span class="haiao_totalPrice_PlusShipPrice">{{totalPrice}}</span></span></div>
+		</div>
+	</div>
+</div>

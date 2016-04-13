@@ -1,0 +1,40 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/company.css" />
+
+<div class="tilhed">
+   <a class="golevel" href="/User"></a>
+   <div class="mbtitle">我的职位</div>
+   <a class="gohome" href="/user"></a>
+</div>
+
+<div class="mbbox mt14">  
+
+
+<volist name="list" id="v">
+<div class="zwyuan">
+    <table class="myzhiwei" width="100%" border="0" cellspacing="0" cellpadding="0">
+    
+          <tr>
+            <td class="toplk" colspan="2"><a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}" title="Android">{$v.zhiwei_mingcheng}</a></td>
+          </tr>
+          <tr>
+            <td><i class="zwico1"></i>{$v.gongzuo_chengshi}</td>
+            <td><i class="zwico2"></i>{$v.gongzuo_jingyan}</td>
+          </tr>
+          <tr>
+            <td><i class="zwico3"></i>{$v.yuexin_min}k-{$v.yuexin_max}k </td>
+            <td><i class="zwico4"></i>{$v.xueli}</td>
+          </tr>
+          <tr>
+            <td class="botlk" colspan="2">
+              <a href="{$Think.WEB_URL}Company/interview/type/all/job_id/{$v.jid}">{$v.jid|getApplyCount=###}简历</a>
+            </td>
+          </tr>
+    
+     </table>
+ </div>
+</volist>
+
+</div> 
+

@@ -1,0 +1,170 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/myresume.css"/>
+<style>li{ list-style:none;}</style>
+<script>
+$(function(){
+    $(".btn_showprogress").click(function(){
+          $(this).find("i").toggleClass("transform");
+		  $(this).parent("div").siblings(".progress_status").slideToggle(200);
+    });
+});
+</script>
+
+
+
+<div id="container">
+    <div class="mr_myresume_l bgf9">
+    
+          <div class="tounav">
+             <a {$amenu[0]} href="/User/delivery/type/0.html">全部</a><em>|</em>
+             <a {$amenu[1]} href="/User/delivery/type/1.html">投递成功</a><em>|</em>
+             <a {$amenu[2]} href="/User/delivery/type/2.html">被查看<i></i></a><em>|</em>
+             <a {$amenu[3]} href="/User/delivery/type/3.html">待沟通</a><em>|</em>
+             <a {$amenu[4]} href="/User/delivery/type/4.html">通知面试</a><em>|</em>
+             <a {$amenu[-1]} href="/User/delivery/type/-1.html">不合适</a>
+             <a class="shuaxin" href="javascript:window.location.reload()"></a>
+          </div>
+          
+       <div class="toucet">
+         
+     <ul class="my_delivery">
+     
+	     <volist name="list" id="v">
+	     
+	     	<php>$result = getApplyLog($v['aid'],$v['apply_log']);</php>
+	     	
+	     	<li>
+            <div class="d_item">
+                <h2 title="{$v.zhiwei_mingcheng}"><a href="/Jobs/info/id/{$v.jid}.html?source=rec" target="_blank"><em>{$v.zhiwei_mingcheng}</em><span>（{$v.yuexin_min}k-{$v.yuexin_max}k）</span></a></h2>
+                <div class="clear">
+                </div>
+                <a href="/Company/info/id/{$v.company_id}/.html" target="_blank" class="d_jobname" title="{$v.company_name}">{$v.company_name} <span>[{$v.gongzuo_chengshi}]</span></a><span class="d_time">{$v.addtime|showDate=###}</span>
+                <div class="clear">
+                </div>
+                <div class="d_resume">
+                    使用简历： <span><if condition="$v.resume_name eq ''">在线简历<else />{$v.resume_name}</if></span>
+                </div>
+                <a href="javascript:;" class="btn_showprogress"><span><php>echo getResumeStatus($v['status'],$v['isread'],$v['view_contact']);</php></span><i></i></a>
+            </div>
+            
+              <div class="progress_status dn">
+              
+              <php>if($result['step']==1){</php>
+              
+              	<ul class="status_steps">                	
+                    <li class="status_done status_1">1</li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey status_2"><span>2</span></li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey"><span>3</span></li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey"><span>4</span></li>
+                </ul>
+                <ul class="status_text clearfixs">
+                    <li>投递成功</li>
+                    <li class="status_text_2">简历被查看</li>
+                    <li class="status_text_3">待沟通</li>
+                    <li class="status_text_4 status_text_6">面试</li>
+                </ul>
+                
+              <php>}elseif($result['step']==2){</php>
+              
+              	<ul class="status_steps">
+                    <li class="status_done status_1">1</li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done status_2"><span>2</span></li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey"><span>3</span></li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey"><span>4</span></li>
+                </ul>
+                <ul class="status_text clearfixs">
+                    <li>投递成功</li>
+                    <li class="status_text_2">简历被查看</li>
+                    <li class="status_text_3">待沟通</li>
+                    <li class="status_text_4 status_text_6">面试</li>
+                </ul>
+              
+              <php>}elseif($result['step']==3){</php>
+              
+              	<ul class="status_steps">
+                    <li class="status_done status_1">1</li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done status_2"><span>2</span></li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done"><span>3</span></li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey"><span>4</span></li>
+                </ul>
+                <ul class="status_text clearfixs">
+                    <li>投递成功</li>
+                    <li class="status_text_2">简历被查看</li>
+                    <li class="status_text_3">待沟通</li>
+                    <li class="status_text_4 status_text_6">面试</li>
+                </ul>
+               
+               <php>}elseif($result['step']==4){</php>
+              
+              	<ul class="status_steps">
+                    <li class="status_done status_1">1</li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done status_2"><span>2</span></li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done"><span>3</span></li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done"><span>4</span></li>
+                </ul>
+                <ul class="status_text clearfixs">
+                    <li>投递成功</li>
+                    <li class="status_text_2">简历被查看</li>
+                    <li class="status_text_3">待沟通</li>
+                    <li class="status_text_4 status_text_6">面试</li>
+                </ul>     
+                
+              <php>}elseif($result['step']==10){</php>              
+              	<ul class="status_steps">
+                    <li class="status_done status_1">1</li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done"><span>2</span></li>
+                </ul>
+                <ul class="status_text clearfixs clr">
+                    <li>投递成功</li>
+                    <li class="status_text_2">&nbsp;&nbsp;不合适</li>
+                </ul>              
+              
+              <php>}</php>
+                
+                
+                <ul class="status_list">
+                   
+                   {$result.content}
+                    
+                </ul>
+                  <a href="javascript:;" class="btn_closeprogress"></a>
+                </div>
+       		</li>
+	     
+	     </volist>
+         
+              
+     </ul>
+            
+            
+          </div>
+         
+    </div>
+    
+<!-- 板块右侧 -->    
+    <div class="mr_myresume_r">
+      <div class="jllfnav">
+        <a class="nav1" href="/Resume/myresume.html">在线简历</a>
+        <a class="nav2" href="/Resume/otherResume.html">附件简历<em>{$resumeCount}</em></a>
+        <a class="nav3 cur3" href="/User/delivery.html">投递管理</a>
+      </div>
+    </div>
+    
+    
+</div>
+
+<include file="Public/footer" />

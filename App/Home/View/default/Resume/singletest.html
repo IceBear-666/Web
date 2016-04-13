@@ -1,0 +1,310 @@
+<include file="Public/header" /> 
+
+<script type="text/javascript">
+var ctx = "{$Think.WEB_URL}";
+var ctx_new = "{$Think.WEB_URL}";
+var rctx = "{$Think.WEB_URL}";
+var pctx = "{$Think.WEB_URL}";
+
+/* var frontLogin = "http://www.lagou.com/frontLogin.do";
+var frontLogout = "http://www.lagou.com/frontLogout.do";
+var frontRegister = "http://www.lagou.com/frontRegister.do"; */
+</script>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/testresume.css">
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/tabstyles.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/flat-ui.min.css" />
+
+<script src="/Public/Home/js/modernizr.custom.js"></script>
+
+<!-- <link rel="stylesheet" type="text/css" href="/Public/Home/css/myresume.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/tailoring.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/external.min.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+ -->
+<script type="text/javascript" src="/Public/Home/js/timeCountDown.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/additional-methods.js"></script> 
+
+<script>
+	/* function callback(response) {
+	    if(response.success==true&&response.state==1){
+	        $("#nowrap").parent().addClass('plus-vip');
+	        $('#accountSetting')[0].href="http://hr.lagou.com/baseinfo/accountDetail.html";
+	    }
+	}
+    jQuery.ajax({
+        url:"http://hr.lagou.com/plus/getVipTip.json",
+        dataType: 'jsonp',
+        jsonp: 'jsoncallback'
+    }).done(function (response) {
+        callback && callback(response);
+    }); */
+</script> 
+
+<!--后台给出的变量天数》0--> 
+<script>
+    var cd = {
+            $: function(id){
+                return document.getElementById(id);    
+            },
+            futureDate: -5768647956,
+            obj: function(){
+                return {
+                    sec: cd.$("activity_minute"),
+                    mini: cd.$("activity_hour"),
+                    hour: cd.$("activity_day")
+                }
+            }
+        };
+        fnTimeCountDown(cd.futureDate, cd.obj());
+</script>
+
+
+<div id="body"> 
+  
+  <!-- 数据展示类接口需要版本号 -->
+  <input type="hidden" id="version" value="1.5.6_2015051318">
+  
+  <div id="container">
+    <input type="hidden" id="isShowDefault" value="1" />
+    <div class="clearfixs mr_created container" id="tab1">
+		<section>
+			<div class="tabs tabs-style-underline">
+				<nav>
+					<ul>
+						<li><a href="#su1" class="icon icon-home"><span>基本信息</span></a></li>
+						<li><a href="#section-underline-2" class="icon icon-gift"><span>教育信息</span></a></li>
+						<li><a href="#section-underline-3" class="icon icon-upload"><span>工作经历</span></a></li>
+						<li><a href="#section-underline-4" class="icon icon-coffee"><span>项目经历</span></a></li>
+						<li><a href="#section-underline-5" class="icon icon-config"><span>在校实践</span></a></li>
+						<li><a href="#section-underline-6" class="icon icon-config"><span>社团经历</span></a></li>
+                        <li><a href="#section-underline-7" class="icon icon-config"><span>获奖经历</span></a></li>
+                        <li><a href="#section-underline-8" class="icon icon-config"><span>语言能力</span></a></li>
+                        <li><a href="#section-underline-9" class="icon icon-config"><span>证书</span></a></li>
+                         <li><a href="#section-underline-10" class="icon icon-config"><span>培训经历</span></a></li>
+                         <li><a href="#section-underline-11" class="icon icon-config"><span>其他信息</span></a></li>
+					</ul>
+				</nav>
+				<div class="content-wrap">
+					<section id="su1">
+						<include file="./App/Home/View/default/Resume/add/addinfo.html" />
+					</section>
+					<section id="section-underline-2">
+						<include file="./App/Home/View/default/Resume/add/addedu.html" />
+					</section>
+					<section id="section-underline-3">
+						<include file="./App/Home/View/default/Resume/add/addwork.html" />
+					</section>
+					<section id="section-underline-4">
+						<include file="./App/Home/View/default/Resume/add/addproject.html" />
+					</section>
+					<section id="section-underline-5">
+						<include file="./App/Home/View/default/Resume/add/addschoolpra.html" />
+					</section>
+					<section id="section-underline-6">
+						<include file="./App/Home/View/default/Resume/add/addschoolclub.html" />
+					</section>
+                    <section id="section-underline-7">
+                        <include file="./App/Home/View/default/Resume/add/addSchoolAwards.html" />
+                    </section>
+                     <section id="section-underline-8">
+                        <include file="./App/Home/View/default/Resume/add/addLanguageSkill.html" />
+                    </section>
+                     <section id="section-underline-9">
+                        <include file="./App/Home/View/default/Resume/add/addCertificate.html" />
+                    </section>
+                     <section id="section-underline-10">
+                        <include file="./App/Home/View/default/Resume/add/addTraining.html" />
+                    </section>
+                     <section id="section-underline-11">
+                        <include file="./App/Home/View/default/Resume/add/addOtherInfo.html" />
+                    </section>
+					<a href="javascript:" class="prev" id="prev1">
+		                <img src="http://demo.litextension.com/le_demo/skin/frontend/default/default/le_itemslider/images/icon-prev.png">
+		            </a>
+
+		            <a href="javascript:" class="next" id="next1">
+		                <img src="http://demo.litextension.com/le_demo/skin/frontend/default/default/le_itemslider/images/icon-next.png">
+		            </a>
+				</div><!-- /content -->
+			</div><!-- /tabs -->
+		</section>
+      </div>     
+    </div>
+
+	<include file="./App/Home/View/default/Resume/edit/editedu.html" />
+	<include file="./App/Home/View/default/Resume/edit/editwork.html" />
+	<include file="./App/Home/View/default/Resume/edit/editproject.html" />
+  	<include file="./App/Home/View/default/Resume/edit/editschoolpra.html" /> 
+  	<include file="./App/Home/View/default/Resume/edit/editschoolclub.html" /> 
+ 
+	<script src="/Public/Home/js/cbpFWTabs.js"></script>
+
+	<script>
+		(function() {
+			[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+				new CBPFWTabs( el );
+			});
+		})();
+
+		var $t=new CBPFWTabs(document.getElementById( 'tab1' ) )
+		document.getElementById('prev1').onclick=function(){
+		    var current=$t.current;
+		    var count=$t.items.length;
+		    current--;
+		    if(current<0) current=count-1;
+		    $t._show(current);
+		};
+
+		document.getElementById('next1').onclick=function(){
+		    var current=$t.current;
+		    var count=$t.items.length;
+		    current++;
+		    if(current>=count) current=0;
+		    $t._show(current);
+		};
+	</script>
+
+    <!------------------------------------- end -----------------------------------------> 
+    
+    
+    
+    <script type="text/javascript" src="/Public/Home/js/tinymce/jscripts/tiny_mce/jquery.tinymce.js"></script> 
+    <script>
+	// 设置全局变量
+	window.globals =  {
+		resumeId: '{$info.uid}',
+		initRatio: '{$info.resume_score}',
+		token: '3ad1ea0ea3794947ade65710418b25bd',
+		refreshTime: '{$info.update_time}',
+		skillScore: '{$info.score_jineng}',
+		projectExperienceScore: '{$info.score_xiangmu}',
+		workShowScore: '{$info.score_zuopin}',
+		//expectJobsScore: '{$info.score_qiwang}',
+		myRemarkScore: '{$info.score_ziwo}',
+		hasProjectExperiences: true,
+		hasWorkShows: false,
+		hasSelf: true,
+		//hasExpectJobs: true,
+		hasSkillEvaluates: true,
+		hasUserDefines: true,
+		personIdFlag:'',
+		qrImgSrc:'/Public/qr/qrcode.jpg?qrSource=myResume',
+		isOpenResume:'{$info.isOpenMyResume}',
+		isFirstOpen:false
+	};
+	</script> 
+    <script type="text/javascript" src="/Public/Home/js/common.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/json.min.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/jquery-migrate-1.1.1.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/jquery-ui-1.8.custom.min.js"></script> 
+    
+    <script type="text/javascript" src="/Public/Home/js/jquery.cropzoom.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/components.js?v=1.5.6_2015051318"></script> 
+    <script type="text/javascript" src="/Public/Home/js/singletest.js"></script> 
+    <!------------------------------------- end ----------------------------------------->
+    
+    
+    
+    <div class="clear"></div>
+    <script>
+		// 关闭
+		//3s tips消失
+		var global = {}
+		global.email = "{$info.email}";
+		global.usertoken = $.cookie('user_trace_token');
+	</script>
+	
+	</div>
+	<!-- end #container --> 
+	
+	
+</div>
+<!-- end #body --> 
+
+<script type="text/javascript" src="/Public/Home/js/core.min.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/popup.js"></script> 
+
+
+<!--copy账号系统的passport.html--> 
+<script type="text/javascript">
+var userId = "{$info.uid}";
+	/* function noticeInit(){
+        var userId = "969363";
+        var urls = {
+            //调用B端简历管理nav的数字
+            queryTipsNums : "http://hr.lagou.com/recruitment/queryTipsNums.json",
+            //调用B端简历管理Notice Tip
+            queryNotice : "http://hr.lagou.com/notice/queryNotice.json",
+            //调用C端用户的notice数字
+            getPushNoticeOfC : "http://www.lagou.com/common/getPushNoticeOfC.json",
+            //清空C端用户的notice
+            clearPushNoticeOfC : "http://www.lagou.com/common/clearPushNoticeOfC.json",
+            //清空B端用户的notice
+            clearAll : "http://hr.lagou.com/notice/clearAll.json"
+        }
+        
+             
+        //调用C端用户的notice数字
+        PASSPORT.util.rpc({
+            params:{},
+            url: urls.getPushNoticeOfC,
+            succ:function(data){
+                var result = data.content.data;
+                if(data.state == "1"){
+                    var headerNoticeObj = $('#header .wrapper');
+                    var noticeDotObj = $("#noticeDot");
+                    var noticePopTip = ['<div id="noticeTip">','<span class="bot"></span>','<span class="top"></span>','<a href="javascript:;" class="closeNT"></a>'];
+                    
+                    //推送投递反馈数
+                    if(result.isShowPushNotice){
+                        var counters = result.pushNoticeEntity.statusList;
+                        if(counters && counters[0] >= 0 ){
+                            noticePopTip.push('<a href="http://www.lagou.com/mycenter/delivery.html?tag=0&r=0"  class="notice_tip" target="_blank"><strong>'+counters[0]+'</strong>条新投递反馈</a>');
+
+                            //下拉菜单中我投递的职位number
+                            $('#noticeNo').attr("href","http://www.lagou.com/mycenter/delivery.html?tag=0&r=0")
+                            .children("span").html("("+counters[0]+")").show();
+                        }
+                    }
+         
+                    noticePopTip.push('</div>');
+
+                    if(result.isShowPushNotice || result.isShowPlusTips){
+                        //弹出tip和红点
+                        noticeDotObj.removeClass("dn");
+                        headerNoticeObj.append(noticePopTip.join(''));
+                    }
+                    
+                    //全部已读
+                    $('#noticeTip a.closeNT').click(function(){
+                        //与后台交互，消息标识为已读
+                        clearNoticeTip(urls.clearPushNoticeOfC); 
+                        $('#noticeNo span').html('').hide();
+                    });
+                }
+            },
+            fail:function(data){
+                console.log('fail:' + data);
+            }
+        });
+        	}
+    
+    //全部清空notice
+    
+    function clearNoticeTip(url){
+        PASSPORT.util.rpc({
+            params:{},
+            url:url,
+            succ:function(data){
+                $('#noticeTip').remove();
+                $("#noticeDot").addClass("dn");
+            },
+            fail:function(data){
+                 console.log('fail:' + data);
+            }
+        });
+    } */
+</script> 
+
+
+<include file="Public/footer" />

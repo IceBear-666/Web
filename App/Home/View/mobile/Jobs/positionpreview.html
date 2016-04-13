@@ -1,0 +1,50 @@
+<include file="Public/header" />
+
+<!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
+<script type="text/javascript">
+/* var ctx = "http://www.lagou.com";
+var rctx = "http://hr.lagou.com";
+var pctx = "http://passport.lagou.com";
+var crctx = "http://www.lagou.com";
+
+var frontLogin = "http://www.lagou.com/frontLogin.do";
+var frontLogout = "http://www.lagou.com/frontLogout.do";
+var frontRegister = "http://www.lagou.com/frontRegister.do"; */
+
+</script>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/external.min.css"/>
+
+<div class="w960 mt30">
+    <div style="width:700px; margin:0 auto;">
+      <dl class="job_detail">
+      
+        <dt class="clearfix join_tc_icon">
+          <h1 title="{$info.positionName}">{$info.positionName}</h1>
+        </dt>
+         
+         
+        <dd class="job_request"> 
+         <span>地点&nbsp;{$info.workAddress} {$info.positionAddress}</span> <span>起薪&nbsp;{$info.salaryMin}k-{$info.salaryMax}k</span> <span>经验&nbsp;{$info.workYear} </span> <span> 学历&nbsp;{$info.education}</span> <span>性质&nbsp;{$info.jobNature}</span><br />
+          职位诱惑 : {$info.positionAdvantage}
+          <div class="f14 mt10">发布时间：刚刚</div>
+        </dd>
+        <dd class="job_bt">
+          <h3 class="description">职位描述</h3>
+          <!-- <p><strong>岗位职责：</strong></p> -->
+          {$info.positionDetail}
+        </dd>
+        
+
+
+          <div class="clr"> </div>
+       </dl>
+       
+    </div>
+     
+    
+<!-- end #container -->
+</div>
+<!-- end #body --> 
+
+<include file="Public/footer" />

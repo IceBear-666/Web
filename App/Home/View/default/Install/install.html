@@ -1,0 +1,195 @@
+<include file="Public/header" />
+<!-- <link rel="stylesheet" type="text/css"  href="/Public/Home/css/bootstrap.min.css" /> -->
+    <style type="text/css">
+       
+        h1.jm_plugin_title {
+            text-align: center;
+            font-size: 30px;
+            color: #222222;
+        }
+        h2.jm_plugin_subtitle {
+            font-size: 30px;
+            color: #222222;
+        }
+        p.jm_plugin_subintro {
+            font-size: 20px;
+            color: #4a4a4a;
+        }
+        /*.container-text {
+            width: 50%;  
+            height: 50%;  
+            overflow: auto;  
+            margin: auto;  
+            position: absolute;  
+            top: 0; left: 0; bottom: 0; right: 0;  
+        }
+        */    
+        dl.jm_plugin_install dt{
+            border-left: 2px solid #82b547;
+            /*//padding-left: 15px;*/
+            color: #82b547;
+            padding: 0 0 0 15px;
+            margin: 20px 0 ;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        dl.jm_plugin_install dd {
+            padding: 0;
+            margin: 0;
+        }
+
+        .jm_install_l {
+            color: #222222;
+            font-weight: 500;
+            background-color: #f9f9f9;
+        }
+
+        .jm_install_l h3 {
+            font-size: 20px;
+            padding: 10px 0 10px 40px;
+            font-weight: 500;
+        }
+        .jm_install_l ul.nav-installtabs {
+            list-style: none;
+        }
+        .jm_install_l ul.nav-installtabs li a{
+            display: block;
+            font-size: 15px;
+            padding: 14px 0px 14px 40px;
+            /*border-left: 4px solid #f9f9f9;*/
+        }
+
+        .jm_install_l ul.nav-installtabs li.active a,.jm_install_l ul.nav-installtabs li a:hover{
+            /*border-left: 4px solid #ac6198;*/
+            background: #82b547;
+            color: #fff;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        .jm_install_r {
+            line-height: 30px;
+        }
+        .jm_install_r h3 {
+            color: #482929;
+            font-weight: 500;
+            font-size: 20px;
+            padding: 10px 0 20px 0;
+        }
+        .tab-content>.tab-pane{
+            display:none
+        }
+        .tab-content>.active{
+            display:block
+        }
+        .fade{
+            opacity:0;-webkit-transition:opacity .15s linear;
+            -o-transition:opacity .15s linear;
+            transition:opacity .15s linear}
+        .fade.in{
+            opacity:1
+        }
+        .jm_install_r a {
+            color: #82b547;
+            text-decoration: underline;
+        }
+        </style>
+
+<div class="w960 mt30">
+    <div class="lw240 jm_install_l">
+        <h3>安装教程</h3>
+        <!-- <a class="cur" href="#"></a>
+        <a href="#"></a> -->
+        <ul id="InstallTab" class="nav nav-installtabs">
+           <li class="active">
+              <a href="#chrome" data-toggle="tab">
+                 Chrome浏览器
+              </a>
+           </li>
+           <li><a href="#360" data-toggle="tab">360浏览器</a></li>
+        </ul>
+    </div>
+
+    <div class="rw680">
+    
+        <!-- 浏览器列表开始-->
+         <div class="jm_install_r tab-content" style="margin:0;" id="myTabContent">
+            <div class="tab-pane fade in active" id="chrome">
+                    <h3>Chrome版网申助手安装方法</h3>
+                    <p>亲爱的小伙伴, 由于伟大防火墙的原因, 导致Chrome网上应用店无法访问, 能翻墙的小伙伴, 可以直接去<a href="https://chrome.google.com/webstore/detail/nhgekjaiflndcadkdbfmloffbgmpdpld" target="_blank">Chrome网上应用店</a>安装.<br/>如果不能翻墙也不要紧, 只需三步即可轻松解决安装问题:</p>
+                    <dl class="jm_plugin_install">
+                    <dt>
+                        步骤一
+                    </dt>
+                    <dd>
+                        下载安装包：鼠标右键点击下方链接，选择“链接另存为”，将网申助手安装包保存到本地：<br/>
+                        <a href="{:U('File/download?id=1')}" class="btn btn-primary btn-block btn-large">点此下载网申助手</a>
+                        <!-- <a href="http://www.jobsminer.cc/Uploads/Plugin/网申助手-1.0.0.crx">点此下载网申助手</a> -->
+                    </dd>     
+                
+                    <dt>
+                        步骤二
+                    </dt>
+                    <dd>
+                        打开扩展管理页面：点击浏览器右上角的设置图标—>选中“工具”或“更多工具”—>选中“扩展程序”：
+                        <br/><br/>
+                         <img src="/Uploads/Plugin/chrome1.png">
+                    </dd>     
+               
+                    <dt>
+                        步骤三
+                    </dt>
+                    <dd>
+                        将刚才下载的网申助手安装包拖到扩展管理页面中完成安装。<br/>（mac端用户请在finder下载中找到网申助手文件并拖拽，详见下方第二张图）
+                        <br/><br/>
+                         <img src="/Uploads/Plugin/chrome2.png">
+                         <br/>
+                         <img src="/Uploads/Plugin/chrome-mac.png">
+                    </dd>     
+                </dl>
+            </div>
+           <div class="tab-pane fade " id="360">
+                <h3>360浏览器版网申助手安装方法</h3>
+        
+                <dl class="jm_plugin_install">
+                    <dt>
+                        步骤一
+                    </dt>
+                    <dd>
+                        将浏览器切换到极速模式, 360安全浏览器超速版和360极速浏览器只能在极速模式下才能安装扩展。 <br/>点击地址栏右侧图标查看当前浏览模式，如果是兼容模式，请点击「极速模式」切换。<br/><br/>
+                        <img src="/Uploads/Plugin/360-1.png">
+                    </dd>     
+                
+                    <dt>
+                        步骤二
+                    </dt>
+                    <dd>
+                        下载安装包, 点击下方链接安装:<br/>
+                         <a href="{:U('File/download?id=2')}" class="btn btn-primary btn-block btn-large">点此下载网申助手</a>
+
+                        <!-- <a href="http://www.jobsminer.cc/Uploads/Plugin/网申助手-1.0.0.crx">点此下载网申助手</a> -->
+                        <br/><br/>
+                        <img src="/Uploads/Plugin/360-2.png">
+                    </dd>     
+               
+                    
+                </dl>
+           </div>
+         </div>
+         <!-- 职位列表结束-->
+    </div>
+
+</div>
+<script language="JavaScript" type="text/javascript"> 
+$(document).ready(function(){
+    $('#InstallTab a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+});
+</script> 
+
+<script type="text/javascript" src="/Public/Home/js/query.1.10.1.min.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/bootstrap.min.js"></script> 
+<include file="Public/footer" />       

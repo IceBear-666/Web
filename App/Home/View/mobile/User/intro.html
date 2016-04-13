@@ -1,0 +1,48 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+	    <div class="content_mid"> 
+	      <!--form-->
+	      <dl class="c_section c_section_mid">
+	        <dt>
+	          <h2><em></em>填写公司信息</h2>
+	          <a href="{$Think.WEB_URL}Jobs/createPost" class="c_addjob"><i></i>发布新职位</a>
+	        </dt>
+	        
+	        <dd>
+	          <div class="c_text">背景深、规模大、发展快、氛围好…用优势吸引求职者吧！</div>
+	          <img src="__PUBLIC__/Images/step5.png" alt="第五步" class="c_steps" height="56" width="668"> 
+	          
+	          <form id="infoForm" action="{$Think.WEB_URL}Users/intro" method="post">
+	            <input value="{$myinfo.uid}" name="companyId" type="hidden">
+	            <h3>公司介绍</h3>
+	            <textarea class="error" id="companyProfile" name="companyProfile" placeholder="请分段详细描述公司简介、企业文化等">{$myinfo.content}</textarea>
+	            <div class="word_count">你还可以输入 <span>1000</span> 字</div>
+	            <div class="clear"></div>
+	            <input class="btn_big fr" value="保存，完成" id="step5Submit" type="button">
+	          </form>
+	        </dd>
+	        
+	      </dl>
+	    </div>
+	   
+	    <script type="text/javascript" src="__PUBLIC__/Js/step5.js"></script>       
+		<div class="clear"></div>
+		<input id="resubmitToken" value="" type="hidden">
+	    <a style="display: none;" id="backtop" title="回到顶部" rel="nofollow"></a>
+
+	</div>	    
+  	<!-- end #container -->
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

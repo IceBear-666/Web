@@ -1,0 +1,701 @@
+<include file="Public/header" />
+
+<!--<script defer id="_lgpassport_" data-css-site="0" data-css-popup="0" src="http://passport.lagou.com/static/js/passport.js" onload="passportInit()"></script>
+-->
+<style>
+/* .c_add {
+    background: rgba(0, 0, 0, 0) url("/Public/Home/images/company/c_edit.png") no-repeat scroll 0 -25px;
+    height: 25px;
+    position: absolute;
+    right: 37px;
+    top: 7px;
+    width: 25px;
+}
+
+.c_edit {
+    background: rgba(0, 0, 0, 0) url("/Public/Home/images/company/c_edit.png") no-repeat scroll 0 1px;
+    height: 25px;
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    width: 25px;
+    z-index: 10;
+} */
+</style>
+<script type="text/javascript">
+	function passportInit(){
+	     noticeInit();
+	}
+</script>
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/company.css" />
+<script type="text/javascript" src="/Public/Home/js/timeCountDown.js"></script>
+<script type="text/javascript" src="/Public/Home/js/additional-methods.js"></script>
+<script type="text/javascript" src="/Public/Home/js/company/jobs.js"></script>
+<script type="text/javascript" src="/Public/Home/js/company/spsd.js"></script>
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/external.min.css" />
+
+<script>
+	function callback(response) {
+	    if(response.success==true&&response.state==1){
+	        $("#nowrap").parent().addClass('plus-vip');
+	        $('#accountSetting')[0].href="http://hr.lagou.com/baseinfo/accountDetail.html";
+	    }
+	}
+    jQuery.ajax({
+        url:"http://hr.lagou.com/plus/getVipTip.json",
+        dataType: 'jsonp',
+        jsonp: 'jsoncallback'
+    }).done(function (response) {
+        callback && callback(response);
+    });
+</script>
+
+
+<!--后台给出的变量天数》0-->
+<script>
+    var cd = {
+            $: function(id){
+                return document.getElementById(id);    
+            },
+            futureDate: -6857648427,
+            obj: function(){
+                return {
+                    sec: cd.$("activity_minute"),
+                    mini: cd.$("activity_hour"),
+                    hour: cd.$("activity_day")
+                }
+            }
+        };
+        fnTimeCountDown(cd.futureDate, cd.obj());
+</script>
+
+
+<div id="body">
+
+
+  <div id="container"> 
+  
+    <!-- <script src="http://www.lagou.com/flash/Scripts/swfobject_modified.js" type="text/javascript"></script> -->
+    
+    <div class="clearfix">
+      <div class="w640">
+        <div class="c_detail">
+        
+          <div class="c_logo" style="background-color:#fff;"> <a href="#logoUploader" class="inline" id="logoShow" title="上传公司LOGO"><img src="{$myinfo.logo}" width="190" height="190" alt="公司logo"/><span>更换公司图片<br/>
+            190px*190px 小于5M</span> </a>
+		  </div>
+			
+          <div class="c_box companyName">
+          
+            <h2 title="{$myinfo.company_short_name}"><php>if($myinfo['company_short_name'])echo $myinfo['company_short_name'];else echo $myinfo['company_name'];</php></h2>
+            
+            <php>if($myinfo['isv']){</php>
+            	<em class='valid'></em>
+            <php>}else{</php>
+	            <em></em>            
+	            <!-- 如果通过验证,上边的em标签添加css，例：<em class='valid'></em> --> 
+	            <span class="va dn">未认证企业</span> <a href="/Company/auth.html" class="applyC" target="_blank">申请认证</a>
+            <php>}</php>
+            
+            <div class="clear"> </div>
+            <h1 class="fullname" title="{$myinfo.company_name}">{$myinfo.company_name}</h1>
+            
+            <form id="editDetailForm" class="clear editDetail dn">
+              <p class="company-tip"> 如需修改公司全称，请发邮件至lee@eztojob.com</p>
+              <input type="text" class="mt14" id="companyShortName" name="companyShortName" value="{$myinfo.company_short_name}" placeholder="请输入公司简称"/>
+              <input type="text" class="mt14" id="companyFeatures" name="companyFeatures" value="{$myinfo.descri}" maxlength="50" placeholder="一句话描述公司优势，核心价值，限50字"/>
+              <span id="beError" style="display:none" class="error"></span>
+              <table style="margin-top:10px;">
+                <tr>
+                  <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="40">地点</td>
+                        <td width="136"><input type="text" style="width:80px;" id="city" name="city" value="{$myinfo.company_city}" placeholder="请输入地点" /></td>
+                        <td width="40">规模</td>
+                        <td><input type="hidden" name="companySize" id="companySize" value="{$myinfo.guimu}">
+                          <input type="button" class="select_tags" id="select_sca" value="{$myinfo.guimu}"  placeholder="选择企业规模">
+                          <div id="box_sca" class="selectBox dn">
+                            <ul class="reset">
+                              <li >少于15人</li><!-- class="current" -->
+                              <li>15-50人</li>
+                              <li>50-150人</li>
+                              <li>150-500人</li>
+                              <li>500-2000人</li>
+                              <li>2000人以上</li>
+                            </ul>
+                          </div></td>
+                      </tr>
+                    </table></td>
+                </tr>
+                <tr>
+                  <td height="10"></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td height="10">性质</td>
+                  <td><input type="hidden" name="gongsi_xingzhi" id="gongsi_xingzhi" value="<php>echo $myinfo['gongsi_xingzhi'];</php>" >
+                          <input type="button" class="select_tags2" id="select_sca2" value="<php>if(!$myinfo['gongsi_xingzhi'])echo '选择企业性质';else echo $gongsi_xingzhi[$myinfo['gongsi_xingzhi']];</php>" >
+                          <div id="box_sca2" class="selectBox2 dn">
+                            <ul class="reset">
+                              	<php>foreach($gongsi_xingzhi as $kk=>$vv){</php>
+                              	<li xzid="{$kk}">{$vv}</li>
+                              	<php>}</php>
+                              </volit>
+                            </ul>
+                          </div></td>
+                </tr>
+                <tr>
+                  <td height="10"></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td width="38">行业</td>
+                  <td><input type="hidden" name="positionType" value="{$myinfo.hangye}" id="positionType" />
+                    <input type="button" class="selectr"  style="width:340px;" id="select_category"  value="<php>if($myinfo['hangye'])echo $myinfo['hangye'];else echo '请选择行业领域';</php>"  />
+                    <div id="box_job" class="dn">
+                    
+	                    <volist name="hangye_lingyu" id="v"> 
+	                    
+	                      <dl>
+	                        <dt>{$v.title}</dt>
+	                        <dd>
+	                          <ul class="reset job_main">
+	                            <volist name="v.sub" id="vv"> 
+	                            	<li>{$vv.title}</li>
+	                            </volist>
+	                          </ul>
+	                        </dd>
+	                      </dl>
+	                      
+	                    </volist>
+                      
+
+                    </div></td>
+                </tr>
+                <tr>
+                  <td height="10"></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>主页</td>
+                  <td><input type="text" style="width:316px;" id="companyUrl" name="companyUrl" value="{$myinfo.web_url}" placeholder="请输入网址"></td>
+                </tr>
+              </table>
+              <input type="hidden" value="{$myinfo.company_city}" id="comCity">
+              <input type="hidden" value="{$myinfo.hangye}" id="comInd">
+              <input type="hidden" value="{$myinfo.guimu}" id="comSize">
+              <input type="hidden" value="{$myinfo.web_url}" id="comUrl">
+              <input type="hidden" name="companyId" id="companyId" value="{$myinfo.uid}"/>
+              <div class="pdt10">
+                <input type="submit" class="mybtn2 f16" id="saveDetail" value="保存"/>
+                <a href="#" class="mybtn2s f16" id="cancelDetail">取消</a> </div>
+            </form>
+            
+            
+            
+            
+            <div class="clear oneword"> <img src="/Public/Home/images/quote_l.png" width="17" height="15"/>&nbsp; <span>{$myinfo.descri}</span> &nbsp;<img src="/Public/Home/images/quote_r.png" width="17" height="15"/> </div>
+            <div class="mybiaoqian">
+              <h3 class="dn">已选择标签</h3>
+              <ul class="reset clearfix" id="hasLabels" style="overflow:auto">
+              	<php>if($myinfo['tags']){
+               		$tags = explode(",",$myinfo['tags']);
+               		foreach( $tags as $k=>$v){
+               			echo '<li><span>'.$v.'</span></li>';
+               		}
+               	}</php>
+                <li class="link">编辑</li>
+              </ul>
+              <div id="addLabels" class="dn"> <a href="javascript:void(0)" class="change" id="changeLabels">换一换</a>
+                <input type="hidden" id="labelPageNo" value="1"/>
+                <input type="submit" id="add_label" class="fr" value="贴上"/>
+                <input type="text" class="label_form fr" id="label" name="label" placeholder="添加自定义标签"/>
+                <div class="clear"> </div>
+                <ul class="reset clearfix">
+                	
+                </ul>
+                <div class="clr pdt20"> <a href="javascript:void(0)" class="mybtn2 f16" id="saveLabels">保存</a> <a href="javascript:void(0)" class="mybtn2s f16" id="cancelLabels">取消</a> </div>
+              </div>
+            </div>
+          </div>
+          
+          <a href="javascript:void(0);" id="editCompanyDetail" class="c_edit" title="编辑基本信息"></a>
+          <div class="clear"> </div>
+        </div>
+        
+        
+        <div class="c_breakline"></div>
+        <div class="slideTxtBox">
+          <div class="hd">
+            <ul>
+              <li>公司介绍</li>
+              <li>宣讲会</li>
+              <li>宣讲会日程</li>
+            </ul>
+          </div>
+          <div class="bd">
+            <ul class="wh">
+              
+              <!-- 公司图片开始 -->
+              <div id="comvimg">
+                <div class="profile_wrap"> 
+                  <!--无介绍 -->
+                  <dl class="c_section1">
+                    <dd>
+                      <div class="addnew addico1"> 丰富的图片可以让申请者更加了解您公司多彩的一面哦！<br />
+                        <a href="javascript:void(0)" id="addimg">+添加公司视频</a> </div>
+                    </dd>
+                  </dl>
+                  <!--编辑介绍-->
+                  <dl class="c_section1 newIntro dn">
+                    <dd>
+                      <form id="comimgForm">
+                        <textarea id="companyimg" name="companyProfile" placeholder="请分段详细描述公司简介、企业文化等"></textarea>
+                        <div class="word_count fr">你还可以输入 <span>1000</span> 字</div>
+                        <div class="clear"></div>
+                        <input class="mybtn2 f16" id="submitProfile" type="submit" value="保存" />
+                        <a href="javascript:void(0)" class="mybtn2s f16" id="delimg">取消</a>
+                      </form>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+              
+              <!-- 公司视频开始 -->
+              <div id="comvideo">
+                <div class="profile_wrap"> 
+                  <!--无介绍 -->
+                  <dl class="c_section1">
+                    <dd>
+                      <div class="addnew addico2"> 公司宣传视频、媒体报道等视频都将大大提高获取优秀人才的机会哦！<br />
+                        <a href="javascript:void(0)" id="addvideo">+添加公司视频</a> </div>
+                    </dd>
+                  </dl>
+                  <!--编辑介绍-->
+                  <dl class="c_section1 newIntro dn">
+                    <dd>
+                      <form id="comviedoForm">
+                        <textarea id="companyvideo" name="companyProfile" placeholder="请分段详细描述公司简介、企业文化等"></textarea>
+                        <div class="word_count fr">你还可以输入 <span>1000</span> 字</div>
+                        <div class="clear"></div>
+                        <input class="mybtn2 f16" id="submitProfile" type="submit" value="保存" />
+                        <a href="javascript:void(0)" class="mybtn2s f16" id="delvideo">取消</a>
+                      </form>
+                    </dd>
+                  </dl>
+                  <!--有介绍-->
+                  <dl class="c_section1 dn">
+                    <dd>
+                      <div class="c_intro"></div>
+                      <a href="javascript:void(0)" class="c_edit" id="editIntro" title="编辑公司介绍"></a> </dd>
+                  </dl>
+                </div>
+              </div>
+              
+              <!-- 公司介绍开始 -->
+              <div id="Profile">
+                <div class="profile_wrap"> 
+                
+                  <!--无介绍 -->
+                  <dl class="c_section1 <php>if($myinfo['content'])echo 'dn';</php>">
+                    <dd>
+                      <div class="addnew addico3"> 一篇给力的公司介绍文！案是获取优秀人才的第一步！<br />
+                        <a href="javascript:void(0)" id="addIntro">+添加公司介绍</a> </div>
+                    </dd>
+                  </dl>
+                  
+                  <!--编辑介绍-->
+                  <dl class="c_section1 newIntro dn">
+                    <dd>
+                      <form id="companyDesForm">
+                        <textarea id="companyProfile" name="companyProfile" placeholder="请分段详细描述公司简介、企业文化等">{$myinfo.content}</textarea>
+                        <div class="word_count fr">你还可以输入 <span>1000</span> 字</div>
+                        <div class="clear"></div>
+                        <input class="mybtn2 f16" id="submitProfile" type="submit" value="保存" />
+                        <a href="javascript:void(0)" class="mybtn2s f16" id="delProfile">取消</a>
+                      </form>
+                    </dd>
+                  </dl>
+                  
+                  <!--有介绍-->
+                  <dl class="c_section1  <php>if(!$myinfo['content'])echo 'dn';</php>">
+                    <dd>
+                      <div class="c_intro">{$myinfo.content}</div>
+                      <a href="javascript:void(0)" class="c_edit" id="editIntro" title="编辑公司介绍"></a> </dd>
+                  </dl>
+                  
+                </div>
+              </div>
+              
+              
+            </ul>
+            <ul class="wh">
+              2
+            </ul>
+            <ul class="wh">
+              3
+            </ul>
+          </div>
+          <script type="text/javascript">jQuery(".slideTxtBox").slide({effect:"left"});</script> 
+        </div>
+        
+        <!-- 招聘职位列表开始 -->
+        <div style="height:20px; background:#fff;"></div>
+        <dl class="c_section">
+          <dt>
+            <h2>招聘职位</h2>
+          </dt>
+          <dd>
+            <ul class="reset c_jobs" id="jobList">
+            
+            <volist name="joblist" id="v">
+            
+              <li> <a href="/Jobs/info/id/{$v.jid}.html?source=company" target="_blank">
+                <h3><span class="pos" title="{$v.zhiwei_mingcheng}">{$v.zhiwei_mingcheng}</span> <span>[{$v.gongzuo_dizhi}]</span> </h3>
+                <div> 月薪：{$v.yuexin_min}k-{$v.yuexin_max}k &nbsp;&nbsp;&nbsp; 经验：{$v.gongzuo_jingyan} &nbsp;&nbsp;&nbsp; 学历要求：{$v.xueli} </div>
+                </a>
+			 </li>
+            
+            </volist>  
+
+            </ul>
+          </dd>
+        </dl>
+        
+        <!-- end #Profile -->
+        
+        <input type="hidden" id="hasNextPage" name="hasNextPage" value="" />
+        <input type="hidden" id="pageNo" name="pageNo" value="" />
+        <input type="hidden" id="pageSize" name="pageSize" value="" />
+        <div id="flag"></div>
+      </div>
+      <!-- end .content_l -->
+      
+      
+      
+      
+      <div class="w280">
+        <div id="Member"> 
+          
+          <!--无创始团队-->
+          <dl class="c_section c_member">
+            <dt>
+              <h2>创始团队</h2>
+              <a href="javascript:void(0)" class="c_add" title="添加创始人"></a>
+			</dt>
+			
+            <dd>
+              <div class="member_wrap"> 
+              
+                <!-- 无创始人 -->
+                
+                <div class="addnew_right member_info <php>if($leads)echo 'dn';</php>">
+                	
+					展示公司的领导班子，<br />
+                  	提升诱人指数！<br />
+                  	
+                  <a href="javascript:void(0)" class="member_edit">+添加成员</a>
+				</div>
+				
+                
+                <!-- 编辑创始人 -->
+                <div class="member_info newMember dn">
+                  <form class="memberForm">
+                    <div class="new_portrait">
+                      <div class="portrait_upload portraitNo"> <span>上传创始人头像</span> </div>
+                      <div  class="portraitShow dn"> <img src="" width="120" height="120" /> <span>更换头像</span> </div>
+                      <input type="file" id="profiles0" name="myfiles" onchange="member_check(this,'/Company/uploadImage','portraitNo','portraitShow','type','leaderInfos');" title="支持jpg、jpeg、gif、png格式，文件小于5M" value="" />
+                      <input type="hidden" class="type" name="type" value="7" />
+                      <input type="hidden" class="leaderInfos" name="photo" />
+                      <em> 尺寸：120*120px <br />
+                      大小：小于5M </em> </div>
+                    <input type="text" name="name" value="" placeholder="请输入创始人姓名" />
+                    <input type="text" name="position" value="" placeholder="请输入创始人当前职位" />
+                    <input type="text" name="weibo" value="" placeholder="请输入创始人新浪微博地址" />
+                    <div>
+                      <textarea name="remark" maxlength="500" class="s_textarea" placeholder="请输入创始人个人简介"></textarea>
+                    </div>
+                    <div class="word_count fr">你还可以输入 <span>500</span> 字</div>
+                    <div class="clear"></div>
+                    <input type="submit" class="mybtn2 f16 btn_small mt10" value="保存" />
+                    <a href="javascript:void(0)" class="mybtn2s f16 btn_cancel_s member_delete">删除</a>
+                    <input class="leader_id" type="hidden" value="" />
+                  </form>
+                </div>
+                
+                <!-- 显示创始人 -->
+                <volist name="leads" id="v">
+                
+                <div class="member_info"> <a href="javascript:void(0)" class="c_edit member_edit" title="编辑{$v.position}"></a>
+                  <div class="m_portrait">
+                    <div></div>
+                    <img src="{$v.photo}" width="120" height="120" alt="" />
+                  </div>
+                  
+                  <div class="m_name">{$v.name}
+                  	<php>if($v['weibo']){</php>
+                  		<a class="weibo" target="_blank" href="$v['weibo']"></a>
+                  	<php>}</php>
+                  </div>
+                  <div class="m_position">{$v.position}</div>
+                  <div class="m_intro">{$v.remark}</div>
+                </div>
+                
+                </volist>
+                
+                <div class="member_info dn"> <a href="javascript:void(0)" class="c_edit member_edit" title="编辑"></a>
+                  <div class="m_portrait">
+                    <div></div>
+                    <img src="" width="120" height="120" alt="" /></div>
+                  <div class="m_name">
+                  	
+                  </div>
+                  <div class="m_position"></div>
+                  <div class="m_intro"></div>
+                </div>
+                
+              </div>
+              <!-- end .leader_wrap --> 
+            </dd>
+          </dl>
+        </div>
+        <!-- end #Member --> 
+        
+        <!--公司深度报道-->
+        <div id="Reported"> 
+          <!--无报道-->
+          <dl class="c_section c_reported">
+            <dt>
+              <h2>公司报道</h2>
+              <a href="javascript:void(0)" class="c_add <php>if(!$articles)echo 'dn';</php>" title="添加报道"></a> </dt>
+            <dd> 
+              <!-- 编辑报道 -->
+              <ul class="reset">
+              	<volist name="articles" id="v">
+              		<li>
+					<a style="" class="article" title="{$v.title}" target="_blank" href="{$v.url}">{$v.title}</a> <a title="编辑报道" class="c_edit dn" href="javascript:;" style="display: inline;"></a>
+	                  <form class="reportForm dn">
+	                    <input type="text" placeholder="请输入文章标题" value="{$v.title}" name="articleTitle" class="valid">
+	                    <input type="text" placeholder="请输入文章链接" value="{$v.url}" name="articleUrl" class="valid">
+	                    <input type="submit" value="保存" class="mybtn2 f16 btn_small mt20">
+	                    <a class="mybtn2s f16 btn_cancel_s report_delete" href="javascript:;">删除</a>
+	                    <input type="hidden" value="{$v.id}" class="article_id">
+	                  </form>
+	                </li>
+              	</volist>
+              </ul>
+              
+              <!-- 无报道 -->
+              <php>if(!$articles){</php>
+              
+              <div class="addnew_right reported_info"> 展示外界对公司的深度报道，<br />
+                便于求职者了解公司！<br />
+                <a href="javascript:void(0)" class="report_edit">+添加报道</a>
+			  </div>
+			  
+			  <php>}</php>
+				
+              <ul class="newReport dn">
+                <li> <a href="#" target="_blank" title="" class="article" style="display:none;"></a> <a href="javascript:;" class="c_edit dn" title="编辑报道"></a>
+                  <form class="reportForm">
+                    <input type="text" name="articleTitle" value="" placeholder="请输入文章标题" />
+                    <input type="text" name="articleUrl" value="" placeholder="请输入文章链接" />
+                    <input type="submit" class="mybtn2 f16 btn_small mt20" value="保存" />
+                    <a href="javascript:;" class="mybtn2s f16 btn_cancel_s report_cancel">取消</a>
+                    <input class="article_id" type="hidden" value="" />
+                  </form>
+                </li>
+              </ul>
+              
+              
+            </dd>
+          </dl>
+          
+          
+          <!-- end .c_reported --> 
+        </div>
+        <!-- end #Reported --> 
+        
+      </div>
+    </div>
+    
+    <!-------------------------------------弹窗lightbox  ----------------------------------------->
+    <div style="display:none;">
+      <div id="logoUploader" class="popup" style="width:650px;height:470px;">
+        <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="650" height="470">
+          <param name="movie" value="/Public/Home/flash/avatar.swf?url={$Think.WEB_URL}Company/uploadLogo">
+          <param name="quality" value="high">
+          <param name="wmode" value="opaque">
+          <param name="swfversion" value="111.0.0.0">
+          <!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
+          <param name="expressinstall" value="/Public/Home/flash/expressInstall.swf">
+          <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 --> 
+          <!--[if !IE]>-->
+          <object type="application/x-shockwave-flash" data="/Public/Home/flash/avatar.swf?url={$Think.WEB_URL}Company/uploadLogo" width="650" height="470">
+            <!--<![endif]-->
+            <param name="quality" value="high">
+            <param name="wmode" value="opaque">
+            <param name="swfversion" value="111.0.0.0">
+            <param name="expressinstall" value="/Public/Home/flash/expressInstall.swf">
+            <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+            <div>
+              <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+              <!-- 
+              <p><a href="http://www.adobe.com/go/getflashplayer"><img alt="获取 Adobe Flash Player" src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" width="112" height="33" /></a></p>
+            	 -->
+            </div>
+            <!--[if !IE]>-->
+          </object>
+          <!--<![endif]-->
+        </object>
+      </div>
+      <!-- #logoUploader --> 
+    </div>
+    <!------------------------------------- end -----------------------------------------> 
+    
+    <script type="text/javascript" src="/Public/Home/js/company/company.js"></script> 
+    <script>
+var avatar = {};
+avatar.uploadComplate = function( data ){
+	var result = eval('('+ data +')');
+	if(result.success){
+		jQuery('#logoShow img').attr("src",ctx+ '/'+result.content);
+		jQuery.colorbox.close();
+	}
+};
+</script> 
+    <!-- 添加此段代码的页面：公司列表页面、公司主页【B端和C端】，联系我们、 帮助中心、ua【用户协议】、友情链接--> 
+    
+    <script>
+	// 关闭
+	//3s tips消失
+	var global = {}
+	global.email = "{$myinfo.email}";
+	global.usertoken = $.cookie('user_trace_token');
+</script> 
+  </div>
+  <!-- end #container --> 
+</div>
+<!-- end #body --> 
+
+<script type="text/javascript" src="/Public/Home/js/core.min.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/popup.js"></script> 
+<!--copy账号系统的passport.html--> 
+<script type="text/javascript">
+	function noticeInit(){
+        var userId = "996061";
+        var urls = {
+            //调用B端简历管理nav的数字
+            queryTipsNums : "http://hr.lagou.com/recruitment/queryTipsNums.json",
+            //调用B端简历管理Notice Tip
+            queryNotice : "http://hr.lagou.com/notice/queryNotice.json",
+            //调用C端用户的notice数字
+            getPushNoticeOfC : "http://www.lagou.com/common/getPushNoticeOfC.json",
+            //清空C端用户的notice
+            clearPushNoticeOfC : "http://www.lagou.com/common/clearPushNoticeOfC.json",
+            //清空B端用户的notice
+            clearAll : "http://hr.lagou.com/notice/clearAll.json"
+        }
+        
+                //调用简历管理nav的数字
+        PASSPORT.util.rpc({
+            params:{},
+            url: urls.queryTipsNums,
+            succ:function(data){
+                if(data.state == "1"){
+                    var result = data.content.data;
+                    var unhandleNum = $("#navheader b.unhandleNum");
+                    if(result.unTreateNum && result.unTreateNum > 99 ){
+                        unhandleNum.text("99+");
+                    }else if(result.unTreateNum && result.unTreateNum > 0 ){
+                        unhandleNum.text(result.unTreateNum);
+                    }else{
+                        unhandleNum.text("");
+                    }
+                }
+            },
+            fail:function(data){
+                console.log('fail:' + data);
+            }
+        });
+
+        //调用简历管理Notice Tip
+        PASSPORT.util.rpc({
+            params:{userId:userId},
+            url:urls.queryNotice,
+            succ:function(data){
+                var result = data.content.data;
+                if(data.state == "1" && result.pushNoticeEntity.isShowPushNotice){
+                    var headerNoticeObj = $('#header .wrapper');
+                    var counters = result.pushNoticeEntity.counters;
+                    var noticeDotObj = $("#noticeDot");
+                    var noticePopTip = ['<div id="noticeTip">','<span class="bot"></span>','<span class="top"></span>','<a href="javascript:;" class="closeNT"></a>'];
+                    
+                    if(counters.WILL_BE_REJECTED && counters.WILL_BE_REJECTED != 0 ){
+                        noticePopTip.push('<a href="http://hr.lagou.com/interview/unHandlelist.html?autoRefuseDay=1&nt_flag=0&headTip=1" target="_blank" class="notice_tip" data-type="1"><strong>'+counters.WILL_BE_REJECTED+'</strong> 份简历1天内将被自动回绝！</a>');
+                    }
+                    if(counters.REJECTED && counters.REJECTED != 0 ){
+                        noticePopTip.push('<a href="http://hr.lagou.com/interview/haveRefuselist.html?nt_flag=2" target="_blank" class="notice_tip"  data-type="3">已帮你自动回绝了 <strong>'+counters.REJECTED+'</strong>份简历！</a>');
+                    }
+                    //弹出tip和红点
+                    noticeDotObj.removeClass("dn");
+                    headerNoticeObj.append(noticePopTip.join(''));
+                    
+                    //全部已读
+                    $('#noticeTip a.closeNT').click(function(){
+                        //与后台交互，消息标识为已读
+                        clearNoticeTip(urls.clearAll); 
+                    });
+                    
+                    //B端消息绑定单击事件
+                    var notice_tip = $("#noticeTip .notice_tip");
+                    notice_tip.bind("click",function(){
+                        var _this = $(this);
+                        //获取当前点击的消息类型
+                        var type = _this.data("type");
+                        //告诉后台哪种类型的消息一经被查看
+                        PASSPORT.util.rpc({
+                            params:{nt:type},
+                            url:'http://hr.lagou.com/notice/clear.json',
+                            succ:function(data){
+                                _this.remove();
+                                if($("#noticeTip .notice_tip")){
+                                    $('#noticeTip').remove();
+                                    noticeDotObj.addClass("dn");
+                                }
+                            },
+                            fail:function(data){
+                                 console.log('fail:' + data);
+                            }
+                        });
+                    });
+                }
+            },
+            fail:function(data){
+                console.log('fail:' + data);
+            }
+        });
+        
+        	}
+    
+    /*
+    * 全部清空notice
+    */
+    function clearNoticeTip(url){
+        PASSPORT.util.rpc({
+            params:{},
+            url:url,
+            succ:function(data){
+                $('#noticeTip').remove();
+                $("#noticeDot").addClass("dn");
+            },
+            fail:function(data){
+                 console.log('fail:' + data);
+            }
+        });
+    }
+</script>
+
+<include file="Public/footer" />

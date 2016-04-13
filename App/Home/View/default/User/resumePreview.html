@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>简历预览</title>
+
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/common.css" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/myresume.css"/>
+<script type="text/javascript" src="/Public/Home/js/jquery.1.10.1.min.js" ></script>
+<script type="text/javascript" src="/Public/Home/js/jquery.lib.min.js"></script>
+<include file="Public/var"/>
+
+
+</head>
+
+<body>
+
+<div class="mr_created mr_preview">
+  <div class="mr_myresume_l mrcenter">
+    <div id="mr_mr_head">
+          <div class="mr_top_bg" id="baseinfo"> <img id="userpic"  src='<if condition="$info.pic neq '' ">{$info.pic}<else />/Public/Home/images/default_headpic.png</if>'  width="117" height="117" alt="头像" class="mr_headimg"/> <img src="/Public/Home/images/shadow_tx.png" alt="" class="shadow"/>
+          </div>
+          <div class="mr_baseinfo"> 
+            <div class="mr_p_myname mr_w604 clearfixs"> <span class="mr_name" id="txt_realname">{$info.realname}</span> </div>
+            <div class="mr_p_info mr_infoed mr_w604 clearfixs">
+              <div class="info_t"> <span class="base_info"><i></i><em class="s"></em><em class="x">{$info.birthday}年出生 · <if condition="$info.sex eq 2">女<else />男</if> · {$info.edu} · {$info.workyear}</em></span> </div>
+              <div class="info_b"> <span class="dizhi"><i></i><em data-id="0" title="{$info.city}">{$info.city}</em></span> <span class="mobile"><i></i><em>{$info.phone|getHidePhone=###,$view_contact}</em></span> <span class="email"><i></i><em>{$info.email|getHideEmail=###,$view_contact}</em></span> </div>
+              
+              <span class="mr_edit mr_head_r mr_edit_on dn" data-birthday="{$info.birthday}"  data-sex='<if condition="$info.sex eq 2">女<else />男</if>' data-xl="{$info.edu}" data-gzjy="{$info.workyear}" data-city="{$info.city}" data-mobile="{$info.phone}" data-email="{$info.email}" data-realname="{$info.realname}"></span> </div>
+            
+          </div>
+      </div>
+        
+        
+    <div class="mr_content">
+      <div class="mr_w604">
+      
+<!-- 工作经历 -->       
+        <div id="workExperience">
+          <div>
+            <div class="mr_moudle_head clearfixs">
+              <div class="mr_head_l">
+                <div class="mr_title"> <span class="mr_title_l"></span><span class="mr_title_c"> 工作经历 </span><span class="mr_title_r"></span> </div>
+              </div>
+            </div>
+            <div class="mr_moudle_content">
+              <div class="list_show">
+                <div class="mr_jobe_list">
+                
+                <volist name="exp_list" id="v">
+                  <div class="clearfixs">
+                    <div class="mr_content_l">
+                        <a class="projectTitle nourl">{$v.companyName}</a>
+                        <p>{$v.positionName}</p>
+                    </div>
+                    <div class="mr_content_r"> <span>{$v.startDate} - {$v.endDate}</span> </div>
+                  </div>
+                  
+                  <div class=" mr_content_m">{$v.workContent}</div>
+                  
+                </volist>
+                  
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+<!-- 教育经历 -->         
+        <div id="educationalBackground">
+          <div>
+            <div class="mr_moudle_head clearfixs">
+              <div class="mr_head_l">
+                <div class="mr_title"> <span class="mr_title_l"></span><span class="mr_title_c">教育经历</span><span class="mr_title_r"></span> </div>
+              </div>
+            </div>
+         
+            
+            <div class="mr_moudle_content">            
+            
+            <volist name="edu_list" id="v">
+              <div class="clearfixs mb46 mr_jobe_list">
+              
+              
+                <div class="mr_content_l">
+                    <h4>{$v.schoolName}</h4>
+                      <span>{$v.education} · {$v.professional}</span>
+                </div>
+                <div class="mr_content_r"> <span>{$v.endYear}年毕业</span></div>
+              </div>
+              
+              
+            </div> 
+            
+            </volist>           
+            
+          </div>
+        </div>
+        
+        
+ <!-- 项目经验 -->       
+        <div id="projectExperience" class="<php>if(!$pro_list){echo 'dn';}</php>">
+          <div>
+            <div class="mr_moudle_head clearfixs">
+              <div class="mr_head_l">
+                <div class="mr_title"> <span class="mr_title_l"></span><span class="mr_title_c">项目经验</span><span class="mr_title_r"></span> </div>
+              </div>
+            </div>
+            <div class="mr_moudle_content mr_w604">
+              <div class="list_show">
+              
+              <volist name="pro_list" id="v">
+                <div class="mr_jobe_list" >
+                  <div class="clearfixs">
+                    <div class="mr_content_l">
+                      <div class="l2"> 
+                        <a href="{$v.projectUrl}" class="projectTitle" target="_blank"><span></span>{$v.projectName}</a>
+                        <p>{$v.positionName}</p>
+                      </div>
+                    </div>
+                    <div class="mr_content_r"> <span>{$v.startDate} - {$v.endDate}</span> </div>
+                  </div>
+                  <div class="mr_content_m">
+                     <p>{$v.projectRemark}</p>
+                  </div>
+                </div>
+                
+                </volist>
+                
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+ <!-- 作品展示 -->        
+        <div id="worksShow" class="<php>if(!$work_list){echo 'dn';}</php>">
+          <div>
+            <div class="mr_moudle_head clearfixs">
+              <div class="mr_head_l">
+                <div class="mr_title"> <span class="mr_title_l"></span><span class="mr_title_c">作品展示</span><span class="mr_title_r"></span> </div>
+              </div>
+            </div>
+            <div class="mr_moudle_content">
+              <div class="mr_work_online">
+              
+              <volist name="work_list" id="v">
+                <div class="mr_wo_show">
+                  <div>
+                    <div class="mr_c_r_t"> &nbsp; </div>
+                  </div>
+                  <div class="mr_self_site"> 
+                    <a class="mr_self_sitelink" href="{$v.url}" target="_blank"> {$v.url} </a> 
+                  </div>
+                  <div class="mr_wo_preview">
+                    <p>{$v.workName}</p>
+                  </div>
+                </div>
+                </volist>
+                
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        
+ <!-- 自我描述 -->  
+        
+        <div id="selfDescription" class="<php>if(!$info['remark']){echo 'dn';}</php>">
+          <div>
+            <div class="mr_moudle_head clearfixs">
+              <div class="mr_head_l">
+                <div class="mr_title"> <span class="mr_title_l"></span><span class="mr_title_c">自我描述</span><span class="mr_title_r"></span> </div>
+              </div>
+            </div>
+            <div class="mr_moudle_content clearfixs">
+                <div class="mr_self_r">
+                    {$info.remark}
+                  </div>
+            </div>
+          </div>
+        </div>
+        
+        
+ 
+        
+<!-- 技能评价 -->       
+        <div id="skillsAssess"  class="item_container_target <php>if(!$skill_list){echo 'dn';}</php>" >
+          <div>
+            <div class="mr_moudle_head clearfixs">
+              <div class="mr_head_l">
+                <div class="mr_title"> <span class="mr_title_l"></span><span class="mr_title_c">技能评价</span><span class="mr_title_r"></span> </div>
+              </div>
+            </div>
+            <div class="mr_moudle_content mr_w604">
+              <div class="me_skill_list">
+              
+              		<php>foreach($skill_list as $kk=>$vv){</php>
+	                  <div class="mr_skill_con" data-grade="{$vv.skillPercent}" data-skill-id="{$vv.sid}"> <span class="mr_skill_name" title="{$vv.skillName}">{$vv.skillName}</span> <span class="mr_skill_plan"> <em></em> </span> <span class="mr_skill_delete"></span> <span class="mr_skill_level">{$vv.masterLevel}</span> <i class="mr_skill_circle"><em>{$vv.masterLevel}</em></i> </div>
+	                 <php>}</php>
+	                 
+	                  <!-- <div class="mr_skill_con" data-grade="73" data-skill-id=""> <span class="mr_skill_name" title="php+mysql">php+mysql</span> <span class="mr_skill_plan"> <em></em> </span> <span class="mr_skill_delete"></span> <span class="mr_skill_level">精通</span> <i class="mr_skill_circle"><em>精通</em></i> </div>
+	                  <div class="mr_skill_con" data-grade="22" data-skill-id=""> <span class="mr_skill_name" title="div+html">div+html</span> <span class="mr_skill_plan"> <em></em> </span> <span class="mr_skill_delete"></span> <span class="mr_skill_level">基础</span> <i class="mr_skill_circle"><em>基础</em></i> </div>
+	                  <div class="mr_skill_con" data-grade="55" data-skill-id=""> <span class="mr_skill_name" title="javascript">javascript</span> <span class="mr_skill_plan"> <em></em> </span> <span class="mr_skill_delete"></span> <span class="mr_skill_level">熟练</span> <i class="mr_skill_circle"><em>熟练</em></i> </div> -->
+                </div>
+              </div>
+
+          </div>
+        </div>
+        
+        
+<!-- 自定义 -->        
+	<php>if($custom_model){</php>    
+      <div id="customBlock">
+        <div>
+          <div class="mr_moudle_head clearfixs">
+              <div class="mr_head_l">
+                <div class="mr_title"> <span class="mr_title_l"></span><span class="mr_title_c">{$custom_model.titleName}</span><span class="mr_title_r"></span> </div>
+              </div>
+            </div>
+          <div data-id="{$custom_model.id}" class="custom_list">
+             <p>{$custom_model.titleContent}</p>
+         </div>
+        </div>
+      </div>
+      
+       <php>}</php> 
+        
+    </div>
+    
+    
+      <div class="mr_self_state"> 
+        <div class="form_wrap mr_self_s resume_status"> ·&nbsp;{$info.workstatus}&nbsp;· </div>
+      </div>
+    </div>
+    <div class="mr_bottom_r" id="mr_pre_bot"> <span>© {$info.realname}  简历更新于{$info.update_time|showDay=###}<!-- . {:C('COPYRIGHT')} --></span> </div>
+  </div>
+</div>
+
+<div class="h20"></div>
+<!--end #previewWrapper--> 
+
+    <script type="text/javascript" src="/Public/Home/js/tinymce/jscripts/tiny_mce/jquery.tinymce.js"></script> 
+    <script>
+	// 设置全局变量
+	window.globals =  {
+		resumeId: '{$info.uid}',
+		initRatio: '{$info.resume_score}',
+		token: '3ad1ea0ea3794947ade65710418b25bd',
+		refreshTime: '{$info.update_time}',
+		skillScore: '{$info.score_jineng}',
+		projectExperienceScore: '{$info.score_xiangmu}',
+		workShowScore: '{$info.score_zuopin}',
+		//expectJobsScore: '{$info.score_qiwang}',
+		myRemarkScore: '{$info.score_ziwo}',
+		hasProjectExperiences: true,
+		hasWorkShows: false,
+		hasSelf: true,
+		//hasExpectJobs: true,
+		hasSkillEvaluates: true,
+		hasUserDefines: true,
+		personIdFlag:'',
+		qrImgSrc:'/Public/qr/qrcode.jpg?qrSource=myResume',
+		isOpenResume:'{$info.isOpenMyResume}',
+		isFirstOpen:false
+	};
+	</script> 
+    <script type="text/javascript" src="/Public/Home/js/common.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/json.min.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/jquery-migrate-1.1.1.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/jquery-ui-1.8.custom.min.js"></script> 
+    
+    <script type="text/javascript" src="/Public/Home/js/jquery.cropzoom.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/components.js?v=1.5.6_2015051318"></script> 
+    <script type="text/javascript" src="/Public/Home/js/new_myresume.js"></script> 
+    
+</body>
+</html>
+

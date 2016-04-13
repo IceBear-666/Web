@@ -1,0 +1,180 @@
+<!------------------------------------- 弹窗lightbox ----------------------------------------->
+<div style="display:none;">
+	<!--联系方式弹窗-->	
+        <div id="telTip" class="popup" style="height:180px;">
+	        <form id="telForm">
+	        	<table width="100%">
+	            	<tr>
+	            		<td align="center" class="f18">留个联系方式方便我们联系你吧！</td>
+	            	</tr>
+	            	<tr>
+	                	<td align="center">
+							<input type="text" name="tel" placeholder="请输入你的手机号码或座机号码" maxlength="49" />
+							<span id="telError" class="error" style="display:none;"></span>
+						</td>
+	                </tr>
+	                <tr>
+	                	<td align="center">
+	                		<input class="btn" type="submit" value="提交" />
+	                	</td>
+	                </tr>
+	            </table>
+            </form>
+        </div><!--/#telTip-->
+        
+    <!--地图弹窗-->	
+        <div id="baiduMap" class="popup">
+        	<div class="mb10">点击地图可重新定位公司所在的位置</div>
+	        <div id="allmap"></div>
+        </div><!--/#baiduMap-->
+</div>
+<!------------------------------------- end ----------------------------------------->
+    
+    
+    <!-- old --> 
+    <!-- <script type="text/javascript" src="__PUBLIC__/Js/jquery_003.js"></script> --> 
+    
+    <script type="text/javascript" src="__PUBLIC__/Js/tinymce_full/tinymce.jquery.js"></script>
+	<script>
+	$(function(){
+			
+		/***********************************************
+		** textarea 编辑器
+		*/
+		
+		tinyMCE.init({
+			mode : "textareas",
+			save_enablewhendirty: function(e) {
+		        console.log('dirty',e);
+		    },
+		    save_onsavecallback: function(e){
+		        console.log('save',e);
+		    },
+		    setup: function (editor) {
+		        editor.on('keyup', function (e) {  
+		        	tinyMCE.triggerSave();
+		        	var editorContent = tinyMCE.get(editor.id).getContent();
+				    if(editorContent.length > 20){
+						$("#" + editor.id).valid();
+				    }
+		        });
+		    }
+		});
+		
+		 /* $('#jobForm').ajaxForm(options);
+		    // 绑定form-pre-serialize事件，在触发form-serilaize事件前保存tinyMCE的数据到textarea中
+		    $('#jobForm').bind('form-pre-serialize', function(event, form, options, veto) {
+			tinyMCE.triggerSave();
+
+		    }); */
+		
+		
+		$('#workAddress').focus(function(){
+			$('#beError').hide();
+		});
+	});
+	</script>
+    <!-- end old --> 
+    
+    <script type="text/javascript" src="__PUBLIC__/Js/jobs.js"></script> 
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=u77bnG3qafFf85j6cQMY1XkT"></script>
+	<script type="text/javascript">
+	//百度地图API功能
+	var map = new BMap.Map("allmap");
+	//控件添加
+	map.addControl(new BMap.NavigationControl());
+	map.addControl(new BMap.MapTypeControl());
+	map.addControl(new BMap.ScaleControl());
+	map.addControl(new BMap.OverviewMapControl());
+	
+	var point = new BMap.Point(116.331398,39.897445);//初始化坐标点
+	map.centerAndZoom(point, 15);
+	/* map.centerAndZoom(, 15); */
+	map.enableScrollWheelZoom(true);//允许缩放
+	var gc = new BMap.Geocoder();//地址定位
+	var local = new BMap.LocalSearch(map, {
+		  renderOptions:{map: map}
+	});
+	function showInfo(e){
+		 map.clearOverlays();//清除所有覆盖物
+		 map.centerAndZoom(new BMap.Point(olng, olat), 11);//重定义中心点
+		 alert(e.point.lng + ", " + e.point.lat);
+		 var marker = new BMap.Marker(new BMap.Point(e.point.lng, e.point.lat));  // 创建标注
+		 
+		 /* marker.addEventListener("mouseup",function(em){//覆盖物监听事件--释放鼠标时定位覆盖物位置
+			var pt = em.point;//移动后重新定位
+			gc.getLocation(pt, function(rs){
+			   var addComp = rs.addressComponents;
+			   var label = new BMap.Label("我的坐标："+em.point.lng + ", " + em.point.lat+"  我的地址："+addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber,{offset:new BMap.Size(20,-10)});
+				// marker.setLabel(label);//新坐标-新地址
+				 if(rs){
+		 				 var sContent =
+						"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>"+addComp.province+"</h4>" + 
+						"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>"+rs.address+"</p>" + 
+						"</div>";
+					 	var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
+					 	//图片加载完毕重绘infowindow
+				 		marker.openInfoWindow(infoWindow);
+		 			}
+				
+				  $('#lat').val(em.point.lat);
+				  $('#lng').val(em.point.lng);
+			});
+		}); */
+		 
+		 
+		marker.enableDragging();    //可拖拽
+		map.addOverlay(marker);     // 将标注添加到地图中
+		
+		 /////////////////////地址定位
+		 var pt = e.point;
+		gc.getLocation(pt, function(rs){
+		    var addComp = rs.addressComponents;
+		    var label = new BMap.Label("我的坐标："+e.point.lng + ", " + e.point.lat+"  我的地址："+addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber,{offset:new BMap.Size(20,-10)});
+		 			//marker.setLabel(label);
+		 			if(rs){
+		 				 var sContent =
+						"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>"+addComp.province+"</h4>" + 
+						"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>"+rs.address+"</p>" + 
+						"</div>";
+					 	var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
+					 	//图片加载完毕重绘infowindow
+				 		marker.openInfoWindow(infoWindow);
+		 			}  
+		 			
+		 		$('#lat').val(e.point.lat);
+				$('#lng').val(e.point.lng);
+		});
+		
+		//////////////////////重置中心点
+		 olng = e.point.lng;
+		 olat = e.point.lat;
+	}
+	map.addEventListener("click", showInfo);//地图点击事件
+	
+	$(function(){
+		$('#mapPreview').bind('click',function(){
+			$.colorbox({inline:true, href:"#baiduMap",title:"公司地址"});
+			var address = $('#positionAddress').val();
+			var city = $('#workAddress').val();
+		    map.setCurrentCity(city);
+		    map.setZoom(15);
+			gc.getPoint(address, function(point){
+			  if (point) { 
+			    map.centerAndZoom(point, 15);
+				map.setZoom(15);
+		    	map.setCenter(point);
+			   	local.search(address);
+			  }
+			}, city); 
+			/* map.addEventListener("tilesloaded",function(){
+		    	map.setZoom(15);
+		    }); */
+		});
+	});
+	</script>
+	
+    <div class="clear"></div>
+    <input id="resubmitToken" value="aa3adcfa3aa34365af954b38e2f3654f" type="hidden">
+    <a style="display: none;" id="backtop" title="回到顶部" rel="nofollow"></a> 
+

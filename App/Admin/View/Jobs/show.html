@@ -1,0 +1,57 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>{$info.zhiwei_mingcheng}</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        
+        <div class="form-item">
+            <label class="item-label">职位名称<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.zhiwei_mingcheng}
+            </div>
+        </div>
+                
+        <div class="form-item">
+            <label class="item-label">职位名称<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.zhiwei_mingcheng}
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">职位名称<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.zhiwei_mingcheng}
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">职位名称<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.zhiwei_mingcheng}
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">职位名称<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.zhiwei_mingcheng}
+            </div>
+        
+        <div class="form-item">
+            <input type="hidden" name="vid" value="{$info.vid|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">        
+        Think.setValue("status", {$info.status|default = 0});
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+    </script>
+</block>

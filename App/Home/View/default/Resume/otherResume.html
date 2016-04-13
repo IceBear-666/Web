@@ -1,0 +1,187 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/myresume.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/external.min.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+<script>
+$(function(){
+    $(".btn_showprogress").click(function(){
+          $(this).find("i").toggleClass("transform");
+		  $(this).parent("div").siblings(".progress_status").slideToggle("slow");
+    });
+});
+</script>
+
+
+
+<div id="container">
+    <div class="mr_myresume_l bgf9">
+      
+      <div class="fjlist">
+        <ul>
+        
+        <php>if(!$otherResume){</php>
+        	<li>
+            <div class="nocenter"><span><img src="/Public/Home/images/empty.png" />暂无附件简历</span></div>
+          </li>
+        
+        <php>}</php>
+        
+        <php>foreach($otherResume as $k=>$v){</php>
+        
+          <li>
+            <div class="fjinfo lf">
+              <i class="{$v.ext}"></i><span>{$v.name}<br /><font class="mytime">{$v.addtime|showDate=###,"Y-m-d H:i"}</font></span>
+            </div>
+            <div id="mydel" class="down rt"><a class="xiazai" href="/Resume/downResume/id/{$v.oid}">下载</a><a dit="{$v.oid}" class="shanchu" href="javascript:">删除</a></div>
+             <div class="clr"></div> 
+          </li>
+          
+       <php>}</php>
+          
+          <!-- <li>
+            <div class="fjinfo lf">
+              <i class="pdf"></i><span>李大明的简历.pdf<br /><font class="mytime">2015-05-19</font></span>
+            </div>
+            <div class="down rt"><a class="xiazai" href="#">下载</a><a class="shanchu" href="#">删除</a></div>
+             <div class="clr"></div> 
+          </li> -->
+          
+          
+          
+          
+        </ul>
+       
+      </div>
+         
+    </div>
+    
+<!-- 板块右侧 -->    
+    <div class="mr_myresume_r">
+      <div class="jllfnav">
+        <a class="nav1" href="/Resume/myresume.html">在线简历</a>
+        <a class="nav2 cur2" href="/Resume/otherResume.html">附件简历<em>{$resumeCount}</em></a>
+        <a class="nav3" href="/User/delivery.html">投递管理</a>
+      </div>
+      <div class="clr"></div>
+       <div class="mr_upload mt20" <php>if($otherResume)echo 'dn';</php>  ><a class="inline" href="#uploadFile" title="上传附件简历">上传附件简历</a> </div>
+       <div class="bgf9" style=" padding:16px;">
+         <img  width="100%" src="/Public/Home/images/maxewm.gif" />
+       </div>
+    </div>
+    
+    
+</div>
+
+ <!-- 弹窗 -->
+  <div style="display:none;">
+  
+    <!--删除附件-->
+    <div id="delfj" class="popup delfujie">
+      <span>确认要删除吗？</span>
+        <div class="txtct"><a class="mybtn2 f16" id="woshan" href="#">确定</a><a href="javascript:" class="mybtn2s f16 report_cancel">取消</a></div>
+    </div>
+    
+     <!-- 上传简历 -->
+      <div id="uploadFile" class="popup" style="padding-bottom:10px;">
+        <table width="100%">
+          <tr>
+            <td align="center"><form>
+                <a href="javascript:void(0);" class="btn_addPic"> <span>选择上传文件</span>
+                <input tabindex="3" title="支持word、pdf格式文件，大小不超过10M" size="3" name="newResume" id="resumeUpload" 
+	                        class="filePrew" type="file" onchange="file_check(this,'/Resume/updateMyResume','resumeUpload')" />
+                </a>
+              </form></td>
+          </tr>
+          <tr>
+            <td align="left">支持word、pdf格式文件<br />
+              文件大小需小于10M</td>
+          </tr>
+          <tr>
+            <td align="left" style="color:#dd4a38; padding-top:10px;">注：若从其它网站下载的word简历，请将文件另存为.docx格式后上传</td>
+          </tr>
+          <tr>
+            <td align="center"><img src="/Public/Home/images/loading.gif" height="24" id="loadingImg" style="visibility: hidden;" alt="loading" /></td>
+          </tr>
+        </table>
+      </div>
+      <!--/#uploadFile-->
+      
+      
+      <!-- 简历上传成功 -->
+      <div id="uploadFileSuccess" class="popup">
+        <h4>简历上传成功！</h4>
+        <table width="100%">
+          <tr>
+            <td align="center"><p>你可以将简历投给你中意的公司了。</p></td>
+          </tr>
+          <tr>
+            <td align="center"><a href="javascript:top.location.reload();" class="btn_s">确&nbsp;定</a></td>
+          </tr>
+        </table>
+      </div>
+      <!--/#uploadFileSuccess--> 
+      
+  </div>
+  
+ 
+<script>
+ $('#mydel .shanchu').bind('click',function(){
+        $.colorbox({inline:true, href:"#delfj",title:"删除附件"});
+		var getdit = $(this).attr("dit");
+		$("#woshan").attr("href","/Resume/delOtherResume/id/"+getdit);
+ });
+</script>
+<script>
+var amountScore, oMoudle, oMoudleScore, oDelMoudle, oMdScore, uploadFlag, openFlag, toggleHandler, projectTitle = $(".mr_jobe_list .l2 .projectTitle");
+function file_check(obj, action_url, id) {
+	var userId;
+	return 2 == uploadFlag ? !1 : (uploadFlag = 2, $("#loadingImg").css("visibility", "visible"), obj = $("#" + id), userId = $("#userid").val(), this.AllowExt = ".doc,.docx,.pdf", this.FileExt = obj.val().substr(obj.val().lastIndexOf(".")).toLowerCase(), "" == obj.val() ? ($("#loadingImg").css("visibility", "hidden"), !1) : (0 != this.AllowExt && -1 == this.AllowExt.indexOf(this.FileExt) ? (errorTips("只支持word、pdf格式文件，请重新上传"), $("#resumeUpload").val(""), $("#loadingImg").css("visibility", "hidden"), uploadFlag = 1) : $.ajaxFileUpload({
+		type: "POST",
+		url: action_url,
+		secureuri: !1,
+		fileElementId: id,
+		data: {
+			userId: userId
+		},
+		dataType: "text",
+		success: function(jsonStr) {
+			var json, isShowDefault;
+			uploadFlag = 1, json = eval("(" + jsonStr + ")"), $("#loadingImg").css("visibility", "hidden"), json.success ? ($.ajax({
+				url: ctx + "Resume/setDefaultResume",
+				type: "POST",
+				data: {
+					type: "0"
+				}
+			}).done(function(a) {
+				a = $.parseJSON( a );
+				//console.log(a.msg);
+				//a.success ? $("#default_resume").val("默认投递：附件简历") : alert(a.msg)
+			}), $(".mr_uploaded .mr_up_main a").text(json.content.nearbyName).attr("title", "下载" + json.content.nearbyName), $(".mr_uploaded .mr_up_main p").text(json.content.time), isShowDefault = $("#isShowDefault"), "0" == isShowDefault.val() ? $(".mr_uploaded .mr_set_default").hide() : $(".mr_uploaded .mr_set_default").show(), $(".mr_uploaded").show(), $.colorbox({
+				inline: !0,
+				href: $("div#uploadFileSuccess"),
+				title: "上传附件简历"
+			})) : -1 == json.code ? $.colorbox({
+				inline: !0,
+				href: $("div#fileResumeUpload"),
+				title: "附件简历上传失败"
+			}) : -2 == json.code ? $.colorbox({
+				inline: !0,
+				href: $("div#fileResumeUploadSize"),
+				title: "附件简历上传失败"
+			}) : (uploadFlag = 1, errorTips("简历上传失败，请重新上传"), $("#loadingImg").css("visibility", "hidden"))
+		},
+		error: function() {
+			errorTips("简历上传失败，请重新上传"), $("#loadingImg").css("visibility", "hidden"), uploadFlag = 1, $(".btn_s").click(function() {
+				window.location.reload()
+			}), $("#colorbox").on("click", "#cboxClose", function() {
+				"uploadFile" == $(this).siblings("#cboxLoadedContent").children("div").attr("id") && window.location.reload()
+			})
+		}
+	}), void 0))
+}
+	</script> 
+
+
+<script type="text/javascript" src="/Public/Home/js/core.min.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/popup.js"></script> 
+<include file="Public/footer" />

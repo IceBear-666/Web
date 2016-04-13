@@ -1,0 +1,161 @@
+      
+<if condition="$show_nav eq 1">
+<div class="clear"></div>
+
+<php>if($show_foot!==0){</php>
+<div style="height:60px;"></div>
+<div class="clr"></div>
+
+
+    <if condition="is_login()">
+              
+          <php>if(getUsersSession('type')==1){</php>
+                  
+              <div id="comfooter">
+                  <a  {$cur_top_nav.noread} href="/Company/interview/type/noread">未读简历</a><!-- {$cur_top_nav.noread} -->
+                  <a  {$cur_top_nav.user} href="/User/">个人中心</a><!-- {$cur_top_nav.user} -->
+              </div>
+          
+          <php>}else{</php>
+          
+              
+              <div id="footer">
+                  <a {$cur_top_nav.job} href="/Jobs/">职位</a>
+                  <a {$cur_top_nav.company} href="/Company/">公司</a>
+                  <a {$cur_top_nav.user} id="mwode" href="/User/">我的</a>
+              </div>
+              
+         <php>}</php>
+         
+      <else/>   
+         <div id="footer">
+                  <a {$cur_top_nav.job} href="/Jobs/">职位</a>
+                  <a {$cur_top_nav.company} href="/Company/">公司</a>
+                  <a {$cur_top_nav.user} id="mwode" href="/User/">我的</a>
+         </div>
+         
+     </if>
+
+<php>}</php>
+
+</if>
+
+<script type="text/javascript">
+/* $(function(){
+	$(".picbig").each(function(i){
+		var cur = $(this).find('.img-wrap').eq(0);
+		var w = cur.width();
+		var h = cur.height();
+	   $(this).find('.img-wrap img').LoadImage(true, w, h,'{IMG_PATH}msg_img/loading.gif');
+	});
+}) */
+
+//$("#user_collection_btn").click(function(){ 
+    
+function user_collection(id,type,flag,refresh){	
+    //flag:1职位2公司3宣讲会
+    //type：0取消1收藏
+    
+    //$("#btn_collect").attr('disabled',"true");
+    
+    if(!id || !flag){
+        alert("参数无效");
+        //$("#btn_add").removeAttr("disabled");
+        return false;
+    }
+    if(type!=0 && type!=1 ){
+    	alert("参数无效");
+        //$("#btn_add").removeAttr("disabled");
+        return false;
+    }
+    
+    $.ajax({
+        type:"POST",
+        url:ctx +"User/collectAdd",
+        data:{id:id,type:type,flag:flag},
+        dataType:'json',
+        beforeSend:function(){
+        },          
+        success:function(data){
+        	//data = $.parseJSON( data );
+            if(data.success){
+                alert(data.msg);
+                if(refresh){
+                	window.location.reload();
+                }
+                return false;
+            }
+            else {
+            	alert(data.message);
+            	if(data.content.do_type==-1){
+            		window.location.href="/User/login/?ref=/Jobs/info/id/{$info.jid}";
+            	}
+            	
+            
+            }
+            return false;
+            //$("#btn_collect").removeAttr("disabled");  
+        }   ,
+        //调用执行后调用的函数
+        complete: function(XMLHttpRequest, textStatus){
+        	//$("#btn_collect").removeAttr("disabled");
+        	//return false;
+        },
+        //调用出错执行的函数
+        error: function(){
+        	//$("#btn_collect").removeAttr("disabled");
+            alert("收藏失败，请稍后再试");
+            return false;
+        }        
+     });
+    
+}
+      
+//});
+
+
+</script>
+
+<script>
+$(".icous").hover(function(){$(this).find(".inusnav").slideDown(200);},function(){$(this).find(".inusnav").slideUp(50);});
+</script>
+<script>
+	// 关闭
+	//3s tips消失
+	var global = {}
+	global.email = "{:C($Think.session.email)}";
+	global.usertoken = $.cookie('user_trace_token');
+</script>
+
+<script>
+	$(document).click(function(){
+		$(".ft_share").removeClass('share_open2');
+		$(".ft_share").removeClass("share_click2");
+		$(".ft_share").removeClass("share_hover2");
+		$(".licity").hide();
+	});
+	//微信分享
+	$('.ft_share').click(function(event){
+		$(this).unbind("mouseover");
+		$(this).unbind("mouseout");
+		if($(this).hasClass("share_open2")){
+			$(this).removeClass('share_open2');
+			$(this).removeClass("share_click2");
+			$(this).removeClass("share_hover2");
+		}else{
+			$(this).addClass('share_open2');
+			$(this).addClass("share_click2");	
+			$(this).find("span#share_jd2").addClass("dn") ;
+		}
+		/*$(this).find("span#share_jd2").addClass("dn") ;*/
+		event.stopPropagation();	
+	});
+</script>
+<script> 
+with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~ (-new Date() / 36e5)]; 
+</script>
+<!-- 页面footer钩子，一般用于加载插件JS文件和JS代码 -->
+{:hook('pageFooter', 'widget')}
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/fuwu.css" />
+
+	<div class="fuwubox"> 
+    <div class="login_logo"> <a href="/"><img src="/Public/Home/images/uslogo.png" /></a></div> 
+	   <div class="fwbox">
+         <div class="toptl">开通招聘服务</div> 
+         <div class="os_step_1"></div>
+         
+           <div class="stform">
+            <form class="registerform" action="/Company/openZhaopin/" method="post">
+             <li>
+              <h3>联系方式<em>(请填写真实有效的电话号码，方便系统校验使用)</em></h3>
+                <input class="myipt" type="text" id="phone" name="phone" value="{$myinfo.phone}" datatype="mp" placeholder="请输入你的手机号或座机" nullmsg="请输入你的手机号或座机" errormsg="7-11位座机或手机。座机格式：010-8765432。"/> 
+             </li>
+             
+             <li>
+              <h3>接收简历的邮箱<em>(常用邮箱，如与公司邮箱不一致，则简历将同时发送到你的两个邮箱。)</em></h3>
+              <input class="myipt" type="text" id="email" name="email" value="{$myinfo.email}" datatype="e" placeholder="请输入公司邮箱" nullmsg="请输入公司邮箱" errormsg="请输正确的入公司邮箱"/> 
+             </li>
+             
+              <div class="error" style="display:none;color:#ff6a6a" id="beError"></div>
+              <input type="hidden" id="step" name="step" value="1"/>
+              
+              <input type="submit" class="mybtn1 f18"  value="下一步" /> 
+            </form> 
+             <div class="myask">
+               <b>常见问题：</b><br />
+               问：填写个人邮箱可以吗？<br />
+               答：不可以。为了保证每个职位的真实性，找份工作网严格要求招聘方必须提供公司邮箱。（公司邮箱是指以你的公司网址为后缀的免费公司邮箱，例如Jobsminer的公司邮箱后缀是@jobsminer.cc）
+             </div>
+          </div>
+          
+	   </div> 
+  </div> 
+
+<script type="text/javascript" src="/Public/Home/js/Validform_v5.3.2_min.js"></script>   
+<script type="text/javascript">
+$(function(){	
+	$(".registerform:eq(0)").Validform({
+		tiptype:3,
+		showAllError:true,
+
+	});
+	
+	$("form").submit(function(){
+   		$("#beError").hide();
+   		var self = $(this);
+   		$.post(self.attr("action"), self.serialize(), success, "json");
+   		return false;
+
+   		function success(data){
+   			if(data.status){
+   				window.location.href = "/Company/openZhaopin/step/2";//data.url; message/stype/1
+   			} else {
+   				//self.find(".Validform_checktip").text(data.info);
+   				$("#beError").show();
+   				$("#beError").text(data.info);
+   				//刷新验证码
+   				//$(".reloadverify").click();
+   			}
+   		}
+   	});
+	
+});
+</script>
+
+
+<include file="Public/footer" />

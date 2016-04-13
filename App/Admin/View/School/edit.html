@@ -1,0 +1,105 @@
+<extend name="Public/base"/>
+
+<block name="body">
+
+    <div class="main-title">
+        <h2>{:isset($info['sid'])?'编辑':'新增'}学校</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">学校名称<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="name" value="{$info.name|default=''}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">所属城市<span class="check-tips"> </span></label>
+            <div class="controls">
+                <select name="province"  id="province" onchange="setcity(this)">
+	              <option value="0">--选择省--</option>
+	            </select>
+	            &nbsp;&nbsp;
+	            <select name="city"   id="city">
+	              <option value="0">--选择市--</option>
+	            </select>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">状态<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" name="status" value="1">启用</label>
+                <label class="radio"><input type="radio" name="status" value="0">禁用</label>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">是否热门<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" name="ishot" value="1">是</label>
+                <label class="radio"><input type="radio" name="ishot" value="0">否</label>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <input type="hidden" name="sid" value="{$info.sid|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        Think.setValue("pid", {$info.pid|default = 0});
+        Think.setValue("status", {$info.status|default = 0});
+        Think.setValue("ishot", {$info.ishot|default = 0});
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+        
+
+        var addressarr = {$city_arr};
+        var cprovince = {$info.pid};
+        var ccity = {$info.cid};
+
+        addressarr = eval(addressarr);
+        function setprovince() {
+        	var html = '';
+        	for(var key in addressarr) {
+        		if(addressarr[key]['pid']==1){
+        			html += '<option value="'+addressarr[key].aid+'">'+addressarr[key].name+'</option>';
+        		}
+        	}
+        	$("#province").html(html);
+        }
+
+        function setcity(vv) {
+        	var html = '';
+        	var v ='';
+        	if(isNaN(vv)){
+        		v = $(vv).val();
+        	}
+        	else v = vv;
+
+        	if(addressarr[v]){
+        		var cityarr = addressarr[v]['sub'];
+        		for(var k in cityarr) {
+        			html += '<option value="'+k+'">'+cityarr[k].name+'</option>';
+        		}
+        	}
+
+        	$("#city").html(html);
+        }
+
+        setprovince();
+
+        $("#province").val(cprovince);
+        var obj = $("#province").val();
+        setcity(obj);
+
+
+        $("#city").val(ccity);
+
+</script>
+</block>

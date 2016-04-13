@@ -1,0 +1,129 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/company.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/external.min.css"/>
+<script type="text/javascript" src="/Public/Home/js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="/Public/Home/js/timeCountDown.js"></script>
+<script type="text/javascript" src="/Public/Home/js/additional-methods.js"></script>
+<script type="text/javascript" src="/Public/Home/js/callTimeCountDown.js"></script>
+
+
+<!--后台给出的变量天数》0-->
+<script>
+    var cd = {
+            $: function(id){
+                return document.getElementById(id);
+            },
+            futureDate: '-7680251632',
+            obj: function(){
+                return {
+                    sec: cd.$("activity_minute"),
+                    mini: cd.$("activity_hour"),
+                    hour: cd.$("activity_day")
+                }
+            }
+        };
+        fnTimeCountDown(cd.futureDate, cd.obj());
+</script>
+
+
+<div id="body">
+  <div id="container">
+    
+    
+    <include file="Public/left" />
+    
+    <div class="content">
+      <dl class="company_center_content">
+          <dt>
+            <h1> <em></em> 已下线职位 <span>（共<i id="positionNumber" style="color:#fff;font-style:normal">2</i>个）</span> </h1>
+          </dt>
+          <dd>     
+            
+            <form id="searchForm">
+              <input type="hidden" name="type" value="Expired">
+              <ul class="reset my_jobs">
+                <li data-id="672780">
+                  <h3> <a href="http://www.lagou.com/jobs/672780.html" title="Java" target="_blank">Java</a> <span>[深圳]</span> </h3>
+                  <span class="receivedResumeNo"><a href="http://hr.lagou.com/interview/unHandlelist.html?positionId=672780">应聘简历（2）</a> </span>
+                  <div>全职 / 9k-12k / 1-3年 / 本科及以上</div>
+                  <div class="c9">下线时间：2015-05-20</div>
+                  <div class="links"> <a href="http://www.lagou.com/corpPosition/create.html?positionId=672780" class="job_edit" target="_blank">再发布</a> <a href="javascript:void(0)" class="job_del" rel="672780">删除</a> </div>
+                </li>
+                
+                <li data-id="661842">
+                  <h3> <a href="http://www.lagou.com/jobs/661842.html" title="UI设计师" target="_blank">UI设计师</a> <span>[深圳]</span> </h3>
+                  <span class="receivedResumeNo"><a href="http://hr.lagou.com/interview/unHandlelist.html?positionId=661842">应聘简历（5）</a> </span>
+                  <div>全职 / 6k-9k / 不限 / 学历不限</div>
+                  <div class="c9">下线时间：2015-05-20</div>
+                  <div class="links"> <a href="http://www.lagou.com/corpPosition/create.html?positionId=661842" class="job_edit" target="_blank">再发布</a> <a href="javascript:void(0)" class="job_del" rel="661842">删除</a> </div>
+                </li>
+                
+              </ul>
+            </form>
+          </dd>
+    </dl>
+
+      <!-- end .company_center_content --> 
+    </div>
+    <!-- end .content -->
+
+<!-- 删除操作的核心js -->    
+<script type="text/javascript" src="/Public/Home/js/company/job_list.min.js"></script> 
+<script>
+$('.jc_publisher_tip a.jc_pt_close').bind('click',function(){
+    var jc_publisher_tip = $(this).parent();
+    jc_publisher_tip.slideUp(200);
+});
+</script>
+    
+<script>
+
+$(function(){
+	PASSPORT.util.rpc({
+        url:rctx+"/recruitment/queryTipsNums.json",
+        succ:function(result){
+    		if(result.state == "1"){
+    			var data = result.content.data;
+    			if(data.unHandleNum > 0){
+    				$(".unHandle").text(data.unHandleNum).removeClass("dn");
+    			}else{
+    				$(".unHandle").text("").addClass("dn");
+    			}
+    			if(data.autoFilterNum > 0){
+    				$(".autoFilter").text(data.autoFilterNum).removeClass("dn");
+    			}else{
+    				$(".autoFilter").text(data.autoFilterNum).addClass("dn");
+    			}
+    			if(data.deliverCount > 0){
+    				$(".deliverCount").text(data.deliverCount).removeClass("dn");
+    			}else{
+    				$(".deliverCount").text(data.deliverCount).addClass("dn");
+    			}
+    			if((data.showNum > 0 || data.showNum == 0 ) && data.limitNum > 0  ){
+    				$(".goutong").text( data.showNum +'/'+ data.limitNum ).removeClass("dn");
+    			}else{
+    				$(".goutong").text( data.showNum +'/'+ data.limitNum).addClass("dn");
+    			}
+    		}else{
+    			alert(message);
+    		};
+    	},
+        fail:function(data){
+            console.log('fail:' + data);
+        }
+    });
+}); 
+</script>
+    
+    <div class="clear"></div>
+  </div>
+  <!-- end #container --> 
+</div>
+<!-- end #body --> 
+
+
+
+
+<include file="Public/footer" />

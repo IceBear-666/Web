@@ -1,0 +1,128 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/reg.css" />
+<php>if($_GET[md]=='min'){</php>
+ <style>
+ body{ background:#fff;}
+.login_wrapper{ padding:0; margin:0;}
+.login_box{ margin:0;}
+.login_logo{ display:none;}
+#submitLogin {
+  width: 100%;
+  padding: 12px 0;
+  margin: 10px 0 20px 0;
+}
+ </style>
+<php>}</php> 
+<!--   <a href="/User/sendXMassage">发送给短信</a> -->
+	<div class="login_wrapper"> 
+      <input type="hidden" id="resubmitToken" value="" /> 
+	   <div class="login_box"> 
+      <div class="login_logo"> <a href="/"><img src="/Public/Home/images/xunlu_logo.png" /></a></div> 
+   
+	    <form id="loginForm" class="loginForm" action="__SELF__" method="post" name="forms">
+	     <input type="text" id="email" name="email" value="" tabindex="1" placeholder="请输入登录邮箱地址" /> 
+
+	  
+       <div style="position:relative;">
+         <div id="editipt"> <input type="password" oncut="return false" onpaste="return false" id="password" name="password" tabindex="2" placeholder="请输入密码" errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"/></div>
+         <div id="editpw"><a class="icon-user offpw" href="javascript:showps()"></a></div>
+       </div>
+	  
+	     <!-- <label class="lf" for="remember"><input type="checkbox" id="remember" value="1" checked="checked" name="autoLogin" /> 记住我</label> 
+	     <a href="/User/findPassword" class="rt" >忘记密码？</a>  -->
+	     <input type="submit" id="submitLogin" class="mybtn f20"  value="登录" /> 
+	     <input type="hidden" id="callback" name="callback" value="" /> 
+	     <input type="hidden" id="authType" name="authType" value="" /> 
+	     <input type="hidden" id="signature" name="signature" value="" /> 
+	     <input type="hidden" id="timestamp" name="timestamp" value="" /> 
+	    </form> 
+      <div style="margin: 60px 0 20px 0; overflow: hidden;">
+          <div style="float:left"><a href="/User/Password" class="rt" >忘记密码？</a> </div>
+          <div style="float:right">
+              <a id="test_reg" href="{:U('User/register')}" >没有帐号？立即注册></a>
+          </div>
+          <div class="clr"></div> 
+      </div>
+ <!-- <div class="login_right"> 
+      <div class="login_others" style="padding-top:0px;">还没有帐号？</div> 
+     <a href="register.html" class="registor_now mybtn" target="_parent">立即注册</a> 
+     <div class="login_others">或者</div> 
+     <div class="iconlogin">
+       <a href="/Public/otherLogin/type/sina"  class="icon_wb" title="使用新浪微博帐号登录"></a> 
+       <!--<a href="/Public/otherLogin/type/qq" class="icon_qq"  title="使用腾讯QQ帐号登录"></a>
+       <a href="/Public/otherLogin/type/wx" class="icon_weixin"  title="使用微信帐号登录"></a> 
+     </div>
+    </div>  --> 
+	   </div> 
+	   <div class="login_box_btm"></div> 
+  </div> 
+
+	<!-- <script type="text/javascript" src="/Public/Home/js/jquery.validate.js" ></script>
+	<script type="text/javascript" src="/Public/Home/js/main.js" ></script> -->
+
+	<script type="text/javascript">
+    localStorage.setItem("site", "js8.in");
+
+	var login_from = "<php>echo $_GET[md];</php>";
+    	$(document)
+	    	.ajaxStart(function(){
+	    		$("#submitLogin").addClass("log-in").attr("disabled", true);
+	    	})
+	    	.ajaxStop(function(){
+	    		$("#submitLogin").removeClass("log-in").attr("disabled", false);
+	    	});
+
+
+    	$("form").submit(function(){
+    		$("#beError").hide();
+    		var self = $(this);
+    		$.post(self.attr("action"), self.serialize(), success, "json");
+    		return false;
+
+    		function success(data){
+    			if(data.status){
+    				if(login_from == "min"){
+    					window.close(); 
+    					parent.location.reload();
+    				}
+    				else window.location.href = data.url;
+    			} else {
+    				//self.find(".Validform_checktip").text(data.info);
+    				$("#beError").show();
+    				$("#beError").text(data.info);
+    				//刷新验证码
+    				//$(".reloadverify").click();
+    			}
+    		}
+    	});
+
+		$(function(){
+			var verifyimg = $(".verifyimg").attr("src");
+            $(".reloadverify").click(function(){
+                if( verifyimg.indexOf('?')>0){
+                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+                }else{
+                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+                }
+            });
+		});
+	</script>
+<!-- 眼镜显示隐藏密码 -->
+<script language="JavaScript">
+    function showps(){
+      if (this.forms.password.type="password") {
+        document.getElementById("editipt").innerHTML="<input type=\"text\" name=\"password\" oncut=\"return false\" onpaste=\"return false\"  id=\"password\" placeholder=\"请输入密码\" errormsg=\"密码为6-20位\" nullmsg=\"请填写密码\" datatype=\"*6-20\" tabindex=\"2\" value="+this.forms.password.value+">";
+        document.getElementById("editpw").innerHTML="<a class=\"icon-user onpw\" href=\"javascript:hideps()\"></a>"
+      }
+    }
+    function hideps(){
+      if (this.forms.password.type="text") {
+        document.getElementById("editipt").innerHTML="<input type=\"password\" name=\"password\" id=\"password\"  oncut=\"return false\" onpaste=\"return false\" placeholder=\"请输入密码\" errormsg=\"密码为6-20位\" nullmsg=\"请填写密码\" datatype=\"*6-20\" tabindex=\"2\" value="+this.forms.password.value+">";
+        document.getElementById("editpw").innerHTML="<a class=\"icon-user offpw\" href=\"javascript:showps()\"></a>"
+      }
+    }
+</script>
+
+
+<include file="Public/footer" />

@@ -1,0 +1,83 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+	    
+		<include file="Public/left" />
+	    <!-- end .sidebar --> 
+	    
+	    <div class="content">
+	      <dl class="company_center_content">
+	        <dt>
+	          <h1> <em></em> 发布新职位 </h1>
+	        </dt>
+	        <dd>
+	        
+	          <div class="ccc_tr">今日已发布 <span>{$count}</span> 个职位   还可发布 <span>{$left_count}</span> 个职位</div>
+	          <div class="publish_tip">
+	            <h2>恭喜你，职位发布成功！</h2>
+	            <a href="{$Think.WEB_URL}Jobs/info/id/{$jid}" target="_blank">预览职位</a><br>
+	            <a href="{$Think.WEB_URL}Jobs/createPost" class="greylink">继续发布新职位</a><br>
+	            <a href="{$Think.WEB_URL}Company/info/id/{$uid}" class="greylink"> 进入我的公司主页</a><br>
+	            <div class="invite_share" style="float:left;"> 
+	              <!-- 
+	              <div class="jiathis_style_32x32"> <a class="jiathis_button_tsina" title="分享到新浪微博"><span class="jiathis_txt jiathis_separator jtico jtico_tsina">分享到新浪微博</span></a> </div>
+	               --> 
+	            </div>
+	          </div>
+	          
+	          <!-- <div class="weixin weixinSuc">
+	            <div class="qr"> <img src="./fabuchenggong_files/f59c307a9a5640b583db4c0f107a8de0_557505.jpg" width="110" height="110">
+	              <div>[仅限本人使用]</div>
+	            </div>
+	            <div class="qr_text">
+	              <h3>关注微信服务号，可随时获取接收简历的通知 </h3>
+	              关注方式：<br>
+	              <span>打开微信 </span> <img src="./fabuchenggong_files/wx1.png" width="30" height="30"><span> →发现 </span> 
+	              <img src="./fabuchenggong_files/wx2.png" width="31" height="30"><span> →扫一扫左侧二维码</span>
+	              <img src="./fabuchenggong_files/wx3.png" width="78" height="29"> 
+	             </div>
+	          </div> -->
+	          
+	        </dd>
+	      </dl>
+	    </div>
+	    <!-- end .content -->
+	    
+	    <style>
+		.jiathis_style_32x32 .jiathis_txt{font-size:14px!important;text-decoration:underline!important;padding-left:0 !important;}
+		.jiathis_style_32x32 .jiathis_separator{margin:0!important; line-height:22px !important;}
+		.jiathis_style_32x32 .jtico{height:auto !important;background:none;line-height:22px !important;padding-left:0 !important;}
+		</style>
+		    <script type="text/javascript">
+			/* var jiathis_config={summary:"【虎山技术部招聘Android】我们公司正在招聘Android，月薪10k-15k，如果你对这个职位感兴趣，请进入详情页投递简历：{$Think.WEB_URL}jobs/244924.html @钢铁侠网",boldNum:6,title:"#钢铁侠网热招职位#",url:"{$Think.WEB_URL}jobs/244924.html",hideMore:!0,appkey:{tsina:"3761453225"},pic:"{$Think.WEB_URL}images/sharewb.jpg",evt:{share:""}};
+			popQR();
+			function popQR(){
+			    $.ajax({
+			         url:ctx+"/mycenter/showQRCode",
+			         type:"GET"
+			    }).done(function(data){
+			         if(data.success){
+			              $('.weixinSuc .qr img').attr("src",data.content);
+			              $('.weixinSuc').removeClass('dn');
+			         }
+			    });  
+			} */
+		</script> 
+	    <script type="text/javascript" src="/Public/Js/jia.js" charset="utf-8"></script>
+	    
+
+	</div>	    
+  	<!-- end #container -->
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

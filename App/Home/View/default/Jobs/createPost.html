@@ -1,0 +1,209 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+	    
+		<include file="Public/left" />
+	    <!-- end .sidebar --> 
+	    
+	    
+	    <!-- 简历管理重大改变 tip --> 
+	    <!-- 简历管理重大改版 start -->
+	    <div class="major_revision fr"> <a href="{$Think.WEB_URL}forum.php?mod=viewthread&amp;tid=23555&amp;page=1&amp;extra=#pid54165" target="_blank"></a> </div>
+	    <!-- 简历管理重大改版end-->
+	    
+	    <div class="content">
+		      <dl class="company_center_content">
+		        <dt>
+		          <h1> <em></em> 发布新职位 </h1>
+		        </dt>
+		        <dd>
+		          <div class="ccc_tr">今日已发布 <span>{$count}</span> 个职位  
+		            还可发布 <span>{$left_count}</span> 个职位 </div>
+		          <form id="jobForm" method="post" action="{$Think.WEB_URL}Jobs/preview">
+		            <input type="hidden" name="id" value="" />
+		            <input type="hidden" name="preview" value="create" />
+		            <input type="hidden" name="companyId" value="32809" />
+		            <input type="hidden" name="resubmitToken" value="e0db7098b5254c5ebe927152c20eaa9c" />
+		            <table class="btm">
+		              <tr>
+		                <td width="25"><span class="redstar">*</span></td>
+		                <td width="85">职位类别</td>
+		                <td><input type="hidden" name="positionType" value="" id="positionType" />
+		                  <input type="button" class="selectr selectr_380" id="select_category"  value="请选择职位类别"  />
+		                  <div id="box_job" class="dn">
+		                  
+		                    <volist name="webCat" id="v">
+		                  
+		                    <dl>		                    
+		                      <dt>{$v.name}</dt>
+		                      <dd>
+		                        <ul class="reset job_main">
+		                        
+		                        <volist name="v.childs" id="vv">
+		                        
+		                          <li>
+			                          <if condition="$vv.name eq '高端职位' ">
+			                          	<span>高端{$v.name}职位</span>
+			                          <else />
+			                          	<span>{$vv.name}</span>
+			                          </if>									
+		                            <ul class="reset job_sub dn">
+		                              <volist name="vv.son" id="vvv">
+		                              <li>{$vvv.name}</li>
+		                              </volist>
+		                            </ul>
+		                          </li>
+		                          
+		                          </volist>		                          
+		                          
+		                        </ul>
+		                      </dd>
+		                    </dl>
+		                    
+		                    </volist>		                    
+		                    
+		                  </div>
+		                  </td>
+		              </tr>
+		              <tr>
+		                <td><span class="redstar">*</span></td>
+		                <td>职位名称</td>
+		                <td><input type="text" id="positionName" name="positionName" value="" placeholder="请输入职位名称，如：产品经理" /></td>
+		              </tr>
+		              <tr>
+		                <td></td>
+		                <td>所属部门</td>
+		                <td><input type="text" id="department" name="department" value="" placeholder="请输入所属部门" /></td>
+		              </tr>
+		            </table>
+		            <table class="btm">
+		              <tr>
+		                <td width="25"><span class="redstar">*</span></td>
+		                <td width="85">工作性质</td>
+		                <td><ul class="profile_radio clearfix reset">
+		                    <li> 全职<em></em>
+		                      <input type="radio" value="全职" name="jobNature" />
+		                    </li>
+		                    <li> 兼职<em></em>
+		                      <input type="radio" value="兼职" name="jobNature" />
+		                    </li>
+		                    <li> 实习<em></em>
+		                      <input type="radio" value="实习" name="jobNature" />
+		                    </li>
+		                  </ul></td>
+		              </tr>
+		              <tr>
+		                <td><span class="redstar">*</span></td>
+		                <td>月薪范围</td>
+		                <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
+		                <td><div class="salary_range">
+		                    <div>
+		                      <input type="text" name="salaryMin" id="salaryMin"  value=""  placeholder="最低月薪" />
+		                      <span>k</span> </div>
+		                    <div>
+		                      <input type="text" name="salaryMax" id="salaryMax"  value=""  placeholder="最高月薪" />
+		                      <span>k</span> </div>
+		                    <span>只能输入整数，如：9</span> </div></td>
+		              </tr>
+		              <tr>
+		                <td><span class="redstar">*</span></td>
+		                <td>工作城市</td>
+		                <td><input type="text" id="workAddress" name="workAddress" value="" placeholder="请输入工作城市，如：北京" /></td>
+		              </tr>
+		            </table>
+		            <table class="btm">
+		              <tr>
+		                <td width="25"><span class="redstar">*</span></td>
+		                <td width="85">工作经验</td>
+		                <td><input type="hidden" name="workYear" value="" id="experience" />
+		                  <input type="button" class="selectr selectr_380" id="select_experience"   value="请选择工作经验"  />
+		                  <div id="box_experience" class="boxUpDown boxUpDown_380 dn">
+		                    <ul>
+		                      <li> 不限 </li>
+		                      <li> 应届毕业生 </li>
+		                      <li> 1年以下 </li>
+		                      <li> 1-3年 </li>
+		                      <li> 3-5年 </li>
+		                      <li> 5-10年 </li>
+		                      <li> 10年以上 </li>
+		                    </ul>
+		                  </div></td>
+		              </tr>
+		              <tr>
+		                <td><span class="redstar">*</span></td>
+		                <td>学历要求</td>
+		                <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
+		                <td><input type="hidden" name="education" value="" id="education" />
+		                  <input type="button" class="selectr selectr_380" id="select_education"  value="请选择学历要求"  />
+		                  <div id="box_education" class="boxUpDown boxUpDown_380 dn">
+		                    <ul>
+		                      <li> 不限 </li>
+		                      <li> 大专 </li>
+		                      <li> 本科 </li>
+		                      <li> 硕士 </li>
+		                      <li> 博士 </li>
+		                    </ul>
+		                  </div></td>
+		              </tr>
+		            </table>
+		            <table class="btm">
+		              <tr>
+		                <td width="25"><span class="redstar">*</span></td>
+		                <td width="85">职位诱惑</td>
+		                <td><input type="text" id="positionAdvantage" class="input_520"  name="positionAdvantage" value="" placeholder="20字描述该职位的吸引力，如：福利待遇、发展前景等" /></td>
+		              </tr>
+		              <tr>
+		                <td><span class="redstar">*</span></td>
+		                <td>职位描述</td>
+		                <td><span class="c9 f14">(建议分条描述工作职责等。请勿输入公司邮箱、联系电话及其他外链，否则将自动删除)</span>
+		                  <textarea class="tinymce" id="positionDetail" name="content" placeholder="请输入岗位职责、任职要求等，建议尽量使用短句并分条列出"></textarea></td>
+		              </tr>
+		              <tr>
+		                <td><span class="redstar">*</span></td>
+		                <td>工作地址</td>
+		                <td><input type="text" id="positionAddress" class="input_520" name="positionAddress" value="" placeholder="请输入详细的工作地址" />
+		                  <input type="hidden" id="lng" name="positionLng" value="" />
+		                  <input type="hidden" id="lat" name="positionLat" value="" />
+		                  <div class="work_place f14">我们将在职位详情页以地图方式精准呈现给用户 <a href="javascript:;" id="mapPreview">预览地图</a></div></td>
+		              </tr>
+		            </table>
+		            <table>
+		              <tr>
+		                <td width="25"><span class="redstar">*</span></td>
+		                <td colspan="2"> 接收简历邮箱： <span id="receiveEmailVal">{$info.email_jianli}</span>
+		                  <input type="hidden" name="email" id="receiveEmail" value="{$info.email_jianli}" /></td>
+		              </tr>
+		              <tr>
+		                <td width="25"></td>
+		                <td colspan="2"> 同时简历自动发送至邮箱（仅一个）
+		                  <input type="text" name="forwardEmail" id="forwardEmail" value="" />
+		                  <span class="error" id="beError" style="display:none"></span></td>
+		              </tr>
+		              <tr>
+		                <td width="25"></td>
+		                <td colspan="2"><input type="submit" class="btn_32" id="jobPreview" value="预览" />
+		                  <input type="button" class="btn_32" id="formSubmit" value="发布" /></td>
+		              </tr>
+		            </table>
+		          </form>
+		        </dd>
+		      </dl>
+		</div>
+	   
+	    <include file="Public/post_bottom" />
+
+	</div>	    
+  	<!-- end #container -->
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

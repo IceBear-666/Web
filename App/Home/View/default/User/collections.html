@@ -1,0 +1,135 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/list.css" />
+
+
+<!-- ======== 职位收藏开始 ========== -->
+<div class="w960 mt30">
+    <div class="lw240 scang">
+        <a href="/User/collections" {$lmenu[1]}>我收藏的职位</a>
+        <a href="/User/collections/type/2" {$lmenu[2]}>我收藏的公司</a>
+        <a href="/User/collections/type/3" {$lmenu[3]}>我收藏的宣讲会</a>
+    </div>
+
+    <div class="rw680">
+
+	<php>if($type==2){</php>
+
+		<!-- 公司列表开始-->
+	     <div class="listbox" style="margin:0">
+	     
+	     	<php>if(!$list)echo '<div class="nocenter"><span><img src="/Public/Home/images/empty.png" />暂时还没有收藏的公司，快去收藏把！</span></div>';</php>
+	     	
+	       <ul>
+
+	       	<volist name="list" id="v"  key="k">
+
+              <li <if condition="$key%3== '0'"> class="clr"</if >>
+	               <h5>
+	                  <a class="comtl lf" href="/Company/info/id/{$v.uid}" target="_blank">{$v.company_short_name}</a>
+	                  <a class="rt" href="/Company/info/id/{$v.uid}" target="_blank">[{$v.company_city}]</a>
+	                  <div class="clr"></div>
+	               </h5>
+	               <a  href="/Company/info/id/{$v.uid}" target="_blank" class="comlogo">
+	                  <if condition="$v.logo neq ''">
+	                      <img src="{$v.logo}" alt="{$v.company_short_name}" height="190" width="190">
+	                  <else />
+	                      <img src="/Public/Home/images/logo_default.png" alt="{$v.company_short_name}" height="190" width="190">
+	                  </if>
+	                  <em></em>
+	                  <h4>{$v.hangye}</h4>
+	               </a>
+	               <div class="zhiwei">
+	                 <volist name="v.jobs_arr" id="vv">
+	                  <a href="/Jobs/info/id/{$vv.jid}/source/company_list" target="_bank">{$vv.zhiwei_mingcheng}</a>
+	                 </volist>
+	               </div>
+                   <a href="javascript:void(0);" onclick="user_collection({$v.toid},0,2,1)" class="mybtn qxsc">取消收藏</a>
+	          </li>
+
+	          </volist>
+
+
+	       </ul>
+	     </div>
+	     <!-- 公司列表结束-->
+
+	<php>}elseif($type==3){</php>
+
+		<!-- 宣讲会列表开始-->
+	     <div class="xjlist bgf9" style="padding:10px 20px 30px 20px;">
+         
+         <php>if($list){</php>
+	      <table class="bgfff" width="100%" border="0" cellpadding="0" cellspacing="0">
+	            <tr class="bgf9">
+	              <td class="xjpl" width="160">日期</td>
+	              <td width="70">时间</td>
+                  <td width="90">参与企业</td>
+	              <td>地点</td>
+	              <td width="32">收藏</td>
+	           </tr>
+
+				<volist name="list" id="v"  key="k">
+
+	           <tr <if condition="$k%2== '0'"> class="bgf9"</if>>
+	              <td class="xjpl">{$v.date_ymd}(周<php>echo getWeekName($v['date_ymd']);</php>)</td>
+	              <td>{$v.date_time}</td>
+                   <td><a target="_blank" href="<php>if($v['com_id'])echo '/Company/info/id/'.$v['com_id'];else echo $v['com_url'];</php>">{$v.company}</a></td>
+	              <td>
+	               {$v.cid|getPlaceById=###}，{$v.sid|getSchoolById=###}，<br />
+	               {$v.address}
+	              </td>
+	              <td><a class="mystar" href="javascript:void(0);" onclick="user_collection({$v.toid},0,3,1)" title="取消收藏"></a></td>
+	           </tr>
+
+	           </volist>
+	           
+	           <php>}else{</php>
+                  <div class="nocenter"><span><img src="/Public/Home/images/empty.png" />暂时还没有收藏的宣讲会，快去收藏把！</span></div>
+               <php>}</php>
+
+
+	       </table>
+
+	     </div>
+	     <!-- 列表结束-->
+
+	<php>}else{</php>
+
+		<!-- 职位列表开始-->
+	     <div class="listjob bgf9" style="margin:0;">
+	       <ul>
+
+	       	<volist name="list" id="v" key="k">
+
+	          <li <if condition="$k%2== '0'"> class="bgfff"</if>>
+	           <a href="/Company/info/id/{$v.uid}"><img src="{$v.logo}" /></a>
+	           <div class="info">
+	             <a href="/Jobs/info/id/{$v.jid}" class="til">{$v.zhiwei_mingcheng}</a><font class="f16">[{$v.gongzuo_chengshi}]</font><br />
+	             月薪：{$v.yuexin_min}-{$v.yuexin_max} k&nbsp;&nbsp;&nbsp;经验：{$v.gongzuo_jingyan}&nbsp;&nbsp;&nbsp;学历要求：{$v.xueli}<br />
+	             职位诱惑：{$v.zhiwei_youhuo}
+	             <span><a class="til" href="/Company/info/id/{$v.uid}">{$v.company_short_name}</a> - {$v.hangye}</span>
+	           </div>
+	            <a href="javascript:void(0);" onclick="user_collection({$v.toid},0,1,1)" class="mybtn shenq">取消收藏</a>
+	          </li>
+
+	          </volist>
+	          
+	          <php>if(!$list)echo '<div class="nocenter"><span><img src="/Public/Home/images/empty.png" />暂时还没有收藏的职位，快去收藏把！</span></div>';</php>
+
+
+	       </ul>
+	     </div>
+	     <!-- 职位列表结束-->
+
+
+	<php>}</php>
+
+
+
+    </div>
+
+</div>
+
+
+<include file="Public/footer" />

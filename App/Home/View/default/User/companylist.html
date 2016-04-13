@@ -1,0 +1,312 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/companylist.css" />
+<script type="text/javascript" src="/Public/Home/js/jquery.fancybox.pack.js"></script> 
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/jquery.fancybox.css" />
+<script type="text/javascript" src="/Public/Home/js/jquery-labelauty.js"></script> 
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/jquery-labelauty.css" />
+<script src="/Public/Home/js/modernizr.custom.js"></script>
+<script src="/Public/Home/js/cbpFWTabs.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/tabchange.css" />
+<?php function deep_in_array($value, $array) {   
+    foreach($array as $item) {   
+        if(!is_array($item)) {   
+            if ($item == $value) {  
+                return true;  
+            } else {  
+                continue;   
+            }  
+        }   
+           
+        if(in_array($value, $item)) {  
+            return true;      
+        } else if(deep_in_array($value, $item)) {  
+            return true;      
+        }  
+    }   
+    return false;   
+} ?>
+
+<!-- <body data-spy="scroll" data-target="#myScrollspy" data-offset="10" style="position: relative;"> -->
+    <div class="section-top">
+        <div class="section-top-contrainer">
+            <h3 class="pull-left top-title">已支持一键填写网申列表</h3>
+            <div class="pull-right">
+                <ul class="top-cat">
+                   <li><a class="lt-title current" href="{:U('Company/companylist')}">实习</a> 
+                   </li>
+                    <li>|</li>
+                    <li><a class="rt-title " href="{:U('Company/fulltimecompanylist')}">全职</a></li>
+                </ul>
+                <div class="triangle-up"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w960 jm_companylist_container">  
+      <div class="tabs">
+            <div class="lw240 jm_companylist_l affix-top" id="myScrollspy">
+            <nav id="companyaffix">
+                <h3>我关注的行业</h3>
+                <ul class="nav nav-tabs nav-stacked ">
+                    <li <?php if(deep_in_array("1", $user_cat)):?>style="display:block"<?php else:?><?php endif?>><a class="icon-resume icon-inter" href="#su1" >互联网/游戏/软件</a></li>
+                    <li <?php if(deep_in_array("41", $user_cat)):?>style="display:block"<?php else:?><?php endif?>><a class=" icon-resume icon-build" href="#section-2">房地产/建筑/物业</a></li>
+                    <li <?php if(deep_in_array("40", $user_cat)):?>style="display:block"<?php else:?><?php endif?>><a class="icon-resume icon-finance" href="#section-3">金融</a></li>
+                    <li <?php if(deep_in_array("63", $user_cat)):?>style="display:block"<?php else:?><?php endif?>><a class="icon-resume icon-comm" href="#section-4">电子/通信/硬件</a></li>
+                    <li <?php if(deep_in_array("42", $user_cat)):?>style="display:block"<?php else:?><?php endif?>><a class="icon-resume icon-consumable" href="#section-5">消费品</a></li>
+                    <li <?php if(deep_in_array("203", $user_cat)):?>style="display:block"<?php else:?><?php endif?>><a class="icon-resume icon-other" href="#section-6">其他</a></li>
+                </ul>
+                <a class="choose-edit" id="choosebox" href="#chooseworkcat"><i class="icon-resume icon-edit"></i></a>
+              </nav>
+            </div>
+            <div class="rw680">
+            <div class="content-wrap jm_companylist_r">
+                <section id="su1" class="jm_companylist_section jm_inter">
+                  <h3 class="jm_support_title jm_cl_purple"><i class="icon-resume icon-inter"></i>互联网/游戏/软件</h3>
+                <table class="jm_companylist_tb">
+
+                    <volist name="info" id="v">
+                       
+                        <if condition="$v.cid eq 1">
+         
+                        <?php foreach ($collet_list as $cl){
+                            if($cl['cid'] == $v['id']){
+                            $collet = 1; $kid = $cl['kid'];  break; }else{ $collet = 0; }
+                        };
+                        ?>
+                        <?php  $now = strtotime(date('y-m-d',time()));  $end_date = strtotime($v['end_time']);?>
+                      
+                       
+                            <tr>
+                                <td width="250"><img src="{$v['path']}" style="height:50px;width:56px;"/>{$v.company_name}</td>
+                                <td width="210"><a target="_blank" href="{$v.url_link}">{$v.link}</a></td>
+                                <?php if ($now <= $end_date ) :?>
+                                <td width="220">已开始 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ( $now > $end_date && $v['end_time'] != "0000-00-00 00:00:00") :?>  
+                                <td width="220">已结束 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ($v['end_time'] == "0000-00-00 00:00:00") : ?>
+                                <td width="220">已开始</td>
+                                <?php endif;?> 
+                                <if condition="$collet eq 1">
+                                 <td width="40"><div class="collected jd_col" cid='{$v.id}' kid=<?php echo $kid?>><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">取消收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 <elseif condition="$collet eq 0"/>
+                                 <td width="40"><div class="jobCollection jd_col" cid='{$v.id}'><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 </if>
+                            </tr>
+                        </if>  
+                    </volist>
+                </table>
+                </section>
+                <section id="section-2">
+                    <h3 class="jm_support_title jm_cl_purple"><i class="icon-resume icon-build"></i>房地产/建筑/物业</h3>
+                <table class="jm_companylist_tb">
+
+                    <volist name="info" id="v">
+                       
+                        <if condition="$v.cid eq 41">
+         
+                        <?php foreach ($collet_list as $cl){
+                            if($cl['cid'] == $v['id']){
+                            $collet = 1; $kid = $cl['kid'];  break; }else{ $collet = 0; }
+                        };
+                        ?>
+                        <?php  $now = strtotime(date('y-m-d',time()));  $end_date = strtotime($v['end_time']);?>
+                      
+                       
+                            <tr>
+                                <td width="250"><img src="{$v['path']}" style="height:50px;width:56px;"/>{$v.company_name}</td>
+                                <td width="210"><a target="_blank" href="{$v.url_link}">{$v.link}</a></td>
+                                <?php if ($now <= $end_date ) :?>
+                                <td width="220">已开始 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ( $now > $end_date && $v['end_time'] != "0000-00-00 00:00:00") :?>  
+                                <td width="220">已结束 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ($v['end_time'] == "0000-00-00 00:00:00") : ?>
+                                <td width="220">已开始</td>
+                                <?php endif;?> 
+                                <if condition="$collet eq 1">
+                                 <td width="40"><div class="collected jd_col" cid='{$v.id}' kid=<?php echo $kid?>><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">取消收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 <elseif condition="$collet eq 0"/>
+                                 <td width="40"><div class="jobCollection jd_col" cid='{$v.id}'><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 </if>
+                            </tr>
+                        </if>  
+                    </volist>
+                </table>
+                </section>
+                <section id="section-3">
+                      <h3 class="jm_support_title jm_cl_purple"><i class="icon-resume icon-finance"></i>金融</h3>
+                <table class="jm_companylist_tb">
+
+                    <volist name="info" id="v">
+                       
+                        <if condition="$v.cid eq 40">
+         
+                        <?php foreach ($collet_list as $cl){
+                            if($cl['cid'] == $v['id']){
+                            $collet = 1; $kid = $cl['kid'];  break; }else{ $collet = 0; }
+                        };
+                        ?>
+                        <?php  $now = strtotime(date('y-m-d',time()));  $end_date = strtotime($v['end_time']);?>
+                      
+                       
+                            <tr>
+                                <td width="250"><img src="{$v['path']}" style="height:50px;width:56px;"/>{$v.company_name}</td>
+                                <td width="210"><a target="_blank" href="{$v.url_link}">{$v.link}</a></td>
+                                <?php if ($now <= $end_date ) :?>
+                                <td width="220">已开始 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ( $now > $end_date && $v['end_time'] != "0000-00-00 00:00:00") :?>  
+                                <td width="220">已结束 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ($v['end_time'] == "0000-00-00 00:00:00") : ?>
+                                <td width="220">已开始</td>
+                                <?php endif;?> 
+                                <if condition="$collet eq 1">
+                                 <td width="40"><div class="collected jd_col" cid='{$v.id}' kid=<?php echo $kid?>><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">取消收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 <elseif condition="$collet eq 0"/>
+                                 <td width="40"><div class="jobCollection jd_col" cid='{$v.id}'><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 </if>
+                            </tr>
+                        </if>  
+                    </volist>
+                </table>
+                </section>
+                  <section id="section-4">
+                      <h3 class="jm_support_title jm_cl_purple"><i class="icon-resume icon-comm"></i>电子/通信/硬件</h3>
+                <table class="jm_companylist_tb">
+
+                    <volist name="info" id="v">
+                       
+                        <if condition="$v.cid eq 63">
+         
+                        <?php foreach ($collet_list as $cl){
+                            if($cl['cid'] == $v['id']){
+                            $collet = 1; $kid = $cl['kid'];  break; }else{ $collet = 0; }
+                        };
+                        ?>
+                        <?php  $now = strtotime(date('y-m-d',time()));  $end_date = strtotime($v['end_time']);?>
+                      
+                       
+                            <tr>
+                                <td width="250"><img src="{$v['path']}" style="height:50px;width:56px;"/>{$v.company_name}</td>
+                                <td width="210"><a target="_blank" href="{$v.url_link}">{$v.link}</a></td>
+                                <?php if ($now <= $end_date ) :?>
+                                <td width="220">已开始 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ( $now > $end_date && $v['end_time'] != "0000-00-00 00:00:00") :?>  
+                                <td width="220">已结束 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ($v['end_time'] == "0000-00-00 00:00:00") : ?>
+                                <td width="220">已开始</td>
+                                <?php endif;?> 
+                                <if condition="$collet eq 1">
+                                 <td width="40"><div class="collected jd_col" cid='{$v.id}' kid=<?php echo $kid?>><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">取消收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 <elseif condition="$collet eq 0"/>
+                                 <td width="40"><div class="jobCollection jd_col" cid='{$v.id}'><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 </if>
+                            </tr>
+                        </if>  
+                    </volist>
+                </table>
+                </section>
+                 <section id="section-5">
+                      <h3 class="jm_support_title jm_cl_purple"><i class="icon-resume icon-consumable"></i>消费品</h3>
+                <table class="jm_companylist_tb">
+
+                    <volist name="info" id="v">
+                       
+                        <if condition="$v.cid eq 42">
+         
+                        <?php foreach ($collet_list as $cl){
+                            if($cl['cid'] == $v['id']){
+                            $collet = 1; $kid = $cl['kid'];  break; }else{ $collet = 0; }
+                        };
+                        ?>
+                        <?php  $now = strtotime(date('y-m-d',time()));  $end_date = strtotime($v['end_time']);?>
+                      
+                       
+                            <tr>
+                                <td width="250"><img src="{$v['path']}" style="height:50px;width:56px;"/>{$v.company_name}</td>
+                                <td width="210"><a target="_blank" href="{$v.url_link}">{$v.link}</a></td>
+                                <?php if ($now <= $end_date ) :?>
+                                <td width="220">已开始 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ( $now > $end_date && $v['end_time'] != "0000-00-00 00:00:00") :?>  
+                                <td width="220">已结束 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ($v['end_time'] == "0000-00-00 00:00:00") : ?>
+                                <td width="220">已开始</td>
+                                <?php endif;?> 
+                                <if condition="$collet eq 1">
+                                 <td width="40"><div class="collected jd_col" cid='{$v.id}' kid=<?php echo $kid?>><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">取消收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 <elseif condition="$collet eq 0"/>
+                                 <td width="40"><div class="jobCollection jd_col" cid='{$v.id}'><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 </if>
+                            </tr>
+                        </if>  
+                    </volist>
+                </table>
+                </section>
+                 <section id="section-6">
+                      <h3 class="jm_support_title jm_cl_purple"><i class="icon-resume icon-other"></i>其他</h3>
+                <table class="jm_companylist_tb">
+
+                    <volist name="info" id="v">
+                       
+                        <if condition="$v.cid eq 203">
+         
+                        <?php foreach ($collet_list as $cl){
+                            if($cl['cid'] == $v['id']){
+                            $collet = 1; $kid = $cl['kid'];  break; }else{ $collet = 0; }
+                        };
+                        ?>
+                        <?php  $now = strtotime(date('y-m-d',time()));  $end_date = strtotime($v['end_time']);?>
+                      
+                       
+                            <tr>
+                                <td width="250"><img src="{$v['path']}" style="height:50px;width:56px;"/>{$v.company_name}</td>
+                                <td width="210"><a target="_blank" href="{$v.url_link}">{$v.link}</a></td>
+                                <?php if ($now <= $end_date ) :?>
+                                <td width="220">已开始 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ( $now > $end_date && $v['end_time'] != "0000-00-00 00:00:00") :?>  
+                                <td width="220">已结束 ({$end_date|date="Y年m月",### } 截止)</td>
+                                <?php elseif ($v['end_time'] == "0000-00-00 00:00:00") : ?>
+                                <td width="220">已开始</td>
+                                <?php endif;?> 
+                                <if condition="$collet eq 1">
+                                 <td width="40"><div class="collected jd_col" cid='{$v.id}' kid=<?php echo $kid?>><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">取消收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 <elseif condition="$collet eq 0"/>
+                                 <td width="40"><div class="jobCollection jd_col" cid='{$v.id}'><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                                 </if>
+                            </tr>
+                        </if>  
+                    </volist>
+                </table>
+                </section>
+            </div><!-- /content -->
+            </div>
+          </div><!-- /tabs -->
+            <div style="display: none" id="chooseworkcat">
+                <div style="padding: 0 20px">
+                    <p>选择你感兴趣的行业，拥有专属你的网申列表！</p>
+                    <span class="tip">（至少选择一个）</span>
+                    <ul class="chooseworkcat">
+                    
+                      
+                        <li><input type="checkbox" name="company_cat[]" value="1" data-labelauty="互联网/游戏/软件" <?php if(deep_in_array("1", $user_cat)):?>checked<?php endif?>><i class="icon-popup icon-inter"></i></li>
+                        <li><input type="checkbox" name="company_cat[]" value="41" data-labelauty="房地产/建筑/物业" <?php if(deep_in_array("41", $user_cat)):?>checked<?php endif?>><i class="icon-popup icon-build"></i></li>
+                        <li><input type="checkbox" name="company_cat[]" value="40" data-labelauty="金融" <?php if(deep_in_array("40", $user_cat)):?>checked<?php endif?>><i class="icon-popup icon-finance"></i></li>
+                        <li><input type="checkbox" name="company_cat[]" value="63" data-labelauty="电子/通信/硬件" <?php if(deep_in_array("63", $user_cat)):?>checked<?php endif?>><i class="icon-popup icon-comm"></i></li>
+                        <li><input type="checkbox" name="company_cat[]" value="42" data-labelauty="消费品" <?php if(deep_in_array("42", $user_cat)):?>checked<?php endif?>><i class="icon-popup icon-consumable"></i></li>
+                        <li><input type="checkbox" name="company_cat[]" value="203" data-labelauty="其他" <?php if(deep_in_array("203", $user_cat)):?>checked<?php endif?>><i class="icon-popup icon-other"></i></li>
+
+                    </ul>   
+                    <a class="btn choose-btn">完成</a>
+                </div>
+            </div>
+        <div class="clr"></div>
+    </div>
+<!--    
+</body> -->
+<script type="text/javascript" src="/Public/Home/js/companylist.js"> </script> 
+<script type="text/javascript" src="/Public/Home/js/query.1.10.1.min.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/affix.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/scrollspy.js"></script>  
+<!-- <script type="text/javascript" src="/Public/Home/js/bootstrap.min.js"></script>  --> 
+
+<include file="Public/footer" />        

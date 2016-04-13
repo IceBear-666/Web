@@ -1,0 +1,1445 @@
+<include file="Public/header" />
+
+<script type="text/javascript">
+var ctx = "{$Think.WEB_URL}";
+var ctx_new = "{$Think.WEB_URL}";
+var rctx = "{$Think.WEB_URL}";
+var pctx = "{$Think.WEB_URL}";
+</script>
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/company.css" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/external.min.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/upload.css" />
+<script type="text/javascript" src="/Public/Home/js/timeCountDown.js"></script>
+<script type="text/javascript" src="/Public/Home/js/additional-methods.js"></script>
+<script type="text/javascript" src="/Public/Home/js/company/jobs.js"></script>
+<script type="text/javascript" src="/Public/Home/js/company/spsd.js"></script>
+<script type="text/javascript" src="/Public/Home/js/swfupload.js"></script>
+<script type="text/javascript" src="/Public/Home/js/handlers.js"></script>
+
+<script type="text/javascript" src="/Public/Home/js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="/Public/Home/js/jquery.jscrollpane.min.js"></script>
+<style type="text/css">
+.jp-container{width:100%;height:280px;position:relative;float:left;}
+.jspTrack{ background:none !important;}
+.ui-slider-horizontal .ui-slider-handle{ top:-8px;}
+</style>
+
+<!--后台给出的变量天数》0-->
+<script>
+    var cd = {
+            $: function(id){
+                return document.getElementById(id);    
+            },
+            futureDate: -6857648427,
+            obj: function(){
+                return {
+                    sec: cd.$("activity_minute"),
+                    mini: cd.$("activity_hour"),
+                    hour: cd.$("activity_day")
+                }
+            }
+        };
+        fnTimeCountDown(cd.futureDate, cd.obj());
+
+</script>
+
+
+<div id="body">
+
+
+  <div id="container"> 
+  
+    <!-- <script src="http://www.lagou.com/flash/Scripts/swfobject_modified.js" type="text/javascript"></script> -->
+    
+    <div class="clearfix">
+      <div class="w640">
+        <div class="c_detail">
+        
+          <div class="c_logo" style="background-color:#fff;"> 
+           <input type="file" class="mr_headfile" id="up_txpic" name="headPic" onchange="myresumeCommon.utils.imageUpload(this,myresumeCommon.requestTargets.photoUpload,uploadPhoto.upSucc,uploadPhoto.upFail);" title="支持jpg、jpeg、gif、png格式，文件小于10M" />
+               <a href="#" id="logoShow">
+               <php>if($myinfo['logo']){</php> 
+                 <img id="userpic" src="{$myinfo.logo}" width="220" height="220" alt="公司logo" class="mr_headimg"/>
+               <php>}else{</php> 
+                 <img id="userpic" src="/Public/Home/images/com_logo.gif" width="220" height="220" alt="公司logo" class="mr_headimg"/>
+               <php>}</php> 
+               <span>上传公司Logo<br/>
+                尺寸：220*220px <br />
+                大小：小于5M</span> </a>
+               <php>if(!$myinfo['logo']){</php>
+                  <div id="logoerr"><span class="error1">请上传公司logo</span></div>
+                <php>}</php> 
+		  </div>
+			
+          <div class="c_box companyName">
+          
+            <h2 title="{$myinfo.company_short_name}"><php>if($myinfo['company_short_name'])echo $myinfo['company_short_name'];else echo $myinfo['company_name'];</php></h2>
+            
+            <php>if($myinfo['isv']==2){</php>
+            	<em class='valid'></em>
+            <php>}else{</php>
+	            <em></em>            
+	            <!-- 如果通过验证,上边的em标签添加css，例：<em class='valid'></em> --> 
+	            <span class="va dn">未认证企业</span> <a id="shenqrz" href="/Company/auth.html" class="applyC dn" target="_blank">申请认证</a>
+            <php>}</php>
+            
+            <div class="clear"> </div>
+            <h1 class="fullname" title="{$myinfo.company_name}">{$myinfo.company_name}</h1>
+            <div class="cominfo2">
+                 <font>城市</font><span id="didian">{$myinfo.company_city}</span>
+                 <font>规模</font><span id="guimu">{$myinfo.guimu}</span>
+                 <font>公司性质</font><span id="gongsixz" style="padding:0">{$gongsi_xingzhi[$myinfo['gongsi_xingzhi']]}</span>
+               <div class="clr"></div>
+                 <div><font>行业</font><span id="hangye">{$myinfo.hangye}</span></div>
+                 <div class="clr"></div>
+                 <div><font>主页</font><a id="mygourl" href="http://{$myinfo.web_url}" target="_blank" style="color:#ac6198"><span id="zhuye">{$myinfo.web_url}</span></a></div>
+               <div class="clr"></div>
+            </div>
+            <form id="editDetailForm" class="clear editDetail dn">
+              <p class="company-tip"> 如需修改公司全称，请发邮件至service@jobsminer.cc</p>
+              <input type="text" class="mt14" id="companyShortName" name="companyShortName" value="{$myinfo.company_short_name}" placeholder="请输入公司简称"/>
+              <input type="text" class="mt14" id="companyFeatures" name="companyFeatures" value="{$myinfo.descri}" maxlength="50" placeholder="一句话描述公司优势，核心价值，限50字"/>
+              
+              <span id="beError" style="display:none" class="error"></span>
+              <table style="margin-top:10px;">
+                <tr>
+                  <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="40" valign="top" style="padding-top:12px;">城市</td>
+                        <td width="156" valign="top"><input type="text" style="width:110px;" id="city" name="city" value="{$myinfo.company_city}" placeholder="请输入地点" /></td>
+                        <td width="40" valign="top" style="padding-top:12px;">规模</td>
+                        <td valign="top"><input type="hidden" name="companySize" id="companySize" value="{$myinfo.guimu}">
+                          <input type="button" class="select_tags" id="select_sca" value="{$myinfo.guimu}"  placeholder="选择企业规模">
+                          <div id="box_sca" class="selectBox dn">
+                            <ul class="reset">
+                              <li >少于15人</li><!-- class="current" -->
+                              <li>15-50人</li>
+                              <li>50-150人</li>
+                              <li>150-500人</li>
+                              <li>500-2000人</li>
+                              <li>2000人以上</li>
+                            </ul>
+                          </div></td>
+                      </tr>
+                    </table></td>
+                </tr>
+                <tr>
+                  <td height="10"></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td height="10" valign="top" style="padding-top:12px;">性质</td>
+                  <td>
+                          <input type="button" class="select_tags2" id="select_sca2" value="<php>if(!$myinfo['gongsi_xingzhi'])echo '选择企业性质';else echo $gongsi_xingzhi[$myinfo['gongsi_xingzhi']];</php>" >
+                          <input type="hidden" name="gongsi_xingzhi" id="gongsi_xingzhi" value="<php>echo $myinfo['gongsi_xingzhi'];</php>" >
+                          <div id="box_sca2" class="selectBox2 dn">
+                            <ul class="reset">
+                              	<php>foreach($gongsi_xingzhi as $kk=>$vv){</php>
+                              	<li xzid="{$kk}">{$vv}</li>
+                              	<php>}</php>
+                              </volit>
+                            </ul>
+                          </div></td>
+                </tr>
+                <tr>
+                  <td height="10"></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td width="38" valign="top" style="padding-top:12px;">行业</td>
+                  <td>
+                    
+                    <input type="hidden" name="hangye_id" value="{$myinfo.hangye_id}" id="hangye_id" />
+                    <input type="button" class="selectr select_sca4"  id="select_category"  value="<php>if($myinfo['hangye'])echo $myinfo['hangye'];else echo '请选择行业领域';</php>"  />
+                    <input type="hidden" name="positionType" value="{$myinfo.hangye}" id="positionType" />
+                    <div id="box_job" class="dn">
+                    
+	                    <volist name="hangye_lingyu" id="v"> 
+	                    
+	                      <dl>
+	                        <dt>{$v.title}</dt>
+	                        <dd>
+	                          <ul class="reset job_main">
+	                            <volist name="v.sub" id="vv"> 
+	                            	<li id="{$vv.id}">{$vv.title}</li>
+	                            </volist>
+	                          </ul>
+	                        </dd>
+	                      </dl>
+	                      
+	                    </volist>
+                      
+
+                    </div></td>
+                </tr>
+                <tr>
+                  <td height="10"></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>主页</td>
+                  <td><input type="text" style="width:316px;" id="companyUrl" name="companyUrl" value="{$myinfo.web_url}" placeholder="请输入网址"></td>
+                </tr>
+              </table>
+              <input type="hidden" value="{$myinfo.company_city}" id="comCity">
+              <input type="hidden" value="{$myinfo.hangye}" id="comInd">
+              <input type="hidden" value="{$myinfo.guimu}" id="comSize">
+              <input type="hidden" value="{$myinfo.web_url}" id="comUrl">
+              <input type="hidden" name="companyId" id="companyId" value="{$myinfo.uid}"/>
+              
+           
+            
+            
+            
+           
+            
+<!--编辑标签-->          
+            <div class="mybiaoqian">
+              <h3 class="dn">已选择标签</h3>
+              <ul class="reset clearfix" id="hasLabels" style="overflow:auto">
+              	<php>if($myinfo['tags']){
+               		$tags = explode(",",$myinfo['tags']);
+               		foreach( $tags as $k=>$v){
+               			echo '<li><span>'.$v.'</span></li>';
+               		}
+               	}</php>
+                <li class="link clr">+添加标签</li>
+              </ul>
+              <div id="addLabels" class="dn"> <a href="javascript:void(0)" class="change" id="changeLabels">换一换</a>
+                <input type="hidden" id="labelPageNo" value="1"/>
+                <input type="submit" id="add_label" class="fr" value="贴上"/>
+                <input type="text" class="label_form fr" id="label" name="label" placeholder="添加自定义标签"/>
+                <div class="clear"> </div>
+                <ul class="reset clearfix">
+                	
+                </ul>
+              </div>
+            </div>
+           
+           
+            
+            <div class="clr pdt10">
+                <input type="submit" class="mybtn2 f16" id="saveDetail" value="保存"/>
+                <a href="#" class="mybtn2s f16" id="cancelDetail">取消</a> 
+             </div>
+ </form>  
+           
+<!-- 一句话 -->              
+         <div class="clear oneword"> 
+              <img src="/Public/Home/images/quote_l.png" width="17" height="15"/>&nbsp; <span>{$myinfo.descri}</span> &nbsp;<img src="/Public/Home/images/quote_r.png" width="17" height="15"/> 
+         </div>
+         
+<!-- 显示标签 -->         
+         <div id="mybiaoq" class="mybiaoqian">
+              <ul class="reset clearfix" id="hasLabels2" style="overflow:auto">
+              	<php>if($myinfo['tags']){
+               		$tags = explode(",",$myinfo['tags']);
+               		foreach( $tags as $k=>$v){
+               			echo '<li><span>'.$v.'</span></li>';
+               		}
+               	}</php>
+              </ul>
+            </div>
+           
+</div>
+          
+          <a href="javascript:void(0);" id="editCompanyDetail" class="c_edit2" title="编辑基本信息"></a>
+          <div class="clear"> </div>
+        </div>
+<input id="mypdtag" type="hidden" value="" />
+       
+        
+        <div class="c_breakline"></div>
+        <div class="slideTxtBox">
+          <div class="hd">
+            <ul>
+                <li id="mytt1" >公司介绍</li>
+                <php>if($cuser_type==1){}else{</php>
+                <li id="mytt2">宣讲会</li>
+                <li id="mytt3">宣讲会日程</li>
+                <php>}</php>
+            </ul>
+          </div>
+          <div class="bd">
+            <ul class="wh">
+            
+
+              
+    <!---- 公司图片开始 ----->
+    	<script type="text/javascript">
+		
+		var path='/Public/Home';
+		var url='/index.php/Index';
+		var upmax='20';
+	    </script>
+		<script type="text/javascript">
+                var swfu;
+                window.onload = function () {
+                    swfu = new SWFUpload({
+                        upload_url: "/index.php/Index/uploadImg",
+                        post_params: {"PHPSESSID": "<?php echo session_id();?>"},
+                        file_size_limit : "5 MB",
+                        file_types : "*.jpg;*.png;*.gif;*.bmp",
+                        file_types_description : "JPG Images",
+                        file_upload_limit : "20",
+                        file_queue_error_handler : fileQueueError,
+                        file_dialog_complete_handler : fileDialogComplete,
+                        upload_progress_handler : uploadProgress,
+                        upload_error_handler : uploadError,
+                        upload_success_handler : uploadSuccess,
+                        upload_complete_handler : uploadComplete,
+                        button_image_url : "",
+                        button_placeholder_id : "spanButtonPlaceholder",
+                        button_width: 150,
+                        button_height: 36,
+                        button_text : '<span class="spanButtonPlaceholder">选择照片上传</span>',
+                        button_text_style : '.spanButtonPlaceholder { font-family:Microsoft YaHei; font-size: 16px; color:#ffffff; } ',
+                        button_text_top_padding: 6,
+                        button_text_left_padding: 26,
+                        button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
+                        button_cursor: SWFUpload.CURSOR.HAND,			
+                        flash_url : "/Public/Home/flash/swfupload.swf",
+                        custom_settings : {
+                            upload_target : "divFileProgressContainer"
+                        },				
+                        debug: false
+                    });
+                };
+        </script>
+          <div id="comvimg">
+              <div class="profile_wrap"> 
+               <php>if(!$photos){</php>
+                
+              <!--无图片 -->
+                  <dl class="c_section1">
+                    <dd>
+                      <div class="addnew addico1"> 丰富的图片可以让申请者更加了解您公司多彩的一面哦！<br />
+                       需要免费拍照服务可以邮件我们service@jobsminer.cc<br />
+                        <a href="javascript:void(0)" id="addIntro">+添加公司照片</a> </div>
+                    </dd>
+                      <div class="comfgx"></div> 
+                  </dl>
+                  
+                  
+              <!--上传图片-->
+              <dl id="uppic" class="c_section1 newIntro dn">
+                 <dd>     
+                  <form action="" method="post">
+                      <div>
+                         <div class="myupnav">
+                             <div class="uploadbtn lf"><span id="spanButtonPlaceholder"></span></div>
+                             <div class="info rt">尺寸：640*220px，每张照片限制为5M，可上传20张。</div>
+                             <div class="clr"></div>
+                         </div>
+                           
+                          <div id="divFileProgressContainer"></div>
+                          <div id="thumbnails">
+                              <ul id="pic_list"></ul>
+                              <div class="clr"></div>
+                          </div>
+                      </div>
+                      <input type="hidden" name="s" id="cphotos" value=""/>
+                      <input type="button" id="company_pic_btn"  class="mybtn2 f16" value="提交" />
+                      <a href="javascript:void(0)" class="mybtn2s f16" id="delcomvimg">取消</a>
+                  </form>
+                </dd>
+              </dl>
+                  
+              <php>}else{</php>
+              
+             <!--有图片-->
+             
+               <div class="comfocus">
+                  <a href="javascript:void(0);" id="bteditpic" class="c_edit2" title="编辑基本信息"></a>
+                    <ul class="tihspic">
+                         <php>foreach($photos as $k=>$v){</php>
+                               <li><img src="{$v.url}"></li>
+                        <php>}</php>
+                    </ul>
+                    <a class="sNext" href="javascript:void(0)"></a>
+                    <a class="sPrev" href="javascript:void(0)"></a>
+                    <div class="num">
+                        <ul></ul>
+                    </div>
+                     <div class="clr"></div>
+                </div>
+                <script>
+                 $(".sPrev,.sNext").show();
+                 $(".comfocus").slide({ titCell:".num ul" , mainCell:".tihspic" , effect:"left",prevCell:".sPrev",nextCell:".sNext", autoPlay:false, delayTime:800 ,interTime:4000,autoPage:"<a></a>" });
+                </script>
+    
+              
+             <!--编辑-->
+              <dl id="editpic" class="c_section1 dn">
+              <dd>
+                <form method="post">
+                      <div>
+                         <div class="myupnav">
+                             <div class="uploadbtn lf"><span id="spanButtonPlaceholder"></span></div>
+                             <div class="info rt">尺寸：640*220px，每张照片限制为5M，可上传20张。</div>
+                             <div class="clr"></div>
+                         </div>
+                           
+                         <div id="divFileProgressContainer"></div>  
+                         <div id="thumbnails">
+                             <ul id="pic_list">
+                                <php>foreach($photos as $k=>$v){</php>
+                                  <li>
+                                    <img src="{$v.url}" class="myimg">
+                                    <img dataid="{$v.pid}"  class="button" src="/Public/Home/images/fancy_close.png">
+                                  </li>
+                                <php>}</php>
+                             </ul>
+                               <div class="clr"></div>
+                         </div>
+                       </div>
+                       
+                    
+                    <input type="hidden" name="s" id="cphotos" value=""/>
+                    <input type="button" id="company_pic_btn"  class="mybtn2 f16" value="提交" />
+                     <a href="javascript:top.location.reload();" class="mybtn2s f16" id="qxbjpic">取消</a><font class="f12">（删除图片后点取消即可）</font>
+                 </form>
+                 </dd>
+                  <div class="comfgx"></div> 
+              </dl> 
+              
+			  <script>
+			  
+			   $("#bteditpic").click(function(){ 
+				   $(".comfocus").addClass('dn');
+				   $("#editpic").removeClass('dn');
+				 });
+		
+				 
+			  $("img.button").click(function(){  
+                  $(this).parent().remove();
+                  var pid = $(this).attr("dataid");
+                  if(!pid) {
+                	  alert("操作无效，请刷新页面重试");
+                	  return false;
+                  }
+					
+                  $.ajax({
+			            type:"POST",
+			            url:ctx +"Company/delPhotos",
+			            data:{id:pid},
+			            datatype: "json",
+			            success:function(data){
+			            	if(data.status==1){
+			            		alert(data.info);   
+				            	//window.location.reload();
+			            	}
+			            	else alert(data.info);      
+			            }   ,
+			            complete: function(XMLHttpRequest, textStatus){
+			            },
+			            //调用出错执行的函数
+			            error: function(){
+			                alert("保存失败，请稍后再试");
+			            }        
+			         });
+	                
+                });
+              </script> 
+              
+             <php>}</php>
+
+              <input type="hidden" id="getphoto" value="<php>if(!$photos){echo '1';}else{echo '2';}</php>"/>
+
+           </div>
+        </div>
+            
+            
+            <script>
+            	$("#company_pic_btn").click(function(){ 
+            		
+            		var cphotos = $("#cphotos").val();
+            		$("#company_pic_btn").attr('disabled',"true");
+            		
+            		if(cphotos==''){
+            			alert("请选择要上传的图片");
+            			$("#company_pic_btn").removeAttr("disabled");
+            			return false;
+            		}
+					
+  			   		$.ajax({
+			            //提交数据的类型 POST GET
+			            type:"POST",
+			            //提交的网址
+			            url:ctx +"Company/savePhotos",
+			            //提交的数据
+			            data:{cphotos:cphotos},
+			            //返回数据的格式
+			            datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+			            //在请求之前调用的函数
+			            beforeSend:function(){
+			            	//$("#msg").html("logining");
+			            },
+			            //成功返回之后调用的函数            
+			            success:function(data){
+			            	if(data.status==1){
+			            		$("#divFileProgress").hide();
+				            	$("#cphotos").val("");	
+				            	window.location.reload();
+			            	}
+			            	else alert(data.info);
+			            	$("#company_pic_btn").removeAttr("disabled");
+			           		//$("#msg").html(decodeURI(data));           
+			            }   ,
+			            //调用执行后调用的函数
+			            complete: function(XMLHttpRequest, textStatus){
+			               //alert(XMLHttpRequest.responseText);
+			               //alert(textStatus);
+			                //HideLoading();
+			            	$("#company_pic_btn").removeAttr("disabled");
+			            },
+			            //调用出错执行的函数
+			            error: function(){
+			            	$("#company_pic_btn").removeAttr("disabled");
+			                alert("保存失败，请稍后再试");
+			            }        
+			         });
+
+          			  
+            	});
+            </script>
+        
+            
+              
+       <!-- 公司视频开始 -->
+              <div id="comvideo">
+                <div class="profile_wrap"> 
+                
+                  <!--无视频 -->
+                  <dl id="vdadd" class="c_section1 <php>if($video) echo 'dn';</php>">
+                    <dd>
+                      <div class="addnew addico2"> 公司宣传视频、媒体报道等视频都将大大提高获取优秀人才的机会哦！<br />
+                      需要免费拍照服务可以邮件我们service@jobsminer.cc<br />
+                        <a href="javascript:void(0)" id="addIntro">+添加公司视频</a> </div>
+                    </dd>
+                  </dl>
+                  
+                  <!--发布视频 -->
+                  <dl id="vdfom" class="c_section1 newIntro dn">
+                    <dd>
+                      <form id="comviedo_Form" method="post">
+                      
+                        <table style="margin-left:30px;" class="f16" width="100%" border="0" cellspacing="10" cellpadding="0">
+                        
+                          <tr>
+                            <td width="130">视频标题</td>
+                            <td><input type="text" style="width:340px;" id="video_title" name="video_title" value="{$video.title}" placeholder="请输入视频标题"></td>
+                          </tr>
+                          
+                          
+                          
+                          
+                          
+                          <tr>
+                            <td>视频（tpye）</td>
+                            <td>
+                                
+                                <input type="button"  class="select_tags3" name="vide_from" id="select_sca3" value="<php>if($video['type']) echo $video['type'];else echo '选择视频来源';</php>"  placeholder="选择视频来源">
+                                <div id="box_sca3" class="selectBox3 dn">
+                                  <ul class="reset">
+                                    <li>优酷视频</li>
+                                    <li>土豆视频</li>
+                                    <li>腾讯视频</li>
+                                  </ul>
+                                </div>
+                                <font class="f12">&nbsp;&nbsp;现已支持优酷、土豆、腾讯视频</font>
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>视频地址（url）</td>
+                            <td><input type="text"  style="width:340px;" id="video_url" name="video_url" value="{$video.url}" placeholder="复制视频网站的通用代码"></td>
+                          </tr>
+                          
+                       <tr><td height="10"></td><td></td></tr> 
+                          
+                          <tr>
+                            <td colspan="2"> 
+                            
+			                <div class="vdfengmian">
+			                     <div class="portrait_fm portraitNo"> <span>更换视频封面</span> </div>
+			                     <div  class="portraitShow <php>if(!$video[thumb]) echo 'dn';</php>"> <img id="video_img" src="{$video.thumb}"  width="130" height="60" /> <span>更换视频封面</span> </div>
+			                     <input type="file" id="vdfmup01"  name="myfiles" onchange="member_check2(this,'/Company/uploadImage','portraitNo','portraitShow','type','video_thumb');" title="支持jpg、jpeg、gif、png格式，文件小于5M" value="" />
+			                     <input type="hidden" class="type" name="type" value="7" />
+			                     <input type="hidden" class="video_thumb" value="{$video.thumb}" name="video_thumb" id="video_thumb" />
+			                </div>
+                      
+                              <font class="f12">*更换封面图片请上传不大于2M，130*60px的图片，<br />
+                                如果没有合适的封面上传会默认统一的封面。</font>
+                            </td>
+                          </tr>
+                          
+                          
+                        <tr><td height="10"></td><td></td></tr>
+                          
+                           <tr>
+                            <td colspan="2"> 
+                               <input class="submit_video mybtn2 f16" type="button" value="保存" />
+                             <php>if(!$video){</php>   
+                                <a href="javascript:void(0)" class="mybtn2s f16" id="delcomvideo">取消</a>
+                             <php>}else{</php>
+                                 <a href="javascript:void(0)" delvid="{$video.vid}" class="mybtn2s f16" id="delvideo">删除</a>
+                                 <a href="javascript:void(0)" class="mybtn2s f16" style=" padding:8px" id="vdedit">取消</a>
+                                 <a href="javascript:void(0)" class="mybtn2s f16 dn" style=" padding:8px" id="vddel">取消</a>
+                             <php>}</php> 
+                             
+                            </td>
+                          </tr>
+                          
+                        </table>
+
+                       
+                      </form>
+                    </dd>
+                  </dl>
+                  
+                  <!--有视频-->
+                  <dl id="vdshow" class="c_section1 <php>if(!$video) echo 'dn';</php>">
+                    <dd>
+                      <div class="videovw">
+                         <php>if(!$video['thumb']){</php>   
+                                  <a class="inline" href="#showmyvideo" title="{$video.title}"><i class="vvplay"></i><img class="icovd" src="/Public/Home/images/icovd.gif" /></a>
+                         <php>}else{</php>
+                                 <a class="inline" href="#showmyvideo" title="{$video.title}"><i class="vvplay"></i><img class="icovd" src="{$video.thumb}" width="130" height="60" /></a>
+                         <php>}</php> 
+                        
+                        <div class="info lf">
+                          <h4>{$video.title}</h4>
+                          <em>{$video.addtime|showDay=###,"Y/m/d"}</em>
+                        </div>
+                      </div>
+                      <a href="javascript:void(0)" class="c_edit" id="editIntro" title="编辑视频"></a> 
+                    </dd>
+                  </dl>
+                  <input type="hidden" id="getvideo" value="<php>if(!$video){echo '1';}else{echo '2';}</php>"/>
+                </div>
+              </div>
+              
+           <div style="display:none;"> 
+            <style>.popup{ padding:0;}</style>
+              <div id="showmyvideo" class="popup" style="<php>if($video['type']=='腾讯视频'){ echo 'width:710px; text-align:center; height:370px; padding-top:4px; overflow:hidden;';}else{echo 'width:700px;padding:4px 6px;';}</php> ">
+                  <iframe frameborder="0" width="700" height="400" src="{$video.url}" allowfullscreen></iframe>
+              </div>
+           </div>
+
+	 <script>
+	   $(".videovw a").hover(
+	      function(){
+		     $(".vvplay").show();
+		  },function(){
+			 $(".vvplay").hide();
+	    })
+        $(".submit_video").click(function(){ 
+            
+            var video_thumb = $("#video_thumb").val();
+            var video_from = $("#select_sca3").val();
+            var video_url = $("#video_url").val();
+            var video_title = $("#video_title").val();
+            
+            $(".submit_video").attr('disabled',"true");
+            
+            if(video_title==''){
+                alert("视频标题不能为空");
+                $(".submit_video").removeAttr("disabled");
+                return false;
+            }
+			 if(video_from=='选择视频来源'){
+                alert("请选择视频来源");
+                $(".submit_video").removeAttr("disabled");
+                return false;
+            }
+            if(video_url==''){
+                alert("视频地址不能为空");
+                $(".submit_video").removeAttr("disabled");
+                return false;
+            }else if($("#select_sca3").val()=="优酷视频"){
+				 if($("#video_url").val().indexOf('player.youku.com')<=0){
+				    alert('格式错误！请复制优酷通用代码');
+				    $(".submit_video").removeAttr("disabled");
+				    return false;
+				 }
+			}else if($("#select_sca3").val()=="土豆视频"){
+				 if($("#video_url").val().indexOf('www.tudou.com')<=0){
+				    alert('格式错误！请复制土豆通用代码');
+				    $(".submit_video").removeAttr("disabled");
+				    return false;
+				 }
+			}else if($("#select_sca3").val()=="腾讯视频"){
+				 if($("#video_url").val().indexOf('v.qq.com')<=0){
+				    alert('格式错误！请复制腾讯通用代码');
+				    $(".submit_video").removeAttr("disabled");
+				    return false;
+				 }
+			}
+	
+           
+            
+            
+            $.ajax({
+                //提交数据的类型 POST GET
+                type:"POST",
+                //提交的网址
+                url:ctx +"Company/saveVideos",
+                //提交的数据
+                data:{video_from:video_from,video_thumb:video_thumb,video_title:video_title,video_url:video_url},
+                //返回数据的格式
+                datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+                //在请求之前调用的函数
+                beforeSend:function(){
+                    //$("#msg").html("logining");
+                },
+                //成功返回之后调用的函数            
+                success:function(data){
+                    if(data.status==1){
+                        $("#divFileProgress").hide();
+                        $("#video_thumb").val("");	
+                        window.location.reload();
+                    }
+                    else alert(data.info);
+                    $(".submit_video").removeAttr("disabled");
+                    //$("#msg").html(decodeURI(data));           
+                }   ,
+                //调用执行后调用的函数
+                complete: function(XMLHttpRequest, textStatus){
+                   //alert(XMLHttpRequest.responseText);
+                   //alert(textStatus);
+                    //HideLoading();
+                    $(".submit_video").removeAttr("disabled");
+                },
+                //调用出错执行的函数
+                error: function(){
+                    $(".submit_video").removeAttr("disabled");
+                    alert("保存失败，请稍后再试");
+                }        
+             });
+
+              
+        });
+        
+    //删除视频
+     $("#delvideo").click(function(){  
+          var vid = $(this).attr("delvid");
+          if(!vid) {
+              alert("操作无效，请刷新页面重试");
+              return false;
+          }
+
+          $.ajax({
+                type:"POST",
+                url:ctx +"Company/delvideo",
+                data:{id:vid},
+                datatype: "json",
+                success:function(data){
+                    if(data.status==1){
+                        $("#vdadd").show();
+                        $("#vdfom").hide();
+                        $("#vdedit").hide();
+                        $("#vddel").show();
+                        $("#video_title").val("");
+                        $("#video_url").val("");
+						$("#video_img").attr("src","");
+					    $("#video_thumb").val("");
+					    $(".portraitShow").addClass("dn");
+						
+                        //alert(data.info);  
+                        //window.location.reload();
+                    }
+                    else alert(data.info);      
+                }   ,
+                complete: function(XMLHttpRequest, textStatus){
+                },
+                //调用出错执行的函数
+                error: function(){
+                    alert("保存失败，请稍后再试");
+                }        
+             });
+            
+        });
+        
+         $("#vddel").click(function(){  
+            $("#vdadd").show();
+            $("#vdfom").hide();
+          });
+          $("#vdedit").click(function(){  
+            $("#vdadd").hide();
+            $("#vdfom").hide();
+            $("#vdshow").show();
+          });
+    </script>
+      
+      
+              
+       <!-- 公司介绍开始 -->
+        <div class="comfgx"></div> 
+            <div id="Profile">
+                <div class="profile_wrap"> 
+                
+                  <!--无介绍 -->
+                  <dl class="c_section1 <php>if($myinfo['content'])echo 'dn';</php>">
+                    <dd>
+                      <div class="addnew addico3"> 一篇给力的公司介绍文案是获取优秀人才的第一步！<br />
+                        <a href="javascript:void(0)" id="addIntro">+添加公司介绍</a> </div>
+                    </dd>
+                  </dl>
+                  
+                  <!--编辑介绍-->
+                  <dl class="c_section1 newIntro dn">
+                    <dd>
+                      <form id="companyDesForm">
+                        <textarea id="companyProfile" name="companyProfile" placeholder="请分段详细描述公司简介、企业文化等">{$myinfo.content}</textarea>
+                        <div class="word_count fr">你还可以输入 <span>1000</span> 字</div>
+                        <div class="clear"></div>
+                        <input class="mybtn2 f16" id="submitProfile" type="submit" value="保存" />
+                        <a href="javascript:void(0)" class="mybtn2s f16" id="delProfile">取消</a>
+                      </form>
+                    </dd>
+                  </dl>
+                  
+                  <!--有介绍-->
+                  <dl class="c_section1  <php>if(!$myinfo['content'])echo 'dn';</php>">
+                    <dd>
+                      <div class="c_intro">{$myinfo.content}</div>
+                      <a href="javascript:void(0)" class="c_edit" id="editIntro" title="编辑公司介绍"></a> </dd>
+                    </dl>
+                    <div class="h20"></div>
+                </div>
+            </div>
+              
+     
+              
+            </ul>
+            
+            
+            <php>if($cuser_type==1){}else{</php>
+            
+<!-- 宣讲会列表 -->            
+            <ul class="wh">
+             <div class="videoxjlt">
+                 <div id="jp-container1" class="jp-container1" style="height:328px; position:relative;">
+                 
+                      <ul>
+                      
+                      <volist name="xjh_video" id="v" key="k">
+                      
+                        <li <if condition="$k%2== '1'"> class="bgfff"</if>>
+                          <div class="psimg">
+                             <a href="/Video/info/id/{$v.vid}" target="_blank"> <img src="/Public/Home/images/icovd.gif" /></a>
+                             <span>{$v.shichang}</span>
+                           </div>
+                           <div class="info lf">
+                                <h4><a href="/Video/info/id/{$v.vid}" target="_blank">{$v.title}</a></h4>
+                                <em>{$v.date_ymd}</em>
+                                <i>{$v.hits}</i>
+                           </div>
+                         </li>
+                         
+                      </volist>
+                         
+                        
+                      </ul>
+                      
+                      
+                 </div>	
+             </div>
+        </ul>
+        
+        
+<!-- 宣讲会日程列表 -->          
+        <ul class="wh">
+          <div class="xjlist bgf9">
+                 <table style="margin-bottom:10px;" width="100%" border="0" cellpadding="0" cellspacing="0">
+                      <tr class="mtil">
+                        <td class="xjpl" width="160">日期</td>
+                        <td width="60">时间</td>
+                        <td>地点</td>
+                        <td  class="xjpr" width="22">&nbsp;</td>
+                     </tr>
+                   </table>
+          <div id="jp-container" class="jp-container">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                     
+                     <volist name="xjh_word" id="v" key="k">
+                     
+                     <tr <if condition="$k%2== '1'"> class="bgfff"</if>>
+                        <td class="xjpl" width="160"><span><b>{$v.date_ymd}</b>(周<php>echo getWeekName($v['date_ymd']);</php>)</span></td>
+                        <td width="60">{$v.date_time}</td>
+                        <td>
+                          {$v.cid|getPlaceById=###}，{$v.school}，<br />
+                          {$v.address}
+                        </td>
+                        <td><!-- <a class="mystar" href="#" title="取消收藏"></a> --></td>
+                     </tr>
+                     
+                     </volist>                  
+                     
+
+                 </table>
+	         </div>	
+
+         </div>
+        </ul>
+        
+        
+        <php>}</php>
+        
+          </div>
+<script type="text/javascript">
+	jQuery(".slideTxtBox").slide({effect:"left",trigger:"click",delayTime:0});
+	$("#mytt1").click(function(){
+		$(".tempWrap").css("height","100%");
+	});
+	$("#mytt2,#mytt3").click(function(){
+		$(".tempWrap").css("height","380px");
+	});
+</script>
+        </div>
+        
+        <!-- 招聘职位列表开始 -->
+     <php>if($joblist){</php>
+        <div style="height:20px; background:#fff;"></div>
+        <dl class="c_section">
+          <dt>
+            <h2>招聘职位</h2>
+          </dt>
+          <div class="h20"></div>
+          <dd>
+            <ul class="reset c_jobs" id="jobList">
+            
+            <volist name="joblist" id="v">
+            
+              <li>
+                <a href="/Jobs/info/id/{$v.jid}.html" target="_blank">
+                  <h3><span class="pos" title="{$v.zhiwei_mingcheng}">{$v.zhiwei_mingcheng}</span> <span>[{$v.gongzuo_chengshi}]</span> </h3>
+                  <div> 月薪：{$v.yuexin_min}k-{$v.yuexin_max}k &nbsp;&nbsp;&nbsp; 经验：{$v.gongzuo_jingyan} &nbsp;&nbsp;&nbsp; 学历要求：{$v.xueli} </div>
+                </a>
+                <a href="/Company/createPost/jid/{$v.jid}"  class="c_edit3" title="编辑招聘信息" target="_blank"></a>
+			  </li>
+            
+            </volist>  
+
+            </ul>
+          </dd>
+        </dl>
+     <php>}</php>   
+        <!-- end #Profile -->
+        
+        <input type="hidden" id="hasNextPage" name="hasNextPage" value="" />
+        <input type="hidden" id="pageNo" name="pageNo" value="" />
+        <input type="hidden" id="pageSize" name="pageSize" value="" />
+        <div id="flag"></div>
+      </div>
+      <!-- end .content_l -->
+      
+      <script>
+	    $("#jobList li").hover(function(){
+			 $(this).find('a.c_edit3').toggleClass("myshow");;
+			});
+	  </script>
+      
+      
+      <div class="w280">
+        <div id="Member"> 
+          
+          <!--无创始团队-->
+          <dl class="c_section c_member">
+            <dt>
+              <h2>创始团队</h2>
+               <a href="javascript:void(0)" class="c_add <php>if(!$leads)echo 'dn';</php>" title="添加创始人"></a> </dt>
+			</dt>
+			
+            <dd>
+            
+            
+           <php>if(!$leads){</php>
+              <div class="member_wrap"> 
+              
+                <!-- 无创始人 -->
+                <div class="addnew_right member_info2 ">
+					展示公司的领导班子，<br />
+                  	提升诱人指数！<br />
+                  <a href="javascript:void(0)" class="member_edit">+添加成员</a>
+				</div>
+				
+               
+                  <!-- 编辑创始人 -->
+                <div class="member_info newMember dn">
+                  <form class="memberForm">
+                    <div class="new_portrait">
+                      <div class="portrait_upload portraitNo"> <span>上传创始人头像</span> </div>
+                      <div  class="portraitShow dn"> <img src="" width="120" height="120" /> <span>更换头像</span> </div>
+                      <input type="file" id="profiles0" name="myfiles" onchange="member_check(this,'/Company/uploadImage','portraitNo','portraitShow','type','leaderInfos');" title="支持jpg、jpeg、gif、png格式，文件小于5M" value="" />
+                      <input type="hidden" class="type" name="type" value="7" />
+                      <input type="hidden" class="leaderInfos" name="photo" />
+                      <em> 尺寸：120*120px <br />
+                      大小：小于5M </em> </div>
+                    <input type="text" name="name" value="" placeholder="请输入创始人姓名" />
+                    <input type="text" name="position" value="" placeholder="请输入创始人当前职位" />
+                    <input type="text" name="weibo" value="" placeholder="请输入创始人新浪微博地址" />
+                    <textarea name="remark" maxlength="500" class="s_textarea" placeholder="请输入创始人个人简介"></textarea>
+                    <div class="word_count fr">你还可以输入 <span>500</span> 字</div>
+                    <div class="clear"></div>
+                    <input type="submit" class="mybtn2 f16 btn_small mt10" value="保存" />
+                    <a href="javascript:void(0)" class="mybtn2s f16 btn_cancel_s member_delete">删除</a>
+                    <input class="leader_id" type="hidden" value="" />
+                  </form>
+                </div>
+                
+                <div class="member_info dn"><a href="javascript:void(0)" class="c_edit member_edit" title="编辑"></a>
+                      <div class="m_portrait">
+                        <img src="" width="120" height="120" alt="" />
+                      </div>
+                      <div class="m_name"></div>
+                      <div class="m_position"></div>
+                      <div class="m_intro"></div>
+                </div>
+                
+            
+              </div> 
+            <php>}</php>
+                
+                
+           <!-- 显示创始人 -->
+            <volist name="leads" id="v">  
+               <div class="member_wrap"> 
+               
+                <!-- 无创始人 -->
+                <div class="addnew_right member_info2 dn">
+					展示公司的领导班子，<br />
+                  	提升诱人指数！<br />
+                  <a href="javascript:void(0)" class="member_edit">+添加成员</a>
+				</div>
+                
+                <div class="member_info newMember dn">
+                  <form class="memberForm">
+                    <div class="new_portrait">
+                      <div class="portrait_upload portraitNo <php>if($v['photo'])echo 'dn';</php>"> <span>上传创始人头像</span> </div>
+                      <div class="portraitShow <php>if(!$v['photo'])echo 'dn';</php>"> <img src="{$v.photo}" width="120" height="120" /> <span>更换头像</span> </div>
+                      <input type="file"  id="profiles{$v['lid']}" name="myfiles" onchange="member_check(this,'/Company/uploadImage','portraitNo','portraitShow','type','leaderInfos');" title="支持jpg、jpeg、gif、png格式，文件小于5M" value="" />
+                      <input type="hidden" class="type" name="type" value="{$v['lid']}" />
+                      <input type="hidden" class="leaderInfos" name="photo" value="{$v.photo}" />
+                      <em> 尺寸：120*120px <br />
+                      大小：小于5M </em> </div>
+                    <input type="text" name="name" value="{$v.name}" placeholder="请输入创始人姓名" />
+                    <input type="text" name="position" value="{$v.position}" placeholder="请输入创始人当前职位" />
+                    <input type="text" name="weibo" value="{$v['weibo']}" placeholder="请输入创始人新浪微博地址" />
+                    <textarea name="remark" maxlength="500" class="s_textarea" placeholder="请输入创始人个人简介">{$v.remark}</textarea>
+                    <div class="word_count fr">你还可以输入 <span>500</span> 字</div>
+                    <div class="clear"></div>
+                    <input type="submit" class="mybtn2 f16 btn_small mt10" value="保存" />
+                    <a href="javascript:void(0)" class="mybtn2s f16 btn_cancel_s member_delete">删除</a>
+                    <input class="leader_id" type="hidden" value="{$v['lid']}" />
+                  </form>
+                </div>
+                
+                
+                <div class="member_info"> <a href="javascript:void(0)" class="c_edit member_edit" title="编辑{$v.position}"></a>
+                  <div class="m_portrait">
+                    <div></div>
+                    <img src="{$v.photo}" width="120" height="120" alt="" />
+                  </div>
+                  
+                  <div class="m_name">{$v.name}
+                  	<php>if($v['weibo']){</php>
+                  		<a class="weibo" target="_blank" href="{$v['weibo']}"></a>
+                  	<php>}</php>
+                  </div>
+                  <div class="m_position">{$v.position}</div>
+                  <div class="m_intro">{$v.remark}</div>
+                </div>
+                </div>
+             </volist>
+
+             
+           <!-- end .leader_wrap --> 
+              
+              
+            </dd>
+          </dl>
+        </div>
+        <!-- end #Member --> 
+        
+        <!--公司深度报道-->
+        <div id="Reported"> 
+          <!--无报道-->
+          <dl class="c_section c_reported">
+            <dt>
+              <h2>公司报道</h2>
+              <a href="javascript:void(0)" class="c_add <php>if(!$articles)echo 'dn';</php>" title="添加报道"></a> </dt>
+            <dd> 
+              <!-- 编辑报道 -->
+              <ul class="reset">
+              	<volist name="articles" id="v">
+              		<li>
+					<a style="" class="article" title="{$v.title}" target="_blank" href="{$v.url}">{$v.title}</a> <a title="编辑报道" class="c_edit dn" href="javascript:;" style="display: inline;"></a>
+	                  <form class="reportForm dn">
+	                    <input type="text" placeholder="请输入文章标题" value="{$v.title}" name="articleTitle" class="valid">
+	                    <input type="text" placeholder="请输入文章链接" value="{$v.url}" name="articleUrl" class="valid">
+	                    <input type="submit" value="保存" class="mybtn2 f16 btn_small mt20">
+	                    <a class="mybtn2s f16 btn_cancel_s report_delete" href="javascript:;">删除</a>
+	                    <input type="hidden" value="{$v.aid}" class="article_id">
+	                  </form>
+	                </li>
+              	</volist>
+              </ul>
+              
+              <!-- 无报道 -->
+              <php>if(!$articles){</php>
+              
+              <div class="addnew_right reported_info"> 展示外界对公司的深度报道，<br />
+                便于求职者了解公司！<br />
+                <a href="javascript:void(0)" class="report_edit">+添加报道</a>
+			  </div>
+			  
+			  <php>}</php>
+				
+              <ul class="newReport dn">
+                <li> <a href="#" target="_blank" title="" class="article" style="display:none;"></a> <a href="javascript:;" class="c_edit dn" title="编辑报道"></a>
+                  <form class="reportForm">
+                    <input type="text" name="articleTitle" value="" placeholder="请输入文章标题" />
+                    <input type="text" name="articleUrl" value="" placeholder="请输入文章链接" />
+                    <input type="submit" class="mybtn2 f16 btn_small mt20" value="保存" />
+                    <a href="javascript:;" class="mybtn2s f16 btn_cancel_s report_cancel">取消</a>
+                    <input class="article_id" type="hidden" value="" />
+                  </form>
+                </li>
+              </ul>
+              
+              
+            </dd>
+          </dl>
+          
+          
+          <!-- end .c_reported --> 
+        </div>
+        <!-- end #Reported --> 
+        
+      </div>
+    </div>
+    
+    <!-------------------------------------弹窗lightbox  ----------------------------------------->
+    <div style="display:none;">
+      <div id="logoUploader" class="popup" style="width:650px;height:470px;">
+        <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="650" height="470">
+          <param name="movie" value="/Public/Home/flash/avatar.swf?url={$Think.WEB_URL}Company/uploadLogo">
+          <param name="quality" value="high">
+          <param name="wmode" value="opaque">
+          <param name="swfversion" value="111.0.0.0">
+          <!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
+          <param name="expressinstall" value="/Public/Home/flash/expressInstall.swf">
+          <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 --> 
+          <!--[if !IE]>-->
+          <object type="application/x-shockwave-flash" data="/Public/Home/flash/avatar.swf?url={$Think.WEB_URL}Company/uploadLogo" width="650" height="470">
+            <!--<![endif]-->
+            <param name="quality" value="high">
+            <param name="wmode" value="opaque">
+            <param name="swfversion" value="111.0.0.0">
+            <param name="expressinstall" value="/Public/Home/flash/expressInstall.swf">
+            <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+            <div>
+              <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+              <!-- 
+              <p><a href="http://www.adobe.com/go/getflashplayer"><img alt="获取 Adobe Flash Player" src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" width="112" height="33" /></a></p>
+            	 -->
+            </div>
+            <!--[if !IE]>-->
+          </object>
+          <!--<![endif]-->
+        </object>
+      </div>
+      <!-- #logoUploader --> 
+    </div>
+    <!------------------------------------- end -----------------------------------------> 
+    
+    <script type="text/javascript" src="/Public/Home/js/company/company.js"></script> 
+    <script>
+var avatar = {};
+avatar.uploadComplate = function( data ){
+	var result = eval('('+ data +')');
+	if(result.success){
+		jQuery('#logoShow img').attr("src",ctx+ '/'+result.content);
+		$("#logoerr").hide();
+		jQuery.colorbox.close();
+	}
+};
+</script> 
+    <!-- 添加此段代码的页面：公司列表页面、公司主页【B端和C端】，联系我们、 帮助中心、ua【用户协议】、友情链接--> 
+    
+
+  </div>
+  <!-- end #container --> 
+</div>
+<!-- end #body --> 
+<script type="text/javascript" src="/Public/Home/js/popup.js"></script> 
+<!--copy账号系统的passport.html--> 
+
+
+<!-- logo上传 -->
+    <div style="display:none">
+      <div class="popup" id="uploadImages" style="overflow:hidden;width:360px;height:470px;">
+        <div class="crop">
+          <div id="cropzoom_container" style="overflow:hidden;"></div>
+          <div class="page_btn">
+            <input type="button" class="btn" id="crop" value="确定" />
+            <input type="button" class="cancel" id="restore" value="取消" />
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    
+   <script type="text/javascript" src="/Public/Home/js/tinymce/jscripts/tiny_mce/jquery.tinymce.js"></script> 
+    <script>
+	// 设置全局变量
+	window.globals =  {};
+	
+	 u = function() {
+		var e, f, g, a = $("#uploadImages"),
+			b = a.find("#cropzoom_container"),
+			c = a.find("#crop"),
+			d = a.find("#restore");
+		return c.bind("click", function() {
+			e.send(ctx + "Resume/cutHead", "POST", {
+				resubmitToken: globals.token
+			}, function(a) {
+				var b, c, d;
+				a = $.parseJSON( a );
+				//console.log(a);
+				e.showImage.attr("src", ctx + a.content.uploadPath + "?cc=" + Math.random()), $.colorbox.close(), e.showImage = null, null != a.resubmitToken && "" != a.resubmitToken && (globals.token = a.resubmitToken), updateResumeTime(a.content.refreshTime), b = a.content.infoCompleteStatus.score, c = parseInt($.trim($(".mr_bfb").text())), d = amountScore - c + b, updateRatioRM(b, d), $(".shadow").hide(), $(".mr_headfile").hover(function() {
+					$(".shadow").show()
+				}, function() {
+					$(".shadow").hide()
+				}), e.restore()
+			})
+		}), d.bind("click", function() {
+			e.restore(), $(".shadow").hide(), $(".mr_headfile").hover(function() {
+				$(".shadow").show()
+			}, function() {
+				$(".shadow").hide()
+			}), $.colorbox.close()
+		}), f = function(c) {
+			var f = $(".mr_headimg"),
+				g = ctx +  c.uploadPath;
+			$.colorbox({
+				inline: !0,
+				href: a,
+				title: "选择裁剪区域"
+			}), myresumeCommon.config.cutImage.image.source = g, myresumeCommon.config.cutImage.image.width = c.srcImageW, myresumeCommon.config.cutImage.image.height = c.srcImageH, myresumeCommon.config.cutImage.selector.w = myresumeCommon.config.userPhotoSelector.width, myresumeCommon.config.cutImage.selector.h = myresumeCommon.config.userPhotoSelector.height, e = b.cropzoom(myresumeCommon.config.cutImage), e.showImage = null, e.showImage = f
+		}, g = function() {}, {
+			upSucc: f,
+			upFail: g
+		}
+	}(), window.uploadPhoto = u, $("#colorbox").on("click", "#cboxClose", function() {
+		"uploadImages" == $(this).siblings("#cboxLoadedContent").children("div").attr("id") && ($(".shadow").hide(), $(".mr_headfile").hover(function() {
+			$(".shadow").show()
+		}, function() {
+			$(".shadow").hide()
+		}))
+	}), v = function() {
+		var e, a = $("#uploadLogos"),
+			b = a.find("#cropzoom_container"),
+			c = a.find("#crop"),
+			d = a.find("#restore"),
+			f = function(c, d) {
+				var f = $("#" + d).next(".logo_u"),
+					g = ctx + "/" + c.uploadPath;
+				$.colorbox({
+					inline: !0,
+					href: a,
+					title: "选择裁剪区域"
+				}), myresumeCommon.config.cutImage.image.source = g, myresumeCommon.config.cutImage.image.width = c.srcImageW, myresumeCommon.config.cutImage.image.height = c.srcImageH, myresumeCommon.config.cutImage.selector.w = myresumeCommon.config.userPhotoSelector.width, myresumeCommon.config.cutImage.selector.h = myresumeCommon.config.userPhotoSelector.height, e = b.cropzoom(myresumeCommon.config.cutImage), e.showImage = null, e.showImage = f
+			},
+			g = function() {};
+		return c.bind("click", function() {
+			$(".jobExpForm").find(":submit").val("上传中").attr("disabled", !0), e.send(ctx + "Resume/cutLogo", "POST", {
+				resubmitToken: globals.token
+			}, function(a) {
+				oMoudle.workId = "", e.showImage.css({
+					width: 120,
+					height: 120
+				}).attr("src", ctx + "/" + a.content + "?cc=" + Math.random()), e.showImage.prev().prev().removeClass("active").addClass("up"), $.colorbox.close(), e.showImage = null, null != a.resubmitToken && "" != a.resubmitToken && (globals.token = a.resubmitToken), $(".jobExpForm").find(":submit").val("保存").attr("disabled", !1), e.restore()
+			})
+		}), d.bind("click", function() {
+			e.restore(), $.colorbox.close()
+		}), {
+			upSucc: f,
+			upFail: g
+		}
+	}()
+	</script> 
+    
+    <script>
+	window.myresumeCommon = window.myresumeCommon || {
+
+	// 请求路径
+	requestTargets: {
+
+		//上传头像
+		photoUpload : '/Resume/uploadPhoto'
+			
+	},
+
+
+    /**
+     * 默认配置
+     */
+    config: {
+
+    	// 用户上传头像的selector的大小
+    	userPhotoSelector: {
+    		width: 250,
+    		height: 250
+    	},
+
+    	// 用户上传作品，比例为4:3
+    	workShowSelector: {
+    		width: 280,
+    		height: 210
+    	},
+
+    	cutImage: {
+		    width: 360,
+		    height: 360,
+		    bgColor: '#ccc',
+		    enableRotation: false,
+		    enableZoom: true,
+		    selector: {
+		        w: 250,
+		        h: 250,
+		        showPositionsOnDrag: false,
+		        showDimetionsOnDrag: false,
+		        centered: true,
+		        bgInfoLayer: '#fff',
+		        borderColor: '#ac6198',
+		        animated: false,
+		        maxWidth: 358,
+		        maxHeight: 358,
+		        borderColorHover: '#ac6198'
+		    },
+		    image: {
+		        source: '',
+		        // 在上传完图片后，这个必须要设置，width height
+		        width: 0,
+		        height: 0,
+		        minZoom: 10,
+		        maxZoom: 300
+		    }
+		},
+    	// 编辑器配置
+        tinymce: {
+            // Location of TinyMCE script
+            script_url: ctx + 'Public/Home/js/tinymce/jscripts/tiny_mce/tiny_mce.js',
+
+            // General options
+            theme: "advanced",
+            language: "zh-cn",
+            plugins: "paste,autolink,lists,style,layer,save,advhr,advimage,advlink,iespell,inlinepopups,preview,media,searchreplace,contextmenu,fullscreen,noneditable,visualchars,nonbreaking",
+
+            // Theme options
+            theme_advanced_buttons1: "bullist,numlist",
+            theme_advanced_toolbar_location: "top",
+            theme_advanced_toolbar_align: "left",
+            theme_advanced_statusbar_location: "none", //定义输入框下方是否显示状态栏，默认不显示
+            theme_advanced_resizing: false,
+            paste_auto_cleanup_on_paste: true,
+            paste_as_text: true,
+            auto_cleanup_word: true,
+            paste_remove_styles: true,
+            contextmenu: "copy cut paste",
+            force_br_newlines: true,
+            force_p_newlines: false,
+            apply_source_formatting: false,
+            remove_linebreaks: false,
+            convert_newlines_to_brs: true,
+
+            // Example content CSS (should be your site CSS)
+            content_css: ctx + "/js/tinymce/examples/css/content.css",
+
+            // Drop lists for link/image/media/template dialogs
+            template_external_list_url: "lists/template_list.js",
+            external_link_list_url: "lists/link_list.js",
+
+            // Replace values for the template plugin
+            template_replace_values: {
+                username: "Some User",
+                staffid: "991234"
+            },
+            onchange_callback: function(editor) {
+                tinyMCE.triggerSave();
+                var editorContent = tinyMCE.get(editor.id).getContent();
+                if (editorContent.length > 20) {
+                    $("#" + editor.id).valid();
+                }
+                /* alert($("#" + editor.id).width());*/
+            }
+        }
+
+    },
+
+	// 一些工具方法
+	utils: {
+
+		imageUpload: function ( targetInput, targetUrl, success, fail ) {
+
+			targetInput = $( targetInput );
+			var inputId = targetInput.attr( 'id' );
+			var hint = targetInput.attr( 'title' );
+
+			// var dataType = 'json';
+			var dataType = 'text';
+
+			var params = { };
+
+			this.AllowExt = '.jpg,.gif,.jpeg,.png,.pjpeg';
+			this.FileExt = targetInput.val().substr(targetInput.val().lastIndexOf(".")).toLowerCase();
+			if(this.AllowExt != 0 && this.AllowExt.indexOf(this.FileExt) == -1)//judge file format
+			{
+				errorTips( hint );
+				$("input[type = 'file']").val("");
+			}else{
+				$.ajaxFileUpload ({
+					url: targetUrl,
+					secureuri: false,
+					fileElementId: inputId,
+					data: params,
+					dataType: dataType,
+					// "content":{"srcImageW":650,"srcImageH":346,"uploadPath":"upload/workPic/d7f6a8cb0fd5473193a3ffd021a54838.png"}
+					success: function ( rs ) {
+						if ( dataType == 'text' )
+							rs = $.parseJSON( rs );
+						if( rs.success ){
+							success && success( rs.content, inputId );
+						}
+						else{
+							fail && fail( 1 );
+							errorTips( hint , "上传" );
+						}
+					},
+					error:function(data){
+						fail && fail( data );
+						errorTips( "上传失败，请重新上传","上传");
+					}
+				});
+			}
+
+		}
+	   
+
+	}
+
+};
+
+	</script>
+    
+    <script type="text/javascript" src="/Public/Home/js/jquery-migrate-1.1.1.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/jquery-ui-1.8.custom.min.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/jquery.cropzoom.js"></script> 
+    
+
+<include file="Public/footer" />

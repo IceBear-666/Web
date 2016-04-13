@@ -1,0 +1,118 @@
+
+/***********
+  **图片上传
+*****/
+
+.myupnav .uploadbtn{ background:#ac6198; width:150px; text-align:center;  }
+.myupnav  .info{ padding-top:10px; color:#999;}
+
+
+
+#progressWrapper {
+}
+
+#divFileProgress{
+	width:100%;
+	border: solid 1px #D3B8CC;
+	background-color: #FCF8FB;
+	}
+.progressContainer {
+	padding: 6px 12px;
+	}
+/* Message */
+.message {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;
+}
+/* Error */
+.red {
+	border: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+
+/* Current */
+.green {
+	border: solid 1px #ac6198;
+	background-color: #FCF8FB;
+}
+
+/* Complete */
+.blue {
+	background-color: #FCF8FB;
+	overflow: hidden;
+}
+
+.progressName {
+	font-size: 8pt;
+	font-weight: 700;
+	color: #555;
+	width: 323px;
+	height: 14px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {
+	font-size: 0;
+	width: 0%;
+	height: 2px;
+	width: 100%;
+	background-color:#AC6198;
+	margin: 4px 0px 2px 0px;
+}
+
+.progressBarComplete {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+.progressBarError {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+.progressBarStatus {
+	margin-top: 2px;
+	color:#ac6198;
+	width: 337px;
+	font-size: 12;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap;
+}
+
+a.progressCancel {
+	font-size: 0;
+	display: block;
+	height: 14px;
+	width: 14px;
+	background-image: url(../images/cancelbutton.gif);
+	background-repeat: no-repeat;
+	background-position: -14px 0px;
+	float: right;
+}
+
+a.progressCancel:hover {
+	background-position: 0px 0px;
+}
+
+#thumbnails{ width:100%; overflow:hidden; margin-top:14px;}
+#thumbnails ul{ width:620px;}
+#thumbnails ul li{
+	float:left;list-style-type:none;width:138px; height:158px;
+    margin-right:12px; margin-bottom:18px; position:relative;
+   -moz-box-shadow: 1px 1px 4px #ddd;-webkit-box-shadow: 1px 1px 4px #ddd; box-shadow:1px 1px 4px #ddd;
+}
+#thumbnails ul li .myimg{ width:138px; height:130px; display:block;}
+#thumbnails .button{display:block;position: relative;right:0px; top:0px;z-index: 1103;cursor:pointer;}
+
+
+

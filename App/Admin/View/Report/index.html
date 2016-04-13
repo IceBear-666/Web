@@ -1,0 +1,111 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>举报列表</h2>
+    </div>
+
+    
+
+    <div class="data-table table-striped">
+        <form class="ids">
+            <table>
+                <thead>
+                    <tr>
+                        <!-- <th class="row-selected">
+                            <input class="checkbox check-all" type="checkbox">
+                        </th> -->
+                        <th>举报人</th>                        
+                        <th>邮箱</th>
+                        <th>举报职位</th> 
+                        <th>原因</th>
+                        
+                        <th>内容</th>            
+                        <th>时间</th>  
+                        <th>状态</th>                    
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+				<notempty name="list">
+                <volist name="list" id="v">
+                    <tr>
+                        <!-- <td><input class="ids row-selected" type="checkbox" name="id[]" value="{$v.rid}"></td> -->
+                        
+                        <td>
+                        <php>if($v['realname'])echo $v['realname'];else echo $v['company_name'];</php>
+                        </td>                      
+                        
+                        <td>{$v.email}</td>
+                        <td><a target="_bank" href="/Jobs/info/id/{$v.toid}">查看职位</a></td>
+                        <td>{$v.reason|getReportReason=###}</td>
+                                         
+                        <td>{$v.content}<!-- |msubstr=###,0,1000 --></td>
+                        <td>{$v.addtime|showDate=###}</td> 
+                        <td>{$v.status|getReportStatus=###}</td>    
+                        <td>
+                        	<php>if($v['status']==0){</php>
+                            <a  href="/Admin/Report/deal/id/{$v.rid}">已处理</a> &nbsp; 
+                            <php>}</php>
+                            <a class="confirm ajax-get" title="删除" href="{:U('del?id='.$v['rid'])}">删除</a>
+                        </td>
+                    </tr>
+                </volist>
+				<else/>
+				<td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td>
+				</notempty>
+                </tbody>
+            </table>
+        </form>
+        <!-- 分页 -->
+        <div class="page">
+			{$_page}
+        </div>
+    </div>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        $(function() {
+            //搜索功能
+            $("#search").click(function() {
+                var url = $(this).attr('url');
+                var query = $('.search-form').find('input').serialize();
+                query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g, '');
+                query = query.replace(/^&/g, '');
+                if (url.indexOf('?') > 0) {
+                    url += '&' + query;
+                } else {
+                    url += '?' + query;
+                }
+                window.location.href = url;
+            });
+            //回车搜索
+            $(".search-input").keyup(function(e) {
+                if (e.keyCode === 13) {
+                    $("#search").click();
+                    return false;
+                }
+            });
+            //导航高亮
+            highlight_subnav('{:U('index')}');
+            //点击排序
+        	$('.list_sort').click(function(){
+        		var url = $(this).attr('url');
+        		var ids = $('.ids:checked');
+        		var param = '';
+        		if(ids.length > 0){
+        			var str = new Array();
+        			ids.each(function(){
+        				str.push($(this).val());
+        			});
+        			param = str.join(',');
+        		}
+
+        		if(url != undefined && url != ''){
+        			window.location.href = url + '/ids/' + param;
+        		}
+        	});
+        });
+    </script>
+</block>

@@ -1,0 +1,56 @@
+<style>
+.wltao_package_wp .tb_bd ul{margin-left:0px;}
+</style>
+<div class="tb_hd tb_row">
+	<span class="tb_col col1"></span>
+	<span class="tb_col col2">商品名/运单号</span>
+	<span class="tb_col col3">包裹状态</span>
+	<!-- <span class="tb_col col4">更新时间</span> -->
+	<span class="tb_col col5">备注</span>
+	<!-- <span class="tb_col col5">备注</span> -->
+	<!-- <span class="tb_col col5">删除</span> -->
+</div>
+<div class="tb_bd">
+	<ul style="padding-left: 0;">
+		{{#trackList}}
+		<li class="tb_row" shipNum={{shipNum}} shipStatus={{shipStatus}} transShipStatus={{transShipStatus}}>
+			<!--序号-->
+			<span class="tb_col col1"></span>
+			
+			<!--快递单号-->
+			<span class="tb_col col2">
+  				<span class="pop_tips td_ship_icon" style="display:none;">
+					<span>
+						{{#if(shipComp==fedex)}}<i class="icon_fedex" style="margin:2px 2px 0 0; float:left;"></i>{{/if(shipComp==fedex)}}
+						{{#if(shipComp==usps)}}<i class="icon_usps" style="margin:2px 2px 0 0; float:left;"></i>{{/if(shipComp==usps)}}
+						{{#if(shipComp==ups)}}<i class="icon_ups" style="margin:2px 2px 0 0; float:left;"></i>{{/if(shipComp==ups)}}
+						{{#if(shipComp==dhl)}}<i class="icon_dhl" style="margin:2px 2px 0 0; float:left;"></i>{{/if(shipComp==dhl)}}
+						{{#if(shipComp==dhlde)}}<i class="icon_dhl" style="margin:2px 2px 0 0; float:left;"></i>{{/if(shipComp==dhlde)}}
+						{{#if(shipComp==bpost)}}<i class="icon_bpost" style="margin:2px 2px 0 0; float:left;"></i>{{/if(shipComp==bpost)}}
+					{{shipNum}}
+					</span>
+					 <!-- <i class="arr"></i> -->
+				</span>
+				<a target="_blank" title="{{shipNum}}" href="{{chaUrl}}" data-stat="icon.ship.tracking1" class="shiplink wltao-stat">{{proOrShip}}</a>
+			</span>
+
+			<span class="tb_col col3">
+				{{#if(transShipStatusShort==undef...)}}
+					<a target="_blank" title="点击查看详情" href="{{chaUrl}}" data-stat="icon.ship.tracking2" class="shiplink wltao-stat">{{shipStatusShort}}</a>
+				{{/if(transShipStatusShort==undef...)}}
+				{{^if(transShipStatusShort==undef...)}}
+					<a target="_blank" title="点击查看详情" href="{{chaUrl}}" data-stat="icon.ship.tracking1" class="shiplink wltao-stat">{{transShipStatusShort}}</a>
+				{{/if(transShipStatusShort==undef...)}}
+			</span>
+			
+			<!--更新时间-->
+			<!-- <span class="tb_col col5">
+				{{addDateTime}}
+			</span> -->
+			
+			<!--备注-->
+			<span class="tb_col col5">{{trackRemark}}</span>
+		</li>
+		{{/trackList}}
+	</ul>
+</div>

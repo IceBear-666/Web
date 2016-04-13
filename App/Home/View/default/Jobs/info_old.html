@@ -1,0 +1,579 @@
+<include file="Public/header" />
+
+<body>
+
+
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+	
+	<div id="container">
+	
+    <div class="clearfix">
+    
+    
+      <div class="content_l">
+        <dl class="job_detail">
+          <dt>
+            <h1 title="Java"> <em></em>
+              <div>{$info.company_name}{$info.suoshu_bumen}招聘</div>
+              {$info.zhiwei_mingcheng} </h1>
+            <div id="jobCollection" <if condition="$my_collect neq '' ">class="jd_collection  collected"<else />class="jd_collection"</if>>
+              <div class="jd_collection_success"  > <span>已成功收藏该职位，</span> <a href="{$Think.WEB_URL}Jobs/collections" class="jd_collection_page">查看全部</a> <a href="javascript:;" class="jd_collection_x"></a> </div>
+            </div>
+          </dt>
+          <dd class="job_request"> <span class="red">{$info.yuexin_min}k-{$info.yuexin_max}k</span> <span>{$info.gongzuo_dizhi}</span> <span>经验{$info.gongzuo_jingyan} </span> <span> {$info.xueli}</span> <span>{$info.gongzuo_xingzhi}</span><br>
+            职位诱惑 : {$info.zhiwei_youhuo}
+            <div>发布时间：{$info.job_addtime|getLongTimeSpace=###}前发布</div>
+          </dd>
+          <dd class="job_bt">
+            <h3 class="description">职位描述</h3>
+            {$info.descrip}
+          </dd>
+          
+          <!-- 用户是否激活 0-否；1-是 -->
+          
+          <if condition="$Think.session.uid gt 0">
+          
+	          <dd class="resume resume_web">
+	          
+	          <if condition="$myinfo.default_select eq 0 and $myinfo.other_resume neq ''">
+	          	<div>
+					<span> 你已有可投递的附件简历：<a href="{$Think.WEB_URL}Users/downloadResumeOther" target="_blank" title="{$myinfo.other_resume_name}"><strong>{$myinfo.other_resume_name}</strong></a></span><br>
+					<span>简历更新于{$myinfo.other_resume_time|showDay=###,'Y-m-d H:i:s'}</span>
+				</div>
+	          <elseif condition="$myinfo.resume_status eq 1" />
+		            <div>
+						<span> 你已有可投递的在线简历：<a href="{$Think.WEB_URL}Jobs/myResume" target="_blank" title="{$myinfo.resume_name}"><strong>{$myinfo.resume_name}</strong></a></span><br>
+						<span>简历更新于{$myinfo.update_time|showDay=###,'Y-m-d H:i:s'}</span>
+					</div>
+				<else />
+				
+					<div>
+						<span> 你的简历还不完整：<a href="{$Think.WEB_URL}Jobs/myResume" target="_blank" title="{$myinfo.resume_name}"><strong>去完善简历</strong></a></span><br>
+						<span>简历更新于{$myinfo.update_time|showDay=###,'Y-m-d H:i:s'}</span>
+					</div>
+				
+				</if>
+				
+	            <span class="setBtns"> <a href="{$Think.WEB_URL}Jobs/resumePreview" title="预览" target="_blank">预览</a> | <a href="{$Think.WEB_URL}Jobs/myResume" target="_blank" title="修改">修改</a> </span>
+				
+		      </dd>
+	      
+	      <else />
+	      
+		      <dd class="unresume">
+		           <div>
+		           	你在钢铁侠还没有简历呢，你可以<a href="{$Think.WEB_URL}Public/login" target="_blank" title="完善在线简历" rel="nofollow">完善在线简历</a>，也可<a class="inline" href="#loginPop" title="登录">上传附件简历</a>直接投递
+		           </div>
+		      </dd>
+	      
+	      </if>
+			
+          <!-- <div class="saoma saoma_btm">
+            <div class="dropdown_menu">
+              <div class="drop_l"> <img src="info_files/08ab9ba6471d4d0095ebdb9efd559eb1_448299.jpg" height="131" width="131"> <span>[仅限本人使用]</span> </div>
+              <div class="drop_r">
+                <div class="drop_title"></div>
+                <p> 想知道HR在看简历嘛？<br>
+                  想在微信中收到面试通知？<br>
+                  <span>&lt;&lt; 扫一扫，给你解决</span> </p>
+              </div>
+            </div>
+          </div> -->
+          <dd> 
+            <!-- 用户是否激活 0-否；1-是 --> 
+            
+            <a href="#setResumeApply" class="btn fr btn_apply inline cboxElement" title="投个简历">投个简历</a> </dd>
+        </dl>
+        <div id="weibolist"></div>
+      </div>
+      
+      
+      
+      <div class="content_r">
+      
+        <dl class="job_company">
+          <dt> <a href="{$Think.WEB_URL}Company/info/id/{$info.uid}" target="_blank"> <img class="b2" src="/{$info.logo}" alt="{$info.company_name}" height="80" width="80">
+            <div>
+              <h2 class="fl"> {$info.company_short_name} <img src="/Public/Images/valid.png" alt="钢铁侠认证企业" height="19" width="15"> <span class="dn">钢铁侠认证企业</span> </h2>
+            </div>
+            </a> </dt>
+          <dd>
+            <ul class="c_feature reset">
+              <li><span>领域</span> {$info.hangye}</li>
+              <li><span>规模</span> {$info.guimu}</li>
+              <li> <span>主页</span> <a href="{$info.web_url}" target="_blank" title="{$info.web_url}" rel="nofollow">{$info.web_url}</a> </li>
+            </ul>
+            <h4>发展阶段</h4>
+            <ul class="c_feature reset">
+              <li><span>目前阶段</span> {$info.jieduan}</li>
+            </ul>
+            
+            <h4>工作地址</h4>
+            <div>{$info.gongzuo_chengshi}</div>
+            <div style="overflow: hidden; position: relative; z-index: 0; background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); text-align: left;" id="smallmap">
+              
+            
+            </div>
+            <a href="javascript:;" id="mapPreview">查看完整地图</a> </dd>
+        </dl>
+        <!--  --> 
+        
+        
+        
+        
+        <!-- write by Darren  -->
+        <div id="position_recommend">
+        
+          <ul class="position_head">
+            <li class="guess_selected">相似职位</li>
+            <li>猜你喜欢</li>
+          </ul>
+          
+          <div class="similar_content">
+            <div class="position_detail_content">
+            
+            <if condition="$same_list neq ''">
+            
+	          <volist name="same_list" id="v">
+	            
+	              <dl>
+	                <dt><a href="{$Think.WEB_URL}Company/info/id/{$v.uid}/?source=position_rec" title="{$v.company_name}" target="_blank"><img src="{$v.logo}" alt="{$v.company_name}" height="54" width="54"></a></dt>
+	                <dd class="content_inner"> <a href="{$Think.WEB_URL}Company/info/id/{$v.uid}/?source=position_rec" target="_blank">
+	                  <h2 title="Java">{$v.zhiwei_mingcheng}</h2>
+	                  <span>{$v.yuexin_min}k-{$v.yuexin_max}k</span>
+	                  <p title="{$v.company_name}">{$v.company_name}</p>
+	                  </a> </dd>
+	              </dl>
+              
+              </volist>
+              
+              <a href="{$Think.WEB_URL}Jobs/index/type/?kd={$info.zhiwei_mingcheng}" class="similar_position_footer" target="_blank" id="similar_footer">查看更多相似职位</a>
+			
+			<else />
+			
+				<dl>
+	                	暂无记录
+	              </dl>
+			</if>
+			
+			
+			</div>
+			
+          </div>
+          
+          <div id="guess">
+          
+          	<if condition="$may_list neq ''">
+            
+	          <volist name="may_list" id="v">
+	            
+	              <dl>
+	                <dt><a href="{$Think.WEB_URL}Company/info/id/{$v.uid}/?source=position_rec" title="{$v.company_name}" target="_blank"><img src="{$v.logo}" alt="{$v.company_name}" height="54" width="54"></a></dt>
+	                <dd class="content_inner"> <a href="{$Think.WEB_URL}Company/info/id/{$v.uid}/?source=position_rec" target="_blank">
+	                  <h2 title="Java">{$v.zhiwei_mingcheng}</h2>
+	                  <span>{$v.yuexin_min}k-{$v.yuexin_max}k</span>
+	                  <p title="{$v.company_name}">{$v.company_name}</p>
+	                  </a> </dd>
+	              </dl>
+              
+              </volist>
+              
+              
+			<else />			
+				<div class="guess_like">
+	              <p>暂时没有匹配的职位</p>
+	              <p class="special_fix">不妨调整你的期望工作试一试</p>
+	              <p><a href="{$Think.WEB_URL}Jobs/myresume.html#expectJob" title="前去修改" target="_blank" class="guess_rectangle">前去修改</a></p>
+	            </div>
+			</if>
+          
+            
+          </div>
+          
+        </div>
+        <!--  End --> 
+        
+        
+        
+        <!-- 广告位：主站--职位详情页 --> 
+        <div id="BAIDU_DUP_wrapper_946156_0">
+        	<img width="280" height="135" border="0" alt="三体迷跳槽专场" title="三体迷跳槽专场" src="/Public/Images/ad/ad1.jpg">
+        </div>
+        
+      </div>
+      <!--end #myRecommend--> 
+    </div>
+    
+    
+    <input value="{$info.uid}" name="userid" id="userid" type="hidden">
+    <input value="{$info.type}" name="type" id="resend_type" type="hidden">
+    <input value="{$info.jid}" id="jobid" type="hidden">
+    <input value="{$info.uid}" id="companyid" type="hidden">
+    <input value="" id="positionLng" type="hidden">
+    <input value="" id="positionLat" type="hidden">
+    <div id="tipOverlay"></div>
+    
+    
+    <!-------------------------------------弹窗lightbox  ----------------------------------------->
+    <div style="display:none;"> 
+    
+      <!-- 设置默认投递简历 -->
+      <div id="setResume" class="popup" style="height:280px;">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td class="f18 c5">请选择你要投出去的简历：</td>
+            </tr>
+            <tr>
+              <td><form id="resumeSetForm" class="resumeSetForm">
+                  <label class="radio">
+                    <input name="resumeName" class="resume1" value="1" type="radio">
+                    在线简历： <span title="{$myinfo.resume_name}">{$myinfo.resume_name}</span> </label>
+                  <div class="setBtns"> <a href="{$Think.WEB_URL}Jobs/resumePreview" target="_blank">预览</a> | <a href="{$Think.WEB_URL}Jobs/myResume" target="_blank">修改</a> </div>
+                  <div class="clear"></div>
+                  <label class="radio">
+                    <input name="resumeName" class="resume0" value="0" type="radio">
+                    附件简历： <span class="uploadedResume red">暂无附件简历</span> </label>
+                  <div class="setBtns"> <a href="{$Think.WEB_URL}Users/downloadResumeOther" class="downloadResume dn">下载</a> <span class="dn">|</span> <a target="_blank" title="上传附件简历" class="reUpload">上传附件简历</a>
+                    <input title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M" name="newResume" id="reUploadResume1" onchange="file_check(this,'{$Think.WEB_URL}Users/updateMyResumeOther','reUploadResume1')" type="file">
+                  </div>
+                  <div class="clear"></div>
+                  <span class="error" style="display:none;">只支持word、pdf、ppt、txt、wps格式文件，请重新上传</span>
+                  <label class="bgPink">默认使用此简历直接投递，下次不再提示</label>
+                  <span class="setTip error"></span>
+                  <input class="btn_profile_save btn_s" value="保存设置" type="submit">
+                </form></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--/#setResume--> 
+      
+      <!-- 投递简历时  - 设置默认投递简历 -->
+      <div id="setResumeApply" class="popup" style="height:280px;">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td class="f18 c5">请选择你要投出去的简历：</td>
+            </tr>
+            <tr>
+              <td><form id="resumeSendForm" class="resumeSetForm">
+                  <label class="radio">
+                    <input <if condition="$myinfo.default_select eq 1">checked</if> name="resumeName" class="resume1" value="1" type="radio">
+                    在线简历： <span title="{$myinfo.resume_name}">{$myinfo.resume_name}</span> </label>
+                  <div class="setBtns"> <a href="{$Think.WEB_URL}Jobs/resumePreview" target="_blank">预览</a> | <a href="{$Think.WEB_URL}Jobs/myResume" >修改</a> </div>
+                  <div class="clear"></div>
+                  <label class="radio">
+                    <input <if condition="$myinfo.default_select eq 0">checked</if> name="resumeName" class="resume0" value="0" type="radio">
+                    附件简历： <span class="uploadedResume red">
+                    	<if condition="$myinfo.other_resume neq ''">
+                    		{$myinfo.other_resume_name}
+                    	<else />
+                    	暂无附件简历
+                    	</if>
+                    </span> </label>
+                  <div class="setBtns"> <a href="{$Think.WEB_URL}Users/downloadResumeOther" class="downloadResume dn">下载</a> <span class="dn">|</span> <a target="_blank" title="上传附件简历" class="reUpload">上传附件简历</a>
+                    <input title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M" name="newResume" id="reUploadResume2" onchange="file_check(this,'{$Think.WEB_URL}Users/updateMyResumeOther','reUploadResume2')" type="file">
+                  </div>
+                  <div class="clear"></div>
+                  <span class="error" style="display:none;">只支持word、pdf、ppt、txt、wps格式文件，请重新上传</span>
+                  <label class="bgPink">
+                    <input checked="checked" type="checkbox">
+                    默认使用此简历直接投递，下次不再提示</label>
+                  <span class="setTip error"></span>
+                  <input class="btn_profile_save btn_s" value="确认投递简历" type="submit">
+                </form></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--/#setResumeApply--> 
+      
+      <!-- 上传简历 -->
+      <div id="uploadFile" class="popup">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td align="center"><form>
+                  <a href="javascript:void(0);" class="btn_addPic"> <span>选择上传文件</span>
+                  <input tabindex="3" title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M" size="3" name="newResume" id="resumeUpload" class="filePrew" onchange="file_check(this,'{$Think.WEB_URL}Users/updateMyResumeOther','resumeUpload')" type="file">
+                  </a>
+                </form></td>
+            </tr>
+            <tr>
+              <td align="left">支持word、pdf、ppt、txt、wps格式文件<br>
+                文件大小需小于10M</td>
+            </tr>
+            <tr>
+              <td style="color:#dd4a38; padding-top:10px;" align="left">注：若从其它网站下载的word简历，请将文件另存为.docx格式后上传</td>
+            </tr>
+            <tr>
+              <td align="center"><img src="/Public/Images/loading.gif" id="loadingImg" style="visibility: hidden;" alt="loading" height="16" width="55"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--/#uploadFile--> 
+      
+      <!-- 简历上传成功 -->
+      <div id="uploadFileSuccess" class="popup">
+        <h4>简历上传成功！</h4>
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td align="center"><p>你可以将简历投给你中意的公司了。</p></td>
+            </tr>
+            <tr>
+              <td align="center"><a href="javascript:top.location.reload();" class="btn_s">确&nbsp;定</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--/#uploadFileSuccess--> 
+      
+      <!-- 登录框 -->
+      <if condition="$Think.session.uid elt 0">
+	    	<include file="Public/user_login" />
+	  </if>
+      <!--/#loginPop--> 
+      
+      <!-- 投简历成功前填写基本信息 -->
+      <style>
+	    #cboxContent{overflow:visible;}
+	    #colorbox, #cboxOverlay, #cboxWrapper{overflow:visible;}
+	  </style>
+      <div id="infoBeforeDeliverResume" class="popup" style="height:300px; overflow:visible;">
+        <div class="f18">为方便所投递企业HR查阅，请确认个人信息</div>
+        <form id="basicInfoForm" method="post">
+          <table width="100%">
+            <tbody>
+              <tr>
+                <td valign="middle"><span class="redstar">*</span></td>
+                <td><input name="name" placeholder="姓名" type="text"></td>
+                <td valign="middle"><span class="redstar">*</span></td>
+                <td><input name="degree" value="" id="degree" type="hidden">
+                  <input class="profile_select_190 profile_select_normal" id="select_degree" value="最高学历" type="button">
+                  <div id="box_degree" class="boxUpDown boxUpDown_190 dn"></div></td>
+              </tr>
+              <tr>
+                <td valign="middle"><span class="redstar">*</span></td>
+                <td><input name="workyear" value="" id="workyear" type="hidden">
+                  <input class="profile_select_190 profile_select_normal" id="select_workyear" value="工作年限" type="button">
+                  <div id="box_workyear" class="boxUpDown boxUpDown_190 dn"></div></td>
+                <td valign="middle"><span class="redstar">*</span></td>
+                <td><input name="expectCity" value="" id="expectCity" type="hidden">
+                  <input class="profile_select_190 profile_select_normal" id="select_expectCity" value="期望工作城市" type="button">
+                  <div id="box_expectCity" class="boxUpDown boxUpDown_596 dn"></div></td>
+              </tr>
+              <tr>
+                <td valign="middle"><span class="redstar">*</span></td>
+                <td><input name="tel" placeholder="手机号码" type="text"></td>
+                <td valign="middle"><span class="redstar">*</span></td>
+                <td><input name="email" placeholder="邮箱地址" type="text"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td colspan="3"><input name="type" value="" type="hidden">
+                  <input class="btn" value="确认并投递" type="submit"></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <!--/#infoBeforeDeliverResume--> 
+      
+      <!-- 上传附件简历操作说明-重新上传 -->
+      <div id="fileResumeUpload" class="popup">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td><div class="f18 mb10">请上传标准格式的word简历</div></td>
+            </tr>
+            <tr>
+              <td><div class="f16"> 操作说明：<br>
+                  打开需要上传的文件 - 点击文件另存为 - 选择.docx - 保存 </div></td>
+            </tr>
+            <tr>
+              <td align="center"><a class="inline btn cboxElement" href="#uploadFile" title="上传附件简历">重新上传</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--/#fileResumeUpload--> 
+      
+      <!-- 上传附件简历操作说明-重新上传 -->
+      <div id="fileResumeUploadSize" class="popup">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td><div class="f18 mb10">上传文件大小超出限制</div></td>
+            </tr>
+            <tr>
+              <td><div class="f16"> 提示：<br>
+                  单个附件不能超过10M，请重新选择附件简历！ </div></td>
+            </tr>
+            <tr>
+              <td align="center"><a class="inline btn cboxElement" href="#uploadFile" title="上传附件简历">重新上传</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--/#deliverResumeConfirm--> 
+      
+      <!-- 投简历成功前二次确认 -->
+      <div id="deliverResumeConfirm" class="popup">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td class="msg"><div class="f18">你的简历中：</div>
+                <div class="f16 count"><span class="f18 confirm_field">学历、工作年限、期望工作城市</span>与该职位要求不匹配，确认要投递吗？</div></td>
+            </tr>
+            <tr>
+              <td align="center"><input name="type" value="" type="hidden">
+                <a href="javascript:sendResume(444203,209699,true,true);" class="btn">确认投递</a> <a href="javascript:;" class="btn_s">放弃投递</a> <a href="javascript:;" class="f20 edit_field">修改信息</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--/#deliverResumeConfirm--> 
+      
+      <!-- 投简历成功 -->
+      <div id="deliverResumesSuccess" class="popup" style="width:440px;padding-bottom:10px;">
+        <table width="100%">
+          <tbody>
+            <tr class="drawGGJ">
+              <td align="center"><p class="font_16 count"></p>
+                <!-- <p class="font_16 share dn">邀请好友成功注册钢铁侠，可提升每日投递量 &nbsp;&nbsp; <a href="{$Think.WEB_URL}share/invite.html" target="_blank">邀请好友&gt;&gt;</a></p>
+                 -->
+              </td>
+            </tr>
+            <tr class="drawQD">
+              <td align="center"><a href="javascript:top.location.reload();" class="btn_s">确&nbsp;定</a></td>
+            </tr>
+            <!-- <tr class="weixinQR">
+              <td><div class="weixin">
+                  <div class="qr"> <img src="qr.jpg" height="120" width="120">
+                    <div>[仅限本人使用]</div>
+                  </div>
+                  <div class="qr_text"> 想知道HR是否看过你的简历？<br>
+                    想在微信中收到面试通知？<br>
+                    <span>&lt;&lt; 微信扫一扫，一并解决</span> </div>
+                </div></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+      <!--/#deliverResumesSuccess--> 
+      
+      <!-- 投递时，一个简历都没有弹窗 -->
+      <div id="sendNoResume" class="popup">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td class="f18 c5" align="center">你还没有可以投递的简历呢</td>
+            </tr>
+            <tr>
+              <td class="c5" align="center">请上传附件简历或填写在线简历后再投递吧~</td>
+            </tr>
+            <tr>
+              <td align="center"><form>
+                  <a href="javascript:void(0);" class="btn_addPic"> <span>选择上传文件</span>
+                  <input title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M" size="3" name="newResume" id="resumeUpload2" class="filePrew" onchange="file_check(this,'{$Think.WEB_URL}Users/downloadResumeOther','resumeUpload2')" type="file">
+                  </a>
+                </form>
+                <a class="btn" href="{$Think.WEB_URL}Users/basic" target="_blank" rel="nofollow">完善在线简历</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--/#sendNoResume--> 
+      
+      <!-- 没有简历请上传 -->
+      <div id="deliverResumesNo" class="popup">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td align="center"><p class="font_16">你在钢铁侠还没有简历，请先上传一份</p></td>
+            </tr>
+            <tr>
+              <td align="center"><form>
+                  <a href="javascript:void(0);" class="btn_addPic"> <span>选择上传文件</span>
+                  <input title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M" size="3" name="newResume" id="resumeUpload1" class="filePrew" onchange="file_check(this,'{$Think.WEB_URL}Users/downloadResumeOther','resumeUpload1')" type="file">
+                  </a>
+                </form></td>
+            </tr>
+            <tr>
+              <td align="center">支持word、pdf、ppt、txt、wps格式文件，大小不超过10M</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--/#deliverResumesNo--> 
+      
+      <!--
+    	激活邮箱
+		登录邮箱未验证时，
+	 	点击上传附件简历、申请职位、订阅职位、发布职位出现该弹窗
+	-->
+      <div id="activePop" class="popup" style="height:240px;">
+        <h4>登录邮箱未验证</h4>
+        <p>请验证你的登录邮箱以使用钢铁侠网的所有功能！ </p>
+        <p>我们已将验证邮件发送至：<a>{$myinfo.email}</a>，请点击邮件内的链接完成验证。</p>
+        <p><a href="javascript:void(0)" id="resend">重新发送验证邮件 </a> | <a href="{$Think.WEB_URL}Public/reg" target="_blank"> 换个邮箱？ </a> </p>
+      </div>
+      <!--/#activePop--> 
+      
+      <!--
+    	激活邮箱
+		验证邮件发送成功弹窗
+	-->
+      <div id="resend_success" class="popup">
+        <p>我们已将激活邮件发送至：<a>{$myinfo.email}</a>，请点击邮件内的链接完成验证。</p>
+      </div>
+      <!--/#resend_success--> 
+      
+      <!--地图弹窗-->
+      <div id="baiduMap" class="popup">
+        
+      </div>
+      <!--/#baiduMap--> 
+    </div>
+    <!------------------------------------- end -----------------------------------------> 
+    
+    <script type="text/javascript" src="/Public/Js/jquery-hbzx.js"></script>
+    <script type="text/javascript" src="/Public/Js/job_detail.js"></script>
+    <script>
+	$(function(){
+		$('#weibolist .cookietxte').text('推荐本职位给好友');
+		$(document).bind('cbox_complete', function(){ 
+			hbzxJQ("#gaosutapt .pttui a").trigger("click"); 
+			hbzxJQ("#mepingpt .pttui a").trigger("click"); 
+		});
+		$('#cboxOverlay').bind('click',function(){
+			top.location.reload();
+		});
+		$('#colorbox').on('click','#cboxClose',function(){
+			if($(this).siblings('#cboxLoadedContent').children('div').attr('id') == 'deliverResumesSuccess' || $(this).siblings('#cboxLoadedContent').children('div').attr('id') == 'uploadFileSuccess'){
+				top.location.reload();
+			}
+		});
+				popQR();
+		})
+	</script> 
+    
+    <div class="clear"></div>
+    <input id="resubmitToken" value="e2ac104445fe4db096d1cecf3ee8dba2" type="hidden">
+    <a style="display: none;" id="backtop" title="回到顶部" rel="nofollow"></a>
+
+	</div>
+
+	<!-- end #container --> 
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

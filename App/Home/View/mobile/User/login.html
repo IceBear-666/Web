@@ -1,0 +1,86 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/mcss/reg.css" />
+
+	<div class="mbbox">
+
+	   <input type="hidden" id="resubmitToken" value="" /> 
+	   <div class="login_box"> 
+	    <form id="loginForm"  action="__SELF__" method="post">
+        
+         <div class="loginForm">
+	       <input type="text" id="email" name="email" value="" tabindex="1" placeholder="请输入登录邮箱地址" /> 
+	       <input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"/> 
+         </div>
+         
+	     <span class="error" style="display:none;" id="beError"></span> 
+          <div class="clr"></div>
+	     <input type="submit" id="submitLogin" class="mybtn f20"  value="登录" /> 
+	     <input type="hidden" id="callback" name="callback" value="" /> 
+	     <input type="hidden" id="authType" name="authType" value="" /> 
+	     <input type="hidden" id="signature" name="signature" value="" /> 
+	     <input type="hidden" id="timestamp" name="timestamp" value="" /> 
+	    </form> 
+        
+         <div class="txtct pdt20">没有账号？<a class="sty colac"  href="{:U('User/register')}">立即注册</a></div>
+         
+	   </div> 
+	   <div class="login_box_btm"></div> 
+  </div> 
+
+	<!-- <script type="text/javascript" src="/Public/Home/js/jquery.validate.js" ></script>
+	<script type="text/javascript" src="/Public/Home/js/main.js" ></script> -->
+
+
+
+
+
+	<script type="text/javascript">
+
+    	$(document)
+	    	.ajaxStart(function(){
+	    		$("#submitLogin").addClass("log-in").attr("disabled", true);
+	    	})
+	    	.ajaxStop(function(){
+	    		$("#submitLogin").removeClass("log-in").attr("disabled", false);
+	    	});
+
+
+    	$("form").submit(function(){
+    		$("#beError").hide();
+    		var self = $(this);
+    		$.post(self.attr("action"), self.serialize(), success, "json");
+    		return false;
+
+    		function success(data){
+    			if(data.status){
+    				if(data.url==888){
+						alert("恭喜你，绑定成功！");
+						WeixinJSBridge.call('closeWindow');
+					}    					
+					else window.location.href = data.url;
+    				//window.location.href = data.url;
+    			} else {
+    				//self.find(".Validform_checktip").text(data.info);
+    				$("#beError").show();
+    				$("#beError").text(data.info);
+    				//刷新验证码
+    				//$(".reloadverify").click();
+    			}
+    		}
+    	});
+
+		$(function(){
+			var verifyimg = $(".verifyimg").attr("src");
+            $(".reloadverify").click(function(){
+                if( verifyimg.indexOf('?')>0){
+                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+                }else{
+                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+                }
+            });
+		});
+	</script>
+
+
+<include file="Public/footer" />

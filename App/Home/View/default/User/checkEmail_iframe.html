@@ -1,0 +1,127 @@
+<include file="Public/header_iframe" />
+
+<style>
+body{font-size:14px;}
+a{color:#AC6198; font-weight:bold;}
+a:hover{text-decoration: underline;}
+.login_logo{ text-align:center; padding-top:40px;}
+.yzbtn{ padding:30px 0px 30px 0px;}
+.yzbtn a{ background:#ffda44; color:#222; padding:8px 14px; font-size:15px;}
+.yzbtn a:hover{background:#FBE58C; color: #585858; text-decoration:none;}
+.zise{ color:#AC6198; font-weight:bold}
+
+
+.yzbox{width:640px;margin:0 auto;color:#5C5C46;font-size:14px;padding-top:80px}
+
+.fasong{margin-top:40px; background:#fff; padding:30px 10px; line-height:22px;}
+.fasong h2{ display:block; font-weight:normal; font-size:18px; padding-bottom:20px}
+
+  
+.denglu{margin-top:40px;  background:#fff; padding:30px; line-height:22px;}
+.loginurl{ background:#fff; padding:4px; margin:10px 0px; border:1px solid #f30;}
+.loginurl a{ color:#555;}
+
+.chenggong{ width:600px; height:350px; background:#666; margin:0 auto; text-align:center;}
+.chenggong h2{ display:block; text-align:center; padding:180px 0px 40px 0px; color:#fadc62; font-size:22px;}
+.chenggong a{ color:#333; font-size:18px; background:#fadc62; padding:10px 50px;}
+.chenggong a:hover{background:#F9CC1C; }
+#jm-qipao-register{position: absolute; top: 0}
+</style>
+
+<div class="mbbox">
+  
+    <if condition="$type neq 'success' ">
+      
+      <!-- 发送 -->  
+      <div class="fasong">
+         <h2> 哈啰~小鲜肉</h2>
+         <div class="gomail">我们给你的邮箱：<span  class="zise">{$email}</span> 
+         <br/>发送了验证邮件，请按照链接的提示，</div>
+         <div>在24小时内完成验证，谢谢。</div>
+         <div class="yzbtn">
+          <a href="{$email_link}" target="_blank">立即验证</a>
+          <a href="{:U('User/register_iframe')}">返回</a>
+         </div>
+         <div>
+            没有收到验证邮件？<a href="javascript:void(0)" id="resend" class="zise">重新发送</a>
+        </div>
+        <p>(有可能在邮箱垃圾目录哦~)</p>
+        <input type="hidden" value="{$userid}" name="userid" id="userid">
+      	<input type="hidden" value="0" id="resend_type">
+      </div>
+      
+   <else />   
+             
+       <!-- 验证成功 -->  
+       <div class="denglu">
+         欢迎加入Jobsminer<br />
+         你已经成功验证邮箱：<span class="zise">{$email}</span><br />
+         
+          <php>if($user_type==1){</php>
+          
+          		<!-- <div class="yzbtn"><a href="/Company/createPost.html">发布职位</a></div> -->
+          		<div class="yzbtn"><a href="/Company/companylist.html">查看已支持的网申网站</a></div>
+              <div class="yzbtn"><a href="/Plugin/plugin.html">查看网申助手功能详情</a></div>
+          <php>}else{</php>
+              <div class="yzbtn"><a href="/Company/companylist.html">查看已支持的网申网站</a></div>
+              <div class="yzbtn"><a href="/Plugin/plugin.html">查看网申助手功能详情</a></div>
+          		<!-- <div class="yzbtn"><a href="/Resume/myresume.html">完善简历</a></div> -->
+          
+          <php>}</php>
+          
+            <!-- <a href="/">先逛逛职位，待会在完善</a> -->
+       </div>  
+      
+   </if>
+      
+   <div id="tantan_tip" class="temail" style="display:none;">
+     <h5 style="padding-top:45px;">已发送 *\(^o^)/* </h5>
+     <h5>快去验证吧~</h5>
+   </div>
+
+</div> 
+
+
+<if condition="$type neq 'success' ">
+
+<script>
+
+$('#resend').click(function(event){
+
+  	var userid = $('#userid').val();
+  	
+	$.ajax({
+
+        type: "GET",
+        url: '/User/resendEmail/',
+        data: {userid:userid},
+        dataType: "json",
+        //async:false,
+
+        success: function(json){
+        	if(json.status==1){
+    			$('#tantan_tip').show();   				
+          setTimeout(function(){$('#tantan_tip').hide()},3000);
+    		}
+    		else {
+    			alert(json.info);
+    			
+    		}
+        },
+        error:function(){
+        	alert("服务器繁忙，请稍后再试");
+			return false;
+        }
+    });
+	
+	return true;
+
+})
+
+</script>
+
+
+</if>
+
+  
+<include file="Public/footer_iframe" />

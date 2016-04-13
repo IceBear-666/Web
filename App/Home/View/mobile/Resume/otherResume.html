@@ -1,0 +1,55 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/myresume.css"/>
+
+<div class="tilhed">
+   <a class="golevel" href="/User"></a>
+   <div class="mbtitle">我的简历</div>
+   <a class="gohome" href="/"></a>
+</div>
+
+<php>if(getUsersSession("type")<1){</php>  
+
+<table class="qhjianli" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="/Resume/myresume.html">在线</a></td>
+    <td><a class="cur" href="/Resume/otherResume.html">附件</a></td>
+  </tr>
+</table>
+
+<php>}</php>   
+
+<div  class="mbbox">
+
+    
+      <div class="fjlist">
+        <ul>
+        
+        <php>if(!$otherResume){</php>
+        	<li>
+            <div class="nocenter"><span><img src="/Public/Home/images/empty.png" />暂无附件简历</span></div>
+          </li>
+        
+        <php>}</php>
+        
+        <php>foreach($otherResume as $k=>$v){</php>
+        
+          <a href="/Resume/downResume/id/{$v.oid}">
+          <li>
+            <div class="fjinfo lf">
+              <i class="{$v.ext}"></i><span>{$v.name}<br /><font class="mytime">{$v.addtime|showDate=###,"Y-m-d H:i"}</font></span>
+            </div>
+             <div class="clr"></div> 
+          </li>
+          </a>
+          
+       <php>}</php>
+
+          
+          
+          
+        </ul>
+       
+      </div>
+         
+
+<include file="Public/footer" />

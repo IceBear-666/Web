@@ -1,0 +1,140 @@
+<include file="Public/header" />
+    <style type="text/css">
+       
+        h1.jm_plugin_title {
+            text-align: center;
+            font-size: 30px;
+            color: #222222;
+        }
+        h2.jm_plugin_subtitle {
+            font-size: 30px;
+            color: #222222;
+        }
+        p.jm_plugin_subintro {
+            font-size: 20px;
+            color: #4a4a4a;
+        }
+        /*.container-text {
+            width: 50%;  
+            height: 50%;  
+            overflow: auto;  
+            margin: auto;  
+            position: absolute;  
+            top: 0; left: 0; bottom: 0; right: 0;  
+        }
+        */    
+        dl.jm_plugin_install dt{
+            border-left: 2px solid #8f4c7e;
+            /*//padding-left: 15px;*/
+            color: #8f4c7e;
+            padding: 0 0 0 15px;
+            margin: 20px 0 ;
+        }
+        dl.jm_plugin_install dd {
+            padding: 0;
+            margin: 0;
+        }
+
+        .jm_install_l {
+            background-color: #f9f9f9;
+        }
+
+        .jm_install_l h3 {
+            font-size: 20px;
+            padding: 10px 0 10px 40px;
+            font-weight: 500;
+        }
+        .jm_install_l a{
+            display: block;
+            font-size: 15px;
+            padding: 14px 0px 14px 40px;
+            /*border-left: 4px solid #f9f9f9;*/
+        }
+
+        .jm_install_l a.cur,.jm_install_l a:hover{
+            /*border-left: 4px solid #ac6198;*/
+            background: #e8d9e4;
+        }
+        .jm_install_r {
+            line-height: 30px;
+        }
+        .jm_install_r h3 {
+            font-size: 20px;
+            padding: 10px 0 20px 0;
+        }
+        </style>
+
+<div class="w960 mt30">
+    <div class="lw240 jm_install_l">
+        <h3>安装教程</h3>
+        <a class="cur" href="#">Chrome游览器</a>
+        <a href="#">360游览器</a>
+    </div>
+
+    <div class="rw680">
+    
+        <!-- 浏览器列表开始-->
+         <div class="jm_install_r" style="margin:0;">
+           <h3>Chrome版网申助手安装方法</h3>
+            <p>亲爱的小伙伴, 由于伟大防火墙的原因, 导致Chrome网上应用店无法访问, 能翻墙的小伙伴, 可以直接去<a href="">Chrome网上应用店</a>安装.<br/>如果不能翻墙也不要紧, 只需三步即可轻松解决安装问题:</p>
+            <dl class="jm_plugin_install">
+                <dt>
+                    步骤一
+                </dt>
+                <dd>
+                    下载安装包：鼠标右键点击下方链接，选择“链接另存为”，将助手安装包保存到本地：
+                    <a href="http://shared.ydstatic.com/gouwuex/chrome/4.2.4/youdaogouwu-4.2.4.crx">http://shared.ydstatic.com/gouwuex/chrome/4.2.4/youdaogouwu-4.2.4.crx</a>
+                    
+                </dd>     
+            
+                <dt>
+                    步骤二
+                </dt>
+                <dd>
+                    打开扩展管理页面：点击浏览器右上角的设置图标—>选中“工具”或“更多工具”—>选中“扩展程序”：
+                </dd>     
+           
+                <dt>
+                    步骤三
+                </dt>
+                <dd>
+                    将刚才下载的惠惠购物助手安装包拖到扩展管理页面中完成安装。
+                </dd>     
+            </dl>
+         </div>
+         <!-- 职位列表结束-->
+
+
+    
+
+
+    </div>
+
+</div>
+<script language="JavaScript" type="text/javascript"> 
+    function ChangeDiv(divId,divName,zDivCount) 
+    { 
+    for(i=0;i<=zDivCount;i++) 
+    { 
+    document.getElementById(divName+i).style.display="none"; 
+    //将所有的层都隐藏 
+    } 
+    document.getElementById(divName+divId).style.display="block"; 
+    //显示当前层 
+    } 
+</script> 
+<!-- <div class="jm_plugin_foot">
+    <img src="">
+    <a href="" class="jm_plugin_download"></a>
+</div>
+-->
+<!-- 弹窗 --><!--
+<a class="inline mybtn1 ljsq rt"  href="#yseResume" title="简历投递">立即申请</a>
+<div id="yseResume" class="popup" style=" height:90px; text-align:center;">
+          <div class="jd_delivery">
+            <p class="f16">系统检测到你还没有登陆，如果已经登陆请刷新当前页面。</p>
+             <a href="/User/login/?ref=/Jobs/info/id/{$info.jid}" class="btn f16 report_cancel" id="goto_login">确定</a>
+          </div>
+        </div> -->
+
+<include file="Public/footer" />        

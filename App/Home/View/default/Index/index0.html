@@ -1,0 +1,77 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/index.css" />
+
+	<div class="num_box">
+		<div class="num" id="num_0">
+	    
+	      <!-- <div class="header">
+	        <div class="w1024">
+	          <div class="logo"><a href="#"><img src="/Public/Home/images/logo.gif" /></a></div>
+	          <div class="nav"><a class="current" href="#">首页</a><a href="#">求职</a><a href="#">公司</a><a href="#">宣讲会</a><a href="#">我的简历</a><a href="#">发布职位</a></div>
+	          <div class="login"><a class="rili" href="#"><img src="/Public/Home/images/Calendar.png" /></a>
+	          <if condition="is_login()">
+	          <a class="sty" href="{:U('User/profile')}">修改密码</a><a class="sty" href="{:U('User/logout')}">退出</a>
+	          <else/>
+	          <a class="sty" href="{:U('User/login')}">登录</a><a class="sty" href="{:U('User/register')}">注册</a>
+	          </if>
+	          </div>
+	          <div class="clr"></div>
+	        </div>
+	      </div> -->
+	     
+	      <div class="w1024"> 
+	        <div class="mysearch">
+	            <div id="search_box">
+	              <form id="searchForm" target="_blank" name="searchForm" action="http://www.lagou.com/jobs/list_" method="get" >
+	              <ul id="searchType">
+	                   <li data-searchtype="1" class="type_selected">职位</li>
+	                   <li data-searchtype="2">公司</li>
+	                   <li data-searchtype="3">宣讲会</li>
+	                </ul>
+	              <div class="searchtype_arrow"></div>
+	              <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
+	              <input type="hidden" name="spc" id="spcInput" value=""/>
+	              <input type="hidden" name="pl" id="plInput" value=""/>
+	              <input type="hidden" name="gj" id="gjInput" value=""/>
+	              <input type="hidden" name="xl" id="xlInput" value=""/>
+	              <input type="hidden" name="yx" id="yxInput" value=""/>
+	              <input type="hidden" name="gx" id="gxInput" value="" />
+	              <input type="hidden" name="st" id="stInput" value="" />
+	              <input type="hidden" name="labelWords" id="labelWords" value="" />
+	              <input type="hidden" name="lc" id="lc" value="" />
+	              <input type="hidden" name="workAddress" id="workAddress" value=""/>
+	                      <input type="hidden" name="city" id="cityInput" value=""/>
+	                      <input type="hidden" name="requestId" id="requestId" value=""/>
+	              <input type="submit" id="search_button" value="搜索" />
+	             </form>
+	              <input type="hidden" id="search_py" value=""/>
+	              <input type="hidden" id="isIndex" value="true"/>
+	          </div>
+	      
+	           <dl class="hotSearch"></dl>
+	          <script type="text/javascript" src="/Public/Home/js/search.min.js"></script>	
+	        </div>
+	      </div>
+	      
+	    </div>
+	    
+		<div class="num" id="num_1">
+	     <div class="header1">
+	        <div class="w1024">
+	          <div class="logo"><a href="#"><img src="/Public/Home/images/logo1.gif" /></a></div>
+	          <div class="nav"><a class="current" href="#">首页</a><a href="#">求职</a><a href="#">公司</a><a href="#">宣讲会</a><a href="#">我的简历</a><a href="#">发布职位</a></div>
+	           <div class="login"><a class="sty" href="{:U('User/login')}">登录</a><a class="sty" href="{:U('User/register')}">注册</a></div>
+	           <div class="clr"></div>
+	        </div>
+	      </div>
+	    </div>
+	
+	</div>
+	<input type="hidden" value="0" class="ddw"/>
+	<input type="hidden" value="0" class="ddw2"/>
+	<script type="text/javascript" src="/Public/Home/js/scroll.js" ></script> 
+	<script type="text/javascript" src="/Public/Home/js/jquery.mousewheel.js" ></script>
+	
+
+<include file="Public/footer" />

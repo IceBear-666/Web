@@ -1,0 +1,124 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>{:isset($info['nid'])?'编辑':'新增'}文章</h2>
+    </div>
+    <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        
+        <div class="form-item">
+            <label class="item-label">标题<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+            </div>
+        </div>
+                
+        <div class="form-item">
+            <label class="item-label">状态<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" name="status" value="1">启用</label>
+                <label class="radio"><input type="radio" name="status" value="0">禁用</label>
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">文章类型<span class="check-tips"> </span></label>
+            <div class="controls">
+                <select name="type" id="type">
+                	<php>foreach($type_arr as $kk=>$vv){</php>
+                	<option value="{$kk}" <php>if($info['type']==$kk)echo 'selected';</php> >{$vv}</option>
+                	<php>}</php>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">所属公司<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="company" value="{$info.company}">
+            </div>
+        </div>
+        
+        <div class="form-item">
+        	<label class="item-label">上传附件<span class="check-tips"> </span></label>
+            <div class="controls">
+				<input type="file" id="upload_file_attach">
+				<input type="hidden" name="attach_name" value="{$info.attach_name}"/>
+				<input type="hidden" name="attach_url" value="{$info.attach_url}"/>
+				<input type="hidden" name="attach_id" value="{$info.attach_id}"/>
+				<div class="upload-img-box">
+					<present name="info['attach_name']">
+						<div class="upload-pre-file"><span class="upload_icon_all"></span>{$info.attach_name}</div>
+					</present>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		//上传图片
+	    /* 初始化上传插件 */
+		$("#upload_file_attach").uploadify({
+	        "height"          : 30,
+	        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+	        "fileObjName"     : "download",
+	        "buttonText"      : "上传附件",
+	        "uploader"        : "{:U('File/upload',array('session_id'=>session_id()))}",
+	        "width"           : 120,
+	        'removeTimeout'	  : 1,
+	        "onUploadSuccess" : uploadFileattach,
+	        'onFallback' : function() {
+	            alert('未检测到兼容版本的Flash.');
+	        }
+	    });
+		function uploadFileattach(file, data){
+			var data = $.parseJSON(data);
+	        if(data.status){
+	        	var name = "attach";
+	        	$("input[name="+name+"_name]").val(data.name);
+	        	$("input[name="+name+"_url]").val(data.url);
+	        	$("input[name="+name+"_id]").val(data.id);
+	        	$("input[name="+name+"_name]").parent().find('.upload-img-box').html(
+	        		"<div class=\"upload-pre-file\"><span class=\"upload_icon_all\"></span>" + data.info + "</div>"
+	        	);
+	        } else {
+	        	updateAlert(data.info);
+	        	setTimeout(function(){
+	                $('#top-alert').find('button').click();
+	                $(that).removeClass('disabled').prop('disabled',false);
+	            },1500);
+	        }
+	    }
+		</script>
+        
+        <div class="form-item">
+            <label class="item-label">内容<span class="check-tips"></span></label>
+            <div class="controls">
+                
+				<label class="textarea">
+                <textarea name="content">{$info.content}</textarea>
+                {:hook('adminArticleEdit', array('name'=>'content','value'=>$info['content']))}
+                </label>
+
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <input type="hidden" name="nid" value="{$info.nid|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">  
+    
+	    $('#submit').click(function(){
+	    	$('#form').submit();
+	    });
+    
+        Think.setValue("status", {$info.status|default = 0});
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+    </script>
+</block>

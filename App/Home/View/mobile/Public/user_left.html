@@ -1,0 +1,9 @@
+<div class="lw240 usnav">
+    <a href="/User/index.html" class="iunav1 {$left_menu.index}">账号绑定</a>
+    <a href="/User/index.html?type=pwd" class="iunav2 {$left_menu.pwd}">修改密码</a> 
+    
+    <php>if(getUsersSession('type')==1){</php>
+    <a href="/User/template.html" class="iunav3 {$left_menu.template}">修改通知面板</a>
+    <a href="/User/index.html?type=email" class="iunav4 {$left_menu.email}">修改接收简历</a>
+    <php>}</php>
+</div>

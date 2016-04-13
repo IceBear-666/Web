@@ -1,0 +1,203 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/list.css" />
+
+
+<!-- ======== 职位收藏开始 ========== -->
+<div class="w960 mt30">
+    <div class="lw240 scang">
+        <a href="#" class="cur">我收藏的职位</a>
+        <a href="#">我收藏的公司</a>
+        <a href="#">我收藏的宣讲会</a>
+    </div>
+    
+    <div class="rw680">
+    
+    <!-- 职位列表开始-->
+     <div class="listjob" style="margin:0;">
+       <ul>
+          <li class="bgf9">
+           <a href="#"><img src="http://www.lagou.com/image1/M00/25/D4/Cgo8PFVS2SeAWgf8AACUSzhxomw100.png" /></a>
+           <div class="info">
+             <a href="#" class="til">游戏策划</a><font class="f16">[北京]</font><br />
+             月薪：4-5 k&nbsp;&nbsp;&nbsp;经验：应届毕业生&nbsp;&nbsp;&nbsp;学历要求：本科<br />
+             职位诱惑：全新领域，扁平管理，期权激励
+             <span><a class="til" href="#">腾讯</a> - 移动互联网、游戏</span>
+           </div>
+            <a href="#" class="mybtn shenq">取消收藏</a>
+          </li>
+          
+          <li class="">
+            <a href="#"><img src="http://www.lagou.com/image1/M00/25/D4/Cgo8PFVS2SeAWgf8AACUSzhxomw100.png" /></a>
+           <div class="info">
+             <a href="#" class="til">游戏策划</a><font class="f16">[北京]</font><br />
+             月薪：4-5 k&nbsp;&nbsp;&nbsp;经验：应届毕业生&nbsp;&nbsp;&nbsp;学历要求：本科<br />
+             职位诱惑：全新领域，扁平管理，期权激励
+             <span><a class="til" href="#">腾讯</a> - 移动互联网、游戏</span>
+           </div>
+            <a href="#" class="mybtn shenq">取消收藏</a>
+          </li>
+          
+          <li class="bgf9">
+           <a href="#"><img src="http://www.lagou.com/image1/M00/25/D4/Cgo8PFVS2SeAWgf8AACUSzhxomw100.png" /></a>
+           <div class="info">
+             <a href="#" class="til">游戏策划</a><font class="f16">[北京]</font><br />
+             月薪：4-5 k&nbsp;&nbsp;&nbsp;经验：应届毕业生&nbsp;&nbsp;&nbsp;学历要求：本科<br />
+             职位诱惑：全新领域，扁平管理，期权激励
+             <span><a class="til" href="#">腾讯</a> - 移动互联网、游戏</span>
+           </div>
+            <a href="#" class="mybtn shenq">取消收藏</a>
+          </li>
+          
+          <li class="">
+           <a href="#"><img src="http://www.lagou.com/image1/M00/25/D4/Cgo8PFVS2SeAWgf8AACUSzhxomw100.png" /></a>
+           <div class="info">
+             <a href="#" class="til">游戏策划</a><font class="f16">[北京]</font><br />
+             月薪：4-5 k&nbsp;&nbsp;&nbsp;经验：应届毕业生&nbsp;&nbsp;&nbsp;学历要求：本科<br />
+             职位诱惑：全新领域，扁平管理，期权激励
+             <span><a class="til" href="#">腾讯</a> - 移动互联网、游戏</span>
+           </div>
+            <a href="#" class="mybtn shenq">取消收藏</a>
+          </li>
+
+          
+       </ul>
+     </div>
+     <!-- 职位列表结束-->
+    
+    </div>
+    
+</div>
+
+
+
+<!-- ======== 企业收藏开始 ========== -->
+<div class="clr"></div>
+<div class="w960 mt30">
+    <div class="lw240 scang">
+        <a href="#">我收藏的职位</a>
+        <a href="#" class="cur">我收藏的公司</a>
+        <a href="#">我收藏的宣讲会</a>
+    </div>
+    
+    <div class="rw680">
+    
+     <!-- 公司列表开始-->
+     <div class="listbox" style="margin:0">
+       <ul>
+
+		<php>if(!$list) echo '<li>没有找到符合要求的记录</li>';</php>
+
+       	<volist name="list" id="v"  key="k">
+
+          <li <if condition="$k%4== '0'"> class="clr"</if >>
+               <h5>
+                  <a class="comtl lf" href="/Company/info/id/{$v.uid}" target="_blank">{$v.company_short_name}</a>
+                  <a class="rt" href="/Company/info/id/{$v.uid}" target="_blank">[{$v.company_city}]</a>
+                  <div class="clr"></div>
+               </h5>
+               <a  href="/Company/info/id/{$v.uid}" target="_blank" class="comlogo">
+                  <if condition="$v.logo neq ''">
+                      <img src="{$v.logo}" alt="{$v.company_short_name}" height="190" width="190">
+                  <else />
+                      <img src="/Public/Home/images/logo_default.png" alt="{$v.company_short_name}" height="190" width="190">
+                  </if>
+                  <em></em>
+                  <h4>{$v.hangye}</h4>
+               </a>
+               <div class="zhiwei">
+                 <volist name="v.jobs_arr" id="vv">
+                  <a href="/Jobs/info/id/{$vv.jid}/source/company_list" target="_bank">{$vv.zhiwei_mingcheng}</a>
+                 </volist>
+               </div>
+          </li>
+
+          </volist>
+
+
+       </ul>
+     </div>
+     <!-- 公司列表结束-->
+    
+    </div>
+    
+</div>
+
+
+
+
+
+<!-- ======== 宣讲会收藏开始 ========== -->
+<div class="clr"></div>
+<div class="w960 mt30">
+    <div class="lw240 scang">
+        <a href="#">我收藏的职位</a>
+        <a href="#">我收藏的公司</a>
+        <a href="#"  class="cur">我收藏的宣讲会</a>
+    </div>
+    
+    <div class="rw680">
+    
+     <!-- 公司列表开始-->
+     <div class="xjlist bgf9">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr class="mtil">
+              <td width="160">日期</td>
+              <td width="70">时间</td>
+              <td>地点</td>
+              <td width="22">&nbsp;</td>
+           </tr>
+            
+           <tr>
+              <td><a href="#">2015-06-06(周四)</a></td>
+              <td>13:00</td>
+              <td>
+                上海，上海交通大学，<br />
+                新太阳活动中心（备注：航天科工二院）
+              </td>
+              <td><a class="mystar" href="#" title="取消收藏"></a></td>
+           </tr>
+           
+           <tr class="bgfff">
+              <td><a href="#">2015-06-06(周四)</a></td>
+              <td>13:00</td>
+              <td>
+                上海，上海交通大学，<br />
+                新太阳活动中心（备注：航天科工二院）
+              </td>
+              <td><a class="mystar" href="#" title="取消收藏"></a></td>
+           </tr>
+           
+           
+           <tr>
+              <td><a href="#">2015-06-06(周四)</a></td>
+              <td>13:00</td>
+              <td>
+                上海，上海交通大学，<br />
+                新太阳活动中心（备注：航天科工二院）
+              </td>
+              <td><a class="mystar" href="#" title="取消收藏"></a></td>
+           </tr>
+           
+           <tr class="bgfff">
+              <td><a href="#">2015-06-06(周四)</a></td>
+              <td>13:00</td>
+              <td>
+                上海，上海交通大学，<br />
+                新太阳活动中心（备注：航天科工二院）
+              </td>
+              <td><a class="mystar" href="#" title="取消收藏"></a></td>
+           </tr>
+           
+          
+       </table>
+
+     </div>
+     <!-- 公司列表结束-->
+    
+    </div>
+    
+</div>
+
+
+<include file="Public/footer" />

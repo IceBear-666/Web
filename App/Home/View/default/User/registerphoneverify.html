@@ -1,0 +1,199 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/reg.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/external.min.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+<style>
+#xieyi{ width:600px; height:400px; line-height:28px; padding-bottom:20x; overflow-y:scroll}
+.loginForm input#verity {
+  width: 218px;
+  font-size: 14px;
+  color: #777;
+  height: 30px;
+  line-height: 30px;
+  border: 2px solid #eee;
+    vertical-align: top;}
+
+
+/*.registerForm{
+   width:460px;
+  height:554px;
+}*/
+
+ #submitReg {
+        width: 100%;
+        padding: 12px 0;
+        margin: 10px 0 20px 0;
+    }
+.header{
+    display: none
+}
+.phoneverify {
+	float: right;
+	width: 119px;
+    height: 46px;
+   /* border-radius: 2px;*/
+    background-color: #6f3400;
+    border: none;
+    color: #fff;
+}	
+ </style>
+
+
+
+<div class="login_wrapper">
+  
+  <input type="hidden" id="resubmitToken" value=""/>
+  <div class="login_box">
+    <form id="registerForm" class="loginForm" action="{:U('User/registerphone')}" method="post" name="forms">
+      <!-- <ul class="register_radio clearfix">
+        <li id="regjob"> 找工作
+          <input type="radio" value="0" name="type"/>
+        </li>
+        <li id="regcom"> 招人
+          <input type="radio" value="1" name="type"/>
+        </li>
+      </ul> -->
+       <div class="login_logo"> <a href="/"><img src="/Public/Home/images/xunlu_logo.png" /></a></div>
+     
+	
+      <input type="text" id="phone"  nullmsg="请填写手机号" datatype="e" name="phone" tabindex="1" placeholder="手机号"/>
+
+ 
+		<form id="form">
+        <div class="controls">
+        <input type="text" name="verify" id="verity" value="" placeholder="验证码"/>
+        <button class="phoneverify">发送验证码</button>
+            <!-- <img  class="verifyimg reloadverify" alt="点击切换" src="{:U('verify')}" style="cursor:pointer;"> -->
+        </div> 
+		</form>
+      
+
+        <div class="controls Validform_checktip text-warning"></div>
+
+      <span class="error" style="display:none;" id="beError"></span>
+       <div class="clr"></div>
+     
+     <input type="submit" id="submitReg" class="mybtn" value="确认注册"/>
+
+      <input type="hidden" id="callback" name="callback" value=""/>
+      <input type="hidden" id="authType" name="authType" value=""/>
+      <input type="hidden" id="signature" name="signature" value=""/>
+      <input type="hidden" id="timestamp" name="timestamp" value=""/>
+    </form>
+
+   <!--  <div class="login_right">
+      <div class="login_others" style="padding-top:0px;">还没有帐号？</div>
+     <a href="login.html" class="registor_now mybtn">直接登录</a>
+     <div class="login_others">或者</div>
+     <div class="iconlogin">
+       <a href="/Public/otherLogin/type/sina"  class="icon_wb" title="使用新浪微博帐号登录"></a>
+       <a href="/Public/otherLogin/type/qq" class="icon_qq"  title="使用腾讯QQ帐号登录"></a>
+       <a href="/Public/otherLogin/type/wx" class="icon_weixin"  title="使用微信帐号登录"></a>
+     </div> -->
+    </div>
+  </div>
+  <div class="login_box_btm"></div>
+</div>
+
+ <div style="display:none;">
+     <div id="xieyi" class="popup">
+        {$webRule}
+        <br />
+
+      </div>
+</div>
+
+<!-- <script type="text/javascript" src="/Public/Home/js/jquery.validate.js" ></script>
+<script type="text/javascript" src="/Public/Home/js/main.js" ></script>  -->
+
+<script type="text/javascript" src="/Public/Home/js/popup.js"></script>
+
+<!--手机验证码-->
+
+<script type="text/javascript">
+      $(function(){
+      $("#submit").click(function(){
+              var tourl = $("#form").attr("action");
+            $.post("__URL__/registerphoneverify",{to:$("#to").val()},function(data,textStatus){
+              alert(data);
+        });
+      })
+      })
+ </script>
+
+<!-- 眼镜显示隐藏密码 -->
+
+<script language="JavaScript">
+    function showps(){
+      if (this.forms.password.type="password") {
+        document.getElementById("editipt").innerHTML="<input type=\"text\" name=\"password\" oncut=\"return false\" onpaste=\"return false\"  id=\"password\" placeholder=\"请输入密码\" errormsg=\"密码为6-20位\" nullmsg=\"请填写密码\" datatype=\"*6-20\" tabindex=\"2\" value="+this.forms.password.value+">";
+        document.getElementById("editpw").innerHTML="<a class=\"icon-user onpw\" href=\"javascript:hideps()\"></a>"
+      }
+    }
+    function hideps(){
+      if (this.forms.password.type="text") {
+        document.getElementById("editipt").innerHTML="<input type=\"password\" name=\"password\" id=\"password\"  oncut=\"return false\" onpaste=\"return false\" placeholder=\"请输入密码\" errormsg=\"密码为6-20位\" nullmsg=\"请填写密码\" datatype=\"*6-20\" tabindex=\"2\" value="+this.forms.password.value+">";
+        document.getElementById("editpw").innerHTML="<a class=\"icon-user offpw\" href=\"javascript:showps()\"></a>"
+      }
+    }
+</script>
+
+
+<script type="text/javascript">
+
+  // $("#regjob").click(function(){
+  //   $("#email").attr('placeholder','请输入常用邮箱地址');
+  // })
+  // $("#regcom").click(function(){
+  //   $("#email").attr('placeholder','请输入公司邮箱');
+  // })
+
+  $(document).ready(function() {
+    $(".register_radio li input").click(function() {
+      $(this).parent("li").addClass("current").append("<em></em>").siblings().removeClass("current").find("em").remove()
+    })
+
+  })
+
+    $(document)
+      .ajaxStart(function(){
+        $("#submitReg").addClass("log-in").attr("disabled", true);
+      })
+      .ajaxStop(function(){
+        $("#submitReg").removeClass("log-in").attr("disabled", false);
+      });
+
+
+    $("form").submit(function(){
+      $("#beError").hide();
+      var self = $(this);
+      $.post(self.attr("action"), self.serialize(), success, "json");
+      return false;
+
+      function success(data){
+        if(data.status){
+          window.location.href = data.url; //"/Home/User/";//
+        } else {
+          //self.find(".Validform_checktip").text(data.info);
+          $("#beError").show();
+          $("#beError").text(data.info);
+          //刷新验证码
+          //$(".reloadverify").click();
+        }
+      }
+    });
+
+  $(function(){
+    var verifyimg = $(".verifyimg").attr("src");
+           $(".reloadverify").click(function(){
+               if( verifyimg.indexOf('?')>0){
+                   $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+               }else{
+                   $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+               }
+           });
+  });
+</script>
+
+

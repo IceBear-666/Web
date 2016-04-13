@@ -1,0 +1,124 @@
+<include file="Public/header" />
+
+<div class="tilhed">
+   <div class="mbtitle">完善基本信息</div>
+</div>
+
+<div class="mbbox mt10">
+
+	   <div class="ziliao_box"> 
+       
+	    <form  action="__SELF__" method="post">
+        
+           <div class="ziliaofm">
+               <input type="text"  name="mr_name" value=""  placeholder="姓名" /> 
+               <input type="text"  name="xingbie" value="" placeholder="性别" />
+               
+               <div style="position:relative;">  
+                   <div id="sl_zgxl">
+                    <input type="button" class="slhyly" id="select_gs" value="<php>if($zgxl)echo $zgxl;else echo '最高学历';</php>">
+                    </div>
+                    <div id="box_sca2" class="selectBox2 dn">
+                      <ul class="reset">
+                            <li>大专</li>
+                            <li>本科</li>
+                            <li>硕士</li>
+                            <li>博士</li>
+                            <li>其他</li>
+                      </ul>
+                    </div>
+                </div>
+                          
+               <input type="text"  name="byxy" value=""  placeholder="毕业学校" />
+               <input type="text"  name="zhuanye" value=""  placeholder="所学专业" />
+               <input type="text"  name="szcs" value=""  placeholder="所在城市" />
+               <input type="text"  name="mr_email" value=""  placeholder="联系电话" />
+               <input type="text"  name="mr_mobile" value=""  placeholder="邮箱" class="nobtm" />
+           </div>
+         
+	      <span class="error" style="display:none;" id="beError"></span> 
+          <div class="clr"></div>
+	     <input type="submit" id="submitzl" class="mybtn f20 adbtn"  value="完成" /> 
+	    </form> 
+      
+        
+    
+    
+    
+	   </div> 
+       
+     
+    
+  </div> 
+
+
+
+<script>
+	$(document).click(function(){
+		$('#select_bg').removeClass('selectrFocus');
+		$('#box_sca2').hide();
+		$('#sl_zgxl').removeClass('selectrFocus');
+	});
+	
+   /* 选性质*/
+	$('#sl_zgxl').bind('click',function(e){
+		$('#select_bg').removeClass('selectrFocus');
+		e.stopPropagation();
+		$(this).addClass('selectrFocus');
+		$('#box_sca2').show();
+		$('#stageform .selectBoxShort').hide();
+	});
+	$('#box_sca2').on('click','ul li',function(e){
+		e.stopPropagation();
+		var sca = $(this).text();
+		var sca2 = $(this).attr('xzid');
+		$('#select_gs').val(sca);
+		$('#gongsi_xingzhi').val(sca2);
+		$('#sl_zgxl').removeClass('selectrFocus');
+		$('#box_sca2').hide();
+	});
+</script>
+
+
+	<script type="text/javascript">
+
+    	$(document)
+	    	.ajaxStart(function(){
+	    		$("#submitzl").addClass("log-in").attr("disabled", true);
+	    	})
+	    	.ajaxStop(function(){
+	    		$("#submitzl").removeClass("log-in").attr("disabled", false);
+	    	});
+
+
+    	$("form").submit(function(){
+    		$("#beError").hide();
+    		var self = $(this);
+    		$.post(self.attr("action"), self.serialize(), success, "json");
+    		return false;
+
+    		function success(data){
+    			if(data.status){
+    				window.location.href = data.url;
+    			} else {
+    				//self.find(".Validform_checktip").text(data.info);
+    				$("#beError").show();
+    				$("#beError").text(data.info);
+    				//刷新验证码
+    				//$(".reloadverify").click();
+    			}
+    		}
+    	});
+
+		$(function(){
+			var verifyimg = $(".verifyimg").attr("src");
+            $(".reloadverify").click(function(){
+                if( verifyimg.indexOf('?')>0){
+                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+                }else{
+                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+                }
+            });
+		});
+	</script>
+

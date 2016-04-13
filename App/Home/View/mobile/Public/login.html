@@ -1,0 +1,152 @@
+<include file="Public/header" />
+
+<body id="login_bg">
+
+<script src="__PUBLIC__/Js/jquery.1.10.1.min.js?v={$rand}" type="text/javascript"></script>
+
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.lib.min.js?v={$rand}"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/core.min.js?v={$rand}"></script>
+
+<div class="login_wrapper" style="padding-top: 10px;">
+  <div class="login_header"> <a href="{$Think.WEB_URL}"><img src="__PUBLIC__/Images/logo_white.png" alt="" height="62" width="285"></a>
+    <div id="cloud_s"><img src="__PUBLIC__/Images/cloud_s.png" alt="cloud" height="52" width="81"></div>
+    <div id="cloud_m"><img src="__PUBLIC__/Images/cloud_m.png" alt="cloud" height="95" width="136"></div>
+  </div>
+  <input id="resubmitToken" value="" type="hidden">
+  <div class="login_box">
+    <form id="loginForm">
+      <input id="email" name="email" tabindex="1" placeholder="请输入登录邮箱地址" type="text">
+      <input id="password" name="password" tabindex="2" placeholder="请输入密码" type="password">
+      <span class="error" style="display:none;" id="beError"></span>
+      <label class="fl" for="remember">
+        <input id="remember" value="" checked="checked" name="autoLogin" type="checkbox">
+        记住我</label>
+      <a href="{$Think.WEB_URL}reset.html" class="fr" target="_blank">忘记密码？</a>
+      <input id="submitLogin" value="登 &nbsp; &nbsp; 录" type="submit">
+      <input id="callback" name="callback" value="" type="hidden">
+      <input id="authType" name="authType" value="" type="hidden">
+      <input id="signature" name="signature" value="" type="hidden">
+      <input id="timestamp" name="timestamp" value="" type="hidden">
+    </form>
+    <div class="login_right">
+      <div>还没有本站帐号？</div>
+      <a href="{$Think.WEB_URL}Public/reg" class="registor_now">立即注册</a>
+      <div class="login_others">使用以下帐号直接登录:</div>
+      <a href="{$Think.WEB_URL}Public/otherLogin/type/sina" target="_blank" class="icon_wb" title="使用新浪微博帐号登录"></a> <a href="{$Think.WEB_URL}Public/otherLogin/type/qq" class="icon_qq" target="_blank" title="使用腾讯QQ帐号登录"></a> </div>
+  </div>
+  <div class="login_box_btm"></div>
+</div>
+<script type="text/javascript">
+$(function(){
+	
+	$('#email,#password').focus(function(){
+   		$('#beError').text('').hide();
+   	}); 
+	/**add nancy**/
+	function immediately(){
+		var element = document.getElementById("password");
+		if("\v"=="v") {
+			element.onpropertychange = webChange;
+		}else{
+			element.addEventListener("input",webChange,false);//此时的input为添加的oninput事件
+		}
+		function webChange(){
+			$('#beError').text('').hide();
+		}
+	}
+	immediately();
+	/**end nancy**/
+	//验证表单
+	 	$("#loginForm").validate({
+	 		/* onkeyup: false,
+	 		focusCleanup:true,  */
+	        rules: {
+	    	   	email: {
+	    	    	required: true,
+	    	    	email: true,
+	    	    	maxlength:100
+	    	   	},
+	    	   	password: {
+	    	    	required: true,
+	    	    	rangelength: [6,16]
+	    	   	}
+	    	},
+	    	messages: {
+	    	   	email: {
+	    	    	required: "请输入登录邮箱地址",
+	    	    	email: "请输入有效的邮箱地址，如：vivi@lagou.com",
+	    	    	maxlength:"请输入100字以内的邮箱地址"
+	    	   	},
+	    	   	password: {
+	    	    	required: "请输入密码",
+	    	    	rangelength: "请输入6-16位密码，字母区分大小写"
+	    	   	}
+	    	},
+	    	submitHandler:function(form){
+	    		if($('#remember').prop("checked")){
+	      			$('#remember').val(1);
+	      		}else{
+	      			$('#remember').val(null);
+	      		}
+	    		var email = $('#email').val();
+	    		var password = $('#password').val();
+	    		var remember = $('#remember').val();
+	    		
+	    		var callback = $('#callback').val();
+	    		var authType = $('#authType').val();
+	    		var signature = $('#signature').val();
+	    		var timestamp = $('#timestamp').val();
+	    		
+	    		$(form).find(":submit").attr("disabled", true);
+	            $.ajax({
+	            	type:'POST',
+	            	data:{email:email,password:password,autoLogin:remember, callback:callback, authType:authType, signature:signature, timestamp:timestamp},
+	            	url:ctx+'/Public/checkLogin',
+	            	dataType: 'json'
+	            }).done(function(result) {
+					if(result.status){
+					 	if(result.url){
+							window.location.href=result.url;
+	            		}else{
+	            			window.location.href=ctx+'/';
+	            		} 
+					}else{
+						$('#beError').text(result.info).show();
+					}
+					$(form).find(":submit").attr("disabled", false);
+	            }); 
+	        }  
+		});
+})
+</script>
+<div style="display: none;" id="cboxOverlay"></div>
+<div style="display: none;" tabindex="-1" role="dialog" class="" id="colorbox">
+  <div id="cboxWrapper">
+    <div>
+      <div style="float: left;" id="cboxTopLeft"></div>
+      <div style="float: left;" id="cboxTopCenter"></div>
+      <div style="float: left;" id="cboxTopRight"></div>
+    </div>
+    <div style="clear: left;">
+      <div style="float: left;" id="cboxMiddleLeft"></div>
+      <div style="float: left;" id="cboxContent">
+        <div style="float: left;" id="cboxTitle"></div>
+        <div style="float: left;" id="cboxCurrent"></div>
+        <button id="cboxPrevious" type="button"></button>
+        <button id="cboxNext" type="button"></button>
+        <button id="cboxSlideshow"></button>
+        <div style="float: left;" id="cboxLoadingOverlay"></div>
+        <div style="float: left;" id="cboxLoadingGraphic"></div>
+      </div>
+      <div style="float: left;" id="cboxMiddleRight"></div>
+    </div>
+    <div style="clear: left;">
+      <div style="float: left;" id="cboxBottomLeft"></div>
+      <div style="float: left;" id="cboxBottomCenter"></div>
+      <div style="float: left;" id="cboxBottomRight"></div>
+    </div>
+  </div>
+  <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+</div>
+</body>
+</html>

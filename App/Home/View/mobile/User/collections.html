@@ -1,0 +1,166 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/mcss/list.css" />
+
+<div class="tilhed">
+   <a class="golevel" href="/User"></a>
+   <div class="mbtitle">我的收藏</div>
+   <a class="gohome" href="/"></a>
+</div>
+
+<table class="sctab" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33.3%"><a href="/User/collections" {$lmenu[1]}>职位</a></td>
+    <td width="33.3%"><a href="/User/collections/type/2" {$lmenu[2]}>公司</a></td>
+    <td><a href="/User/collections/type/3" {$lmenu[3]}>宣讲会</a></td>
+  </tr>
+</table>
+
+
+<!-- ======== 职位收藏开始 ========== -->
+<div class="mbbox2">
+
+
+    <div>
+
+	<php>if($type==2){</php>
+    
+    <!-- 公司列表开始-->
+     <div class="listjob">
+       <ul>
+       
+       <volist name="list"  id="v" >
+       
+        <li>
+         <a href="/Company/info/id/{$v.uid}">
+         
+            <if condition="$v.logo neq ''">
+                <img src="{$v.logo}" alt="{$v.company_short_name}">
+            <else />
+                <img src="/Public/Home/images/logo_default.png">
+            </if>
+           
+           <div class="info mconinfo">
+               <div>
+                 <h5>{$v.company_short_name}</h5> <i <php>if($company['isv']==2)echo 'class="cur"';</php> ></i>
+               </div>
+               <div class="mcomhy clr">{$v.hangye}</div>
+               <span>{$v.company_city}</span>
+           </div>
+           
+            <div class="numzhiwei">{$v.com_id|getCompanyJobsNum=###}个在招职位</div>
+            
+           <div class="clr"></div> 
+         </a>
+          <a href="javascript:void(0);" onclick="user_collection({$v.toid},0,2,1)" class="mbqxsc"></a>
+        </li>
+          
+       </volist>   
+       
+        <php>if(!$list)echo '<div class="mbbox mt10"><div class="nocenter"><span><img src="/Public/Home/images/empty.png" />暂时还没有收藏的公司，快去收藏吧！</span></div></div>';</php>
+          
+
+       </ul>
+     </div>
+
+<!-- 公司列表结束-->
+
+
+
+	<php>}elseif($type==3){</php>
+
+  <!-- 宣讲会列表开始-->
+      <php>if($list){</php>
+      
+           
+           <table class="mymianshi" width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                <volist name="list" id="v">
+
+                  <tr>
+                    <td class="onebg">{$v.date_ymd}&nbsp;&nbsp;&nbsp;(周<php>echo getWeekName($v['date_ymd']);</php>)&nbsp;&nbsp;&nbsp;{$v.date_time}<!-- 5月 4日 （周六） 08.30 --></td>
+                  </tr>
+                  <tr>
+                    <td height="8"></td>
+                  </tr>
+                  <tr>
+                    <td style="position:relative;"><span class="colac f16">{$v.company_short_name}</span><a style=" top:4px;" href="javascript:void(0);" onclick="user_collection({$v.toid},0,3,1)" class="mbqxsc"></a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                     {$v.cid|getPlaceById=###}，{$v.sid|getSchoolById=###}，<br />
+	                 {$v.address}
+                   </td>
+                  </tr>
+                  <tr>
+                    <td height="8"></td>
+                  </tr>
+                  
+                </volist>    
+                  
+           </table>
+
+         
+          <php>}else{</php>
+                   <php>if(!$list)echo '<div class="mbbox mt20"><div class="nocenter"><span><img src="/Public/Home/images/empty.png" />暂时还没有收藏的宣讲会，快去收藏吧！</span></div></div>';</php>
+          <php>}</php>
+               
+	     <!-- 列表结束-->
+
+	<php>}else{</php>
+
+
+         
+         
+<!-- 职位列表开始-->
+     <div class="listjob">
+       <ul>
+       
+       <volist name="list"  id="v" >
+       
+        <li>
+         <a href="/Jobs/info/id/{$v.jid}">
+         
+           <img src="{$v.logo}" />
+           
+           <div class="info">
+               <div>
+                 <h5>{$v.company_short_name}</h5> <i <php>if($company['isv']==2)echo 'class="cur"';</php> ></i>
+               </div>
+               <div class="clr">{$v.zhiwei_mingcheng}</div>
+               <span class="lf">{$v.gongzuo_chengshi}</span>
+                <div class="mgzjy2 lf">{$v.gongzuo_jingyan}</div>
+           </div>
+           
+           <div class="shenq">
+              <div class="colac" style="padding-top:44px;">{$v.yuexin_min}-{$v.yuexin_max}k</div>
+            </div>
+            
+           <div class="clr"></div> 
+         </a>
+         
+         <a href="javascript:void(0);" onclick="user_collection({$v.toid},0,1,1)" class="mbqxsc"></a>
+         
+        </li>
+          
+       </volist>   
+       
+        <php>if(!$list)echo '<div class="mbbox mt10"><div class="nocenter"><span><img src="/Public/Home/images/empty.png" />暂时还没有收藏的职位，快去收藏吧！</span></div></div>';</php>
+          
+
+       </ul>
+     </div>
+     <!-- 职位列表结束-->
+     
+
+
+	<php>}</php>
+
+
+
+    </div>
+
+</div>
+
+
+<include file="Public/footer" />

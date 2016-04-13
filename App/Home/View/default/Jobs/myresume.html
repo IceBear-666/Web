@@ -1,0 +1,1012 @@
+<include file="Public/header" />
+
+<body>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/hrstyle.css">
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+	    <div class="clearfix">
+	      <input id="topStatus" type="hidden" value="0">
+	      <div class="content_l">
+	        <div id="resume_name" class="fl">
+	          <div class="nameShow fl">
+	            <h1 title="{$info.resume_name}">{$info.resume_name}</h1>
+	            <span class="rename">重命名</span> | <a href="{$Think.WEB_URL}Jobs/resumePreview" target="_blank">预览</a> </div>
+	          <form id="resumeNameForm" class="fl dn">
+	            <input type="text" class="nameEdit c9" name="resumeName" value="{$info.resume_name}">
+	            <input type="submit" value="保存">
+	            | <a href="{$Think.WEB_URL}Jobs/resumePreview" target="_blank">预览</a>
+	          </form>
+	        </div>
+	        <!--end #resume_name-->
+	        <div id="lastChangedTime" class="fr c5">最后一次更新：<span>{$info.update_time|showDay=###,'Y-m-d H:i:s'} </span></div>
+	        <!--end #lastChangedTime-->
+	        
+	        
+	        
+		        <div id="resumeScore">
+		          <div class="score fl">
+		            <canvas id="doughnutChartCanvas" width="120" height="120" style="width: 120px; height: 120px;"></canvas>
+		            <div class="scoreVal"><span>{$info.resume_score}</span>分</div>
+		          </div>
+		          <div class="which fl">
+		            <div>{$step_info.memo}</div>
+		            <span rel="{$step_info.key}"><a>马上去完善</a></span> </div>
+		        </div>
+	        
+	        
+	        
+	        <!--end #resumeScore-->
+	        
+	        <div id="basicInfo" class="profile_box">
+	          <h2>基本信息</h2>
+	          <span class="c_edit"></span>
+	          <div class="basicShow"> <span>{$info.realname} |  {$info.sex|showSex=###} |    {$info.edu} |  {$info.workyear}工作经验<br>
+	            {$info.phone} | {$info.email}<br>
+	            {$info.workstatus}
+	            </span>
+	            <div class="m_portrait">
+	              <div></div>
+	              <img src="{$Think.WEB_URL}{$info.pic}" width="120" height="120" alt="{$info.realname}"> </div>
+	          </div>
+	          <!--end .basicShow-->
+	          
+	          <div class="basicEdit dn">
+	            <form id="profileForm">
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" id="name" name="name" value="{$info.realname}" placeholder="姓名"></td>
+	                    <td valign="top"></td>
+	                    <td><ul class="profile_radio clearfix reset">
+	                        <li> 男<em></em>
+	                          <input type="radio" value="男" name="gender" <if condition="$info.sex eq 1">checked="checked"</if>  >
+	                        </li>
+	                        <li class="current"> 女<em></em>
+	                          <input type="radio" value="女" name="gender" <if condition="$info.sex eq 2">checked="checked"</if>>
+	                        </li>
+	                      </ul></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="hidden" name="topDegree" value="{$info.edu}" id="topDegree">
+	                      <input type="button" class="profile_select_190 profile_select_normal" id="select_topDegree" value="{$info.edu}">
+	                      <div id="box_topDegree" class="boxUpDown boxUpDown_190 dn" style="display: none;">
+	                        <ul>
+	                          <li>大专</li>
+	                          <li>本科</li>
+	                          <li>硕士</li>
+	                          <li>博士</li>
+	                          <li>其他</li>
+	                        </ul>
+	                      </div></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="hidden" name="workyear" value="{$info.workyear}" id="workyear">
+	                      <input type="button" class="profile_select_190 profile_select_normal" id="select_workyear" value="{$info.workyear}">
+	                      <div id="box_workyear" class="boxUpDown boxUpDown_190 dn" style="display: none;">
+	                        <ul>
+	                          <li>应届毕业生</li>
+	                          <li>1年</li>
+	                          <li>2年</li>
+	                          <li>3年</li>
+	                          <li>4年</li>
+	                          <li>5年</li>
+	                          <li>6年</li>
+	                          <li>7年</li>
+	                          <li>8年</li>
+	                          <li>9年</li>
+	                          <li>10年</li>
+	                          <li>10年以上</li>
+	                        </ul>
+	                      </div></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td colspan="3"><input type="text" id="tel" name="tel" value="{$info.phone}" placeholder="手机号码"></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td colspan="3"><input type="text" id="email" name="email" value="{$info.email}" placeholder="请输入接收面试通知的常用邮箱"></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"></td>
+	                    <td colspan="3"><input type="hidden" name="currentState" value="{$info.workstatus}" id="currentState">
+	                      <input type="button" class="profile_select_410 profile_select_normal" id="select_currentState" value="{$info.workstatus}" style="color: rgb(51, 51, 51);">
+	                      <div id="box_currentState" class="boxUpDown boxUpDown_410 dn" style="display: none;">
+	                        <ul>
+	                          <li>我目前已离职，可快速到岗</li>
+	                          <li>我目前正在职，正考虑换个新环境</li>
+	                          <li>我暂时不想找工作</li>
+	                          <li>我是应届毕业生</li>
+	                        </ul>
+	                      </div></td>
+	                  </tr>
+	                  <tr>
+	                    <td></td>
+	                    <td colspan="3"><input type="submit" class="btn_profile_save" value="保 存">
+	                      <a href="javascript:;" class="btn_profile_cancel">取 消</a></td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	            </form>
+	            <!--end #profileForm-->
+	            <div class="new_portrait">
+	              <div id="portraitNo" class="portrait_upload"> <span>上传自己的头像</span> </div>
+	              <div id="portraitShow" class="portraitShow dn"> <img src="" width="120" height="120"> <span>更换头像</span> </div>
+	              <input type="file" class="myfiles" id="headPic" name="headPic" onchange="img_check(this,&#39;{$Think.WEB_URL}Users/uploadLeadHead&#39;,&#39;headPic&#39;);" title="支持jpg、jpeg、gif、png格式，文件小于5M" value="">
+	              <!-- <input type="hidden" id="headPicHidden" /> --> 
+	              <em> 尺寸：120*120px <br>
+	              大小：小于5M </em> <span class="error" id="headPic_error" style="display:none;"></span> </div>
+	            <!--end .new_portrait--> 
+	          </div>
+	          <!--end .basicEdit-->
+	          <input type="hidden" value="{$info.realname}" id="nameVal">
+	          <input type="hidden" value="<if condition='$info.sex eq 2'>女<else />男</if>" id="genderVal">
+	          <input type="hidden" value="{$info.edu}" id="topDegreeVal">
+	          <input type="hidden" value="{$info.workyear}" id="workyearVal">
+	          <input type="hidden" value="{$info.workstatus}" id="currentStateVal">
+	          <input type="hidden" value="{$info.email}" id="emailVal">
+	          <input type="hidden" value="{$info.phone}" id="telVal">
+	          <input type="hidden" value="1" id="pageType">
+	        </div>
+	        <!--end #basicInfo-->
+	        
+	        <div id="expectJob" class="profile_box">
+	          <h2>期望工作</h2>
+	          <span class="c_edit <if condition='$info.score_qiwang eq 0'>dn</if>"></span>
+	          <div class="expectShow <if condition='$info.score_qiwang eq 0'>dn</if>"> <span>{$info.city}，{$info.position_type}，月薪{$info.salarys}，{$info.position_name}</span> </div>
+	          <!--end .expectShow-->
+	          
+	          <div class="expectEdit <if condition='$info.score_qiwang neq 0'>dn</if>">
+	            <form id="expectForm">
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td><input type="hidden" name="expectCity" value="" id="expectCity">
+	                      <input type="button" class="profile_select_287 profile_select_normal" id="select_expectCity" value="期望城市，如：北京">
+	                      <div id="box_expectCity" class="boxUpDown boxUpDown_596 dn" style="display: none;">
+	                        <dl>
+	                          <dt>热门城市</dt>
+	                          <dd> <span>北京</span> <span>上海</span> <span>广州</span> <span>深圳</span> <span>成都</span> <span>杭州</span> </dd>
+	                        </dl>
+	                        <dl>
+	                          <dt>ABCDEF</dt>
+	                          <dd> <span>北京</span> <span>长春</span> <span>成都</span> <span>重庆</span> <span>长沙</span> <span>常熟</span> <span>常州</span> <span>东莞</span> <span>大连</span> <span>佛山</span> <span>福州</span> </dd>
+	                        </dl>
+	                        <dl>
+	                          <dt>GHIJ</dt>
+	                          <dd> <span>贵阳</span> <span>广州</span> <span>哈尔滨</span> <span>合肥</span> <span>呼和浩特</span> <span>海口</span> <span>杭州</span> <span>惠州</span> <span>金华</span> <span>济南</span> <span>嘉兴</span> </dd>
+	                        </dl>
+	                        <dl>
+	                          <dt>KLMN</dt>
+	                          <dd> <span>昆明</span> <span>昆山</span> <span>廊坊</span> <span>临沂</span> <span>兰州</span> <span>宁波</span> <span>南昌</span> <span>南京</span> <span>南宁</span> </dd>
+	                        </dl>
+	                        <dl>
+	                          <dt>OPQR</dt>
+	                          <dd> <span>青岛</span> <span>泉州</span> </dd>
+	                        </dl>
+	                        <dl>
+	                          <dt>STUV</dt>
+	                          <dd> <span>上海</span> <span>石家庄</span> <span>汕头</span> <span>绍兴</span> <span>沈阳</span> <span>深圳</span> <span>苏州</span> <span>泰安</span> <span>天津</span> <span>太原</span> <span>台州</span> </dd>
+	                        </dl>
+	                        <dl>
+	                          <dt>WXYZ</dt>
+	                          <dd> <span>潍坊</span> <span>武汉</span> <span>乌鲁木齐</span> <span>无锡</span> <span>温州</span> <span>西安</span> <span>厦门</span> <span>徐州</span> <span>烟台</span> <span>淄博</span> <span>珠海</span> <span>镇江</span> <span>湛江</span> <span>肇庆</span> <span>中山</span> <span>郑州</span> </dd>
+	                        </dl>
+	                      </div></td>
+	                    <td><ul class="profile_radio clearfix reset">
+	                        <li class="current"> 全职<em></em>
+	                          <input type="radio" value="全职" name="type" checked="">
+	                        </li>
+	                        <li> 兼职<em></em>
+	                          <input type="radio" value="兼职" name="type">
+	                        </li>
+	                        <li> 实习<em></em>
+	                          <input type="radio" value="实习" name="type">
+	                        </li>
+	                      </ul></td>
+	                  </tr>
+	                  <tr>
+	                    <td><input type="text" id="expectPosition" name="expectPosition" value="" placeholder="期望职位，如：产品经理"></td>
+	                    <td><input type="hidden" name="expectSalary" value="" id="expectSalary">
+	                      <input type="button" class="profile_select_287 profile_select_normal" id="select_expectSalary" value="期望月薪">
+	                      <div id="box_expectSalary" class="boxUpDown boxUpDown_287 dn" style="display: none;">
+	                        <ul>
+	                          <li>2k以下</li>
+	                          <li>2k-5k</li>
+	                          <li>5k-10k</li>
+	                          <li>10k-15k</li>
+	                          <li>15k-25k</li>
+	                          <li>25k-50k</li>
+	                          <li>50k以上</li>
+	                        </ul>
+	                      </div></td>
+	                  </tr>
+	                  <tr>
+	                    <td colspan="2"><input type="submit" class="btn_profile_save" value="保 存">
+	                      <a href="javascript:;" class="btn_profile_cancel">取 消</a></td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	            </form>
+	            <!--end #expectForm--> 
+	          </div>
+	          <!--end .expectEdit-->
+	          
+	          <div class="expectAdd pAdd <if condition='$info.score_qiwang neq 0'>dn</if>"> 填写准确的期望工作能大大提高求职成功率哦…<br>
+	            快来添加期望工作吧！ <span>添加期望工作</span> </div>
+	          <!--end .expectAdd-->
+	          
+	          <input type="hidden" value="" id="expectJobVal">
+	          <input type="hidden" value="{$info.city}" id="expectCityVal">
+	          <input type="hidden" value="{$info.position_type}" id="typeVal">
+	          <input type="hidden" value="{$info.position_name}" id="expectPositionVal">
+	          <input type="hidden" value="{$info.salarys}" id="expectSalaryVal">
+	        </div>
+	        <!--end #expectJob-->
+	        
+	        
+	        
+	        <div id="workExperience" class="profile_box">
+	          <h2>工作经历 <span> （投递简历时必填）</span></h2>
+	          <span <if condition="$exp_list eq '' ">class="c_add dn"<else />class="c_add"</if> ></span>
+	          
+	          <div <if condition="$exp_list eq '' ">class="experienceShow dn"<else />class="experienceShow"</if> >
+	            
+	            <form class="experienceForm borderBtm dn">
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" class="companyName" name="companyName" placeholder="公司名称"></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" class="positionName" name="positionName" placeholder="职位名称，如：产品经理"></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><div class="fl">
+	                        <input type="hidden" name="companyYearStart" value="" class="companyYearStart">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_companyYearStart" value="开始年份">
+	                        <div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="year" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="fl">
+	                        <input type="hidden" name="companyMonthStart" value="" class="companyMonthStart">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_companyMonthStart" value="开始月份">
+	                        <div class="box_companyMonthStart boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="month" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="clear"></div></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><div class="fl">
+	                        <input type="hidden" name="companyYearEnd" value="" class="companyYearEnd">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_companyYearEnd" value="结束年份">
+	                        <div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <li>至今</li>
+	                            <volist name="year" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="fl">
+	                        <input type="hidden" name="companyMonthEnd" value="" class="companyMonthEnd">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_companyMonthEnd" value="结束月份">
+	                        <div class="box_companyMonthEnd boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="month" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="clear"></div></td>
+	                  </tr>
+	                  <tr>
+	                    <td></td>
+	                    <td colspan="3"><input type="submit" class="btn_profile_save" value="保 存">
+	                      <a href="javascript:;" class="btn_profile_cancel">取 消</a></td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	              <input type="hidden" value="" class="expId">
+	            </form>
+	            <!--end .experienceForm-->
+	            
+	            <ul class="wlist clearfix">
+	            
+	            <volist name="exp_list" id="v">
+		            <li data-id="{$v.id}">
+			            <i class="sm_del dn"></i>
+			            <i class="sm_edit dn"></i>
+			            <span data-endmonth="{$v.endMonth}" data-startmonth="{$v.startMonth}" data-endyear="{$v.endYear}" data-startyear="{$v.startYear}" class="c9">{$v.startYear}.{$v.startMonth}-{$v.endYear}.{$v.endMonth}</span>
+			            <div>
+			            <img width="56" height="56" alt="{$v.companyName}" src="{$Think.WEB_URL}{$v.companyLogo}">
+			            <h3>{$v.positionName}</h3>
+			            <h4>{$v.companyName}</h4>
+			            </div>
+		            </li>
+	            
+	            </volist>
+	            
+	            </ul>
+	          
+	          </div>
+	          <!--end .experienceShow-->
+	          
+	          
+	          <div class="experienceEdit dn" >
+	            <form class="experienceForm">
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" class="companyName" name="companyName" placeholder="公司名称"></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" class="positionName" name="positionName" placeholder="职位名称，如：产品经理"></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><div class="fl">
+	                        <input type="hidden" name="companyYearStart" value="" class="companyYearStart">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_companyYearStart" value="开始年份">
+	                        <div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="year" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="fl">
+	                        <input type="hidden" name="companyMonthStart" value="" class="companyMonthStart">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_companyMonthStart" value="开始月份">
+	                        <div class="box_companyMonthStart boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="month" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="clear"></div></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><div class="fl">
+	                        <input type="hidden" name="companyYearEnd" value="" class="companyYearEnd">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_companyYearEnd" value="结束年份">
+	                        <div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <li>至今</li>
+	                            <volist name="year" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="fl">
+	                        <input type="hidden" name="companyMonthEnd" value="" class="companyMonthEnd">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_companyMonthEnd" value="结束月份">
+	                        <div class="box_companyMonthEnd boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="month" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="clear"></div></td>
+	                  </tr>
+	                  <tr>
+	                    <td></td>
+	                    <td colspan="3"><input type="submit" class="btn_profile_save" value="保 存">
+	                      <a href="javascript:;" class="btn_profile_cancel">取 消</a></td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	              <input type="hidden" value="" class="expId">
+	            </form>
+	            <!--end .experienceForm--> 
+	          </div>
+	          <!--end .experienceEdit-->
+	          
+	          <div <if condition="$exp_list eq '' ">class="experienceAdd pAdd"<else />class="experienceAdd pAdd dn"</if> > 工作经历最能体现自己的工作能力，<br>
+	            且完善后才可投递简历哦！ <span>添加工作经历</span> </div>
+	          <!--end .experienceAdd--> 
+	        </div>
+	        <!--end #workExperience-->
+	        
+	        
+	        
+	        
+	        <div id="projectExperience" class="profile_box">
+	          <h2>项目经验</h2>
+	          <span <if condition="$pro_list eq '' ">class="c_add dn"<else />class="c_add"</if> > </span>
+	          <div <if condition="$pro_list eq '' ">class="projectShow dn"<else />class="projectShow"</if> >
+	            <ul class="plist clearfix">
+	            
+	            <volist name="pro_list" id="v">
+		            <li data-id="{$v.id}" class="noborder">
+			            <div class="projectList">
+				            <i class="sm_del dn"></i>
+				            <i class="sm_edit dn"></i>
+				            <div data-endm="{$v.endMonth}" data-endy="{$v.endYear}" data-startm="{$v.startMonth}" data-starty="{$v.startYear}" data-posname="{$v.positionName}" data-proname="{$v.projectName}" class="f16 mb10 fixed_width">{$v.projectName}，{$v.positionName}<span class="c9">（{$v.startYear}.{$v.startMonth}-{$v.endYear}.{$v.endMonth}）</span></div>
+				            <div class="dl1">{$v.projectRemark}</div>
+			            </div>
+		            </li>
+		         </volist>   
+		            
+	            </ul>
+	          </div>
+	          <!--end .projectShow-->
+	          <div class="projectEdit dn">
+	            <form class="projectForm">
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" class="projectName" name="projectName" placeholder="项目名称"></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" class="thePost" name="thePost" placeholder="项目职务，如：产品负责人"></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><div class="fl">
+	                        <input type="hidden" name="projectYearStart" value="" class="projectYearStart">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_projectYearStart" value="开始年份">
+	                        <div class="box_projectYearStart  boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="year" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="fl">
+	                        <input type="hidden" name="projectMonthStart" value="" class="projectMonthStart">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_projectMonthStart" value="开始月份">
+	                        <div class="box_projectMonthStart boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="month" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="clear"></div></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><div class="fl">
+	                        <input type="hidden" name="projectYearEnd" value="" class="projectYearEnd">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_projectYearEnd" value="结束年份">
+	                        <div class="box_projectYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <li>至今</li>
+	                            <volist name="year" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="fl">
+	                        <input type="hidden" name="projectMonthEnd" value="" class="projectMonthEnd">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_projectMonthEnd" value="结束月份">
+	                        <div class="box_projectMonthEnd boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="month" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="clear"></div></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"></td>
+	                    <td colspan="3"><textarea placeholder="项目描述" name="projectDescription" class="projectDescription s_textarea"></textarea>
+	                      <div class="word_count">你还可以输入 <span>500</span> 字</div></td>
+	                  </tr>
+	                  <!-- <tr>
+										<td colspan="2">
+											<textarea placeholder="职责描述" name="ResponsDescription" class="ResponsDescription s_textarea"></textarea>
+											<div class="word_count">你还可以输入 <span>500</span> 字</div>
+										</td>
+		            				</tr> -->
+	                  <tr>
+	                    <td valign="top"></td>
+	                    <td colspan="3"><input type="submit" class="btn_profile_save" value="保 存">
+	                      <a href="javascript:;" class="btn_profile_cancel">取 消</a></td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	              <input type="hidden" class="projectId" value="">
+	            </form>
+	            <!--end .projectForm--> 
+	          </div>
+	          <!--end .projectEdit-->
+	          <div <if condition="$pro_list eq '' ">class="projectAdd pAdd"<else />class="projectAdd pAdd dn"</if> > 项目经验是用人单位衡量人才能力的重要指标哦！<br>
+	            来说说让你难忘的项目吧！ <span>添加项目经验</span> </div>
+	          <!--end .projectAdd--> 
+	        </div>
+	        <!--end #projectExperience-->
+	        
+	        
+	        
+	        <div id="educationalBackground" class="profile_box">
+	          <h2>教育背景<span>（投递简历时必填）</span></h2>
+	          <span <if condition="$edu_list eq '' ">class="c_add dn"<else />class="c_add"</if> ></span>
+	          <div <if condition="$edu_list eq '' ">class="educationalShow dn"<else />class="educationalShow"</if> >
+	            <form class="educationalForm borderBtm dn">
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" class="schoolName" name="schoolName" placeholder="学校名称"></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="hidden" name="degree" value="" class="degree">
+	                      <input type="button" class="profile_select_287 profile_select_normal select_degree" value="学历">
+	                      <div class="box_degree boxUpDown boxUpDown_287 dn" style="display: none;">
+	                        <ul>
+	                          <li>大专</li>
+	                          <li>本科</li>
+	                          <li>硕士</li>
+	                          <li>博士</li>
+	                          <li>其他</li>
+	                        </ul>
+	                      </div></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" class="professionalName" name="professionalName" placeholder="专业"></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><div class="fl">
+	                        <input type="hidden" name="schoolYearStart" value="" class="schoolYearStart">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_schoolYearStart" value="开始年份">
+	                        <div class="box_schoolYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="year" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="fl">
+	                        <input type="hidden" name="schoolYearEnd" value="" class="schoolYearEnd">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_schoolYearEnd" value="结束年份">
+	                        <div class="box_schoolYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            
+	                            <li>2017</li>
+	                            <li>2016</li>
+	                            <li>2015</li>
+	                            <volist name="year" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="clear"></div></td>
+	                  </tr>
+	                  <tr>
+	                    <td></td>
+	                    <td colspan="3"><input type="submit" class="btn_profile_save" value="保 存">
+	                      <a href="javascript:;" class="btn_profile_cancel">取 消</a></td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	              <input type="hidden" value="" class="eduId">
+	            </form>
+	            <!--end .educationalForm-->
+	            
+	            <ul class="elist clearfix">
+	            	<volist name="edu_list" id="v">
+	            		<li data-id="{$v.id}">
+		            		<i class="sm_del dn"></i>
+		            		<i class="sm_edit dn"></i>
+		            		<span data-endy="{$v.endYear}" data-starty="{$v.startYear}" class="c9">{$v.startYear}-{$v.endYear}</span>
+		            		<div>
+		            			<h3 data-schname="{$v.schoolName}">{$v.schoolName}</h3>
+		            			<h4 data-degree="{$v.education}" data-proname="{$v.professional}">{$v.education}，{$v.professional}</h4>
+		            		</div>
+	            		</li>			                      
+		            </volist>
+	            </ul>
+	          </div>
+	          <!--end .educationalShow-->
+	          
+	          <div class="educationalEdit dn">
+	            <form class="educationalForm">
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" class="schoolName" name="schoolName" placeholder="学校名称"></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="hidden" name="degree" value="" class="degree">
+	                      <input type="button" class="profile_select_287 profile_select_normal select_degree" value="学历">
+	                      <div class="box_degree boxUpDown boxUpDown_287 dn" style="display: none;">
+	                        <ul>
+	                          <li>大专</li>
+	                          <li>本科</li>
+	                          <li>硕士</li>
+	                          <li>博士</li>
+	                          <li>其他</li>
+	                        </ul>
+	                      </div></td>
+	                  </tr>
+	                  <tr>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><input type="text" class="professionalName" name="professionalName" placeholder="专业名称"></td>
+	                    <td valign="top"><span class="redstar">*</span></td>
+	                    <td><div class="fl">
+	                        <input type="hidden" name="schoolYearStart" value="" class="schoolYearStart">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_schoolYearStart" value="开始年份">
+	                        <div class="box_schoolYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="year" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="fl">
+	                        <input type="hidden" name="schoolYearEnd" value="" class="schoolYearEnd">
+	                        <input type="button" class="profile_select_139 profile_select_normal select_schoolYearEnd" value="结束年份">
+	                        <div class="box_schoolYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
+	                          <ul>
+	                            <volist name="year" id="v">
+	                            <li>{$v}</li>	                            
+	                            </volist>
+	                          </ul>
+	                        </div>
+	                      </div>
+	                      <div class="clear"></div></td>
+	                  </tr>
+	                  <tr>
+	                    <td></td>
+	                    <td colspan="3"><input type="submit" class="btn_profile_save" value="保 存">
+	                      <a href="javascript:;" class="btn_profile_cancel">取 消</a></td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	              <input type="hidden" value="" class="eduId">
+	            </form>
+	            <!--end .educationalForm--> 
+	          </div>
+	          <!--end .educationalEdit-->
+	          <div <if condition="$edu_list eq '' ">class="educationalAdd pAdd"<else />class="educationalAdd pAdd dn"</if> > 教育背景可以充分体现你的学习和专业能力，<br>
+	            且完善后才可投递简历哦！ <span>添加教育经历</span> </div>
+	          <!--end .educationalAdd--> 
+	        </div>
+	        <!--end #educationalBackground-->
+	        
+	        
+	        
+	        
+	        <div id="selfDescription" class="profile_box">
+	          <h2>自我描述</h2>
+	          <span <if condition="$info.remark eq '' ">class="c_edit dn"<else />class="c_edit"</if> ></span>
+	          <div <if condition="$info.remark eq '' ">class="descriptionShow dn"<else />class="descriptionShow"</if> >{$info.remark}</div>
+	          <!--end .descriptionShow-->
+	          <div class="descriptionEdit dn">
+	            <form class="descriptionForm">
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td colspan="2"><textarea placeholder="请输入自我描述" name="selfDescription" class="selfDescription s_textarea"></textarea>
+	                      <div class="word_count">你还可以输入 <span>500</span> 字</div></td>
+	                  </tr>
+	                  <tr>
+	                    <td colspan="2"><input type="submit" class="btn_profile_save" value="保 存">
+	                      <a href="javascript:;" class="btn_profile_cancel">取 消</a></td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	            </form>
+	            <!--end .descriptionForm--> 
+	          </div>
+	          <!--end .descriptionEdit-->
+	          <div <if condition="$info.remark eq '' ">class="descriptionAdd pAdd"<else />class="descriptionAdd pAdd dn"</if>> 描述你的性格、爱好以及吸引人的经历等，<br>
+	            让企业了解多元化的你！ <span>添加自我描述</span> </div>
+	          <!--end .descriptionAdd--> 
+	        </div>
+	        <!--end #selfDescription-->
+	        
+	        
+	        
+	        <div id="worksShow" class="profile_box">
+	          <h2>作品展示</h2>
+	          <span <if condition="$work_list eq '' ">class="c_add dn"<else />class="c_add"</if> ></span>
+	          <div <if condition="$work_list eq '' ">class="workShow dn"<else />class="workShow"</if>>
+	            <ul class="slist clearfix">
+	            	<volist name="work_list" id="v">
+	                    <li data-id="{$v.id}" class="noborder">
+	                    <div class="workList c7">
+		                    <i class="sm_del dn"></i>
+		                    <i class="sm_edit dn"></i>
+		                    <div class="f16">
+			                    <span>网址：</span>
+			                    <a target="_blank" href="{$v.url}">{$v.url}</a>
+		                    </div>
+		                    <p>{$v.workName}</p>
+	                    </div>
+	                    </li>                     
+	                </volist>
+	            </ul>
+	          </div>
+	          <!--end .workShow-->
+	          <div class="workEdit dn">
+	            <form class="workForm">
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td><input type="text" class="workLink" name="workLink" placeholder="作品链接"></td>
+	                  </tr>
+	                  <tr>
+	                    <td><textarea placeholder="作品说明" name="workDescription" class="workDescription s_textarea" maxlength="100"></textarea>
+	                      <div class="word_count">你还可以输入 <span>100</span> 字</div></td>
+	                  </tr>
+	                  <tr>
+	                    <td><input type="submit" class="btn_profile_save" value="保 存">
+	                      <a href="javascript:;" class="btn_profile_cancel">取 消</a></td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	              <input type="hidden" value="" class="showId">
+	            </form>
+	            <!--end .workForm--> 
+	          </div>
+	          <!--end .workEdit-->
+	          <div <if condition="$work_list eq '' ">class="workAdd pAdd"<else />class="workAdd pAdd dn"</if>> 好作品会说话！<br>
+	            快来秀出你的作品打动企业吧！ <span>添加作品展示</span> </div>
+	          <!--end .workAdd--> 
+	        </div>
+	        <!--end #worksShow-->
+	        <input type="hidden" value="{$info.uid}" id="resumeId">
+	      </div>
+	      <!--end .content_l-->
+	      
+	      <div class="content_r">
+	      
+	        <div id="myInfo" class="mycenterR">
+	          <h2>我的信息</h2>
+	          <a href="{$Think.WEB_URL}Jobs/collections" target="_blank">我收藏的职位</a> <br>
+	          <if condition="$is_sub neq 0">
+	          <a href="{$Think.WEB_URL}Jobs/mList" target="_blank">我的职位推荐</a> <br>
+	          </if>
+	          <a href="{$Think.WEB_URL}Jobs/subscribe" target="_blank">我订阅的职位</a>
+			</div>
+	        <!--end #myInfo-->
+	        
+	        <div id="myResume" class="mycenterR">
+	          <h2>我的附件简历 
+	          
+	          <if condition="$info.other_resume eq ''">
+	          	<a class="inline cboxElement" href="#uploadFile" title="上传附件简历">上传简历</a>
+	          <else />
+	          	<a title="上传附件简历" href="#uploadFile" class="inline cboxElement">重新上传</a>
+	          </if>
+	          
+	          </h2>
+	          
+	          <if condition="$info.other_resume eq ''">
+	          	<div class="resumeUploadDiv clearfixs"> 暂无附件简历 </div>
+	          <else />
+	          	<div class="resumeUploadDiv clearfixs"><a title="{$info.other_resume_name}" class="resume_download" href="{$Think.WEB_URL}Users/downloadResumeOther">{$info.other_resume_name}</a><a href="javascript:;" class="fr del">删除</a><br><span class="c9">上传时间：{$info.other_resume_time|showDay=###}</span></div>
+	          </if>
+	        </div>
+	        <!--end #myResume-->
+	        
+	        <div id="resumeSet" class="mycenterR">
+	          <h2>投递简历设置 <span>修改设置</span></h2>
+	          
+	          <!-- -1 (0=附件， 1=在线， 其他=未设置) -->
+	          <div <if condition="$info.default_select eq 1">class="noSet set1"<else />class="noSet set1 dn"</if>>默认使用<span>在线简历</span>进行投递</div>
+	          <div <if condition="$info.default_select eq 0">class="noSet set0"<else />class="noSet set0 dn"</if>>默认使用<span>附件简历</span>进行投递</div>
+	          
+	          <div <if condition="$info.default_select neq '-1'">class="noSet dn"<else />class="noSet"</if> >暂未设置默认投递简历</div>
+	          
+	          <input type="hidden" <if condition="$info.default_select neq -1">value="{$info.default_select}"<else />value="-1"</if> class="defaultResume">
+	          <form id="resumeSetForm" class="dn">
+	            <label>
+	              <input type="radio" name="resume" <if condition="$info.default_select eq '1'">checked</if> class="resume1" value="1">
+	              默认使用<span>在线简历</span>进行投递</label>
+	            <label>
+	              <input type="radio" name="resume" <if condition="$info.default_select eq '0'">checked</if> class="resume0" value="0">
+	              默认使用<span>附件简历</span>进行投递</label>
+	            <span class="setTip error"></span>
+	            <div class="resumeTip">设置后投递简历时将不再提醒</div>
+	            <input type="submit" class="btn_profile_save" value="保 存">
+	            <a href="javascript:;" class="btn_profile_cancel">取 消</a>
+	          </form>
+	        </div>
+	        <!--end #resumeSet-->
+	        
+	        <div id="myShare" class="mycenterR">
+	          <h2>当前每日投递量：{$info.dr_num}个</h2>
+	          
+	          <!--<a href="{$Think.WEB_URL}share/invite.html" target="_blank">邀请好友，提升投递量</a>-->
+			
+			</div>
+	        <!--end #myShare-->
+	        
+	        <!--
+	        <div class="greybg qrcode mt20"> <img src="__PUBLIC__/Images/qr/qr_resume.png" width="242" height="242" alt="钢铁侠微信公众号二维码"> <span class="c7">微信扫一扫，轻松找工作</span> </div>
+	      	--> 
+	      </div>
+	      <!--end .content_r--> 
+	    </div>
+	    <input type="hidden" value="{$info.uid}" name="userid" id="userid">
+	    
+	    
+	    
+	    
+	    <!-------------------------------------弹窗lightbox ----------------------------------------->
+	    <div style="display:none;"> 
+	    
+	      <!-- 上传简历 -->
+	      <div id="uploadFile" class="popup">
+	        <table width="100%">
+	          <tbody>
+	            <tr>
+	              <td align="center"><form>
+	                  <a href="javascript:void(0);" class="btn_addPic"> <span>选择上传文件</span>
+	                  <input tabindex="3" title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M" size="3" name="newResume" id="resumeUpload" class="filePrew" type="file" onchange="file_check(this,&#39;{$Think.WEB_URL}Users/updateMyResumeOther&#39;,&#39;resumeUpload&#39;)">
+	                  </a>
+	                </form></td>
+	            </tr>
+	            <tr>
+	              <td align="left">支持word、pdf、ppt、txt、wps格式文件<br>
+	                文件大小需小于10M</td>
+	            </tr>
+	            <tr>
+	              <td align="left" style="color:#dd4a38; padding-top:10px;">注：若从其它网站下载的word简历，请将文件另存为.docx格式后上传</td>
+	            </tr>
+	            <tr>
+	              <td align="center"><img src="__PUBLIC__/Images/loading.gif" width="55" height="16" id="loadingImg" style="visibility: hidden;" alt="loading"></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	      <!--/#uploadFile--> 
+	      
+	      <!-- 简历上传成功 -->
+	      <div id="uploadFileSuccess" class="popup">
+	        <h4>简历上传成功！</h4>
+	        <table width="100%">
+	          <tbody>
+	            <tr>
+	              <td align="center"><p>你可以将简历投给你中意的公司了。</p></td>
+	            </tr>
+	            <tr>
+	              <td align="center"><a href="javascript:;" class="btn_s">确&nbsp;定</a></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	      <!--/#uploadFileSuccess--> 
+	      
+	      <!-- 没有简历请上传 -->
+	      <div id="deliverResumesNo" class="popup">
+	        <table width="100%">
+	          <tbody>
+	            <tr>
+	              <td align="center"><p class="font_16">你在钢铁侠还没有简历，请先上传一份</p></td>
+	            </tr>
+	            <tr>
+	              <td align="center"><form>
+	                  <a href="javascript:void(0);" class="btn_addPic"> <span>选择上传文件</span>
+	                  <input title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M" size="3" name="newResume" id="resumeUpload1" class="filePrew" type="file" onchange="file_check(this,&#39;{$Think.WEB_URL}Users/updateMyResumeOther&#39;,&#39;resumeUpload1&#39;)">
+	                  </a>
+	                </form></td>
+	            </tr>
+	            <tr>
+	              <td align="center">支持word、pdf、ppt、txt、wps格式文件，大小不超过10M</td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	      <!--/#deliverResumesNo--> 
+	      
+	      <!-- 上传附件简历操作说明-重新上传 -->
+	      <div id="fileResumeUpload" class="popup">
+	        <table width="100%">
+	          <tbody>
+	            <tr>
+	              <td><div class="f18 mb10">请上传标准格式的word简历</div></td>
+	            </tr>
+	            <tr>
+	              <td><div class="f16"> 操作说明：<br>
+	                  打开需要上传的文件 - 点击文件另存为 - 选择.docx - 保存 </div></td>
+	            </tr>
+	            <tr>
+	              <td align="center"><a class="inline btn cboxElement" href="#uploadFile" title="上传附件简历">重新上传</a></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	      <!--/#fileResumeUpload--> 
+	      
+	      <!-- 上传附件简历操作说明-重新上传 -->
+	      <div id="fileResumeUploadSize" class="popup">
+	        <table width="100%">
+	          <tbody>
+	            <tr>
+	              <td><div class="f18 mb10">上传文件大小超出限制</div></td>
+	            </tr>
+	            <tr>
+	              <td><div class="f16"> 提示：<br>
+	                  单个附件不能超过10M，请重新选择附件简历！ </div></td>
+	            </tr>
+	            <tr>
+	              <td align="center"><a class="inline btn cboxElement" href="#uploadFile" title="上传附件简历">重新上传</a></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	      <!--/#deliverResumeConfirm--> 
+	      
+	    </div>
+	    <!------------------------------------- end -----------------------------------------> 
+	    
+	    <script type="text/javascript" src="__PUBLIC__/Js/Chart.min.js"></script> 
+	    <script type="text/javascript" src="__PUBLIC__/Js/profile.min.js"></script> 
+	    
+	    <!-- <div id="qr_cloud_resume dn" class="" >
+	      <div class="cloud"> <img src="" width="134" height="134"> <a href="javascript:;" class="close"></a> </div>
+	    </div> -->
+	    
+	    <script>
+		$(function(){
+			$.ajax({
+		        url:ctx+"Users/showQRCode",
+		        type:"GET",
+		        async:false,
+		        dataType: "JSON",
+		   	}).done(function(data){
+		        if(data.status){
+		        	//暂时屏蔽微信类的
+		             //$('#qr_cloud_resume img').attr("src",data.url);
+		        }
+		   	}); 
+			var sessionId = "resumeQR"+444203;
+			if(!$.cookie(sessionId)){
+				$.cookie(sessionId, 0, {expires: 1});
+			}
+			if($.cookie(sessionId) && $.cookie(sessionId) != 5){
+				//$('#qr_cloud_resume').removeClass('dn');
+			}
+			$('#qr_cloud_resume .close').click(function(){
+				$('#qr_cloud_resume').fadeOut(200);
+				resumeQR = parseInt($.cookie(sessionId)) + 1;
+				$.cookie(sessionId, resumeQR, {expires: 1});
+			});
+		});
+		</script>
+		
+	    <div class="clear"></div>
+	    <input type="hidden" id="resubmitToken" value="">
+	    <a id="backtop" title="回到顶部" rel="nofollow" style="display: none;"></a>
+	    
+	</div>
+	<!-- end #container --> 
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

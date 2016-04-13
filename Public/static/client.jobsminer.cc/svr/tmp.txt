@@ -1,0 +1,797 @@
+<!DOCTYPE html><!--STATUS OK--><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="content-type" content="text/html;charset=utf-8"><title>美元人民币汇率_百度搜索</title><style data-for="result" >body{color:#333;background:#fff;padding:6px 0 0;margin:0;position:relative;min-width:900px}body,th,td,.p1,.p2{font-family:arial}p,form,ol,ul,li,dl,dt,dd,h3{margin:0;padding:0;list-style:none}input{padding-top:0;padding-bottom:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}table,img{border:0}td{font-size:9pt;line-height:18px}em{font-style:normal;color:#cc0000}a em{text-decoration:underline}cite{font-style:normal;color:#008000}.m,a.m{color:#666}a.m:visited{color:#606}.g,a.g{color:#008000}.c{color:#77c}.f14{font-size:14px}.f10{font-size:10.5pt}.f16{font-size:16px}.f13{font-size:13px}.bg{background-image:url(http://s1.bdstatic.com/r/www/cache/static/global/img/icons_e540198d.png);background-repeat:no-repeat;_background-image:url(http://s1.bdstatic.com/r/www/cache/static/global/img/icons_d2618985.gif);background-repeat:no-repeat}.bg_tuiguang_browser{width:16px;height:16px;background-position:-600px 0;display:inline-block;vertical-align:text-bottom;font-style:normal;overflow:hidden;margin-right:5px}.bg_tuiguang_browser_big{width:56px;height:56px;position:absolute;left:10px;top:10px;background-position:-600px -24px}.bg_tuiguang_weishi{width:56px;height:56px;position:absolute;left:10px;top:10px;background-position:-672px -24px}#u,#head,#tool,#search,#foot{font-size:12px}.logo{width:117px;height:38px;cursor:pointer}.p1{line-height:120%;margin-left:-12pt}.p2{width:100%;line-height:120%;margin-left:-12pt}#wrapper{_zoom:1}#container{word-break:break-all;word-wrap:break-word}.container_s{width:1002px}.container_l{width:1222px}#content_left{width:636px;float:left;padding-left:35px}#content_right{border-left:1px solid #e1e1e1;float:right}.container_s #content_right{width:271px}.container_l #content_right{width:434px}.content_none{padding-left:35px}#u{color:#999;white-space:nowrap;position:absolute;right:10px;top:4px;z-index:299}#u a{color:#00c;margin:0 5px}#u .reg{margin:0}#u .last{margin-right:0}#u .un{font-weight:bold;margin-right:5px}#u ul{width:100%;background:#fff;border:1px solid #9b9b9b}#u li{height:25px}#u li a{width:100%;height:25px;line-height:25px;display:block;text-align:left;text-decoration:none;text-indent:6px;margin:0;filter:none\9}#u li a:hover{background:#ebebeb}#u li.nl{border-top:1px solid #ebebeb}#user{position:relative;display:inline-block}#user_center{position:relative;display:inline-block}#user_center .user_center_btn{margin-right:5px}.userMenu{width:64px;position:absolute;right:7px;_right:2px;top:15px;top:14px\9;*top:15px;padding-top:4px;display:none;*background:#fff}#head{padding-left:35px;margin-bottom:20px;width:900px}.fm{clear:both;position:relative;z-index:297}.nv a,.nv b,.btn,#page,#more{font-size:14px}.s_nav{height:45px}.s_nav .s_logo{margin-right:20px;float:left}.s_nav .s_logo img{border:0;display:block}.s_tab{line-height:18px;padding:20px 0 0;float:left}.s_nav a{color:#0000cc;font-size:14px}.s_nav b{font-size:14px}.s_ipt_wr{width:536px;height:30px;display:inline-block;margin-right:5px;background-position:0 -96px;border:1px solid #b6b6b6;border-color:#7b7b7b #b6b6b6 #b6b6b6 #7b7b7b;vertical-align:top}.s_ipt{width:523px;height:22px;font:16px/22px arial;margin:5px 0 0 7px;padding:0;background:#fff;border:0;outline:0;-webkit-appearance:none}.s_btn{width:95px;height:32px;padding-top:2px\9;font-size:14px;padding:0;background-color:#ddd;background-position:0 -48px;border:0;cursor:pointer}.s_btn_h{background-position:-240px -48px}.s_btn_wr{width:97px;height:34px;display:inline-block;background-position:-120px -48px;*position:relative;z-index:0;vertical-align:top}.sethf{padding:0;margin:0;font-size:14px}.set_h{display:none;behavior:url(#default#homepage)}.set_f{display:none}.shouji{margin-left:19px}.bdsug{position:absolute;width:536px;background:#fff;display:none;border:1px solid #817f82}.bdsug li{width:520px;color:#000;font:14px arial;line-height:25px;padding:0 8px;position:relative;cursor:default}.bdsug li.bdsug-s{background:#ebebeb}#head .bdsug{top:31px}#search form{position:relative}#search form .bdsug{bottom:33px}.bdsug-store span,.bdsug-store b{color:#7a77c8}.bdsug-store-del{font-size:12px;color:#666;text-decoration:underline;position:absolute;right:8px;top:0;cursor:pointer;display:none}.bdsug-s .bdsug-store-del{display:inline-block}.bdsug-ala{display:inline-block;border-bottom:1px solid #e6e6e6}.bdsug-ala h3{line-height:14px;background:url(http://www.baidu.com/img/sug_bd.png) no-repeat left center;margin:6px 0 4px 0;font-size:12px;font-weight:normal;color:#7b7b7b;padding-left:20px}.bdsug-ala p{font-size:14px;font-weight:bold;padding-left:20px}.bdsug .bdsug-direct{width:auto;padding:0;border-bottom:1px solid #f1f1f1}.bdsug .bdsug-direct p{color:#00c;font-weight:bold;line-height:34px;padding:0 8px;cursor:pointer;white-space:nowrap;overflow:hidden}.bdsug .bdsug-direct p img{width:16px;height:16px;margin:7px 6px 9px 0;vertical-align:middle}.bdsug .bdsug-direct p span{margin-left:8px}#tb_mr{color:#00c;cursor:pointer;position:relative;z-index:298}#tb_mr b{font-weight:normal;text-decoration:underline}#tb_mr small{font-size:11px}#page{font:14px arial;white-space:nowrap;padding-left:35px}#page a,#page strong{display:inline-block;vertical-align:text-bottom;height:66px;text-align:center;line-height:34px;text-decoration:none;overflow:hidden;margin-right:9px;background:white}#page a{cursor:pointer}#page a:hover{background:0}#page .n:hover,#page a:hover .pc{background:#f2f8ff;border:1px solid #38f}#page .n{height:34px;padding:0 18px;border:1px solid #e1e2e3}#page span{display:block}#page .pc{width:34px;height:34px;border:1px solid #e1e2e3;cursor:pointer}#page .fk{width:24px;height:24px;margin-bottom:6px;margin-left:6px;cursor:pointer}#page strong .fk,#page strong .pc{cursor:auto}#page .fk .c-icon-bear-pn{top:-3px;position:relative}#page .fkd .c-icon-bear-pn{top:3px;position:relative}#page .fk_cur .c-icon-bear-p{top:-2px;position:relative}#page strong .pc{border:0;width:36px;height:36px;line-height:36px}#page .nums{display:inline-block;vertical-align:text-bottom;height:36px;line-height:36px;margin-left:10px}#rs{width:900px;background:#fff;padding:8px 0;margin:20px 0 0 15px}#rs td{width:5%}#rs th{font-size:14px;font-weight:normal;line-height:19px;white-space:nowrap;text-align:left;vertical-align:top}#rs .tt{font-weight:bold;padding:0 10px 0 20px}#rs_top{font-size:14px;margin-bottom:22px}#rs_top a{margin-right:18px}#search{width:900px;padding:35px 0 16px 35px}#search .s_help{position:relative;top:10px}#foot{height:20px;line-height:20px;color:#77c;background:#e6e6e6;text-align:center}#foot span{color:#666}.site_tip{font-size:12px;margin-bottom:20px}.site_tip_icon{width:56px;height:56px;background:url(http://www.baidu.com/aladdin/img/tools/tools-3.png) -288px 0 no-repeat}.to_zhidao,.to_tieba,.to_zhidao_bottom{font-size:16px;line-height:24px;margin:20px 0 0 35px}.to_tieba .c-icon-tieba{float:left}.f{line-height:115%;*line-height:120%;font-size:100%;width:33.7em;word-break:break-all;word-wrap:break-word}.h{margin-left:8px;width:100%}.r{word-break:break-all;cursor:hand;width:238px}.t{font-weight:normal;font-size:medium;margin-bottom:1px}.pl{padding-left:3px;height:8px;padding-right:2px;font-size:14px}.mo,a.mo:link,a.mo:visited{color:#666;font-size:100%;line-height:10px}.htb{margin-bottom:5px}.jc a{color:#cc0000}a font[size="3"] font,font[size="3"] a font{text-decoration:underline}div.blog,div.bbs{color:#707070;padding-top:2px;font-size:13px}.result{width:33.7em;table-layout:fixed}.result-op .f{word-wrap:normal}.nums{font-size:12px;color:#999}.tools{position:absolute;top:10px;white-space:nowrap}#mHolder{width:62px;position:relative;z-index:296;top:-18px;margin-left:9px;margin-right:-12px;display:none}#mCon{height:18px;position:absolute;right:7px;top:3px;top:6px\9;cursor:pointer;line-height:18px}#mCon span{color:#00c;cursor:default;display:block}#mCon .hw{text-decoration:underline;cursor:pointer;display:inline-block}#mCon .pinyin{display:inline-block}#mCon .c-icon-chevron-unfold2{margin-left:5px}#mMenu{width:56px;border:1px solid #9b9b9b;position:absolute;right:7px;top:23px;display:none;background:#fff}#mMenu a{width:100%;height:100%;color:#00c;display:block;line-height:22px;text-indent:6px;text-decoration:none;filter:none\9}#mMenu a:hover{background:#ebebeb}#mMenu .ln{height:1px;background:#ebebeb;overflow:hidden;font-size:1px;line-height:1px;margin-top:-1px}.op_LAMP{background:url("/cache/global/img/aladdinIcon-1.0.gif") no-repeat 0 2px;color:#77C;display:inline-block;font-size:13px;height:12px;*height:14px;width:16px;text-decoration:none;zoom:1}.EC_mr15{margin-left:0}.pd15{padding-left:0}.map_1{width:30em;font-size:80%;line-height:145%}.map_2{width:25em;font-size:80%;line-height:145%}.favurl{background-repeat:no-repeat;background-position:0 1px;padding-left:20px}.dan_tip{font-size:12px;margin-top:4px}.dan_tip a{color:#b95b07}#more,#u ul,#mMenu,.msg_holder{box-shadow:1px 1px 2px #ccc;-moz-box-shadow:1px 1px 2px #ccc;-webkit-box-shadow:1px 1px 2px #ccc;filter:progid:DXImageTransform.Microsoft.Shadow(Strength=2,Direction=135,Color="#cccccc")\9}.hit_top{line-height:18px;margin:0 15px 10px 0;width:516px}.hit_top .c-icon-bear{height:18px;margin-right:4px}.f a font[size="3"] font,.f font[size="-1"] a font{text-decoration:underline}h3 a font{text-decoration:underline}.c-title{font-weight:normal;font-size:16px}.c-title-size{font-size:16px}.c-abstract{font-size:13px}.c-abstract-size{font-size:13px}.c-showurl{color:#008000;font-size:13px}.c-showurl-color{color:#008000}.c-cache-color{color:#666}.c-lightblue{color:#77C}.c-highlight-color{color:#C00}.c-clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.c-clearfix{zoom:1}.c-wrap{word-break:break-all;word-wrap:break-word}.c-icons-outer{overflow:hidden;display:inline-block;vertical-align:bottom}.c-icons-inner{margin-left:-4px}.c-container table.result,.c-container table.result-op{width:100%}.c-container td.f{font-size:13px;line-height:1.54;width:auto}.c-container .vd_newest_main{width:auto}.c-customicon{display:inline-block;width:16px;height:16px;vertical-align:text-bottom;font-style:normal;overflow:hidden}.c-tip-icon i{display:inline-block;cursor:pointer}.c-tip-con{position:absolute;z-index:1;top:22px;left:-35px;background:#fff;border:1px solid #dcdcdc;border:1px solid rgba(0,0,0,0.2);-webkit-transition:opacity .218s;transition:opacity .218s;-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);box-shadow:0 2px 4px rgba(0,0,0,0.2);padding:5px 0 5px 0;display:none;font-size:12px;line-height:20px}.c-tip-arrow{width:0;height:0;font-size:0;line-height:0;display:block;position:absolute;top:-16px}.c-tip-arrow em,.c-tip-arrow ins{width:0;height:0;font-size:0;line-height:0;display:block;position:absolute;border:8px solid #000;border-style:dashed dashed solid dashed}.c-tip-arrow em{border-color:transparent transparent #d8d8d8 transparent}.c-tip-arrow ins{border-color:transparent transparent #fff transparent;top:2px}.c-tip-con h3{font-size:12px}.c-tip-con .c-tip-title{margin:0 10px;display:inline-block;width:239px}.c-tip-con .c-tip-info{color:#666;margin:0 10px 1px 10px;width:239px}.c-tip-con .c-tip-cer{width:354px;color:#666;margin:0 10px 1px 10px}.c-tip-con .c-tip-title{width:auto;_width:354px}.c-tip-con .c-tip-item-i{padding:3px 0 3px 20px;line-height:14px}.c-tip-con .c-tip-item-i .c-tip-item-icon{margin-left:-20px}.c-tip-con .c-tip-menu ul{width:74px}.c-tip-con .c-tip-menu ul{text-align:center}.c-tip-con .c-tip-menu li a{display:block;text-decoration:none;cursor:pointer;background-color:#fff;padding:3px 0;color:#0000d0}.c-tip-con .c-tip-menu li a:hover{display:block;background-color:#ebebeb}.c-tip-con .c-tip-notice{width:239px;padding:0 10px}.c-tip-con .c-tip-notice .c-tip-notice-succ{color:#4cbd37}.c-tip-con .c-tip-notice .c-tip-notice-fail{color:#f13f40}.c-tip-con .c-tip-notice .c-tip-item-succ{color:#444}.c-tip-con .c-tip-notice .c-tip-item-fail{color:#aaa}.c-tip-con .c-tip-notice .c-tip-item-faila{color:#aaa}.c-tip-close{right:10px;position:absolute;cursor:pointer}.c-tools{display:inline}.c-tools-share{width:239px;padding:0 10px}.icp_info{color:#666;margin-top:2px;font-size:13px}.icon-gw,.icon-unsafe-icon{background:#2c99ff;vertical-align:text-bottom;*vertical-align:baseline;height:16px;padding-top:0;padding-bottom:0;padding-left:6px;padding-right:6px;line-height:16px;_padding-top:2px;_height:14px;_line-height:14px;font-size:12px;font-family:simsun;margin-left:10px;overflow:hidden;display:inline-block;-moz-border-radius:1px;-webkit-border-radius:1px;border-radius:1px;color:#fff}a.icon-gw{color:#fff;background:#2196ff;text-decoration:none;cursor:pointer}a.icon-gw:hover{background:#1e87ef}a.icon-gw:active{height:15px;_height:13px;line-height:15px;_line-height:13px;padding-left:5px;background:#1c80d9;border-left:1px solid #145997;border-top:1px solid #145997}.icon-unsafe-icon{background:#e54d4b}#con-at{margin-bottom:15px}#con-ar{margin-bottom:40px}#con-at .result-op{margin-bottom:15px;font-size:13px;line-height:1.52em}#con-ar .result-op{margin-bottom:28px;font-size:13px;line-height:1.52em}#content_left .result-op,#content_left .result{margin-bottom:14px;border-collapse:collapse}#content_left .c-border .result-op,#content_left .c-border .result{margin-bottom:25px}#content_left .c-border .result-op:last-child,#content_left .c-border .result:last-child{margin-bottom:12px}#content_left .result .f,#content_left .result-op .f{padding:0}.subLink_factory{border-collapse:collapse}.subLink_factory td{padding:0}.subLink_factory td.middle,.subLink_factory td.last{color:#666}.subLink_factory td a{text-decoration:underline}.subLink_factory td.rightTd{text-align:right}.subLink_factory_right{width:100%}.subLink_factory_left td{padding-right:26px}.subLink_factory_left td.last{padding:0}.subLink_factory_left td.first{padding-right:75px}.subLink_factory_right td{width:90px}.subLink_factory_right td.first{width:auto}.general_image_pic{margin-top:2px}.general_image_pic a{background:#fff no-repeat center center;text-decoration:none;display:block;overflow:hidden;text-align:center}.iebrowser_banner{height:36px;text-align:left;border-bottom:1px solid #e3e3e3;background:#fcfade;font-size:13px;padding-left:8px;margin-bottom:6px;color:#333;position:relative}.iebrowser_banner span{_zoom:1}.iebrowser_banner .iebrowser_logo{background-position:-24px -216px;width:18px;height:18px;margin:9px 10px 0 0}.iebrowser_banner .iebrowser_download{display:inline-block;width:65px;line-height:22px;_padding-top:1px;margin:0 0 0 10px;color:#fff;background:#0e97e6;text-align:center;text-decoration:none}.iebrowser_banner .iebrowser_download:hover{background:#2ea5e9}.iebrowser_banner .iebrowser_download:active{color:#fff;background:#0d8dd7}.iebrowser_banner .iebrowser_close{background-position:-672px -144px;cursor:pointer;position:absolute;right:10px;top:10px}@-moz-document url-prefix(){.result,.f{width:538px}}.tools .shouji{display:none}</style><style data-for="result">.c-icon{background:url(http://s1.bdstatic.com/r/www/cache/static/global/img/icons_e540198d.png) no-repeat 0 0;_background-image:url(http://s1.bdstatic.com/r/www/cache/static/global/img/icons_d2618985.gif)}.c-frame{margin-bottom:18px}.c-offset{padding-left:10px}.c-gray{color:#666}.c-gap-top-small{margin-top:5px}.c-gap-top{margin-top:10px}.c-gap-bottom-small{margin-bottom:5px}.c-gap-bottom{margin-bottom:10px}.c-gap-left{margin-left:12px}.c-gap-left-small{margin-left:6px}.c-gap-right{margin-right:12px}.c-gap-right-small{margin-right:6px}.c-gap-icon-right-small{margin-right:5px}.c-gap-icon-right{margin-right:10px}.c-gap-icon-left-small{margin-left:5px}.c-gap-icon-left{margin-left:10px}.c-container{width:538px;font-size:13px;line-height:1.54;word-wrap:break-word;word-break:break-all}.c-container .c-container{width:auto}.c-container table{border-collapse:collapse;border-spacing:0}.c-container td{font-size:13px;line-height:1.54}.c-default{font-size:13px;line-height:1.54;word-wrap:break-word;word-break:break-all}.c-container .t,.c-default .t{line-height:1.54}.c-default .t{margin-bottom:0}.cr-content{width:259px;font-size:13px;line-height:1.54;color:#333}.cr-content table{border-collapse:collapse;border-spacing:0}.cr-content td{font-size:13px;line-height:1.54;vertical-align:top}.cr-offset{padding-left:17px}.cr-title{font-size:14px;line-height:1.29;font-weight:bold}.cr-title-sub{float:right;font-size:13px;font-weight:normal}.c-row{*zoom:1}.c-row:after{display:block;height:0;content:"";clear:both;visibility:hidden}.c-span2{width:29px}.c-span3{width:52px}.c-span4{width:75px}.c-span5{width:98px}.c-span6{width:121px}.c-span7{width:144px}.c-span8{width:167px}.c-span9{width:190px}.c-span10{width:213px}.c-span11{width:236px}.c-span12{width:259px}.c-span13{width:282px}.c-span14{width:305px}.c-span15{width:328px}.c-span16{width:351px}.c-span17{width:374px}.c-span18{width:397px}.c-span19{width:420px}.c-span20{width:443px}.c-span21{width:466px}.c-span22{width:489px}.c-span23{width:512px}.c-span24{width:535px}.c-span2,.c-span3,.c-span4,.c-span5,.c-span6,.c-span7,.c-span8,.c-span9,.c-span10,.c-span11,.c-span12,.c-span13,.c-span14,.c-span15,.c-span16,.c-span17,.c-span18,.c-span19,.c-span20,.c-span21,.c-span22,.c-span23,.c-span24{float:left;_display:inline;margin-right:17px;list-style:none}.c-span-last{margin-right:0}.c-span-last-s{margin-right:0}.container_l .cr-content{width:351px}.container_l .cr-content .c-span-last-s{margin-right:17px}.container_l .cr-content-narrow{width:259px}.container_l .cr-content-narrow .c-span-last-s{margin-right:0}.c-border{width:518px;padding:9px;border:1px solid #e3e3e3;border-bottom-color:#e0e0e0;border-right-color:#ececec;box-shadow:1px 2px 1px rgba(0,0,0,0.072);-webkit-box-shadow:1px 2px 1px rgba(0,0,0,0.072);-moz-box-shadow:1px 2px 1px rgba(0,0,0,0.072);-o-box-shadow:1px 2px 1px rgba(0,0,0,0.072)}.c-border .c-gap-left{margin-left:10px}.c-border .c-gap-left-small{margin-left:5px}.c-border .c-gap-right{margin-right:10px}.c-border .c-gap-right-small{margin-right:5px}.c-border .c-border{width:auto;padding:0;border:none;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none}.c-border .c-span2{width:34px}.c-border .c-span3{width:56px}.c-border .c-span4{width:78px}.c-border .c-span5{width:100px}.c-border .c-span6{width:122px}.c-border .c-span7{width:144px}.c-border .c-span8{width:166px}.c-border .c-span9{width:188px}.c-border .c-span10{width:210px}.c-border .c-span11{width:232px}.c-border .c-span12{width:254px}.c-border .c-span13{width:276px}.c-border .c-span14{width:298px}.c-border .c-span15{width:320px}.c-border .c-span16{width:342px}.c-border .c-span17{width:364px}.c-border .c-span18{width:386px}.c-border .c-span19{width:408px}.c-border .c-span20{width:430px}.c-border .c-span21{width:452px}.c-border .c-span22{width:474px}.c-border .c-span23{width:496px}.c-border .c-span24{width:518px}.c-border .c-span2,.c-border .c-span3,.c-border .c-span4,.c-border .c-span5,.c-border .c-span6,.c-border .c-span7,.c-border .c-span8,.c-border .c-span9,.c-border .c-span10,.c-border .c-span11,.c-border .c-span12,.c-border .c-span13,.c-border .c-span14,.c-border .c-span15,.c-border .c-span16,.c-border .c-span17,.c-border .c-span18,.c-border .c-span19,.c-border .c-span20,.c-border .c-span21,.c-border .c-span22,.c-border .c-span23,.c-border .c-span24{margin-right:10px}.c-border .c-span-last{margin-right:0}.c-loading{display:block;width:50px;height:50px;background:url("http://www.baidu.com/aladdin/img/tools/loading.gif") no-repeat 0 0}.c-vline{display:inline-block;margin:0 3px;border-left:1px solid #ddd;width:0;height:12px;_vertical-align:middle;_overflow:hidden}.c-icon{display:inline-block;width:14px;height:14px;vertical-align:text-bottom;font-style:normal;overflow:hidden}.c-icon-unfold,.c-icon-fold,.c-icon-chevron-unfold,.c-icon-chevron-fold{width:12px;height:12px}.c-icon-star,.c-icon-star-gray{width:60px}.c-icon-qa-empty,.c-icon-safeguard,.c-icon-register-empty,.c-icon-zan,.c-icon-location,.c-icon-warning,.c-icon-doc,.c-icon-xls,.c-icon-ppt,.c-icon-pdf,.c-icon-txt,.c-icon-play-black,.c-icon-gift,.c-icon-baidu-share,.c-icon-bear,.c-icon-sfda,.c-icon-bear-border,.c-icon-location-blue,.c-icon-hotAirBall,.c-icon-moon,.c-icon-streetMap,.c-icon-mv,.c-icon-zhidao-s{width:16px;height:16px}.c-icon-bear-circle,.c-icon-warning-circle,.c-icon-warning-triangle,.c-icon-warning-circle-gray{width:18px;height:18px}.c-icon-tieba,.c-icon-zhidao,.c-icon-bear-p,.c-icon-bear-pn{width:24px;height:24px}.c-icon-ball-blue,.c-icon-ball-red{width:38px;height:38px}.c-icon-unfold:hover,.c-icon-fold:hover,.c-icon-chevron-unfold:hover,.c-icon-chevron-fold:hover,.c-icon-download:hover,.c-icon-lyric:hover,.c-icon-v:hover,.c-icon-hui:hover,.c-icon-bao:hover,.c-icon-person:hover,.c-icon-high-v:hover,.c-icon-phone:hover,.c-icon-nuo:hover,.c-icon-med:hover,.c-icon-air:hover,.c-icon-share2:hover,.c-icon-v1:hover,.c-icon-v2:hover,.c-icon-v3:hover,.c-icon-write:hover{border-color:#388bff}.c-icon-unfold:active,.c-icon-fold:active,.c-icon-chevron-unfold:active,.c-icon-chevron-fold:active,.c-icon-download:active,.c-icon-lyric:active,.c-icon-v:active,.c-icon-hui:active,.c-icon-bao:active,.c-icon-person:active,.c-icon-high-v:active,.c-icon-phone:active,.c-icon-nuo:active,.c-icon-med:active,.c-icon-air:active,.c-icon-share2:active,.c-icon-v1:active,.c-icon-v2:active,.c-icon-v3:active,.c-icon-write:active{border-color:#a2a6ab;background-color:#f0f0f0;box-shadow:inset 1px 1px 1px #c7c7c7;-webkit-box-shadow:inset 1px 1px 1px #c7c7c7;-moz-box-shadow:inset 1px 1px 1px #c7c7c7;-o-box-shadow:inset 1px 1px 1px #c7c7c7}.c-icon-unfold,.c-icon-fold,.c-icon-chevron-unfold,.c-icon-chevron-fold,.c-icon-download,.c-icon-lyric{border:1px solid #d8d8d8;cursor:pointer}.c-icon-v,.c-icon-hui,.c-icon-bao,.c-icon-person,.c-icon-high-v,.c-icon-phone,.c-icon-nuo,.c-icon-med,.c-icon-air,.c-icon-share2,.c-icon-v1,.c-icon-v2,.c-icon-v3,.c-icon-write{border:1px solid #d8d8d8;cursor:pointer;border-color:transparent;_border-color:#ff6347;_filter:chroma(color=#ff6347)}.c-icon-v1,.c-icon-v2,.c-icon-v3,.c-icon-v1-noborder,.c-icon-v2-noborder,.c-icon-v3-noborder,.c-icon-v1-noborder-disable,.c-icon-v2-noborder-disable,.c-icon-v3-noborder-disable{width:19px}.c-icon-download,.c-icon-lyric{width:16px;height:16px}.c-icon-play-circle,.c-icon-stop-circle{width:18px;height:18px}.c-icon-play-circle-middle,.c-icon-stop-circle-middle{width:24px;height:24px}.c-icon-play-black-large,.c-icon-stop-black-large{width:36px;height:36px}.c-icon-play-black-larger,.c-icon-stop-black-larger{width:52px;height:52px}.c-icon-flag{background-position:0 -144px}.c-icon-bus{background-position:-24px -144px}.c-icon-calendar{background-position:-48px -144px}.c-icon-street{background-position:-72px -144px}.c-icon-map{background-position:-96px -144px}.c-icon-bag{background-position:-120px -144px}.c-icon-money{background-position:-144px -144px}.c-icon-game{background-position:-168px -144px}.c-icon-user{background-position:-192px -144px}.c-icon-globe{background-position:-216px -144px}.c-icon-lock{background-position:-240px -144px}.c-icon-plane{background-position:-264px -144px}.c-icon-list{background-position:-288px -144px}.c-icon-star-gray{background-position:-312px -144px}.c-icon-circle-gray{background-position:-384px -144px}.c-icon-triangle-down{background-position:-408px -144px}.c-icon-triangle-up{background-position:-432px -144px}.c-icon-triangle-up-empty{background-position:-456px -144px}.c-icon-sort-gray{background-position:-480px -144px}.c-icon-sort-up{background-position:-504px -144px}.c-icon-sort-down{background-position:-528px -144px}.c-icon-down-gray{background-position:-552px -144px}.c-icon-up-gray{background-position:-576px -144px}.c-icon-download-noborder{background-position:-600px -144px}.c-icon-lyric-noborder{background-position:-624px -144px}.c-icon-download-white{background-position:-648px -144px}.c-icon-close{background-position:-672px -144px}.c-icon-fail{background-position:-696px -144px}.c-icon-success{background-position:-720px -144px}.c-icon-triangle-down-g{background-position:-744px -144px}.c-icon-refresh{background-position:-768px -144px}.c-icon-chevron-left-gray{background-position:-816px -144px}.c-icon-chevron-right-gray{background-position:-840px -144px}.c-icon-fullscreen{background-position:0 -168px}.c-icon-safe{background-position:-24px -168px}.c-icon-exchange{background-position:-48px -168px}.c-icon-chevron-bottom{background-position:-72px -168px}.c-icon-chevron-top{background-position:-96px -168px}.c-icon-unfold{background-position:-120px -168px}.c-icon-fold{background-position:-144px -168px}.c-icon-chevron-unfold{background-position:-168px -168px}.c-icon-qa{background-position:-192px -168px}.c-icon-register{background-position:-216px -168px}.c-icon-star{background-position:-240px -168px}.c-icon-star-gray{position:relative}.c-icon-star-gray .c-icon-star{position:absolute;top:0;left:0}.c-icon-play-blue{background-position:-312px -168px}.c-icon-pic{width:16px;background-position:-336px -168px}.c-icon-chevron-fold{background-position:-360px -168px}.c-icon-video{width:18px;background-position:-384px -168px}.c-icon-circle-blue{background-position:-408px -168px}.c-icon-circle-yellow{background-position:-432px -168px}.c-icon-play-white{background-position:-456px -168px}.c-icon-triangle-down-blue{background-position:-480px -168px}.c-icon-chevron-unfold2{background-position:-504px -168px}.c-icon-right{background-position:-528px -168px}.c-icon-right-empty{background-position:-552px -168px}.c-icon-new-corner{width:15px;background-position:-576px -168px}.c-icon-horn{background-position:-600px -168px}.c-icon-right-large{width:18px;background-position:-624px -168px}.c-icon-wrong-large{background-position:-648px -168px}.c-icon-circle-blue-s{background-position:-672px -168px}.c-icon-play-gray{background-position:-696px -168px}.c-icon-up{background-position:-720px -168px}.c-icon-down{background-position:-744px -168px}.c-icon-stable{background-position:-768px -168px}.c-icon-calendar-blue{background-position:-792px -168px}.c-icon-triangle-down-blue2{background-position:-816px -168px}.c-icon-triangle-up-blue2{background-position:-840px -168px}.c-icon-down-blue{background-position:-864px -168px}.c-icon-up-blue{background-position:-888px -168px}.c-icon-ting{background-position:-912px -168px}.c-icon-piao{background-position:-936px -168px}.c-icon-wrong-empty{background-position:-960px -168px}.c-icon-warning-circle-s{background-position:-984px -168px}.c-icon-chevron-left{background-position:-1008px -168px}.c-icon-chevron-right{background-position:-1032px -168px}.c-icon-circle-gray-s{background-position:-1056px -168px}.c-icon-v,.c-icon-v-noborder{background-position:0 -192px}.c-icon-hui{background-position:-24px -192px}.c-icon-bao{background-position:-48px -192px}.c-icon-phone{background-position:-72px -192px}.c-icon-qa-empty{background-position:-96px -192px}.c-icon-safeguard{background-position:-120px -192px}.c-icon-register-empty{background-position:-144px -192px}.c-icon-zan{background-position:-168px -192px}.c-icon-location{background-position:-240px -192px}.c-icon-warning{background-position:-264px -192px}.c-icon-doc{background-position:-288px -192px}.c-icon-xls{background-position:-312px -192px}.c-icon-ppt{background-position:-336px -192px}.c-icon-pdf{background-position:-360px -192px}.c-icon-txt{background-position:-384px -192px}.c-icon-play-black{background-position:-408px -192px}.c-icon-play-black:hover{background-position:-432px -192px}.c-icon-gift{background-position:-456px -192px}.c-icon-baidu-share{background-position:-480px -192px}.c-icon-bear{background-position:-504px -192px}.c-icon-sfda{width:31px;background-position:-528px -192px}.c-icon-bear-border{background-position:-576px -192px}.c-icon-person,.c-icon-person-noborder{background-position:-600px -192px}.c-icon-location-blue{background-position:-624px -192px}.c-icon-hotAirBall{background-position:-648px -192px}.c-icon-moon{background-position:-672px -192px}.c-icon-streetMap{background-position:-696px -192px}.c-icon-high-v,.c-icon-high-v-noborder{background-position:-720px -192px}.c-icon-nuo{background-position:-744px -192px}.c-icon-mv{background-position:-768px -192px}.c-icon-med{background-position:-816px -192px}.c-icon-air{background-position:-840px -192px}.c-icon-share2{background-position:-864px -192px}.c-icon-v1,.c-icon-v1-noborder{background-position:-888px -192px}.c-icon-v2,.c-icon-v2-noborder{background-position:-912px -192px}.c-icon-v3,.c-icon-v3-noborder{background-position:-936px -192px}.c-icon-v1-noborder-disable{background-position:-960px -192px}.c-icon-v2-noborder-disable{background-position:-984px -192px}.c-icon-v3-noborder-disable{background-position:-1008px -192px}.c-icon-write{background-position:-1032px -192px}.c-icon-zhidao-s{background-position:-1056px -192px}.c-icon-bear-circle{background-position:0 -216px}.c-icon-warning-circle{background-position:-24px -216px}.c-icon-warning-triangle{width:24px;background-position:-48px -216px}.c-icon-warning-circle-gray{background-position:-72px -216px}.c-icon-ball-red{background-position:0 -240px}.c-icon-ball-blue{background-position:-48px -240px}.c-icon-tieba{background-position:0 -288px}.c-icon-zhidao{background-position:-48px -288px}.c-icon-bear-p{background-position:-96px -288px}.c-icon-bear-pn{background-position:-144px -288px}.c-icon-download{background-position:0 -336px}.c-icon-lyric{background-position:-24px -336px}.c-icon-play-circle{background-position:-48px -336px}.c-icon-play-circle:hover{background-position:-72px -336px}.c-icon-stop-circle{background-position:-96px -336px}.c-icon-stop-circle:hover{background-position:-120px -336px}.c-icon-play-circle-middle{background-position:0 -360px}.c-icon-play-circle-middle:hover{background-position:-48px -360px}.c-icon-stop-circle-middle{background-position:-96px -360px}.c-icon-stop-circle-middle:hover{background-position:-144px -360px}.c-icon-play-black-large{background-position:0 -408px}.c-icon-play-black-large:hover{background-position:-48px -408px}.c-icon-stop-black-large{background-position:-96px -408px}.c-icon-stop-black-large:hover{background-position:-144px -408px}.c-icon-play-black-larger{background-position:0 -456px}.c-icon-play-black-larger:hover{background-position:-72px -456px}.c-icon-stop-black-larger{background-position:-144px -456px}.c-icon-stop-black-larger:hover{background-position:-216px -456px}.c-recommend-vline{display:inline-block;margin:0 10px -2px;border-left:1px solid #d8d8d8;width:0;height:12px;_vertical-align:middle;_overflow:hidden}.c-recommend-circle-weak{display:inline-block}.c-recommend-circle-weak{background:url(http://www.baidu.com/aladdin/img/tools/circle.png) no-repeat}.c-recommend-circle-weak{margin-bottom:-2px;width:14px;height:14px;background-position:0 -37px}.c-text{display:inline-block;padding:2px;text-align:center;vertical-align:text-bottom;font-size:12px;line-height:100%;font-style:normal;font-weight:normal;color:#fff;overflow:hidden}a.c-text{text-decoration:none}.c-text-new{background-color:#f13f40}.c-text-info{padding-left:0;padding-right:0;font-weight:bold;color:#2b99ff;*vertical-align:baseline;_position:relative;_top:2px}.c-text-info b{_position:relative;_top:-1px}.c-text-info span{padding:0 2px;font-weight:normal}.c-text-important{background-color:#1cb7fd}.c-text-public{background-color:#2b99ff}.c-text-warning{background-color:#ff830f}.c-text-prompt{background-color:#f5c537}.c-text-danger{background-color:#f13f40}.c-text-safe{background-color:#52c277}.c-text-empty{padding-top:1px;padding-bottom:1px;border:1px solid #d8d8d8;cursor:pointer;color:#23b9fd;background-color:#fff}.c-text-empty:hover{border-color:#388bff}.c-text-empty:active{border-color:#a2a6ab;background-color:#f0f0f0;box-shadow:inset 1px 1px 1px #c7c7c7;-webkit-box-shadow:inset 1px 1px 1px #c7c7c7;-moz-box-shadow:inset 1px 1px 1px #c7c7c7;-o-box-shadow:inset 1px 1px 1px #c7c7c7}.c-text-mult{padding-left:5px;padding-right:5px}.c-text-gray{background-color:#666}
+</style><noscript><meta http-equiv="refresh" content="0; url=/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&nojs=1&bqid=a7d862280008b9fa"/></noscript><script>var hashMatch = document.location.href.match(/#+(.*wd=[^&].+)/);if (hashMatch && hashMatch[0] && hashMatch[1]) {document.location.href = "http://"+location.host+"/s?"+hashMatch[1];}var bds = {comm:{loginAction : []},se:{},su:{urdata:[],urSendClick:function(){}},util:{},use:{},_base64:{domain : "http://b1.bdstatic.com/",b64Exp : -1,pdc : -1}};var al_arr=[];var selfOpen = window.open;eval("var open = selfOpen;");var isIE=navigator.userAgent.indexOf("MSIE")!=-1&&!window.opera;var E = bds.ecom= {};</script><script type="text/javascript" src="http://s1.bdstatic.com/r/www/cache/static/jquery/jquery-1.10.2.min_f2fb5194.js"></script><script type="text/javascript" src="http://s1.bdstatic.com/r/www/cache/static/global/js/all_async_popstate_713dd668.js"></script></head><body link="#0000cc"><div id="wrapper" class="wrapper_l"><div id="content" style="display:none"><form id="form1" name="f1" action="/s" class="fm"><input type="text" name="wd" id="kw1" maxlength="100" class="s_ipt"></form></div><div id="u"><a href="http://www.baidu.com/gaoji/preferences.html"  onmousedown="return user_c({'fm':'set','tab':'setting','login':'0'})">搜索设置</a>|<a id="btop" href="/"  onmousedown="return user_c({'fm':'set','tab':'index','login':'0'})">百度首页</a>|<a id="lb" href="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F" onclick="return false;"  onmousedown="return user_c({'fm':'set','tab':'login'})">登录</a><a href="https://passport.baidu.com/v2/?reg&regType=1&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F"  onmousedown="return user_c({'fm':'set','tab':'reg'})" target="_blank" class="reg">注册</a></div><div id="head"><div class="s_nav"><a href="/" class="s_logo" onmousedown="return c({'fm':'tab','tab':'logo'})"><div class="bg logo" title="到百度首页"></div></a><div class="s_tab" id="s_tab"><a href="http://news.baidu.com/ns?cl=2&rn=20&tn=news&word=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA" wdfield="word"  onmousedown="setHeadUrl(this);return c({'fm':'tab','tab':'news'})">新闻</a>&#12288;<b>网页</b>&#12288;<a href="http://tieba.baidu.com/f?kw=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&fr=wwwt" wdfield="kw"  onmousedown="setHeadUrl(this);return c({'fm':'tab','tab':'tieba'})">贴吧</a>&#12288;<a href="http://zhidao.baidu.com/q?ct=17&pn=0&tn=ikaslist&rn=10&word=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&fr=wwwt" wdfield="word"  onmousedown="setHeadUrl(this);return c({'fm':'tab','tab':'zhidao'})">知道</a>&#12288;<a href="http://music.baidu.com/search?fr=ps&key=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA" wdfield="key"  onmousedown="setHeadUrl(this);return c({'fm':'tab','tab':'music'})">音乐</a>&#12288;<a href="http://image.baidu.com/i?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&word=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA" wdfield="word"  onmousedown="setHeadUrl(this);return c({'fm':'tab','tab':'pic'})">图片</a>&#12288;<a href="http://v.baidu.com/v?ct=301989888&rn=20&pn=0&db=0&s=25&word=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA" wdfield="word"   onmousedown="setHeadUrl(this);return c({'fm':'tab','tab':'video'})">视频</a>&#12288;<a href="http://map.baidu.com/m?word=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&fr=ps01000" wdfield="word"  onmousedown="setHeadUrl(this);return c({'fm':'tab','tab':'map'})">地图</a>&#12288;<a href="http://wenku.baidu.com/search?word=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&lm=0&od=0" wdfield="word"  onmousedown="setHeadUrl(this);return c({'fm':'tab','tab':'wenku'})">文库</a>&#12288;<a href="http://www.baidu.com/more/"  onmousedown="return c({'fm':'tab','tab':'more'})">更多»</a></div></div><form id="form" name="f" action="/s" class="fm" ><input type="hidden" name="tn" value="baidu"><input type="hidden" name="ie" value="utf-8"><input type="hidden" name="bs" value="美元人民币汇率"><input type="hidden" name="f" value="8"><input type="hidden" name="rsv_bp" value="1"><span class="bg s_ipt_wr"><input name="wd" id="kw" class="s_ipt" value="美元人民币汇率" maxlength="100"></span><span class="bg s_btn_wr"><input type="submit" id="su" value="百度一下" class="bg s_btn" onmousedown="this.className='bg s_btn s_btn_h'" onmouseout="this.className='bg s_btn'"></span><span class="tools"><span id="mHolder"><div id="mCon"><span>输入法</span></div><ul id="mMenu"><li><a href="#" name="ime_hw">手写</a></li><li><a href="#" name="ime_py">拼音</a></li><li class="ln"></li><li><a href="#" name="ime_cl">关闭</a></li></ul></span><span class="shouji"><strong>推荐&nbsp;:&nbsp;</strong><a href="http://www.baidu.com/home/xman/show/worldcupindex?frm=jieguoye2" target="_blank" onmousedown="return ns_c({'fm':'behs','tab':'shijiebei'})">看世界杯，人人有礼，赢家通吃</a></span></span></form></div><script>var __rdNum = "2465";</script><script>bds.base64 = (function () {var _opt = bds._base64;var _containerAllId = "container",_containerLeftId = "content_left",_containerRightId = "content_right",_BOTTAGLSNAME = "BASE64_BOTTAG",_domain = bds._base64.domain, _imgWatch = [], _domLoaded = [], _data = [], _dataLoaded = [], _finish = [], _hasSpImg = false, _expGroup = 0, _reqTime = 0, _reqEnd = 0, _reqEndL = 0, _rsst = 0, _rest = 0, _dt = 1, _loadState = {}, _hasPreload = 0, _ispdc = false; var preXhrs = [],$ = window.$;if($) {$(window).on("swap_begin",function(){_imgWatch = []; _domLoaded = []; _data = []; _dataLoaded = []; _finish = []; _hasSpImg = false; _expGroup = 0; _reqTime = 0; _reqEnd = 0; _reqEndL = 0; _rsst = 0; _rest = 0; _dt = 1; _ispdc = false; for(var i = 0 ; i < preXhrs.length; i++) {preXhrs[i].abort();}});}var init = function(imgRight,imgLeft,isPreload){var imgArr = imgRight || [], imgArr2 = imgLeft || [];if(window.__IS_IMG_PREFETCH){function filter(img){return !window.__IS_IMG_PREFETCH.hasOwnProperty(img);}imgArr=$.grep(imgArr,filter);imgArr2=$.grep(imgArr2,filter);}if(window.__IMG_PRELOAD && isPreload) {_loadState["cbr"] = 0;_loadState["cbpr"] = 0;_hasPreload = 1; var imgPreloadList = window.__IMG_PRELOAD = {};for(var i = 0; i < imgArr.length; i++) {if(!imgPreloadList.hasOwnProperty(imgArr[i])) {window.__IMG_PRELOAD[imgArr[i]] = true;}}} else if(window.__IMG_PRELOAD && !isPreload) {var tmpArr = [];for(var i = 0; i < imgArr.length; i++){if(!window.__IMG_PRELOAD.hasOwnProperty(imgArr[i])) {tmpArr.push(imgArr[i]);}}imgArr = tmpArr;}if(_opt.b64Exp) {_expGroup = _opt.b64Exp;if(_expGroup == 1){_domain = "http://b2.bdstatic.com/"; _dt = 2;}}_ispdc= _opt.pdc>0 ? true : false;_reqTime = new Date()*1;if(_expGroup==2){if(imgArr2.length>0){_hasSpImg = true;loadJs(_domain + "image?imglist=" + imgArr2.join(",") + "&cb=bds.base64.cbl");}if(!isPreload) {cbl({});}}if(imgArr.length>0){if(isPreload) {loadJs(_domain + "image?imglist=" + imgArr.join(",") + "&cb=bds.base64.cbpr");} else {loadJs(_domain + "image?imglist=" + imgArr.join(",") + "&cb=bds.base64.cbr");}if(_ispdc){if(bds.ready){bds.ready(function(){setTimeout(function(){var _bottag = botTag.get();var logstr = "dt=" + _dt + "&time=" + ((_reqEnd>0)?(_reqEnd-_reqTime):0) + "&bot=" + _bottag + "&rcount=" + imgArr.length;window._B64_REQ_LOG = ((_reqEnd>0)?(_reqEnd-_reqTime):0) + "_" + imgArr.length;if(_expGroup==2 && _reqEndL>0){var _apics = document.getElementById("ala_img_pics");var _lcount = (_apics&&_apics.children)?_apics.children.length:0;logstr += "&time2=" + (_reqEndL-_reqTime) + "&lcount=" + _lcount;}if(Math.random()*100<10){sendLog(logstr);}}, 2000);});}}} else {if(!isPreload) {cbr({});}}if(imgArr.length>0 || imgArr2.length>0){if(!isPreload) {watchReq(imgArr.length);}}};if(window.__IS_IMG_PREFETCH_DEFER){$(window).one("swap_dom_ready",function(){window.__IS_IMG_PREFETCH_DEFER.done(function(data){data=window.__IS_IMG_PREFETCH?window.__IS_IMG_PREFETCH:data;var fail_num=0,success_num=0,no_num=0;$("#content_right").find("img[data-b64-id]").each(function(i,img){var b64Id=$(img).attr("data-b64-id");if(data.hasOwnProperty(b64Id)&&data[b64Id]!==true){setSrc(img,data[b64Id]);success_num++;}else if(data.hasOwnProperty(b64Id)){failover(img);fail_num++;}else{no_num++;}});if(window.PDC_ASYNC){window.PDC_ASYNC.prefetchImg(success_num,fail_num,no_num);}fail_ie7();});});}var loadJs;if($) {loadJs = function(url){var matchs = url.match(/.*(bds\.base64\.cb[rl])/);if(!matchs){return;}var url = matchs[0].replace(/bds\.base64\.cb[rl]/,"is_base64_img");var xhr = $.ajax({'url':url,cache:true,'dataType':'jsonp',jsonp:false,jsonpCallback:'is_base64_img','success':function(data){if(matchs[1] == "bds.base64.cbr") {bds.base64.cbr(data); } else if(matchs[1] == "bds.base64.cbl") {bds.base64.cbl(data); }} });preXhrs.push(xhr); }} else {loadJs = function (b) {var a = document.createElement("script");a.setAttribute("type", "text/javascript");a.setAttribute("src", b);a.setAttribute("defer", "defer");a.setAttribute("async", "true");document.getElementsByTagName("head")[0].appendChild(a);};}var imgLoad = function(data,side){if(_finish[side]){return; }_finish[side] = true;if(side=="right"){botTag.ot(false); }var imgs = document.getElementById(_expGroup!=1?((side=="left")?_containerLeftId:_containerRightId):_containerAllId).getElementsByTagName("IMG");for(var i=0;i<imgs.length;i++){var b64Id = imgs[i].getAttribute("data-b64-id");if(b64Id){var find = false;if(data.hasOwnProperty(b64Id)) {setSrc(imgs[i],data[b64Id]);find = true;} if(!find){failover(imgs[i]);}}}fail_ie7();};function fail_ie7(){setTimeout(function(){for( var i=0; i<_imgWatch.length; i++ ){var n = _imgWatch[i];if(!n.loaded){failover(n.obj);}}_imgWatch=[];},200);}function setSrc(img,data){try{img.onerror = function(){failover(this);};_imgWatch.push({obj:img,loaded:false});img.onload = function(){for( var i=0; i<_imgWatch.length; i++ ){var m = _imgWatch[i];if(m.obj == this){m.loaded = true;}}};img.src = "data:image\/jpeg;base64," + data;}catch(e){failover(img);}}var failover = function(img){if(img.getAttribute("data-b64-id")!=null && img.getAttribute("data-b64-id")!="" && img.getAttribute("data-src")!=null){img.src = img.getAttribute("data-src");}};var watchReq = function(len){var wt = 1250;if(len<6){wt = 1000;}else if(len>10){ wt = 1500; } setTimeout(function(){ if( !_dataLoaded["right"] ){ var imgs = document.getElementById(_containerRightId).getElementsByTagName("IMG"); for(var i=0;i<imgs.length;i++){failover(imgs[i]);}_finish["right"] = true; botTag.ot(true);}setTimeout(function(){if(_hasSpImg && !_dataLoaded["left"]){var imgs = document.getElementById(_containerLeftId).getElementsByTagName("IMG");for(var i=0;i<imgs.length;i++){failover(imgs[i]);}_finish["left"] = true; }},500);},wt);};var botTag = {ot : function(isInc){var _bottag = botTag.get();if(isInc){if(_bottag<6){_bottag++;}}else{if(_bottag>0){_bottag--;}}if( _bottag>=2 ){var date = new Date();date.setTime(date.getTime() + 24*3600*1000*5);document.cookie = "B64_BOT=1; expires=" + date.toGMTString();}else if( _bottag<1 ){if(document.cookie.match('B64_BOT=1')){document.cookie = "B64_BOT=0;";}}try{if(window.localStorage){window.localStorage[_BOTTAGLSNAME] = _bottag;}}catch(e){}},get : function(){try{if(window.localStorage){var _bottag = window.localStorage[_BOTTAGLSNAME];_bottag = _bottag?parseInt(_bottag):0;}else{return 0;}return _bottag;}catch(e){return 0;}}};var cbr = function(data){_reqEnd = new Date()*1;if(_ispdc && bds.comm && _reqTime>0 && _reqEnd>0){bds.comm.cusval = "b64_" + _dt + "_" + ( _reqEnd - _reqTime );}_loadState["cbr"] = 1;callback(data, "right");};var cbl = function(data){_reqEndL = new Date()*1;callback(data, "left");};var cbpr = function(data){_loadState["cbpr"] = 1;callback(data, "right");};var callback = function(data, side){_dataLoaded[side] = _hasPreload ? (_loadState.cbpr && _loadState.cbr) : true;if(data) {if(_data[side] === undefined) {_data[side] = {}};for(var key in data) {if(data.hasOwnProperty(key)) {_data[side][key] = data[key];}}}if(_domLoaded[side] && _dataLoaded[side]){imgLoad(_data[side], side);}};var setDomLoad = function(side){_domLoaded[side] = true;if(_dataLoaded[side]){imgLoad(_data[side],side);}};var predictImg = false; var sendLog = function (src) {var loghost = "http://nsclick.baidu.com/v.gif?pid=315&rsv_yc_log=3&";var n = "b64log__" + (new Date()).getTime(),c = window[n] = new Image();c.onload = (c.onerror = function () {window[n] = null;});c.src = loghost + src + "&_t=" + new Date()*1; c = null; };cbs = function(data){_rest = new Date()*1;if( (_rest - _rsst) < 1500 ){botTag.ot(false); }else{botTag.ot(true); }};ts = function(){_expGroup = 3;_rsst = new Date()*1;loadJs(_domain + "image?imglist=1241886729_3226161681_58,1072899117_2953388635_58,2469877062_2085031320_58,155831992_309216365_58,2539127170_1607411613_58,1160777122_283857721_58,1577144716_3149119526_58,2339041784_1038484334_58&cb=bds.base64.cbs");};return {init : init,cbl : cbl,cbr : cbr,cbpr : cbpr,setDomLoad : setDomLoad,cbs : cbs,ts : ts,predictImg : predictImg}})();</script><div id="wrapper_wrapper"><!--[if IE 8]><style>.c-input input{padding-top:4px}</style><![endif]--><style>.c-tool{display:inline-block;width:56px;height:56px;background:url("http://www.baidu.com/aladdin/img/tools/tools-5.png") no-repeat}.c-tool-region{background-position:0 0}.c-tool-calendar{background-position:-72px 0}.c-tool-city{background-position:-144px 0}.c-tool-phone-pos{background-position:-216px 0}.c-tool-other{background-position:-288px 0}.c-tool-midnight{background-position:-360px 0}.c-tool-kefu{width:121px;background-position:-432px 0}.c-tool-phone{background-position:-576px 0}.c-tool-car{background-position:-648px 0}.c-tool-station{background-position:0 -72px}.c-tool-cheat{background-position:-72px -72px}.c-tool-counter{background-position:-144px -72px}.c-tool-time{background-position:-216px -72px}.c-tool-zip{background-position:-288px -72px}.c-tool-warning{background-position:-360px -72px}.c-tool-ip{background-position:0 -144px}.c-tool-unit{background-position:-72px -144px}.c-tool-rate{background-position:-144px -144px}.c-tool-conversion{background-position:-288px -144px}.c-tool-ads{background-position:-360px -144px}.c-btn,.c-btn:visited{color:#333 !important}.c-btn{display:inline-block;padding:0 14px;margin:0;height:24px;line-height:25px;font-size:13px;filter:chroma(color=#000);*zoom:1;border:1px solid #d8d8d8;cursor:pointer;font-family:inherit;font-weight:normal;text-align:center;vertical-align:middle;background-color:#f9f9f9;overflow:hidden;outline:none}.c-btn:hover{border-color:#388bff}.c-btn:active{border-color:#a2a6ab;background-color:#f0f0f0;box-shadow:inset 1px 1px 1px #c7c7c7;-webkit-box-shadow:inset 1px 1px 1px #c7c7c7;-moz-box-shadow:inset 1px 1px 1px #c7c7c7;-o-box-shadow:inset 1px 1px 1px #c7c7c7}a.c-btn{text-decoration:none}button.c-btn{height:26px;_line-height:18px;*overflow:visible}button.c-btn::-moz-focus-inner{padding:0;border:0}.c-btn .c-icon{margin-top:5px}.c-btn-disable{color:#999 !important}.c-btn-disable:visited{color:#999 !important}.c-btn-disable:hover{border:1px solid #d8d8d8;cursor:default}.c-btn-disable:active{border-color:#d8d8d8;background-color:#f9f9f9;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none}.c-btn-mini{padding-left:5px;padding-right:5px;height:18px;line-height:18px;font-size:12px}button.c-btn-mini{height:20px;_height:18px;_line-height:14px}.c-btn-mini .c-icon{margin-top:2px}.c-btn-large{height:28px;line-height:28px;font-size:14px;font-family:"微软雅黑","黑体"}button.c-btn-large{height:30px;_line-height:24px}.c-btn-large .c-icon{margin-top:7px;_margin-top:6px}.c-btn-primary,.c-btn-primary:visited{color:#fff !important}.c-btn-primary{background-color:#388bff;border-color:#3c8dff #408ffe #3680e6}.c-btn-primary:hover{border-color:#2678ec #2575e7 #1c6fe2 #2677e7;background-color:#388bff;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAMAAACuX0YVAAAABlBMVEVnpv85i/9PO5r4AAAAD0lEQVR42gEEAPv/AAAAAQAFAAIros7PAAAAAElFTkSuQmCC);background-repeat:repeat-x;box-shadow:1px 1px 1px rgba(0,0,0,0.4);-webkit-box-shadow:1px 1px 1px rgba(0,0,0,0.4);-moz-box-shadow:1px 1px 1px rgba(0,0,0,0.4);-o-box-shadow:1px 1px 1px rgba(0,0,0,0.4)}.c-btn-primary:active{border-color:#178ee3 #1784d0 #177bbf #1780ca;background-color:#388bff;background-image:none;box-shadow:inset 1px 1px 1px rgba(0,0,0,0.15);-webkit-box-shadow:inset 1px 1px 1px rgba(0,0,0,0.15);-moz-box-shadow:inset 1px 1px 1px rgba(0,0,0,0.15);-o-box-shadow:inset 1px 1px 1px rgba(0,0,0,0.15)}.c-btn .c-icon{float:left}.c-input{display:inline-block;padding:0 4px;height:24px;line-height:24px\9;font-size:13px;border:1px solid #999;border-bottom-color:#d8d8d8;border-right-color:#d8d8d8;outline:none;box-sizing:content-box;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;vertical-align:top;overflow:hidden}.c-input:hover{box-shadow:inset 1px 1px 1px 0 #d8d8d8;-webkit-box-shadow:inset 1px 1px 1px 0 #d8d8d8;-moz-box-shadow:inset 1px 1px 1px 0 #d8d8d8;-o-box-shadow:inset 1px 1px 1px 0 #d8d8d8}.c-input .c-icon{float:right;margin-top:6px}.c-input .c-icon-left{float:left;margin-right:4px}.c-input input{float:left;height:22px;*padding-top:4px;margin-top:2px;font-size:13px;border:0;outline:none}.c-input{width:180px}.c-input input{width:162px}.c-input-xmini{width:65px}.c-input-xmini input{width:47px}.c-input-mini{width:88px}.c-input-mini input{width:70px}.c-input-small{width:157px}.c-input-small input{width:139px}.c-input-large{width:203px}.c-input-large input{width:185px}.c-input-xlarge{width:341px}.c-input-xlarge input{width:323px}.c-input12{width:249px}.c-input12 input{width:231px}.c-input20{width:433px}.c-input20 input{width:415px}.c-border .c-input{width:178px}.c-border .c-input input{width:160px}.c-border .c-input-xmini{width:68px}.c-border .c-input-xmini input{width:50px}.c-border .c-input-mini{width:90px}.c-border .c-input-mini input{width:72px}.c-border .c-input-small{width:156px}.c-border .c-input-small input{width:138px}.c-border .c-input-large{width:200px}.c-border .c-input-large input{width:182px}.c-border .c-input-xlarge{width:332px}.c-border .c-input-xlarge input{width:314px}.c-border .c-input12{width:244px}.c-border .c-input12 input{width:226px}.c-border .c-input20{width:420px}.c-border .c-input20 input{width:402px}.c-dropdown2{position:relative;display:inline-block;width:100%;height:26px;line-height:26px;font-size:13px;vertical-align:middle;outline:none;_font-family:SimSun;background-color:#fff;word-wrap:normal;word-break:normal}.c-dropdown2 .c-dropdown2-btn-group{position:relative;height:24px;border:1px solid #999;border-bottom-color:#d8d8d8;border-right-color:#d8d8d8;-moz-user-select:none;-webkit-user-select:none;user-select:none}.c-dropdown2:hover .c-dropdown2-btn-group,.c-dropdown2-hover .c-dropdown2-btn-group{box-shadow:inset 1px 1px 0 0 #d8d8d8;-webkit-box-shadow:inset 1px 1px 0 0 #d8d8d8;-moz-box-shadow:inset 1px 1px 0 0 #d8d8d8;-o-box-shadow:inset 1px 1px 0 0 #d8d8d8}.c-dropdown2:hover .c-dropdown2-btn-icon,.c-dropdown2-hover .c-dropdown2-btn-icon{box-shadow:inset 0 1px 0 0 #d8d8d8;-webkit-box-shadow:inset 0 1px 0 0 #d8d8d8;-moz-box-shadow:inset 0 1px 0 0 #d8d8d8;-o-box-shadow:inset 0 1px 0 0 #d8d8d8}.c-dropdown2:hover .c-dropdown2-btn-icon-border,.c-dropdown2-hover .c-dropdown2-btn-icon-border{background-color:#f2f2f2}.c-dropdown2 .c-dropdown2-btn{height:24px;padding-left:10px;padding-right:10px;cursor:default;overflow:hidden;white-space:nowrap}.c-dropdown2 .c-dropdown2-btn-icon{position:absolute;top:0;right:0;width:23px;height:24px;line-height:24px;background-color:#fff;padding:0 1px 0 10px}.c-dropdown2 .c-dropdown2-btn-icon-border{height:24px;width:23px;border-left:1px solid #d9d9d9;text-align:center;zoom:1}.c-dropdown2 .c-icon-triangle-down{*margin-top:5px;_margin-left:2px}.c-dropdown2 .c-dropdown2-menu{position:absolute;left:0;top:100%;_margin-top:0;width:100%;overflow:hidden;border:1px solid #bbb;background:#fff;visibility:hidden}.c-dropdown2 .c-dropdown2-menu-inner{overflow:hidden}.c-dropdown2 .c-dropdown2-option{background-color:#fff;cursor:pointer}.c-dropdown2 .c-dropdown2-selected{background-color:#f5f5f5}.c-dropdown2-common ul,.c-dropdown2-common li{margin:0;padding:0;list-style:none}.c-dropdown2-common .c-dropdown2-option{height:26px;line-height:26px;font-size:12px;color:#333;white-space:nowrap;cursor:pointer;padding-left:10px}.c-dropdown2-common .c-dropdown2-selected{background-color:#f5f5f5}.c-dropdown2-common .c-dropdown2-menu-group .c-dropdown2-group{padding-left:10px;font-weight:bold;cursor:default}.c-dropdown2-common .c-dropdown2-menu-group .c-dropdown2-option{padding-left:20px}.c-img{display:block;min-height:1px;border:none 0}.c-img3{width:52px}.c-img4{width:75px}.c-img6{width:121px}.c-img7{width:144px}.c-img12{width:259px}.c-img15{width:328px}.c-img18{width:397px}.c-border .c-img3{width:56px}.c-border .c-img4{width:78px}.c-border .c-img7{width:144px}.c-border .c-img12{width:254px}.c-border .c-img15{width:320px}.c-border .c-img18{width:386px} .op_exrate_sub_title{font-family:"微软雅黑" arial;font-size:1.23em;}.op_exrate_result{font-family:"微软雅黑" arial;font-size:1.69em;}.op_exrate_table .c-dropdown2{width:120px;}.op_exrate_table .c-dropdown2-option{padding-left:10px;}.op_exrate_table .op_exrate_td_sp{vertical-align:middle;font-weight:bold;}.op_exrate_errors{position:relative;top:26px;}.op_exrate_errors span{display:none;color:#f00;}.op_exrate_txt_e,.op_exrate_from_e,.op_exrate_to_e,.op_exrate_addmodle{float:left;}.op_exrate_txt_e,.op_exrate_from_e,.op_exrate_to_e{position:absolute;width:140px;}.op_exrate_txt_e{left:0;}.op_exrate_from_e{left:110px;}.op_exrate_to_e{left:291px;}.op_exrate_tiptop{margin-top:20px;}.op_sp_realtime_preBox{text-decoration:none;position:relative;overflow:hidden;}.op_sp_realtime_preBox img{vertical-align:top;float:left;height:79px;}.op_sp_realtime_preBox span,.op_sp_realtime_preBox b{display:block;position:absolute;bottom:0;left:1px;height:20px;cursor:pointer;}.op_sp_realtime_preBox span{display:block;background:#000;opacity:.65;filter:alpha(opacity=65);width:119px;}.op_sp_realtime_preBox b{font:400 13px/20px arial;color:#fff;background:url(http://s1.bdstatic.com/r/www/cache/realtime/img/play-1.0.png) no-repeat 4px center;padding-left:20px;}.op_sp_weibo a{text-decoration:none;}.op_sp_weibo a:hover{text-decoration:underline;}.op_sp_weibo li{min-height:55px;height:auto!important;height:55px;overflow:visible;}.op_sp_weibo li .info{padding-top:2px;}.op_sp_weibo li .info .c{text-decoration:none;}.op_sp_weibo_info{color:#666;}.op_sp_weibo_info .op_sp_weibo_pz{float:right;color:#999;}.op_sp_weibo_face{position:relative;float:left;}.op_sp_weibo_face img{height:52px;}.op_sp_weibo_level_icon{background-image:url(/cache/midpage/baiduwb/img/weibo_level_icon.png);width:16px;height:14px;background-repeat:no-repeat;display:inline-block;vertical-align:text-bottom;}.op_sp_weibo_level_icon_1{background-position:-20px 0;}.op_sp_weibo_level_icon_2{background-position:0 0;}.op_sp_weibo_level_icon_3{background-position:-40px 0;}.op_sp_weibo_level_icon_11{background-position:-80px 0;}.op_sp_weibo_level_icon_12{background-position:-60px 0;}.op_sp_weibo_level_icon_13{background-position:-100px 0;}.op_sp_weibo_more a{text-decoration:underline;}.op_sp_weibo_info .m a{color:#666;}.op_sp_weibo_all{white-space:nowrap;display:inline-block;}.opr-recommends-title{text-decoration:none;}.opr-recommends-title:hover{text-decoration:underline;}.opr-recommends-imgtext{display:block;}.opr-recommends-hide{display:none;}.opr-recommends-p{position:relative;_zoom:1;}.opr-recommends-item{text-align:center;}.opr-recommends-mask{position:absolute;top:0;left:0;width:100%;background:#000\9;_background:none;filter:alpha(opacity=3)\9;background:-webkit-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,0.03));background:-moz-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,0.03));background:-o-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,0.03));background:-ms-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,0.03));}.opr-recommends-more-btn i{cursor:pointer;}.opr-recommends-layerbtn{position:absolute;right:0;bottom:0;width:1.23em;height:1.23em;background:url(http://www.baidu.com/aladdin/img/right_recommends/layericon.png) no-repeat;_background-image:url(http://www.baidu.com/aladdin/img/right_recommends/layericon.gif);}.opr-recommends-layerbtn1,.opr-recommends-layerbtn2{background-position:-48px 0;}.opr-recommends-layerbtn1,.opr-recommends-layerbtn3{background-color:#999;}.opr-recommends-layerbtn1:hover,.opr-recommends-layerbtn3:hover,.opr-recommends-layerbtn2,.opr-recommends-layerbtn4{background-color:#38f;}.opr-recommends-layerbtn3:hover,.opr-recommends-layerbtn4:hover{background-position:-24px 0;}.opr-recommends-layer{padding:4px 9px;width:350px;}.opr-recommends-layer table{border-collapse:collapse;border-padding:0;}.opr-recommends-layer td{font-size:1em;line-height:1.67;vertical-align:top;}.opr-recommends-lastspan{display:none;}.container_l .opr-recommends-lastspan{display:block;}.container_l .cr-content-narrow .opr-recommends-lastspan{display:none;}</style><script id="head_script">$.extend(bds.comm,{domain:"http://www.baidu.com",ubsurl : "http://sclick.baidu.com/w.gif",tn:"baidu",queryEnc:"%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA",queryId:"a7d862280008b9fa",inter:"",resTemplateName:"baidu",sugHost : "http://suggestion.baidu.com/su",ishome : 0,query : "美元人民币汇率",qid : "a7d862280008b9fa",cid : "0",sid : "1428_7571_5224_6997_7447_7599_7540_7532_7442_7592_6017_7202_6931_7253_7133_7416_7573_7580",stoken : "",serverTime : "1404986539",user : "",username : "",__rdNum : "2465",useFavo : "",pinyin : "meiyuanrenminbihuilv",favoOn : "",curResultNum:"10",rightResultExist:false,protectNum:0,zxlNum:0,pageNum:parseInt('1')||1,pageSize:parseInt('10')||10});bds.se.mon = {'loadedItems':[],'load':function(){},'srvt':-1};try {bds.se.mon.srvt = parseInt(document.cookie.match(new RegExp("(^| )BDSVRTM=([^;]*)(;|$)"))[2]);document.cookie="BDSVRTM=;expires=Sat, 01 Jan 2000 00:00:00 GMT"; }catch(e){bds.se.mon.srvt=-1; }bdUser = bds.comm.user?bds.comm.user:null;bdQuery = bds.comm.query;bdUseFavo = bds.comm.useFavo;bdFavoOn = bds.comm.favoOn;bdCid = bds.comm.cid;bdSid = bds.comm.sid;bdServerTime = bds.comm.serverTime;bdQid = bds.comm.queryId;bdstoken = bds.comm.stoken;login_success = [];bds.comm.seinfo = {'fm':'se','T':'1404986539','y':'E7FEBFFF','rsv_cache': (bds.se.mon.srvt>0)?0:1 };bds.comm.cgif = "http://c.baidu.com/c.gif?t=0&q=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&p=0&pn=1";</script><script>(function(){var imgArr = [],imgArr2 = [];imgArr = ["920867907_2813902510_58","1633053883_4103243667_58","279290741_2862598242_58","1248177390_744506789_58","2568181175_1527508299_58","2555144822_4074276722_58","2237322460_1019043466_58","412369964_2495770866_58","2445277209_1569073791_58","2418097862_3029041406_58","4055608334_2902201353_58","3452783470_996080117_58","3409103560_1448859244_58","425488425_1210646555_58","1911645611_2730369326_58","3459787474_845575577_58","4190750334_3279482314_58","2348109795_3931392291_58","152139076_2498252012_58","2815656000_127053083_58","2554093936_1858701404_58","2802296537_1375865647_58","3383616234_3543519679_58"];bds.base64.init(imgArr,imgArr2);})();</script><div id="container" class="container_s"><script>bds.util.setContainerWidth();bds.ready(function(){$(window).on("resize",function(){bds.util.setContainerWidth();bds.event.trigger("se.window_resize");});bds.util.setContainerWidth();});</script><div id="content_right" class="cr-offset"><table cellpadding="0" cellspacing="0"><tr><td align="left"><div></div><div id="con-ar"><div class="result-op xpath-log" tpl="right_recommends" data-click="{fm:'alxr',p1:'1',rsv_srcid:'20783',mu:'http://www.baidu.com/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&srcid=20783',rsv_stl:'0'}">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+    
+    
+
+
+<div class="cr-content ">
+    <style>.opr-recommends-p,.opr-recommends-img,.opr-recommends-mask{height:75px}.opr-recommends-item-vertical .opr-recommends-p,.opr-recommends-item-vertical .opr-recommends-img{height:100px}</style><div class="cr-title c-clearfix">  <a class="cr-title-sub opr-recommends-more-btn" href="javascript:;" onclick="return false;" data-click="{'fm':'beha'}"><span>展开</span><i class="c-icon c-icon-chevron-bottom c-gap-left-small"></i></a>  <span title="相关术语">相关术语</span></div><div class="opr-recommends-panel">    
+<div class="c-row c-gap-top">
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'美元指数','rsv_re_uri':'725538'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E7%BE%8E%E5%85%83%E6%8C%87%E6%95%B0&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"><img data-src="http://t10.baidu.com/it/u=920867907,2813902510&fm=58" data-b64-id="920867907_2813902510_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E7%BE%8E%E5%85%83%E6%8C%87%E6%95%B0&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="美元指数" href="/s?usm=3&f=0&wd=%E7%BE%8E%E5%85%83%E6%8C%87%E6%95%B0&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783">美元指数</a></div>
+                        <div>
+            <img data-src="http://t12.baidu.com/it/u=2568181175,1527508299&fm=58" data-b64-id="2568181175_1527508299_58" class="opr-recommends-imgtext" data-nolog="1"/>        </div>
+                            </div>   
+
+    
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'外汇牌价','rsv_re_uri':'196589'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E5%A4%96%E6%B1%87%E7%89%8C%E4%BB%B7&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"><img data-src="http://t11.baidu.com/it/u=1633053883,4103243667&fm=58" data-b64-id="1633053883_4103243667_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E5%A4%96%E6%B1%87%E7%89%8C%E4%BB%B7&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="外汇牌价" href="/s?usm=3&f=0&wd=%E5%A4%96%E6%B1%87%E7%89%8C%E4%BB%B7&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783">外汇牌价</a></div>
+                        <div>
+            <img data-src="http://t12.baidu.com/it/u=2555144822,4074276722&fm=58" data-b64-id="2555144822_4074276722_58" class="opr-recommends-imgtext" data-nolog="1"/>        </div>
+                            </div>   
+
+    
+    
+    <div class="c-span4  c-span-last-s opr-recommends-item " data-click="{'rsv_re_ename':'日元汇率','rsv_re_uri':'1814571'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%97%A5%E5%85%83%E6%B1%87%E7%8E%87&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"><img data-src="http://t12.baidu.com/it/u=279290741,2862598242&fm=58" data-b64-id="279290741_2862598242_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%97%A5%E5%85%83%E6%B1%87%E7%8E%87&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="日元汇率" href="/s?usm=3&f=0&wd=%E6%97%A5%E5%85%83%E6%B1%87%E7%8E%87&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783">日元汇率</a></div>
+                        <div>
+            <img data-src="http://t11.baidu.com/it/u=2237322460,1019043466&fm=58" data-b64-id="2237322460_1019043466_58" class="opr-recommends-imgtext" data-nolog="1"/>        </div>
+                            </div>   
+
+    
+    
+    <div class="c-span4  c-span-last opr-recommends-lastspan opr-recommends-item " data-click="{'rsv_re_ename':'人民币升值','rsv_re_uri':'529049'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E4%BA%BA%E6%B0%91%E5%B8%81%E5%8D%87%E5%80%BC&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"><img data-src="http://t10.baidu.com/it/u=1248177390,744506789&fm=58" data-b64-id="1248177390_744506789_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E4%BA%BA%E6%B0%91%E5%B8%81%E5%8D%87%E5%80%BC&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="人民币升值" href="/s?usm=3&f=0&wd=%E4%BA%BA%E6%B0%91%E5%B8%81%E5%8D%87%E5%80%BC&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783">人民币升值</a></div>
+                        <div>
+            <img data-src="http://t12.baidu.com/it/u=412369964,2495770866&fm=58" data-b64-id="412369964_2495770866_58" class="opr-recommends-imgtext" data-nolog="1"/>        </div>
+                            </div>   
+
+    </div>
+<textarea class="opr-recommends-hide opr-recommends-more-textarea">
+    <div class="opr-recommends-morelists">
+    
+<div class="c-row c-gap-top">
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'外汇汇率','rsv_re_uri':'356555'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E5%A4%96%E6%B1%87%E6%B1%87%E7%8E%87&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"><img  data-img="http://t10.baidu.com/it/u=361669839,2897767922&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E5%A4%96%E6%B1%87%E6%B1%87%E7%8E%87&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="外汇汇率" href="/s?usm=3&f=0&wd=%E5%A4%96%E6%B1%87%E6%B1%87%E7%8E%87&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783">外汇汇率</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'纸黄金','rsv_re_uri':'96100'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E7%BA%B8%E9%BB%84%E9%87%91&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"><img  data-img="http://t10.baidu.com/it/u=3716204160,2639964014&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E7%BA%B8%E9%BB%84%E9%87%91&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="纸黄金" href="/s?usm=3&f=0&wd=%E7%BA%B8%E9%BB%84%E9%87%91&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783">纸黄金</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  c-span-last-s opr-recommends-item " data-click="{'rsv_re_ename':'白银价格','rsv_re_uri':'4873572'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E7%99%BD%E9%93%B6%E4%BB%B7%E6%A0%BC&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"><img  data-img="http://t11.baidu.com/it/u=388325422,893427145&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E7%99%BD%E9%93%B6%E4%BB%B7%E6%A0%BC&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="白银价格" href="/s?usm=3&f=0&wd=%E7%99%BD%E9%93%B6%E4%BB%B7%E6%A0%BC&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783">白银价格</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  c-span-last opr-recommends-lastspan opr-recommends-item " data-click="{'rsv_re_ename':'货币兑换','rsv_re_uri':'1209612'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E8%B4%A7%E5%B8%81%E5%85%91%E6%8D%A2&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"><img  data-img="http://t12.baidu.com/it/u=162963971,2514472490&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E8%B4%A7%E5%B8%81%E5%85%91%E6%8D%A2&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="货币兑换" href="/s?usm=3&f=0&wd=%E8%B4%A7%E5%B8%81%E5%85%91%E6%8D%A2&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783">货币兑换</a></div>
+                                    </div>   
+
+    </div>
+    
+<div class="c-row c-gap-top">
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'货币政策','rsv_re_uri':'142663'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"><img  data-img="http://t11.baidu.com/it/u=3445911511,323739993&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="货币政策" href="/s?usm=3&f=0&wd=%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783">货币政策</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'期货','rsv_re_uri':'2348'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%9C%9F%E8%B4%A7&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"><img  data-img="http://t12.baidu.com/it/u=3714006650,367606822&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%9C%9F%E8%B4%A7&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="期货" href="/s?usm=3&f=0&wd=%E6%9C%9F%E8%B4%A7&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20783">期货</a></div>
+                                    </div>   
+
+    </div>
+</div>
+</textarea></div><script>A.setup({platform:"pc"});</script>
+</div>
+</div><div class="result-op xpath-log" tpl="right_recommends" data-click="{fm:'alxr',p1:'2',rsv_srcid:'20784',mu:'http://www.baidu.com/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&srcid=20784',rsv_stl:'0'}">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+    
+    
+
+
+<div class="cr-content ">
+    <style>.opr-recommends-p,.opr-recommends-img,.opr-recommends-mask{height:75px}.opr-recommends-item-vertical .opr-recommends-p,.opr-recommends-item-vertical .opr-recommends-img{height:100px}</style><div class="cr-title c-clearfix">  <a class="cr-title-sub opr-recommends-more-btn" href="javascript:;" onclick="return false;" data-click="{'fm':'beha'}"><span>展开</span><i class="c-icon c-icon-chevron-bottom c-gap-left-small"></i></a>  <span title="相关货币">相关货币</span></div><div class="opr-recommends-panel">    
+<div class="c-row c-gap-top">
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'英镑','rsv_re_uri':'42906'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E8%8B%B1%E9%95%91&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img data-src="http://t10.baidu.com/it/u=2445277209,1569073791&fm=58" data-b64-id="2445277209_1569073791_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E8%8B%B1%E9%95%91&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="英镑" href="/s?usm=3&f=0&wd=%E8%8B%B1%E9%95%91&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">英镑</a></div>
+                        <div>
+            <img data-src="http://t11.baidu.com/it/u=3409103560,1448859244&fm=58" data-b64-id="3409103560_1448859244_58" class="opr-recommends-imgtext" data-nolog="1"/>        </div>
+                            </div>   
+
+    
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'欧元','rsv_re_uri':'6832'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%AC%A7%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img data-src="http://t12.baidu.com/it/u=2418097862,3029041406&fm=58" data-b64-id="2418097862_3029041406_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%AC%A7%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="欧元" href="/s?usm=3&f=0&wd=%E6%AC%A7%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">欧元</a></div>
+                        <div>
+            <img data-src="http://t10.baidu.com/it/u=425488425,1210646555&fm=58" data-b64-id="425488425_1210646555_58" class="opr-recommends-imgtext" data-nolog="1"/>        </div>
+                            </div>   
+
+    
+    
+    <div class="c-span4  c-span-last-s opr-recommends-item " data-click="{'rsv_re_ename':'泰铢','rsv_re_uri':'272488'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%B3%B0%E9%93%A2&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img data-src="http://t12.baidu.com/it/u=4055608334,2902201353&fm=58" data-b64-id="4055608334_2902201353_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%B3%B0%E9%93%A2&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="泰铢" href="/s?usm=3&f=0&wd=%E6%B3%B0%E9%93%A2&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">泰铢</a></div>
+                        <div>
+            <img data-src="http://t12.baidu.com/it/u=1911645611,2730369326&fm=58" data-b64-id="1911645611_2730369326_58" class="opr-recommends-imgtext" data-nolog="1"/>        </div>
+                            </div>   
+
+    
+    
+    <div class="c-span4  c-span-last opr-recommends-lastspan opr-recommends-item " data-click="{'rsv_re_ename':'新台币','rsv_re_uri':'296225'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%96%B0%E5%8F%B0%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img data-src="http://t11.baidu.com/it/u=3452783470,996080117&fm=58" data-b64-id="3452783470_996080117_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%96%B0%E5%8F%B0%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="新台币" href="/s?usm=3&f=0&wd=%E6%96%B0%E5%8F%B0%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">新台币</a></div>
+                        <div>
+            <img data-src="http://t11.baidu.com/it/u=3459787474,845575577&fm=58" data-b64-id="3459787474_845575577_58" class="opr-recommends-imgtext" data-nolog="1"/>        </div>
+                            </div>   
+
+    </div>
+<textarea class="opr-recommends-hide opr-recommends-more-textarea">
+    <div class="opr-recommends-morelists">
+    
+<div class="c-row c-gap-top">
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'日元','rsv_re_uri':'68875'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%97%A5%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t10.baidu.com/it/u=1444944009,695759074&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%97%A5%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="日元" href="/s?usm=3&f=0&wd=%E6%97%A5%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">日元</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'法郎','rsv_re_uri':'42912'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%B3%95%E9%83%8E&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t11.baidu.com/it/u=482241868,429757138&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%B3%95%E9%83%8E&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="法郎" href="/s?usm=3&f=0&wd=%E6%B3%95%E9%83%8E&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">法郎</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  c-span-last-s opr-recommends-item " data-click="{'rsv_re_ename':'港元','rsv_re_uri':'142432'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%B8%AF%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t12.baidu.com/it/u=3342761402,3806368628&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%B8%AF%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="港元" href="/s?usm=3&f=0&wd=%E6%B8%AF%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">港元</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  c-span-last opr-recommends-lastspan opr-recommends-item " data-click="{'rsv_re_ename':'卢比','rsv_re_uri':'457139'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E5%8D%A2%E6%AF%94&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t11.baidu.com/it/u=3484830112,1207539137&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E5%8D%A2%E6%AF%94&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="卢比" href="/s?usm=3&f=0&wd=%E5%8D%A2%E6%AF%94&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">卢比</a></div>
+                                    </div>   
+
+    </div>
+    
+<div class="c-row c-gap-top">
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'越南盾','rsv_re_uri':'272480'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E8%B6%8A%E5%8D%97%E7%9B%BE&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t11.baidu.com/it/u=1407785323,1295315837&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E8%B6%8A%E5%8D%97%E7%9B%BE&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="越南盾" href="/s?usm=3&f=0&wd=%E8%B6%8A%E5%8D%97%E7%9B%BE&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">越南盾</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'新加坡元','rsv_re_uri':'261750'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t11.baidu.com/it/u=1693470169,687420796&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="新加坡元" href="/s?usm=3&f=0&wd=%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">新加坡元</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  c-span-last-s opr-recommends-item " data-click="{'rsv_re_ename':'韩币','rsv_re_uri':'557265'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E9%9F%A9%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t11.baidu.com/it/u=3063679312,1882762259&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E9%9F%A9%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="韩币" href="/s?usm=3&f=0&wd=%E9%9F%A9%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">韩币</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  c-span-last opr-recommends-lastspan opr-recommends-item " data-click="{'rsv_re_ename':'澳门币','rsv_re_uri':'362738'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%BE%B3%E9%97%A8%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t12.baidu.com/it/u=164833286,2129229615&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%BE%B3%E9%97%A8%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="澳门币" href="/s?usm=3&f=0&wd=%E6%BE%B3%E9%97%A8%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">澳门币</a></div>
+                                    </div>   
+
+    </div>
+    
+<div class="c-row c-gap-top">
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'俄罗斯卢布','rsv_re_uri':'1325713'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E4%BF%84%E7%BD%97%E6%96%AF%E5%8D%A2%E5%B8%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t11.baidu.com/it/u=18442306,1280920742&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E4%BF%84%E7%BD%97%E6%96%AF%E5%8D%A2%E5%B8%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="俄罗斯卢布" href="/s?usm=3&f=0&wd=%E4%BF%84%E7%BD%97%E6%96%AF%E5%8D%A2%E5%B8%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">俄罗斯卢布</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'朝鲜圆','rsv_re_uri':'87582'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%9C%9D%E9%B2%9C%E5%9C%86&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t11.baidu.com/it/u=1462625080,2819720655&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%9C%9D%E9%B2%9C%E5%9C%86&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="朝鲜圆" href="/s?usm=3&f=0&wd=%E6%9C%9D%E9%B2%9C%E5%9C%86&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">朝鲜圆</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  c-span-last-s opr-recommends-item " data-click="{'rsv_re_ename':'比特币','rsv_re_uri':'12216829'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%AF%94%E7%89%B9%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t10.baidu.com/it/u=2008216413,302897318&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%AF%94%E7%89%B9%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="比特币" href="/s?usm=3&f=0&wd=%E6%AF%94%E7%89%B9%E5%B8%81&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">比特币</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  c-span-last opr-recommends-lastspan opr-recommends-item " data-click="{'rsv_re_ename':'澳大利亚元','rsv_re_uri':'272494'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"><img  data-img="http://t12.baidu.com/it/u=463322495,694187466&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="澳大利亚元" href="/s?usm=3&f=0&wd=%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E5%85%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20784">澳大利亚元</a></div>
+                                    </div>   
+
+    </div>
+</div>
+</textarea></div><script>A.setup({platform:"pc"});</script>
+</div>
+</div><div class="result-op xpath-log" tpl="right_recommends" data-click="{fm:'alxr',p1:'3',rsv_srcid:'20785',mu:'http://www.baidu.com/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&srcid=20785',rsv_stl:'0'}">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+    
+    
+
+
+<div class="cr-content ">
+    <style>.opr-recommends-p,.opr-recommends-img,.opr-recommends-mask{height:75px}.opr-recommends-item-vertical .opr-recommends-p,.opr-recommends-item-vertical .opr-recommends-img{height:100px}</style><div class="cr-title c-clearfix">  <a class="cr-title-sub opr-recommends-more-btn" href="javascript:;" onclick="return false;" data-click="{'fm':'beha'}"><span>展开</span><i class="c-icon c-icon-chevron-bottom c-gap-left-small"></i></a>  <span title="相关机构">相关机构</span></div><div class="opr-recommends-panel">    
+<div class="c-row c-gap-top">
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'中国银行','rsv_re_uri':'9609'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%A1%8C&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"><img data-src="http://t10.baidu.com/it/u=4190750334,3279482314&fm=58" data-b64-id="4190750334_3279482314_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%A1%8C&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="中国银行" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%A1%8C&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785">中国银行</a></div>
+                        <div>
+            <img data-src="http://t11.baidu.com/it/u=2554093936,1858701404&fm=58" data-b64-id="2554093936_1858701404_58" class="opr-recommends-imgtext" data-nolog="1"/>        </div>
+                            </div>   
+
+    
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'盎司','rsv_re_uri':'22172'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E7%9B%8E%E5%8F%B8&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"><img data-src="http://t10.baidu.com/it/u=2348109795,3931392291&fm=58" data-b64-id="2348109795_3931392291_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E7%9B%8E%E5%8F%B8&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="盎司" href="/s?usm=3&f=0&wd=%E7%9B%8E%E5%8F%B8&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785">盎司</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  c-span-last-s opr-recommends-item " data-click="{'rsv_re_ename':'中国外汇交易中心','rsv_re_uri':'295668'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E5%A4%96%E6%B1%87%E4%BA%A4%E6%98%93%E4%B8%AD%E5%BF%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"><img data-src="http://t11.baidu.com/it/u=152139076,2498252012&fm=58" data-b64-id="152139076_2498252012_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E5%A4%96%E6%B1%87%E4%BA%A4%E6%98%93%E4%B8%AD%E5%BF%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="中国外汇交易中心" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E5%A4%96%E6%B1%87%E4%BA%A4%E6%98%93%E4%B8%AD%E5%BF%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785">中国外汇交易中心</a></div>
+                        <div>
+            <img data-src="http://t12.baidu.com/it/u=2802296537,1375865647&fm=58" data-b64-id="2802296537_1375865647_58" class="opr-recommends-imgtext" data-nolog="1"/>        </div>
+                            </div>   
+
+    
+    
+    <div class="c-span4  c-span-last opr-recommends-lastspan opr-recommends-item " data-click="{'rsv_re_ename':'中国人民银行','rsv_re_uri':'21741'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E9%93%B6%E8%A1%8C&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"><img data-src="http://t10.baidu.com/it/u=2815656000,127053083&fm=58" data-b64-id="2815656000_127053083_58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E9%93%B6%E8%A1%8C&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="中国人民银行" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E9%93%B6%E8%A1%8C&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785">中国人民银行</a></div>
+                        <div>
+            <img data-src="http://t10.baidu.com/it/u=3383616234,3543519679&fm=58" data-b64-id="3383616234_3543519679_58" class="opr-recommends-imgtext" data-nolog="1"/>        </div>
+                            </div>   
+
+    </div>
+<textarea class="opr-recommends-hide opr-recommends-more-textarea">
+    <div class="opr-recommends-morelists">
+    
+<div class="c-row c-gap-top">
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'中国工商银行','rsv_re_uri':'14038'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E5%B7%A5%E5%95%86%E9%93%B6%E8%A1%8C&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"><img  data-img="http://t10.baidu.com/it/u=2590012326,3120175511&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E5%B7%A5%E5%95%86%E9%93%B6%E8%A1%8C&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="中国工商银行" href="/s?usm=3&f=0&wd=%E4%B8%AD%E5%9B%BD%E5%B7%A5%E5%95%86%E9%93%B6%E8%A1%8C&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785">中国工商银行</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  opr-recommends-item " data-click="{'rsv_re_ename':'卢布','rsv_re_uri':'5074255'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E5%8D%A2%E5%B8%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"><img  data-img="http://t11.baidu.com/it/u=3199439125,841925984&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E5%8D%A2%E5%B8%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="卢布" href="/s?usm=3&f=0&wd=%E5%8D%A2%E5%B8%83&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785">卢布</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  c-span-last-s opr-recommends-item " data-click="{'rsv_re_ename':'美国联邦储备局','rsv_re_uri':'462966'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E7%BE%8E%E5%9B%BD%E8%81%94%E9%82%A6%E5%82%A8%E5%A4%87%E5%B1%80&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"><img  data-img="http://t10.baidu.com/it/u=3030629739,3734922628&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E7%BE%8E%E5%9B%BD%E8%81%94%E9%82%A6%E5%82%A8%E5%A4%87%E5%B1%80&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="美国联邦储备局" href="/s?usm=3&f=0&wd=%E7%BE%8E%E5%9B%BD%E8%81%94%E9%82%A6%E5%82%A8%E5%A4%87%E5%B1%80&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785">美国联邦储备局</a></div>
+                                    </div>   
+
+    
+    
+    <div class="c-span4  c-span-last opr-recommends-lastspan opr-recommends-item " data-click="{'rsv_re_ename':'外汇管理局','rsv_re_uri':'2347121'}">
+    	<div class="opr-recommends-p">
+            <a target="_blank" href="/s?usm=3&f=0&wd=%E5%A4%96%E6%B1%87%E7%AE%A1%E7%90%86%E5%B1%80&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"><img  data-img="http://t10.baidu.com/it/u=4077294933,4141439968&fm=58" class="c-img c-img4 opr-recommends-img"/></a>
+            <a class="opr-recommends-mask" target="_blank" href="/s?usm=3&f=0&wd=%E5%A4%96%E6%B1%87%E7%AE%A1%E7%90%86%E5%B1%80&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785"></a>                    </div>
+        <div class="c-gap-top-small"><a target="_blank" title="外汇管理局" href="/s?usm=3&f=0&wd=%E5%A4%96%E6%B1%87%E7%AE%A1%E7%90%86%E5%B1%80&ie=utf-8&rsv_cq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsv_dl=0_right_recom_20785">外汇管理局</a></div>
+                                    </div>   
+
+    </div>
+</div>
+</textarea></div><script>A.setup({platform:"pc"});</script>
+</div>
+</div><div style="text-align:right;"><a href="javascript:;" onclick="return false;" class="c-gray c-feedback">意见反馈</a></div></div><div></div><div></div></td></tr></table></div><script>if(bds.base64){bds.base64.setDomLoad("right");}</script><div id="content_left">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    
+    
+
+
+<div class="result-op c-container"  srcid="6017"  fk="美元人民币元" id="1" tpl="exrate" mu="http://open.baidu.com/huilv/s?tn=baiduhuilv&wd=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA" data-op="{'y':'F5FDDFB6'}" data-click="{'p1':'1','rsv_bdr':'0','fm':'alop',rsv_stl:'0'}">
+            <div class="c-border"><div> <div class="c-row">  <div class="c-span3"> <i class="c-tool c-tool-rate"></i> </div>  <div class="c-span21 c-span-last"> <div class="op_exrate_sub_title">货币兑换</div> <div class="op_exrate_result">   <div>1美元=6.1994人民币元</div> <div>1人民币元=0.1613美元</div>  </div> </div> </div> <div class="c-gap-top">  <div class="op_exrate_table c-clearfix"> <div> <div class="op_exrate_addmodle"> <input class="c-input c-input-mini c-gap-right op_exrate_txt" type="text" value="1" maxlength="13"> </div> <div class="op_exrate_addmodle"> <div class="c-dropdown2 c-gap-right op_exrate_from OP_LOG_BTN"  data-click="{fm:'beha'}"> <div class="c-dropdown2-btn-group"> <div class="c-dropdown2-btn">美元</div> <div class="c-dropdown2-btn-icon"> <div class="c-dropdown2-btn-icon-border"> <i class="c-icon c-icon-triangle-down"></i> </div> </div> </div> <div class="c-dropdown2-menu"> <div class="c-dropdown2-menu-inner"> <ul class="c-dropdown2-menubox"> </ul> </div> </div> </div> </div> <div class="op_exrate_addmodle op_exrate_td_sp"><span class="c-gap-right">兑换为</span></div> <div class="op_exrate_addmodle"> <div class="c-dropdown2 c-gap-right op_exrate_to OP_LOG_BTN"  data-click="{fm:'beha'}"> <div class="c-dropdown2-btn-group"> <div class="c-dropdown2-btn">人民币元</div> <div class="c-dropdown2-btn-icon"> <div class="c-dropdown2-btn-icon-border"> <i class="c-icon c-icon-triangle-down"></i> </div> </div> </div> <div class="c-dropdown2-menu"> <div class="c-dropdown2-menu-inner"> <ul class="c-dropdown2-menubox"> </ul> </div> </div> </div> </div> <div class="op_exrate_addmodle"><a href="#" onclick="return false;"  class="c-btn c-btn-primary op_exrate_exchange">转换</a></div> </div> <div class="op_exrate_errors"> <span class="op_exrate_txt_e"></span> <span class="op_exrate_from_e"></span> <span class="op_exrate_to_e"></span> </div> </div>  </div>  <div class="c-gap-top op_exrate_tip" style="color:#666;">数据仅供参考，交易时以银行柜台成交价为准 更新时间:2014-07-10 17:39</div>   <div class="c-gap-top-small"> <a href="http://forex.hexun.com/rmbhl/#zkRate" target="_blank">更多汇率信息&gt;&gt;</a> </div> </div><script >
+A.setup({
+    currency1 : '美元',
+    currency2 : '人民币元',
+    errcode : '',
+    number1 : ''
+});
+</script><script>A.setup(function() {var _this = this;var $btn = _this.find('.op_exrate_exchange'),txt = _this.find('.op_exrate_txt')[0],txt_e = _this.find('.op_exrate_txt_e')[0],cur1_e = _this.find('.op_exrate_from_e')[0],cur2_e = _this.find('.op_exrate_to_e')[0],resultDOM = _this.find('.op_exrate_result')[0],tiptop = _this.find('.op_exrate_tip');(function(){var m = document.uniqueID && document.compatMode && !window.XMLHttpRequest && document.execCommand;try{if(!!m){m("BackgroundImageCache", false, true) }}catch(oh){};})();var cur1Container = _this.find('.op_exrate_from')[0];var cur2Container = _this.find('.op_exrate_to')[0];var cur1={value:_this.data.currency1};var cur2={value:_this.data.currency2};var cur1ListOptions=[];var cur2ListOptions=[];var currencyArray = ['阿联迪拉姆|AED|阿联酋迪拉姆', '阿根廷披索|ARS|阿根廷披索', '奥币|ATS|奥地利先令', '澳元|AUD|澳元', '孟加拉塔卡|BDT|孟加拉塔卡', '比法郎|BEF|比利时法郎', '保加利亚列弗|BGN|保加利亚列弗', '巴林第纳尔|BHD|巴林第纳尔', '百慕大元|BMD|百慕大元', '玻币|BOB|玻利维亚诺', '巴西币|BRL|巴西里尔', '缅元|BUK|缅甸缅元', '普拉|BWP|博茨瓦纳普拉', '加元|CAD|加元', '瑞郎|CHF|瑞士法郎', '智利币|CLP|智利披索', '离岸人民币|CNH|离岸人民币', '人民币|CNY|人民币元', '哥伦比亚披索|COP|哥伦比亚披索', '古巴披索|CUP|古巴披索', '捷克币|CZK|捷克克鲁', '马克|DEM|德国马克', '丹麦币|DKK|丹麦克朗', '埃及镑|EGP|埃及镑', '西币|ESP|西班牙比塞塔', '欧元|EUR|欧元', '芬兰币|FIM|芬兰马克', '法法郎|FRF|法国法郎', '英镑|GBP|英镑', '迦纳塞地|GHC|迦纳塞地', '希腊德拉克马|GRD|希腊德拉克马', '危地马拉格查尔|GTQ|危地马拉格查尔', '港币|HKD|港币', '克罗地亚库纳|HRK|克罗地亚库纳', '匈牙利币|HUF|匈牙利福林', '印尼盾|IDR|印度尼西亚盾', '爱尔兰镑|IEP|爱尔兰镑', '以色列谢克尔|ILS|以色列谢克尔', '印度币|INR|印度卢比', '冰岛克朗|ISK|冰岛克朗', '意大利里拉|ITL|意大利里拉', '牙买加元|JMD|牙买加元', '约旦第纳尔|JOD|约旦第纳尔', '日元|JPY|日元', '韩元|KER|韩元', '肯尼亚先令|KES|肯尼亚先令', '科威特第纳尔|KWD|科威特第纳尔', '哈萨克腾格|KZT|哈萨克腾格', '寮国基普|LAK|老挝基普', '黎巴嫩镑|LBP|黎巴嫩镑', '斯里兰卡卢比|LKR|斯里兰卡卢比', '立陶宛利达|LTL|立陶宛利达', '拉脱维亚拉特|LVL|拉脱维亚拉特', '摩洛哥迪拉姆|MAD|摩洛哥迪拉姆', '蒙古图格里克|MNT|蒙古图格里克', '澳门元|MOP|澳门帕塔卡', '毛里求斯卢比|MUR|毛里求斯卢比', '墨披索|MXN|墨西哥披索', '马币|MYR|马来西亚林吉特', '尼日利亚第纳尔|NGN|尼日利亚第纳尔', '荷兰币|NLG|荷兰盾', '挪威币|NOK|挪威克朗', '纽币|NZD|新西兰元', '阿曼里亚尔|OMR|阿曼里亚尔', '巴拿马巴尔博亚|PAB|巴拿马巴尔博亚', '秘鲁币|PEN|秘鲁新索尔', '菲律宾比索|PHP|菲律宾比索', '巴基斯坦卢比|PKR|巴基斯坦卢比', '波兰币|PLN|波兰罗提', '葡币|PTE|葡萄牙埃斯库多', '巴拉圭瓜拉尼|PYG|巴拉圭瓜拉尼', '卡达里亚尔|QAR|卡达里亚尔', '罗马尼亚列伊|RON|罗马尼亚列伊', '卢布|RUB|俄罗斯卢布', '沙亚币|SAR|沙特阿拉伯里亚尔', '瑞典币|SEK|瑞典克朗', '新加坡元|SGD|新加坡元', '索马里先令|SOS|索马里先令', '泰铢|THB|泰铢', '突尼西亚第纳尔|TND|突尼西亚第纳尔', '土耳其里拉|TRY|土耳其里拉', '新台币|TWD|新台币', '坦桑尼亚先令|TZS|坦桑尼亚先令', '美元|USD|美元', '乌拉圭披索|UYU|乌拉圭披索', '委内瑞拉博利瓦|VEB|委内瑞拉博利瓦', '越南盾|VND|越南盾', '南非币|ZAR|南非兰特', '津巴布韦元|ZWD|津巴布韦元'];for (var i = 0, len = currencyArray.length; i < len; i++) {var items = currencyArray[i].split('|');cur1ListOptions.push(['<li class="c-dropdown2-option" data-value="',items[2],'"',_this.data.currency1===items[2]?' data-selected="selected"':'','>',items[1],items[2],'</li>'].join(''));cur2ListOptions.push(['<li class="c-dropdown2-option" data-value="',items[2],'"',_this.data.currency2===items[2]?' data-selected="selected"':'','>',items[1],items[2],'</li>'].join(''));}cur1Container.getElementsByTagName('ul')[0].innerHTML=cur1ListOptions.join('');cur2Container.getElementsByTagName('ul')[0].innerHTML=cur2ListOptions.join('');var exrateJSON = {};exrateJSON.getData = function(data) {var html=[];data.number1&&html.push(['<div>',data.number1,data.currency1,'=',data.number2,data.currency2,'</div>'].join(''));if(data.content2Mini){data.content1Mini&&html.push(['<div>',data.content1Mini,'</div>'].join(''));html.push(['<div>',data.content2Mini,'</div>'].join(''));}resultDOM.innerHTML = html.join('');};exrateJSON.errorData = function() {resultDOM.innerHTML = '<div style="color:#f00;">抱歉！系统暂未查询到您输入的币种兑换数据</div>';};function getResult(query) {var resourceId = _this.srcid;_this.ajax(query, resourceId, {success: function(data) {if (data && data[0]) {exrateJSON.getData(data[0]);}else {exrateJSON.errorData();}},error: function() {exrateJSON.errorData();},timeout: function() {exrateJSON.errorData();}});}function trim(s) {var trimer = new RegExp('[\\s\\t\\xa0\\u3000]+', 'g');return s.replace(trimer, '');}function checkOpt(c1, c2, err1, err2) {var enable = false;if (!c1.getValue()) {err1.innerHTML = '请选择货币类型';err1.style.display = 'inline';tiptop.addClass('op_exrate_tiptop');}else if (c1.getValue() === c2.getValue()) {err1.innerHTML = '请选择不同的货币单位';err1.style.display = 'inline';tiptop.addClass('op_exrate_tiptop');}else {err1.style.display = 'none';if (c2.getValue()) {err2.style.display = 'none';}enable = true;}return enable;}function checkVal(o, err) {var enable = false;var val = trim(o.value);if (val === '') {o.value = val = 1;}if (parseFloat(val) === 0 || isNaN(val)) {err.innerHTML = '请输入有效数字';err.style.display = 'inline';tiptop.addClass('op_exrate_tiptop');}else {var floatValue = parseFloat(val);if (floatValue < 0.0001 || floatValue > 1000000000) {err.innerHTML = '超出计算范围';err.style.display = 'inline';tiptop.addClass('op_exrate_tiptop');}else {err.style.display = 'none';enable = true;}}return enable;}$(txt).blur(function(){checkVal(txt, txt_e);if(checkVal(txt, txt_e) && (checkOpt(cur1, cur2, cur1_e, cur2_e) || checkOpt(cur2, cur1, cur2_e, cur1_e))){tiptop.removeClass('op_exrate_tiptop');}});$btn.click(function(){var s1 = checkVal(txt, txt_e),s2 = checkOpt(cur1, cur2, cur1_e, cur2_e),s3 = checkOpt(cur2, cur1, cur2_e, cur1_e);if (s1 && s2 && s3) {tiptop.removeClass('op_exrate_tiptop');var floatValue = parseFloat(trim(txt.value));var query = floatValue + cur1.getValue() + '等于多少' + cur2.getValue();getResult(query);}});A.use('dropdown21',function(){cur1 = A.ui.dropdown21(cur1Container,{onchange : function(e){checkOpt(cur1, cur2, cur1_e, cur2_e);},type: 'custom',width:118,height:158 });cur2 = A.ui.dropdown21(cur2Container,{onchange : function(e){checkOpt(cur2, cur1, cur2_e, cur1_e);},type: 'custom',width:118,height:158 });}); this.dispose = function(){cur1&&cur1.dispose&&cur1.dispose();cur2&&cur2.dispose&&cur2.dispose();};});</script></div>        
+        <div class="c-gap-top-small"><span class="c-showurl">forex.hexun.com/ </span><span class="c-tools" id="tools_2690557600896181222" data-tools="{title:'',url:'http://forex.hexun.com/?f=bo&amp;t=3386'}"><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></span> - <a target="_blank" href="http://open.baidu.com/" class="op_LAMP"></a></div> 
+        
+    
+</div>
+<div class="result c-container " id="2" srcid="1524" tpl="se_com_default"  data-click="{'rsv_bdr':'0' ,'rsv_cd':'pt:40520'}"  ><h3 class="t"><a 
+	        data-click="{
+			'F':'778317EA',
+			'F1':'9D73F1E4',
+			'F2':'4CA6DE6B',
+			'F3':'54E5343F',
+			'T':'1404986539',
+						'y':'EFAFB07F'
+			 
+							,'rsv_sug9':'美元兑换人民币'
+									}"
+        href = "http://www.baidu.com/link?url=ESon3Ib0LhGqhbU1maPdwuI4dhPvskj5eJZuAcJV_BwQqET0QxgEPiCXxp27h_PSecN93Uj416-c2ixyvKXumq"
+
+		            target="_blank"
+        		
+		><em>美元</em>对<em>人民币汇率</em>,<em>美元</em>兑换人民币(USDCNY)_新浪财经_新浪网</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
+          href="http://www.baidu.com/link?url=ESon3Ib0LhGqhbU1maPdwuI4dhPvskj5eJZuAcJV_BwQqET0QxgEPiCXxp27h_PSecN93Uj416-c2ixyvKXumq"
+                target="_blank"
+      ><img src="http://i7.baidu.com/it/u=3010699291,2978961141&fm=96" style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract"><em>美元人民币</em> -  USDCNY ()  昨收盘: 今开盘: 最高价: 最低价: 买入价: 卖出价: 振幅:  分时图 5分钟分时 30分钟分时 30分钟K线 日K线 周K线 月K线 ...</div><div class="f13"><span class="g">finance.sina.com.cn/mo...&nbsp;2014-07-10&nbsp;</span><div class="c-tools" id="tools_8641139178626494642" data-tools='{"title":"美元对人民币汇率,美元兑换人民币(USDCNY)_新浪财经_新浪网","url":"http://www.baidu.com/link?url=ESon3Ib0LhGqhbU1maPdwuI4dhPvskj5eJZuAcJV_BwQqET0QxgEPiCXxp27h_PSecN93Uj416-c2ixyvKXumq"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-nolog href="http://cache.baiducontent.com/c?m=9d78d513d9d430ae4f9c96697b10c0156a4381132ba6da020ea4843992732f42506793ac57210772d3d27d1716df394b9df12103371451c48f8fc814d2e1d46e6d9f26476d01d21a4e8045fe9c5125b661cb06bab81990ebad6d84aea58283490c970f52319da4d61a575ed735b3095682d0e8347e4810cdac6a23a007&p=c2769a47979c11a05debc2344959&newp=9c61de16d9c114ff57e8922c465592695c16ed673a82&user=baidu&fm=sc&query=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&qid=&p1=2" 
+						target="_blank" 
+                    class="m">百度快照</a></div></div></div><div style="display:none;padding:3px 0 0 0" class="extquery" data-extquery="美元兑换人民币"><a href="/s?usm=3&f=0&wd=%E7%BE%8E%E5%85%83%E5%85%91%E6%8D%A2%E4%BA%BA%E6%B0%91%E5%B8%81&ie=utf-8&rsv_crq=1&bs=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87" target="_blank" style="font-size:13px;font-weight:bold;">查看更多关于“<em>美元兑换人民币</em>”的内容 &gt;&gt;</a></div></div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+<div class="result-op c-container xpath-log"  srcid="19"  id="3" tpl="sp_realtime" mu="http://www.baidu.com/s?tn=baidurt&rtt=1&bsst=1&wd=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA" data-op="{'y':'C9CF13FE'}" data-click="{'p1':'3','rsv_bdr':'0','fm':'alop',rsv_stl:'5'}">
+            <h3 class="t"><a href="http://www.baidu.com/s?tn=baidurt&rtt=1&bsst=1&wd=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA" target="_blank"><em>美元人民币汇率</em>的最新相关信息</a></h3>
+          <div class="c-offset">    <div class="c-gap-bottom-small"> <a href="http://www.baidu.com/link?url=W3Qmq6ZghRrMrSjQ0x2oCRsrlRHWlT2N2zZr0R3vnJMuSTj8F7sWTyXRymCMhRQdAR4qo2HTNWkkxD74riX9KK" target="_blank" > 10日<em>人民币汇率</em>中间价:1<em>美元</em>对人民币6.1443元(图) </a> </div> <div class="c-row c-gap-bottom-small">  <a href="http://www.baidu.com/link?url=W3Qmq6ZghRrMrSjQ0x2oCRsrlRHWlT2N2zZr0R3vnJMuSTj8F7sWTyXRymCMhRQdAR4qo2HTNWkkxD74riX9KK" target="_blank" class="op_sp_realtime_preBox c-span6" data-click="{'title':'美元人民币汇率的最新相关信息'}"> <img src="http://t10.baidu.com/it/u=3300872874,1043151292&fm=55&s=A9605D321B03456402DDF1CA0000C0B2&w=121&h=81&img.JPEG" class="c-img c-img6" />  </a>  <div class="c-span-last">  图表来源中国人民银行网站中新网7月10日电中国人民银行授权中国外汇交易中心公布,2014年7月10日银行间外汇市场<em>人民币汇率</em>中间价为:1<em>美元</em>对人民币6.1...   <br /><span style="color:#008000">搜狐财经</span>   &nbsp;<span style="color:#666;">1小时前</span>  </div> </div>           <div class="c-row">   <span style="color:#666;float:right">4小时前</span>  <a href="http://www.baidu.com/link?url=W3Qmq6ZghRrMrSjQ0x2oCW1AkAyZL5ohDD15FSWRanGjvFIZl1HWyti8v4A1KP9affABBu6mqO6mi9879C_k4dYGyYvmHkAbYtizkGXIWAy" target="_blank" >  7月10日<em>美元</em>/<em>人民币</em>(香港)即期<em>汇率</em>定盘价...  </a>  &nbsp;<span style="color:#008000">新浪财经</span>   </div>           <div class="c-row">   <span style="color:#666;float:right">7小时前</span>  <a href="http://www.baidu.com/link?url=_mqbumgi3fz1M3E3h1FrYPMRwGqiH29Fwn18b5JRj56er3dmqjjfuhtXEq96VUbdE62AW3QsfmJCvOGIvvXpjvOg2SWPq571Isqi2FR9w67" target="_blank" >  <em>人民币</em>的后发优势有助于构筑“金融高边疆”  </a>  &nbsp;<span style="color:#008000">东方网</span>   </div>           <div class="c-row">   <span style="color:#666;float:right">11小时前</span>  <a href="http://www.baidu.com/link?url=N7Yr7ua4H6CEOdwh-X8X3ZaPtFeln-I-CS147ss6J5N1Q5ZEDoY80Gb7uPeAvYj_iXggFIAqvd-tWssio7MeRK" target="_blank" >  <em>人民币</em>对<em>美元汇率</em>中间价昨涨至6.1565  </a>  &nbsp;<span style="color:#008000">凤凰网</span>   </div>           <div class="c-row">   <span style="color:#666;float:right">16小时前</span>  <a href="http://www.baidu.com/link?url=N7Yr7ua4H6CEOdwh-X8X3ZaPtFeln-I-CS147ss6J5N1Q5ZEDoY80Gb7uPeAvYj_RtGCkJ8iMZ7GGZCNWbZni_" target="_blank" >  <em>美元</em>兑<em>人民币</em>今日中间价报6.1557,上调33...  </a>  &nbsp;<span style="color:#008000">凤凰网</span>   </div>   </div>    
+</div>
+<div class="result c-container " id="4" srcid="1524" tpl="se_com_default"  data-click="{'rsv_bdr':'0' }"  ><h3 class="t"><a 
+	        data-click="{
+			'F':'778317EA',
+			'F1':'9D73F0E4',
+			'F2':'4CA6DD6B',
+			'F3':'54E5343F',
+			'T':'1404986539',
+						'y':'FFF9FDB8'
+			 
+							,'rsv_sug9':'美元汇率走势图'
+									}"
+        href = "http://www.baidu.com/link?url=qoiU3Vu6nCLF8aSMEQpyG8FEzYDcupYDi7fJKM7BuKf1BraeTikMHXNjlhv5gt-nBW4soIwx0MO10lF7J5CBM_"
+
+		            target="_blank"
+        		
+		><em>美元</em>走势图_<em>美元汇率</em>走势图_<em>美元</em>对<em>人民币汇率</em>走势图_<em>美元</em>价格走势图</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
+          href="http://www.baidu.com/link?url=qoiU3Vu6nCLF8aSMEQpyG8FEzYDcupYDi7fJKM7BuKf1BraeTikMHXNjlhv5gt-nBW4soIwx0MO10lF7J5CBM_"
+                target="_blank"
+      ><img src="http://i8.baidu.com/it/u=2015304308,3598394838&fm=96&s=749EEC3219D951CA0CF115DA0000C0B1" style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract">金投外汇网,中国外汇投资最大最具影响力的财经门户,为外汇投资者提供<em>美元</em>走势图,<em>美元汇率</em>走势图,<em>美元</em>对<em>人民币汇率</em>走势图,<em>美元</em>价格走势图等<em>美元</em>新闻和知识介绍,及最...</div><div class="f13"><span class="g">www.cngold.org/img_dat...&nbsp;2014-07-08&nbsp;</span><div class="c-tools" id="tools_1904197872281912978" data-tools='{"title":"美元走势图_美元汇率走势图_美元对人民币汇率走势图_美元价格走势图","url":"http://www.baidu.com/link?url=qoiU3Vu6nCLF8aSMEQpyG8FEzYDcupYDi7fJKM7BuKf1BraeTikMHXNjlhv5gt-nBW4soIwx0MO10lF7J5CBM_"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-nolog href="http://cache.baiducontent.com/c?m=9d78d513d9d430ae4f9c96697b10c0156a4381132ba6da020ea4843992732f42506793ac57210772d3d27d1716df394b9df12103371451c48f8fc814d2e1d46e6d9f26476d01c30457c419d89a1a709c7ec64de9d844a7efed69ccfbc5d4ab02008c04183dc1a69c5d74459624e71446b9e0c616&p=80769a478f9908ff57ed920c160e&newp=82759a45d0db5af804be9b7c424792695c16ed633acfcb4223&user=baidu&fm=sc&query=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&qid=&p1=4" 
+						target="_blank" 
+                    class="m">百度快照</a></div></div></div><div style="display:none;padding:3px 0 0 0" class="extquery" data-extquery="美元汇率走势图"><a href="/s?usm=3&f=0&wd=%E7%BE%8E%E5%85%83%E6%B1%87%E7%8E%87%E8%B5%B0%E5%8A%BF%E5%9B%BE&ie=utf-8&rsv_crq=1&bs=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87" target="_blank" style="font-size:13px;font-weight:bold;">查看更多关于“<em>美元汇率走势图</em>”的内容 &gt;&gt;</a></div></div><div class="result c-container " id="5" srcid="1599" tpl="se_com_default"  data-click="{'rsv_bdr':'0' }"  ><h3 class="t"><a 
+	        data-click="{
+			'F':'778317EA',
+			'F1':'9D73F1E4',
+			'F2':'4CA6DD6B',
+			'F3':'54E5243F',
+			'T':'1404986539',
+						'y':'3D67FFFB'
+			 
+									}"
+        href = "http://www.baidu.com/link?url=kwxs0blCNIiRGJuZwny0mOhPxDMmvajuXX8Ne0HcQQi0kCDVnCG-zWabokM7FOVI"
+
+		            target="_blank"
+        		
+		><em>美元</em>对<em>人民币汇率</em>_中国银行外汇牌价_今日汇率查询</a></h3><div class="c-abstract">【今日汇率查询CurrencyDo.com】实时查询全球货币汇率、今日外汇牌价查询,同时提供各种外币与<em>人民币汇率</em>兑换。</div><div class="f13"><span class="g">www.currencydo.com/&nbsp;2014-06-10&nbsp;</span><div class="c-tools" id="tools_17211994131537384396" data-tools='{"title":"美元对人民币汇率_中国银行外汇牌价_今日汇率查询","url":"http://www.baidu.com/link?url=kwxs0blCNIiRGJuZwny0mOhPxDMmvajuXX8Ne0HcQQi0kCDVnCG-zWabokM7FOVI"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-nolog href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f7327b9790422385d81ece735b36163bbca633674d4485ca6b1600b8385efd863065447037b6ebdff940cacae23f5e893040730b873105a31ab8bd4632c050872a99b86ee6ad813284dfa1&p=c47e8316d9c111a05bec972644449f&newp=8b2a9710ce881dfd05bd9b7d0c1591231610db2151d1d21e2accd814c139&user=baidu&fm=sc&query=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&qid=&p1=5" 
+						target="_blank" 
+                    class="m">百度快照</a>&nbsp;-&nbsp;<a href="http://www.baidu.com/tools?url=http%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3Dkwxs0blCNIiRGJuZwny0mOhPxDMmvajuXX8Ne0HcQQi0kCDVnCG-zWabokM7FOVI&jump=http%3A%2F%2Fkoubei.baidu.com%2Fwomc%2Fp%2Fsentry%3Ftitle%3D%02%E7%BE%8E%E5%85%83%03%E5%AF%B9%02%E4%BA%BA%E6%B0%91%01%E5%B8%81%01%E6%B1%87%E7%8E%87%03_%01%E4%B8%AD%E5%9B%BD%01%E9%93%B6%E8%A1%8C%01%E5%A4%96%E6%B1%87%01%E7%89%8C%E4%BB%B7%01_%01%E4%BB%8A%E6%97%A5%01%E6%B1%87%E7%8E%87%01%E6%9F%A5%E8%AF%A2%01%26q%3D%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&key=surl" target="_blank" class="m">评价</a></div></div><div class="result c-container " id="6" srcid="1524" tpl="se_com_default"  data-click="{'rsv_bdr':'0' }"  ><h3 class="t"><a 
+	        data-click="{
+			'F':'778317EA',
+			'F1':'9D73F1E4',
+			'F2':'4CA6DE6B',
+			'F3':'54E5343F',
+			'T':'1404986539',
+						'y':'7FFFFB33'
+			 
+							,'rsv_sug9':'美元人民币汇率 查询'
+									}"
+        href = "http://www.baidu.com/link?url=TSuUtXrYydO8oKhsgT4ghoxwZGJLtHfVWAlBNXx83qDwnHB6IB0rnJ7G0KWZ0O8a"
+
+		            target="_blank"
+        		
+		><em>美元</em>兑换<em>人民币汇率</em>查询-<em>美元</em>对换人民币-<em>美元</em>和人民币-<em>美元</em>与人民...</a></h3><div class="c-abstract"> 银率网汇率频道为您提供<em>美元</em>兑换<em>人民币汇率</em>查询功能, 包括<em>美元</em>对换人民币及时汇率, <em>美元</em>和人民币历史走势图等<em>美元</em>与人民币相关内容,欢迎使用<em>美元</em>兑换<em>人民币汇率</em>查询...</div><div class="f13"><span class="g">www.yinhang.com/Exchan...&nbsp;2014-07-10&nbsp;</span><div class="c-tools" id="tools_15236143616280996092" data-tools='{"title":"美元兑换人民币汇率查询-美元对换人民币-美元和人民币-美元与人民...","url":"http://www.baidu.com/link?url=TSuUtXrYydO8oKhsgT4ghoxwZGJLtHfVWAlBNXx83qDwnHB6IB0rnJ7G0KWZ0O8a"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"><span class="c-vline"></span><span class="c-trust-as vstar" data_key="12104815109519964399" hint-data='{"label":"银率网北京科技发展有限公司","url":"http://www.baidu.com/s?wd=www.bankrate.com.cn@v&vmp_ec=294653b67784b0a63f6c64d3f979e27da580=5YYbdamee143a92fc3j40W0Su52cZfFffrdi3e3y5dJXas7ed9X8c7c9111&vmp_ectm=1404845010","hint":[{"txt":"[ecard 92]","vlevel":"3"}]}' hint-type="vstar"><a href="http://www.baidu.com/s?wd=www.bankrate.com.cn@v&vmp_ec=294653b67784b0a63f6c64d3f979e27da580=5YYbdamee143a92fc3j40W0Su52cZfFffrdi3e3y5dJXas7ed9X8c7c9111&vmp_ectm=1404845010" class="c-icon c-icon-v c-icon-v3" target="_blank" data-click="{'title':'vstar','rsv_vlevel':'3'}" ></a></span></span></span>&nbsp;-&nbsp;<a data-nolog href="http://cache.baiducontent.com/c?m=9d78d513d9d430ae4f9c96697b10c0156a4381132ba6da020ea4843992732f42506793ac57210772d3d27d1716df394b9df12103371451c48f8fc814d2e1d46e6d9f26476d01c30457c419d8801d799b73cc0ffeaf6eb6e7af2fe4e483898c08069d4e026d878488&p=80769a478f9908ff57ec940c160e&newp=82759a44d6db5af804be9b7c424792695c16ed623ccfcb4223&user=baidu&fm=sc&query=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&qid=&p1=6" 
+						target="_blank" 
+                    class="m">百度快照</a></div><div style="display:none;padding:3px 0 0 0" class="extquery" data-extquery="美元人民币汇率 查询"><a href="/s?usm=3&f=0&wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87+%E6%9F%A5%E8%AF%A2&ie=utf-8&rsv_crq=1&bs=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87" target="_blank" style="font-size:13px;font-weight:bold;">查看更多关于“<em>美元人民币汇率 查询</em>”的内容 &gt;&gt;</a></div></div><div class="result c-container " id="7" srcid="1524" tpl="se_com_default"  data-click="{'rsv_bdr':'0' }"  ><h3 class="t"><a 
+	        data-click="{
+			'F':'778317EA',
+			'F1':'9D73F1E4',
+			'F2':'4CA6DD6B',
+			'F3':'54E5343F',
+			'T':'1404986539',
+						'y':'BBFBECFA'
+			 
+							,'rsv_sug9':'美元对人民币汇率'
+									}"
+        href = "http://www.baidu.com/link?url=a12WB-Ei2kNAEUbC9Ezy9QfbjtbqDoDWWAGzbynx9ImE2c-nIQg5rwJUkGUOVRtu"
+
+		            target="_blank"
+        		
+		><em>美元</em>对<em>人民币汇率</em>兑换走势图,<em>美元汇率</em>走势图,<em>人民币汇率</em>走势图,...</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
+          href="http://www.baidu.com/link?url=a12WB-Ei2kNAEUbC9Ezy9QfbjtbqDoDWWAGzbynx9ImE2c-nIQg5rwJUkGUOVRtu"
+                target="_blank"
+      ><img src="http://i7.baidu.com/it/u=3175520759,2535900419&fm=96&s=4096E833C14E6DEB02D841EE00005032" style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract"><em>美元</em>对<em>人民币汇率</em>网提供今日世界各国上百种主要货币的外汇牌价,汇率换算工具和外汇汇率查询服务,汇率表与汇率兑换即时资讯,实时汇率查询换算工具,中国纸黄金为华人黄金...</div><div class="f13"><span class="g">www.zhijinwang.com/huilv/&nbsp;2014-07-08&nbsp;</span><div class="c-tools" id="tools_4567257456467656815" data-tools='{"title":"美元对人民币汇率兑换走势图,美元汇率走势图,人民币汇率走势图,...","url":"http://www.baidu.com/link?url=a12WB-Ei2kNAEUbC9Ezy9QfbjtbqDoDWWAGzbynx9ImE2c-nIQg5rwJUkGUOVRtu"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-nolog href="http://cache.baiducontent.com/c?m=9d78d513d9d430ae4f9c96697b10c0156a4381132ba6da020ea4843992732f42506793ac57210772d3d27d1716df394b9df12103371451c48f8fc814d2e1d46e6d9f26476d01c30457c419d8831c7e997bcc1fbaf34cf0ba8763cef1cf89980f0d8e4e&p=8779c54ad5c05bfc57efd33f524d&newp=aa78c54ad5c018ed0be2963f4b0892695c16ed603f8e92&user=baidu&fm=sc&query=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&qid=&p1=7" 
+						target="_blank" 
+                    class="m">百度快照</a></div></div></div><div style="display:none;padding:3px 0 0 0" class="extquery" data-extquery="美元对人民币汇率"><a href="/s?usm=3&f=0&wd=%E7%BE%8E%E5%85%83%E5%AF%B9%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&rsv_crq=1&bs=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87" target="_blank" style="font-size:13px;font-weight:bold;">查看更多关于“<em>美元对人民币汇率</em>”的内容 &gt;&gt;</a></div></div><div class="result c-container " id="8" srcid="1524" tpl="se_com_default"  data-click="{'rsv_bdr':'0' }"  ><h3 class="t"><a 
+	        data-click="{
+			'F':'778317EA',
+			'F1':'9D73F1E4',
+			'F2':'CCA6DE6B',
+			'F3':'54E5343F',
+			'T':'1404986539',
+						'y':'7376EDEB'
+			 
+							,'rsv_sug9':'美元对人民币汇率'
+									}"
+        href = "http://www.baidu.com/link?url=2Hocbl01uq5pkPUsEsqtlx7iq91cK0BifVN5YLMQQqJV_b9XVMFRxv5V9awUqd-ILc6HYw2HI2N8yg48PJVY1q"
+
+		            target="_blank"
+        		
+		>中国<em>人民</em>银行—关键图表—<em>人民币汇率</em>中间价对<em>美元</em>细览</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
+          href="http://www.baidu.com/link?url=2Hocbl01uq5pkPUsEsqtlx7iq91cK0BifVN5YLMQQqJV_b9XVMFRxv5V9awUqd-ILc6HYw2HI2N8yg48PJVY1q"
+                target="_blank"
+      ><img src="http://i8.baidu.com/it/u=740764373,815219549&fm=96&s=80334D302B3A480954E544DA0000C0B1" style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract"><em>人民币汇率</em>中间价 对<em>美元</em>如果不能正常显示显示,请点击下载最新的flash插件法律声明 | 联系我们 | 网站统计 | 设为首页 | 加入收藏 | 网站地图 地址:北京市...</div><div class="f13"><span class="g">www.pbc.gov.cn/publish...&nbsp;2014-03-19&nbsp;</span><div class="c-tools" id="tools_10289440217453361815" data-tools='{"title":"中国人民银行—关键图表—人民币汇率中间价对美元细览 ","url":"http://www.baidu.com/link?url=2Hocbl01uq5pkPUsEsqtlx7iq91cK0BifVN5YLMQQqJV_b9XVMFRxv5V9awUqd-ILc6HYw2HI2N8yg48PJVY1q"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-nolog href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f7216c86c7150881ce0c84642c101b7ba1fc777c4b4589d823345af3545bebf52b296b5577fd8cc8ff109be4cc3c6ad567627f0bf74005a21bb8bd4032b253875b99b868edad814284dfd3c4ab5744cb23120a83e7fd5a1715ba7880642694a78e39154861c9&p=8b2a9756c78c59f404bd9b790c55&newp=c33dc54ad1c25afc57efc86f174192695c16ed653dcc&user=baidu&fm=sc&query=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&qid=&p1=8" 
+						target="_blank" 
+                    class="m">百度快照</a></div></div></div><div style="display:none;padding:3px 0 0 0" class="extquery" data-extquery="美元对人民币汇率"><a href="/s?usm=3&f=0&wd=%E7%BE%8E%E5%85%83%E5%AF%B9%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&rsv_crq=1&bs=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87" target="_blank" style="font-size:13px;font-weight:bold;">查看更多关于“<em>美元对人民币汇率</em>”的内容 &gt;&gt;</a></div></div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+<div class="result-op c-container xpath-log"  srcid="34"  id="9" tpl="sp_weibo" mu="http://www.baidu.com/s?rtt=2&tn=baiduwb&rn=20&cl=2&wd=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA" data-op="{'y':'EFFA27FB'}" data-click="{'p1':'9','rsv_bdr':'0','fm':'alop',rsv_stl:'5'}">
+            <h3 class="t"><a href="http://www.baidu.com/s?rtt=2&tn=baiduwb&rn=20&cl=2&wd=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA" target="_blank"><em>美元人民币汇率</em>的最新微博结果</a></h3>
+        <div class="op_sp_weibo c-gap-top-small"><ul>          <li class="c-row c-gap-bottom">  <div class="op_sp_weibo_face c-span3"> <a target="_blank" data-click="{'rsv_wb':'weibo_face'}" href="http://www.baidu.com/link?url=N7Yr7ua4H6CEOdwh-X8X3ZMHjZ-_Lk5e_EhhdDwZsOyZR6QgJNsN04IPeE21deaIwuSuqY6b0c12upmTKZ93hSDW7ib6zNMDLaOa0Idh58a"><img src="http://tp1.sinaimg.cn/3266127724/50/5658558183/1" class="c-img c-img3" /></a> </div>  <div class="op_sp_weibo_detail c-span21 c-span-last"> <p>  <a href="http://www.baidu.com/link?url=N7Yr7ua4H6CEOdwh-X8X3ZMHjZ-_Lk5e_EhhdDwZsOyZR6QgJNsN04IPeE21deaIwuSuqY6b0c12upmTKZ93hSDW7ib6zNMDLaOa0Idh58a" target="_blank" data-click="{'rsv_wb':'weibo_rootnick'}">中国海关杂志</a> <span class="c-gap-left-small c-gap-right-small op_sp_weibo_level_icon op_sp_weibo_level_icon_2"></span>：        【2014年7月10日<em>人民币汇率</em>中间价】1<em>美元</em>对人民币6.1443元,1欧元对人民币8.3848元,100日元对人民币6.0700元,1港元对人民币0.79281元,1英镑对人民币10.5708元,1澳大利亚元对人民币5.8045元,1新西兰元对人民币5.4361元,1加拿大元对人民币5.7682元,人民币1元对0.51307林吉特。    <a class="op_sp_weibo_all c-gap-left-small" data-click="{'rsv_wb':'weibo_detail'}" target="_blank" href="http://www.baidu.com/link?url=N7Yr7ua4H6CEOdwh-X8X3ON538nJHrLWXFSV7kwiaOs22JP7XuFPKWxt2SEuoGUfGgXg3HkdzZuB6VD8qJfyeXHaEY6MOHMA9X-BvkxFbma">查看全文>></a> </p>   <div class="op_sp_weibo_info"> <div class="op_sp_weibo_pz"> <a href="http://www.baidu.com/link?url=cN_C8-i0thq0X8csAEo9y-cHdk-7zGwxfyGgvfNJQWbgCB7ov8YGlNtFv_jLcsGpJYPYeveb1zyJM3mO7U6pC1oETeepqR6aQPwsri5qwtBRrPW_-eGz9JFxVbvT4wGy" data-click="{'rsv_wb':'weibo_trans'}" target="_blank">转发(1)</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://www.baidu.com/link?url=OkodZqGQNzqY74mnkRzTUgZ-oxYlapP4SuiE5FJkPF3glX6zEG9Fb8oo-YANB75UkucrKYZyk7BjCm_qwUgxJyj3S5ojjpZvoIUj0NXg2lpTT-1TaOoIVLUzITko0nQ0" target="_blank" data-click="{'rsv_wb':'weibo_ping'}">评论(0)</a> </div> <div class="m"> <a target="_blank" href="http://www.baidu.com/link?url=N7Yr7ua4H6CEOdwh-X8X3ON538nJHrLWXFSV7kwiaOs22JP7XuFPKWxt2SEuoGUfGgXg3HkdzZuB6VD8qJfyeXHaEY6MOHMA9X-BvkxFbma">8小时前</a>&nbsp;-&nbsp;<a target="_blank" href=
+                                                                                "http://weibo.com/?c=spr_qdhz_bd_baidusmt_weibo_s"                                >新浪微博</a> </div> </div> </div> </li>          <li class="c-row ">  <div class="op_sp_weibo_face c-span3"> <a target="_blank" data-click="{'rsv_wb':'weibo_face'}" href="http://www.baidu.com/link?url=wbx-JII8fFZwF-6Y_oXiNPxFVQlVx3Ef5bDYu8rvnCkBPcrvJW9R4WvlhLHk7yt_xgfFqUToG-tDu_dWCxmMlzjNXnRt0ra1gY3zIwGI9y3"><img src="http://tp1.sinaimg.cn/1614808372/50/1292746766/0" class="c-img c-img3" /></a> </div>  <div class="op_sp_weibo_detail c-span21 c-span-last"> <p>  <a href="http://www.baidu.com/link?url=wbx-JII8fFZwF-6Y_oXiNPxFVQlVx3Ef5bDYu8rvnCkBPcrvJW9R4WvlhLHk7yt_xgfFqUToG-tDu_dWCxmMlzjNXnRt0ra1gY3zIwGI9y3" target="_blank" data-click="{'rsv_wb':'weibo_rootnick'}">新奇雅思</a> <span class="c-gap-left-small c-gap-right-small op_sp_weibo_level_icon op_sp_weibo_level_icon_2"></span>：        #每日<em>汇率</em>#1<em>美元</em>兑<em>人民币</em>6.1443元↓,1欧元兑<em>人民币</em>8.3848元↓,100日元兑<em>人民币</em>6.0700元↑,1港元兑<em>人民币</em>0.79281元↓,1英镑兑<em>人民币</em>10.5708元↓,1澳大利亚元兑<em>人民币</em>5.8045元↑,1新西兰元兑<em>人民币</em>5.4361元↑,1加拿大元兑<em>人民币</em>5.7682元↓。                 <a href="http://weibo.com/1614808372/BcTz1plqu?c=spr_qdhz_bd_baidusmt_weibo_s?c=spr_qdhz_bd_baidusmt_weibo_s" target="_blank" class="op_sp_weibo_img c-gap-left-small" data-click="{'rsv_wb':'weibo_img'}"><i class='c-icon c-icon-pic c-gap-icon-left-small c-gap-icon-right-small'></i></a>            <a class="op_sp_weibo_all c-gap-left-small" data-click="{'rsv_wb':'weibo_detail'}" target="_blank" href="http://www.baidu.com/link?url=N7Yr7ua4H6CEOdwh-X8X3PnXB-e6RIRWqvPNCzO07YLc1F8WvU1vvmBsXn0QEppdTl0WStWccT-GIbFcnqOIZz02lMlYlz9zxAIxG9MAVR3">查看全文>></a> </p>   <div class="op_sp_weibo_info"> <div class="op_sp_weibo_pz"> <a href="http://www.baidu.com/link?url=cN_C8-i0thq0X8csAEo9y-cHdk-7zGwxfyGgvfNJQWa7X4QGJEPm69F8i-qy1nUIEbirJfy4iWBoZync87aOCHPhMlu1XuDcnLDyvacTL9JvNHQEGWZxKGjB9fiax07p" data-click="{'rsv_wb':'weibo_trans'}" target="_blank">转发(1)</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://www.baidu.com/link?url=OkodZqGQNzqY74mnkRzTUgZ-oxYlapP4SuiE5FJkPF3PFqBldxgYJ5AuVy9OrZmCC_R4RNDIIiJp7p4YxVTLgUKYqoQfJFY0Mn7Vy7ItLlCHucgFPKbVZ7MO5zsZFNsg" target="_blank" data-click="{'rsv_wb':'weibo_ping'}">评论(1)</a> </div> <div class="m"> <a target="_blank" href="http://www.baidu.com/link?url=N7Yr7ua4H6CEOdwh-X8X3PnXB-e6RIRWqvPNCzO07YLc1F8WvU1vvmBsXn0QEppdTl0WStWccT-GIbFcnqOIZz02lMlYlz9zxAIxG9MAVR3">7小时前</a>&nbsp;-&nbsp;<a target="_blank" href=
+                                                                                "http://weibo.com/?c=spr_qdhz_bd_baidusmt_weibo_s"                                >新浪微博</a> </div> </div> </div> </li> </ul><div class="op_sp_weibo_more c-gap-top-small"><a href="http://www.baidu.com/link?url=cN_C8-i0thq0X8csAEo9yqKewt-QGZ8YuPC_T_aiztrT9PTIuZ-MEpPEuazWwTwGnePH-A2-ki23uKiJVBCly9r9sKJcZQEL5oRMtsBeeuuRNpu6ELaM-icbCFq_NAhfO0O5A6kn7ltzAoeAYmsGuK" target="_blank" data-click="{'rsv_wb':'more'}">查看更多相关微博>></a></div></div>    
+</div>
+<div class="result c-container " id="10" srcid="1524" tpl="se_com_default"  data-click="{'rsv_bdr':'0' }"  ><h3 class="t"><a 
+	        data-click="{
+			'F':'778317EA',
+			'F1':'9D73F1E4',
+			'F2':'4CA6DC6B',
+			'F3':'54E5243F',
+			'T':'1404986539',
+						'y':'EFFD5AF9'
+			 
+									}"
+        href = "http://www.baidu.com/link?url=-QbcGtZo-B9kfUbUNks7bklhjkSzFAcVqzwSsu7lnAUHCV9kP6HWskXUAoKj2noW"
+
+		            target="_blank"
+        		
+		><em>人民币</em>升值缘何再度加速-专题-外汇频道-和讯网</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
+          href="http://www.baidu.com/link?url=-QbcGtZo-B9kfUbUNks7bklhjkSzFAcVqzwSsu7lnAUHCV9kP6HWskXUAoKj2noW"
+                target="_blank"
+      ><img src="http://i9.baidu.com/it/u=2710718510,3249568040&fm=96&s=D488F1B346290CA44A14B6FA03008030" style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract"><em>人民币</em>连创新高,升值缘何再度加速... 去年下半年,<em>人民币</em>上演单边升值大戏,对<em>美元</em>自6.38升至6.22。今年一季度,<em>人民币</em>走势趋稳,然而进入4月后再现连续升值景象,即期<em></em>...</div><div class="f13"><span class="g">forex.hexun.com/2013/r...&nbsp;2014-06-19&nbsp;</span><div class="c-tools" id="tools_13591974970694980757" data-tools='{"title":"人民币升值缘何再度加速-专题-外汇频道-和讯网","url":"http://www.baidu.com/link?url=-QbcGtZo-B9kfUbUNks7bklhjkSzFAcVqzwSsu7lnAUHCV9kP6HWskXUAoKj2noW"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-nolog href="http://cache.baiducontent.com/c?m=9d78d513d9d430ae4f9c96697b10c0156a4381132ba6da020ea4843992732f42506793ac57210772d3d27d1716df394b9df12103371451c48f8fc814d2e1d46e6d9f26476d01d21c528453b8cb317f966ad706feaf6eb6e7af2f93acd1d2c2140c9a53077981ed&p=ce60d415d9c040ab0aacc7710f7a81&newp=813e891985cc43ff57ee957a5f4791231610db2151d1d517&user=baidu&fm=sc&query=%C3%C0%D4%AA%C8%CB%C3%F1%B1%D2%BB%E3%C2%CA&qid=&p1=10" 
+						target="_blank" 
+                    class="m">百度快照</a></div></div></div></div></div><div style="clear:both;height:19px;"></div><p id="page" ><strong><span class="fk fk_cur"><i class="c-icon c-icon-bear-p"></i></span><span class="pc">1</span></strong><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&pn=10&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">2</span></a><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&pn=20&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">3</span></a><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&pn=30&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">4</span></a><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&pn=40&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">5</span></a><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&pn=50&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">6</span></a><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&pn=60&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">7</span></a><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&pn=70&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">8</span></a><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&pn=80&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">9</span></a><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&pn=90&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">10</span></a><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&pn=10&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3&rsv_page=1" class="n">下一页&gt;</a><span class="nums">百度为您找到相关结果约25,300,000个</span></p></div><script>try{document.cookie="WWW_ST=;expires=Sat, 01 Jan 2000 00:00:00 GMT";}catch(e){}</script><div id="rs"><table cellpadding="0"><tr><th rowspan="2" class="tt">相关搜索</th><th><a href="/s?wd=%E6%AC%A7%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsp=0&f=1&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3&rsv_ers=xdt1&rs_src=0">欧元人民币汇率</a></th><td></td><th><a href="/s?wd=%E6%97%A5%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsp=1&f=1&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3&rsv_ers=xdt1&rs_src=0">日元人民币汇率</a></th><td></td><th><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87%E8%B5%B0%E5%8A%BF&rsp=2&f=1&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3&rsv_ers=xdt1&rs_src=0">美元人民币汇率走势</a></th><td></td><th><a href="/s?wd=%E7%BE%8E%E5%85%83%E5%85%91%E6%8D%A2%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsp=3&f=1&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3&rsv_ers=xdt1&rs_src=0">美元兑换人民币汇率</a></th><td></td><th><a href="/s?wd=%E6%B1%87%E7%8E%87%E7%82%B9%E5%B7%AE&rsp=4&f=1&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3&rsv_ers=xdt1&rs_src=1">汇率点差</a></th></tr><tr><th><a href="/s?wd=%E6%B1%87%E7%8E%87&rsp=5&f=1&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3&rsv_ers=xdt1&rs_src=0">汇率</a></th><td></td><th><a href="/s?wd=%E7%BE%8E%E5%85%83%E5%AF%B9%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsp=6&f=1&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3&rsv_ers=xdt1&rs_src=0">美元对人民币汇率</a></th><td></td><th><a href="/s?wd=%E6%B1%87%E7%8E%87%E6%9B%B2%E7%BA%BF&rsp=7&f=1&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3&rsv_ers=xdt1&rs_src=1">汇率曲线</a></th><td></td><th><a href="/s?wd=%E6%B1%87%E7%8E%87%E5%8F%91%E5%B8%83&rsp=8&f=1&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3&rsv_ers=xdt1&rs_src=1">汇率发布</a></th><td></td><th><a href="/s?wd=%E7%BE%8E%E5%85%83%E4%B8%8E%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&rsp=9&f=1&oq=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&ie=utf-8&usm=3&rsv_ers=xdt1&rs_src=0">美元与人民币汇率</a></th></tr></table></div><div id="search"><form name="f2" action="/s" ><input type="hidden" name="bs" value="美元人民币汇率"><input type="hidden" name="ie" value="utf-8"><input type="hidden" name="f" value="8"><input type="hidden" name="rsv_bp" value="2"><span class="bg s_ipt_wr"><input name="wd" class="s_ipt" value="美元人民币汇率" maxlength="100"></span><span class="bg s_btn_wr"><input type="submit" value="百度一下" class="bg s_btn" onmouseout="this.className='bg s_btn'" onmousedown="this.className='bg s_btn s_btn_h'"></span><span class="s_help">&nbsp;&nbsp;&nbsp;<a href="/s?wd=%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87&tn=baidufir" onmousedown="return c({'almid':'fir','stl':'link'})">结果中找</a>&nbsp;&nbsp;&nbsp;<a href="http://help.baidu.com/question" target="_blank" onmousedown="return c({'fm':'behb','tab':'help','url':this.href,'title':this.innerHTML})">帮助</a>&nbsp;&nbsp;&nbsp;<a id="feedback" onclick="return false;" href="http://qingting.baidu.com" target="_blank" onmousedown="return c({'fm':'behb','tab':'listen','url':this.href,'title':this.innerHTML})">反馈意见</a>&nbsp;&nbsp;&nbsp;<a href="http://www.baidu.com/search/jubao.html" target="_blank" onmousedown="return c({'fm':'behb','tab':'jubao','url':this.href,'title':this.innerHTML})">举报</a>&nbsp;&nbsp;&nbsp;<a href="http://www.baidu.com/gaoji/advanced.html" onclick='location.href=this.href+"?q="+encodeURIComponent(document.f.kw.value);return false;' onmousedown="return c({'fm':'behb','tab':'gaoji','url':this.href,'title':this.innerHTML})">高级搜索</a></span></form></div><div id="foot">&copy;2014&nbsp;Baidu&nbsp;<span>此内容系百度根据您的指令自动搜索的结果，不代表百度赞成被搜索网站的内容或立场</span></div></div></div><div class="c-tips-container" id="c-tips-container"></div></body><script></script><script>A.merge("right_recommends",function(){A.setup(function(){var f=this,a=f.find(".opr-recommends-layerbtn"),g=f.find(".opr-recommends-more-btn"),e=g.find(".c-icon"),i=g.find("span"),k=f.find(".opr-recommends-panel"),d=[],c=[],b=bds.comm.containerSize,j=function(m){m=$(m);var o=$(f.container),l=o.width()-(m.offset().left-o.offset().left)-m.width();var n=370/2;if(l<0){l=0}else{if(l>n){l=n}}return l};if(f.data.platform=="pc"){bds.event.on("se.window_resize",function(){if(bds.comm.containerSize===b){return}b=bds.comm.containerSize;$.each(c,function(n,l){var o=l.tip,m=j(l.dom);o.setOffset({x:m});o.setArrow({offset:m})})});function h(m,l){if(bds.se&&bds.se.tip){$.each(m,function(r,p){var u=$(p),t=u.parents(".opr-recommends-item"),o=t.find(".opr-recommends-layer-p"),q=o.find(".opr-recommends-layer"),n=j(u);$.each(q.find("img"),function(x,w){var y=$(w);if(y.attr("data-img")){y.attr("src",y.attr("data-img"))}});var s=new bds.se.tip({target:p,align:"right",content:q,arrow:{offset:n},offset:{x:n,y:25}});c.push({dom:p,tip:s})})}}bds.event.on("se.api_tip_ready",function(){h(a)});h(a)}g.on("click",function(){var n=$(this);if(n.hasClass("opr-recommends-close")){i.text("展开");e.removeClass("c-icon-chevron-top").addClass("c-icon-chevron-bottom");d.hide()}else{i.text("收起");e.addClass("c-icon-chevron-top").removeClass("c-icon-chevron-bottom");if(!d.length){var o=f.find(".opr-recommends-more-textarea"),l=[];k.append(o.val());o.remove();d=f.find(".opr-recommends-morelists");l=d.find(".opr-recommends-layerbtn");var m=d.find(".opr-recommends-img");$.each(m,function(q,p){var r=$(p);r.attr("src",r.attr("data-img"))});if(f.data.platform=="pc"){bds.event.on("se.api_tip_ready",function(){h(l)});h(l,1)}}else{d.show()}}n.toggleClass("opr-recommends-close")})})});bds.comm.resultPage = 1;var __disable_preload_rand = Math.random();initPreload({'disable':(__disable_preload_rand > 1)});$("#u,#u1").delegate("#lb",'click',function(){try{bds.se.login.open();}catch(e){}});</script><script type="text/javascript">_WWW_SRV_T =190.05;</script></html>

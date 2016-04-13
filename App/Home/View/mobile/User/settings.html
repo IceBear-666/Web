@@ -1,0 +1,212 @@
+<include file="Public/bbs_header" />
+
+<script type="text/javascript" src="__PUBLIC__/Js/prototype.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/Base.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/mootools.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/ThinkAjax.js"></script>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var PUBLIC	 =	 '__PUBLIC__';
+ThinkAjax.image = [	 '__PUBLIC__/Images/loading2.gif', '__PUBLIC__/Images/ok.gif','__PUBLIC__/Images/update.gif' ]
+ThinkAjax.updateTip	=	'更新中～';
+
+function updateHandle(data,status){
+	if (status==1)
+	{
+		$('result').innerHTML	=	'<span style="color:blue"><IMG SRC="__PUBLIC__/images/ok.gif" WIDTH="20" HEIGHT="20" BORDER="0" ALT="" align="absmiddle" > 登录成功！3 秒后跳转～</span>';
+		$('form1').reset();
+		window.location = '__APP__/Users/';
+	}
+}
+
+
+//-->
+</SCRIPT>
+
+<style>
+
+#simgarea {
+    background: url("{$Think.WEB_URL}Public/Images/simgarea.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    min-height: 180px;
+    width: 280px;
+}
+
+div.tagsinput div {
+    display: block;
+    float: left;
+}
+
+div.tagsinput input {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0);
+    color: #757575;
+    font-size: 13px;
+    margin: 0;
+    outline: 0 none;
+    padding: 8px 5px;
+    text-indent: 0;
+    width: auto;
+}
+.pnitem input, .pnitem textarea {
+    color: #757575;
+    font-family: "微软雅黑",Arial;
+}
+
+div.tagsinput div {
+    display: block;
+    float: left;
+}
+.tags_clear {
+    clear: both;
+    height: 0;
+    width: 100%;
+}
+
+div.tagsinput {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DBE2E6;
+    height: 100px;
+    overflow-y: auto;
+    padding: 2px;
+    width: 300px;
+}
+
+#simageupload {
+    float: left;
+    margin-left: 30px;
+    margin-top: 60px;
+}
+
+.pnitem {
+    color: #757575;
+    font-size: 14px;
+}
+
+
+
+.uploadifive-button {
+    background: none repeat scroll 0 0 #9F9F9F;
+    color: #FFFFFF;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 120px;
+}
+
+.uploadifive-button input {
+    height: 100%;
+}
+.pnitem input, .pnitem textarea {
+    color: #757575;
+    font-family: "微软雅黑",Arial;
+}
+input {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+}
+
+
+#postbtn, #removebtn {
+    background: none repeat scroll 0 0 #70CA10;
+    color: #FFFFFF;
+    display: inline-block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 120px;
+}
+
+</style>
+
+
+  
+  <div id="somoreitem">
+    <div class="automw">
+      <div id="smicontent" class="autocw"></div>
+    </div>
+  </div>
+  
+  <!--[if lt IE 10]><script type="text/javascript">window.location.href="{$Think.WEB_URL}update_browser.html";</script><![endif]-->
+  
+  <div id="container" class="automw">
+  
+      <div class="contentfw nosoo">
+	      <ul id="umnav">
+	        <li id="umnactive"><a href="javascript:void(0);">修改资料</a></li>
+	        <!-- <li ><a href="javascript:void(0);">修改密码</a></li> -->
+	      </ul>
+	      
+	      
+	      <form action="{$Think.WEB_URL}Users/checkSettings/" method="post" name="myform" id="form1" enctype="multipart/form-data">
+	      
+	      <div id="postnew" data-id="" data-cid="4">
+	        
+	        <div class="pnitem" style="  line-height: 40px;">
+	          <div class="pnlabel"><span class="inputmust">*</span>用户名</div>
+	          {$info.username}
+	        </div>
+	        
+	        <div class="pnitem">
+	          <div class="pnlabel"><span class="inputmust">*</span>昵称</div>
+	          <input type="text" value="{$info.nickname}" name="nickname" autocomplete="off" class="inputtxt" size="20" />
+	        </div>
+	        
+	        <div class="pnitem">
+	          <div class="pnlabel"><span class="inputmust">*</span>邮箱</div>
+	          <input type="text" value="{$info.email}" name="email" autocomplete="off" class="inputtxt" size="20" />
+	        </div>
+	        
+	        <div class="pnitem">
+	          <div class="pnlabel"><span class="inputmust">*</span>电话</div>
+	          <input type="text" value="{$info.phone}" name="phone" autocomplete="off" class="inputtxt" size="20" />
+	        </div>
+	        
+	        <div class="pnitem">
+	          <div class="pnlabel"><span class="inputmust">*</span>地址</div>
+	          <input type="text" value="{$info.address}" name="address" autocomplete="off" class="inputtxt" size="20" />
+	        </div>
+	        	        
+	        <div class="pnitem">
+	          <div class="pnlabel"><span class="inputmust">*</span>个性签名</div>
+	          <input type="text" value="{$info.sign}" name="sign" autocomplete="off" class="inputtxt" style="width:850px;"/>
+	          <span class="inputmust">* 限100字以内</span>
+	        </div>
+	        
+	        <div id="pnfoot">
+	        
+	        	<table>
+		        <tr>
+		        <td style="width:130px;">
+		        	<input type="button" id="postbtn" value=" 提　交　 " onclick="ThinkAjax.sendForm('form1','__URL__/checkSettings',updateHandle,'result')" name="submit_btn">
+		        </td>
+		        <td>
+		        <span class="submitwarning" style="background:#ffffff;" id="result" ></span>
+		      	</td>
+		      	</tr>
+		      	</table>
+	          
+	        </div>
+	      </div>
+	      
+	      <input type="hidden" value="1" name="ajax">
+	      
+	      </form>
+	      
+	  </div>
+      
+      
+      <div class="clear"></div>
+      
+             
+    
+  </div>
+  
+  
+  <include file="Public/bbs_footer" />
+  
+
+
+<include file="Public/footer" />

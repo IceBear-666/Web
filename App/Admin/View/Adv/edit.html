@@ -1,0 +1,121 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>{:isset($info['aid'])?'编辑':'新增'}广告</h2>
+    </div>
+    <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <form action="{:U()}" method="post" class="form-horizontal">
+
+        <div class="form-item">
+            <label class="item-label">标题<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">广告位置<span class="check-tips"> </span></label>
+            <div class="controls">
+                <select name="cid" id="cid">
+                	<php>foreach($type_arr as $kk=>$vv){</php>
+                	<option value="{$kk}" <php>if($info['cid']==$kk)echo 'selected';</php> >{$vv}</option>
+                	<php>}</php>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">上传图片<span class="check-tips"> </span></label>
+
+            <div class="controls">
+				<input type="file" id="upload_picture_pic">
+				<input type="hidden" name="path" id="cover_id_path" value="{$info.path}"/>
+				<div class="upload-img-box">
+				<notempty name="info.path">
+					<div class="upload-pre-item"><img src="{$info['path']}"/></div>
+				</notempty>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+			//上传图片
+		    /* 初始化上传插件 */
+			$("#upload_picture_pic").uploadify({
+		        "height"          : 30,
+		        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+		        "fileObjName"     : "download",
+		        "buttonText"      : "上传图片",
+		        "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+		        "width"           : 120,
+		        'removeTimeout'	  : 1,
+		        'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
+		        "onUploadSuccess" : uploadPictures,
+		        'onFallback' : function() {
+		            alert('未检测到兼容版本的Flash.');
+		        }
+		    });
+			function uploadPictures(file, data){
+		    	var data = $.parseJSON(data);
+		    	var src = '';
+		        if(data.status){
+		        	$("#cover_id_path").val(data.path);
+		        	src = data.url || '__ROOT__' + data.path
+		        	$("#cover_id_path").parent().find('.upload-img-box').html(
+		        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
+		        	);
+		        } else {
+		        	updateAlert(data.info);
+		        	setTimeout(function(){
+		                $('#top-alert').find('button').click();
+		                $(that).removeClass('disabled').prop('disabled',false);
+		            },1500);
+		        }
+		    }
+			</script>
+
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">链接<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="link" value="{$info.link}">
+            </div>
+        </div>
+
+		<div class="form-item">
+            <label class="item-label">说明<span class="check-tips"> </span></label>
+            <div class="controls">
+            	<label class="textarea">
+                <textarea name="memo">{$info.memo}</textarea>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">排序<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="sn" value="{$info.sn}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <input type="hidden" name="aid" value="{$info.aid|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+
+	    $('#submit').click(function(){
+	    	$('#form').submit();
+	    });
+
+        Think.setValue("status", {$info.status|default = 0});
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+    </script>
+</block>

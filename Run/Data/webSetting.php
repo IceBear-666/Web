@@ -1,0 +1,1 @@
+<?php	return array ( 'open' => '1', 'del_key' => '赌博;一夜情;毒品；', 'check_username' => 'admin;user;test;baidu;member', );?>

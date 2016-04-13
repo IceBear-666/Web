@@ -1,0 +1,719 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/company.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/external.min.css"/>
+<script type="text/javascript" src="/Public/Home/js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="/Public/Home/js/timeCountDown.js"></script>
+<script type="text/javascript" src="/Public/Home/js/additional-methods.js"></script>
+<script type="text/javascript" src="/Public/Home/js/callTimeCountDown.js"></script>
+
+
+<!--后台给出的变量天数》0-->
+<script>
+    var cd = {
+            $: function(id){
+                return document.getElementById(id);
+            },
+            futureDate: '-7680251632',
+            obj: function(){
+                return {
+                    sec: cd.$("activity_minute"),
+                    mini: cd.$("activity_hour"),
+                    hour: cd.$("activity_day")
+                }
+            }
+        };
+        fnTimeCountDown(cd.futureDate, cd.obj());
+</script>
+
+
+<div id="body">
+  <div id="container">
+    
+    
+    <include file="Public/left" />
+    
+    <div class="content">
+    
+   <dl class="company_center_content">
+      <dt  id="autofiletitle">
+        <h1> 不合适简历 <span>（共32份）</span> </h1>
+      </dt>
+      <dd>
+        <form id="filterForm" method="get" action="http://hr.lagou.com/interview/haveRefuselist.html">
+          <div class="filter_actions">
+            <label class="checkbox">
+              <input type="checkbox" />
+              <i></i> </label>
+            <span class="mf12">全选</span> <a href="javascript:;" class="mark_nofit" id="resumeDelAll">删除</a> <a href="javascript:;" class="mark_nofit" id="resume_empty">清空</a>
+            <ul class="filter_btn reset">
+            </ul>
+          </div>
+          <!-- end .filter_actions -->
+          <input type="hidden" value="1" id="pageNo"/>
+          <input type="hidden" value="3" id="totalPageCount"/>
+          <div class="filter_options" style="display:block;">
+            <dl style="padding-top:10px;">
+              <input type="hidden" name="defaultCondition" value="true" id="defaultCondition"/>
+              <dt>简历状态：</dt>
+              <dd> <a  class="current"  rel="-1">不限</a> <a  rel="1">未阅读</a> <a  rel="2">已阅读</a> <a  rel="3">已转发</a>
+                <div class="more_filter">更多筛选&ensp;<i></i></div>
+                <input type="hidden" name="statusFilter" value="-1" />
+              </dd>
+            </dl>
+            <dl class="dn">
+              <dt>工作经验：</dt>
+              <dd> <a   class="current"   rel="0">不限</a> <a    rel="1">应届毕业生</a> <a    rel="2">1年以下</a> <a    rel="3">1-3年</a> <a    rel="4">3-5年</a> <a    rel="5">5-10年</a> <a    rel="6">10年以上</a>
+                <input type="hidden" name="workExp" value="0" />
+              </dd>
+            </dl>
+            <dl class="dn">
+              <dt>最低学历：</dt>
+              <dd> <a  class="current"  rel="-1">不限</a> <a  rel="1">大专及以上</a> <a  rel="2">本科及以上</a> <a  rel="3">硕士及以上</a> <a  rel="4">博士及以上</a>
+                <input type="hidden" name="eduCode" value="-1" />
+              </dd>
+            </dl class="dn">
+            <input type="hidden" id="positionId" name="positionId" value="" />
+            <input type="hidden" id="filtera" name="filtera" value=""/>
+            <input type="hidden" id="filtera" name="filtera" value=""/>
+          </div>
+          <!-- end .filter_options -->
+          <ul class="resume_lists">
+            <li  data-flag="9953819"> <span class="resume_header2"><span class="time">2015-06-10 10:58</span>
+              <label class="checkbox">
+                <input type="checkbox" />
+                <i></i> </label>
+              <span class="employee">应聘：<a class="employee_position" href="http://www.lagou.com/jobs/661821.html" title="网页设计师"  target="_blank">网页设计师</a></span> </span>
+              <div class="resume_show"> <a href="http://www.lagou.com/corpResume/resumeView.html?deliverId=9953819" class="resumeImg" target="_blank" title="预览在线简历"> <img src=" http://hr.lagou.com/image1/M00/27/46/CgYXBlVaBvyAMyZ3AAAeD93V_Mg001.jpg " width="69" height="69" /> </a> <a href="http://www.lagou.com/corpResume/resumeView.html?deliverId=9953819" target="_blank" class="hotspace">
+                <div class="resume_intro" data-flag="9953819"> 王伟  				                                    	 / 男  				                                    	 / 4年  				                                    	  / 临沂 <em ></em><br/>
+                  威客  			                                    		· 个人全职威客 <br/>
+                  蒙阴实验中学  				                                    	 · 计算机  				                                    	 · 其他 </div>
+                </a>
+                <div  class="resume_link nolook_phone pt20" > <a href="javascript:;" title="13969973911" class="phone">13969973911 </a> <a href="javascript:;" class="resume_color phone" title="870653736@qq.com">870653736@qq.com</a> </div>
+                <div class="resume_fit resume_del2"><a href="javascript:;" class="resume_del">删除</a></div>
+              </div>
+            </li>
+            <li  data-flag="9735263"> <span class="resume_header2"><span class="time">2015-06-04 11:33</span>
+              <label class="checkbox">
+                <input type="checkbox" />
+                <i></i> </label>
+              <span class="employee">应聘：<a class="employee_position" href="http://www.lagou.com/jobs/633769.html" title="产品经理"  target="_blank">产品经理</a></span> </span>
+              <div class="resume_show"> <a href="http://www.lagou.com/nearBy/preview.html?deliverId=9735263" class="resumeImg" target="_blank" title="预览附件简历"> <img src="http://hr.lagou.com/images/corp/icon_file.png" width="69" height="69" /> </a> <a href="http://www.lagou.com/nearBy/preview.html?deliverId=9735263" target="_blank" class="hotspace">
+                <div class="resume_intro" data-flag="9735263"> 贾逸飞  				                                    					                                    	 / 1年  				                                    	  / <em  class="read" ></em><br/>
+                  <br/>
+                  <span>附件简历：点击查看更多信息</span> </div>
+                </a>
+                <div  class="resume_link nolook_phone pt20" > <a href="javascript:;" title="18233324421" class="phone">18233324421 </a> <a href="javascript:;" class="resume_color phone" title="xiaofeijisb@126.com">xiaofeijisb@126.com</a> </div>
+                <div class="resume_fit resume_del2"><a href="javascript:;" class="resume_del">删除</a></div>
+              </div>
+            </li>
+            <li  data-flag="9508944"> <span class="resume_header2"><span class="time">2015-05-29 10:50</span>
+              <label class="checkbox">
+                <input type="checkbox" />
+                <i></i> </label>
+              <span class="employee">应聘：<a class="employee_position" href="http://www.lagou.com/jobs/633769.html" title="产品经理"  target="_blank">产品经理</a></span> </span>
+              <div class="resume_show"> <a href="http://www.lagou.com/corpResume/resumeView.html?deliverId=9508944" class="resumeImg" target="_blank" title="预览在线简历"> <img src=" http://hr.lagou.com/image1/M00/1F/BD/CgYXBlU0sH6AbVfjAABT2MNbjNY906.jpg " width="69" height="69" /> </a> <a href="http://www.lagou.com/corpResume/resumeView.html?deliverId=9508944" target="_blank" class="hotspace">
+                <div class="resume_intro" data-flag="9508944"> 王翔  				                                    					                                    	 / 3年  				                                    	  / 深圳 <em ></em><br/>
+                  运营策划  			                                    		· 深圳塔斯克电子商务 <br/>
+                  INTI International University  				                                    	 · 电子通讯技术  				                                    	 · 本科 </div>
+                </a>
+                <div  class="resume_link nolook_phone" > <span data-flag="flag">未查看联系方式 </span> </div>
+                <div class="resume_fit resume_del2"><a href="javascript:;" class="resume_del">删除</a></div>
+              </div>
+            </li>
+            <li  data-flag="9499881"> <span class="resume_header2"><span class="time">2015-05-29 00:09</span>
+              <label class="checkbox">
+                <input type="checkbox" />
+                <i></i> </label>
+              <span class="employee">应聘：<a class="employee_position" href="http://www.lagou.com/jobs/633769.html" title="产品经理"  target="_blank">产品经理</a></span> </span>
+              <div class="resume_show"> <a href="http://www.lagou.com/corpResume/resumeView.html?deliverId=9499881" class="resumeImg" target="_blank" title="预览在线简历"> <img src=" http://hr.lagou.com/image1/M00/10/6C/CgYXBlT-yKaATq2oAAA1ECFj6gE742.jpg " width="69" height="69" /> </a> <a href="http://www.lagou.com/corpResume/resumeView.html?deliverId=9499881" target="_blank" class="hotspace">
+                <div class="resume_intro" data-flag="9499881"> 倪璧鸿  				                                    	 / 男  				                                    	 / 应届毕业生  				                                    	  / 广州 <em  class="read" ></em><br/>
+                  技术培训生  			                                    		· 文思海辉技术有限公司 <br/>
+                  肇庆学院  				                                    	 · 信息与计算科学  				                                    	 · 本科 </div>
+                </a>
+                <div  class="resume_link nolook_phone" > <span data-flag="flag">未查看联系方式 </span> </div>
+                <div class="resume_fit resume_del2"><a href="javascript:;" class="resume_del">删除</a></div>
+              </div>
+            </li>
+            <li  data-flag="9475142"> <span class="resume_header2"><span class="time">2015-05-28 13:07</span>
+              <label class="checkbox">
+                <input type="checkbox" />
+                <i></i> </label>
+              <span class="employee">应聘：<a class="employee_position" href="http://www.lagou.com/jobs/633769.html" title="产品经理"  target="_blank">产品经理</a></span> </span>
+              <div class="resume_show"> <a href="http://www.lagou.com/corpResume/resumeView.html?deliverId=9475142" class="resumeImg" target="_blank" title="预览在线简历"> <img src=" http://hr.lagou.com/image1/M00/03/D5/CgYXBlTUb_KAU7l9AAWos_4KfuQ663.png " width="69" height="69" /> </a> <a href="http://www.lagou.com/corpResume/resumeView.html?deliverId=9475142" target="_blank" class="hotspace">
+                <div class="resume_intro" data-flag="9475142"> 李政华  				                                    	 / 男  				                                    	 / 3年  				                                    	  / 深圳 <em ></em><br/>
+                  产品经理  			                                    		· 《图解电影》创业团队 <br/>
+                  哈尔滨理工大学远东学院  				                                    	 · 国际经济与贸易  				                                    	 · 本科 </div>
+                </a>
+                <div  class="resume_link nolook_phone" > <span data-flag="flag">未查看联系方式 </span> </div>
+                <div class="resume_fit resume_del2"><a href="javascript:;" class="resume_del">删除</a></div>
+              </div>
+            </li>
+            <li  data-flag="9133299"> <span class="resume_header2"><span class="time">2015-05-19 20:04</span>
+              <label class="checkbox">
+                <input type="checkbox" />
+                <i></i> </label>
+              <span class="employee">应聘：<a class="employee_position" href="http://www.lagou.com/jobs/672780.html" title="Java"  target="_blank">Java</a></span> </span>
+              <div class="resume_show"> <a href="http://www.lagou.com/nearBy/preview.html?deliverId=9133299" class="resumeImg" target="_blank" title="预览附件简历"> <img src="http://hr.lagou.com/images/corp/icon_file.png" width="69" height="69" /> </a> <a href="http://www.lagou.com/nearBy/preview.html?deliverId=9133299" target="_blank" class="hotspace">
+                <div class="resume_intro" data-flag="9133299"> 马楷鸿  				                                    					                                    	 / 3年  				                                    	  / 深圳 <em  class="read" ></em><br/>
+                  <br/>
+                  <span>附件简历：点击查看更多信息</span> </div>
+                </a>
+                <div  class="resume_link nolook_phone" > <span data-flag="flag">未查看联系方式 </span> </div>
+                <div class="resume_fit resume_del2"><a href="javascript:;" class="resume_del">删除</a></div>
+              </div>
+            </li>
+            <li  data-flag="9131373"> <span class="resume_header2"><span class="time">2015-05-19 18:59</span>
+              <label class="checkbox">
+                <input type="checkbox" />
+                <i></i> </label>
+              <span class="employee">应聘：<a class="employee_position" href="http://www.lagou.com/jobs/661842.html" title="UI设计师"  target="_blank">UI设计师</a></span> </span>
+              <div class="resume_show"> <a href="http://www.lagou.com/corpResume/resumeView.html?deliverId=9131373" class="resumeImg" target="_blank" title="预览在线简历"> <img src=" http://hr.lagou.com/image1/M00/25/48/CgYXBlVQrziAHhS6AAB6zJOMzd0804.jpg " width="69" height="69" /> </a> <a href="http://www.lagou.com/corpResume/resumeView.html?deliverId=9131373" target="_blank" class="hotspace">
+                <div class="resume_intro" data-flag="9131373"> 刘付敏  				                                    					                                    	 / 2年  				                                    	  / 深圳 <em ></em><br/>
+                  平面设计师  			                                    		· 东莞市志诚汽车销售服务有限公司 <br/>
+                  湛江市技师学院  				                                    	 · 电气自动化控制技术  				                                    	 · 其他 </div>
+                </a>
+                <div  class="resume_link nolook_phone" > <span data-flag="flag">未查看联系方式 </span> </div>
+                <div class="resume_fit resume_del2"><a href="javascript:;" class="resume_del">删除</a></div>
+              </div>
+            </li>
+           
+            <li  data-flag="8922906"> <span class="resume_header2"><span class="time">2015-05-14 08:33</span>
+              <label class="checkbox">
+                <input type="checkbox" />
+                <i></i> </label>
+              <span class="employee">应聘：<a class="employee_position" href="http://www.lagou.com/jobs/633769.html" title="产品经理"  target="_blank">产品经理</a></span> </span>
+              <div class="resume_show"> <a href="http://www.lagou.com/nearBy/preview.html?deliverId=8922906" class="resumeImg" target="_blank" title="预览附件简历"> <img src="http://hr.lagou.com/images/corp/icon_file.png" width="69" height="69" /> </a> <a href="http://www.lagou.com/nearBy/preview.html?deliverId=8922906" target="_blank" class="hotspace">
+                <div class="resume_intro" data-flag="8922906"> 杨俊  				                                    	 / 男  				                                    	 / 1年  				                                    	  / 深圳 <em  class="read" ></em><br/>
+                  <br/>
+                  <span>附件简历：点击查看更多信息</span> </div>
+                </a>
+                <div  class="resume_link nolook_phone" > <span data-flag="flag">未查看联系方式 </span> </div>
+                <div class="resume_fit resume_del2"><a href="javascript:;" class="resume_del">删除</a></div>
+              </div>
+            </li>
+            <li  data-flag="8855957"> <span class="resume_header2"><span class="time">2015-05-12 18:19</span>
+              <label class="checkbox">
+                <input type="checkbox" />
+                <i></i> </label>
+              <span class="employee">应聘：<a class="employee_position" href="http://www.lagou.com/jobs/633769.html" title="产品经理"  target="_blank">产品经理</a></span> </span>
+              <div class="resume_show"> <a href="http://www.lagou.com/nearBy/preview.html?deliverId=8855957" class="resumeImg" target="_blank" title="预览附件简历"> <img src="http://hr.lagou.com/images/corp/icon_file.png" width="69" height="69" /> </a> <a href="http://www.lagou.com/nearBy/preview.html?deliverId=8855957" target="_blank" class="hotspace">
+                <div class="resume_intro" data-flag="8855957"> 吴世佳  				                                    					                                    	 / 应届毕业生  				                                    	  / 深圳 <em ></em><br/>
+                  <br/>
+                  <span>附件简历：点击查看更多信息</span> </div>
+                </a>
+                <div  class="resume_link nolook_phone" > <span data-flag="flag">未查看联系方式 </span> </div>
+                <div class="resume_fit resume_del2"><a href="javascript:;" class="resume_del">删除</a></div>
+              </div>
+            </li>
+          </ul>
+          <!-- end .resumeLists -->
+          <div class="Pagination "></div>
+    <script>
+    $(function(){/* 分页 */
+         $('.Pagination').pager({
+              currPage: 1,
+              form: "filterForm",
+              pageCount: 3,
+              pageSize:  5 
+        });	 
+    })
+    </script>
+        </form>
+      </dd>
+    </dl>
+      <!-- end .company_center_content --> 
+    </div>
+    <!-- end .content -->
+    
+    <input type="hidden" value="十五贯" id="noticeCompanyName"/>
+    
+    <!--------------------------------- 弹窗lightbox ----------------------------------------->
+    <div style="display:none;"> //将原来的发送线上面试和线下面试合二为一弹窗
+      <div id="hr_noticeInterview" class="popup" style="height:545px;">
+        <div class="interview_notice_box" id="interview_notice_box"> 
+        <span class="interview_notice_selected interview_notice_offset" name="interview_notice">发面试通知</span> 
+        <span class="interview_notice" name="interview_noticed_already">已安排面试</span> </div>
+        <div class="hr_con">
+          <form id="hr_noticeInterview_form">
+            <table width="100%" class="f16">
+              <tr>
+                <td width="20%" align="right" class="c9">收件人</td>
+                <td width="80%"><span id="receiveEmail" class="c9"></span>
+                  <input type="text" name="email" value="" readonly class="receiveEmail" /></td>
+              </tr>
+              <tr>
+                <td align="right"><span class="redstar">*</span>主题</td>
+                <td><input type="text" name="subject" placeholder="公司：职位名称面试通知" /></td>
+              </tr>
+              <tr>
+                <td align="right"><span class="redstar">*</span>面试时间</td>
+                <td><input type="text" name="interTime" id="datetimepicker" readonly /></td>
+              </tr>
+              <tr class="select_templete">
+                <td align="right"><span>可选模板</span></td>
+                <td><span class="notice_templete" style="margin-left:0;">
+                  <input type="text" name="selectTemplate" readonly id="notice_select_templete" placeholder="系统模板（默认模板）" class="profile_select_265 profile_select_normal"/>
+                  </span>
+                  <div  class="boxUpDown dn" >
+                    <ul class="reset">
+                    </ul>
+                  </div>
+                  <a target="_blank" href="http://hr.lagou.com/templates/InterviewTemplateManagement.html" class="templete_manage">模板管理</a></td>
+              </tr>
+              <tr>
+                <td align="right"><span class="redstar">*</span>面试地点</td>
+                <td><input type="text" name="interAdd" /></td>
+              </tr>
+              <tr>
+                <td align="right"><span class="redstar">*</span>联系人</td>
+                <td><input type="text" name="linkMan" /></td>
+              </tr>
+              <tr>
+                <td align="right"><span class="redstar">*</span>联系电话</td>
+                <td><input type="text" name="linkPhone" /></td>
+              </tr>
+              <tr>
+                <td align="right" valign="top">补充内容</td>
+                <td><textarea name="content"></textarea></td>
+              </tr>
+              <tr align="right">
+                <td></td>
+                <td class="effect">编辑内容仅针对本次发送，不会影响模板</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><input class="btn" type="submit" value="发送" />
+                  <a href="javascript:;" class="emailPreview">预览</a></td>
+              </tr>
+            </table>
+            <input type="hidden" name="name" value="" />
+            <input type="hidden" name="positionName" value="" />
+            <input type="hidden" name="companyName" value="" />
+            <input type="hidden" name="deliverId" id="deliverId"/>
+            <input type="hidden" name="forwardKey" id="forwardKey" value=""/>
+          </form>
+          <div id="hr_checkContact" class="popup">
+            <p>如果已通过电话或邮件通知求职者面试，可以将简历标为“已安排面试”，需要您提供面试时间，标记后，简历会进入已安排面试列表，待沟通名额立即释放</p>
+            <div id="hr_checkInterview">
+              <form id="hr_checkInterviewForm">
+                <table width="100%" class="f16">
+                  <tr>
+                    <td width="20%" class="effect"></td>
+                    <td width="80%"></td>
+                  </tr>
+                  <tr>
+                    <td align="right"><span class="redstar">*</span>面试时间</td>
+                    <td><input type="text" name="interTime" id="interviewtime" readonly /></td>
+                  </tr>
+                  <tr>
+                    <td align="right"><span class="redstar">*</span>联系人</td>
+                    <td><input type="text" name="contactName" id="contactNameInput" /></td>
+                  </tr>
+                  <tr>
+                    <td align="right"><span class="redstar">*</span>联系电话</td>
+                    <td><input type="text" name="contactPhone" id="contactPhoneInput" /></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td align="left"><input class="btn" type="submit" value="确认" />
+                      <a href="javascript:;" class="cancelPreview">取消</a></td>
+                  </tr>
+                </table>
+              </form>
+            </div>
+            <!--/#noticeInterview--> 
+          </div>
+        </div>
+        <input type="hidden" name="name" value="" id="" />
+        <input type="hidden" name="positionName" value="" />
+        <input type="hidden" name="companyName" value="" />
+        <input type="hidden" name="deliverId" id="deliverId" />
+      </div>
+      
+      <!--查看联系方式需要填写hr的信息--> 
+      
+      <!-- 当达到20时，再次点击查看联系方式 -->
+      <div id="reached_limit" class="popup" style="overflow:auto;">
+        <div><span></span>待沟通简历太多，请先去处理一些吧</div>
+        <a href="javascript:;" class="i_konw">我知道了</a> </div>
+      <div id="big_reached_limit" class="popup">
+        <div><span></span>待沟通简历太多，先去处理一些吧~</div>
+        <a href="javascript:;" class="i_konw">我知道了</a> </div>
+      <!-- 待定简历到达上限 -->
+      <div id="reachLimit" class="popup">
+        <table width="100%" class="f16">
+          <tr>
+            <td class="f16" align="center"> 待沟通简历数量已达到上限，暂时无法查看~ </td>
+          </tr>
+          <tr>
+            <td align="center"><input class="btn" type="button" value="我知道了" /></td>
+          </tr>
+        </table>
+      </div>
+      
+      <!-- 简历状态发生改变 -->
+      <div id="statusChange" class="popup">
+        <table width="100%" class="f16">
+          <tr>
+            <td class="f16" align="center"> 简历状态已经发生变化，无法进行当前操作~ </td>
+          </tr>
+          <tr>
+            <td align="center"><input class="btn" type="button" value="确定" /></td>
+          </tr>
+        </table>
+      </div>
+      
+      <!-- 已经安排为线下面试 -->
+      <div id="hasOfflineNotice" class="popup" style="width:440px;height:330px;">
+        <div>如果已通过电话或邮件通知求职者面试，可以将简历标为“已安排面试”，需要您提供面试时间，标记后，简历会进入已安排面试列表，待定简历名额立即释放</div>
+        <form id="hasOfflineNoticeForm">
+          <table>
+            <tr>
+              <td width="20%"><span class="redstar" style="margin-left:0;">*</span></td>
+              <td width="20%"><span>面试时间</span></td>
+              <td width="60%"><input type="text" id="mianshiYear" name="noticeTime" readonly class="selectr" /></td>
+            </tr>
+            <tr>
+              <td align="right"><span class="redstar">*</span>联系电话</td>
+              <td><input type="text" name="linkPhone" id="linkPhone"/></td>
+            </tr>
+            <tr>
+              <td align="right">联系人</td>
+              <td><input type="text" name="linkMan" id="linkMan"/></td>
+            </tr>
+          </table>
+          <input type="hidden" id="offlineDeliverId" />
+          <div class="confirm_remark">您确认将简历标注为已安排面试吗？</div>
+          <div class="noticeTips">注意：如求职者投诉未收到面试通知，核实后，待定名额上限会被永久减1</div>
+          <div class="remark_button"> 
+            <!-- <a href="javascript:;" class="confirm_remarkBtn" data-flag="data-deliverId">确认</a> -->
+            <input type="submit" value="确认" class="confirm_remarkBtn" data-flag="data-deliverId"/>
+            <a href="javascript::" class="cancel">取消</a></div>
+        </form>
+      </div>
+      <!--通知面试弹窗--> 
+      <!-- <div id="noticeInterview" class="popup" style="height:545px;">
+	    <form id="noticeInterviewForm">
+	     	<table width="100%" class="f16">
+	         	<tr>
+	         		<td width="20%" align="right" class="c9">收件人  </td>
+	         		<td width="80%">
+	         			<span id="receiveEmail" class="c9"></span>
+	         			<input type="text" name="email" value=""  readonly="readonly" class="receiveEmail"/>
+	         		</td>
+	         	</tr>
+	         	<tr>
+	             	<td align="right"><span class="redstar">*</span>主题</td>
+	             	<td>
+						<input type="text" name="subject" placeholder="公司：职位名称面试通知" />
+					</td>
+	           	</tr>
+	           	<tr>
+	             	<td align="right"><span class="redstar">*</span>面试时间</td>
+	             	<td>
+						<input type="text" name="interTime" id="datetimepicker"  readonly="readonly"/>
+					</td>
+	           	</tr>
+	           	<tr class="select_templete">
+	             	<td align="right"><span>可选模板</span></td>
+	             	<td>
+						<span class="notice_templete" style="margin-left:0;"><input type="text" name="selectTemplate" readonly="readonly" id="notice_select_templete" placeholder="系统模板（默认模板）" class="profile_select_265 profile_select_normal"/></span>
+						<div class="boxUpDown dn">
+			         		<ul class="reset"></ul>
+			         	</div>
+						<a target="_blank" href="http://hr.lagou.com/templates/InterviewTemplateManagement.html" class="templete_manage">模板管理</a>
+					</td>
+	           	</tr>
+	           	<tr>
+	             	<td align="right"><span class="redstar">*</span>面试地点</td>
+	             	<td>
+						<input type="text" name="interAdd" />
+					</td>
+	           	</tr>
+	           	<tr>
+	             	<td align="right">联系人</td>
+	             	<td>
+						<input type="text" name="linkMan" />
+					</td>
+	           	</tr>
+	           	<tr>
+	             	<td align="right"><span class="redstar">*</span>联系电话</td>
+	             	<td>
+						<input type="text" name="linkPhone" />
+					</td>
+	           	</tr>
+	           	<tr>
+	             	<td align="right" valign="top">补充内容</td>
+	             	<td>
+						<textarea name="content"></textarea>
+					</td>
+	           	</tr>
+	           	<tr align="right"><td></td><td class="effect">编辑内容仅针对本次发送，不会影响模板</td></tr>
+	            <tr>
+	            	<td></td>
+	             	<td>
+	             		<input class="btn" type="submit" value="发送" />
+	             		<a href="javascript:;" class="emailPreview">预览</a>
+	             	</td>
+	             </tr>
+	         </table>
+			<input type="hidden" name="name" value="" />
+			<input type="hidden" name="positionName" value="" />
+			<input type="hidden" name="companyName" value="" />
+			<input type="hidden" name="deliverId" id="deliverId"/>
+        </form>
+    </div> --><!--/#noticeInterview--> 
+      
+      <!--预览通知面试弹窗-->
+      <div id="noticeInterviewPreview" class="popup">
+        <div class="f18">拉勾网：产品经理面试通知 </div>
+        <div class="c9">发给：<span>vivi@lagou.com</span></div>
+        <div id="emailText"></div>
+        <input class="btn fl" type="button" value="提交" />
+        <a href="#hr_noticeInterview" class="inline fl" title="通知面试">返回修改</a> </div>
+      <!--/#noticeInterviewPreview--> 
+      
+      <!--通知面试成功弹窗-->
+      <div id="noticeInterviewSuccess" class="popup">
+        <table width="100%" class="f16">
+          <tr>
+            <td class="f16" align="center"> 面试通知已发送成功<br />
+              该简历已进入“已安排面试”列表 </td>
+          </tr>
+          <tr>
+            <td align="center"><input class="btn" type="button" value="确认" /></td>
+          </tr>
+        </table>
+      </div>
+      <!--/#noticeInterviewSuccess--> 
+      
+      <!--转发简历弹窗-->
+      <div id="forwardResume" class="popup">
+        <form id="forwardResumeForm">
+          <table width="100%" class="f16">
+            <tr>
+              <td width="20%" align="right" nowrap >收件人</td>
+              <td width="80%"><input type="text" name="recipients" id="recipients" placeholder="最多可添加两个邮箱，用“；”隔开" />
+                <span class="beError" style="display:none" id="forwardResumeError"></span></td>
+            </tr>
+            <tr>
+              <td align="right">主题</td>
+              <td><input type="text" name="title" value="" /></td>
+            </tr>
+            <tr>
+              <td align="right" valign="top">正文</td>
+              <td><textarea name="content"></textarea>
+                <span class="beError error" style="display:none;"></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input class="btn" type="submit" value="发送" />
+                <a href="javascript:;" class="emial_cancel">取消</a></td>
+            </tr>
+          </table>
+          <input type="hidden" name="resumeKey" value="" />
+          <input type="hidden" name=forwardKey value="" />
+          <input type="hidden" name="positionId" value="" />
+          <input type="hidden" name="deliverId" value="" />
+          <input type="hidden" name="positionName" value="" />
+        </form>
+      </div>
+      <!--/#forwardResume--> 
+      
+      <!--转发简历成功弹窗-->
+      <div id="forwardResumeSuccess" class="popup">
+        <table width="100%" class="f16">
+          <tr>
+            <td class="f16" align="center">简历转发成功</td>
+          </tr>
+          <tr>
+            <td align="center"><input class="btn" type="button" value="确认" /></td>
+          </tr>
+        </table>
+      </div>
+      <!--/#forwardResumeSuccess--> 
+      
+      <!--确认不合适弹窗-->
+      <div id="confirmRefuse" class="popup" style="height:500px;">
+        <form id="refuseMailForm">
+          <table width="100%">
+            <tr>
+              <td><div class="refuse_icon">
+                  <h3><em></em>确认这份简历不合适吗？</h3>
+                  <span>确认后，系统将自动发送不合适通知邮件至用户邮箱</span> </div></td>
+            </tr>
+            <tr class="select_templete select_templete2">
+              <td><span>可选模板</span><span class="selectRefuse">
+                <input class="profile_select_265 profile_select_normal" readonly type="text" placeholder="系统模板（默认模板）" id="refuse_select_templete" />
+                </span>
+                <div class="boxUpDown dn">
+                  <ul class="reset">
+                  </ul>
+                </div>
+                <a target="_blank" href="http://hr.lagou.com/templates/RefuseTemplateManagement.html" class="templete_manage">模板管理</a></td>
+            </tr>
+            <tr>
+              <td><textarea name="content">
+非常荣幸收到您的简历，在我们仔细阅读您的简历之后，却不得不很遗憾的通知您：
+您的简历与该职位的定位有些不匹配，因此无法进入面试。
+
+但您的信息已录入我司人才储备库，当有合适您的职位开放时我们将第一时间联系您，希望在未来我们有机会成为一起拼搏的同事；
+再次感谢您投递AAA公司，感谢您对我们的信任；
+
+祝您早日找到满意的工作。
+						</textarea></td>
+            </tr>
+            <tr align="right">
+              <td class="effect">编辑内容仅针对本次发送，不会影响模板</td>
+            </tr>
+            <tr>
+              <td><input class="btn" type="submit" value="确认不合适" />
+                <a href="javascript:;" class="emial_cancel">取消</a></td>
+            </tr>
+          </table>
+          <input type="hidden" name="deliverId" value="" />
+        </form>
+      </div>
+      <!--/#confirmRefuse--> 
+      <!-- 简历管理列表页 查看联系方式 -->
+      <div id="checkContact" class="popup" style="height:480px;">
+        <p>查看联系方式意味着该候选人的简历已经通过筛选，该候选人会被移动到待沟通简历表中，同时收到通过筛选的通知，您需要在三个工作日内与其进行沟通。</p>
+        <p>三日后，您的联系方式将会展示给候选人，同时，他将可以对没有沟通的行为进行举报，这将会使你职位的曝光率受到严重影响。</p>
+        <div id="checkInterview">
+          <form id="checkInterviewForm">
+            <table width="100%" class="f16">
+              <tr>
+                <td width＝"20%" class="effect"></td>
+                <td width＝"80%"></td>
+              </tr>
+              <tr>
+                <td align="right"><span class="redstar">*</span>联系人</td>
+                <td><input type="text" name="contactName" id="contactName"/></td>
+              </tr>
+              <tr>
+                <td align="right"><span class="redstar">*</span>联系电话</td>
+                <td><input type="text" name="contactPhone" id="contactPhone"/></td>
+              </tr>
+              <tr>
+                <td align="right"><span class="redstar">*</span>联系邮箱</td>
+                <td><input type="text" name="contactEmail" id="contactEmail"/></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td align="left"><input class="btn" type="submit" value="确认查看"/>
+                  <a href="javascript:;" class="cancelLink">取消</a></td>
+              </tr>
+            </table>
+            <input type="hidden" name="name" value=""/>
+            <input type="hidden" name="positionName" value=""/>
+            <input type="hidden" name="companyName" value=""/>
+            <input type="hidden" name="deliverId" data-deliverId=""/>
+          </form>
+        </div>
+        <!--/#noticeInterview--> 
+      </div>
+      <!--拒绝email成功弹窗-->
+      <div id="refuseMailSuccess" class="popup">
+        <table width="100%" class="f16">
+          <tr>
+            <td class="f16" align="center"> 不合适通知已发送成功<br />
+              该简历已进入“不合适简历”列表 </td>
+          </tr>
+          <tr>
+            <td align="center"><input class="btn" type="button" value="确认" /></td>
+          </tr>
+        </table>
+      </div>
+      <!--/#refuseMailSuccess--> 
+    </div>
+    
+    <!------------------------------------- end -------------------------------------><!-------------------------------------弹窗lightbox  ----------------------------------------->
+    <!-- <div style="display:none;">
+      <div id="weixinQR" class="popup" style="width:500px;*height:220px;">
+        <table width="100%">
+          <tr class="weixinQR">
+            <td><div class="weixin">
+                <div class="qr"> <img src="" width="100" height="100" />
+                  <div>[仅限本人使用]</div>
+                </div>
+                <div class="qr_text">
+                  <h3>关注微信服务号，可随时获取接收简历的通知 </h3>
+                  关注方式：<br />
+                  <span>打开微信 </span> <img src="/images/corp/wx1.png" width="30" height="30" /><span> →发现 </span> <img src="http://hr.lagou.com/images/corp/wx2.png" width="31" height="30" /><span> →扫一扫左侧二维码</span> </div>
+              </div></td>
+          </tr>
+          <tr>
+            <td align="center"><a href="javascript:;" class="btn_s">我已关注</a> <a href="javascript:;" class="qr_cancel f18">下次再关注</a></td>
+          </tr>
+        </table>
+      </div>
+      
+    </div> -->
+    
+    <!------------------------------------- end -----------------------------------------> 
+    <script type="text/javascript" src="/Public/Home/js/jquery.ui.datetimepicker.min.js"></script> 
+    <script type="text/javascript" src="/Public/Home/js/new_received_resumes.min.js"></script> 
+    <script>
+//风暴周报名入口
+$('.employee_apply').click(function(){
+	fengBaoEntrance();
+});
+//全局对象
+var global = {headTip:""};
+$(function(){
+			
+	var resumeLength = $('.resume_lists li').length;
+	/* var href = L.trim(ctx);
+	if(href.substr(href.length-1)== 'm' ){
+		href = href.substr(href.length-10);
+	} */
+	if(L.cookie('functionMask') == null && resumeLength > 0){
+		L('#guide_all').show();
+ 		L.cookie('functionMask', '1', {expires:365});
+	}else{
+		L('#guide_all').hide();
+		//var cookie = parseInt(L.cookie('functionMask')) + 1;
+		//L.cookie('functionMask', '2', options );
+	}
+	//如果是从右上角消息推送入口跳转过来的，展开过滤条件框
+	if(global.headTip == 1 || global.headTip == "1"){
+		$('#filter_btn2').trigger("click");
+	} 
+	
+	var parent = $(".message_tip");
+	var height = parent.height();
+	var timer = null ;
+	if(L.cookie('message') == null ){
+		parent.show();
+		L.cookie('message','msg',{expires:365}) ; 
+	}else{
+		parent.hide();
+	}
+	
+	$(".message_no").on("click",function(){
+		timer = setInterval(function(){
+			 if(height >= 15){
+		           height -= 5 ;
+		           parent.height(height);
+		       }else{
+		    	   parent.css("visibility","hidden");
+		    	   return;
+		       }
+		},30)
+	})
+});
+
+</script>
+    <div class="clear"></div>
+  </div>
+  <!-- end #container --> 
+</div>
+<!-- end #body --> 
+
+<script type="text/javascript" src="/Public/Home/js/core.min.js?v=1.5.6_2015060418"></script> 
+<script type="text/javascript" src="/Public/Home/js/popup.min.js?v=1.5.6_2015060418"></script> 
+
+
+<include file="Public/footer" />

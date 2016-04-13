@@ -1,0 +1,148 @@
+<include file="Public/header" />
+
+
+ <php>if(getUsersSession('type')==1){</php>
+      <div class="tilhed">
+          <div class="logo"><img src="/Public/Home/images/logo.png" /></div>
+      </div>
+ <php>}</php>
+ 
+ 
+<div class="mbbox">
+ 
+ <div class="userhome">
+ 
+ <php>if(getUsersSession('type')==1){</php>
+
+        <div class="out txtrt">
+            <a class="colac" href="{:U('User/logout')}">退出</a>
+        </div>
+        
+        <php>if($info['logo']){</php> 
+           <img class="upic" src="{$info.logo}" />
+        <php>}else{</php> 
+           <img class="upic" src="/Public/Home/images/com_logo.gif" />
+        <php>}</php> 
+             
+        <div class="txtct pdt10 f16">{$info.company_short_name}</div>
+          
+       </div>
+       
+      <table class="myhobt1" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#FFDA44"><a href="/Company/cinfo.html" class="mbt1"><i></i>我的公司</a></td>
+          <td width="10"></td>
+          <td bgcolor="#FFDA44"><a href="/Company/positions/type/Publish.html" class="mbt2"><i></i>我的职位</a></td>
+        </tr>
+        <tr>
+          <td height="10" colspan="3"></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFDA44"><a href="/Company/interview.html" class="mbt3"><i></i>简历管理</a></td>
+          <td></td>
+          <td bgcolor="#FFDA44"><a href="/Company/interview/type/mianshi.html" class="mbt4"><i></i>面试管理</a></td>
+        </tr>
+      </table>
+      
+  <php>}else{</php>
+  
+     <div class="out">
+     
+      		<php>if($info['check_email']<1){</php>
+            <a id="ttemail" class="lf colac" href="javascript:">验证邮箱</a>
+            <php>}</php>
+            
+            <a class="rt colac" href="{:U('User/logout')}">退出</a>
+            <div class="clr"></div>
+        </div>
+        <img class="upic"  src='<if condition="$info.pic neq '' ">{$info.pic}<else />/Public/Home/images/default_headpic.png</if>'  width="117" height="117" alt="头像" /> 
+        <div class="txtct pdt10 f16">{$info.realname}</div>
+          
+       </div>
+       
+      <table class="myhobt" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#FFDA44"><a href="/User/delivery.html" class="mbt1"><i></i>投递记录</a></td>
+          <td width="10"></td>
+          <td bgcolor="#FFDA44"><a href="/User/myinterview.html" class="mbt2"><i></i>我的面试</a></td>
+        </tr>
+        <tr>
+          <td height="10" colspan="3"></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFDA44"><a href="/Resume/myresume.html" class="mbt3"><i></i>我的简历</a></td>
+          <td></td>
+          <td bgcolor="#FFDA44"><a href="/User/collections.html" class="mbt4"><i></i>我的收藏</a></td>
+        </tr>
+      </table>
+      
+      
+      
+<!-- 弹出层验证邮箱 -->
+
+   <div id="tantan_tip" class="temail" style="display:none;">
+     <span><em id="costt">x</em></span>
+     <h5>邮件已发送，快去验证吧：）</h5>
+      未收到验证邮件？垃圾箱找找看~
+      <input type="hidden" value="{$info.uid}" name="userid" id="userid">
+      <a id="resend" href="javascript:">重新发送验证邮件</a>
+   </div>
+   
+   <script>
+     $("#ttemail").click(function(){
+    	 send_check_email(0);
+        $("#tantan_tip").show();
+     })
+	 
+	 $("#costt").click(function(){
+        $("#tantan_tip").hide();
+     })
+     
+     
+     $('#resend').click(function(){
+    	 send_check_email(1);
+     })
+     
+     function send_check_email(show){
+    	 
+    	 var userid = $('#userid').val();
+    	  	
+    		$.ajax({
+
+    	        type: "POST",
+    	        url: '/User/resendEmail/',
+    	        data: {userid:userid},
+    	        dataType: "json",
+    	        //async:false,
+
+    	        success: function(json){
+    	        	if(json.status==1){
+    	        		if(show==1){
+    	    				alert("邮件发送成功！");
+    	        		}
+    	    		}
+    	    		else {
+    	    			alert(json.info);
+    	    			
+    	    		}
+    	        },
+    	        error:function(){
+    	        	alert("服务器繁忙，请稍后再试");
+    				return false;
+    	        }
+    	    });
+    		
+     }
+     
+  </script>
+  
+  
+  <php>}</php>
+
+   
+   
+</div>
+
+
+ 
+<include file="Public/footer" />

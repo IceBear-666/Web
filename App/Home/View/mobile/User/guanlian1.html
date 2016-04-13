@@ -1,0 +1,274 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/reg.css" />
+<style type="text/css">
+*{ padding: 0; margin: 0; }
+body{font-size:14px; background:#FADC62; font-family:"Microsoft YaHei";}
+a{color:#AC6198; font-weight:bold;}
+a:hover{text-decoration: underline;}
+.login_logo{ text-align:center; padding-top:40px;}
+.yzbtn{ padding:30px 0px 30px 0px;}
+.yzbtn a{ background:#AC6198; color:#fff; padding:8px 14px; font-size:15px;}
+.yzbtn a:hover{background:#BE83AE; text-decoration:none;}
+.zise{ color:#AC6198; font-weight:bold}
+.mymsg p{ display:block; font-size:16px; text-align:center; line-height:28px;}
+
+.yzbox{width:640px;margin:0 auto;color:#333;font-size:14px;padding-top:80px}
+
+.mymsg{margin-top:40px; background:#fff; padding:30px 60px 60px 60px; line-height:22px;}
+.mymsg h2{ display:block; text-align:center; font-weight:normal; font-size:22px; padding-bottom:20px}
+.gopw{ font-size:20px; padding:6px 40px;}
+
+input[type="text"],input[type="password"]{border:2px solid #f1f1f1;outline:none; font-size:16px; width: 294px;height: 30px;  padding: 6px 10px; margin-top:10px; transition:border 0.2s ease-in 0s;}
+input[type="button"],input[type="submit"]{outline:none;cursor:pointer;border:none;}
+input[type="text"]:focus,input[type="password"]:focus{border:2px solid #D3B8CC;}
+
+.yiyou{ position: absolute; bottom:0px; left:50px;}
+.meiyou{ position: absolute; bottom:0px; left:50px;}
+.pwcnt{ width:420px; margin:0 auto;}
+#ueditpw {
+    position: absolute;
+    right:100px;
+    top: 14px;
+}
+
+.mytou{ position:relative; margin:0 auto; height:86px; padding-top:10px;}
+.mytou .mytiltxt{ padding-left:16px;}
+.mytou .ttil{ display:block; padding-top:3px; padding-bottom:6px;}
+.mytou .smtxt{ font-size:15px; color:#999;}
+#submitLogin{ float:none; margin:0; width:auto; height:auto; margin-top:30px;}
+</style>
+  
+  
+<div class="yzbox">
+  <div class="login_logo"> <a href="/"><img src="/Public/Home/images/uslogo.png" /></a></div>
+  
+
+
+<!-- 管理邮箱 -->   
+  <div id="nogl" class="mymsg">
+  
+    <div class="mytou" style=" margin-bottom:10px;">
+       <div class="lf"><img style="vertical-align:middle" src="/Public/Home/images/icogl.gif" /></div>
+        <div class="mytiltxt lf">
+         <h2 class="ttil">创建一个Email账号，并绑定你现在登陆的{$login_type}</h2>
+         <div class="smtxt">绑定后，使用{$login_type}或者Email均可以登陆到你现有的账号</div>
+        </div>
+        <a class="yiyou" href="javascript:">已有Email账户？立即关联</a>
+    </div>
+   
+         <div class="pwcnt">
+	          
+	          <form id="registerForm" class="forms" action="/User/register" method="post" name="forms">
+	            <table width="100%" align="center" class="savePassword">
+                
+	                <tr>
+	                  <td>
+                        <input type="text" name="email" id="email" placeholder="输入你常用的邮箱"  maxlength="30">
+	                    <span class="error" style="display:none;" id="findPwd_beError"> </span>
+                        <div class="newpw">
+                      <div id="editipt"><input type="password" id="newpassword" class="myipt" name="password"  placeholder="请输入新密码" errormsg="密码为6-20位" nullmsg="请输入新密码" datatype="*6-20"/></div>
+                      <div id="ueditpw"><a class="offpw" href="javascript:showps()"></a></div>
+                     </div>
+                        </td>
+	                </tr>
+                    
+                    
+                   <tr>
+                     <td style="padding-top:10px;">    
+                         <ul class="register_radio clearfix">
+                            <li id="regjob"> 找工作
+                              <input type="radio" value="0" name="type"/>
+                            </li>
+                            <li id="regcom"> 招人
+                              <input type="radio" value="1" name="type"/>
+                            </li>
+                          </ul>
+                      </td>
+                    </tr>
+                    
+	                
+	                <tr>
+	                  <td>
+	                  <input type="hidden" id="web_rule" name="web_rule" value="1"/>
+	                  <input type="hidden" name="resubmitToken" value={$accesstoken}>
+	                  <span class="error" style="display:none;" id="beError"></span>
+	                  <input type="submit" id="submitReg" class="mybtn gopw" value="创建并绑定"></td>
+	                </tr>
+	            </table>
+	            
+	            
+	          </form>
+            </div>
+	  </div>
+      
+
+
+<!-- 管理已有邮箱 -->     
+      <div id="yiyou" class="mymsg dn">
+       
+         <div  class="mytou" style=" margin-bottom:10px;">
+            <div class="lf"><img style="vertical-align:middle" src="/Public/Home/images/icogl.gif" /></div>
+            <div class="mytiltxt lf">
+              <h2 class="ttil">关联你的Email账号，并绑定你现在登陆的{$login_type}</h2>
+              <div class="smtxt">绑定后，使用{$login_type}或者Email均可以登陆到你现有的账号</div>
+            </div>
+             <a class="meiyou" href="javascript:">没有Email账户？立即创建</a>
+         </div>
+    
+           <div class="pwcnt">
+           
+           <form id="loginForm" action="/User/login" method="post">
+	          <input type="text" name="email" id="email" placeholder="输入你已注册的邮箱"  maxlength="30">
+              <input type="password" name="password" id="password" placeholder="密码"  maxlength="30">
+              <span class="error" style="display:none;" id="beError_bind"></span>
+              <input type="submit" id="submitLogin" class="mybtn gopw mt20" value="确认并绑定">
+            	<input type="hidden" name="resubmitToken" value={$accesstoken}>
+            </form>
+            
+            </div>
+	  </div>
+  
+  
+      
+</div>
+  
+<!-- 眼镜显示隐藏密码 -->
+<script language="JavaScript">
+	  function showps(){ 
+		  if (this.forms.newpassword.type="password") {
+			  document.getElementById("editipt").innerHTML="<input type=\"text\" name=\"newpassword\" class=\"myipt\" id=\"newpassword\" placeholder=\"请输入新密码\" errormsg=\"密码为6-20位\" nullmsg=\"请输入新密码\" datatype=\"*6-20\"  value="+this.forms.newpassword.value+">"; 
+			  document.getElementById("ueditpw").innerHTML="<a class=\"onpw\" href=\"javascript:hideps()\"></a>"
+		  }
+	  } 
+	  function hideps(){ 
+		  if (this.forms.newpassword.type="text") {
+			  document.getElementById("editipt").innerHTML="<input type=\"password\" name=\"newpassword\" class=\"myipt\" id=\"newpassword\" placeholder=\"请输入新密码\" errormsg=\"密码为6-20位\" nullmsg=\"请输入新密码\" datatype=\"*6-20\"  value="+this.forms.newpassword.value+">"; 
+			  document.getElementById("ueditpw").innerHTML="<a class=\"offpw\" href=\"javascript:showps()\"></a>"
+		  } 
+	  } 
+</script>	
+
+<!-- ==================== 弹窗  ==================== -->
+
+<!-- 修改密码成功 -->
+ <div style="display:none;">
+    <script type="text/javascript" src="/Public/Home/js/setting.js"></script> 
+	<div id="updatePassword" class="popup" style="overflow:hidden">
+		<h3>修改密码成功，请重新登录</h3>
+		<h4><span>5</span>秒后将自动退出</h4>
+		<a href="/User/logout" class="btn">直接退出</a>
+	</div>
+ </div>
+ 
+ 
+<script>
+
+$(".yiyou").click(function(){
+	$("#yiyou").show();
+	$("#nogl").hide();
+})
+$(".meiyou").click(function(){
+	$("#yiyou").hide();
+	$("#nogl").show();
+})
+
+
+
+$(document)
+   	.ajaxStart(function(){
+   		$("#submitReg").addClass("log-in").attr("disabled", true);
+   	})
+   	.ajaxStop(function(){
+   		$("#submitReg").removeClass("log-in").attr("disabled", false);
+   	});
+
+
+$("#registerForm").submit(function(){
+	$("#beError").hide();
+	var self = $(this);
+	$.post(self.attr("action"), self.serialize(), success, "json");
+	return false;
+
+	function success(data){
+		if(data.status){
+			window.location.href = data.url; //"/Home/User/";//
+		} else {
+			//self.find(".Validform_checktip").text(data.info);
+			$("#beError").show();
+			$("#beError").text(data.info);
+			//刷新验证码
+			//$(".reloadverify").click();
+		}
+	}
+});
+  	
+$(document)
+.ajaxStart(function(){
+	$("#submitLogin").addClass("log-in").attr("disabled", true);
+})
+.ajaxStop(function(){
+	$("#submitLogin").removeClass("log-in").attr("disabled", false);
+});
+
+
+$("#loginForm").submit(function(){
+	$("#beError_bind").hide();
+	var self = $(this);
+	$.post(self.attr("action"), self.serialize(), success, "json");
+	return false;
+	
+	function success(data){
+		if(data.status){
+			window.location.href = data.url;
+		} else {
+			//self.find(".Validform_checktip").text(data.info);
+			$("#beError_bind").show();
+			$("#beError_bind").text(data.info);
+			//刷新验证码
+			//$(".reloadverify").click();
+		}
+	}
+}); 	
+
+$('#resetPswForm').validate({
+       rules: {
+   	   	newpassword: {
+   	   		required: true,
+   	    	rangelength: [6,16]
+   	   	}
+   	},
+   	messages: {
+       	
+   	   	newpassword: {
+   	   		required: "请输入新密码",
+   	    	rangelength: "请输入6-16位密码，字母区分大小写"
+   	   	}
+   	},
+   	submitHandler:function(form){
+   		var newpassword = $('#newpassword').val();    		
+
+   		$.ajax({
+   			url:ctx+'User/findPassword/type/3/key/{$key}',
+   			type:'POST',
+   			data:{
+   				newPassword:newpassword,
+   			},
+           	dataType:'json'
+   		}).done(function(result){
+   			if (result.status == 1) {
+   				alert("密码设置成功，请前往登录。");
+				top.location.href=ctx+"User/login";
+   				//$.colorbox({inline:true, href:$("#updatePassword"),title:"修改密码成功"});
+   				//setCountdown(4,'updatePassword h4 span',ctx+"User/lgoin");	//调用倒计时
+               } else{
+               	 alert(result.info);
+               }
+   		});
+       }  
+});	
+	
+	
+</script>
+  
+
+<include file="Public/footer" />

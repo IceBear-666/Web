@@ -1,0 +1,192 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/reg.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/external.min.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+<style>
+#xieyi{ width:600px; height:400px; line-height:28px; padding-bottom:20x; overflow-y:scroll}
+.loginForm input#verity {
+  width: 155px;
+  font-size: 14px;
+  color: #777;
+  height: 30px;
+  line-height: 30px;
+  border: 2px solid #eee;
+    vertical-align: top;}
+
+
+/*.registerForm{
+   width:460px;
+  height:554px;
+}*/
+
+ #submitReg {
+        width: 100%;
+        padding: 12px 0;
+        margin: 10px 0 20px 0;
+    }
+
+.header{
+    display: none
+}
+ </style>
+
+
+<div class="login_wrapper">
+  
+  <input type="hidden" id="resubmitToken" value=""/>
+  <div class="login_box">
+
+    <form id="registerForm" class="loginForm"  action="{:U('User/registerphone')}"  method="post" name="forms">
+
+      <div class="login_logo"> <a href="/"><img src="/Public/Home/images/xunlu_logo.png" /></a></div>
+      <input type="text" id="nickname" ajaxurl="/member/checkUserEmailUnique.html"  nullmsg="请填写昵称" datatype="e" name="nickname" tabindex="1" placeholder="昵称"/>
+
+      <input type="text" id="phone" errormsg="请填写正确格式手机号" nullmsg="请填写手机号" datatype="e" name="phone" tabindex="1" placeholder="手机号"/> 
+
+      <div style="position:relative;">
+         <div id="editipt"> <input type="password" oncut="return false" onpaste="return false" id="password" name="password" tabindex="2" placeholder="请输入密码" errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"/></div>
+         <div id="editpw"><a class="icon-user offpw" href="javascript:showps()"></a></div>
+       </div>
+    
+      <div class="controls">
+      <input type="text" name="verify" id="verity" value="" placeholder="验证码"/>
+          <img  class="verifyimg reloadverify" alt="点击切换" src="{:U('verify')}" style="cursor:pointer;">
+      </div> 
+
+      <!--   <input type="text" name="verify" id="verity" value="" placeholder="手机验证码"/>
+        <a >发送验证码</a> -->
+
+      <div class="controls Validform_checktip text-warning"></div>
+
+      <span class="error" style="display:none;" id="beError"></span>
+      <div class="clr"></div>
+<!-- 	   <a class="btn-email" id="reg_phone"><i class="icon-user email-icon"></i>注 册</a>
+       <a id="reg_phone" class="btn-email" <i class="icon-user email-icon"></i>注 册</a>
+ -->     <input type="submit" id="submitReg" class="mybtn" value="注 册"/>
+     <div style="overflow: hidden;">
+        <div style="float:left"> <label class="fl registerJianJu" for="checkbox">
+        <input type="checkbox" id="web_rule" name="web_rule" checked class="checkbox valid"/>
+        我已阅读并同意<a class="inline"  href="#xieyi" title="乔麦网用户协议">《乔麦网用户协议》</a> </label></div>
+        <div style="float:right">
+            <a href="login.html">已有帐号？</a>
+        </div>
+        <div class="clr"></div> 
+    </div>
+    <!--   <input type="hidden" id="callback" name="callback" value=""/>
+      <input type="hidden" id="authType" name="authType" value=""/>
+      <input type="hidden" id="signature" name="signature" value=""/>
+      <input type="hidden" id="timestamp" name="timestamp" value=""/> -->
+    </form>
+
+    <a class="btn-email" href="{:U('User/register')}"><i class="icon-user email-icon"></i>用邮箱号注册</a>
+   <!--  <div class="login_right">
+      <div class="login_others" style="padding-top:0px;">还没有帐号？</div>
+     <a href="login.html" class="registor_now mybtn">直接登录</a>
+     <div class="login_others">或者</div>
+     <div class="iconlogin">
+       <a href="/Public/otherLogin/type/sina"  class="icon_wb" title="使用新浪微博帐号登录"></a>
+       <a href="/Public/otherLogin/type/qq" class="icon_qq"  title="使用腾讯QQ帐号登录"></a>
+       <a href="/Public/otherLogin/type/wx" class="icon_weixin"  title="使用微信帐号登录"></a>
+     </div> -->
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <script type="text/javascript" src="/Public/Home/js/jquery.validate.js" ></script>
+<script type="text/javascript" src="/Public/Home/js/main.js" ></script>  -->
+
+<script type="text/javascript" src="/Public/Home/js/popup.js"></script>
+
+<!-- 眼镜显示隐藏密码 -->
+<script language="JavaScript">
+    function showps(){
+      if (this.forms.password.type="password") {
+        document.getElementById("editipt").innerHTML="<input type=\"text\" name=\"password\" oncut=\"return false\" onpaste=\"return false\"  id=\"password\" placeholder=\"请输入密码\" errormsg=\"密码为6-20位\" nullmsg=\"请填写密码\" datatype=\"*6-20\" tabindex=\"2\" value="+this.forms.password.value+">";
+        document.getElementById("editpw").innerHTML="<a class=\"icon-user onpw\" href=\"javascript:hideps()\"></a>"
+      }
+    }
+    function hideps(){
+      if (this.forms.password.type="text") {
+        document.getElementById("editipt").innerHTML="<input type=\"password\" name=\"password\" id=\"password\"  oncut=\"return false\" onpaste=\"return false\" placeholder=\"请输入密码\" errormsg=\"密码为6-20位\" nullmsg=\"请填写密码\" datatype=\"*6-20\" tabindex=\"2\" value="+this.forms.password.value+">";
+        document.getElementById("editpw").innerHTML="<a class=\"icon-user offpw\" href=\"javascript:showps()\"></a>"
+      }
+    }
+</script>
+
+
+<script type="text/javascript">
+      // var phone = $("#phone").val();
+      // alert(phone);
+      // $('#reg_phone').click(function(){
+      //    $.ajax({
+      //      type: "post",
+      //      url: ctx +"User/registerphone",
+      //      data: {phone:$("#phone").val()},
+      //      dataType: "json",
+      //      success: function(data){
+      //          if (data) {
+      //           window.location.href = ('/User/registerphoneverify?phone='+phone);
+      //          }
+      //       }
+      //    });
+      // });
+ 
+
+  // $("#regjob").click(function(){
+  //   $("#email").attr('placeholder','请输入常用邮箱地址');
+  // })
+  // $("#regcom").click(function(){
+  //   $("#email").attr('placeholder','请输入公司邮箱');
+  // })
+
+  $(document).ready(function() {
+    $(".register_radio li input").click(function() {
+      $(this).parent("li").addClass("current").append("<em></em>").siblings().removeClass("current").find("em").remove()
+    })
+
+  })
+
+    $(document)
+      .ajaxStart(function(){
+        $("#submitReg").addClass("log-in").attr("disabled", true);
+      })
+      .ajaxStop(function(){
+        $("#submitReg").removeClass("log-in").attr("disabled", false);
+      });
+
+
+    $("form").submit(function(){
+      $("#beError").hide();
+      var self = $(this);
+      $.post(self.attr("action"), self.serialize(), success, "json");
+      return false;
+
+      function success(data){
+        if(data.status){
+          window.location.href = data.url; //"/Home/User/";//
+        } else {
+          //self.find(".Validform_checktip").text(data.info);
+          $("#beError").show();
+          $("#beError").text(data.info);
+          //刷新验证码
+          //$(".reloadverify").click();
+        }
+      }
+    });
+
+  $(function(){
+    var verifyimg = $(".verifyimg").attr("src");
+     $(".reloadverify").click(function(){
+         if( verifyimg.indexOf('?')>0){
+             $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+         }else{
+             $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+         }
+     });
+  });
+</script>
+
+

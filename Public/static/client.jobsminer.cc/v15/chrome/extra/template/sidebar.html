@@ -1,0 +1,117 @@
+<div id="wltao_sidebar" class="wltao_font">
+    <div class="wltao_sidebar_logo">
+        <div class="wltao_sidebar_air"></div>
+    </div>
+    <div class="wltao_sidebar_top wltao-stat" data-stat="web.help.top"></div>
+    <div class="wltao_sidebar_transaddress wltao_transaddress wltao-stat" data-stat="web.help.transaddress"><i></i>
+        <span>填写转运地址</span>
+    </div>
+    <div class="wltao_sidebar_panel">
+        <div class="wltao_si_title">瓦拉淘工具箱</div>
+        {{#isShow}}
+        <div class="wltao_sidebar_intro">
+            <div class="wltao_si_sub_title">此商家可信任，支持以下服务：</div>
+            <div class="wltao_si_item wltao_si_card" tip="{{cardsupport}}"><i></i>支付</div>
+            <div class="wltao_si_item wltao_si_fee" tip="{{shiptip}}"><i></i>邮费</div>
+            <div class="wltao_si_item wltao_si_tax" tip="{{taxtip}}"><i></i>消费税</div>
+            <div class="wltao_si_tip wltao_si_tip_card">{{cardsupport}}</div>
+            <div class="wltao_si_tip wltao_si_tip_fee">{{shiptip}}</div>
+            <div class="wltao_si_tip wltao_si_tip_tax">{{taxtip}}</div>
+        </div>
+        {{/isShow}}
+        <div class="wltao_sidebar_oper">
+            <label>
+                <div class="haiao_chk_text">划词翻译</div>
+                <div class="wltao_chk wltao_switch_trans wltao-stat {{#isTranslate}}wltao_chk_checked{{/isTranslate}}" data-stat="web.help.fanyi">
+                    <div class="wltao_chk_circle"></div>
+                </div>
+            </label>
+            <label style="display:;">
+                <div class="haiao_chk_text">页面提示</div>
+                <div class="wltao_chk wltao_switch_tips wltao-stat {{#isShowTips}}wltao_chk_checked{{/isShowTips}}" data-stat="web.help.xinxi">
+                    <div class="wltao_chk_circle"></div>
+                </div>
+            </label>
+            <label>
+                <div class="haiao_chk_text">桌面提醒</div>
+                <div class="wltao_chk wltao_switch_pushnotify wltao-stat {{#isShowPushNotify}}wltao_chk_checked{{/isShowPushNotify}}" data-stat="web.help.pushnotify">
+                    <div class="wltao_chk_circle"></div>
+                </div>
+            </label>
+			<label>
+                <div class="haiao_chk_text">底部工具条</div>
+                <div class="wltao_chk wltao_switch_downbar wltao-stat {{#isShowDownBar}}wltao_chk_checked{{/isShowDownBar}}" data-stat="web.help.showDownBar">
+                    <div class="wltao_chk_circle"></div>
+                </div>
+            </label>
+			<p style="margin:0px;">（注：设置后需刷新方可生效）</p>
+        </div>
+        <div class="wltao_sidebar_help wltao-clearfix">
+            <label class="wltao_chima_lable"><a href="javascript:void(0);" class="wltao_chima wltao-stat" data-stat="web.help.chima"><i></i>尺码转换</a>
+            </label>
+            <label class="wltao_newuser_lable"><a href="javascript:void(0);" class="wltao_newuser wltao-stat" data-stat="web.help.zhidao"><i></i>下单教程</a>
+            </label>
+        </div>
+        <div class="wltao_sidebar_help wltao-clearfix">
+            <label class="wltao_email_lable"><a href="javascript:void(0);" class="wltao_transPage wltao-stat" data-stat="web.help.transPage" style="cursor:default"><i></i>反馈邮箱:  fankui@iwala.net</a>
+            </label>
+        </div>		
+        <div class="wltao_sidebar_help wltao-clearfix">
+            <label class="wltao_qq_lable">
+                <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=a5de4595f154731e7d2befb8ad3b068f80b0e9f65f828ebaf9e34b7265d88a47"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="瓦拉淘" title="瓦拉淘"></a>
+            </label>
+        </div>			
+    </div>
+</div>
+<div id="wltao_sidebar_scrollTop" class="wltao_font wltao_sidebar_top wltao-stat" data-stat="web.help.top">top</div>
+<!--<div id="wltao_sidebar_tool" class="wltao_font wltao-stat">
+	<a target="_blank" title="转运公司问题反馈" href="http://fankui.walatao.com/survey/shipping_fankui.html" class="wltao_sidebar_feedback" data-stat="web.help.feedback"></a>
+    <a target="_blank" title="瓦拉淘客服" href="http://kefu.walatao.com/portal/init.jspa?instanceCode=ALIR00001700&scenceCode=SCEN00005175&digest=485829f7035f0531475ad6165cd81b59" class="wltao_sidebar_robot" data-stat="web.help.robot"></a>
+</div>
+-->
+
+
+
+<div class="container feedback" id="wltao_feedback_dialog">
+    <div class="hd">
+        <p class="title">亲爱的【瓦拉网络瓦拉淘】用户</p>
+        <p class="detail">请在下面填写你的转运物流环节遇到的问题或好的意见建议，您的支持是我们前进的动力，十分感谢！</p>
+    </div>
+
+    <a tabindex="0" href='javascript:void("关闭")' role="button" class="wltao-ks-ext-close">
+        <span class="wltao-ks-ext-close-x">关闭</span>
+    </a>
+
+    <div class="bd">
+        <form action="" class="info">
+            <div class="control select">
+                <label for="trans_company">转运公司：</label>
+                <select id="trans_company" name="trans_company">
+                    <option value='328'>友家</option>
+                    <option value='329'>4PX</option>
+                    <option value='330'>百通</option>
+                    <option value='331' selected>斑马</option>
+                </select>
+
+                <input type="text" name="trans_num" id="trans_num" placeholder="转运单号">
+                <span class="tip">（<b class="required">*</b>必填项）</span>
+            </div>
+            <div class="control">
+                <label for="description">问题描述：</label>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="请填写联系转运公司客服依然没有处理好的问题，催单的问题一律不回"></textarea>
+            </div>
+            <div class="control">
+                <label for="email"><b class="required">*</b>联系邮箱：</label>
+                <input class="large" type="text" name="email" id="email" placeholder="电子邮箱">
+                <span class="tip">（<b class="required">*</b>必填项）</span>
+                <p class="tip warn">请填入正确格式的电子邮箱</p>
+            </div>
+            <div class="control btns">
+                <a href="#" class="btn reset">重置</a>
+                <a href="#" class="btn submit">提交</a>
+                <span class="tip">（两个工作日内回复）</span>
+                <span class="tip success">（提交成功，两秒后自动关闭）</span>
+            </div>
+        </form>
+    </div>
+</div>

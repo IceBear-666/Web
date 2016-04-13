@@ -1,0 +1,35 @@
+/**********************************************
+* background:#666666;             灰 背景色
+* background:#fadc62;             黄 按钮
+* background:#F9CC1C;             黄 按钮 current
+* color:#fadc62;                  黄 字体
+* background:#AC6198;             深紫色
+
+* color:#5C5C46;                  链接灰黑 字体
+* color:#AC6198;                  hover紫 字体
+**********************************************/
+body{font-size:14px;background:#FADC62}
+.login_logo{ text-align:center; padding-top:20px;}
+.fuwubox{width:820px;margin:0 auto;color:#5C5C46; padding-top:60px; margin-bottom:50px;}
+a{color:#ac6198;}
+
+li{ list-style:none;}
+
+.fwbox{overflow:hidden;margin-top:40px; background:#fff; padding:40px 40px; position:relative;}
+.fwbox .toptl{ background:#ac6198; color:#fff; text-align:center; width:160px; padding:10px 0px; font-size:20px; margin:-40px auto 40px auto;  position:relative;}
+.fwbox .myipt{width:400px; padding:4px 10px; font-size:16px;color:#777;height:30px;line-height:30px;border:2px solid #eee; margin-bottom:8px;}
+.fwbox li { padding-top:20px;}
+.fwbox li h3{ display:block; padding-bottom:10px; }
+.fwbox li h3 em{ font-size:14px; color:#999; padding-left:10px;}
+
+.os_step_1,.os_step_2,.os_step_3{width:520px;height:110px;margin:0 auto;}
+.os_step_1{background:url(../images/company/open_services_steps.png) 0 0 no-repeat; }
+.os_step_2{background:url(../images/company/open_services_steps.png) 0 -110px no-repeat;}
+.os_step_3{background:url(../images/company/open_services_steps.png) 0 -220px no-repeat;}
+
+.stform{ padding-left:100px;}
+.stform .myask{ padding-right:60px; line-height:28px;}
+.mybtn1{ padding:6px 18px; margin:28px 0px;}
+
+.step3{ padding:20px 0px; width:560px; border-bottom:1px dashed #aaa; line-height:30px; margin-bottom:20px;}
+.step3 span{ font-size:15px;}

@@ -1,0 +1,738 @@
+
+<div class="baseinfo-top">
+  <h3>基本信息</h3>
+</div>
+<!-- <link rel="stylesheet" type="text/css" href="/Public/Home/css/component.css" />
+<script src="/Public/Home/js/modernizr-1.custom.js"></script> -->
+<div>
+	<form id="olinfoForm">
+        <div class="myr_info_list">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+                <tr>
+                    <th class="pt10"><label>姓名</label></th>
+                    <td>
+	                    <div class="myr_input_div_l">
+	                        <input type="text" id="mr_name" name="mr_name" class="ed_name valid form-control" autocomplete="off" value="{$info.realname}">
+	                    </div>
+                    </td>
+                </tr>
+                 <tr class="lowUse">
+
+                    <th class="pt10"><label>英文名</label><span class="lowFreqency">低频</span></th>
+                    <td>
+                      <div class="myr_input_div_l">
+                          <input type="text" id="english_name" name="english_name" class="ed_name valid form-control" autocomplete="off" value="{$info.english_name}">
+                      </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="pt10"><label>性别</label></th>
+                    <td>
+	                    <div class="myr_radio">
+	                        <label class="radio">
+					            <input type="radio" name="sex" id="sex1" value="男" data-toggle="radio" class="custom-radio" <?php if($info["sex"] == "1"): ?>checked=""<?php endif; ?> ><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+					            男
+					         </label>
+					         &nbsp;&nbsp;
+					         <label class="radio">
+					            <input type="radio" name="sex" id="sex2" value="女" data-toggle="radio" class="custom-radio"
+					            <?php if($info["sex"] == "2"): ?>checked=""<?php endif; ?>
+					            ><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+					            女
+					          </label>
+					          <input id="myysex" name="myysex" type="hidden" value="{$info.sex}">
+	                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="pt10"><label>身高</label></th>
+                    <td>
+	                    <div class="myr_input_div_s">
+	                        <input type="text" id="height" name="height" class="valid form-control" autocomplete="off" value="{$info.height}"><span class="sticker">cm</span> 
+	                    </div>
+                    </td>
+                </tr>
+				        <tr>
+                    <th class="pt10"><label>体重</label></th>
+                    <td >
+                      <div class="myr_input_div_s">
+                        <input id="weight" name="weight"  class="form-control" value="{$info.weight}"/><span class="sticker">kg</span>
+                        </div>
+                    </td>
+              	</tr>
+				        <tr>
+                    <th class="pt10"><label>电子邮件</label></th>
+                     <td >
+                      <div class="myr_input_div_l email_s">
+                        <input id="mr_email" name="mr_email" class="form-control" value="{$info.email}"/>
+                      </div>
+                      </td>
+                </tr>
+                <tr>
+                    <th class="pt10"><label>手机号</label></th>
+                    <td >
+                    <div class="myr_input_div_l mobile_s">
+                        <input id="mr_mobile" name="mr_mobile" class="form-control" value="{$info.phone}"/>
+                      </div></td>
+                </tr>
+                 <tr>
+                    <th class="pt10"><label>固定电话</label></th>
+                    <td >
+                       <div class="myr_input_div_l email_s">
+                        <input id="tel" name="tel"  class="form-control" value="{$info.tel}"/>
+                      </div></td>
+                </tr> 
+                
+                  <tr class="lowUse">
+                    <th class="pt10"><label>QQ</label><span class="lowFreqency">低频</span></th>
+                    <td >
+                       <div class="myr_input_div_l email_s">
+                        <input id="qq_name" name="qq_name"  class="form-control" value="{$info.qq_name}"/>
+                      </div></td>
+                </tr> 
+                  <tr class="lowUse">
+                    <th class="pt10"><label>微信</label><span class="lowFreqency">低频</span></th>
+                    <td >
+                       <div class="myr_input_div_l email_s">
+                        <input id="wx_name" name="wx_name"  class="form-control" value="{$info.wx_name}"/>
+                      </div></td>
+                </tr> 
+                  <tr class="lowUse">
+                    <th class="pt10"><label>微博</label><span class="lowFreqency">低频</span></th>
+                    <td >
+                       <div class="myr_input_div_l email_s">
+                        <input id="sina_name" name="sina_name"  class="form-control" value="{$info.sina_name}"/>
+                      </div></td>
+                </tr> 
+                 <tr class="lowUse">
+                    <th class="pt10"><label>个人主页</label><span class="lowFreqency">低频</span></th>
+                    <td >
+                       <div class="myr_input_div_l email_s">
+                        <input id="profile" name="profile"  class="form-control" value="{$info.profile}"/>
+                      </div></td>
+                </tr> 
+                <tr>
+                <th class="pt10"><label>证件类型</label></th>
+
+              	<td >
+                  <div class="myr_input_div_l form_wrap normal_s" style="*z-index:3;">
+                    <input id="idcardtype" name="idcardtype" type="button" class="mr_button form_select" value="{$info.idcardtype}"/>
+                    <i class="mr_sj"></i>
+                    <div class="xl_list dn">
+                      <ul class="ul_zjlx">
+                      	<li>身份证</li>
+                        <li>护照</li>
+                        <li>香港永久居民身份证</li>
+                        <li>香港非永久居民身份证</li>
+                        <li>澳门永久居民身份证</li>
+                        <li>澳门非永久居民身份证</li>
+                        <li>台胞证</li>
+                        <li>军官证</li>
+                      </ul>
+                    </div>
+                  </div></td>
+                </tr>
+                <tr>
+                    <th class="pt10"><label>证件号码</label></th>
+                    <td >
+                      <div class="myr_input_div_l mr_click_flag">
+                        <input id="idcard" name="idcard"  class="form-control" value="{$info.idcard}"/>
+                      </div>
+                    </td>
+                </tr>
+        				<tr>
+        					<th class="pt10"><label>出生日期</label></th>
+                      <td >
+                       <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button" value="{$info.birthday}" readonly class="text input date" placeholder="选择时间" name="birthday"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+               
+                      </td>
+                </tr>
+                <tr class="lowUse">
+                    <th class="pt10"><label>国籍</label><span class="lowFreqency">低频</span></th>
+                    <td >
+                      <div class="myr_input_div_l mr_click_flag">
+                        <input id="national" name="national"  class="form-control" value="{$info.national}"/>
+                    </div></td>
+                </tr>
+        				<tr>
+                    <th class="pt10"><label>籍贯</label></th>
+                    <td >
+                     <!--  <div class="myr_input_div_l mr_click_flag">
+                        <input id="nativeplace" name="nativeplace"  class="form-control" value="{$info.nativeplace}"/>
+                    </div> -->
+                     <div class="form-item">
+                    
+                      <div class="controls select_wrap">
+                        <select name="nativeplace"  id="provincelist" onchange="setnativecity(this)">
+                          <option value="0">--选择省--</option>
+                        
+                        </select>
+                        &nbsp;&nbsp;
+                        <select name="nativeplace_city"   id="nativeplace_city">
+                          <option value="0">--选择市--</option>
+                         
+                        </select>
+                      </div>
+                  </div>
+
+                <!--    <div class="myr_input_div_l form_wrap normal_s" style="*z-index:3;">
+                   <input id="nativeplace" name="nativeplace"  class="form-control" value="{$info.nativeplace}"/>
+                    <i class="mr_sj"></i>
+                    <div class="xl_list dn">
+                      <ul class="ul_nativeplace" id="provincelist">
+                        <li>--选择省--</li>
+                      </ul>
+                    </div>
+                  </div> -->
+                    </td>
+                </tr>
+                <tr>
+                
+                    <th class="pt10"><label>民族</label></th>
+                    <td >
+                    
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                    <input id="nation" name="nation" type="button" class="mr_button" value="{$info.nation}"/>
+                    <i class="mr_sj"></i>
+                    <div class="xl_list dn">
+                      <ul class="ul_nation">
+                        <volist name="nationdata" id="vo">
+                        <li>{$vo.nation}</li>
+                      </volist>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                    </td>
+                </tr>
+                <tr>
+                
+                    <th class="pt10"><label>政治面貌</label></th>
+                    <td >
+                    <div class="form_wrap normal_s" style="*z-index:4;">
+                     <input id="politicalstatus" name="politicalstatus" type="button" class="mr_button"   class="form-control" value="{$info.politicalstatus}"/>
+                    <i class="mr_sj"></i>
+                    <div class="xl_list dn">
+                      <ul class="ul_politicalstatus">
+                        <li>中共党员</li>
+                        <li>中共预备党员</li>
+                        <li>共青团员</li>
+                        <li>群众</li>
+                        <li>九三学社</li>
+                        <li>中国民主同盟</li>
+                        <li>中国民主建国会</li>
+                        <li>中国民主促进会</li>
+                        <li>中国国民党革命委员会</li>
+                        <li>中国农工民主党</li>
+                        <li>中国致公党</li>
+                        <li>台湾民主自治同盟</li>
+                        <li>中华全国工商业联合会</li>
+                        <li>无党派民主人士</li>
+                        <li>其它</li> 
+                      </ul>
+                    </div>
+                  </div>
+                    </td>
+                </tr>
+				        <tr>
+                    <th class="pt10"><label>婚姻状况</label></th>
+                    <td>
+	                    <div class="myr_radio">
+	                        <label class="radio">
+        					            <input type="radio" name="marital" id="maritalstatus1" value="未婚" data-toggle="radio" class="custom-radio" 
+        								<?php if($info["maritalstatus"] == "未婚"): ?>checked=""<?php endif; ?> 
+        					            ><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+        					            未婚
+        					         </label>
+        					         &nbsp;&nbsp;
+        					         <label class="radio">
+        					            <input type="radio" name="marital" id="maritalstatus2" value="已婚" data-toggle="radio"  class="custom-radio"
+        								<?php if($info["maritalstatus"] == "已婚"): ?>checked=""<?php endif; ?>
+        					            ><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+        					            已婚
+        					          </label>
+                             &nbsp;&nbsp;
+        					          <label class="radio">
+        					            <input type="radio" name="marital" id="maritalstatus3" value="离婚" data-toggle="radio"  class="custom-radio"
+        								<?php if($info["maritalstatus"] == "离婚"): ?>checked=""<?php endif; ?>
+        					            ><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+        					            离婚
+        					          </label>
+        					          <input id="mymaritalstatus" name="maritalstatus" type="hidden" value="{$info.maritalstatus}">
+        	                    </div>
+                            </td>
+                        </tr>
+        				<tr>
+                <th class="pt10"><label>现居住城市</label></th>
+                <td >
+                  <!--  <div class="myr_input_div_l email_s">
+                    <input id="live_city" name="live_city"  class="form-control" value="{$info.live_city}"/>
+                  </div> -->
+                    <div class="form-item">
+                    
+                      <div class="controls select_wrap">
+                          <select name="live_city"  id="live_city" onchange="setlivecity(this)">
+                          <option value="0">--选择省--</option>
+                        </select>
+                        &nbsp;&nbsp;
+                        <select name="live_city_city"   id="live_city_city">
+                          <option value="0">--选择市--</option>
+                        </select>
+                      </div>
+                  </div>
+                </td>
+               </tr>
+               <tr>
+                <th class="pt10"><label>联系地址</label></th>
+                <td >
+                   <div class="myr_input_div_l email_s">
+                    <input id="live_address" name="live_address"  class="form-control" value="{$info.live_address}"/>
+                  </div></td>
+               </tr>
+                <tr>
+                <th class="pt10"><label>邮政编码</label></th>
+                <td >
+                  <div class="myr_input_div_l mr_click_flag">
+                    <input id="zip" name="zip"  class="form-control" value="{$info.zip}"/>
+                  </div></td>
+            </tr>
+            <tr class="lowUse">
+                <th class="pt10"><label>家庭地址</label><span class="lowFreqency">低频</span></th>
+                <td >
+                   <div class="myr_input_div_l email_s">
+                    <input id="contact_address" name="contact_address"  class="form-control" value="{$info.contact_address}"/>
+                  </div></td>
+               </tr>
+              <tr>
+          		<th class="pt10"><label>最高学历</label></th>
+                <td >
+				
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                    <input id="edu" name="edu" type="button" class="mr_button" value="{$info.edu}"/>
+                    <i class="mr_sj"></i>
+                    <div class="xl_list dn">
+                      <ul class="ul_xl">
+                      	<li>博士研究生</li>
+            						<li>EMBA</li>
+            						<li>MBA</li>
+            						<li>MPA</li>
+            						<li>硕士研究生</li>
+            						<li>双学士</li>
+            						<li>大学本科-一本</li>
+            						<li>大学本科-二本</li>
+            						<li>大学本科-三本</li>
+            						<li>大学专科</li>
+            						<li>中专</li>
+            						<li>技校/职高</li>
+            						<li>高中</li>
+            						<li>初中及以下</li>
+            						<li>其他</li>
+            						<li>无</li>
+                      </ul>
+                    </div>
+                  </div>
+                 <!--  <select class="form-control select select-primary" data-toggle="select">
+		            <option value="大专">大专</option>
+		            <option value="1">本科</option>
+		            <option value="2">硕士</option>
+		            <option value="3">博士</option>
+		            <option value="4" selected>其他</option>
+		          </select> -->
+                </td>
+            </tr>
+             <tr>
+          		<th class="pt10"><label>教育类型</label></th>
+                <td >
+				
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                    <input id="edu_type" name="edu_type" type="button" class="mr_button" value="{$info.edu_type}"/>
+                    <i class="mr_sj"></i>
+                    <div class="xl_list dn">
+                      <ul class="ul_jylx">
+                        <li>全日制统分统招</li>
+        						<li>海外留学</li>
+        						<li>成人教育</li>
+        						<li>定向</li>
+        						<li>非定向</li>
+        						<li>委培</li>
+        						<li>自费</li>
+        						<li>其他</li>
+                      </ul>
+                    </div>
+                  </div>
+                 <!--  <select class="form-control select select-primary" data-toggle="select">
+		            <option value="大专">大专</option>
+		            <option value="1">本科</option>
+		            <option value="2">硕士</option>
+		            <option value="3">博士</option>
+		            <option value="4" selected>其他</option>
+		          </select> -->
+                </td>
+            </tr>
+              
+           <tr>
+				<th class="pt10"><label>预计毕业时间</label></th>
+                <td >
+                   <div class="form-item ">
+                      <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                      <div class="form_wrap  normal_s controls">
+                          <input type="button" class="mr_button" value="{$info.graduate_time}" readonly class="text input date" placeholder="选择时间" name="graduate_time"  data-date-format="yyyy-mm-dd">
+                          <span class="add-on"><i class="icon-remove"></i></span>
+                          <span class="add-on"><i class="icon-calendar"></i></span>
+                          <i class="mr_sj"></i>
+                          </div>
+                      </div> 
+                  </div>
+
+            <!--     <div class="form_wrap  normal_s" style="*z-index:5;">
+                    <input id="mr_year" name="mr_year" type="button" class="mr_button" value="<php>if($info['graduate_time'])echo $info['graduate_time'];else echo '1990';</php>"/>
+                    <i class="mr_sj"></i>
+                    <div class="xl_list dn">
+                      <ul class="ul_year">
+                        <volist name="year" id="v">
+                        	<li>{$v}</li>
+                        </volist>
+                      </ul>
+                    </div>
+                  </div> -->
+                </td>
+          	</tr>
+
+			     <tr>
+                <th class="pt10"><label>入学前户口所在地</label></th>
+                <td >
+                  <!-- <div class="myr_input_div_l mr_click_flag">
+                    <input id="hukou_city" name="hukou_city"  class="form-control" value="{$info.hukou_city}"/>
+                  </div> -->
+
+                  <div class="form-item">
+                      <div class="controls select_wrap">
+                          <select name="hukou_city"  id="hukou_city" onchange="sethukoucity(this)">
+                          <option value="0">--选择省--</option>
+                        </select>
+                        &nbsp;&nbsp;
+                        <select name="hukou_city_city"   id="hukou_city_city">
+                          <option value="0">--选择市--</option>
+                        </select>
+                      </div>
+                  </div>
+                  </td>
+              </tr>
+
+              <tr>
+                <th class="pt10"><label>当前户口所在地</label></th>
+                <td >
+                  <!-- <div class="myr_input_div_l mr_click_flag">
+                    <input id="hukou_city_now" name="hukou_city_now"  class="form-control" value="{$info.hukou_city_now}"/>
+                  </div> -->
+                    <div class="form-item">
+                      <div class="controls select_wrap">
+                          <select name="hukou_city_now"  id="hukou_city_now" onchange="sethukounowcity(this)">
+                          <option value="0">--选择省--</option>
+                        </select>
+                        &nbsp;&nbsp;
+                        <select name="hukou_city_now_city"   id="hukou_now_city">
+                          <option value="0">--选择市--</option>
+                        </select>
+                      </div>
+                  </div>
+                  </td>
+              </tr>
+
+
+            <tr>
+                <th class="pt10"><label>期望工作城市</label></th>
+                <td >
+                 <!--  <div class="myr_input_div_l mr_click_flag">
+                    <input id="expect_city" name="expect_city"  class="form-control" value="{$info.expect_city}"/>
+                  </div> -->
+                   <div class="form-item">
+                      <div class="controls select_wrap">
+                          <select name="expect_city"  id="expect_city" onchange="setexpectcity(this)">
+                          <option value="0">--选择省--</option>
+                        </select>
+                        &nbsp;&nbsp;
+                        <select name="expect_city_city"   id="expect_city_city">
+                          <option value="0">--选择市--</option>
+                        </select>
+                      </div>
+                  </div>
+                  </td>
+              </tr>
+               <tr>
+                <th class="pt10"><label>紧急联系人</label></th>
+                <td >
+                  <div class="myr_input_div_l mr_click_flag">
+                    <input id="contact_name" name="contact_name"  class="form-control" value="{$info.contact_name}"/>
+                  </div>
+                  </td>
+              </tr>
+                 <tr>
+                <th class="pt10"><label>紧急联系人电话</label></th>
+                <td >
+                  <div class="myr_input_div_l mr_click_flag">
+                    <input id="contact_phone" name="contact_phone"  class="form-control" value="{$info.contact_phone}"/>
+                  </div>
+                  </td>
+              </tr>
+               <tr>
+                <th class="pt10"><label>家庭成员-姓名</label></th>
+                <td >
+                  <div class="myr_input_div_l mr_click_flag">
+                    <input id="fm_name" name="fm_name"  class="form-control" value="{$info.fm_name}"/>
+                  </div>
+                  </td>
+              </tr>
+               <tr>
+                <th class="pt10"><label>家庭成员-关系</label></th>
+                <td >
+                  <div class="myr_input_div_l mr_click_flag">
+                    <input id="fm_relation" name="fm_relation"  class="form-control" value="{$info.fm_relation}"/>
+                  </div>
+                  </td>
+              </tr>
+                <tr>
+                <th class="pt10"><label>家庭成员-联系电话</label></th>
+                <td >
+                  <div class="myr_input_div_l mr_click_flag">
+                    <input id="fm_phone" name="fm_phone"  class="form-control" value="{$info.fm_phone}"/>
+                  </div>
+                  </td>
+              </tr>
+               <tr>
+                <th class="pt10"><label>家庭成员-工作单位</label></th>
+                <td >
+                  <div class="myr_input_div_l mr_click_flag">
+                    <input id="fm_work" name="fm_work"  class="form-control" value="{$info.fm_work}"/>
+                  </div>
+                  </td>
+              </tr>
+				      <tr>
+                <th class="pt10"><label>家庭成员-职位</label></th>
+                <td >
+                  <div class="myr_input_div_l mr_click_flag">
+                    <input id="fm_position" name="fm_position"  class="form-control" value="{$info.fm_position}"/>
+                  </div>
+                  </td>
+              </tr>
+         
+
+            </table>
+        </div>  
+        <div class="btn-group">
+        <!-- <button class="progress-button mr_save" data-style="fill" data-horizontal>Submit</button> -->
+            <input type="submit" class="btn-resumeac mr_save" value="保存" />
+            <input type=button value="保存并下一项"  class="btn-resumeac mr_next" onclick="submitInfoFrom(); tonext();">
+            <!-- <a href="javascript:" class="btn-resumeac mr_next" id="next" >下一步</a> -->
+        </div>
+      
+        
+        
+    </form>
+</div>
+<script src="/Public/Home/js/classie.js"></script>
+<!-- <script src="/Public/Home/js/progressbutton.js"></script>
+<script>
+[].slice.call( document.querySelectorAll( 'button.progress-button' ) ).forEach( function( bttn ) {
+        new ProgressButton( bttn, {
+        callback : function( instance ) {
+            var progress = 0,
+            interval = setInterval( function() {
+            progress = Math.min( progress + Math.random() * 0.1, 1 );
+            instance._setProgress( progress );
+
+            if( progress === 1 ) {
+                instance._stop(1);
+                clearInterval( interval );
+            }
+            }, 20 );
+        }
+        } );
+});
+</script> -->
+<script type="text/javascript">
+
+
+  function submitInfoFrom(){
+    $('#olinfoForm').submit();
+  }
+  $(document).ready(function() {
+      $(".form_oldatetime").datetimepicker({
+
+          format: "yyyy-mm-dd",
+          language: 'zh-CN',
+          weekStart: 1,
+          todayBtn:  1,
+          autoclose: 1,
+          todayHighlight: 1,
+          startView: 2,
+          minView: 2,
+          forceParse: 0
+
+      });
+
+
+   });   
+
+    </script>
+ <script type="text/javascript">
+
+        Think.setValue("pid", {$info.id|default = 0});
+        Think.setValue("status", {$listinfo.status|default = 0});
+        Think.setValue("ishot", {$listinfo.ishot|default = 0});
+
+        var cprovince = {$info.nativeplace};
+        var ccity = {$info.nativeplace_city};
+        var live_city = {$info.live_city};
+        var live_city_city = {$info.live_city_city};
+        var hukou_city ={$info.hukou_city};
+        var hukou_city_city = {$info.hukou_city_city};
+        var hukou_city_now ={$info.hukou_city_now};
+        var hukou_city_now_city = {$info.hukou_city_now_city};
+        var expect_city ={$info.expect_city};
+        var expect_city_city ={$info.expect_city_city};
+        var addressarr = {$city_arr};
+        addressarr = eval(addressarr);
+        function setprovince() {
+          var html = '';
+          for(var key in addressarr) {
+            if(addressarr[key]['pid']==1){
+              html += '<option class="optionstyle" value="'+addressarr[key].aid+'">'+addressarr[key].name+'</option>';
+              //html += '<li>'+addressarr[key].name+'</li>';
+            }
+          }
+          $("#provincelist").html(html);
+          $("#live_city").html(html);
+          $("#hukou_city").html(html);
+          $("#hukou_city_now").html(html);
+          $("#expect_city").html(html);
+
+        }
+
+        function setnativecity(vv) {
+          var html = '';
+          var v ='';
+          if(isNaN(vv)){
+            v = $(vv).val();
+          }
+          else v = vv;
+
+          if(addressarr[v]){
+            var cityarr = addressarr[v]['sub'];
+            for(var k in cityarr) {
+              html += '<option value="'+k+'">'+cityarr[k].name+'</option>';
+            }
+          }
+          $("#nativeplace_city").html(html);
+        }
+
+        function setlivecity(vv) {
+          var html = '';
+          var v ='';
+          if(isNaN(vv)){
+            v = $(vv).val();
+          }
+          else v = vv;
+
+          if(addressarr[v]){
+            var cityarr = addressarr[v]['sub'];
+            for(var k in cityarr) {
+              html += '<option value="'+k+'">'+cityarr[k].name+'</option>';
+            }
+          }
+          
+          $("#live_city_city").html(html);
+        }
+
+        function sethukoucity(vv) {
+          var html = '';
+          var v ='';
+          if(isNaN(vv)){
+            v = $(vv).val();
+          }
+          else v = vv;
+
+          if(addressarr[v]){
+            var cityarr = addressarr[v]['sub'];
+            for(var k in cityarr) {
+              html += '<option value="'+k+'">'+cityarr[k].name+'</option>';
+            }
+          }
+
+          $("#hukou_city_city").html(html);
+        }
+        function sethukounowcity(vv) {
+          var html = '';
+          var v ='';
+          if(isNaN(vv)){
+            v = $(vv).val();
+          }
+          else v = vv;
+
+          if(addressarr[v]){
+            var cityarr = addressarr[v]['sub'];
+            for(var k in cityarr) {
+              html += '<option value="'+k+'">'+cityarr[k].name+'</option>';
+            }
+          }
+
+          $("#hukou_now_city").html(html);
+        }
+        function setexpectcity(vv) {
+          var html = '';
+          var v ='';
+          if(isNaN(vv)){
+            v = $(vv).val();
+          }
+          else v = vv;
+
+          if(addressarr[v]){
+            var cityarr = addressarr[v]['sub'];
+            for(var k in cityarr) {
+              html += '<option value="'+k+'">'+cityarr[k].name+'</option>';
+            }
+          }
+
+          $("#expect_city_city").html(html);
+        }
+
+        setprovince();
+
+        $("#provincelist").val(cprovince);
+        $("#live_city").val(live_city);
+        $("#hukou_city").val(hukou_city);
+        $("#hukou_city_now").val(hukou_city_now);
+        $("#expect_city").val(expect_city);
+       
+        var obj = $("#provincelist").val();
+        setnativecity(obj);
+
+        var obj = $("#live_city").val();
+        setlivecity(obj);
+
+        var obj = $("#hukou_city").val();
+        sethukoucity(obj);
+
+        var obj = $("#hukou_city_now").val();
+        sethukounowcity(obj);
+
+        var obj = $("#expect_city").val();
+        setexpectcity(obj);
+
+
+        $("#nativeplace_city").val(ccity);
+        $("#live_city_city").val(live_city_city);
+        $("#hukou_city_city").val(hukou_city_city);
+        $("#hukou_now_city").val(hukou_city_now_city);
+        $("#expect_city_city").val(expect_city_city);
+
+</script>

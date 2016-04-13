@@ -1,0 +1,104 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">
+	
+	
+	<include file="Public/menu" />
+
+  
+  	<div id="container">
+	    <div class="user_bindSidebar">
+	      <dl class="user_sideBarmenu" id="user_sideBarmenu">
+	        <dt>
+	          <h3>帐号设置</h3>
+	        </dt>
+	        <dd><a href="{$Think.WEB_URL}Users/accountBind">帐号绑定</a></dd>
+	        <dd><a href="{$Think.WEB_URL}Users/updatePwd" class="hover">修改密码</a></dd>
+	      </dl>
+	    </div>
+	    <input type="hidden" value="1" id="hasSidebar">
+	    <div class="content user_modifyContent">
+	      <dl class="c_section">
+	        <dt>
+	          <h2><em></em>修改密码</h2>
+	        </dt>
+	        <dd>
+	          <form id="updatePswForm">
+	            <table class="savePassword">
+	              <tbody>
+	                <tr>
+	                  <td>登录邮箱</td>
+	                  <td class="c7">{$info.email}</td>
+	                </tr>
+	                <tr>
+	                  <td class="label">当前密码</td>
+	                  <td><input type="password" name="oldpassword" id="oldpassword" maxlength="16">
+	                    <span class="error" style="display:none;" id="updatePwd_beError"> </span></td>
+	                </tr>
+	                <tr>
+	                  <td class="label">新密码</td>
+	                  <td><input type="password" name="newpassword" id="newpassword" maxlength="16"></td>
+	                </tr>
+	                <tr>
+	                  <td class="label">确认密码</td>
+	                  <td><input type="password" name="comfirmpassword" id="comfirmpassword" maxlength="16"></td>
+	                </tr>
+	                <tr>
+	                  <td>&nbsp;</td>
+	                  <td><input type="submit" value="保 存"></td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </form>
+	        </dd>
+	      </dl>
+	    </div>
+	    
+	    
+	    <!------------------------------------- 弹窗lightbox ----------------------------------------->
+    	<div style="display:none;"> 
+      
+      
+	      <!-- 修改密码 -->
+	      <div id="updatePassword" class="popup" style="overflow:hidden">
+	        <h3>修改密码成功，请重新登录</h3>
+	        <h4><span>5</span>秒后将自动退出</h4>
+	        <a href="{$Think.WEB_URL}Public/loginout" class="btn">直接退出</a> </div>
+	      
+	      
+	    </div>
+	    <!------------------------------------- end ----------------------------------------->
+    
+    
+	    <script src="__PUBLIC__/Js/setting.js"></script>
+	    
+	    <script type="text/javascript">
+			 function edit(){
+				var element = document.getElementById("oldpassword");
+				if("\v"=="v") {
+					element.onpropertychange = webChange;
+				}else{
+					element.addEventListener("input",webChange,false);
+				}
+				function webChange(){
+					$('#updatePwd_beError').text('').hide();
+				}
+			}
+			edit(); 
+		</script>
+		
+	    <div class="clear"></div>
+	    <input type="hidden" id="resubmitToken" value="">
+	    <a id="backtop" title="回到顶部" rel="nofollow"></a>
+	</div>
+	<!-- end #container --> 
+
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

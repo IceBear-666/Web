@@ -1,0 +1,105 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/index.css" />
+<script type="text/javascript" src="/Public/Home/js/company/spsd.js"></script>
+
+<div class="w960">
+ <!-- banner开始 -->
+<div class="listfocus">
+    <ul class="tihspic">
+    	<php>
+       		$adv_arr = getAdvPic(1,5);
+       		foreach($adv_arr as $k=>$v){
+       	</php>
+        
+            <li><a href="{$v.link}"><img src="{$v.path}" /></a></li>
+            
+        <php>}</php>
+        
+    </ul>
+    <a class="prev" href="javascript:void(0)"></a>
+    <a class="next" href="javascript:void(0)"></a>
+    <div class="num">
+    	<ul></ul>
+    </div>
+</div>
+<script>
+          $(".listfocus").hover(function(){$(this).find(".prev,.next").fadeTo("show",0.5);},function(){$(this).find(".prev,.next").hide();})
+          $(".prev,.next").hover(function(){$(this).fadeTo("show",0.8);},function(){$(this).fadeTo("show",0.5);})
+          $(".listfocus").slide({ titCell:".num ul" , mainCell:".tihspic" , effect:"left", autoPlay:true, delayTime:800 ,interTime:4000,autoPage:"<a></a>" });
+        </script>
+<!-- banner结束 -->
+
+  <div class="centbox">
+      <div class="lbox bgf9">
+         <dl class="hotSearch"></dl>
+      </div>
+
+       <div class="rbox">
+             <!-- 搜索 -->
+
+	          <div id="search_box">
+	              <form id="searchForm" target="_blank" name="searchForm" action="/Jobs/index.html" method="get" >
+	              <ul id="searchType">
+	                   <li data-searchtype="1" class="type_selected">职位</li>
+	                   <li data-searchtype="2">公司</li>
+	                   <li data-searchtype="3">宣讲会</li>
+	                </ul>
+	              <div class="searchtype_arrow"></div>
+	              <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="搜索你感兴趣的职位"  />
+	              <!-- <input type="hidden" name="requestId" id="requestId" value=""/> -->
+	              <input type="hidden" id="spc" name="spc" value="1"/>
+	              <input type="submit" id="search_button" value="" />
+	             </form>
+	              <input type="hidden" id="search_py" value=""/>
+	              <input type="hidden" id="isIndex" value="true"/>
+	          </div>
+
+              <!-- 推荐企业 -->
+              <div class="hotcom">
+                  <ul>
+                  <volist name="company_list" id="v" >
+                     <a href="/Company/info/id/{$v.uid}" target="_blank">
+                     <if condition="$v.logo neq ''">
+						<img src="{$v.logo}" alt="{$v.company_short_name}" height="190" width="190">
+					<else />
+						<img src="/Public/Home/images/logo_default.png" alt="{$v.company_short_name}" height="190" width="190">
+					</if>
+					</a>
+                  </volist>
+                  </ul>
+              </div>
+
+	   </div>
+  </div>
+<!-- 中间结束 -->
+<div class="clr"></div>
+
+<!-- 推荐职位开始-->
+     <div class="listjob">
+      <div class="jxjob">精选职位</div>
+       <ul>
+
+       		<volist name="jobs_list" id="v" key="k">
+
+				<li <php>if($k%4==1 || $k%4==0) echo 'class="bgf9"';</php> >
+		           <a href="/Company/info/id/{$v.uid}" target="_blank"><if condition="$v.logo neq ''"><img src="{$v.logo}" alt="{$v.company_short_name}" ><else /><img src="/Public/Home/images/logo_default.png" alt="{$v.company_short_name}"></if></a>
+		           <div class="info">
+		             <a href="/Jobs/info/id/{$v.jid}"  target="_blank" class="til">{$v.zhiwei_mingcheng}</a><font class="f16">[{$v.gongzuo_chengshi}]</font><br />
+		             月薪：{$v.yuexin_min}-{$v.yuexin_max} k&nbsp;&nbsp;&nbsp;经验：{$v.gongzuo_jingyan}&nbsp;&nbsp;&nbsp;学历要求：{$v.xueli}<br />
+		             <div style="width:310px; height:26px; overflow:hidden;">职位诱惑：{$v.zhiwei_youhuo}</div>
+		             <span><a class="til"  target="_blank" href="/Company/info/id/{$v.uid}">{$v.company_short_name}</a> - {$v.hangye}</span>
+		           </div>
+		        </li>
+
+       		</volist>
+
+       </ul>
+     </div>
+<!-- 推荐职位结束-->
+
+</div>
+
+
+ <script type="text/javascript" src="/Public/Home/js/search.min.js"></script>
+<include file="Public/footer" />

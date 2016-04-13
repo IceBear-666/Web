@@ -1,0 +1,177 @@
+﻿wl_get_ship_addr_callback(
+{
+    "resultCode": 0,
+    "msg": "返回成功",
+    "aid": "001",
+    "data": [{
+        "id": 2088801938531620,
+        "isSet": 1,
+        "list": [{
+            "address1": "625 Jersey Ave Unit 8",
+            "address2": "",
+            "areaName": "AMERICA",
+            "city": "New Brunswick",
+            "firstName": "",
+            "lastName": "",
+            "province": "NJ",
+            "state": "美国",
+            "telephone": "732-613-1400",
+            "wareHouseName": "新泽西仓库",
+            "wareHouseNo": "NB",
+            "zipCode": "08901"
+        },
+        {
+            "address1": "43 Harbor View Drive",
+            "address2": "",
+            "areaName": "AMERICA",
+            "city": "New Castle",
+            "firstName": "",
+            "lastName": "",
+            "province": "DE",
+            "state": "美国",
+            "telephone": "302-787-0239",
+            "wareHouseName": "特拉华仓库",
+            "wareHouseNo": "DE",
+            "zipCode": "19720"
+        }],
+        "name": "百通",
+        "status": 0
+    },
+    {
+        "id": 2088502928803315,
+        "isSet": 1,
+        "list": [{
+            "address1": "2208 NW Birdsdale Ave,Unit14",
+            "address2": "C/O",
+            "areaName": "AMERICA",
+            "city": "Gresham",
+            "firstName": "",
+            "lastName": "",
+            "province": "Oregon",
+            "state": "美国",
+            "telephone": "503-328-9376",
+            "wareHouseName": "俄勒冈仓库",
+            "wareHouseNo": "FPX-0002",
+            "zipCode": "97030-6526"
+        }],
+        "name": "递四方",
+        "status": 0
+    },
+    {
+        "id": 2088301345047652,
+        "isSet": 1,
+        "list": [{
+            "address1": "5160 Rivergrade Road #11",
+            "address2": "11",
+            "areaName": "AMERICA",
+            "city": "Baldwin Park",
+            "firstName": "",
+            "lastName": "",
+            "province": "CA",
+            "state": "美国",
+            "telephone": "626-415-4695",
+            "wareHouseName": "加州仓库",
+            "wareHouseNo": "LAX",
+            "zipCode": "91706"
+        },
+        {
+            "address1": "301 NW Third Ave. #11",
+            "address2": "11",
+            "areaName": "AMERICA",
+            "city": "Portland",
+            "firstName": "",
+            "lastName": "",
+            "province": "OR",
+            "state": "美国",
+            "telephone": "503-664-4847",
+            "wareHouseName": "俄勒冈州仓库",
+            "wareHouseNo": "ORG",
+            "zipCode": "97209"
+        },
+        {
+            "address1": "70 McCullough Dr #11",
+            "address2": "11",
+            "areaName": "AMERICA",
+            "city": "Newark",
+            "firstName": "liu",
+            "lastName": "quan",
+            "province": "DE",
+            "state": "美国",
+            "telephone": "626-506-7585",
+            "wareHouseName": "特拉华州仓库",
+            "wareHouseNo": "DEL",
+            "zipCode": "19711"
+        }],
+        "name": "斑马物流",
+        "status": 0
+    },
+    {
+        "id": 2088011252032565,
+        "isSet": 1,
+        "list": [{
+            "address1": "3760 W CENTURY BLVD",
+            "address2": "ttt",
+            "areaName": "AMERICA",
+            "city": "INGLEWOOD",
+            "firstName": "",
+            "lastName": "",
+            "province": "CA",
+            "state": "美国",
+            "telephone": "626-689-2000",
+            "wareHouseName": "加州仓库",
+            "wareHouseNo": "YJ01",
+            "zipCode": "90303-1106"
+        },
+        {
+            "address1": "215 Lisa Dr",
+            "address2": "",
+            "areaName": "AMERICA",
+            "city": "New Castle",
+            "firstName": "",
+            "lastName": "",
+            "province": "DE",
+            "state": "美国",
+            "telephone": "626-689-2000",
+            "wareHouseName": "特拉华仓库",
+            "wareHouseNo": "YJ02",
+            "zipCode": "19720-9002"
+        }],
+        "name": "友家速递",
+        "status": 0
+    },
+    {
+        "id": 2088801938531623,
+        "isSet": 0,
+        "list": [{
+            "address1": "202 Lisa Dr New Castle",
+            "address2": "",
+            "areaName": "AMERICA",
+            "city": "New Castle",
+            "firstName": "",
+            "lastName": "",
+            "province": "Delaware",
+            "state": "美国",
+            "telephone": "718-690-9080",
+            "wareHouseName": "特拉华仓库",
+            "wareHouseNo": "PAKKING-0001",
+            "zipCode": "19720"
+        },
+        {
+            "address1": "6912 Fort Hamilton Parkway Brooklyn",
+            "address2": "",
+            "areaName": "AMERICA",
+            "city": "Brooklyn",
+            "firstName": "",
+            "lastName": "",
+            "province": "New York",
+            "state": "美国",
+            "telephone": "718-833-1998",
+            "wareHouseName": "纽约仓库",
+            "wareHouseNo": "PAKKING-0002",
+            "zipCode": "11228"
+        }],
+        "name": "海淘客",
+        "status": 0
+    }]
+}
+)

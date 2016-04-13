@@ -1,0 +1,164 @@
+<div id="wltao_single_price" class="wltao_font wltao_triangle wltao_tips {{unfold}} wltao_triangle-{{website}}" style="z-index:110;position:relative">
+	<div class="wltao_tips_title wltao_tips_title-{{website}}" data-domain="{{website}}" >
+		<ul class="ks-switchable-nav wltao_detail_price_topdiv" id="wltao_detail_price_topdiv">
+            <li class="wltao-stat wltao_detail_price_topdiv_gp" data-stat="web.detail.topdiv.gp">商品</li>
+            <li class="wltao-stat wltao_detail_price_topdiv_price" data-stat="web.detail.topdiv.price">历史价格
+            </li>
+            <li class="wltao-stat wltao_detail_price_topdiv_off" class="ks-active" data-stat="web.detail.topdiv.off">特惠<i class="wltao_red_off"></i>
+            </li>   
+            <!-- <li class="wltao-stat wltao_detail_price_topdiv_tips" data-stat="web.detail.topdiv.tips">提醒<i class="wltao_red_tip_tips"></i></li> -->
+            <li class="wltao-stat wltao_detail_price_topdiv_tools" data-stat="web.detail.topdiv.tools">工具<i class="wltao_red_tip_tools"></i></li>
+
+        </ul>
+        <div class="ks-switchable-content wltao_detail_price_bodydiv">
+            <div style="display:"  class="wltao_detail_price_info">
+            	<div class="wltao_detail_price_info_price">
+            		<span class="wltao-stat wltao_detail_price_info_left" data-stat="web.detail.bodydiv.price">到手价约<span class="wltao_yellow">￥<span class="wltao_total_price wltao_yellow">{{totalPrice}}</span></span></span>
+            		<div class="wltao_detail_price_info_right">
+	            		<span class=" wltao-stat wltao_detail_price_info_right_mingxi cur" wlt-price-detail="1" data-stat="web.detail.bodydiv.mingxi">明细</span>
+            			<span class=" wltao-stat wltao_detail_price_info_right_zixun" wlt-price-detail="2" data-stat="web.detail.bodydiv.zixun">资讯</span>
+	            		<!-- <span class=" wltao-stat wltao_detail_price_info_right_more off" wlt-price-detail="3" data-stat="web.detail.bodydiv.more">更多</span> -->
+            		</div>
+            		
+            	</div>
+                <div class="wltao_detail_price_info_detail" wlt-price-detail="1">
+                	<div class="wltao_detail_price_info_item_left">
+                		<div class="wltao_detail_item wltao_detail_item1">
+							<span class="wltao_detail_name">单价</span>
+							<span class="wltao_detail_text wltao_detail_price_info_item_left_unit"><span class="wltao_bz_color">￥{{price_rmb}}</span></span>
+                            <a class="coupon">券
+                                <div class="coupon-detail wltao-clearfix">
+                                    <div class="tips-info">
+                                        <p id="tips">使用coupon<br>立減USD<label id="coupon-price">20</label></p>
+                                        <p id="price-info">
+                                            现价USD<label id="now-price">163.2</label><br>
+                                            约RMB<label id="rmb-price">1294.54</label>
+                                        </p>
+                                    </div>
+                                    <div class="img-info">
+                                        可点击上方
+                                        <img style="display: block;" src="http://js.client.walatao.com/godimage/coupon.png" alt="coupon优惠" title="coupon优惠" >
+                                        获取优惠卷
+                                    </div>
+                                </div>
+                            </a>
+						</div>
+						<div class="wltao_detail_item">
+							<span class="wltao_detail_name">邮费</span>
+							<span class="wltao_detail_text">免费</span>
+						</div>
+						<div class="wltao_detail_item">
+							<span class="wltao_detail_name ">转运费</span>
+							<span class="wltao_detail_text wltao_detail_price_info_item_left_zhuanyun">￥<span class="wltao_ship_price">{{shippingCompanyCost}}</span></span>
+						</div>
+						<div class="wltao_detail_item">
+							<span class="wltao_detail_name">重量</span>
+							<span class="wltao_detail_text wltao_detail_price_info_item_left_weight">
+								<span class="wltao_bz_color wltao_bz_lbtip wltao_hidden">
+									<span style="display:none;" id="wltao_detail_weight_lbspan" class="wltao_detail_weight_lb">{{shippingWeight}}</span>
+									<input id="wltao_detail_weight_lbtext" class="wltao_detail_weight_lb" type="text" style="display: inline; margin: 0; background: none; text-indent: 0;width:38px;height:12px;padding:2px 2px;margin-top:-3px;font-size:11px;border:none;box-shadow:none;" value="{{shippingWeight}}">
+									<span class="wltao_bz_shippingWeight_lb">LB</span>
+								</span>
+								<span class="wltao_bz_color wltao_bz_kgtip wltao_hidden">
+									<span style="display:none;" id="wltao_detail_weight_kgspan" class="wltao_detail_weight_kg">{{shippingWeight_kg}}</span>
+									<input id="wltao_detail_weight_kgtext" class="wltao_detail_weight_kg" type="text" style="display:;width:38px;height:12px;padding:2px 2px;margin-top:-3px;font-size:11px;border:none;box-shadow:none;" value="{{shippingWeight_kg}}">
+									<span class="wltao_bz_shippingWeight_kg">KG</span>
+								</span>
+								<span class="wltao_bz_zerotip wltao_bz_color wltao_hidden"><i></i>未取到重量</span>
+                                <div id="weight-detail" style="display: none; position: absolute; top: 20px; left: 110px; z-index: 999; background: rgba(0,0,0,.5); color: #fff; padding: 10px;">此处为商品净重量<br>实际包裹以转运公司称重为准</div>
+							</span>
+						</div>
+						<div class="wltao_detail_item">
+							<span class="wltao_detail_name">关税</span>
+							<span class="wltao_detail_text wltao_detail_price_info_item_left_tariff" id="wltao_ship_price_tariff">￥<span class="wltao_ship_price wltao_ship_price_free"></span></span>
+						</div>
+                	</div>
+                	<div class="wltao_detail_price_info_item_right">
+                		<div class="wltao_detail_item wltao_detail_item1 wltao_detail_item3">
+							<span class="wltao_detail_text wltao_detail_price_info_item_right_wx"><span id="wltao_detail_price_remind_link" class="pnotice" style="display:none;"><!-- 降价微信提醒我 --></span><!-- <em alt="降价微信"></em> --></span>
+							<span class="wltao_detail_text wltao_detail_price_info_item_right_pricetrend wltao-stat" data-stat="web.detail.bodydiv.qushi"  style="display: block; width: 86px;height: 20px;"><span id="wltao_detail_price_trend" class="hisprice_same" style="display:none;"></span><!-- <em alt="点击查看详情"></em> --></span>
+							
+						</div>
+						<div class="wltao_detail_item wltao_detail_item3">
+							<span class="wltao_detail_text wltao_detail_price_info_item_right_seller wltao_detail_price_info_showalt">&nbsp;<em alt=""></em></span>
+							<span id="wltao_detail_price_info_item_directmail"></span>
+						</div>
+						<div class="wltao_detail_item wltao_detail_item3">
+							<div class="wltao_detail_price_actives">&nbsp;</div>
+						</div>
+                		<div class="wltao_detail_item wltao_detail_item2">
+							<div class="wltao_sel_transComp"></div>
+							<div class="wltao_sel_transChannel"></div>
+							<em class="wltao_compare_ship_btn" alt="点击查看各转运商价格对比等详情"></em>
+						</div>
+						
+						<div class="wltao_detail_item wltao_detail_item2">
+							<div class="wltao_gp_classname"></div>
+							<div class="wltao_gp_alias"></div>
+							<!-- <em class="wltao_gp_ok wltao_gp_ok_checked" alt="是否将关税计入总价"></em> -->
+							<em class="wltao_gp_ok" alt="点击将关税计算（不计算）到到手价中"></em>
+						</div>
+                	</div>
+				</div>
+				<div class="wltao_detail_price_info_detail" wlt-price-detail="2" style="display: none;margin-top:0;"></div>
+				<div class="wltao_detail_price_info_detail" wlt-price-detail="3" style="display: none;margin-top:0;"></div>
+            </div>
+            <div style="display: none" class="wltao_detail_price_trend">
+				
+            </div>
+            <div style="display: none" class="wltao_detail_my_off">
+                
+            </div>
+            <!-- <div style="display: none" class="wltao_detail_my_remind">
+                
+            </div> -->
+            <div style="display: none" class="wltao_detail_my_toolkit">
+            
+            </div>
+        </div>
+        <div class="wltao_detail_price_downdiv">
+			<a class="wltao_detail_price_downdiv_logo  wltao_detail_price_downdiv_left wltao-stat" data-stat="web.detail.downdiv.logo" href="http://www.walatao.com" target="_blank">
+				<em></em>
+			</a>
+			<div class=" wltao_detail_price_downdiv_user">
+				<div class="wltao_detail_price_downdiv_user_unlogin wltao_hidden">
+					<a class="wltao_detail_price_downdiv_user_unlogin_login wltao-stat" data-stat="web.detail.downdiv.login">
+						登录
+					</a>
+				</div>	
+				<div class="wltao_detail_price_downdiv_user_login wltao_hidden">
+					<a class="wltao_detail_price_downdiv_user_login_username" target="_blank" href="http://we.walatao.com/user/">
+						
+					</a>
+				</div>
+				
+			</div>
+			<div class="wltao_detail_price_downdiv_tools  wltao_detail_price_downdiv_right">
+				<div class="wltao_detail_price_downdiv_right_tips"></div>
+				<em class="wltao_detail_price_downdiv_chicun wltao-stat" data-stat="web.detail.downdiv.chicun" alt="点击打开尺码对照">尺码</em>
+<!-- 				<em class="wltao_detail_price_downdiv_fanyi wltao-stat" data-stat="web.detail.downdiv.fanyi" alt='点击打开单句翻译功能'>
+					<div class="xfk wltao_triangle bottom" len="501" style="left: 158px; display: none;"> <div class="ht_tooltip" len="471" style="width: 400px;"> <div class="ht_tooltip_border" len="374" style="height: 325px;"> <div class="ht_tooltip_main" len="339"> <div class="ht_tooltip_title" len="83"> <div class="ht_tooltip_title_text" len="0"><a href="http://fanyi.baidu.com/#auto/zh/" target="_blank"><img src="http://js.client.walatao.com/v8/godimage/baiduTranslation.png"></a></div> <div class="ht_tooltip_title_btn" style="color:#ccc" len="2" lang="zh-chs">关闭</div> </div> <div class="ht_tooltip_content" len="182"> <iframe src="http://www.walatao.com/actives/fanyi-amazon.html " class="ht-xfk_iframe" width="388" height="295" frameborder="no" border="0" marginwidth="0" marginheight="0" len="0"></iframe> </div> </div> </div> <div class="ht_down" len="33"> <div class="ht_down_arrow" len="0" style="margin-left: 193px;"></div> </div> </div> </div>
+				</em> -->
+				<em class="wltao_detail_price_downdiv_allfanyi wltao-stat" data-stat="web.detail.downdiv.allfanyi" alt='点击后将对当前网站进行全文翻译'>全文翻译</em>
+				<a href="http://we.walatao.com/user/" target="_blank">
+                    <em class="wltao_detail_price_downdiv_widgets wltao-stat" data-stat="web.detail.downdiv.myWidgets" alt='我的助手'>我的助手</em>
+                </a>
+                <a href="http://we.walatao.com" target="_blank">
+                    <em class="wltao_detail_price_downdiv_baike wltao-stat" data-stat="web.detail.downdiv.baike" alt='海淘百科'>海淘百科</em>
+                </a>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="wltao_tips_trend">
+	</div>
+	<div class="wltao_detail_price_pop">
+	</div>
+	<div class="wltao_tips_self_info">
+	</div>
+	<div class="wltao_tips_origin_info">
+	</div>
+	<div class="wltao_tips_share_info">
+	</div>
+</div>

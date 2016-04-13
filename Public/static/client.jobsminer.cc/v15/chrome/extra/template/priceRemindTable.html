@@ -1,0 +1,18 @@
+<table id="wltao_price_remind_table" style="border:1px;border-collapse: collapse;">
+	<tr>
+		<td class="td_item_name">商品名称</td>
+		<td class="td_stock_has">订阅价</td>
+		<td class="td_stock_has">现价</td>
+		<td class="td_stock_time">添加时间</td>
+		<td class="td_stock_status">删除</td>
+	</tr>
+	{{#priceRemindList}}
+	<tr itemnum="{{itemnum}}">
+		<td class="td_item_name_2"><a target="_blank" href="{{itemlink}}" alt="{{itefullmname}}">{{itemname}}</a><i class="wltao_td_tip_remind" style="display:{{has_down_price}}}"></i></td>
+		<td class="td_stock_has_2">{{symbol}}{{p_price}}</td>
+		<td class="td_stock_has_2" style="color:{{down_price_color}}">{{symbol}}{{c_price}}</td>
+		<td class="td_stock_time_2">{{time}}</td>
+		<td class="td_stock_status_parent"><span class="td_stock_status_2"></span></td>
+	</tr>
+	{{/priceRemindList}}
+</table>

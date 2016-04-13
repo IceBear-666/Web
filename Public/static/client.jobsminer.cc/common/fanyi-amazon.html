@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+    <script src="https://js.client.walatao.com/common/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="https://js.client.walatao.com/common/js/fanyi.js" type="text/javascript"></script>
+    <title>单句翻译</title>
+    <style type="text/css">
+    #htzs-bar
+    {
+        margin:5;
+        padding:0;
+        font:10pt "宋体";
+    }
+
+    #htzs-bar #empty-input-btn 
+    {
+        text-decoration: none;
+        color:Blue;
+    }
+
+    #htzs-bar #txtTransInput
+    {
+        width: 365px;
+        height: 90px;
+        border: 1px solid #18b4ed;
+        font:10pt "宋体";
+        resize: none;
+        line-height: 90px;
+    }
+    #htzs-bar #txtTransInput {
+        line-height: normal;
+        outline: none;
+    }
+
+    #htzs-bar #explain
+    {
+        margin:0 0 0 20px;
+        padding:2px;
+    }
+
+    #htzs-bar #btnTrans, #htzs-bar #empty-input-btn
+    {
+         width: 170px;
+         height: 30px;
+         line-height: 30px;
+         background: #18b4ed;
+         border: 0;
+         color: #fff;
+         font-size: 14px;
+         cursor: pointer;
+         float: left;
+    }
+    #htzs-bar #btnTrans:focus{ 
+        outline: none;
+    }
+    #htzs-bar #empty-input-btn{  
+        margin-left: 30px;
+        text-align: center;
+    }
+
+    #htzs-bar #transResult
+    {
+        width:365px;
+        height: 90px;
+        background: none repeat scroll 0 0 #F7F7F7;
+        border: 0;
+        font:10pt "宋体";
+        resize: none;
+        background: #fff;
+    }
+    #htzs-bar #transResult:focus{
+        outline: none;
+    }
+    p{
+        margin: 10px 0;
+    }
+    </style>
+</head>
+<body id="htzs-bar">
+    <p><textarea id="txtTransInput" cols="10" rows="5" placeholder="请输入需要翻译的文字内容"></textarea></p>
+    <p style="height: 30px;"><input id="btnTrans" type="button" value="翻译" /><a id="empty-input-btn" href="#" style="visibility: visible;">清空</a></p>
+    <p><textarea id="transResult" cols="10" rows="5" readonly="readonly" placeholder="支持英、日、得、韩、法、粤语等在线翻译"></textarea></p>
+</body>
+</html>

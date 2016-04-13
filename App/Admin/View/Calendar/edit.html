@@ -1,0 +1,93 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>{:isset($info['cid'])?'编辑':'新增'}日程</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        
+        <div class="form-item">
+            <label class="item-label">标题<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+            </div>
+        </div>
+                
+        <div class="form-item">
+            <label class="item-label">状态<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" name="status" value="1">启用</label>
+                <label class="radio"><input type="radio" name="status" value="0">禁用</label>
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">日期<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large date" placeholder="请选择日期" name="date" value="{$info.date}">
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">时间<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large time" placeholder="请选择时间" name="time" value="{$info.time}">
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">地点<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="address" value="{$info.address}">
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">备注<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="memo" value="{$info.memo}">
+            </div>
+        </div>
+        
+        
+        <div class="form-item">
+            <input type="hidden" name="cid" value="{$info.cid|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+
+<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+<script type="text/javascript">        
+        Think.setValue("status", {$info.status|default = 0});
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+
+
+        $(function(){
+           $('.date').datetimepicker({
+               format: 'yyyy-mm-dd',
+               language:"zh-CN",
+               minView:2,
+               autoclose:true
+           });
+           
+           /* $('.time').datetimepicker({
+               format: 'hh:ii',
+               language:"zh-CN",
+               minView:2,
+               autoclose:true
+           }); */
+           showTab();
+        });    
+</script>
+
+</block>

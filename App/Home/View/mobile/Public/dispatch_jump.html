@@ -1,0 +1,72 @@
+<?php
+    if(C('LAYOUT_ON')) {
+        echo '{__NOLAYOUT__}';
+    }
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<title>跳转提示</title>
+<link rel="stylesheet" type="text/css"  href="/Public/Home/mcss/common.css" />
+<style type="text/css">
+*,html,body{ margin:0; padding:0;}
+.yzbox{width:100%; text-align:center; color:#5C5C46;font-size:14px;padding-top:80px; line-height:24px; font-size:16px;}
+a{ color:#ac6198;}
+h2{ display:block; font-weight:normal; padding-bottom:10px;}
+</style>
+</head>
+<body>
+
+<div class="num_box">
+	<div class="num" id="num_00">
+    
+      <div class="header">
+          <div class="logo"><a href="/index.html"><img src="/Public/Home/images/logo.png" /></a></div>
+          <div class="clr"></div>
+        </div>
+        
+        
+      
+	</div>
+
+</div>
+
+<div class="yzbox">
+  <div class="mymsg">
+    <div class="system-message">
+      <present name="message">
+      <h2>系统提示</h2>
+        <p class="success"><?php echo($message); ?></p>
+        <else/>
+        <h2>系统提示</h2>
+        <p class="error"><?php echo($error); ?></p>
+      </present>
+      <p class="detail"></p>
+      <p class="jump"> 页面自动 <a id="href" href="<?php echo($jumpUrl); ?>">跳转</a> 等待时间： <b id="wait"><?php echo($waitSecond); ?></b> </p>
+    </div>
+  </div>
+</div>
+
+
+    <div id="footer">
+        <a {$cur_top_nav.job} href="/Jobs/">职位</a>
+        <a {$cur_top_nav.company} href="/Company/">公司</a>
+        <a id="mwode" href="/User/">我的</a>
+    </div>
+    
+<script type="text/javascript">
+(function(){
+var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+var interval = setInterval(function(){
+	var time = --wait.innerHTML;
+	if(time <= 0) {
+		location.href = href;
+		clearInterval(interval);
+	};
+}, 1000);
+})();
+</script>
+</body>
+</html>

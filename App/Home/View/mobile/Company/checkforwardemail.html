@@ -1,0 +1,72 @@
+<include file="Public/header" />
+
+<div class="resume_verify_bg"></div>
+<!--通知面试弹窗-->	
+<input id="token" type="hidden" value="{$token}"  />
+<div id="resume_verify_border"></div>
+	<div class="resume_verify_main">
+	    <div class="title">
+	   		<h3>查看简历</h3>
+	    </div>
+	    
+	    <div class="con" id="verify_con">
+    		<p>输入邮件内的六位数验证码，查看{$realname}的简历：</p>
+    		<div>
+    			<input type="text" id="verify_code" name="verify_code" autocomplete="off" />
+    			<a href="javascript:;" id="sub">提交</a>
+    		</div>
+	    </div>
+	    
+	    <!-- <div class="con tip">
+    		<p class="center">链接过期，请联系HR重新给你转发简历。</p>
+    		<div class="center">
+    			<span><i id="num">5</i>秒后</span><a href="/">跳回主页</a>
+    		</div>
+	    </div>	 -->
+	     	    
+	</div>
+<!------------------------------------- end -----------------------------------------> 
+
+<script type="text/javascript" src="/Public/Home/js/transpond_verify.js"></script>
+
+<script type="text/javascript"> 
+$(function(){
+	//判断初始化页面时 是否隐藏提示框以及红点的显示
+	if($(".notice_tip").length == 0){
+		$("#noticeTip").hide();
+		$(".collapsible_menu dt .red").addClass("dn");
+	}	
+	
+	//$('#noticeDot-1').hide();
+	$('#noticeTip a.closeNT').click(function(){
+		$(this).parent().hide();
+		//与后台交互，消息标识为已读
+		L.ajax({
+			 type:'POST',
+			 url:ctx+"/notice/clearAll.json",
+			 dataType:'json'
+		});
+		$(".collapsible_menu dt .red").addClass("dn");
+	});
+	//B端消息绑定单击事件
+	$(".notice_tip").bind("click",function(){
+		$(this).remove();
+		//获取当前点击的消息类型
+		var type = $(this).data("type");
+		//告诉后台哪种类型的消息一经被查看
+		L.ajax({
+			 type:'POST',
+			 url:ctx+"/notice/clear.json",
+			 data:{nt:type},
+			 dataType:'json'
+		});
+		if($(".notice_tip").length == 0){
+			$("#noticeTip").hide();
+			$(".collapsible_menu dt .red").addClass("dn");
+		}
+	});
+});
+</script>
+
+
+<include file="Public/footer" />

@@ -1,0 +1,570 @@
+@charset "utf-8";
+/*我的简历 jason 2014/9/4 */
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:#b5b5b5;
+}
+.clearfixs:before,.clearfixs:after{content:"";display:table;}
+.clearfixs:after{display:block;clear:both;}
+.clearfixs{*zoom:1;}
+input[type="text"]:focus{border:2px solid #d4e2e4;transition:border 0s ease-in 0s;}
+.mr_created input[type="text"]:focus{border-width:1px;}
+.mr_content input[type="text"]:focus{border:none;}
+.mr_created input{border:none;}
+a:hover{color:#ac6198;}
+input{outline:none;}
+::-moz-focus-inner{outline:none;}
+button::-moz-focus-inner { border: 0; }
+input::-moz-focus-inner { border: 0; outline:none;}
+.mceContentBody{padding-bottom:20px;}
+
+input[type="button"],input[type="submit"]{outline:none;cursor:pointer;border:none;}
+.pt10{ padding-top:16px !important; vertical-align:top;}
+.tabuinfo td{ padding:8px 4px;}
+.tabuinfo .xl_list{width:170px;}
+#container{width:960px;margin:35px auto 0; padding-bottom:100px; }
+
+span.error{display:block; margin:5px 0 10px 0; font-size:14px; color:#ff6a6a;text-align:left; background:url(../images/error.png) 0 3px no-repeat; padding-left:20px; line-height:22px;}
+
+.metil{ background:#f9f9f9; padding:5px 12px; border-left:3px solid #ac6198; font-size:16px;}
+.infopl{ padding:10px 0px 10px 16px;}
+.infopl td{ line-height:28px;}
+
+.qhjianli a{ display:block; text-align:center; padding:12px 0px; background:#f9f9f9; font-size:15px;}
+.qhjianli .cur{ background:#eee; color:#ac6198;}
+
+
+/* 投递管理 */
+
+.tounav{ background:#eee; height:44px; padding-left:24px;}
+.tounav a{ display:block; float:left; padding:12px 14px 0px 14px; font-size:15px; position:relative;}
+.tounav a i{ position:absolute; top:10px; right:0; width:8px; height:8px; background:url(../images/myresume/reddot.png) center no-repeat;}
+.tounav .cur{ color:#ac6198;}
+.tounav em{display:block; float:left; padding:12px 8px 0px 8px; color:#aaa;}
+.tounav .shuaxin{ display:block; float:right; padding:0; margin-right:40px; margin-top:12px; width:20px; height:20px; background:url(../images/myresume/shuaxin.png) center;}
+.toucet{ padding:30px;}
+
+.toucet .list{ min-height:90px;  background:#fff;}
+.toucet  table{ min-height:90px; border-left:3px solid #ac6198; padding:10px 10px 10px 20px;}
+.hdcnt{ display:none; }
+
+.my_delivery li{ margin-bottom:30px;background:#fff;position:relative;background:#f9f9f9;}
+.my_delivery .d_item{border-left:3px solid #ac6198;overflow:hidden; padding:6px 12px; }
+.tdzhankai{ position:absolute; top:56px; right:12px;}
+
+.my_delivery h2{ padding-bottom:8px; margin:0 !important;ont-weight:normal;float:left; font-size:16px;}
+.my_delivery h2 em{font-size:18px; color:#ac6198; }
+.my_delivery h2 span{font-size:16px; float:none;}
+.my_delivery h2 span.expireDay{color:#555;}
+
+.progress_status{border-top:1px dashed #cccccc;border-bottom:2px solid #D3B8CC;padding:25px 10px;position:relative;zoom:1;overflow:hidden;}
+.progress_status .offer{position:absolute;left:335px;top:120px;width:160px;height:73px;background:url(../images/myresume/offer_status.png) -26px 0 no-repeat;}
+.progress_status .refused{position:absolute;left:335px;top:120px;width:186px;height:76px;background:url(../images/myresume/offer_status.png) 0 -74px no-repeat;}
+.progress_status ul{margin: 0;padding: 0;list-style:none;}
+
+.btn_closeprogress{position:absolute;right:35px;bottom:30px;width:44px;height:44px;background:url(../images/myresume/progress_close.png) no-repeat;}
+.status_steps li{float:left;color:#fff; text-align:center;line-height:18px; font-size:12px; position:relative;}
+.status_steps li em{ position:absolute; width:80px; text-align:center; color:#333; left:50%; margin-left:-40px; top:30px;}
+
+.status_steps .status_done{width:20px;height:20px; background:#ac6198; border-radius:100px;}
+.status_steps .status_grey{width:20px;height:20px; background:#ccc; border-radius:100px;}
+
+.status_steps .status_1{margin-left:14px;}
+.status_steps .status_line{width:22%;margin-top:8px;}
+.status_steps .status_line_done span{display:block; height:4px;background:#ac6198;}
+.status_steps .status_line_grey span{display:block; height:4px;background:#dadada;}
+.progress_status .status_text{margin-bottom:20px; margin-left:6px;}
+.status_text li{float:left;color:#333;font-size:12px;line-height:28px;margin:5px 0 0 0; width:24%; text-align:center;}
+/*.status_text .status_text_2{margin-left:80px;}
+.status_text .status_text_3{margin-left:83px;}
+.status_text .status_text_4{margin-left:82px;}
+.status_text .status_text_5{margin-left: 75px;*margin-left: 60px;}
+.status_text .status_text_6{margin-left:105px;*margin-left: 83px;}
+.status_text .status_text_7{margin-left:73px;*margin-left:57px;}
+.status_text .status_text_8{margin-left:66px;*margin-left:53px;}
+.status_text .status_text_9{margin-left:90px;*margin-left:77px;}*/
+
+.status_list li{margin:0;}
+.status_list font{ color:#aaa;}
+.status_list .list_time{font-size:12.5px;color:#999;padding-left:20px;position:relative;}
+.status_list .list_time em{position:absolute;left:0;top:5px;width:10px;height:11px;background:url(../images/myresume/status_dot.png) left bottom no-repeat;}
+.status_list .top .list_time em{background-position:left top;}
+.status_list .top1 .list_time em{background-position:left top;}
+.status_list .top1 h3{ color:#ac6198}
+.status_list .top1 .list_body{border-left:none;}
+.status_list .list_body{color:#555;border-left:2px solid #d0d0d0;padding:2px 0 20px 12px;margin-left:4px;line-height:24px;}
+.status_list .top .list_body{border-left:2px solid #D3B8CC;}
+.status_list .bottom .list_body{border-left:none;}
+.status_list h3{margin:4px 0 10px;font-size:15px;color:#555555;}
+.status_list .top h3{color:#ac6198;}
+.status_list .list_body div{color:#888888;overflow:auto;}
+.status_list .list_body span{color:#333333;}
+
+
+/* 附件简历 */
+.fjlist{}
+.fjlist ul{ overflow:hidden;}
+.fjlist li{ border-top:1px solid #ddd; padding:0px 0px 20px 0px; margin-top:-2px;}
+.fjinfo .docx{ display:blockl; float:left; width:60px; height:56px;  background:url(../images/myresume/doc.png) left no-repeat;}
+.fjinfo .pdf{ display:blockl; float:left; width:60px; height:56px;  background:url(../images/myresume/pdf.png) left no-repeat;}
+.fjinfo span{ display:block; float:left; padding-top:8px; line-height:22px; font-size:15px;}
+.fjlist .down{ padding-top:28px;}
+.fjlist .xiazai{ display:block; float:left; padding-left:24px;  background:url(../images/myresume/down.png) 0px 0px no-repeat; margin-right:30px;}
+.fjlist .shanchu{ display:block; float:left; padding-left:20px;  background:url(../images/myresume/down.png) 0px -42px no-repeat;}
+.delfujie{ width:320px !important;}
+.delfujie span{ display:block; text-align:center; padding-bottom:20px;}
+.delfujie .mybtn2{ border-radius:2px;}
+
+
+
+
+
+/* 为创建在线简历 */
+.mr_uncreate .drop_r,.mr_created .drop_r{*margin-top:-147px}
+.mr_uncreate .drop_r p,.mr_created .drop_r p{*margin-top:10px;}
+.mr_created input,.mr_created textarea{font-size:14px;}
+.mr_uncreate *{list-style:none;}
+
+.mr_created .city_s .xl_list ,.mr_uncreate .city_s .xl_list{height:130px;}
+.mr_created .mr_selCity,.mr_uncreate .mr_selCity{top:0;}
+.mr_created .mr_selCity ul.mr_province ul,.mr_uncreate .mr_selCity ul.mr_province ul{width:287px;height:110px;padding:10px;}
+.mr_created #mr_mr_head *,.mr_created .mr_myresume_r *{list-style:none;}
+.mr_myresume_l{float:left;width:640px;margin-bottom:20px;}
+.mr_myresume_r{float:right;width:280px;}
+.mr_myresume_r_fix{position:fixed;margin-left:0;width:282px;top:0;}
+#mr_mr_head{margin-top:14px;}
+.mr_created{margin-bottom:0;}
+.mr_top_bg{position:relative;height:70px;background:url(../images/myresume/tou.png) no-repeat; background-size:100% 100%;z-index:2;}
+.mr_top_bg img{position:absolute;width:80px;height:80px;top:16px;left:50%; margin-left:-40px; border:4px solid #fff; border-radius:100px; box-shadow:0px 2px 3px #ddd;}
+.mr_top_bg .opa{top:0px;left:0;width:100%;height:170px;}
+.mr_top_bg input{opacity:0;filter:alpha(opacity:0);cursor:pointer;border-radius:50%; left:50%; margin-left:-56px; }
+.mr_top_bg .shadow{width:120px;height:120px;top:42px;left:50%;margin-left:-60px;display:none;}
+.mr_baseinfo{position:relative; padding:30px 0 10px 0; }
+.mr_created .mr_baseinfo{border-bottom:none;border-bottom-right-radius:0px;border-bottom-left-radius:0px;}
+.mr_left_bg,.mr_right_bg{position:absolute;background: url(../images/myresume/top_bg.png) no-repeat;width:12px;height:34px;top:50px;}
+.mr_left_bg{left:-1px;background-position:0 0;}
+.mr_right_bg{right:-2px;background-position:-40px 0;}
+.mr_my_qr{position:absolute;cursor:pointer;z-index:10;right:52px;top:0;width:48px;height:50px;background:#f2f2f2 url(../images/myresume/qr_bg.png) 10px 10px no-repeat;}
+.mr_my_qr .dropdown_menu {width:299px;height:152px;background:url(../images/qr/myresume_qr.png) no-repeat;color: #fff;display:block;padding:12px 8px 8px 5px;margin:50px 0 0 -225px;opacity: 0;visibility: hidden;-webkit-transition:.25s;transition:.25s;}
+.open>.dropdown_menu{margin-top:58px !important;*margin:70px 0 0 -220px !important;opacity:1;visibility:visible}
+.mr_w604{width:604px;margin:0 auto;}
+.mr_p_myname{height:40px;line-height:38px;margin-bottom:8px;}
+.mr_name{display:block;height:40px;width:468px;margin:0 auto;line-height:40px;font-size:30px;color:#333;text-align:center;}
+.mr_intro{display:block;color:#333;text-align:center;margin:0 auto;}
+.mr_p_introduce .mr_intro{font-size:16px;width:468px;line-height:34px;}
+.mr_p_introduce .mr_intro_grey{color:#bdbdbd;font-style: italic;}
+.mr_p_introduce .mr_edit{height:34px;}
+.mr_edit{float:right;margin-right:12px;cursor:pointer;}
+.mr_edit em{font-size:16px;color:#ac6198;}
+.mr_edit i{display:inline-block;width:12px;height:14px;background:url(../images/myresume/icons_mr.png) -53px -6px no-repeat;margin-right:7px;}
+.mr_edit *{vertical-align: middle;}
+.mr_active{background-color: #fefef2;}
+
+
+
+
+
+/*已创建在线简历 jason 2014/9/8*/
+.mr_p_introduce{line-height:32px;margin-bottom:8px;min-height:34px;}
+.mr_introduce{font-size:16px;color:#333;text-align:center;}
+.mr_years,.mr_man{margin-right:12px;}
+.mr_year_se span i,.mr_year_se span em{vertical-align:middle;}
+span.mr_man,span.mr_women{width:56px;padding-left:22px;color:#b5b5b5;;height:40px;line-height:40px;border:1px solid #f1f3e9;background-color:#fff;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;cursor:pointer;}
+span.active{color:#ac6198;}
+span.mr_man i,span.mr_women i{display:inline-block;width:16px;height:16px;background:url(../images/myresume/icons_mr.png) no-repeat;}
+span.mr_man i{background-position:-4px -25px;}
+span.mr_man i.active{background-position:-4px -5px;}
+span.mr_women i{background-position:-27px -25px;}
+span.mr_women i.active{background-position:-27px -5px;}
+.mr_year_se i{margin-right:11px;}
+.sns_empty{width:227px;height:73px;margin-bottom:20px;padding:32px 0 0 310px;background:url(../images/myresume/sns_add_bg.png) no-repeat;}
+.sns_empty .sns_add_empty{position:relative;width:173px;height:37px;cursor:pointer;}
+.mr_add_m {cursor:default;}
+.sns_add_empty .mr_add_m{left:-124px;top:54px;}
+.mr_add_m li{position:relative;cursor:pointer;}
+.mr_add_m li span{position:absolute;display:none;top:-21px;left:50%;height:20px;line-height:20px;line-height:18px\9;color:#fff;text-align:center;background-color:#666660;padding:0 10px;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
+.sns1 span{margin-left:-38px;}
+.sns2 span{margin-left:-45px;}
+.sns3 span{margin-left:-44px;}
+.sns4 span{margin-left:-43px;}
+.sns5 span{margin-left:-35px;}
+.sns6 span{margin-left:-37px;}
+.sns7 span{margin-left:-29px;}
+.sns8 span{margin-left:-40px;}
+.sns9 span{margin-left:-36px;min-width:47px;}
+.sns10 span{min-width:60px;margin-left:-45px;}
+.sns11 span{margin-left:-63px;}
+.sns12 span{margin-left:-64px;}
+.mr_add_m li em{position:absolute; top:20px;left:50px;margin-left:-7px; font-size:0px; height:0; width:0; border-width:4px 4px 0; border-style:solid dashed; border-color:#666 transparent transparent;overflow: hidden;-webkit-transition:all 0.4s ease 0s;-moz-transition:all 0.4s ease 0s;-o-transition:all 0.4s ease 0s;transition:all 0.4s ease 0s;}
+.mr_add_m .sns1 em{left:36px;}
+.mr_add_m .sns2 em{left:43px;}
+.mr_add_m .sns3 em{left:42px;}
+.mr_add_m .sns4 em{left:42px;}
+.mr_add_m .sns5 em{left:35px;}
+.mr_add_m .sns6 em{left:36px;}
+.mr_add_m .sns7 em{left:27px;}
+.mr_add_m .sns8 em{left:38px;}
+.mr_add_m .sns9 em{left:35px;}
+.mr_add_m .sns10 em{left:44px;}
+.mr_add_m .sns11 em{left:62px;}
+.mr_add_m .sns12 em{left:63px;}
+
+.sns_add_empty .mr_add_m i,.sns_add_empty .mr_add_m em{right:17px;}
+.sns_area .mr_sns_m{position:relative;width:534px;margin-bottom:16px;}
+.mr_sns_m i{position:absolute;left:-43px;top:7px;width:30px;height:30px;background:url(../images/myresume/sns_bg.png) no-repeat;}
+.mr_sns_m .mr_button{width:467px;padding:0 0 0 17px;border:none;*height:44px;line-height:40px;}
+.mr_sns_m em{position:absolute;width:20px;height:20px;right:10px;top:13px;}
+.mr_sns_m .mr_ok{background:url(../images/myresume/icons_mr.png) -4px -46px no-repeat;}
+.mr_sns_m .mr_no{background:url(../images/myresume/icons_mr.png) -28px -46px no-repeat;}
+.mr_sns_m .sns_del{position:absolute;width:16px;height:16px;right:-30px;top:15px;background:url(../images/myresume/icons_mr.png) -57px -49px no-repeat;}
+.mr_add_sns{position:relative;}
+.mr_add_sns i,.mr_add_sns em{vertical-align:middle;}
+.mr_add_sns i{display:inline-block;margin-right:10px;width:15px;height:15px;background:url(../images/myresume/icons_mr.png) -5px -69px no-repeat;}
+.mr_add_sns em{color:#afafa9;}
+.mr_add_m{position:absolute;top:44px;left:0;padding:12px 0 0 20px;background-color:#fff;z-index:2;border:1px solid #e7e7e7;box-shadow:2px 2px 4px #efefe4;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+.mr_add_m i,.mr_add_m em{position:absolute;background:none;top:-16px;border: 8px solid #e7e7e7;border-color: transparent transparent #e7e7e7;display: block;font-size: 0px;height: 0;width: 0;}
+.mr_add_m em{border-color: transparent transparent #fff;top:-15px;}
+.mr_add_m ul{width:276px;}
+.mr_add_m li{float:left; width:42px;height:42px;margin:0 4px 10px 0;}
+.mr_add_m li.mr0{margin-right:0;}
+
+
+.mr_add_op{padding:10px 0;margin-left:-20px;width:296px;background-color:#fafafa;}
+.mr_add_op a{vertical-align:middle;}
+.mr_add_op .mr_none_my{float:left;color:#b5b5b5;padding:6px 0;margin-left:20px;}
+.mr_add_op .sns_cancel,.mr_add_op .sns_save{float:right;padding:6px 13px;text-align:center;}
+.mr_add_op .sns_cancel{}
+.mr_add_op .sns_save{background-color:#ac6198;color:#fff;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+.sns_add{cursor:pointer;}
+
+
+
+
+
+/*在线简历 模块名列表*/
+.mr_module{ background:#f9f9f9}
+.mr_module li{height:50px;line-height:50px;border-left:2px solid transparent;margin-left:-1px;border-left:2px solid #e5e5e5; list-style:none;}
+.mr_module li a{display:block;height:100%;}
+.mr_module li a{color:#333;}
+.mr_module li a *{vertical-align:middle;}
+.mr_module li i{display:inline-block;width:19px;height:18px;background:url(../images/myresume/icons_mr.png) no-repeat;margin:0 24px 0 39px;}
+.mr_module li.active i{margin-left:38px;}
+.mr_module li .mr_base_i{background-position:-24px -117px;}
+.mr_module li .mr_works_i{background-position:-24px -137px;}
+.mr_module li .mr_edu_i{background-position:-23px -156px;}
+.mr_module li.active{border-color:#ac6198;border-width:2px;}
+.mr_module li.active .mr_base_i{background-position:-5px -117px;}
+.mr_module li.active .mr_works_i{background-position:-5px -137px;}
+.mr_module li.active .mr_edu_i{background-position:-4px -156px;}
+.mr_module li.active .mr_m_name{color:#ac6198;}
+.mr_require{float:right;margin-right:16px;width:40px;height:22px;line-height:22px;line-height:22px;text-align:center;margin-top:14px;color:#fff;background-color:#ac6198;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;}
+.mr_module li .mr_addmd_i{background-position:-22px -177px;}
+.mr_module li.hide_md{border-color:#f2f2f2;}
+.mr_module li.hide_md a:hover{background-color:#fefefe;color:#333;}
+.mr_module li.hide_md a:hover .mr_project_i{background-position:-67px -177px;}
+.mr_module li.hide_md a:hover .mr_production_i{background-position:-67px -197px;}
+.mr_module li.hide_md a:hover .mr_self_i{background-position:-66px -219px;}
+.mr_module li.hide_md a:hover .mr_hopework_i{background-position:-63px -239px;}
+.mr_module li.hide_md a:hover .mr_skill_i{background-position:-66px -262px;}
+.mr_module li.hide_md a:hover .mr_moudle_i{background-position:-63px -283px;}
+
+.mr_module li.hide_md a{color:#b5b5b5;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+.mr_module li.hide_md .mr_project_i{background-position:-43px -177px;}
+.mr_module li.hide_md .mr_production_i{background-position:-43px -197px;}
+.mr_module li.hide_md .mr_self_i{background-position:-43px -219px;}
+.mr_module li.hide_md .mr_hopework_i{background-position:-40px -239px;}
+.mr_module li.hide_md .mr_skill_i{background-position:-41px -262px;}
+.mr_module li.hide_md .mr_moudle_i{background-position:-40px -283px;}
+.mr_module li.hide_md a .mr_hide_addic{float:right;display:none;width:15px;height:15px;background:url(../images/myresume/icons_mr.png) -5px -69px no-repeat;margin:17px 20px 0 0;}
+.mr_module li.hide_md a:hover .mr_hide_addic{display:inline-block;}
+
+
+.mr_module li.m_hide .mr_project_i{background-position:-67px -177px;}
+.mr_module li.m_hide .mr_production_i{background-position:-67px -198px;}
+.mr_module li.m_hide .mr_self_i{background-position:-67px -218px;}
+.mr_module li.m_hide .mr_hopework_i{background-position:-65px -240px;}
+.mr_module li.m_hide .mr_skill_i{background-position:-66px -262px;}
+.mr_module li.m_hide .mr_moudle_i{background-position:-66px -285px;}
+
+.mr_module li.active .mr_project_i{background-position:-4px -177px;}
+.mr_module li.active .mr_production_i{background-position:-5px -198px;}
+.mr_module li.active .mr_self_i{background-position:-5px -218px;}
+.mr_module li.active .mr_hopework_i{background-position:-5px -240px;}
+.mr_module li.active .mr_skill_i{background-position:-5px -262px;}
+.mr_module li.active .mr_moudle_i{background-position:-6px -285px;}
+.mr_hide{display:none;}
+.mr_hide_del{opacity:0;filter:alpha(opacity:0);float:right;width:17px;height:17px;background:url(../images/myresume/my_resume_del.png) no-repeat;margin:18px 16px 0 0;}
+.mr_hide_del:hover{background:url(../images/myresume/my_resume_del.png) -19px 0 no-repeat;}
+.mr_module li.m_hide.md_flag a:hover .mr_hide_del{opacity:1;filter:alpha(opacity:100);}
+/*在线简历页面主内容区域*/
+.mr_myresume_l .mr_content{padding-top:26px;background-color: #fafafa;border: 1px solid #f2f2f2;border-bottom:2px solid #f2f2f2;border-top:none;border-bottom-right-radius: 3px;border-bottom-left-radius: 3px;}
+.mr_moudle_head{margin-bottom:23px;}
+#customBlock .mr_moudle_head{margin-bottom:33px;}
+.mr_moudle_head .mr_head_l{float:left;}
+.mr_moudle_head .mr_head_r{float:right;margin-top:3px;cursor:pointer;}
+.mr_title span{vertical-align:middle;display:inline-block;}
+.mr_title .mr_title_l{width:230px;height:0;border-top:1px solid #ededed;}
+.mr_title .mr_title_c{font-size:18px;padding:6px 24px;text-align:center;background-color:#eee;-moz-border-radius:26px;-webkit-border-radius:26px;border-radius:26px;margin:0 13px;}
+.mr_title .mr_title_r{width:152px;height:0;border-top:1px solid #ededed;}
+.mr_preview .mr_title .mr_title_r{width:228px;}
+.mr_moudle_head .mr_head_r *{vertical-align:middle;}
+.mr_moudle_head .mr_head_r em{font-size:16px;color:#ac6198;}
+.mr_moudle_head .mr_head_r i{display: inline-block;width: 15px;height: 15px;background: url(../images/myresume/icons_mr.png) -5px -69px no-repeat;margin-right:6px;}
+.mr_moudle_content{padding-bottom:21px;color:#555;font-size:14px;} /* 块  margin-bottom 48*/
+.mr_moudle_content .mr_content_l{float:left;max-width:445px;}
+.mr_moudle_content .mr_content_r{float:right;text-align:right;}
+.mr_content_l .l1{float:left;margin-right:10px;}
+.mr_content_l .l2{position:relative;float:left;padding-top:10px;max-width:380px;}
+
+#workExperience .mr_content_l .l2,#educationalBackground .mr_content_l .l2{padding-top:4px;}
+/* .mr_content_l .l2 a{position:absolute;top:16px;right:-18px;width:12px;height:12px;background:url(../images/myresume/icons_mr.png) -95px -197px no-repeat;} */
+.mr_content_l .l2 a.projectTitle{/* position:relative; */font-size:16px;}
+.mr_content_l .l2 a.nourl{cursor:default;}
+.mr_content_l .l2 a.nourl:hover{color:#555;}
+.mr_content_l .l2 p{color:#999;}
+.mr_content_l .l2 a.projectTitle span{position:absolute;top:14px;right:-18px;width:12px;height:12px;background:url(../images/myresume/icons_mr.png) -95px -197px no-repeat;}
+.mr_content_l .l1 img{width:46px;height:46px;border:2px solid #eee;}
+.mr_content_l .l2 h4{font-size:16px;}
+.mr_jobe_list{padding-bottom:44px;}
+.mr_content_l .l2 span{color:#999;display:block;}
+.mr_work_upload .mr_content_l {max-width:540px !important;}
+.mr_c_r_t{text-align:right;margin:5px 0 2px 0;*margin-top:8px;float:none;}
+.mr_content_r span{color:#999;}
+.mr_content_m{padding:14px 0 0 0px;*padding-left:1px;color:#555;}
+#workExperience .mr_content_m{padding-bottom:1px;}
+#workExperience .mr_content_m{padding-top:4px;}
+#workExperience .mr_moudle_content{padding-bottom:0;}
+#workExperience .list_show{padding-bottom:6px;}
+.mr_content_m ul,.custom_list ul{padding-left:18px;padding-left:15px\9;*padding-left:16px;}
+.mr_content_m ol,.custom_list ol{padding-left:19px;*padding-left:24px;}
+.mb46{margin-bottom:46px;}
+.proExpForm .mr_prolink .mr_btn{width:484px;}
+/* #educationalBackground .mr_moudle_content{padding-bottom:15px;} */
+#educationalBackground .mr_btn{width:356px;}
+#educationalBackground .mb46{margin-bottom:0;}
+#educationalBackground .mr_moudle_content{padding-bottom:5px;}
+#educationalBackground .mr_time_area .mr_btn{width:130px;}
+#projectExperience .mr_jobe_list{padding-bottom:32px;}
+#projectExperience .mr_moudle_content{padding-bottom:18px;}
+#projectExperience .mr_content_m{padding-top:8px;}
+#selfDescription .mr_moudle_content{padding-bottom:48px;}
+#expectJob .mr_moudle_content{padding-bottom:25px;}
+#projectExperience .mr_empty_add,#worksShow .mr_empty_add{margin-bottom:8px;}
+#selfDescription .mr_empty_add{margin-bottom:-20px;}
+.mr_wo_show{ margin-bottom:38px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+.mr_wo_show p{line-height:26px;color:#ac1698;}
+.mr_self_site{color:#fff;margin-bottom:8px;font-size:24px;}
+.mr_wo_show .mr_c_r_t em{color:#ac1698;}
+.mr_wo_show .mr_c_r_t i{background:url(../images/myresume/icons_mr.png) -53px -6px no-repeat;}
+.wh43{width:100%;}
+.mr_work_upload .l2 span{display:inline-block;}
+.mr_wu_con .mr_work_title{/* max-width: 540px; */word-break: break-all;}
+.mr_content_l .maxWidth{max-width: 940px;}
+.mr_wu_show .mr_c_r_t{padding-top:4px;}
+.mr_wu_con .l2 span{color:#333;}
+.mr_wu_show .mr_wu_con_m{color:#555;}
+
+.mr_wu_con .step_aside{margin-bottom:-23px;}
+.mr_wu_con .step_content{width:532px;}
+
+/*#worksShow{padding-bottom:56px;}*/
+.mr_self_l{position:relative;height:81px;}
+/*#selfDescription {padding-bottom: 56px;}*/
+#selfDescription .mr_head_r i,#expectJob .mr_head_r i,#skillsAssess .mr_head_r i,#customBlock .mr_head_r i{display: inline-block;width: 15px;height: 15px;background: url(../images/myresume/icons_mr.png) -53px -6px no-repeat;margin-right: 7px;}
+/* .mr_self_l img{width:73px;height:73px;border-radius:50%;border:4px solid #f7f7f7;box-shadow:0px 2px 3px #dfdfdf;} */
+.mr_self_l img{position:absolute;top:8px;left:4px;width:73px;height:73px;}
+.mr_self_l i{position:absolute;z-index:2;width:81px;height:81px;background:url(../images/myresume/mr_txs.png) no-repeat;} 
+.mr_moudle_content .mr_self_l{float:left;width:100px;padding-top:5px;}
+.mr_moudle_content .mr_self_r{float:left; color:#555;line-height:26px;}
+/*#expectJob{padding-bottom:70px;}*/
+#expectJob .expectjob_list{position:relative;}
+.expectjob_list .clearfixs li{font-size:16px;}
+#expectJob .mr_job_des i{position:absolute;width:32px;height:31px;background: url(../images/myresume/icons_mr.png) no-repeat;}
+#expectJob .mr_moudle_content .mr_job_t{left:0;top:1px;background-position:-160px -110px;}
+#expectJob .mr_moudle_content .mr_job_b{right:0;bottom:5px;background-position:-160px -153px;}
+.mr_moudle_content .mr_job_info{text-align:center;padding-left:28px;}
+.mr_job_info{color:#555;}
+.mr_name_li{width:188px;}
+.mr_jobtype_li{width:128px;}
+.mr_city_li{width:124px;}
+.mr_jobrange_li{width:94px;}
+.mr_job_info i{display:inline-block;margin-right:10px;background:url(../images/myresume/icons_mr.png) no-repeat;}
+.mr_name_li i{width:9px;height:19px;background-position:-97px -220px;}
+.mr_jobtype_li i{width:17px;height:17px;background-position:-93px -247px;}
+.mr_city_li i{width:14px;height:17px;background-position:-93px -273px;}
+.mr_jobrange_li i{width:18px;height:18px;background-position:-92px -294px;}
+.mr_job_info li *{vertical-align:middle;}
+.mr_job_info li{list-style:none;float:left;text-align:left;height:24px;line-height:24px;overflow:hidden;white-space:nowrap;text-overflow: ellipsis;}
+
+.mr_job_info p .mr_333{color:#333;}
+.expectjob_list .mr_job_des {position:relative;margin-top:28px;padding:15px 38px 25px 47px;}
+/* 
+#skillsAssess{padding-bottom:50px;}
+.mr_skill_con{padding-left:20px;margin-bottom:18px;}
+.mr_skill_con span{vertical-align:middle;display:inline-block;}
+.mr_skill_con .mr_skill_name{width:90px;height:22px;text-align:right;margin-right:13px;word-wrap:break-word;white-space:nowrap;overflow:hidden;text-overflow: ellipsis;}
+.mr_skill_con .mr_skill_name:after{
+content:"...";
+}
+.mr_skill_con .mr_skill_plan{position:relative;width:420px;height:8px;border-radius:4px;background-color:#eee;margin-right:21px;overflow:hidden;}
+.mr_skill_plan em{position:absolute;left:0;top:0;display:inline-block;height:8px;width:370px;background-color:#ac6198;border-radius:4px;overflow:hidden;} */
+#skillsAssess{padding-bottom:12px;}
+.mr_skill_con{;margin-bottom:18px;position:relative;}
+.mr_skill_con span{vertical-align:middle;display:inline-block;}
+.mr_skill_con .mr_skill_name{width:90%;height:24px;text-align:left;}
+/* .mr_skill_con .mr_skill_name:after{
+content:"...";
+} */
+.mr_skill_con .mr_skill_plan{position:relative;width:86%;height:8px;border-radius:4px;background-color:#eee;margin-right:10px;overflow:hidden;}
+.mr_skill_plan em{position:absolute;left:0;top:0;display:inline-block;height:8px;background-color:#ac6198;border-radius:4px;overflow:hidden;}
+/**
+ * @author pooky
+ * display:none -> display:inline-block;
+ */
+.mr_skill_con .mr_skill_delete{display:none; width:13px;height:13px;background:url(../images/myresume/skill_delete.png) center top no-repeat;cursor:pointer;}
+/**
+ * author pooky
+ * display:none -> display:block;
+ */
+.mr_moudle_content .mr_skill_add{display:none; padding-left:125px;*padding-left:104px;color:#999999;font-size:16px;}
+.mr_skill_add_button span{display:inline-block;width:88px;text-indent:22px;background:url(../images/myresume/skill_add.png) left 3px no-repeat;cursor:pointer;}
+#customBlock{padding-bottom:30px;}
+.mr_skill_add span.error{margin-top:0;}
+/**
+ * @author pooky
+ * display:none -> display:inline-block;
+ */
+.mr_skill_con .mr_skill_circle{display:none;cursor:pointer;width:20px;height:19px;position:absolute;left:122px;top:3px;background:url(../images/myresume/skill_circle.png) no-repeat center top;}
+.mr_skill_circle em{display:inline-block; cursor:pointer;width:29px;height:23px;line-height:17px;position:absolute;right: -4px;top: -22px;text-align: center;padding: 0px;color: #ffffff;background:url(../images/myresume/skill_img.png) center top no-repeat;font-size:11px;}
+
+
+#customBlock{padding-bottom:30px;}
+
+
+/*底部求职者职场状态*/
+.mr_self_state{position:relative;height:94px;background-color:#f6f6f6;}
+.mr_self_state *{list-style:none;}
+.mr_self_state .form_wrap{position:absolute;top:50%;left:50%;margin:-24px 0 0 -135px;border:1px solid #eaeced;width:270px;}
+.mr_self_state .form_wrap.active,.mr_self_state .form_wrap.active input{background-color:#f6f6f6;}
+.mr_self_state .form_wrap.active input{color:#999;}
+.mr_self_state .mr_button{width:240px;}
+.mr_self_state .select_color{border-color:#32dbb3;}
+.mr_self_state .xl_list{width:270px;}
+.mr_bottom{margin-top:5px;}
+#mr_pre_bot{margin:20px 0 40px 0;text-align:center;float:none;height:20px;}
+.mr_bottom *{list-style:none;}
+.mr_bottom .mr_bottom_l{float:left;position:relative;cursor:pointer;}
+.mr_bottom .mr_bottom_r{float:right;}
+.mr_bottom_l i{display:inline-block;margin-right:10px;width:16px;height:12px;background:url(../images/myresume/icons_mr.png) -90px -140px no-repeat;}
+.mr_bottom_l em{color:#c5c5c5;}
+.mr_bottom .mr_down:hover em{color:#333;}
+.mr_bottom .mr_down:hover i{background:url(../images/myresume/icons_mr.png) -117px -140px no-repeat;}
+.mr_bottom_r{text-align:right;color:#c6c6c6;}
+.mr_bottom_l .mr_down_tip{position:absolute; width:96px;/* height:79px; */top:-120px;left:12px;background-color:#fff;border:1px solid #e7e7e7;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;box-shadow:2px 2px 4px #efefe4;}
+
+.mr_down_tip i, .mr_down_tip em {position: absolute;background: none;border: 8px solid #e7e7e7;border-color:#e7e7e7 transparent transparent;display: block;font-size: 0px;height: 0;width: 0;}
+.mr_down_tip i{right:30px;bottom:-16px;}
+.mr_down_tip em{right:40px;bottom:-15px;border-color:#fff transparent transparent;;}
+.preview_down em{right:40px;}
+.mr_down_tip li{height:38px;line-height:38px;}
+.mr_down_tip li a{display:block;text-align:center;}
+.mr_down_tip li.active a{background-color:#f4f4f4;color:#555;}
+
+
+
+/*添加框*/
+.xw_input_div{position: relative;cursor: pointer;width: 170px;height: 40px;border: 1px solid #f1f3e9;background-color: #fff;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;margin-bottom: 9px;}
+.xw_input_div .mr_btn{border:none;text-align: left;padding:0 10px;width: 150px;height: 40px;line-height:24px;*height:44px;*line-height:40px;background-color: #fff;}
+
+.mr_input_div{position: relative;cursor: pointer;width: 390px;height: 46px;border: 1px solid #f1f3e9;background-color: #fff;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;margin-bottom: 9px;}
+.mr_add_work label{display: block;color: #afafa9;padding-bottom: 4px;padding-left: 3px;}
+.mr_input_div .mr_btn{border:none;text-align: left;padding:0 17px;width: 356px;height: 46px;line-height:24px;*height:44px;*line-height:40px;background-color: #fff;}
+.mr_timed_div{position:relative;width:190px;height: 46px;cursor:pointer;border: 1px solid #f1f3e9;background-color: #fff;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
+.mr_timed_div .xl_list{width:190px;}
+.mr_sta_time{margin-right:8px;}
+.mr_timed_div .mr_btn{border:none;text-align: left;padding-left: 17px;width: 130px;height: 45px;background-color: #fff;}
+.mr_time_area{margin-bottom:9px;}
+#mr_job_mce .tinymce{width:520px;height:148px;}
+/* #mr_job_mce table.mceLayout,#mr_job_mce table.mceLayout tr.mceFirst td,#mr_job_mce table.mceLayout tr.mceLast td,#mr_job_mce .mceIframeContainer{border:none;}
+#mr_job_mce td.mceToolbar{background-color:#fff;}
+#mr_job_mce table.mceLayout{border:1px solid #f1f3e9;} */
+.mr_upload_logo{position:absolute;right:88px;top:74px;width:120px;height:120px;border:1px solid #f1f3e9;background-color:#fff;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
+.mr_upload_logo img{position:absolute;z-index:1;width:0px;height:0px;}
+.mr_upload_logo div{position:absolute;text-align:center;z-index:2;width:120px;height:52px;padding-top:68px;}
+.mr_upload_logo div span{color:#999;}
+.mr_upload_logo div i{position:absolute;left:50px;top:37px;width:21px;height:18px;background:url(../images/myresume/upload_logo_shadow.png) -1px 0 no-repeat;}
+.mr_upload_logo div.active i{background-position:-24px 0;}
+.mr_upload_logo div.up i{background-position:-47px 0;}
+.mr_upload_logo div.active span{color:#ac6198;}
+.mr_upload_logo div.up span{color:#fff;}
+.mr_upload_logo div.up{filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#4C000000', endColorstr='#4C000000');background:rgba(0,0,0,0.3);}
+
+.mr_upload_logo input{position:absolute;z-index:3;cursor:pointer;width:120px;height:120px;filter: alpha(Opacity=0);opacity: 0;}
+.mr_ope .mr_delete{position:relative;cursor:pointer;float:right;font-size:16px;color:#ff685e;margin-top:13px;z-index:10;}
+.mr_delete_pop{position:absolute;width:146px;height:80px;right:-56px;top:-128px;font-size:16px;border:1px solid #e7e7e7;background-color:#fff;padding:18px 24px;box-shadow:2px 2px 4px #efefe4;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
+.mr_delete_pop div{margin-right:-24px;}
+.mr_delete_pop p{margin-bottom:20px;color:#333;}
+.mr_delete_pop span{display:inline-block;padding:7px 16px;}
+.mr_delete_pop .mr_del_ok{background-color:#ac6198;color:#fff;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
+.mr_delete_pop .mr_del_cancel{background-color:#fff;color:#333;}
+
+.mr_calendar_ym{position:absolute;top:49px;left:-1px;height:160px;width:244px;background-color:#fff;z-index:5000;border:1px solid #e7e7e7;border-radius:3px;box-shadow: 2px 2px 4px #e7e7e7;}
+.mr_calendar_ym *{list-style:none;}
+.mr_calendar_ym ul{float:left;}
+.mr_calendar_ym .mr_year{width:90px;height:160px;overflow:auto;}
+.mr_calendar_ym .mr_year li{width:72px;height:32px;cursor:pointer;line-height:32px;background-color:#fff;color:#333;text-align:center;}
+.mr_calendar_ym .mr_year li:hover{background-color:#f4f4f4 !important;color:#333 !important;}
+.mr_calendar_ym .mr_year li.active{background-color:#D3B8CC !important;color:#fff !important;}
+
+/* .mr_calendar_ym .mr_year li.today{background: #4ed6b7;color:#fff;} */
+/* .mr_calendar_ym .mr_year li.today:hover{background: #4ed6b7;color:#fff;} */
+.mr_calendar_ym .mr_year li.disable{color:silver;cursor:normal;}
+.mr_calendar_ym .mr_year li.disable:hover{color:silver !important;cursor:normal !important;background-color:#fff !important;}
+
+.mr_calendar_ym .mr_month{word-wrap:normal;padding:20px 0px 15px 15px;background-color:#fff;width:136px;}
+.mr_calendar_ym .mr_month li{float:left;cursor:pointer;width:33%;height:22px;line-height:22px;color:#333;background-color:#fff;margin:0 0 10px 0;}
+.mr_calendar_ym .mr_month span{padding:0 6px;border-radius:3px;}
+.mr_calendar_ym .mr_month span.active{background-color:#D3B8CC !important;color:#fff !important;}
+.mr_calendar_ym .mr_month span:hover{background-color:#f4f4f4;color:#333;}
+/* .mr_calendar_ym .mr_month span.today {background-color:#ddd;} */
+/* .mr_calendar_ym .mr_month span.today:hover {background-color:#ac6198;color:#fff;} */
+.mr_calendar_ym .mr_month span.disable {color:silver;cursor:normal;}
+.mr_calendar_ym .mr_month span.disable:hover {color:silver !important;cursor:normal !important;background-color:#fff !important;}
+
+.mr_month .mr0{margin-right:0;}
+.mr_month .mb0{margin-bottom:0;}
+
+
+
+
+/**
+ *	上传作品 
+ */
+.mr_worksshow_tab {width: 305px;cursor: pointer;}
+.mr_worksshow_tab .disabled {color: silver;cursor: normal;}
+.mr_worksshow_tab span {display: inline-block;width: 150px;height: 48px;line-height: 48px; color: #777;font-size: 17px;}
+.mr_worksshow_tab span.selected { height: 47px; background: transparent;}
+.add_worksshow_form .mr_input_div {width: 520px;}
+.add_worksshow_form .mr_btn {width: 484px;}
+.mr_wo_preview {color:#ac6198;}
+.mr_wo_preview ol,.mr_wu_con_m ol,.mr_self_r ol,.mr_expjob_content ol,.mr_wo_preview ul,.mr_wu_con_m ul,.mr_self_r ul,.mr_expjob_content ul{padding-left:19px;}
+.olpf ol,.olpf ul{padding-left:19px;}
+.mr_worksshow_upimage {position: relative;background:#fff;border-radius: 3px;border: 1px solid #f1f3e9;margin-bottom: 15px;width: 530px;height: 360px;}
+.mr_worksshow_upimage div{position:absolute;z-index:9;text-align:center;width: 495px;height: 184px;padding:176px 0 0 35px;}
+.mr_worksshow_upimage div span{color:#777;}
+.mr_worksshow_upimage div i{position:absolute;left:162px;top:152px;width:60px;height:46px;background:url(../images/myresume/upPicCloud.png) 0 0 no-repeat;}
+.mr_worksshow_upimage div.active i{background-position:0 -56px;}
+.mr_worksshow_upimage div.up i{background-position:0 -113px;}
+.mr_worksshow_upimage div.active span{color:#ac6198;}
+.mr_worksshow_upimage div.up span{color:#fff;}
+.mr_worksshow_upimage div.up{filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#4C000000', endColorstr='#4C000000');background:rgba(0,0,0,0.3);}
+
+.mr_worksshow_upimage .worksshow_up {z-index: 10;position: absolute; left: 0;top: 0;cursor:pointer; width: 100%;height: 100%;filter: alpha(Opacity=0);opacity: 0;}
+.mr_worksshow_upimage .worksshow_text {z-index: 5;position: absolute;left: 50%;top: 50%;margin-left: -40px;color: #777;}
+.mr_worksshow_upimage .worksshow_img {z-index: 5;position: absolute;left: 0;top: 0;}
+.mr_self_sitelink {font-weight:bold;/*display:inline-block; width:558px;*/ word-break:break-all;color: #ac6198;}
+.mr_self_sitelink:hover {color: #ac6198;}
+.mr_wu_show {margin-bottom: 20px;}
+
+
+
+

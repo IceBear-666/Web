@@ -1,0 +1,422 @@
+<include file="Public/header" />
+
+<body>
+
+
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+	
+	<div id="container">
+	
+	    <div class="sidebar">
+	    
+	    	<if condition="$gj neq '' or $xl neq '' or $yx neq '' or $gx neq '' or $st neq '' ">
+	    	<div id="selected" class="greybg">
+                <div>已选择</div>
+                <ul class="reset">
+                	<if condition="$yx neq '' ">
+						<li><span><strong>月薪范围</strong>：{$yx}</span><span class="select_remove"></span></li>
+					</if>
+                    <if condition="$gj neq '' ">
+						<li><span><strong>工作经验</strong>：{$gj}</span><span class="select_remove"></span></li>
+					</if>
+					<if condition="$xl neq '' ">
+						<li><span><strong>最低学历</strong>：{$xl}</span><span class="select_remove"></span></li>
+					</if>
+					<if condition="$gx neq '' ">
+						<li><span><strong>工作性质</strong>：{$gx}</span><span class="select_remove"></span></li>
+					</if>
+					<if condition="$st neq '' ">
+						<li><span><strong>发布时间</strong>：{$st}</span><span class="select_remove"></span></li>
+					</if>
+                	
+                </ul>
+            </div>
+            </if>
+	    
+	      <div id="options" class="greybg">
+	        <dl <if condition="$yx neq '' ">class="slideUp"</if> >
+	          <dt>月薪范围 <em <if condition="$yx neq '' ">class="transform"</if>></em></dt>
+	          <dd <if condition="$yx neq '' ">style="display:none;"</if> >
+	            <div>2k以下</div>
+	            <div>2k-5k</div>
+	            <div>5k-10k</div>
+	            <div>10k-15k</div>
+	            <div>15k-25k</div>
+	            <div>25k-50k</div>
+	            <div>50k以上</div>
+	          </dd>
+	        </dl>
+	        <dl <if condition="$gj neq '' ">class="slideUp"</if>>
+	          <dt>工作经验 <em <if condition="$gj neq '' ">class="transform"</if>></em></dt>
+	          <dd <if condition="$gj neq '' ">style="display:none;"</if>>
+	            <div>不限</div>
+	            <div>应届毕业生</div>
+	            <div>1年以下</div>
+	            <div>1-3年</div>
+	            <div>3-5年</div>
+	            <div>5-10年</div>
+	            <div>10年以上</div>
+	          </dd>
+	        </dl>
+	        <dl <if condition="$xl neq '' ">class="slideUp"</if>>
+	          <dt>最低学历 <em <if condition="$xl neq '' ">class="transform"</if>></em></dt>
+	          <dd <if condition="$xl neq '' ">style="display:none;"</if>>
+	            <div>不限</div>
+	            <div>大专</div>
+	            <div>本科</div>
+	            <div>硕士</div>
+	            <div>博士</div>
+	          </dd>
+	        </dl>
+	        <dl <if condition="$gx neq '' ">class="slideUp"</if>>
+	          <dt>工作性质 <em <if condition="$gx neq '' ">class="transform"</if>></em></dt>
+	          <dd <if condition="$gx neq '' ">style="display:none;"</if>>
+	            <div>全职</div>
+	            <div>兼职</div>
+	            <div>实习</div>
+	          </dd>
+	        </dl>
+	        <dl <if condition="$st neq '' ">class="slideUp"</if>>
+	          <dt>发布时间 <em <if condition="$st neq '' ">class="transform"</if>></em></dt>
+	          <dd <if condition="$st neq '' ">style="display:none;"</if>>
+	            <div>今天</div>
+	            <div>3天内</div>
+	            <div>一周内</div>
+	            <div>一月内</div>
+	          </dd>
+	        </dl>
+	      </div>
+	      
+	      
+	      <!-- 广告位：主站搜索--QQ群 --> 
+	      <div>
+	      <img src="/Public/Images/w3c.png" title="w3c"  border="0" height="80" width="230">
+	      </div>
+	      <div>
+	      <img src="/Public/Images/jquery.jpg" title="JQ学校" alt="JQ学校" border="0" height="80" width="230">
+	      </div>
+	      <!-- <script type="text/javascript">BAIDU_CLB_SLOT_ID = "946969";</script> 
+	      
+	      <script type="text/javascript" src="zhaopin_files/o.js"></script>
+	      <div id="BAIDU_DUP_wrapper_946969_0"></div>
+	      <script charset="utf-8" src="zhaopin_files/ecom"></script>
+	      <script charset="utf-8" src="zhaopin_files/fixed7o.js"></script> -->
+	      
+	      <script type="text/javascript">
+			$(document).ready(function(){
+				function test(){
+					var moon1 = $('#search_input').val();
+					if($.trim(moon1).indexOf("产品") != -1 || $.trim(moon1).toLowerCase().indexOf("pm") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>产品经理</span>QQ群<div class='f18'>跟同行聊聊</div><p>168365015</p></div>");
+					}
+					else if($.trim(moon1).indexOf("前端") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>前端</span>QQ群<div class='f18'>跟同行聊聊</div><p>160541839</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("java") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>Java</span>QQ群<div class='f18'>跟同行聊聊</div><p>348067796</p></div>");
+					}
+					else if($.trim(moon1).indexOf("安卓") != -1 || $.trim(moon1).toLowerCase().indexOf("android") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>安卓</span>QQ群<div class='f18'>跟同行聊聊</div><p>337256493</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("ios") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>iOS</span>QQ群<div class='f18'>跟同行聊聊</div><p>376071731</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("php") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>PHP</span>QQ群<div class='f18'>跟同行聊聊</div><p>241217149</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("python") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>Python</span>QQ群<div class='f18'>跟同行聊聊</div><p>146478595</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("c#") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>C#交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>171373938</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("c++") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>C++交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>317871743</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("vb") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>VB交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>226404128</p></div>");
+					}
+					else if($.trim(moon1).indexOf("运营") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>运营学习交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>241217305</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("unity3d") != -1 || $.trim(moon1).toLowerCase().indexOf("u3d") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>Unity3D交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>189473564</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("html5") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>HTML5交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>220572558</p></div>");
+					}
+					else if($.trim(moon1).indexOf("运维") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>运维交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>330106484</p></div>");
+					}
+					else if($.trim(moon1).indexOf("测试") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>测试交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>237531443</p></div>");
+					}
+					else if($.trim(moon1).indexOf("设计") != -1 || $.trim(moon1).toLowerCase().indexOf("ui") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>视觉设计交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>317430486</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("mysql") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>MySQL交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>374169457</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("mac") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>Mac交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>253270205</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("windowsphone") != -1 || $.trim(moon1).toLowerCase().indexOf("wp") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>WindowsPhone交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>373165650</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("cocos2d-x") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>COCOS2D-X交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>105288705</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("hadoop") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>Hadoop交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>339270838</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("flash") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>Flash交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>304949107</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("oracle") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>Oracle交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>286235579</p></div>");
+					}
+					else if($.trim(moon1).indexOf("法务") != -1 || $.trim(moon1).indexOf("专利") != -1){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>互联网法务交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>362296725</p></div>");
+					}
+					else if($.trim(moon1).indexOf("财务") != -1 || $.trim(moon1).indexOf("会计") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>财务、会计交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>367294795</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("bd") != -1 || $.trim(moon1).indexOf("渠道") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>互联网BD精英交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>258696928</p></div>");
+					}
+					else if($.trim(moon1).toLowerCase().indexOf("hr") != -1 || $.trim(moon1).indexOf("人力") != -1 ){
+					$('#container .sidebar .qq_ad').append("<div class='qq_group'>加入<span>互联网HR交流</span>QQ群<div class='f18'>跟同行聊聊</div><p>385219044</p></div>");
+					};
+				}
+				
+				//test();
+				
+			})
+		</script> 
+	      
+	      <!-- 对外合作广告位  --> 
+	      <!-- 对外合作广告位  
+	      
+	    <img src="__PUBLIC__/Images/partime_weixin.png" alt="找实习，扫我吧" class="partime_weixin" height="145" width="233">
+		--> 
+		</div>
+	    
+	    <div class="content">
+	    
+	      <include file="Public/index_search" />	      
+	      
+	      <div class="breakline"></div>
+	      
+	      <include file="Public/zhaopin_city" />
+	      
+	      <div id="tip_didi" class="dn"> <span>亲，“嘀嘀打车”已更名为“滴滴打车”了哦，我们已帮您自动跳转~</span> <a href="javascript:;">我知道了</a> </div>
+	      
+	      <ul class="hot_pos reset">
+	      
+	      	<volist name="list" id="v">
+	      	
+	      		<?php 
+		             $leads_arr = unserialize($v['leads']);
+		        ?>
+	      
+		        <li class="odd clearfix">
+		          <div class="hot_pos_l">
+		            <div class="mb10"> <a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}/source/search" title="{$v.zhiwei_mingcheng}" target="_blank">{$v.zhiwei_mingcheng}</a> &nbsp; <span class="c9">[{$v.gongzuo_chengshi}]</span> </div>
+		            <span><em class="c7">月薪：</em>{$v.yuexin_min}k-{$v.yuexin_max}k</span> <span><em class="c7">经验：</em> {$v.gongzuo_jingyan}</span> <span><em class="c7">最低学历： </em>{$v.xueli}</span> <br>
+		            <span><em class="c7">职位诱惑：</em>{$v.zhiwei_youhuo}</span> <br>
+		            <span>{$v.job_addtime|getLongTimeSpace=###}前发布</span> </div>
+		          <div class="hot_pos_r">
+		            <div class="apply"> <a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}/source/search" target="_blank">投个简历</a> </div>
+		            <div class="mb10"><a href="{$Think.WEB_URL}Gongsi/info/id/{$v.uid}" title="{$v.company_name}" target="_blank">{$v.company_name}</a></div>
+		            <span><em class="c7">领域： </em>{$v.hangye}</span> <span><em class="c7">创始人：</em> {$leads_arr[0]['name']}</span> <br>
+		            <span><em class="c7">阶段： </em>{$v.jieduan}</span> <span><em class="c7">规模： </em>{$v.guimu}</span>
+		            <ul class="companyTags reset">
+		              <?php 
+		              	$arr = explode(",",$v['tags']);
+						foreach($arr as $k=>$v){
+		              ?>
+		              	<li>{$v}</li>
+		              <?php
+		              	}
+					  ?>
+		            </ul>
+		          </div>
+		        </li>
+		        
+	        </volist>	        
+	        
+	      </ul>
+	      
+	      <?php if($page_count>0 && $list){ ?>
+	      
+		      <div class="Pagination myself">
+			      {$page}
+		      </div>
+	      
+	      <?php }else{ ?>
+	      
+		      <!--没有搜索结果       -->
+			  <div class="noresult"> 暂时没有符合该搜索条件的职位 <br>
+			        <span>请重新修改搜索条件后再进行搜索</span>
+			  </div>
+	      
+	      <?php }?>
+	      
+	    </div>
+	    <script>
+			$(function(){
+				/***************************
+			 	 * 分页
+			 	 */
+			 	<?php if($page_count>0 && $list){ ?>
+			 	 
+			 	$('.Pagination').pager({
+					      currPage: "{$currPage}",
+					      pageNOName: "pn",
+					      form: "searchForm",
+					      pageCount: "{$page_count}",
+					      pageSize:  5
+				});
+			 	
+			 	<?php }?>
+					
+				$(".workplace dd").not('.more').children('a').click(function(){
+					var cityVal = $(this).text();
+					var cityjob = $('#box_expectCity').attr("data-cityjob");
+					if(cityjob == 'true'){
+						return true;
+					}else{
+						$('#lc').val(1);
+						editForm("cityInput" , cityVal);
+						return false;
+					}
+				});
+			
+				$("#box_expectCity dd a").click(function(){
+					var cityjob = $('#box_expectCity').attr("data-cityjob");
+					var cityVal = $(this).text();
+					if(cityjob == 'true'){
+						return true;
+					}else{
+						$('#lc').val(1);
+						editForm("cityInput" , cityVal);
+						return false;
+					}
+				});
+				
+				$('#options dd div').click(function(){
+					var firstName = $(this).parents('dl').children('dt').text();
+					var fn = $.trim(firstName);
+					if (fn=="月薪范围"){
+						editForm("yxInput" , $(this).html());
+					}
+					else if(fn=="工作经验"){
+						editForm("gjInput" , $(this).html());
+					}
+					else if(fn=="最低学历"){
+						editForm("xlInput" , $(this).html());
+					}
+					else if(fn=="工作性质"){
+						editForm("gxInput" , $(this).html());
+					}
+					else if(fn=="发布时间"){
+						editForm("stInput" , $(this).html());
+					}
+				});
+				
+				$('#selected ul').delegate('li span.select_remove','click',function(event){
+					var firstName = $(this).parent('li').find('strong').text();
+					var fn = $.trim(firstName);
+					if (fn=="月薪范围")
+						editForm("yxInput" , "");
+					else if(fn=="工作经验")
+						editForm("gjInput" , "");
+					else if(fn=="最低学历")
+						editForm("xlInput" , "");
+					else if(fn=="工作性质")
+						editForm("gxInput" , "");
+					else if(fn=="发布时间")
+						editForm("stInput" , "");
+				});
+				
+				/* search结果飘绿	*/
+				(function($) {
+					var searchVal = $('#search_input').val();
+					var reg = /\s/g;     
+					searchVal = searchVal.replace(reg, "").split(""); 
+					
+					var resultL = '';
+					var resultR = '';
+					$('.hot_pos li').each(function(){
+						resultL = $('.hot_pos_l a',this).text().split("");
+						$.each(resultL,function(i,v){
+							if($.inArray(v.toLowerCase(),searchVal) != -1 || $.inArray(v.toUpperCase(),searchVal) != -1){
+								resultL[i] = '<span>'+ v +'</span>';
+							}
+						});
+						$('.hot_pos_l a',this).html(resultL.join(''));
+						
+						resultR = $('.hot_pos_r .mb10 a',this).text().split("");
+						$.each(resultR,function(i,v){
+							if($.inArray(v.toLowerCase(),searchVal) != -1 || $.inArray(v.toUpperCase(),searchVal) != -1){
+								resultR[i] = '<span>'+ v +'</span>';
+							}
+						});
+						$('.hot_pos_r .mb10 a',this).html(resultR.join(''));
+					});
+					
+				})(jQuery);
+				
+				//didi tip
+			   	if($.cookie('didiTip') != 1 && false){
+					$('#tip_didi').show();
+				}
+				$('#tip_didi a').click(function(){
+					$(this).parent().remove();
+					$.cookie('didiTip',1,{ expires: 30, path: '/'});
+				});
+				
+				//统计到职位详情的来源脚本 add by Vee ｜2014-7-3
+				/* $('.hot_pos .hot_pos_l a').click(function(e){
+					e.preventDefault();
+					var href=$(this).attr("href");
+					window.location.href=href+"?source=search"; //搜索结果页
+				}); */
+				//end
+				$(".partime_delete").click(function(){
+					$(this).parent().hide() ;
+					$(".partime_weixin").show() ;
+				})
+			});
+			
+			function editForm(inputId,inputValue){
+				$("#"+inputId).val(inputValue);
+				var keyword = $.trim($('#search_input').val());
+				var reg =  /[`~!@\$%\^\&\*\(\)_<>\?:"\{\},\\\/;'\[\]]/ig;
+				var re = /#/g;
+				var r = /\./g;
+				var kw = keyword.replace(reg," ");
+				if(kw == ''){
+					$('#searchForm').attr('action','{$Think.WEB_URL}Jobs/zhaopin').submit();	
+				}else{
+					kw = kw.replace(re,'井');
+					kw = kw.replace(r,'。');
+					$('#searchForm').attr('action','{$Think.WEB_URL}Jobs/zhaopin/'+kw).submit();
+				}
+				//$("#searchForm").submit();
+			}
+		</script>
+	    <div class="clear"></div>
+	    <input id="resubmitToken" value="" type="hidden">
+	    <a id="backtop" title="回到顶部" rel="nofollow"></a> 
+    </div>
+	<!-- end #container --> 
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

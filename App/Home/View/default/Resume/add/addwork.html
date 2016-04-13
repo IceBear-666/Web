@@ -1,0 +1,306 @@
+<div class="baseinfo-top">
+	<h3>工作经历</h3>
+</div>
+	
+<div id="workExperience" class="item_container_target">
+   <div class="list_show">
+  	<php>if($exp_list){</php>
+    <div class="mr_jobe_list">
+            
+      <div class="clearfixs">
+    	 <table>
+        	<tr><th width="200px">工作单位</th><th width="200px">职位</th><th width="200px">时间</th><th width="200px">编辑</th></tr>
+          <volist name="exp_list" id="v">
+        	<tr><td>{$v.companyName}</td><td>{$v.positionName}</td><td><span>{$v.startDate}</span><span> — </span><span>{$v.endDate}</span></td><td>
+          <div class="mr_edit mr_c_r_t" data-expid="{$v.id}" data-logo="{$v.companyLogo}" data-comname="{$v.companyName}" data-posname="{$v.positionName}" data-workcontent="{$v.workContent}" data-jobContent="{$v.jobContent}" data-startime="{$v.startDate}" data-endtime="{$v.endDate}" data-content="{$v.workContent}" data-jobcontent="{$v.jobContent}" data-companyproperty="{$v.company_property}" data-companysize="{$v.company_size}" data-companycat="{$v.company_cat}" data-workcat="{$v.work_cat}" data-department="{$v.department}" data-workcity="{$v.work_city}" data-salarymonth="{$v.salary_month}" data-reterencename="{$v.reterence_name}" data-reterencerelation="{$v.reterence_relation}" data-reterencecompany="{$v.reterence_company}" data-reterenceposition="{$v.reterence_position}" data-reterencephone="{$v.reterence_phone}" data-reasons="{$v.reasons}">  <i></i><em>编辑</em> </div>
+          </td>
+          </tr>
+          </volist>
+          </table>
+      </div>
+      
+    </div>
+    <php>}</php>
+  </div>   
+
+<div class="mr_moudle_content ">
+  <form class="jobExpForm " id="addJobForm">
+    <div class="mr_add_work myr_info_list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+    		<tr>
+              <th class="pt10"><label>工作性质</label></th>
+              <td>
+                  <div class="myr_radio">
+                      <label class="radio">
+			            <input type="radio" name="workCat" id="workCat1" value="全职" data-toggle="radio" class="custom-radio"
+                  <?php if($info["maritalstatus"] == "全职"): ?>checked=""<?php endif; ?> 
+                  ><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+			            全职
+			         </label>
+			         &nbsp;&nbsp;
+			         <label class="radio">
+			            <input type="radio" name="workCat" id="workCat2" value="实习(全职)" data-toggle="radio"  class="custom-radio"
+                   <?php if($info["maritalstatus"] == "实习(全职)"): ?>checked=""<?php endif; ?> 
+                  ><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+			            实习(全职)
+			          </label>
+			           <label class="radio">
+			            <input type="radio" name="workCat" id="workCat3" value="实习(兼职)" data-toggle="radio" class="custom-radio"
+                   <?php if($info["maritalstatus"] == "实习(兼职)"): ?>checked=""<?php endif; ?> 
+                   ><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>实习(兼职)
+			          </label>
+			           <label class="radio">
+			            <input type="radio" name="workCat" id="workCat4" value="兼职" data-toggle="radio" class="custom-radio"
+                   <?php if($info["maritalstatus"] == "兼职"): ?>checked=""<?php endif; ?> 
+                   ><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>兼职
+			          </label>
+                <input id="work_cat" name="work_cat" type="hidden" value="{$info.work_cat}">
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <th class="pt10"><label>工作单位</label></th>
+              <td>
+                  <div class="myr_input_div_l">
+                      <input type="text" name="companyName" class="form-control">
+                  </div>
+              </td>
+          </tr>
+          <tr>
+        		<th class="pt10"><label>单位性质</label></th>
+              <td >
+              <div class="form_wrap normal_s" style="*z-index:4;">
+             	<div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="company_property_text" />
+                <input type="button" class="mr_button" name="company_property" id="company_property" />
+                <div class="xl_list dn">
+                  <ul class="ul_dwxz">
+                      <li>外资-欧美</li>
+          						<li>外资-非欧美</li>
+          						<li>合资-欧美</li>
+          						<li>合资-非欧美</li>
+          						<li>国企</li>
+          						<li>民营公司</li>
+          						<li>外企代表处</li>
+          						<li>政府机关</li>
+          						<li>事业单位</li>
+          						<li>非盈利机构</li>
+          						<li>上市公司</li>
+          						<li>创业公司</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+          </tr>
+          <tr>
+        		<th class="pt10"><label>公司规模</label></th>
+              <td >
+              <div class="form_wrap normal_s" style="*z-index:4;">
+             	<div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="company_size_text" />
+                <input type="button" class="mr_button" name="company_size" id="company_size" />
+                <div class="xl_list dn">
+                  <ul class="ul_gsgm">
+                      <li>少于50人</li>
+          						<li>50-149人</li>
+          						<li>150-499人</li>
+          						<li>500-999人</li>
+          						<li>1000-9999人</li>
+          						<li>10000人以上</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+          </tr>
+          <tr>
+        		<th class="pt10"><label>行业类别</label></th>
+              <td >
+              <div class="form_wrap normal_s" style="*z-index:4;">
+             	<div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="company_cat_text" />
+                <input type="button" class="mr_button" name="company_cat" id="company_cat" />
+                <div class="xl_list dn">
+                  <ul class="ul_hylb">
+                      <li>少于50人</li>
+          						<li>50-149人</li>
+          						<li>150-499人</li>
+          						<li>500-999人</li>
+          						<li>1000-9999人</li>
+          						<li>10000人以上</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+          </tr>
+           <tr>
+              <th class="pt10"><label>工作职位</label></th>
+              <td>
+                  <div class="myr_input_div_l">
+                      <input type="text" name="positionName" class="form-control">
+                  </div>
+              </td>
+          </tr>
+           <tr>
+              <th class="pt10"><label>所在部门</label></th>
+              <td>
+                  <div class="myr_input_div_l">
+                      <input type="text" name="department" class="form-control">
+                  </div>
+              </td>
+          </tr>
+           <tr>
+              <th class="pt10"><label>工作城市</label></th>
+              <td>
+                  <div class="myr_input_div_l">
+                      <input type="text" name="work_city" class="form-control">
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <th class="pt10"><label>职责描述</label></th>
+              <td class="tb_textarea">
+                <textarea class="resumetextarea form-control" id="workContent" name="workContent"></textarea>   
+                <span class="tiprighttext icon-resume icon-business_bulb" title="GPA(4分制)"></span> 
+   			        </td>
+          </tr>
+           <tr class="lowUse">
+              <th class="pt10"><span class="lowFreqency">低频</span><label>职位月薪(税前)</label></th>
+              <td>
+                  <div class="form_wrap normal_s" style="*z-index:4;">
+                  <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                    <input type="hidden" name="salary_month_text" />
+                    <input type="button" class="mr_button" name="salary_month" id="salary_month" />
+                    <div class="xl_list dn">
+                      <ul class="ul_yuexin">
+                        <li>1000以下</li>
+                        <li>1000-1499</li>
+                        <li>1500-1999</li>
+                        <li>2000-2999</li>
+                        <li>3000-4499</li>
+                        <li>4500-5999</li>
+                        <li>6000-7999</li>
+                        <li>8000-9999</li>
+                        <li>10000-11999</li>
+                        <li>12000-14999</li>
+                        <li>15000-24999</li>
+                        <li>25000以上</li>
+                      </ul>
+                    </div>
+                  </div>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <th class="pt10"><label>在职时间</label></th>
+              <td>
+                  <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button" readonly class="text input date" placeholder="选择时间" name="startTime"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+              </td>
+          </tr>
+           <tr>
+              <th class="pt10"><label>离职时间</label></th>
+              <td>
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button"  readonly class="text input date" placeholder="选择时间" name="endTime"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+              </td>
+          </tr>
+          
+   		<tr>
+              <th class="pt10"><label>工作内容</label></th>
+              <td class="tb_textarea">
+                <textarea class="resumetextarea form-control" id="jobContent" name="jobContent"></textarea>
+   			</td>
+          </tr>
+            <tr class="lowUse">
+              <th class="pt10"><span class="lowFreqency">低频</span><label>离职原因</label></th>
+              <td>
+                  <div class="myr_input_div_l">
+                      <input type="text" name="reasons" class="form-control">
+                  </div>
+              </td>
+          </tr>
+            <tr class="lowUse">
+              <th class="pt10"><span class="lowFreqency">低频</span><label>证明人姓名</label></th>
+              <td>
+                  <div class="myr_input_div_l">
+                      <input type="text" name="reterence_name" class="form-control">
+                  </div>
+              </td>
+          </tr>
+         <tr class="lowUse">
+              <th class="pt10"><span class="lowFreqency">低频</span><label>证明人关系</label></th>
+              <td>
+                  <div class="myr_input_div_l">
+                      <input type="text" name="reterence_relation" class="form-control">
+                  </div>
+              </td>
+          </tr>
+            <tr class="lowUse">
+              <th class="pt10"><span class="lowFreqency">低频</span><label>证明人单位</label></th>
+              <td>
+                  <div class="myr_input_div_l">
+                      <input type="text" name="reterence_company" class="form-control">
+                  </div>
+              </td>
+          </tr>
+            <tr class="lowUse">
+              <th class="pt10"><span class="lowFreqency">低频</span><label>证明人职位</label></th>
+              <td>
+                  <div class="myr_input_div_l">
+                      <input type="text" name="reterence_position" class="form-control">
+                  </div>
+              </td>
+          </tr>
+           <tr class="lowUse">
+              <th class="pt10"><span class="lowFreqency">低频</span><label>证明人联系方式</label></th>
+              <td>
+                  <div class="myr_input_div_l">
+                      <input type="text" name="reterence_phone" class="form-control">
+                  </div>
+              </td>
+          </tr>
+      	</table>
+  <!--     	<div class="mr_ope clearfixs">
+            <input type="submit" class="mr_save" value="保存" />
+            <a href="javascript:;" class="mr_cancel">取消</a> 
+        </div> -->
+         <div class="btn-group">
+            <input type="submit" class="btn-resumeac mr_save" value="保存" />
+            <input type=button value="保存并下一项"  class="btn-resumeac mr_next" onclick="submitWorkFrom(); tonext();">
+            <!-- <a href="javascript:" class="btn-resumeac mr_next" id="next" >下一步</a> -->
+        </div>
+       <!--   <div class="mr_head_l">
+	        <div class="mr_head_r "> <i></i><em>再添加一项</em> </div>
+	        
+	    </div>	 -->
+	<!--     <div class="mr_moudle_head clearfixs">
+		  <div class="mr_head_r"> <i></i><em>添加</em> </div>
+		</div> -->
+    </div>
+  </form>
+</div>
+</div>
+<script type="text/javascript">
+  function submitWorkFrom(){
+  $('#addJobForm').submit();
+  }
+</script>

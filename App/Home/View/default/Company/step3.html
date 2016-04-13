@@ -1,0 +1,68 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/fuwu.css" />
+
+	<div class="fuwubox"> 
+    <div class="login_logo"> <a href="/"><img src="/Public/Home/images/uslogo.png" /></a></div> 
+	   <div class="fwbox">
+         <div class="toptl">开通招聘服务</div> 
+         <div class="os_step_3"></div>
+         
+           <div class="stform">
+       
+              <div class="step3">
+                <h2 class="f20">验证邮件已发送至：{$myinfo.email}</h2>
+                <span>请登录邮箱点击邮件内的链接，验证后即可发布职位</span>
+                <input type="hidden" value="{$myinfo.uid}" name="userid" id="userid">
+      			<input type="hidden" value="0" id="resend_type">
+              </div>
+              
+             <div class="myask">
+               <h3>没有收到确认邮件，怎么办？</h3>
+              1.邮箱地址填写错误？&nbsp;<a href="/User/register.html">重新填写邮箱地址</a><br />
+              2.看看是否在邮箱的垃圾邮件。广告邮件目录里<br />
+              3.稍等几分钟，若还未收到邮件，&nbsp;<a href="javascript:void(0)" id="resend">重新发送邮件验证</a><br />
+              4，还未收到验证邮件，请联系：service@jobsminer.cc，注明“未收到验证邮件”，我们会为您重新发送。<br />
+             </div>
+          </div>
+          
+	   </div> 
+  </div> 
+
+<script>
+
+$('#resend').click(function(event){
+
+  	var userid = $('#userid').val();
+  	
+	$.ajax({
+
+        type: "POST",
+        url: '/User/resendEmail/',
+        data: {userid:userid},
+        dataType: "json",
+        //async:false,
+
+        success: function(json){
+        	if(json.status==1){
+    			alert("邮件发送成功，请登录邮箱查收。");   				
+
+    		}
+    		else {
+    			alert(json.info);
+    			
+    		}
+        },
+        error:function(){
+        	alert("服务器繁忙，请稍后再试");
+			return false;
+        }
+    });
+	
+	return true;
+
+})
+
+</script>
+
+<include file="Public/footer" />

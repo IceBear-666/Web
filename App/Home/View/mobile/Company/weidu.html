@@ -1,0 +1,59 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/company.css" />
+
+<div class="tilhed"> <a class="golevel" href="/User"></a>
+  <div class="mbtitle">未读简历</div>
+  <a class="gohome" href="/"></a> </div>
+<table class="sctab" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="#" class="cur">职位</a></td>
+    <td><a  href="#">时间</a></td>
+  </tr>
+</table>
+<div class="mbbox mt14">
+
+<!-- 职位 -->
+  <div class="zwyuan">
+    <table class="myzhiwei" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="toplk" colspan="2"><a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}" >产品经理</a></td>
+      </tr>
+      <tr>
+        <td><i class="zwico1"></i>上海</td>
+        <td><i class="zwico2"></i>应届毕业生</td>
+      </tr>
+      <tr>
+        <td><i class="zwico3"></i>1k-2k </td>
+        <td><i class="zwico4"></i>大专</td>
+      </tr>
+      <tr>
+        <td class="botlk" colspan="2"><a href="{$Think.WEB_URL}Company/interview/type/unhandle/jid/{$v.jid}">{$v.jid|getApplyCount=###}简历</a></td>
+      </tr>
+    </table>
+  </div>
+  
+<!-- 时间 -->  
+  <div class="zwyuan">
+    <table class="myjianli" border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tbody>
+        <tr>
+          <td class="toplk" colspan="2"><a href="http://xiaowei/Jobs/info/id/14" title="Android">ceo</a> <a href="javascript:;" class="star " data-deliverid="23"></a></td>
+        </tr>
+        <tr>
+          <td class="botlk" colspan="2"><a href="/User/resumePreview/uid/100021/aid/23">王伟</a></td>
+        </tr>
+        <tr>
+          <td colspan="2"><i class="zwico1"></i>实验中心 · 计算机 · 本科 </td>
+        </tr>
+        <tr>
+          <td style="border-bottom:none; border-right:1px solid #ddd;" width="65%"><i class="zwico4"></i>输出学历</td>
+          <td style="border-bottom:none; cursor:pointer;" class="colac" align="center"><div class="look_resume_link"> <span data-flag="flag" data-deliverid="23">查看联系方式 </span> </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  
+</div>
+<include file="Public/footer" />

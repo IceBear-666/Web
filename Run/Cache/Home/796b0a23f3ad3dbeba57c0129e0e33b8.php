@@ -1,0 +1,204 @@
+<?php if (!defined('THINK_PATH')) exit();?>
+<script type="text/javascript" src="/Public/Home/js/jquery.1.10.1.min.js" ></script>
+<script type="text/javascript" src="/Public/Home/js/jquery.lib.min.js"></script>
+
+<script src="/Public/Home/js/ajaxfileupload.js" type="text/javascript"></script>
+
+<!--New delete-->
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/fontscss.css" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/external.min.css" />
+<script type="text/javascript" src="/Public/Home/js/company/jobs.js"></script>        
+<script type="text/javascript" src="/Public/Home/js/company/company.js"></script>         
+<script type="text/javascript" src="/Public/Home/js/core.min.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/popup.js"></script> 
+<!-- <link rel="stylesheet" type="text/css"  href="/Public/Home/css/reg.css" />
+ -->
+<!--  <link rel="stylesheet" type="text/css" href="/Public/Home/css/loginformstyle.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/animate-custom.css" /> -->
+
+<script type="text/javascript" src="/Public/Home/js/jquery.fancybox.pack.js"></script> 
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/jquery.fancybox.css" />
+<style type="text/css">
+    #loginWarpper {
+        padding: 20px 35px;
+    }
+    #loginWarpper a{
+        color: #482929;
+        text-decoration: none;
+    }
+    #loginWarpper .login_logo{
+       margin:  auto 0;
+    }
+    input.pupbtn{
+        /*width: 100% !important;*/
+        background-color: #e5e5e5;
+        width: 390px;
+        height: 42px;
+        padding: 0 10px;
+        margin: 10px 0;
+        color: #482929;
+        border:0px;
+    }
+
+    #loginForm input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+        background-color: #e5e5e5 !important;
+        -webkit-box-shadow: 0 0 0px 1000px #e5e5e5 inset; 
+        color: #482929;
+    }
+
+    #submitLogin {
+        width: 100%;
+        padding: 12px 0;
+        margin: 10px 0 20px 0;
+    }
+    @font-face {
+      font-family: 'Nucleo Outline';
+      src:url('../fonts/nucleo-outline/nucleo-outline.eot');
+      src:url('../fonts/nucleo-outline/nucleo-outline.eot') format('embedded-opentype'),
+        url('../fonts/nucleo-outline/nucleo-outline.woff2') format('woff2'),
+        url('../fonts/nucleo-outline/nucleo-outline.woff') format('woff'),
+        url('../fonts/nucleo-outline/nucleo-outline.ttf') format('truetype'),
+        url('../fonts/nucleo-outline/nucleo-outline.svg') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    .icon-login::before {
+        z-index: 10;
+        display: inline-block;
+        margin: 0 20px 0 20px;
+        vertical-align: middle;
+        text-transform: none;
+        font-weight: normal;
+        font-variant: normal;
+        font-size: 1.3em;
+        font-family: 'Nucleo Outline';
+        line-height: 1;
+        speak: none;
+        -webkit-backface-visibility: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+</style>
+
+<div id="content">
+    <div style="display: none;">
+        <div id="inline1" style="width:460px;height:350px;overflow:auto;">
+            <div  id="loginWarpper" class="popup" >
+             <a class="hiddenanchor" id="toregister"></a>
+                <a class="hiddenanchor" id="tologin"></a>
+                <div id="">
+                    <div class="login_wrapper"> 
+                        <div class="login_logo" style="text-align:center"> 
+                            <a href="/"><img src="/Public/Home/images/xunlu_logo.png" /></a>
+                        </div> 
+
+                        <input type="hidden" id="resubmitToken" value="" /> 
+                        <div class=""> 
+                        <form id="loginForm" class="loginForm" action="<?php echo U('User/logintest');?>" method="post">
+                         <input class="pupbtn" type="text" id="email" name="email" value="" tabindex="1" placeholder="请输入登录邮箱地址" /> 
+                         <input class="pupbtn" type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"/> 
+                         <span class="error" style="display:none;" id="beError"></span> 
+                          <div class="clr"></div>
+
+                         <input type="submit" id="submitLogin" class="mybtn"  value="登录" /> 
+                         <input type="hidden" id="callback" name="callback" value="" /> 
+                         <input type="hidden" id="authType" name="authType" value="" /> 
+                         <input type="hidden" id="signature" name="signature" value="" /> 
+                         <input type="hidden" id="timestamp" name="timestamp" value="" /> 
+                        <div>
+                            <div style="float:left"><a href="/User/findPassword" class="rt" >忘记密码？</a> </div>
+                            <div style="float:right">
+                                <a id="test_reg" href="<?php echo U('User/register');?>" >没有帐号？立即注册></a>
+                            </div>
+                            <div class="clr"></div> 
+                        </div>
+
+                        </form> 
+                      
+                       </div> 
+                       <div class="login_box_btm"></div> 
+                 
+                    </div>
+                    
+                </div>
+            </div> 
+        </div>
+    
+    </div>
+
+
+    
+</div>
+<div style="text-align:center;clear:both">
+</div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#various1").fancybox({
+            helpers : {
+                overlay : {
+                    css : {
+                        'background' : 'rgba(255, 215, 50, 0.9)',
+                        'overlayOpacity'    : 0.9
+                    }
+                }
+            }
+        });
+        // $("#test_reg").fancybox({
+        //     helpers : {
+        //         overlay : {
+        //             css : {
+        //                 'background' : 'rgba(255, 215, 50, 0.9)',
+        //                 'overlayOpacity'    : 0.9
+        //             }
+        //         }
+        //     }
+        // });
+    });
+    var login_from = "<?php echo $_GET[md]; ?>";
+        $(document)
+            .ajaxStart(function(){
+                $("#submitLogin").addClass("log-in").attr("disabled", true);
+            })
+            .ajaxStop(function(){
+                $("#submitLogin").removeClass("log-in").attr("disabled", false);
+            });
+
+
+        $("#loginForm").submit(function(){
+            $("#beError").hide();
+            var self = $(this);
+            $.post(self.attr("action"), self.serialize(), success, "json");
+            return false;
+
+            function success(data){
+                if(data.status){
+                    if(login_from == "min"){
+                        window.close(); 
+                        parent.location.reload();
+                    }
+                    else window.location.href = data.url;
+                } else {
+                    //self.find(".Validform_checktip").text(data.info);
+                    $("#beError").show();
+                    $("#beError").text(data.info);
+                    //刷新验证码
+                    //$(".reloadverify").click();
+                }
+            }
+        });
+
+        $(function(){
+            var verifyimg = $(".verifyimg").attr("src");
+            $(".reloadverify").click(function(){
+                if( verifyimg.indexOf('?')>0){
+                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+                }else{
+                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+                }
+            });
+        });
+    </script>
+
+<script type="text/javascript" src="/Public/Home/js/query.1.10.1.min.js"></script> 
+<script type="text/javascript" src="/Public/Home/js/bootstrap.min.js"></script>

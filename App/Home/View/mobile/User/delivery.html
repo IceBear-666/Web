@@ -1,0 +1,141 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/reset.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/myresume.css"/>
+<style>
+li{ list-style:none;}
+</style>
+<script>
+$(function(){
+    $(".btn_showprogress").click(function(){
+          $(this).find("i").toggleClass("transform");
+		  $(this).parent("div").siblings(".progress_status").slideToggle(200);
+    });
+});
+</script>
+
+
+<div class="tilhed">
+   <a class="golevel" href="/User"></a>
+   <div class="mbtitle">投递记录</div>
+   <a class="gohome" href="/"></a>
+</div>
+
+<table class="sctab" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33.3%"><a href="/User/delivery/type/0.html" {$amenu[0]}>全部</a></td>
+    <td width="33.3%"><a  href="/User/delivery/type/4.html" {$amenu[4]}>面试</a></td>
+    <td><a {$amenu[-1]} href="/User/delivery/type/-1.html">不合适</a></td>
+  </tr>
+</table>
+
+
+<div class="mbbox mt14">
+
+<php>if(!$list)echo '<div class="nocenter"><span><img src="/Public/Home/images/empty.png" />暂时没有记录哦~<br />快去投递一个简历吧！</span></div>';</php>
+
+     <ul class="my_delivery">
+     
+	     <volist name="list" id="v">
+	     
+	     	<php>$result = getApplyLog($v['aid'],$v['apply_log']);</php>
+	     	
+	     	<li>
+            <div class="d_item">
+                <h2 title="{$v.zhiwei_mingcheng}"><a href="/Jobs/info/id/{$v.jid}.html?source=rec"><em>{$v.zhiwei_mingcheng}</em><span>（{$v.yuexin_min}k-{$v.yuexin_max}k）</span></a></h2>
+                <div class="clear">
+                </div>
+                <a href="/Company/info/id/{$v.company_id}/.html" target="_blank" class="d_jobname" title="{$v.company_name}">{$v.company_name} <span class="col999">[{$v.gongzuo_chengshi}]</span></a>
+                <div class="clear">
+                </div>
+                <div class="pdt10 col999 f12">
+                    {$v.addtime|showDate=###}
+                </div>
+                <a href="javascript:;" class="btn_showprogress tdzhankai"><span><php>echo getResumeStatus($v['status'],$v['isread'],$v['view_contact']);</php></span><i></i></a>
+            </div>
+            
+              <div class="progress_status <php>if($_GET['aid']!=$v['aid'])echo 'dn';</php>">
+              
+              <php>if($result['step']==1){</php>
+              
+              	<ul class="status_steps">                	
+                    <li class="status_done status_1">1<em>投递成功</em></li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey status_2"><span>2</span><em>简历被查看</em></li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey"><span>3</span><em>待沟通</em></li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey"><span>4</span><em>面试</em></li>
+                </ul>
+                <div class="clr h20"></div>
+                
+              <php>}elseif($result['step']==2){</php>
+              
+              	<ul class="status_steps">
+                    <li class="status_done status_1">1<em>投递成功</em></li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done status_2"><span>2</span><em>简历被查看</em></li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey"><span>3</span><em>待沟通</em></li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey"><span>4</span><em>面试</em></li>
+                </ul>
+               <div class="clr h20"></div>
+              
+              <php>}elseif($result['step']==3){</php>
+              
+              	<ul class="status_steps">
+                    <li class="status_done status_1">1<em>投递成功</em></li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done status_2"><span>2</span><em>简历被查看</em></li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done"><span>3</span><em>待沟通</em></li>
+                    <li class="status_line status_line_grey"><span></span></li>
+                    <li class="status_grey"><span>4</span><em>面试</em></li>
+                </ul>
+                <div class="clr h20"></div>
+               
+               <php>}elseif($result['step']==4){</php>
+              
+              	<ul class="status_steps">
+                    <li class="status_done status_1">1<em>投递成功</em></li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done status_2"><span>2</span><em>简历被查看</em></li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done"><span>3</span><em>待沟通</em></li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done"><span>4</span><em>面试</em></li>
+                </ul>
+                <div class="clr h20"></div>     
+                
+              <php>}elseif($result['step']==10){</php>              
+              	<ul class="status_steps">
+                    <li class="status_done status_1">1<em>投递成功</em></li>
+                    <li class="status_line status_line_done"><span></span></li>
+                    <li class="status_done"><span>2</span><em>不合适</em></li>
+                </ul>
+                <div class="clr h20"></div>               
+              
+              <php>}</php>
+                
+                
+                <ul class="status_list">
+                   
+                   {$result.content}
+                    
+                </ul>
+                  <a href="javascript:;" class="btn_closeprogress"></a>
+                </div>
+       		</li>
+	     
+	     </volist>
+         
+              
+     </ul>
+            
+            
+    
+
+    
+    
+</div>
+

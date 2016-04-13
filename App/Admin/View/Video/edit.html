@@ -1,0 +1,318 @@
+<extend name="Public/base"/>
+
+
+
+<block name="body">
+<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+
+    <div class="main-title">
+        <h2>{:isset($info['aid'])?'编辑':'新增'}宣讲会</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+
+        <div class="form-item">
+            <label class="item-label">标题<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="title" value="{$info.title}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">类型<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" <php>if($info['type']==1)echo 'checked';</php> name="type" value="1">视频</label>
+                <label class="radio"><input type="radio" <php>if($info['type']==2)echo 'checked';</php> name="type" value="2">日程</label>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">所属公司<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="company" value="{$info.company}">
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">公司网址<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="com_url" value="{$info.com_url}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">所属学校<span class="check-tips"></span></label>
+            <div class="controls">
+				<select name="cid"  id="province" onchange="setcity(this)">
+	              <option value="0">--选择城市--</option>
+	            </select>
+	            &nbsp;&nbsp;
+	            <select name="school"   id="city">
+	              <option value="0">--选择学校名称--</option>
+	            </select>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">日期/时间<span class="check-tips"></span></label>
+            <!-- <div class="controls"> -->
+            	<div class="controls input-append date form_datetime" data-date="{$info.date_time}">
+				    <input size="16" type="text" value="{$info.date_time}" readonly class="text input date" placeholder="选择时间" name="date_time">
+				    <span class="add-on"><i class="icon-remove"></i></span>
+				    <span class="add-on"><i class="icon-calendar"></i></span>
+				</div>
+				<!-- <input type="text" class="text input date" placeholder="选择时间" name="date_time"  value="{$info.date_time}" > -->
+            <!-- </div> -->
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">详细地址<span class="check-tips"></span></label>
+            <div class="controls">
+				<input type="text" class="text input-large" name="address" value="{$info.address}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">状态<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input <php>if($info['status']==1)echo 'checked';</php> type="radio" name="status" value="1">启用</label>
+                <label class="radio"><input <php>if($info['status']==0)echo 'checked';</php> type="radio" name="status" value="0">禁用</label>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">视频链接<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" style="width:800px;" name="url" value="{$info.url}">
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">时长<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="shichang" value="{$info.shichang}">
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">右上角相关公司名<span class="check-tips"> </span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="related" value="{$info.related}">
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">视频封面<span class="check-tips"> </span></label>
+            <div class="controls">
+                
+                <div class="controls">
+					<input type="file" id="upload_picture_pic">
+					<input type="hidden" name="thumb" id="cover_id_path" value="{$info.thumb}"/>
+					<div class="upload-img-box">
+					<notempty name="info.thumb">
+						<div class="upload-pre-item"><img src="{$info['thumb']}"/></div>
+					</notempty>
+					</div>
+				</div>
+	
+				<script type="text/javascript">
+				//上传图片
+			    /* 初始化上传插件 */
+				$("#upload_picture_pic").uploadify({
+			        "height"          : 30,
+			        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+			        "fileObjName"     : "download",
+			        "buttonText"      : "上传图片",
+			        "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+			        "width"           : 120,
+			        'removeTimeout'	  : 1,
+			        'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
+			        "onUploadSuccess" : uploadPictures,
+			        'onFallback' : function() {
+			            alert('未检测到兼容版本的Flash.');
+			        }
+			    });
+				function uploadPictures(file, data){
+			    	var data = $.parseJSON(data);
+			    	var src = '';
+			        if(data.status){
+			        	$("#cover_id_path").val(data.path);
+			        	src = data.url || '__ROOT__' + data.path
+			        	$("#cover_id_path").parent().find('.upload-img-box').html(
+			        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
+			        	);
+			        } else {
+			        	updateAlert(data.info);
+			        	setTimeout(function(){
+			                $('#top-alert').find('button').click();
+			                $(that).removeClass('disabled').prop('disabled',false);
+			            },1500);
+			        }
+			    }
+				</script>
+                
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">附件<span class="check-tips"> </span></label>
+            <div class="controls">
+                <div class="controls">
+					<input type="file" id="upload_file_attach">
+					<input type="hidden" name="attach" value="{$info['attach']}"/>
+					<div class="upload-img-box">
+						<present name="info[attach]">
+							<div class="upload-pre-file"><span class="upload_icon_all"></span>{$info['attach']}</div>
+						</present>
+					</div>
+					</div>
+					<script type="text/javascript">
+					//上传图片
+				    /* 初始化上传插件 */
+					$("#upload_file_attach").uploadify({
+				        "height"          : 30,
+				        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+				        "fileObjName"     : "download",
+				        "buttonText"      : "上传附件",
+				        "uploader"        : "{:U('File/upload',array('session_id'=>session_id()))}",
+				        "width"           : 120,
+				        'removeTimeout'	  : 1,
+				        "onUploadSuccess" : uploadFile_attach,
+				        'onFallback' : function() {
+				            alert('未检测到兼容版本的Flash.');
+				        }
+				    });
+					function uploadFile_attach(file, data){
+						var data = $.parseJSON(data);console.log(data);
+				        if(data.status){
+				        	var name = "attach";
+				        	$("input[name="+name+"]").val(data.url);
+				        	$("input[name="+name+"]").parent().find('.upload-img-box').html(
+				        		"<div class=\"upload-pre-file\"><span class=\"upload_icon_all\"></span>" + data.info + "</div>"
+				        	);
+				        } else {
+				        	updateAlert(data.info);
+				        	setTimeout(function(){
+				                $('#top-alert').find('button').click();
+				                $(that).removeClass('disabled').prop('disabled',false);
+				            },1500);
+				        }
+				    }
+					</script>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">内容<span class="check-tips"></span></label>
+            <div class="controls">
+
+				<label class="textarea">
+                <textarea name="content">{$info.content}</textarea>
+                <!-- {:hook('adminArticleEdit', array('name'=>'content','value'=>$info['content']))} -->
+                </label>
+
+            </div>
+        </div>
+
+        <div class="form-item">
+            <input type="hidden" name="vid" value="{$info.vid|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        Think.setValue("status", {$info.status|default = 0});
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+    </script>
+
+
+    <link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+	<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+	<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+	<script type="text/javascript">
+	//Think.setValue("status", {$info.status|default = 0});
+	//导航高亮
+	//highlight_subnav('{:U('index')}');
+
+	$(".box").hide();
+	$("#basic").find(".box").show();
+
+	$(function(){
+	   /* $('.date').datetimepicker({
+	       format: 'yyyy-mm-dd hh:ii',
+	       language:"zh-CN",
+	       minView:2,
+	       autoclose:true
+	   }); */
+	   
+	    $(".form_datetime").datetimepicker({
+	        format: "yyyy-mm-dd hh:ii",
+	        autoclose: true,
+	        todayBtn: true,
+	        startDate: "2015-07-01 00:00",
+	        minuteStep: 5
+	    });
+
+	   /* $('.time').datetimepicker({
+	       format: 'hh:ii',
+	       language:"zh-CN",
+	       minView:2,
+	       autoclose:true
+	   }); */
+	   showTab();
+	});
+	</script>
+	
+	
+<script>	
+var addressarr = {$school_arr};
+var cprovince = {$info.cid};
+var ccity = {$info.sid};
+
+addressarr = eval(addressarr);
+function setprovince() {
+	var html = '';
+	for(var key in addressarr) {
+		//if(addressarr[key]['pid']==1){
+			html += '<option value="'+addressarr[key].cid+'">'+addressarr[key].name+'</option>';
+		//}
+	}
+	$("#province").html(html);
+}
+
+function setcity(vv) {
+	var html = '';
+	var v ='';
+	if(isNaN(vv)){
+		v = $(vv).val();
+	}
+	else v = vv;
+
+	if(addressarr[v]){
+		var cityarr = addressarr[v]['sub'];
+		for(var k in cityarr) {
+			html += '<option value="'+k+'">'+cityarr[k].name+'</option>';
+		}
+	}
+
+	$("#city").html(html);
+}
+
+setprovince();
+
+$("#province").val(cprovince);
+var obj = $("#province").val();
+setcity(obj);
+
+
+$("#city").val(ccity);
+
+</script>
+
+</block>

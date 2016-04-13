@@ -1,0 +1,42 @@
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix{*zoom:1;}
+ul, li{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+
+#expressInputPanel { font-family: 'Microsoft Yahei'; width: 320px; z-index: 9999; font-size: 12px; color: #fff; position: absolute; }
+#expressInputPanel .close, #inputPanel .close { width: 10px; height: 10px; background: url(../images/close.png) no-repeat; display: block; position: absolute; right: 5px; top: 5px; cursor: pointer; }
+#expressInputPanel .tips { width: 244px; background: #18b4ed; border-radius: 5px; padding: 15px; position: relative; display: block; }
+#expressInputPanel .tips .title_widget i { width: 26px; height: 26px; background: url(../images/tips.png) no-repeat; float: left; }
+#expressInputPanel .tips .title_widget span { float: left; font-size: 16px; height: 26px; line-height: 26px; padding-left: 10px; }
+#expressInputPanel .tips .content_widget { font-size: 14px; padding-top: 10px; }
+#expressInputPanel .tips .content_widget span { display: block; margin-bottom: 8px; }
+#expressInputPanel .tips .content_widget a { float: left; text-decoration: underline; margin-right: 30px; color: #fff; }
+#expressInputPanel .tips .content_widget a:hover { color: #ffe400; }
+
+#inputPanel { height: 248px; display: block; background: #fff; border-radius: 5px; border: 1px solid #ccc; }
+#inputPanel .info { background: #e4e4e4; position: relative; height: 26px; line-height: 26px; padding-left: 5px; color: #a0a0a0; font-size: 14px; }
+#inputPanel .close { right: 5px; top: 8px; background-position: -10px 0; }
+#inputPanel .title_widget li { width: 45px; height: 32px; line-height: 32px; color: #fff; cursor: pointer; float: left; background: #18b4ed; font-size: 14px; text-align: center; }
+#inputPanel .title_widget li.cur { color: #18b4ed; background: #fff; cursor: default; }
+#inputPanel .title_widget li:last-child { width: 48px; border-top-right-radius: 5px; }
+#inputPanel .title_widget li:first-child { border-top-left-radius: 5px; }
+#inputPanel .content_widget { width: 298px; height: 170px; padding: 10px; position: relative; }
+#inputPanel .content_widget li { width: 99px; height: 28px; line-height: 28px; font-size: 14px; float: left; }
+#inputPanel .content_widget li a { color: #a0a0a0; text-decoration: none; }
+#inputPanel .content_widget li a:hover { color: #18b4ed; text-decoration: underline; }
+#inputPanel .content_widget a.page { color: #18b4ed; font-size: 14px; display: none; text-decoration: none; cursor: pointer; position: absolute; bottom: -10px; }
+#inputPanel .content_widget a.page.prevPage { right: 70px; }
+#inputPanel .content_widget a.page.nextPage { right: 15px; }
+#inputPanel .content_widget a.page.grey { color: #999; }
+#inputPanel .content_widget ul { width: 298px; }

@@ -1,0 +1,25 @@
+<div style="display:none;"> 
+      <!-- 登录框 -->
+      <div id="loginPop" class="popup" style="height:240px;">
+        <form id="loginForm">
+          <input id="email" name="email" tabindex="1" placeholder="请输入登录邮箱地址" type="text">
+          <input id="password" name="password" tabindex="2" placeholder="请输入密码" type="password">
+          <span class="error" style="display:none;" id="beError"></span>
+          <label class="fl" for="remember">
+            <input id="remember" value="" checked="checked" name="autoLogin" type="checkbox">
+            记住我</label>
+          <a href="{$Think.WEB_URL}Public/reset" class="fr">忘记密码？</a>
+          <input id="submitLogin" value="登 &nbsp; &nbsp; 录" type="submit">
+        </form>
+        <div class="login_right">
+          <div>还没有本站帐号？</div>
+          <a href="{$Think.WEB_URL}Public/reg" class="registor_now">立即注册</a>
+          <!-- 
+          <div class="login_others">使用以下帐号直接登录:</div>
+          <a href="{$Think.WEB_URL}Public/otherLogin/type/sina" target="_blank" id="icon_wb" class="icon_wb" title="使用新浪微博帐号登录"></a>
+			<a href="{$Think.WEB_URL}Public/otherLogin/type/sina" class="icon_qq" id="icon_qq" target="_blank" title="使用腾讯QQ帐号登录"></a>
+			 -->
+		</div>
+      </div>
+      <!--/#loginPop--> 
+</div>

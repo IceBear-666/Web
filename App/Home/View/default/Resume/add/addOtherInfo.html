@@ -1,0 +1,64 @@
+<div class="baseinfo-top">
+<h3>其他信息</h3>
+</div>
+<div id="otherInfo" class="item_container_target">
+
+<div class="mr_moudle_head clearfixs">
+
+  <div class="mr_moudle_content" id="">
+    <form class="eduExpForm" id="addOtherInfoForm">
+       <div class="myr_info_list">
+      
+       <input type="hidden" id="otherinfoid" name="otherinfoid" value="{$otherinfo_list[0].id}" /> 
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+            <tr>
+              <th class="pt10"><label>自我评价</label></th>
+               <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="selfIntro">{$otherinfo_list[0].selfIntro}</textarea>
+                   <span class="tiprighttext icon-resume icon-business_bulb" title="自我评价"></span> 
+                </td>
+            </tr>
+           <tr>
+              <th class="pt10"><label>爱好特长</label></th>
+                 <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="skill">{$otherinfo_list[0].skill}</textarea>
+                   <span class="tiprighttext icon-resume icon-business_bulb" title="爱好特长"></span> 
+                </td>
+            </tr>
+            <tr>
+              <th class="pt10"><label>其他技能</label></th>
+                <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="hobbies">{$otherinfo_list[0].hobbies}</textarea>
+                   <span class="tiprighttext icon-resume icon-business_bulb" title="其他技能"></span> 
+                </td>
+              
+            </tr>      
+             <tr>
+              <th class="pt10"><label>个人成就</label></th>
+              <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="achievement">{$otherinfo_list[0].achievement}</textarea>
+                   <span class="tiprighttext icon-resume icon-business_bulb" title="个人成就"></span> 
+                </td>
+            </tr>
+             <tr>
+              <th class="pt10"><label>个人简介</label></th>
+                 <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="profile">{$otherinfo_list[0].profile}</textarea>
+                   <span class="tiprighttext icon-resume icon-business_bulb" title="个人简介"></span> 
+                </td>
+            </tr>
+          </table>
+        </div>
+    <br/><br/>
+     
+        <div class="mr_ope clearfixs">
+          <input type="submit" class="btn-resumeac mr_save" value="保存" />
+          <!-- <a href="javascript:;" class="btn-resumeac mr_cancel">取消</a --></div>
+      </div>
+    </form>
+     <!--  <div class="mr_head_l">
+    <div class="mr_head_r"> <i></i><em>添加</em> </div>
+  </div>       -->  
+</div>
+</div>
+<br/><br/>

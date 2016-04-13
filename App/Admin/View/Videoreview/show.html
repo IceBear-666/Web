@@ -1,0 +1,65 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>{$info.title}</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        
+        <div class="form-item">
+            <label class="item-label">姓名<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.name}
+            </div>
+        </div>
+                
+        <div class="form-item">
+            <label class="item-label">电话<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.phone}
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">图像<span class="check-tips"> </span></label>
+            <div class="controls">
+                <php>if($info['pic'])echo '<img src="'.$info['pic'].'" style=" height:100px;" >';</php>
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">状态<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.status|getCheckStatus=###}
+            </div>
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">时间<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.addtime|showDate=###}
+            </div>
+            
+        </div>
+        
+        <div class="form-item">
+            <label class="item-label">内容<span class="check-tips"> </span></label>
+            <div class="controls">
+                {$info.content}
+            </div>
+            
+        </div>
+        
+        <div class="form-item">
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">        
+        Think.setValue("status", {$info.status|default = 0});
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+    </script>
+</block>

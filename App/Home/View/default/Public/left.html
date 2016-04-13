@@ -1,0 +1,123 @@
+
+<script defer id="_lgpassport_" data-css-site="0" data-css-popup="0" src="/Public/Home/js/company/passport.js" onload="passportInit()"></script>
+<script type="text/javascript">
+	function passportInit(){
+		//noticeInit();
+	}
+</script>
+
+<input type="hidden" value="1" id="pageNo"/>
+<input type="hidden" value="1" id="totalPageCount"/>
+
+<div class="sidebar">
+  <div class="mr_myresume_r">
+    <div class="jllfnav"> 
+    <php>if(!$cur_top_nav['post']){</php>
+    <a class="nav1 cur2" href="/Company/interview.html">简历管理</a> 
+    <a class="nav2" href="/Company/createPost.html">发布职位</a>
+    <php>}elseif($cur_top_nav['post']){</php>
+    <a class="nav1 " href="/Company/interview.html">简历管理</a> 
+    <a class="nav2 cur1" href="/Company/createPost.html">发布职位</a>
+    <php>}</php>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <dl class="company_center_aside">
+  	<php>if($job_info){</php>
+  		<dt>{$job_info.zhiwei_mingcheng}</dt>
+  	<php>}else{</php>
+    	<dt>我收到的简历</dt>
+    <php>}</php>
+    
+    <dd  <if condition="$type eq 'unhandle'">class="current"</if> > <a  href="/Company/interview/type/unhandle/job_id/{$job_id}">待处理简历</a> <span class="dn unHandle"></span> </dd>
+    <!-- 需要根据后台的接口做调整 -->
+    <dd <if condition="$type eq 'prepare'">class="current"</if> > <a href="/Company/interview/type/prepare/job_id/{$job_id}">待沟通简历</a> <span class="dn goutong"></span> </dd>
+    <dd <if condition="$type eq 'arranged'">class="current"</if> > <a href="/Company/interview/type/arranged/job_id/{$job_id}">已安排面试</a> <span class="dn prepare"></span> </dd>
+    <dd <if condition="$type eq 'refuselist'">class="current"</if> > <a href="/Company/interview/type/refuselist/job_id/{$job_id}">不合适简历</a> <span class="dn unTreate"></span></dd>
+    <dd  <if condition="$type eq 'autoFilter'">class="btm current"<else />class="btm"</if> > <a  href="/Company/interview/type/autoFilter/job_id/{$job_id}">自动过滤简历</a> <span class="dn autoFilter"></span> </dd>
+  </dl>
+  <!--我的邀请  -->
+  
+  
+  <php>if($job_info){</php>
+  		<dl class="company_center_aside">
+  			<a href="/Company/interview/">查看全部职位的简历>></a>
+  		</dl>
+  	<php>}else{</php>
+    	<dl class="company_center_aside">
+		    <dt>我发布的职位</dt>
+		    <dd  <if condition="$type eq 'Publish'">class="current"</if> > <a href="/Company/positions/type/Publish">有效职位</a> </dd>
+		    <dd <if condition="$type eq 'Expired'">class="current"</if> > <a href="/Company/positions/type/Expired">已下线职位</a> </dd>
+		</dl>
+    <php>}</php>
+  
+  
+  
+  
+  
+  <!-- 待沟通，待处理，自动过滤，采用json调用的--> 
+  <script>
+	$(function(){
+		PASSPORT.util.rpc({
+	        url:rctx+"Company/queryTipsNums/jid/{$job_id}",
+	        succ:function(result){
+	    		if(result.state == "1"){
+	    			var data = result.content.data;
+	    			if(data.unHandleNum > 0){
+	    				$(".unHandle").text(data.unHandleNum).removeClass("dn");
+	    			}else{
+	    				$(".unHandle").text("").addClass("dn");
+	    			}
+	    			if(data.autoFilterNum > 0){
+	    				$(".autoFilter").text(data.autoFilterNum).removeClass("dn");
+	    			}else{
+	    				$(".autoFilter").text(data.autoFilterNum).addClass("dn");
+	    			}
+	    			if(data.deliverCount > 0){
+	    				$(".deliverCount").text(data.deliverCount).removeClass("dn");
+	    			}else{
+	    				$(".deliverCount").text(data.deliverCount).addClass("dn");
+	    			}
+	    			if((data.showNum > 0 || data.showNum == 0 ) && data.limitNum > 0  ){
+	    				$(".goutong").text( data.showNum +'/'+ data.limitNum ).removeClass("dn");
+	    			}else{
+	    				$(".goutong").text( data.showNum +'/'+ data.limitNum).addClass("dn");
+	    			}
+	    			
+	    			if(data.unTreateNum > 0){
+	    				$(".unTreate").text(data.unTreateNum).removeClass("dn");
+	    			}else{
+	    				$(".unTreate").text(data.unTreateNum).addClass("dn");
+	    			}
+	    			
+	    			if(data.prepareNum > 0){
+	    				$(".prepare").text(data.prepareNum).removeClass("dn");
+	    			}else{
+	    				$(".prepare").text(data.prepareNum).addClass("dn");
+	    			}
+	    			
+	    		}else{
+	    			alert(message);
+	    		};
+	    	},
+	        fail:function(data){
+	            console.log('fail:' + data);
+	        }
+	    });
+	}); 
+	
+	
+	/* jQuery.ajax({
+	    url:"http://xxxx/plus/getVipTip.json",
+	    dataType: 'jsonp',
+	    jsonp: 'jsoncallback'
+	}).done(function (response) {
+	    callback && callback(response);
+	});  */
+	
+	</script> 
+  
+  
+</div>
+<!-- end .sidebar -->
+

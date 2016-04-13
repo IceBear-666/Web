@@ -1,0 +1,237 @@
+<include file="Public/header" />
+
+<body>
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+	
+	<div id="container">
+    <div class="clearfix">
+      <div class="content_l">
+        <div class="c_detail">
+          <div class="c_logo">
+            <div id="logoShow"> <img src="/{$info.logo}" alt="{$info.company_name}" height="190" width="190"> </div>
+          </div>
+          <div class="c_box">
+            <div id="tip_didi_img" class="dn"> <a href="javascript:;"></a> </div>
+            <h2 title="{$info.company_short_name}">{$info.company_short_name}</h2>
+            <if condition="$info.isv eq 1">
+            	<em class="valid"></em> <span class="va dn">钢铁侠认证企业</span>
+            <else />
+            	<em class="unvalid"></em> <span class="va dn">钢铁侠未认证</span>
+            	<if condition="$info.uid eq $Think.session.uid">
+            	<a href="{$Think.WEB_URL}Company/auth" class="applyC" target="_blank">申请认证</a>
+            	</if>
+            </if> 
+            <div class="clear"></div>
+            <h1 class="fullname" title="{$info.company_name}">{$info.company_name}</h1>
+            <div class="clear oneword"><img src="/Public/Images/quote_l.png" height="15" width="17">&nbsp; {$info.hangye} &nbsp;<img src="/Public/Images/quote_r.png" height="15" width="17"></div>
+            <h3 class="dn">已选择标签</h3>
+            <ul class="reset clearfix" id="hasLabels">
+              <?php
+              	$tag_arr = explode(",",$info['tags']);
+				foreach($tag_arr as $k=>$v){
+					echo '<li><span>'.$v.'</span></li>';
+				}
+              ?>              
+              <!-- <li class="link">编辑</li> -->
+            </ul>
+            <!-- <div id="addLabels" class="dn">
+                        	<a href="javascript:void(0)" class="change" id="changeLabels">换一换</a>
+                        	<input type="hidden" id="labelPageNo" value="1" />
+                            <input type="submit" id="add_label" class="fr" value="贴上" />
+                            <input type="text" class="label_form fr" id="label" name="label" placeholder="添加自定义标签" />	
+                            <div class="clear"></div>
+                            <ul class="reset clearfix"></ul>
+                            <a href="javascript:void(0)" class="btn_small" id="saveLabels">保存</a>
+                            <a href="javascript:void(0)" class="btn_cancel_s" id="cancelLabels">取消</a>
+                        </div> --> 
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="c_breakline"></div>
+        
+        <volist name="products" id="v">
+        
+	        <!--有产品-->
+	        <dl class="c_product">
+	          <dt>
+	            <h2><em></em>公司产品</h2>
+	          </dt>
+	          <dd> <img src="/{$v.productPicUrl}" alt="{$v.product}" height="220" width="380">
+	            <div class="cp_intro">
+	              <h3 class="cp_h3_c"><a href="{$v.productUrl}" target="_blank" rel="nofollow">{$v.product}</a></h3>
+	              <div tabindex="0" style="overflow: hidden; padding: 0px; width: 260px;" class="scroll-pane jspScrollable">
+	                <div style="width: 260px; height: 140px;" class="jspContainer">
+	                  <div style="padding: 0px; width: 249px; top: 0px;" class="jspPane">
+	                    <div>{$v.productProfile}</div>
+	                  </div>
+	                  <div class="jspVerticalBar">
+	                    <div class="jspCap jspCapTop"></div>
+	                    <div style="height: 140px;" class="jspTrack">
+	                      <div style="height: 81px;" class="jspDrag">
+	                        <div class="jspDragTop"></div>
+	                        <div class="jspDragBottom"></div>
+	                      </div>
+	                    </div>
+	                    <div class="jspCap jspCapBottom"></div>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+	          </dd>
+	        </dl>
+        
+        </volist>        
+        
+        <!--有介绍-->
+        <dl class="c_section">
+          <dt>
+            <h2><em></em>公司介绍</h2>
+          </dt>
+          <dd>
+            <div class="c_intro">
+				{$info.descri}
+            </div>
+          </dd>
+        </dl>
+        
+        <!--[if IE 7]> <br /> <![endif]--> 
+        
+        <!--有招聘职位  -->
+        <dl class="c_section">
+          <dt>
+            <h2><em></em>招聘职位</h2>
+            <span class="jobsTotal">该公司近两月共有 <i>{$jobs_count}</i> 个职位正在招聘</span> </dt>
+          <dd>
+            <ul class="reset c_jobs" id="jobList">
+            
+            <volist name="jobs" id="v">
+            
+              <li> <a href="{$Think.WEB_URL}Jobs/info/id/{$v.jid}/source/company" target="_blank">
+                <h3><span class="pos" title="{$v.zhiwei_mingcheng}">{$v.zhiwei_mingcheng}</span> <span>[{$v.gongzuo_chengshi}]</span> </h3>
+                <span>{$v.addtime|getLongTimeSpace=###,'Y-m-d H:i:s'}前发布</span>
+                <div>{$v.gongzuo_xingzhi} / {$v.yuexin_min}k-{$v.yuexin_max}k / {$v.gongzuo_jingyan} / {$v.xueli} </div>
+                </a>
+			  </li>
+			
+			</volist>
+			
+              
+            </ul>
+            <a href="{$Think.WEB_URL}Jobs/list_/uid/{$info.uid}" class="positions_more">查看该公司所有职位</a> </dd>
+        </dl>
+        <!-- <div id="flag"></div> --> 
+        
+      </div>
+      <div class="content_r">
+        <div class="c_tags">
+          <table>
+            <tbody>
+              <tr>
+                <td width="45">地点</td>
+                <td>{$info.company_city}</td>
+              </tr>
+              <tr>
+                <td>领域</td>
+                <!-- 支持多选 -->
+                <td title="{$info.hangye}">{$info.hangye}</td>
+              </tr>
+              <tr>
+                <td>规模</td>
+                <td>{$info.guimu}</td>
+              </tr>
+              <tr>
+                <td>主页</td>
+                <td><a href="{$info.web_url}" target="_blank" title="{$info.web_url}" rel="nofollow">{$info.web_url}</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!--融资阶段 投资机构 -->
+        <dl class="c_section c_stages">
+          <dt>
+            <h2><em></em>融资阶段</h2>
+          </dt>
+          <dd>
+            <ul class="reset stageshow">
+              <li>目前阶段：<span class="c5">{$info.jieduan}</span></li>
+            </ul>
+          </dd>
+        </dl>
+        <!-- end .c_stages --> 
+        
+        <!--有创始团队-->
+        
+        <dl class="c_section c_member">
+          <dt>
+            <h2><em></em>创始团队</h2>
+          </dt>          
+          
+          <volist name="leads" id="v">
+          
+	          <dd>
+	            <div class="member_info noborder">
+	            
+	              <div class="m_portrait">
+	                <div></div>
+	                <img src="/{$v.photo}" alt="{$v.name}" height="120" width="120">
+				  </div>
+				  
+	              <div class="m_name"> {$v.name} </div>
+	              <div class="m_position">{$v.position}</div>
+	              <div class="m_intro">
+						
+						{$v.remark}
+						
+	              </div>
+	            </div>
+	          </dd>
+	          
+	      </volist>
+	          
+        </dl>
+        
+        <if condition="$news neq ''">
+        
+	        <!--公司深度报道-->
+	        <dl class="c_section c_reported">
+	          <dt>
+	            <h2><em></em>公司深度报道</h2>
+	          </dt>
+	          <dd>
+	            <ul class="reset">
+	              <volist name="news" id="v">
+	              <a href="{$v.url}" target="_blank" title="{$v.title}" class="article" rel="nofollow">{$v.title}</a> 
+	              </volist>
+	            </ul>
+	          </dd>
+	        </dl>
+        
+        </if>
+        
+        <!-- end .c_reported -->
+        
+        <input value="{$info.uid}" name="companyId" id="companyId" type="hidden">
+      </div>
+    </div>
+    
+    
+    <!-------------------------------------弹窗lightbox  ----------------------------------------->
+    <include file="Public/user_login" />
+    <!------------------------------------- end -----------------------------------------> 
+    <script type="text/javascript" src="__PUBLIC__/Js/company.js"></script> 
+    
+    <div class="clear"></div>
+    <input id="resubmitToken" value="uuiiii" type="hidden">
+    <a style="display: none;" id="backtop" title="回到顶部" rel="nofollow"></a> </div>
+  <!-- end #container -->  
+  
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

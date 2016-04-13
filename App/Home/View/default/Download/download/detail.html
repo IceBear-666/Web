@@ -1,0 +1,36 @@
+
+================================================== -->
+    <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+            <li>
+                <a href="{:U('File/download?id='.$info['id'])}" class="btn btn-primary btn-block btn-large">立即下载</a>
+            </li>
+        </ul>
+       
+    </div>
+
+      <div class="span9 main-content">
+        <!-- Contents
+        ================================================== -->
+        <section id="contents">
+            <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td width="20%">文件尺寸</td>
+                            <td>{$info.size}</td>
+                        </tr>
+                        <tr>
+                            <td>下载次数</td>
+                            <td>{$info.download}</td>
+                        </tr>
+                        <tr>
+                            <td>文件描述</td>
+                            <td>{$info.description|default='暂无描述'}</td>
+                        </tr>
+                    </tbody>
+            </table>
+
+            <div>{$info.content}</div>
+           
+        </section>
+    </div>

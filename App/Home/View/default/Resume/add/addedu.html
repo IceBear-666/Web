@@ -1,0 +1,741 @@
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/schoolselect.css">
+<div class="baseinfo-top">
+  <h3>教育经历</h3>
+</div>
+<div id="educationalBackground" class="item_container_target">
+  <div class="list_show">
+
+    <php>if($edu_list){</php>
+            <div class="clearfixs mb46 mr_jobe_list">
+            <table>
+              <tr><th width="200px">学校</th><th width="200px">学历</th><th width="200px">专业</th><th width="200px">编辑</th></tr>
+               <volist name="edu_list" id="v">
+              <tr><td>{$v.schoolName}</td><td>{$v.education}</td><td>{$v.professional}</td><td><div style="cursor: pointer;" class="mr_edit mr_c_r_t" data-eduid="{$v.id}" data-schoolname="{$v.schoolName}" data-edu="{$v.education}" data-pro="{$v.professional}" data-date="{$v.endYear}" data-startdate="{$v.startYear}" data-schoolcity="{$v.school_city}" data-degree="{$v.degree}" data-academy="{$v.academy}" data-major="{$v.major}" data-gpa="{$v.gpa_score}" data-prorank="{$v.professional_ranking}" data-classrank="{$v.class_ranking}" data-prodes="{$v.professional_describe}" data-tutorname="{$v.tutor_name}" data-tutorphone="{$v.tutor_phone}"> <i></i><em>编辑</em> </div></td></tr>
+              </volist>
+            </table>
+            </div>
+        <php>}</php>
+    </div>
+<div class="mr_moudle_head clearfixs">
+    <div class="mr_moudle_content" id="edu_update">
+      <form class="eduExpForm" id="addEduForm">
+         <div class="myr_info_list">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+                <tr>
+                    <th class="pt10"><label>学校</label></th>
+                    <td>
+                    <div class="myr_input_div_l">
+                      <input type="text" id="schoolName"  name="schoolName"  placeholder="请点击选择学校" class="form-control"  readonly />
+                      <div id="proSchool" class="provinceSchool">
+                          <div class="title"><span>请选择学校</span></div>
+                          <div class="proSelect">
+                              <select></select>
+                              <span>如没找到选择项，请选择其他手动填写</span>
+                              <input type="text" />
+                          </div>
+                          <div class="schoolList">
+                              <ul></ul>
+                          </div>
+                          <div class="button">
+                            <a href="javascript:selectschool();">确定</a>
+                            <a href="javascript:closeschool();">取消</a>
+                          </div>
+                      </div> 
+                    </div> 
+                    </td>
+                </tr>
+                <tr class="lowUse">
+                    <th class="pt10"><label>学校所在城市</label><span class="lowFreqency">低频</span></th>
+                    <td>
+                      <div class="form-item">
+                    
+                      <div class="controls select_wrap">
+                        <select name="school_city"  id="school_city" onchange="setschoolcity(this)">
+                          <option value="0">--选择省--</option>
+                        
+                        </select>
+                        &nbsp;&nbsp;
+                        <select name="school_city_city"   id="school_city_city">
+                          <option value="0">--选择市--</option>
+                         
+                        </select>
+                      </div>
+                  </div>
+                    </td>
+                </tr>
+                <tr>
+                  <th class="pt10"><label>学历</label></th>
+                    <td >
+                    <div class="form_wrap normal_s" style="*z-index:4;">
+                    <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="degree_text" />
+                      <input type="button" class="mr_button"  name="degree_val"/>
+                      <div class="xl_list dn">
+                        <ul class="ul_edubg">
+                          <li>博士研究生</li>
+                          <li>EMBA</li>
+                          <li>MBA</li>
+                          <li>MPA</li>
+                          <li>硕士研究生</li>
+                          <li>双学士</li>
+                          <li>大学本科-一本</li>
+                          <li>大学本科-二本</li>
+                          <li>大学本科-三本</li>
+                          <li>大学专科</li>
+                          <li>中专</li>
+                          <li>技校/职高</li>
+                          <li>高中</li>
+                          <li>初中及以下</li>
+                          <li>其他</li>
+                          <li>无</li>
+
+                        </ul>
+                      </div>
+                    </div>
+                    </div>
+                    </td>
+                </tr>
+                 <tr>
+                  <th class="pt10"><label>学位</label></th>
+                    <td >
+                    <div class="form_wrap normal_s" style="*z-index:4;">
+                    <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="degree_t" />
+                      <input type="button" class="mr_button"  name="degree" id="degree" />
+                      <div class="xl_list dn">
+                        <ul class="ul_degree">
+                          <li>博士</li>
+                          <li>MPA</li>
+                          <li>EMBA</li>
+                          <li>MBA</li>
+                          <li>硕士</li>
+                          <li>双学士</li>
+                          <li>学士</li>
+                          <li>其他</li>
+                          <li>无</li>
+                        </ul>
+                      </div>
+                    </div>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="pt10"><label>院系</label></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="academy" class="form-control">
+                      </div>
+                    </td>
+                </tr>
+                 <tr>
+                    <th class="pt10"><label>专业</label></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="positionName" class="form-control" >
+                      </div>
+                    </td>
+                </tr>
+                <tr>
+                  <th class="pt10"><label>入学时间</label></th>
+                    <td >   
+                      <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button" readonly class="text input date" placeholder="选择时间" name="startYear"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>      
+                    <!-- <div class="form_wrap normal_s" style="*z-index:4;">
+                      <div class="mr_timed_div normal_s fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="startYear_text" />
+                      <input type="button" class="mr_button"  class="mr_btn" onchange="validateChange(this);" name="startYear"/>
+                      <div class="xl_list dn">
+                        <ul class="ul_eduy">
+                          <php>$year = getYear(1990,2017,1);</php>
+                          <volist name="year" id="v">
+                              <li>{$v}</li>
+                            </volist>
+                        </ul>
+                      </div>
+                    </div>
+                    </div> -->
+                    </td>
+                </tr>
+                <tr>
+                  <th class="pt10"><label>毕业时间</label></th>
+                    <td>    
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button" readonly class="text input date" placeholder="选择时间" name="graduate"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>        
+                  <!--   <div class="form_wrap normal_s" style="*z-index:4;">
+                      <div class="mr_timed_div normal_s fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="graduate_text" />
+                      <input type="button" class="mr_button" onchange="validateChange(this);" name="graduate"/>
+                      <div class="xl_list dn">
+                        <ul class="ul_eduy">
+                          <php>$year = getYear(1990,2017,1);</php>
+                          <volist name="year" id="v">
+                              <li>{$v}</li>
+                            </volist>
+                        </ul>
+                      </div>
+                    </div>
+                    </div> -->
+                    </td>
+                </tr>
+                <tr>
+                    <th class="pt10"><label>主修课程</label></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="major" class="form-control">
+                      </div>
+                    </td>
+                </tr>
+                <tr class="lowUse">
+                    <th class="pt10"><label>GPA(4分制)</label><span class="lowFreqency">低频</span></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="gpa_score" class="form-control">
+                          <span class="tipright icon-resume icon-business_bulb" title="GPA(4分制)"></span>
+                      </div>
+
+                    </td>
+
+                </tr>
+                <tr>
+                  <th class="pt10"><label>所在专业排名</label></th>
+                    <td >
+                    <div class="form_wrap normal_s" style="*z-index:4;">
+                    <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="professional_ranking_text" />
+                      <input type="button" class="mr_button" name="professional_ranking" id="proferank" />
+                      <div class="xl_list dn">
+                        <ul class="ul_proferank">
+                          <li>前5%<li>前10%</li><li>前20%</li><li>前30%</li><li>前40%</li><li>前50%</li><li>前60%</li><li>前70%</li><li>前80%</li><li>其他</li>
+                        </ul>
+                      </div>
+                    </div>
+                    </div>
+                    </td>
+                </tr>
+                 <tr>
+                  <th class="pt10"><label>班级排名</label></th>
+                    <td >
+                    <div class="form_wrap normal_s" style="*z-index:4;">
+                    <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="class_ranking_text" />
+                      <input type="button" class="mr_button" name="class_ranking" id="classrank" />
+                      <div class="xl_list dn">
+                        <ul class="ul_classrank">
+                          <li>前5%<li>前10%</li><li>前20%</li><li>前30%</li><li>前40%</li><li>前50%</li><li>前60%</li><li>前70%</li><li>前80%</li><li>其他</li>
+                        </ul>
+                      </div>
+                    </div>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="pt10"><label>专业描述</label></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="professional_describe" class="form-control" >
+                          <span class="tipright icon-resume icon-business_bulb" title="专业描述专业 描述专业描述专业描述专业描述"></span>
+                      </div>
+                    </td>
+                </tr>
+                <tr class="lowUse">
+                    <th class="pt10"><label>导师姓名</label><span class="lowFreqency">低频</span></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="tutor_name" class="form-control" >
+                      </div>
+                    </td>
+                </tr>
+                <tr class="lowUse">
+                    <th class="pt10"><label>导师联系方式</label><span class="lowFreqency">低频</span></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="tutor_phone" class="form-control">
+                      </div>
+                    </td>
+                </tr>
+            </table>
+   
+        </div>
+		
+		<!--添加-->
+		
+		
+		
+		 <div class="myr_info_list"   id="div" style="display: none" onMouseout="hidden();">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+                <tr>
+                    <th class="pt10"><label>学校</label></th>
+                    <td>
+                    <div class="myr_input_div_l">
+                      <input type="text" id="schoolName"  name="schoolName"  placeholder="请点击选择学校" class="form-control"  readonly />
+                      <div id="proSchool" class="provinceSchool">
+                          <div class="title"><span>请选择学校</span></div>
+                          <div class="proSelect">
+                              <select></select>
+                              <span>如没找到选择项，请选择其他手动填写</span>
+                              <input type="text" />
+                          </div>
+                          <div class="schoolList">
+                              <ul></ul>
+                          </div>
+                          <div class="button">
+                            <a href="javascript:selectschool();">确定</a>
+                            <a href="javascript:closeschool();">取消</a>
+                          </div>
+                      </div> 
+                    </div> 
+                    </td>
+                </tr>
+                <tr class="lowUse">
+                    <th class="pt10"><label>学校所在城市</label><span class="lowFreqency">低频</span></th>
+                    <td>
+                      <div class="form-item">
+                    
+                      <div class="controls select_wrap">
+                        <select name="school_city"  id="school_city" onchange="setschoolcity(this)">
+                          <option value="0">--选择省--</option>
+                        
+                        </select>
+                        &nbsp;&nbsp;
+                        <select name="school_city_city"   id="school_city_city">
+                          <option value="0">--选择市--</option>
+                         
+                        </select>
+                      </div>
+                  </div>
+                    </td>
+                </tr>
+                <tr>
+                  <th class="pt10"><label>学历</label></th>
+                    <td >
+                    <div class="form_wrap normal_s" style="*z-index:4;">
+                    <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="degree_text" />
+                      <input type="button" class="mr_button"  name="degree_val"/>
+                      <div class="xl_list dn">
+                        <ul class="ul_edubg">
+                          <li>博士研究生</li>
+                          <li>EMBA</li>
+                          <li>MBA</li>
+                          <li>MPA</li>
+                          <li>硕士研究生</li>
+                          <li>双学士</li>
+                          <li>大学本科-一本</li>
+                          <li>大学本科-二本</li>
+                          <li>大学本科-三本</li>
+                          <li>大学专科</li>
+                          <li>中专</li>
+                          <li>技校/职高</li>
+                          <li>高中</li>
+                          <li>初中及以下</li>
+                          <li>其他</li>
+                          <li>无</li>
+
+                        </ul>
+                      </div>
+                    </div>
+                    </div>
+                    </td>
+                </tr>
+                 <tr>
+                  <th class="pt10"><label>学位</label></th>
+                    <td >
+                    <div class="form_wrap normal_s" style="*z-index:4;">
+                    <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="degree_t" />
+                      <input type="button" class="mr_button"  name="degree" id="degree" />
+                      <div class="xl_list dn">
+                        <ul class="ul_degree">
+                          <li>博士</li>
+                          <li>MPA</li>
+                          <li>EMBA</li>
+                          <li>MBA</li>
+                          <li>硕士</li>
+                          <li>双学士</li>
+                          <li>学士</li>
+                          <li>其他</li>
+                          <li>无</li>
+                        </ul>
+                      </div>
+                    </div>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="pt10"><label>院系</label></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="academy" class="form-control">
+                      </div>
+                    </td>
+                </tr>
+                 <tr>
+                    <th class="pt10"><label>专业</label></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="positionName" class="form-control" >
+                      </div>
+                    </td>
+                </tr>
+                <tr>
+                  <th class="pt10"><label>入学时间</label></th>
+                    <td >   
+                      <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button" readonly class="text input date" placeholder="选择时间" name="startYear"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>      
+                    <!-- <div class="form_wrap normal_s" style="*z-index:4;">
+                      <div class="mr_timed_div normal_s fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="startYear_text" />
+                      <input type="button" class="mr_button"  class="mr_btn" onchange="validateChange(this);" name="startYear"/>
+                      <div class="xl_list dn">
+                        <ul class="ul_eduy">
+                          <php>$year = getYear(1990,2017,1);</php>
+                          <volist name="year" id="v">
+                              <li>{$v}</li>
+                            </volist>
+                        </ul>
+                      </div>
+                    </div>
+                    </div> -->
+                    </td>
+                </tr>
+                <tr>
+                  <th class="pt10"><label>毕业时间</label></th>
+                    <td>    
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button" readonly class="text input date" placeholder="选择时间" name="graduate"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>        
+                  <!--   <div class="form_wrap normal_s" style="*z-index:4;">
+                      <div class="mr_timed_div normal_s fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="graduate_text" />
+                      <input type="button" class="mr_button" onchange="validateChange(this);" name="graduate"/>
+                      <div class="xl_list dn">
+                        <ul class="ul_eduy">
+                          <php>$year = getYear(1990,2017,1);</php>
+                          <volist name="year" id="v">
+                              <li>{$v}</li>
+                            </volist>
+                        </ul>
+                      </div>
+                    </div>
+                    </div> -->
+                    </td>
+                </tr>
+                <tr>
+                    <th class="pt10"><label>主修课程</label></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="major" class="form-control">
+                      </div>
+                    </td>
+                </tr>
+                <tr class="lowUse">
+                    <th class="pt10"><label>GPA(4分制)</label><span class="lowFreqency">低频</span></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="gpa_score" class="form-control">
+                          <span class="tipright icon-resume icon-business_bulb" title="GPA(4分制)"></span>
+                      </div>
+
+                    </td>
+
+                </tr>
+                <tr>
+                  <th class="pt10"><label>所在专业排名</label></th>
+                    <td >
+                    <div class="form_wrap normal_s" style="*z-index:4;">
+                    <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="professional_ranking_text" />
+                      <input type="button" class="mr_button" name="professional_ranking" id="proferank" />
+                      <div class="xl_list dn">
+                        <ul class="ul_proferank">
+                          <li>前5%<li>前10%</li><li>前20%</li><li>前30%</li><li>前40%</li><li>前50%</li><li>前60%</li><li>前70%</li><li>前80%</li><li>其他</li>
+                        </ul>
+                      </div>
+                    </div>
+                    </div>
+                    </td>
+                </tr>
+                 <tr>
+                  <th class="pt10"><label>班级排名</label></th>
+                    <td >
+                    <div class="form_wrap normal_s" style="*z-index:4;">
+                    <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                      <input type="hidden" name="class_ranking_text" />
+                      <input type="button" class="mr_button" name="class_ranking" id="classrank" />
+                      <div class="xl_list dn">
+                        <ul class="ul_classrank">
+                          <li>前5%<li>前10%</li><li>前20%</li><li>前30%</li><li>前40%</li><li>前50%</li><li>前60%</li><li>前70%</li><li>前80%</li><li>其他</li>
+                        </ul>
+                      </div>
+                    </div>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="pt10"><label>专业描述</label></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="professional_describe" class="form-control" >
+                          <span class="tipright icon-resume icon-business_bulb" title="专业描述专业 描述专业描述专业描述专业描述"></span>
+                      </div>
+                    </td>
+                </tr>
+                <tr class="lowUse">
+                    <th class="pt10"><label>导师姓名</label><span class="lowFreqency">低频</span></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="tutor_name" class="form-control" >
+                      </div>
+                    </td>
+                </tr>
+                <tr class="lowUse">
+                    <th class="pt10"><label>导师联系方式</label><span class="lowFreqency">低频</span></th>
+                    <td>
+                      <div class="myr_input_div_l mr_click_flag">
+                          <input type="text" name="tutor_phone" class="form-control">
+                      </div>
+                    </td>
+                </tr>
+            </table>
+   
+        </div>
+		
+		
+		
+
+       <div class="btn-group">
+            <input type="submit" class="btn-resumeac mr_save" value="保存" />
+            <input type="button" value="保存并下一项"  class="btn-resumeac mr_next" onclick="submitEduFrom(); tonext();">
+            <!-- <a href="javascript:" class="btn-resumeac mr_next" id="next" >下一步</a> -->
+        </div>
+               
+		<div class="mr_head_l">
+		<input name="name" type="button" onClick="show();" value="添加">
+		</div> 
+         <!--  <div class="mr_ope clearfixs">
+            <input type="submit" class="mr_save" value="保存" />
+            <a href="javascript:;" class="mr_cancel">取消</a> </div> -->
+        </div>
+      </form>
+   <!--    <div class="mr_head_l">
+          <div class="mr_head_r "> <i></i><em>再添加一项</em> </div>
+        
+      </div>     -->  
+</div>
+</div>
+ 
+<script type="text/javascript">
+  $(document).ready(function() {
+  
+
+  $('.tipright').jBox('Tooltip', {
+    position: {
+      x: 'right',
+      y: 'center'
+    },
+    width:150,
+    outside: 'x' // Horizontal Tooltips need to change their outside position
+  });
+  
+ 
+});
+</script>
+<script type="text/javascript">
+  function submitEduFrom(){
+  $('#addEduForm').submit();
+  }
+  function closeschool(){
+    $("div[class='provinceSchool']").hide();
+  }
+  function selectschool(){
+    var selectPro = $("div[class='proSelect'] select").val();
+    if("99"==selectPro){
+      $("#schoolName").val($("div[class='proSelect'] input").val());
+    }
+    $("div[class='provinceSchool']").hide();
+  }
+   $(document).ready(function() {
+      $(".form_oldatetime").datetimepicker({
+          format: "yyyy-mm-dd",
+          language: 'zh-CN',
+          weekStart: 1,
+          todayBtn:  1,
+          autoclose: 1,
+          todayHighlight: 1,
+          startView: 2,
+          minView: 2,
+          forceParse: 0
+      });
+   });  
+
+
+</script>
+<script type="text/javascript" src="/Public/Home/js/school.js"></script>
+<script type="text/javascript">
+$(function(){
+  //province;
+  //proSchool;
+  //学校名称 激活状态
+  $("#schoolName").focus(function(){
+    var top = $(this).position().top+$(this).height()+2;
+    var left = $(this).position().left;
+    $("div[class='provinceSchool']").css({top:top,left:left});
+    $("div[class='provinceSchool']").show();
+  });
+  //初始化省下拉框
+  var provinceArray = "";
+  var provicneSelectStr = "";
+  for(var i=0,len=province.length;i<len;i++){
+    provinceArray = province[i];
+    provicneSelectStr = provicneSelectStr + "<option value='"+provinceArray[0]+"'>"+provinceArray[1]+"</option>"
+  } 
+  $("div[class='proSelect'] select").html(provicneSelectStr);
+  //初始化学校列表
+  var selectPro = $("div[class='proSelect'] select").val();
+  var schoolUlStr = "";
+  var schoolListStr = new String(proSchool[selectPro]);
+  var schoolListArray = schoolListStr.split(",");
+  var tempSchoolName = "";
+  for(var i=0,len=schoolListArray.length;i<len;i++){
+    tempSchoolName = schoolListArray[i];
+    if(tempSchoolName.length>13){
+    schoolUlStr = schoolUlStr + "<li class='DoubleWidthLi' title="+schoolListArray[i]+">"+schoolListArray[i]+"</li>"
+    }else {
+    schoolUlStr = schoolUlStr + "<li>"+schoolListArray[i]+"</li>"
+    }
+  }
+  $("div[class='schoolList'] ul").html(schoolUlStr);
+  //省切换事件
+  $("div[class='proSelect'] select").change(function(){
+    if("99"!=$(this).val()){
+    $("div[class='proSelect'] span").show();
+    $("div[class='proSelect'] input").hide();
+    schoolUlStr = "";
+    schoolListStr = new String(proSchool[$(this).val()]);
+    schoolListArray = schoolListStr.split(",");
+    for(var i=0,len=schoolListArray.length;i<len;i++){
+      tempSchoolName = schoolListArray[i];
+      if(tempSchoolName.length>13){
+      schoolUlStr = schoolUlStr + "<li class='DoubleWidthLi' title="+schoolListArray[i]+">"+schoolListArray[i]+"</li>"
+      }else {
+      schoolUlStr = schoolUlStr + "<li>"+schoolListArray[i]+"</li>"
+      }
+    }
+    $("div[class='schoolList'] ul").html(schoolUlStr);
+    }
+    else {
+    $("div[class='schoolList'] ul").html("<span class='entertext'>请在输入框内手动输入学校！</span>");
+    $("div[class='proSelect'] span").hide();
+    $("div[class='proSelect'] input").show();
+    }
+  });
+  //学校列表mouseover事件
+  $("div[class='schoolList'] ul li").live("mouseover",function(){
+    $(this).css("background-color","#6f3400");
+  });
+  //学校列表mouseout事件
+  $("div[class='schoolList'] ul li").live("mouseout",function(){
+    $(this).css("background-color","");
+  });
+  //学校列表点击事件
+  $("div[class='schoolList'] ul li").live("click",function(){
+    $("#schoolName").val($(this).html());
+    $("div[class='provinceSchool']").hide();
+  });
+  //按钮点击事件
+  // $("div[class='button'] button").live("click",function(){
+  //   var flag = $(this).attr("flag");
+  //   if("0"==flag){
+  //   $("div[class='provinceSchool']").hide();
+  //   }else if("1"==flag){
+  //   var selectPro = $("div[class='proSelect'] select").val();
+  //   if("99"==selectPro){
+  //     $("#schoolName").val($("div[class='proSelect'] input").val());
+  //   }
+  //   $("div[class='provinceSchool']").hide();
+  //   }
+  // });
+
+});
+</script>
+ <script type="text/javascript">
+        var addressarr = {$city_arr};
+      //  var cprovince = {$info.nativeplace};
+        //var ccity = {$info.nativeplace_city};
+        addressarr = eval(addressarr);
+        function setprovince() {
+          var html = '';
+          for(var key in addressarr) {
+            if(addressarr[key]['pid']==1){
+              html += '<option class="optionstyle" value="'+addressarr[key].aid+'">'+addressarr[key].name+'</option>';
+              //html += '<li value="'+addressarr[key].aid+'">'+addressarr[key].name+'</li>';
+            }
+          }
+          $("#school_city").html(html);
+        }
+
+        function setschoolcity(vv) {
+          var html = '';
+          var v ='';
+          if(isNaN(vv)){
+            v = $(vv).val();
+          }
+          else v = vv;
+          if(addressarr[v]){
+            var cityarr = addressarr[v]['sub'];
+            for(var k in cityarr) {
+              html += '<option value="'+k+'">'+cityarr[k].name+'</option>';
+              //html += '<li>'+cityarr[k].name+'</li>';
+            }
+          }
+          $("#school_city_city").html(html);
+        }
+        setprovince();
+       // $("#school_city").val(cprovince);
+        var obj = $("#school_city").val();
+        setschoolcity(obj);
+        //$("#school_city_city").val(ccity);
+
+		
+		
+		function show(){
+document.getElementById("div").style.display="";
+//alert(document.getElementById("div").style.display)
+}
+function hidden(){
+document.getElementById("div").style.display="none";
+//alert(document.getElementById("div").style.display)
+}
+  
+</script>

@@ -1,0 +1,16 @@
+<table id="wltao_stockremind_table" style="border:1px;border-collapse: collapse;">
+	<tr>
+		<td class="td_item_name">商品名称</th>
+		<td class="td_stock_has">到货</th>
+		<td class="td_stock_time">添加时间</th>
+		<td class="td_stock_status">删除</th>
+	</tr>
+	{{#stockRemindList}}
+	<tr itemnum="{{itemnum}}">
+		<td class="td_item_name_1"><a target="_blank" href="{{itemlink}}">{{itemname}}</a><i class="wltao_td_tip_remind" style="display:{{has_stock_now}}}"></i></td>
+		<td class="td_stock_has_1">{{stockhas}}</td>
+		<td class="td_stock_time_1">{{time}}</td>
+		<td class="td_stock_status_parent"><span class="td_stock_status_2"></span></td>
+	</tr>
+	{{/stockRemindList}}
+</table>

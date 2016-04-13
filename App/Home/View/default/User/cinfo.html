@@ -1,0 +1,191 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">	
+	
+	<include file="Public/menu" />
+  
+	<div id="container">
+		<div id="stepTip" style=""> <a></a> <img src="__PUBLIC__/Images/tiponce.jpg" height="59" width="803"> </div>
+	    <div class="content_mid"> 
+	      <!--form-->
+	      <dl class="c_section c_section_mid">
+	        <dt>
+	          <h2><em></em>填写公司信息</h2>
+	        </dt>
+	        
+	        <dd>
+	          <form id="stepForm">
+	            <div class="c_text_1">基本信息为必填项，是求职者加速了解公司的窗口，认真填写吧！</div>
+	            <img src="__PUBLIC__/Images/step1.png" alt="第一步" class="c_steps" height="56" width="668">
+	            <h3>公司全称 <span>{$myinfo.company_name}</span></h3>
+	            <h3>公司简称</h3>
+	            <!--非必填-->
+	            <input class="valid" id="name" name="name" value="{$myinfo.company_short_name}" placeholder="请输入公司简称，如:钢铁侠" type="text">
+	            <h3>公司LOGO</h3>
+	            <!--非必填改必填-->
+	            <div class="c_logo c_logo_pos"> <a href="#logoUploader" class="inline cboxElement" title="上传公司LOGO">
+	              
+	              <if condition="$myinfo.logo eq ''">
+	              
+	              <div id="logoNo"> <span>上传公司LOGO</span> <br>
+	                尺寸：190*190px <br>
+	                大小：小于5M </div>
+	                
+	             <else />   
+	                
+	              </if>
+	                
+	              <div id="logoShow" class="dn" <if condition="$myinfo.logo neq ''">style="display: block;"</if> > <img src="/{$myinfo.logo}" alt="公司logo" height="190" width="190"> <span>更换公司LOGO<br>
+	                190px*190px 小于5M</span> </div>
+	                
+	              </a> </div>
+	            <h3>公司网址</h3>
+	            <input id="website" name="website" placeholder="请输入公司网址" value="{$myinfo.web_url}" type="text">
+	            <h3>所在城市</h3>
+	            <input id="city" name="city" placeholder="请输入公司所在城市，如：北京" type="text" value="{$myinfo.company_city}">
+	            <h3>行业领域</h3>
+	            <div>
+	              <input id="select_industry_hidden" name="select_industry_hidden" value="{$myinfo.hangye}" type="hidden">
+	              <input class="select" id="select_industry" name="select_industry" <if condition="$myinfo.hangye neq ''">value="{$myinfo.hangye}"<else />value="请选择行业领域"</if> type="button">
+	              <div style="display: none;" id="box_industry" class="dn">
+	                <ul class="reset">
+	                	<volist name="hangye_lingyu" id="v">
+	                  	 <li>{$v}</li>
+	                  	</volist>
+	                </ul>
+	              </div>
+	            </div>
+	            <h3>公司规模</h3>
+	            <div>
+	              <input id="select_scale_hidden" name="select_scale_hidden" value="{$myinfo.guimu}" type="hidden">
+	              <input class="select" id="select_scale" <if condition="$myinfo.hangye neq ''">value="{$myinfo.guimu}"<else />value="请选择公司规模"</if> type="button">
+	              <div style="display: none;" id="box_scale" class="dn">
+	                <ul class="reset">
+	                  <li>少于15人</li>
+	                  <li>15-50人</li>
+	                  <li>50-150人</li>
+	                  <li>150-500人</li>
+	                  <li>500-2000人</li>
+	                  <li>2000人以上</li>
+	                </ul>
+	              </div>
+	            </div>
+	            <h3>发展阶段</h3>
+	            <div>
+	              <input value="{$myinfo.jieduan}" <if condition="$myinfo.jieduan neq ''">class="valid"<else /> </if> name="s_radio_hidden" id="s_radio_hidden" type="hidden">
+	              <ul class="s_radio clearfix s_radio_ex">
+	                <li <if condition="$myinfo.jieduan eq '未融资'">class="current"</if> >未融资<if condition="$myinfo.jieduan eq '未融资'"><em></em></if></li>
+	                <li <if condition="$myinfo.jieduan eq '天使轮'">class="current"</if>>天使轮<if condition="$myinfo.jieduan eq '天使轮'"><em></em></if></li>
+	                <li <if condition="$myinfo.jieduan eq 'A轮'">class="current"</if>>A轮<if condition="$myinfo.jieduan eq 'A轮'"><em></em></if></li>
+	                <li <if condition="$myinfo.jieduan eq 'B轮'">class="current"</if>>B轮<if condition="$myinfo.jieduan eq 'B轮'"><em></em></if></li>
+	                <li <if condition="$myinfo.jieduan eq 'C轮'">class="current"</if>>C轮<if condition="$myinfo.jieduan eq 'C轮'"><em></em></if></li>
+	                <li <if condition="$myinfo.jieduan eq 'D轮及以上'">class="current"</if>>D轮及以上<if condition="$myinfo.jieduan eq 'D轮及以上'"><em></em></if></li>
+	                <li <if condition="$myinfo.jieduan eq '上市公司'">class="current"</if>>上市公司<if condition="$myinfo.jieduan eq '上市公司'"><em></em></if></li>
+	              </ul>
+	            </div>
+	            <h3>投资机构</h3>
+	            <ul class="reset" id="stagesList">
+	              <li>
+	                <input name="select_invest_hidden" value="" class="select_invest_hidden" type="hidden">
+	                <input class="select_short select_invest" value="请选择发展阶段" type="button">
+	                <div style="display: none;" class="box_invest dn">
+	                  <ul class="reset">
+	                    <li>天使轮</li>
+	                    <li>A轮</li>
+	                    <li>B轮</li>
+	                    <li>C轮</li>
+	                    <li>D轮及以上</li>
+	                    <li>上市公司</li>
+	                  </ul>
+	                </div>
+	                <input name="stageorg" placeholder="请输入投资机构，如真格基金，创新工场" type="text">
+	              </li>
+	            </ul>
+	            <div id="cloneInvest" class="dn">
+	              <input name="select_invest_hidden" class="select_invest_hidden" value="" type="hidden">
+	              <input class="select_short select_invest" value="请选择发展阶段" type="button">
+	              <div class="box_invest dn">
+	                <ul class="reset">
+	                  <li>天使轮</li>
+	                  <li>A轮</li>
+	                  <li>B轮</li>
+	                  <li>C轮</li>
+	                  <li>D轮及以上</li>
+	                  <li>上市公司</li>
+	                </ul>
+	              </div>
+	              <input name="stageorg" value="" placeholder="请输入投资机构，如真格基金，创新工场" type="text">
+	            </div>
+	            <h3>一句话介绍</h3>
+	            <input id="temptation" value="{$myinfo.descri}" name="temptation" maxlength="50" placeholder="一句话概括公司亮点，如公司愿景、领导团队等，限50字" type="text">
+	            <span id="beError" class="error" style="display:none;"></span>
+	            <input value="{$myinfo.uid}" name="companyId" id="companyId" type="hidden">
+	            <input value="{$myinfo.company_name}" name="companyName" id="companyName" type="hidden">
+	            <input class="btn_big fr" id="stepBtn" value="保存，下一步" type="submit">
+	          </form>
+	        </dd>
+	        
+	      </dl>
+	    </div>
+	   
+	    <!-------------------------------------弹窗lightbox  ----------------------------------------->
+	    <div style="display:none;"> 
+	      <!--图片上传-->
+	      <div id="logoUploader" class="popup" style="width:650px;height:470px;">
+	        <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" height="470" width="650">
+	          <param name="movie" value="__PUBLIC__/Js/avatar.swf?url={$Think.WEB_URL}Users/uploadLogo">
+	          <param name="quality" value="high">
+	          <param name="wmode" value="opaque">
+	          <param name="swfversion" value="111.0.0.0">
+	          <!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
+	          <param name="expressinstall" value="__PUBLIC__/Js/expressInstall.swf">
+	          <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 --> 
+	          <!--[if !IE]>-->
+	          <object type="application/x-shockwave-flash" data="__PUBLIC__/Js/avatar.swf?url={$Think.WEB_URL}Users/uploadLogo" height="470" width="650">
+	            <!--<![endif]-->
+	            <param name="quality" value="high">
+	            <param name="wmode" value="opaque">
+	            <param name="swfversion" value="111.0.0.0">
+	            <param name="expressinstall" value="__PUBLIC__/Js/expressInstall.swf">
+	            <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+	            <div>
+	              <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+	              <p><a href="http://www.adobe.com/go/getflashplayer"><img alt="获取 Adobe Flash Player" src="__PUBLIC__/Images/get_flash_player.gif" height="33" width="112"></a></p>
+	            </div>
+	            <!--[if !IE]>-->
+	          </object>
+	          <!--<![endif]-->
+	        </object>
+	      </div>
+	      <!-- #logoUploader --> 
+	    </div>
+	    <!------------------------------------- end -----------------------------------------> 
+	    
+	    <script type="text/javascript" src="__PUBLIC__/Js/step1.js"></script> 
+	    <script>
+			var avatar = {};
+			avatar.uploadComplate = function( data ){
+				var result = eval('('+ data +')');
+				if(result.success){
+					jQuery('#logoShow img').attr("src",ctx+ '/'+result.content);
+					jQuery.colorbox.close();
+					jQuery('#logoNo').hide();
+					jQuery('#logoShow').show();
+				}
+			};
+		</script>
+	    <div class="clear"></div>
+	    <input id="resubmitToken" value="1f5c29a119bd4cd297270ad7fb850bfd" type="hidden">
+	    <a style="display: none;" id="backtop" title="回到顶部" rel="nofollow"></a>
+
+	</div>	    
+  	<!-- end #container -->
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

@@ -1,0 +1,205 @@
+<div class="baseinfo-top">
+<h3>获奖经历</h3>
+</div>
+<div id="schoolAwards" class="item_container_target">
+<div class="list_show">
+<php>if($schoolawards_list){</php>
+      
+        <div class="clearfixs mb46 mr_jobe_list">
+        <table>
+          <tr><th width="200px">获奖名称</th><th width="200px">获奖类型</th><th width="200px">获得时间</th><th width="200px">编辑</th></tr>
+          <volist name="schoolawards_list" id="v">
+          <tr><td>{$v.awardsName}</td><td>{$v.awardsType}</td><td>{$v.awardsDate}</td><td><div class="mr_edit mr_c_r_t" data-schoolawardsid="{$v.id}" data-awardsname="{$v.awardsName}" data-awardstype="{$v.awardsType}" data-awardslevel="{$v.awardsLevel}" data-awardsdate="{$v.awardsDate}" data-awardsdes="{$v.awardsDes}"> <i></i><em>编辑</em> </div></td></tr>
+          </volist>
+        </table>
+        </div>
+        
+      <php>}</php>
+    </div>
+<div class="mr_moudle_head clearfixs">
+
+  <div class="mr_moudle_content" id="edu_update">
+    <form class="eduExpForm" id="addSchAwForm">
+      <!-- <input type="hidden" id="eduId" name="eduId" value="" /> -->
+       <div class="myr_info_list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo">
+            <tr>
+              <th class="pt10"><label>获奖名称</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <input type="text" name="awardsName" class="form-control">
+                </div>
+              </td>
+            </tr>
+           <tr>
+              <th class="pt10"><label>获奖类型</label></th>
+              <td>
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="awardsType_text" />
+                <input type="button" class="mr_button" name="awardsType" id="awardsType" />
+                <div class="xl_list dn">
+                  <ul class="ul_awardsType">
+                      <li>国际级</li>
+                       <li>国家级</li>
+                       <li>省市级</li>
+                       <li>学校级</li>
+                       <li>院系级</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="pt10"><label>担任职务</label></th>
+              <td>
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="awardsLevel_text" />
+                <input type="button" class="mr_button" name="awardsLevel" id="awardsLevel" />
+                <div class="xl_list dn">
+                  <ul class="ul_awardsLevel">
+                    <li>特等奖</li>
+                    <li>一等奖</li>
+                    <li>二等奖</li>
+                    <li>三等奖</li>
+                    <li>其它</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+            </tr>
+             <tr>
+              <th class="pt10"><label>获奖时间</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button"  readonly class="text input date" placeholder="选择时间" name="awardsDate"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+                </div>
+               
+              </td>
+            </tr>
+           <tr>
+              <th class="pt10"><label>获奖描述</label></th>
+                <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="awardsDes" style="width:520px;height:148px;"></textarea>
+                  <span class="tiprighttext icon-resume icon-business_bulb" title="获奖描述"></span> 
+                </td>
+            </tr>
+          </table>
+        </div>
+    <!-- 添加-->
+		<div class="myr_info_list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="baseinfo"  id="div3" style="display: none" onMouseout="hidden();">
+            <tr>
+              <th class="pt10"><label>获奖名称</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <input type="text" name="awardsName" class="form-control">
+                </div>
+              </td>
+            </tr>
+           <tr>
+              <th class="pt10"><label>获奖类型</label></th>
+              <td>
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="awardsType_text" />
+                <input type="button" class="mr_button" name="awardsType" id="awardsType" />
+                <div class="xl_list dn">
+                  <ul class="ul_awardsType">
+                      <li>国际级</li>
+                       <li>国家级</li>
+                       <li>省市级</li>
+                       <li>学校级</li>
+                       <li>院系级</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="pt10"><label>担任职务</label></th>
+              <td>
+                <div class="form_wrap normal_s" style="*z-index:4;">
+                <div class="mr_timed_div normal_s mr_sta_time fl"> <i class="mr_sj"></i>
+                <input type="hidden" name="awardsLevel_text" />
+                <input type="button" class="mr_button" name="awardsLevel" id="awardsLevel" />
+                <div class="xl_list dn">
+                  <ul class="ul_awardsLevel">
+                    <li>特等奖</li>
+                    <li>一等奖</li>
+                    <li>二等奖</li>
+                    <li>三等奖</li>
+                    <li>其它</li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </td>
+            </tr>
+             <tr>
+              <th class="pt10"><label>获奖时间</label></th>
+              <td>
+                <div class="myr_input_div_l">
+                    <div class="form-item ">
+                          <div class="controls input-append date form_oldatetime" data-date="{$info.start_time}">
+                          <div class="form_wrap  normal_s controls">
+                              <input type="button" class="mr_button"  readonly class="text input date" placeholder="选择时间" name="awardsDate"  data-date-format="yyyy-mm-dd">
+                              <span class="add-on"><i class="icon-remove"></i></span>
+                              <span class="add-on"><i class="icon-calendar"></i></span>
+                              <i class="mr_sj"></i>
+                              </div>
+                          </div> 
+                      </div>
+                </div>
+               
+              </td>
+            </tr>
+           <tr>
+              <th class="pt10"><label>获奖描述</label></th>
+                <td class="tb_textarea">
+                  <textarea class="resumetextarea form-control" name="awardsDes" style="width:520px;height:148px;"></textarea>
+                  <span class="tiprighttext icon-resume icon-business_bulb" title="获奖描述"></span> 
+                </td>
+            </tr>
+          </table>
+        </div>
+        <div class="mr_ope clearfixs btn-group">
+          <input type="submit" class="mr_save btn-resumeac" value="保存" />
+          <!-- <a href="javascript:;" class="mr_cancel btn-resumeac">取消</a> --> 
+           <input type=button value="保存并下一项"  class="btn-resumeac mr_next" onclick="submitSchAwFrom(); tonext();">
+           </div>
+		   <div class="mr_head_l">
+			<input name="name" type="button" onClick="show();" value="添加">
+		</div> 
+      </div>
+    </form>
+           
+</div>
+</div>
+  <script type="text/javascript">
+  function submitSchAwFrom(){
+  $('#addSchAwForm').submit();
+  }
+  
+  function show(){
+document.getElementById("div3").style.display="";
+//alert(document.getElementById("div").style.display)
+}
+function hidden(){
+document.getElementById("div3").style.display="none";
+//alert(document.getElementById("div").style.display)
+}
+</script>

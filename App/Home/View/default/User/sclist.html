@@ -1,0 +1,188 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/companylist.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/flat-ui.min.css" />
+<style type="text/css">
+ 
+</style>
+<div class="w960 mt30 jm_companylist_container">
+    <div class="lw240 jm_companylist_l">
+        <ul class="nav" >
+            <li class="active">
+              <a class="icon-resume icon-file-archive nav_cl_yl">我收藏的网申</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="rw680">
+    
+        <!-- 浏览器列表开始-->
+        <div  class="jm_companylist_r" style="margin:0;position: relative;">
+            <div id="collectapp" class="jm_companylist_section jm_inter">
+            <h3 class="jm_support_title">
+              <div class="pull-right">
+                <label class="radio">
+                  <input type="radio" name="optype" id="internship" value="实习" data-toggle="radio" class="custom-radio" checked><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                  实习 
+               </label>&nbsp;&nbsp;&nbsp;
+               <label class="radio">
+                  <input type="radio" name="optype" id="fulltime" value="全职" data-toggle="radio" class="custom-radio" ><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                  全职 
+               </label>
+              </div>
+            </h3>
+			
+			
+			
+            <table class="jm_companylist_tb">
+			   <volist name="info" id="v">
+
+              <tr class="<if condition="$v.position eq 2">parttime<else/>fulltime</if>" >
+                  <td width="210"><img src="{$v.path}"/>
+                  {$v.company_name}</td>
+				    
+                  <td width="210"><a target="_blank" href="{$v.url_link}">{$v.link}</a></td>
+                  <td width="220">已开始 </td>
+                   
+                   <td width="40"><div class="collected jd_col" cid='{$v.id}' kid='{$v.kid}'><i class="icon-resumebold icon-favourite"></i><span class="dn collection_jd">取消收藏</span><i class="dn collection_jd_trangle"></i></div></td>
+                
+              </tr>
+               </volist>
+              
+            </table>
+			
+			
+            </div>
+        </div>
+        <!-- 职位列表结束-->
+		<!--  <div class="page">
+            {$page}
+        </div> -->
+    </div>
+    <div class="clr"></div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#ot-add").click(function(){
+      $("#ot-addform").css("display","block");
+      $("#ot-add").addClass("hn");
+      $(".cbp-vm-options").addClass("hn");
+      $("#ot-empty").css("display","none");
+    });
+	
+	// $("#internship")
+   $('.fulltime').css('display','none');
+   $('#fulltime').click(function(){
+      $('.fulltime').css('display','block');
+      $('.parttime').css('display','none');
+      $(this).attr('checked', 'true');
+   });
+  $('#internship').click(function(){
+      $('.fulltime').css('display','none');
+      $('.parttime').css('display','block');
+      $(this).attr('checked', 'true');
+   });
+	
+
+$("div").delegate(".jobCollection","click",function(){ 
+      var cid =$(this).attr('cid');
+        var keepUP = $(this).children('span');
+        var obj=$(this).parent();
+        var msg ='';
+
+        $.ajax({
+          type:"POST",
+          url:ctx + "Company/keep",
+          data:{
+          cid: cid,
+        },
+          success:function(data) {
+            //alert(data);
+            if (data != 0 && data != -1) {
+                msg = '取消收藏';
+                obj.children('div').attr('kid',data);
+                obj.children('div').addClass('collected').removeClass('jobCollection');
+           }
+            
+           if (data == -1) {
+                msg = '已收藏';
+           }
+
+            if (data == 0) {
+                msg = '收藏失败';
+            }
+
+            keepUP.html(msg).removeClass('dn');
+
+          }
+        });
+        return false;
+    }); 
+
+  $("div").delegate(".collected","click",function(){ 
+    //$('.collected').click(function(){
+        var kid =$(this).attr('kid');
+        var keepCancel = $(this).children('span');
+        var obj=$(this).parent();
+        var msg ='';
+
+        $.ajax({
+          type:"POST",
+          url:ctx + "Company/cancelKeep",
+          data:{
+          kid: kid,
+        },
+          success:function(data) {
+            //alert(data);
+            if (data == 1) {
+                msg = '收藏';
+                obj.children('div').addClass('jobCollection').removeClass('collected');
+           }
+            
+           if (data == -1) {
+                msg = '已取消';
+           }
+
+            if (data == 0) {
+                msg = '取消失败';
+            }
+
+            keepCancel.html(msg).removeClass('dn');
+  
+          }
+        });
+        return false;
+      });
+
+      $(".jd_col").bind("mouseover",
+      function() {
+          var a = $(this).find("span.collection_jd");
+          $(this).addClass("collection_hover"),
+           a.removeClass("dn")
+         // $(this).hasClass("collected") ? (a.text("已收藏"), a.removeClass("dn")) : (a.text("收藏"), a.removeClass("dn"))
+      }),
+      $(".jd_col").bind("mouseout",
+      function() {
+          $(this).find("span.collection_jd").addClass("dn"),
+          $(this).removeClass("collection_hover")
+      });
+      $(".jd_col").bind("mouseover",
+      function() {
+          var a = $(this).find("i.collection_jd_trangle");
+          a.removeClass("dn")
+      }),
+      $(".jd_col").bind("mouseout",
+      function() {
+          $(this).find("i.collection_jd_trangle").addClass("dn"),
+          $(this).removeClass("collection_hover")
+        });
+
+
+  });
+</script>
+<script src="/Public/Home/js/modernizr.custom.js"></script>
+<script src="/Public/Home/js/flat-ui.min.js"></script>
+<script src="/Public/Home/js/flat-application.js"></script>
+<!-- <script type="text/javascript" src="/Public/Home/js/bootstrap.min.js"></script>  --> 
+
+<include file="Public/footer" />        

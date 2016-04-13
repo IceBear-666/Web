@@ -1,0 +1,57 @@
+<include file="Public/header" />
+
+  
+<body>
+
+<div id="body">
+	
+	
+	<include file="Public/menu" />
+
+  
+	<div id="container" style=" padding-bottom: 10px;">
+		<style>.ui-autocomplete{max-height:160px;overflow-y:scroll;}</style>
+	    <div class="content_mid"> 
+	      <!--form-->
+	      <dl class="c_section c_section_service">
+	      
+	        <dt>
+	          <h2><em></em>开通招聘服务</h2>
+	        </dt>
+	        
+	        <dd> 
+               	<div class="os_step_3"></div>
+               	<div class="open_service_success">
+                	<h3>验证邮件已发送至：{$myinfo.email_jianli}</h3>
+                	<h4>请登录邮箱点击邮件内的链接，验证后即可发布职位</h4>
+                    
+                    	            	</div>
+            	<div class="open_service_success_btm">
+                 	<h5>没有收到确认邮件，怎么办？</h5>
+                   	<div class="contacttip">
+                    	1.邮箱地址填写错误？ <a href="{$Think.WEB_URL}Users/basic">重新填写邮箱地址</a> <br>
+						2.看看是否在邮箱的垃圾邮件、广告邮件目录里<br>
+						3.稍等几分钟，若还未收到验证邮件，  <a href="javascript:void(0)" id="resendOpenService">重新发送验证邮件</a> <br>
+						4.还未收到验证邮件，请联系我们，邮箱：vivi@lagou.com 电话：400-605-9900
+					</div>
+                    <!-- <span id="tip" style="display:none; float:right; margin:-60px 0 0 -20px;">验证邮件发送成功！</span> -->
+                </div>
+			</dd>       
+	        
+	      </dl>
+	    </div>
+	    
+	    <div id="loadingDiv" class="dn"><img src="__PUBLIC__/Images/ajax-loader.gif" height="32" width="32"></div>
+	    
+	    <script type="text/javascript" src="__PUBLIC__/Js/services.js?v={$rand}"></script>
+	    <div class="clear"></div>
+	    <!-- <input id="resubmitToken" value="e626ce20b99b4d7eac7f0b64aecbbb20" type="hidden"> -->
+	    <a id="backtop" title="回到顶部" rel="nofollow"></a>
+
+	</div>
+  
+</div>
+<!-- end #body -->
+
+
+<include file="Public/footer" />

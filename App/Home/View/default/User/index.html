@@ -1,0 +1,233 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/external.min.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/popup.css"/>
+<style type="text/css">
+.rw690 {
+	width: 690px;
+	margin: 0 auto;
+}
+#edit_pw_contrainer{
+	margin-top: 40px;
+}
+#edit_pw{
+	
+  height: 378px;
+  border-radius: 2px;
+  border: solid 1px #e3d2c4;
+}
+#edit_pw .usinfo {
+	padding:0;
+	background: #fff;
+}
+#edit_pw .usinfo h2{
+	font-size: 16px;
+	padding: 7px 0;
+	text-align: center;
+	color: #482929;
+	width: 690px;
+	height: 28px;
+	background-color: #f6ebd6;
+}
+#edit_pw .edpw{
+	width: 356px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #6f3400;
+}
+#edit_pw .edpw table tr{
+	height: 48px;
+}
+#edit_pw .edpw table td{
+	position: relative;
+	 padding: 3px 20px 0 0;
+}
+#edit_pw .edpw table td:first-child{
+	text-align: right;
+}
+#edit_pw #ueditpw{
+	right: 0
+}
+#edit_pw .mybtn1{
+	padding: 6px 15px;
+    margin-top: 15px;
+	font-size: 14px;
+	color: #482929;
+	background-color: #ffd733;
+}
+#updatePwd_beError{
+    position: absolute;
+    right: -150px;
+    top: 9px;	
+}
+#edit_pw  #ueditpw .offpw:before,#edit_pw #ueditpw .onpw:before{
+	right: 10px;
+	font-size: 21px;
+}
+</style>
+<div class="w960" id="edit_pw_contrainer">
+
+<!-- 左侧开始 -->
+<!-- <include file="Public/user_left" /> -->
+
+<div class="rw690 " id="edit_pw">
+	
+    	<!-- 修改密码 -->
+		<div class="usinfo">
+         <h2>修改密码</h2>
+         <div class="clr"></div>
+             <div class="edpw">
+               <form class="registerform" action="#" method="post" name="forms" id="updatePswForm">   
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    
+                      <tr>
+                        <td width="90">账号</td>
+                        <td>{$info.email}</td>
+                      </tr>
+                      
+                      <tr>
+                        <td style="padding-top:14px;" valign="top" width="90">当前密码</td>
+                        <td> <input type="password" class="myipt" name="oldpassword" id="oldpassword" placeholder="请输入当前密码" errormsg="密码为6-20位" nullmsg="请输入当前密码" datatype="*6-20"/>
+                        <span id="updatePwd_beError" style="" class="error"></span>
+                        </td>
+                        
+                      </tr>
+                      
+                      <tr>
+                        <td style="padding-top:14px;" valign="top" >新密码</td>
+                        <td>
+                          <div class="newpw">
+                             <div id="editipt"><input type="password" id="newpassword" class="myipt" name="newpassword"  placeholder="请输入新密码" errormsg="密码为6-20位" nullmsg="请输入新密码" datatype="*6-20"/></div>
+                             <div id="ueditpw"><a class="offpw" href="javascript:showps()"></a></div>
+                         </div>
+                           </td>
+                      </tr>
+                      
+                      <tr>
+                      	<td></td>
+                        <td><input type="submit" class="mybtn1 f16" value="确认修改"/></td>
+                      </tr>
+                      
+                    </table>
+                 </form>
+             </div>
+       </div>
+</div>
+
+</div>
+
+<!-- 眼镜显示隐藏密码 -->
+<script language="JavaScript">
+	  function showps(){ 
+		  if (this.forms.newpassword.type="password") {
+			  document.getElementById("editipt").innerHTML="<input type=\"text\" name=\"newpassword\" class=\"myipt\" id=\"newpassword\" placeholder=\"请输入新密码\" errormsg=\"密码为6-20位\" nullmsg=\"请输入新密码\" datatype=\"*6-20\"  value="+this.forms.newpassword.value+">"; 
+			  document.getElementById("ueditpw").innerHTML="<a class=\"onpw\" href=\"javascript:hideps()\"></a>"
+		  }
+	  } 
+	  function hideps(){ 
+		  if (this.forms.newpassword.type="text") {
+			  document.getElementById("editipt").innerHTML="<input type=\"password\" name=\"newpassword\" class=\"myipt\" id=\"newpassword\" placeholder=\"请输入新密码\" errormsg=\"密码为6-20位\" nullmsg=\"请输入新密码\" datatype=\"*6-20\"  value="+this.forms.newpassword.value+">"; 
+			  document.getElementById("ueditpw").innerHTML="<a class=\"offpw\" href=\"javascript:showps()\"></a>"
+		  } 
+	  } 
+</script>
+
+<!-- <script type="text/javascript" src="/Public/Home/js/Validform_v5.3.2_min.js"></script>   
+<script type="text/javascript">
+$(function(){	
+	$(".registerform:eq(0)").Validform({
+		tiptype:3,
+		showAllError:true,
+
+	});
+   $(".registerform1:eq(0)").Validform({
+		tiptype:3,
+		showAllError:true,
+
+	});
+});
+</script> -->
+
+
+<!-- ==================== 弹窗  ==================== -->
+
+<!-- 修改密码成功 -->
+ <div style="display:none;">
+    <script type="text/javascript" src="/Public/Home/js/setting.js"></script> 
+	<div id="updatePassword" class="popup" style="overflow:hidden">
+		<h3>修改密码成功，请重新登录</h3>
+		<h4><span>5</span>秒后将自动退出</h4>
+		<a href="/User/logout" class="btn mybtn1">直接退出</a>
+	</div>
+ </div>
+ 
+ 
+  <script>
+			(function(){
+				//校验
+				$('#upEmailForm').validate({
+				    onkeyup:false, 
+			        rules: {
+			        	newemail : {
+			    	   		required:true,
+			    	   		email:true,
+			    	   		//forwardEmailFormat:true,
+			    	   		//forwardSame:true,
+			    	   		maxlength:100
+			    		}
+			    	},
+			    	messages: {
+			    		newemail: {
+			    			required:"请输入正确格式的接收简历邮箱！",
+			    	   		email:"请输入正确的邮箱格式",
+			    	   		//forwardEmailFormat:"邮箱后缀不同，解绑对当前公司的招聘服务才可绑定其他公司邮箱接收简历",
+			    	   		//forwardSame:"请输入与当前接收简历邮箱不同的邮箱地址",
+			    	   		maxlength:"请输入正确格式的接收简历邮箱！"
+			    	   	}
+			    	},
+			    	errorPlacement:function(label, element){
+			    		label.appendTo($(element).parent());
+			    		$(".c_section span.error").css("margin","5px 0 10px 10px");
+			    	},
+			    	submitHandler:function(form){
+			    		var newemail = $("#newemail").val();
+			    		var obj = {receiveEmail:newemail};
+			    		$.ajax({
+				   			 type:'POST',
+				   			 url:ctx+"User/updateEmail",
+				   			 data:obj,
+				   			 dataType:'json'
+				   		 }).done(function(result){
+				   			if(result.state == "1"){
+				   				alert("修改成功");
+				   				top.location.href=ctx+"User/index.html?type=email";
+				   				//top.location.href=ctx+"/baseinfo/receiveEmail/verifyEmail.html?recordId=" + result.content.data.record;
+				   			}else{
+					   			 switch (result.state)
+					                {
+					                case 301:
+									  alert("邮箱为空");		                  
+					                  break;
+					                case 302:
+					                  alert("邮箱和之前的相同");
+					                  
+					                  break;
+					                case 303:
+					                	alert("邮箱后缀不一致");
+					                 
+					                  break;
+					                case 304:
+					                	alert("该邮箱被占用");
+					                 
+					                  break;
+					                default:
+					                	alert("邮箱格式不对");
+					                }
+				   			}
+				   		 });	    		
+			    	}
+				});		
+				
+			})();
+			</script>
+ 
+<include file="Public/footer" />

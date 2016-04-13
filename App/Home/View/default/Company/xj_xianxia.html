@@ -1,0 +1,280 @@
+<include file="Public/header" />
+
+<script type="text/javascript" src="/Public/Home/js/company/spsd.js"></script>
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/xuanjiang.css" />
+<link rel="stylesheet" type="text/css"  href="/Public/Home/css/list.css" />
+
+
+<script>
+ window.onload= function(){
+	 $("ul[cid='<php>echo $_GET['cid'];</php>']").show();
+	 $("li[sid='<php>echo $_GET['sid'];</php>']").addClass('cur');
+	 $("li[cid='<php>echo $_GET['cid'];</php>']").addClass('cur');
+ };
+</script>
+
+
+
+<div class="w960 mt30">
+
+<!-- 1分类开始 -->
+    <div id="xiacity" class="xiacate bgf9">
+    
+       <ul>
+          <h5>华东及华北地区</h5>
+          <div class="cate2 lf">
+            <li cid="1">北京</li>
+            <li cid="2">天津</li>
+            <li cid="3">石家庄</li>
+            <li cid="4">哈尔滨</li>
+            <li cid="5">长春</li>
+          </div>
+       </ul>
+       
+       <ul>
+          <h5>华东地区</h5>
+          <div class="cate2 lf">
+            <li cid="6">上海</li>
+            <li cid="7">杭州</li>
+            <li cid="8">宁波</li>
+            <li cid="9">南京</li>
+            <li cid="10">济南</li>
+            <li cid="11">青岛</li>
+            <li cid="12">合肥</li>
+          </div>
+       </ul>
+       
+       <ul>
+          <h5>华东及中南地区</h5>
+            <div class="cate2 lf">
+              <li cid="13">广州</li>
+              <li cid="14">深圳</li>
+           </div>
+       </ul>
+       
+       <ul>
+          <h5>西北及西南地区</h5>
+           <div class="cate2 lf">
+             <li cid="15">重庆</li>
+             <li cid="16">成都</li>
+          </div>
+       </ul>
+       
+       <div class="clr"></div>
+      <img class="ewm" src="/Public/Home/images/ewm.gif" />
+    </div>
+<!-- 1分类结束 --> 
+  
+  
+<!-- 2分类开始 -->   
+     <div id="school" class="xiacate2">
+       <ul cid="1">
+          <li sid="1">北京大学</li>
+          <li sid="2">清华大学</li>
+          <li sid="4">北京大学</li>
+          <li sid="5">清华大学</li>
+       </ul>
+       
+       <ul cid="2">
+          <li sid="6">山东大学</li>
+          <li sid="7">上海大学</li>
+       </ul>
+       
+       <ul cid="3">
+          <li sid="8">广州大学</li>
+          <li sid="9">深圳大学</li>
+       </ul>
+       
+        <div class="clr"></div>
+     </div>
+<!-- 2分类结束 --> 
+
+
+ <!-- 搜索开始 -->
+   <div class="clr"></div>
+   <div class="rmsou">
+   
+     <div class="rmqy lf">
+         <span class="lf">热门企业：</span>
+         <a href="#" target="_blank">中国银行</a>
+         <a href="#" target="_blank">百度</a>
+         <a href="#" target="_blank">阿里巴巴</a>
+         <a href="#" target="_blank">腾讯</a>
+         <a href="#" target="_blank">南方航空</a>
+      </div>
+      
+     <form id="searchForm" name="searchForm" action="#" method="get" >
+       <input type="hidden" name="cid" id="cityInput" value="<php>echo $_GET['cid']</php>"/>
+        <input type="hidden" name="sid" id="scInput" value="<php>echo $_GET['sid']</php>"/>
+       <div class="xjsoubox" style="float:right;">
+                <input type="text" class="stxt" name = "kd"  tabindex="1" value="<php>echo $_GET['kd'];</php>"  placeholder="搜索高效或企业名称"  />
+                <input type="submit" class="sbtn" value="搜索" />
+           <div class="clr"></div>
+       </div>
+    </form>    
+        <div class="clr"></div>
+   </div>
+
+
+
+ <!-- 线下宣讲列表开始-->
+     <div id="xiajlist" class="xiajlist">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr class="mtil">
+              <td width="30"></td>
+              <td width="160">日期</td>
+              <td width="70">时间</td>
+              <td width="100">参与企业</td>
+              <td width="130">参与学校</td>
+              <td>详细地点</td>
+              <td width="30">收藏</td>
+              <td width="30"></td>
+           </tr>
+            
+           <tr class="bgf9">
+              <td></td>
+              <td>2015-06-06(周四)</td>
+              <td>13:00</td>
+              <td><a href="#">中国银行</a></td>
+              <td><a cid="1" sid="2" href="#">上海交通大学</a></td>
+              <td>新太阳活动中心（备注：航天科工二院）</td>
+              <td align="center"><a class="mystar" href="#" title="取消收藏"></a></td>
+              <td></td>
+           </tr>
+           
+           <tr>
+              <td></td>
+              <td>2015-06-06(周四)</td>
+              <td>13:00</td>
+              <td><a href="#">中国银行</a></td>
+              <td><a cid="1"  sid="2" href="#">上海交通大学</a></td>
+              <td>新太阳活动中心（备注：航天科工二院）</td>
+              <td align="center"><a class="mystaradd" href="#" title="加入收藏"></a></td>
+              <td></td>
+           </tr>
+           
+           <tr class="bgf9">
+              <td></td>
+              <td>2015-06-06(周四)</td>
+              <td>13:00</td>
+              <td><a href="#">中国银行</a></td>
+              <td><a cid="1" sid="2" href="#">上海交通大学</a></td>
+              <td>新太阳活动中心（备注：航天科工二院）</td>
+              <td align="center"><a class="mystaradd" href="#" title="加入收藏"></a></td>
+              <td></td>
+           </tr>
+           
+           <tr>
+              <td></td>
+              <td>2015-06-06(周四)</td>
+              <td>13:00</td>
+              <td><a href="#">中国银行</a></td>
+              <td><a cid="1" sid="2" href="#">上海交通大学</a></td>
+              <td>新太阳活动中心（备注：航天科工二院）</td>
+              <td align="center"><a class="mystaradd" href="#" title="加入收藏"></a></td>
+              <td></td>
+           </tr>
+           
+           <tr class="bgf9">
+              <td></td>
+              <td>2015-06-06(周四)</td>
+              <td>13:00</td>
+              <td><a href="#">中国银行</a></td>
+              <td><a cid="1" sid="2" href="#">上海交通大学</a></td>
+              <td>新太阳活动中心（备注：航天科工二院）</td>
+              <td align="center"><a class="mystaradd" href="#" title="加入收藏"></a></td>
+              <td></td>
+           </tr>
+           
+
+           
+          
+       </table>
+
+     </div>
+   <!-- 线下宣讲列表结束-->
+       
+       
+  <!-- 翻页-->
+    <div class="Pagination"></div> 
+     
+</div>
+
+ 
+ 
+ 
+
+
+
+ 
+
+
+
+
+
+<!-- 地区学校筛选 -->
+<script>
+
+ $('#xiacity').on('click','ul li',function(){
+	   var mcity = $(this).attr('cid');
+	   $("#school ul[cid="+mcity+"]").show().siblings('ul').hide();
+	   $("li[cid="+mcity+"]").addClass('cur').siblings('li').removeClass('cur').parents('ul').siblings().find("li").removeClass('cur');
+	});
+	
+ $('#school').on('click','ul li',function(){
+	   var city = $(this).parent().attr('cid');
+	   var schoolid = $(this).attr('sid');
+	   editForm("cityInput",city);
+	   editForm("scInput",schoolid);
+ });
+ 
+  $('#xiajlist').on('click','a',function(){
+	   var city2 = $(this).attr('cid');
+	   var schoolid2 = $(this).attr('sid');
+	   editForm("cityInput",city2);
+	   editForm("scInput",schoolid2);
+ });
+
+</script>  
+
+
+
+<script type="text/javascript" src="/Public/Home/js/core.min.js"></script>
+<script>
+	
+/****** 分页开始 ****/
+ 	<php>if($totalRows>0){</php>
+ 	 
+	 var getpn='<php>echo $currPage;</php>';
+	 $('.Pagination').pager({
+	      currPage: getpn,
+	      pageNOName: "pn",
+	      form: "searchForm",
+	      pageCount: {$page_count},
+	      pageSize:  {$listRows}
+	});
+	
+	<php>}</php>
+
+
+
+/****** 响应提交表单 ****/
+function editForm(inputId,inputValue){
+	$("#"+inputId).val(inputValue);
+	var keyword = $.trim($('#search_input').val());
+	var reg =  /[`~!@\$%\^\&\*\(\)_<>\?:"\{\},\\\/;'\[\]]/ig;
+	var re = /#/g;
+	var r = /\./g;
+	var kw = keyword.replace(reg," ");
+	if(kw == ''){
+		$('#searchForm').attr('action','?/xj_xianxia.html').submit();
+	}else{
+		kw = kw.replace(re,'井');
+		kw = kw.replace(r,'。');
+		$('#searchForm').attr('action','?/xj_xianxia.html?kw='+kw).submit();
+	}
+}
+
+</script>
+ 
+<include file="Public/footer" />

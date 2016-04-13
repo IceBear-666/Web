@@ -1,0 +1,357 @@
+<include file="Public/header" />
+
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/popup.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Home/mcss/external.min.css"/>
+
+<script type="text/javascript">
+var ctx = "{$Think.WEB_URL}";
+var ctx_new = "{$Think.WEB_URL}";
+var rctx = "{$Think.WEB_URL}";
+var pctx = "{$Think.WEB_URL}";
+
+</script>
+
+    <div class="tilhed">
+       <a class="golevel" href="/Company/info/id/{$info.uid}"></a>
+       <div class="mbtitle">职位详情</div>
+       <a class="gohome" href="<php>if(getUsersSession('type')==1) echo '/user/';else echo'/';</php>"></a>
+    </div>
+
+<div class="mbbox2">
+
+ <div class="mbinfo">
+ 
+   <div class="mbintil">
+      <h1 title="{$info.zhiwei_mingcheng}">{$info.zhiwei_mingcheng}</h1>
+      <!-- 收藏 -->     
+      <php>if($cuser_type){ }else{</php>
+      
+            <php>if($my_collect){</php>
+             	<div  class="jd_collection collected" onclick="return user_collection({$info.jid},0,1,1)">
+             <php>}else{</php>
+             	<div  class="jd_collection" onclick="return user_collection({$info.jid},1,1,1)">
+             <php>}</php>
+               </div>
+               
+        <php>}</php>
+       <!-- end 收藏 -->
+    </div>
+ 
+ 
+   <div class="minfo2">
+         <dd class="job_request">
+         
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="33.3%"><span class="minfo1"><em>{$info.gongzuo_chengshi}</em></span> </td>
+            <td width="33.3%"><span class="minfo2"><em>{$info.yuexin_min}k-{$info.yuexin_max}k</em></span> </td>
+            <td width="33.3%"><span class="minfo3"><em>{$info.xueli}</em></span></td>
+          </tr>
+          <tr>
+            <td><span class="minfo4"><em>{$info.gongzuo_xingzhi}</em></span></td>
+            <td><span class="minfo5"><em>{$info.gongzuo_jingyan}</em> </span></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="3"><span class="minfo6"><em>{$info.zhiwei_youhuo}</em></span></td>
+          </tr>
+        </table>
+
+        </dd>
+        
+        <div class="infocom">
+           <a href="/Company/info/id/{$info.uid}">
+            <img src="{$info.logo}" alt="{$info.company_name}" />
+              <div class="sping lf">
+                 <div><h5>{$info.company_short_name}</h5> <i <php>if($company['isv']==2)echo 'class="cur"';</php> ></i></div>
+                 <div class="clr"><em>“</em>{$info.descri}<em>”</em></div>
+                 <span>{$info.hangye}</span>
+               </div>
+            <div class="clr"></div>
+          </a>
+         
+       </div>
+           
+        <dd class="job_bt">
+          <div class="bgf9" style="padding:2px 0px;"><h3 class="description">职位描述</h3></div>
+          <!-- <p><strong>岗位职责：</strong></p> -->
+          <div style="padding:16px;">{$info.descrip}</div>
+        </dd>
+   </div>
+ 
+ </div>
+ 
+      <div class="shenqing clr" id="show_resume_status">
+         
+         	<php>if($myinfo && $myinfo['type']>0){</php>
+         	
+         	<php>}else{</php>
+         	
+	         	<php>if($my_apply){</php>
+					<a href="javascript:;" class="infobtn1 ljsq">已投递</a>
+				<php>}elseif(!$myinfo){</php>
+					<a class="inline infobtn ljsq rt"  href="#yseResume" title="简投递历" >立即申请</a>
+				<php>}elseif( count($myinfo['offline_resume'])>1 || ($myinfo['offline_resume'] && $myinfo['is_finish']==1 ) ){</php>	
+					<a class="inline infobtn ljsq rt"  href="#selectResume" title="简投递历" >立即申请</a>
+				<php>}elseif($myinfo['offline_resume'] || $myinfo['is_finish']==1){</php>
+					<a class="inline infobtn ljsq rt"  href="#selectResume" title="简投递历" >立即申请</a>					
+				<php>}else{</php>
+					<a class="inline infobtn ljsq rt"  href="#noResume" title="简投递历" >立即申请</a>					
+				<php>}</php>
+			
+			<php>}</php>
+           
+         </div>
+
+       
+</div>
+
+  <input type="hidden" value="<php>echo md5($info['uid']);</php>" name="userid" id="userid" />
+  <input type="hidden" value="1" name="type" id="resend_type" />
+  <input type="hidden" value="{$info.jid}"  id="jobid" />
+  <input type="hidden" value="{$info.uid}"  id="companyid" />
+  <input type="hidden" value="{$info.lng}" id="positionLng" />
+  <input type="hidden" value="{$info.lat}" id="positionLat" />
+<div id="tipOverlay" ></div>
+
+
+
+<!------------------------------------- 弹窗lightbox  ----------------------------------------->
+
+ <style>
+   #colorbox{ width:80% !important;}
+   .popup{ padding-top:10px;}
+ </style>
+  
+  	<php>if(!$myinfo){</php>
+  	
+	  	<!-- 未登陆 -->
+        <div style="display:none;"> 
+          <div id="yseResume" class="popup" style=" height:90px; text-align:center;">
+            <div class="jd_delivery">
+              <p class="f16">系统检测到你还没有登陆，如果已经登陆请刷新当前页面。</p>
+               <a href="/User/login/?ref=/Jobs/info/id/{$info.jid}" class="btn f16 report_cancel" id="goto_login">确定</a>
+            </div>
+          </div>
+        </div>
+	    <!--/#yseResume    $myinfo['offline_resume'] &&-->
+	    
+	<php>}elseif( count($myinfo['offline_resume'])>1 || ( $myinfo['offline_resume'] && $myinfo['is_finish']==1 ) ){</php>
+	
+		<!-- 选择简历 -->
+        <div style="display:none;"> 
+	    <div class="popup" id="selectResume">
+	      <form id="basicInfoForm" method="post" style="line-height:26px;">
+	        
+	          <table width="100%" border="0" cellspacing="0" cellpadding="0" class="f16">
+	            
+	            <tr>
+	              <td style="position:relative; padding-bottom:12px;">
+	              <i class="bitian">*</i>选择简历<br />
+
+	                  <input type="hidden" name="resume_id" id="gongsi_xingzhi" value="" >
+	                  <input type="button" class="toudi_sel" id="select_sca" value="选择一份简历" >
+	                  <div id="box_sca" class="myselectbox toudi_selbox dn">
+	                    <ul class="reset">
+	                    
+	                    	<php>if($myinfo['is_finish']==1){</php>
+	                        	<li value="online">我的在线简历</li>
+	                        <php>}</php>
+	                        
+	                        <volist name="myinfo.offline_resume" id="vv">
+	                        	<li value="{$vv.oid}">{$vv.name}</li>
+	                        </volist>
+	                        
+	                    </ul>
+	                  </div>
+	              
+	              </td>
+	            </tr>
+	            
+	            <tr>
+	              <td style=" padding-bottom:12px;">
+                  <i class="bitian">*</i>联系电话<br />
+
+                  <input class="toudi_tel yuan3"  id="myphone" name="tel" value="{$myinfo.phone}"/>
+                  </td>
+	            </tr>
+	            
+	             <tr><td height="10"></td><td></td></tr>
+	            <tr>
+	               <td align="center" colspan="2">
+	                   <input class="mybtn2 f16" id="fasong" type="submit" value="发送" />
+	                   <a href="javascript:" class="mybtn2s f16 report_cancel" id="cancelDetail">取消</a>
+	                </td>
+	            </tr>
+	          </table>
+	          
+	      </form>
+	    </div>
+      </div>
+	    <!--/#infoBeforeDeliverResume-->
+	
+	<php>}elseif( $myinfo['offline_resume'] || $myinfo['is_finish']==1){</php>
+	
+		<!-- 选择简历 -->
+          <div style="display:none;"> 
+	    <div id="selectResume" class="popup" style="height:196px; overflow:visible;">
+	      <form id="basicInfoForm" method="post" style="line-height:26px;">
+	        
+	          <table width="100%" border="0" cellspacing="0" cellpadding="0" class="f16">
+	            
+	            <tr>
+	              <td style="position:relative; padding-bottom:12px;">
+	              <i class="bitian">*</i>选择简历<br />
+
+	                  <input type="hidden" name="resume_id" id="gongsi_xingzhi" value="" >
+	                  <input type="button" class="toudi_sel" id="select_sca" value="选择一份简历" >
+	                  <div id="box_sca" class="myselectbox toudi_selbox dn">
+	                    <ul class="reset">
+	                    
+	                    	<php>if($myinfo['is_finish']==1){</php>
+	                        	<li value="online">我的在线简历</li>
+	                        <php>}</php>
+	                        
+	                        <volist name="myinfo.offline_resume" id="vv">
+	                        	<li value="{$vv.oid}">{$vv.name}</li>
+	                        </volist>
+	                        
+	                    </ul>
+	                  </div>
+	              
+	              </td>
+	            </tr>
+	            
+	            <tr>
+	              <td style=" padding-bottom:12px;">
+                  <i class="bitian">*</i>联系电话<br />
+
+                  <input class="toudi_tel yuan3"  id="myphone" name="tel" value="{$myinfo.phone}"/>
+                  </td>
+	            </tr>
+	            
+	             <tr><td height="4"></td><td></td></tr>
+	            <tr>
+	               <td align="center" colspan="2">
+	                   <input class="mybtn2 f16" id="fasong" type="submit" value="发送" />
+	                   <a href="javascript:" class="mybtn2s f16 report_cancel" id="cancelDetail">取消</a>
+	                </td>
+	            </tr>
+	          </table>
+	          
+	      </form>
+	    </div>
+        </div>
+	    <!--/#infoBeforeDeliverResume-->
+	
+	<php>}else{</php>
+	
+		<!-- 投递时，一个简历都没有弹窗 -->
+       <div style="display:none;"> 
+	    <div id="noResume" class="popup" style="height:90px; line-height:26px;">
+	      <table width="100%">
+          <tr><td height="10"></td></tr>
+	        <tr>
+	          <td class="f18 c5" align="center">你还没有可以投递的简历呢</td>
+	        </tr>
+	        <tr>
+	          <td class="c5" align="center">请前往电脑版完善简历在再投递吧~</td>
+	        </tr>
+	      </table>
+	    </div>
+        </div>
+	    <!--/#noResume-->
+	
+	<php>}</php>
+  
+  	<!-- 投简历成功 -->
+      <div style="display:none;"> 
+	    <div id="yseResume" class="popup" style=" height:90px; text-align:center;">
+	      <div class="jd_delivery">
+	        <p class="f16">简历已经成功投递出去了，请静候佳音！</p>
+	         <a href="javascript:" class="btn f16 report_cancel" id="cancelDetail">确定</a>
+	      </div>
+	    </div>
+       </div>
+	<!--/#yseResume-->
+
+
+
+    <!-- 举报提交后的弹窗 -->
+    <div style="display:none;">
+      <div id="receive_report" class="popup" style="height:150px;">
+        <h2 style="text-align:center;">你的举报已经成功提交，我们会尽快核实举报内容，<br />对违规职位绝不姑息。</h2>
+        <a href="javascript:;" title="关闭" class="report_cancel">关闭</a> </div>
+    </div>
+    
+    <!-- 重复举报的弹窗 -->
+    <div style="display:none;">
+      <div id="has_report" class="popup" style="height:110px;">
+        <h2 class="mtb10">你已经举报过该职位，不能重复举报。</h2>
+        <a href="javascript:;" title="关闭" class="report_cancel">关闭</a>
+        <input type="hidden" value="0" />
+      </div>
+    </div>
+
+
+
+
+
+  <!------------------------------------- end ----------------------------------------->
+  
+<script>
+$(function(){
+   $('#select_sca').bind('click',function(e){
+		e.stopPropagation();
+		$(this).addClass('select_tags_focus');
+		$('#select_ind').removeClass('select_tags_focus');
+		$('#box_sca').show();
+		$('#box_fin').hide();
+		$('#stageform .selectBoxShort').hide();
+		$('#box_ind').hide();
+	});
+	$('#box_sca').on('click','ul li',function(e){
+		e.stopPropagation();
+		var sca = $(this).text();
+		var sca2 = $(this).attr('value');
+		$('#select_sca').val(sca).removeClass('select_tags_focus');
+		$('#gongsi_xingzhi').val(sca2);
+		$('#box_sca').hide();
+	});
+});	
+</script>
+
+<script type="text/javascript" src="/Public/Home/js/popup.js"></script> 
+  
+
+
+<!-- 收藏、举报、微信调用的js -->
+<script type="text/javascript" src="/Public/Home/js/job_detail.js"></script> 
+<!-- 举报 -->
+<script>
+  $(".report_button").on("click",function(event){
+	  
+	  
+	  $("#problem_txt").val("");
+      $("#problem_txt").attr("placeholder","请您描述问题详情，以便于帮您核实情况。");
+      placeholderFn() ;
+      $("#report_reason").val("请选择举报原因");
+      $("#report_reason_hidden").val("");
+      $("#select_box").find("div.reason_content").hide() ;
+      $("#report_submit").find("span.error").remove() ;
+      $(".reason_content").hide();
+      $(".report_txt").find("b").text(500);
+      $("#report_reason").css("border-color","#f1f1f1");
+      $(".report_select").css("border-color","#f1f1f1");
+      $.colorbox({inline:true, href:$("div#reportbox"),title:"举报该职位"});
+	  
+
+    
+  });
+</script>
+
+	
+
+
+<style>#comfooter{ display:none;}</style>
+<include file="Public/footer" />

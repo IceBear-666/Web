@@ -1,0 +1,124 @@
+<include file="Public/bbs_header" />
+
+  
+  <div id="somoreitem">
+    <div class="automw">
+      <div id="smicontent" class="autocw"></div>
+    </div>
+  </div>
+  
+  
+  <div id="container" class="automw">
+  
+  
+    <div id="homeheader">
+      <div class="contentfw autocw">
+      
+        <div id="hbzl"><a href="{$Think.WEB_URL}Users/" class="fl"><img width="80" height="80" src="{$Think.WEB_URL}Public/Images/user_header.gif"></a>
+          <div id="hbzlinfo" class="fl">
+            <p class="hbzl-s1" style=" font-size: 20px;">
+            
+            {$usersinfo.nickname}
+            
+            &nbsp;          
+            
+            <span style="font-size:12px;">
+            [ 
+            <if condition="$vip eq 1">
+            	VIP会员（有效期至{$stop_time}）  &nbsp;  <a href="{$Think.WEB_URL}Users/recharge">前往续费</a>
+            <else />
+            	非VIP会员  &nbsp;  <a href="{$Think.WEB_URL}Users/recharge">立即充值</a>
+            </if>
+             ]
+            </span>
+            
+            	
+            </p>
+            <p class="hbzl-s2"><span class="yy-icon yy-didian"></span>&nbsp;&nbsp;&nbsp;{$usersinfo.address}</p>
+            
+            <if condition="$is_myself eq 1">
+            	<p class="hbzl-s3"><a href="{$Think.WEB_URL}Users/settings/" class="ufwsms"><span class="yy-icon yy-ceditw"></span>修改资料</a></p>
+          	</if>
+          	
+          </div>
+        </div>
+        
+        <!-- <div id="hbzl2">
+          <p class="hbzl-s4"><span class="yy-icon yy-view"></span>人气：<span class="hbzl-s4t hbzl-s4tb">0</span></p>
+          <p class="hbzl-s4"><span class="yy-icon yy-user"></span>粉丝：<a href="#"  target="_blank" class="hbzl-s4t">0</a><span class="yy-icon yy-user2"></span>关注：<a href="#" target="_blank" class="hbzl-s4t">0</a></p>
+        </div> -->
+        
+        <div class="clear"></div>
+        <ul id="twomenu">
+          <li class="active"><a href="javascript:void(0);">发布</a></li>
+          <!-- <li><a href="{$Think.WEB_URL}Users/like">喜欢</a></li> -->
+        </ul>
+        
+      </div>
+    </div>
+    
+    
+    
+    <div class="contentfw autocw" id="homecontent">
+    
+    
+      <div id="hbwork"  data-cid="">
+      
+      <if condition="$list neq '' ">
+      
+      	<volist name="list" id="info" empth="暂无记录">
+      
+        <div class="citem me"><!-- {$Think.WEB_URL}Public/Images/itemi.png -->
+          <div class="citemtop"><a class="citemimg" href="{$Think.WEB_URL}Bbs/info/id/{$info.pid}" target="_blank"><img src="{$Think.WEB_URL}{$info.thumb}" data-src="{$Think.WEB_URL}{$info.thumb}">
+            <if condition="$info.status eq 0"><div>审核中</div><else/></if>
+            </a>
+            <div class="citemtxt"><a class="citemtitle" target="_blank" href="{$Think.WEB_URL}Bbs/info/id/{$info.pid}">{$info.title}</a>
+              <div class="citemtc"><span class="yy-icon yy-time">{$info.addtime|getLongTimeSpace=###}前</span></div>
+            </div>
+          </div>
+          <div class="citemqt"><span class="yy-icon yy-view">{$info.hits}</span><span class="yy-icon yy-comment">{$info.msg_count}</span><!-- <a class="yy-icon yy-like" data-postid="{$info.pid}" href="{$Think.WEB_URL}Users/like"><span class="likecount">0</span></a> --></div>
+          <if condition="$is_myself eq 1">
+          	<div class="citemqt citemfoot"><a class="yy-icon yy-cdel casedel" href="{$Think.WEB_URL}Users/delPost/id/{$info.pid}" data-id="{$info.pid}">删除</a><a class="yy-icon yy-cedit" href="{$Think.WEB_URL}Users/addPost/id/{$info.pid}">编辑</a></div>
+          </if>
+        </div>
+        
+        </volist>
+        
+      <else />
+      	<div >暂无帖子记录。
+      	<if condition="$is_myself eq 1">
+      		<a href="/Users/addPost">立即发布</a></div>
+      	</if>
+      </if>  
+        
+        <div class="clear"></div>
+        <!-- <div id="pages"><a href="{$Think.WEB_URL}Bbs/info/id/{$info.pid}"  id="pageactive">1</a></div> -->
+      </div>
+      
+      
+      <!-- <div id="hblh">
+        <div class="hblhtitle">最近来访</div>
+        <ul class="hblhbody">
+          <div class="clear"></div>
+        </ul>
+        <div class="hblhtitle">我的关注</div>
+        <ul class="hblhbody">
+          <div class="clear"></div>
+        </ul>
+      </div> -->
+      
+      
+      <div class="clear"></div>
+      
+    </div>
+    
+    
+    
+  </div>
+  
+  
+  <include file="Public/bbs_footer" />
+  
+
+
+<include file="Public/footer" />
