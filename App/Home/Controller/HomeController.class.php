@@ -689,6 +689,7 @@ class HomeController extends Controller {
                     break;
 	            case 'jingyan':
 	                global $expid;
+	                $content['content']['resubmit'] = "work";
 	                $content['content']['isNew'] = false;
 	                $list = getUsersWorkExperience($uid);
 	                $num_counter = $this->NumberCounter(2,6,$list);
@@ -719,8 +720,9 @@ class HomeController extends Controller {
 	            case 'jiaoyu':
 	                global $eduid;
 	                $content['content']['isNew'] = false;
+	                $content['content']['resubmit'] = "edu";
 	                $list = getUsersEduExperience($uid);
-	                $num_counter = $this->NumberCounter(3,9,$list);
+	                $num_counter = $this->NumberCounter(3,11,$list);
 	                $content['content']['firstnum'] = $num_counter[0];
 	                $content['content']['totalnum'] = $num_counter[1];
 	                $alllist = getUsersAllInfo($uid);
@@ -744,9 +746,10 @@ class HomeController extends Controller {
 
 	            case 'zaixiaoshijian':
 	                global $schpraid;
+	                $content['content']['resubmit'] = "schpra";
 	                $content['content']['isNew'] = false;
 	                $list = getSchoolPractice($uid);
-	                $num_counter = $this->NumberCounter(2,6,$list);
+	                $num_counter = $this->NumberCounter(1,5,$list);
 	                $content['content']['firstnum'] = $num_counter[0];
 	                $content['content']['totalnum'] = $num_counter[1];
 	                $alllist = getUsersAllInfo($uid);
@@ -770,6 +773,7 @@ class HomeController extends Controller {
 
 	            case 'shetuan':
 	                global $schoolclubid;
+	                $content['content']['resubmit'] = "schclub";
 	                $content['content']['isNew'] = false;
 	                $list = getUsersSchoolClub($uid);
 	                $num_counter = $this->NumberCounter(1,2,$list);
@@ -793,8 +797,10 @@ class HomeController extends Controller {
 	                }
 	                $content['content']['latestSchoolClubs'] = $list[0];
 	                break;  
+
 	            case 'huojiang':
 	                //global $schoolclubid;
+	            	$content['content']['resubmit'] = "schaw";
 	                $content['content']['isNew'] = false;
 	                $list = getUsersSchoolAwards($uid);
 	                $num_counter = $this->NumberCounter(1,2,$list);
@@ -820,6 +826,7 @@ class HomeController extends Controller {
 	                break;  
 	             case 'zhengshu':
 	                //global $schoolclubid;
+	             	$content['content']['resubmit'] = "certi";
 	                $content['content']['isNew'] = false;
 	                $list = getUsersCertificate($uid);
 	                $num_counter = $this->NumberCounter(1,2,$list);
@@ -846,6 +853,7 @@ class HomeController extends Controller {
 
 	            case 'trainingexp':
 	                //global $schoolclubid;
+	            	$content['content']['resubmit'] = "train";
 	                $content['content']['isNew'] = false;
 	                $list = getUsersTrainingExperience($uid);
 	                $num_counter = $this->NumberCounter(1,2,$list);
@@ -906,6 +914,105 @@ class HomeController extends Controller {
 	                $content['content']['latestCustomize'] = $list[0];
 	                break; 
 
+	            case 'engskill':
+	                //global $schoolclubid;
+	                $content['content']['isNew'] = false;
+	                $content['content']['resubmit'] = 'esl';
+	                $ollist = getUsersOtherSkill($uid);
+	                $content['content']['otherskill'] = $ollist;
+	                $oellist = getUsersOtherEngSkill($uid);
+	                $content['content']['otherengskill'] = $oellist;
+	                $esllist = getUsersEngSkill($uid);
+	                $content['content']['engskill'] = $esllist;
+	                $num_countera = $this->NumberCounter(1,2,$ollist);
+	                $num_counterb = $this->NumberCounter(1,2,$oellist);
+	                $num_counterc = $this->NumberCounter(1,2,$esllist);
+	                $num_counter[0] = $num_countera[0] +$num_counterb[0] + $num_counterc[0];
+	                $num_counter[1] = $num_countera[1] +$num_counterb[1] + $num_counterc[1];
+	                $content['content']['firstnum'] = $num_counter[0];
+	                $content['content']['totalnum'] = $num_counter[1];
+	                $alllist = getUsersAllInfo($uid);
+	                $content['content']['allnum'] = $alllist[0];
+	                $content['content']['allemptynum'] = $alllist[1];
+	                $emptylist = getUsersEmptyInfo($uid);
+	                $content['content']['lownum'] = $emptylist[0];
+	                $content['content']['lowemptynum'] = $emptylist[1];
+	                break;   
+
+	            case 'otherengskill':
+	                //global $schoolclubid;
+	                $content['content']['isNew'] = false;
+	                $content['content']['resubmit'] = 'oesl';
+	                $ollist = getUsersOtherSkill($uid);
+	                $content['content']['otherskill'] = $ollist;
+	                $oellist = getUsersOtherEngSkill($uid);
+	                $content['content']['otherengskill'] = $oellist;
+	                $esllist = getUsersEngSkill($uid);
+	                $content['content']['engskill'] = $esllist;
+	                $num_countera = $this->NumberCounter(1,2,$ollist);
+	                $num_counterb = $this->NumberCounter(1,2,$oellist);
+	                $num_counterc = $this->NumberCounter(1,2,$esllist);
+	                $num_counter[0] = $num_countera[0] +$num_counterb[0] + $num_counterc[0];
+	                $num_counter[1] = $num_countera[1] +$num_counterb[1] + $num_counterc[1];
+	                $content['content']['firstnum'] = $num_counter[0];
+	                $content['content']['totalnum'] = $num_counter[1];
+	                $alllist = getUsersAllInfo($uid);
+	                $content['content']['allnum'] = $alllist[0];
+	                $content['content']['allemptynum'] = $alllist[1];
+	                $emptylist = getUsersEmptyInfo($uid);
+	                $content['content']['lownum'] = $emptylist[0];
+	                $content['content']['lowemptynum'] = $emptylist[1];
+	                break;     
+
+	            case 'otherskill':
+	                //global $schoolclubid;
+	                $content['content']['isNew'] = false;
+	                $content['content']['resubmit'] = 'osl';
+	                $ollist = getUsersOtherSkill($uid);
+	                $content['content']['otherskill'] = $ollist;
+	                $oellist = getUsersOtherEngSkill($uid);
+	                $content['content']['otherengskill'] = $oellist;
+	                $esllist = getUsersEngSkill($uid);
+	                $content['content']['engskill'] = $esllist;
+	                $num_countera = $this->NumberCounter(1,2,$ollist);
+	                $num_counterb = $this->NumberCounter(1,2,$oellist);
+	                $num_counterc = $this->NumberCounter(1,2,$esllist);
+	                $num_counter[0] = $num_countera[0] +$num_counterb[0] + $num_counterc[0];
+	                $num_counter[1] = $num_countera[1] +$num_counterb[1] + $num_counterc[1];
+	                $content['content']['firstnum'] = $num_counter[0];
+	                $content['content']['totalnum'] = $num_counter[1];
+	                $alllist = getUsersAllInfo($uid);
+	                $content['content']['allnum'] = $alllist[0];
+	                $content['content']['allemptynum'] = $alllist[1];
+	                $emptylist = getUsersEmptyInfo($uid);
+	                $content['content']['lownum'] = $emptylist[0];
+	                $content['content']['lowemptynum'] = $emptylist[1];
+	                break;  
+
+	            case 'allskill':
+	                //global $schoolclubid;
+	                $content['content']['isNew'] = false;
+	                $ollist = getUsersOtherSkill($uid);
+	                $content['content']['otherskill'] = $ollist;
+	                $oellist = getUsersOtherEngSkill($uid);
+	                $content['content']['otherengskill'] = $oellist;
+	                $esllist = getUsersEngSkill($uid);
+	                $content['content']['engskill'] = $esllist;
+	                $num_countera = $this->NumberCounter(1,2,$ollist);
+	                $num_counterb = $this->NumberCounter(1,2,$oellist);
+	                $num_counterc = $this->NumberCounter(1,2,$esllist);
+	                $num_counter[0] = $num_countera[0] +$num_counterb[0] + $num_counterc[0];
+	                $num_counter[1] = $num_countera[1] +$num_counterb[1] + $num_counterc[1];
+	                $content['content']['firstnum'] = $num_counter[0];
+	                $content['content']['totalnum'] = $num_counter[1];
+	                $alllist = getUsersAllInfo($uid);
+	                $content['content']['allnum'] = $alllist[0];
+	                $content['content']['allemptynum'] = $alllist[1];
+	                $emptylist = getUsersEmptyInfo($uid);
+	                $content['content']['lownum'] = $emptylist[0];
+	                $content['content']['lowemptynum'] = $emptylist[1];
+	                break;      
+	                
 	            case 'xiangmu':
 	                global $projectid;
 	                $content['content']['isNew'] = false;
@@ -918,7 +1025,7 @@ class HomeController extends Controller {
 	                else {
 	                    $content['code'] = 3;
 	                }
-
+	                $content['content']['resubmit'] = "pro";
 	                $list = getUsersProExperience($uid);
 	                $num_counter = $this->NumberCounter(2,6,$list);
 	                $content['content']['firstnum'] = $num_counter[0];

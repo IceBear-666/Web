@@ -351,7 +351,6 @@ class ResumeController extends UserController {
             'edu_list'=>getUsersEduExperience($uid),
             'pro_list'=>getUsersProExperience($uid),
             'work_list'=>getUsersWorks($uid),
-            'skill_list'=>getUsersSkill($uid),
             'custom_model'=>getUserDefine($uid),
             'step_info'=>getResumeStepNext($info),
             'otherResume'=>getMyUploadResume($uid),
@@ -362,7 +361,12 @@ class ResumeController extends UserController {
             'trainingexperience_list'=>getUsersTrainingExperience($uid),
             'otherinfo_list'=>getUsersotherInfo($uid),
             'resume_info'=>getUsersResumeInfo($uid),
+            'engskill_list'=>getUsersEngSkill($uid),
+            'otherengskill_list'=>getUsersOtherEngSkill($uid),
+            'otherskill_list'=>getUsersOtherSkill($uid),
 
+            'counterAll' =>getUsersAllInfo($uid),
+            'counterEmpty' =>getUsersEmptyInfo($uid),
             'list'=>$list,
             "year"=>$year,
             "month"=>$rili[2],
@@ -994,63 +998,106 @@ class ResumeController extends UserController {
     //添加更新工作经验
     public function workExperience() {
         $uid = $this->uid;
-    
+        $data = $_POST;
         if(!$uid){
             $this->ResumeJson(0,"请先登陆。");
         }
         if($_GET['access'] == 1){
             $_POST = $_GET;
         }  
-        $expid = intval($_POST['expid']);
+   
+        if ($data) {
+      
+            for ($i=0; $i < count($data['companyName']); $i++) { 
+
+                $database['companyName'] = $data['companyName'][$i];
+                $database['positionName'] = $data['positionName'][$i];
+                $database['startDate'] = $data['startDate'][$i];
+                $database['endDate'] = $data['endDate'][$i];
+                $database['jobContent'] = $data['jobContent'][$i];
+                $database['company_property'] = $data['company_property'][$i];
+                $database['company_size'] = $data['company_size'][$i];
+                $database['company_cat'] = $data['company_cat'][$i];
+                $database['work_cat'] = $data['work_cat'][$i];
+                $database['department'] = $data['department'][$i];
+                $database['work_city'] = $data['work_city'][$i];
+                $database['workContent'] = $data['workContent'][$i];
+                $database['salary_month'] = $data['salary_month'][$i];
+                $database['reterence_name'] = $data['reterence_name'][$i];
+                $database['reterence_relation'] = $data['reterence_relation'][$i];
+                $database['reterence_company'] = $data['reterence_company'][$i];
+                $database['reterence_position'] = $data['reterence_position'][$i];
+                $database['reterence_phone'] = $data['reterence_phone'][$i];
+                $database['reasons'] = $data['reasons'][$i];
+                $database['expid'] = $data['expid'][$i];
+                $database['uid'] = $uid;
+                $database['createTime'] = time();
+
+                if(!$database['expid']){
+                    $database['expid'] = M("work_experience")->add($database);
+                }
+                else {
+                    unset($database['uid']);
+                    unset($database['createTime']);
+                    M("work_experience")->where( array('uid'=>$uid,'id'=>$database['expid']) )->save($database);
+                }
+            }
+       
+            $this->ResumeJson(1,"操作成功！",'jingyan');
+                
+        }else{
+            echo 0;
+        }
+        // $expid = intval($_POST['expid']);
          
-        $data = array(
-            'companyName'=>trim($_POST['companyName']),
-            'positionName'=>trim($_POST['positionName']),
-            'startDate'=>trim($_POST['startDate']),
-            'endDate'=>trim($_POST['endDate']),
-            'isUploadLogo'=>intval($_POST['isUploadLogo']),
-            'companyLogo'=>trim($_POST['companyLogo']),
-            'jobContent'=>trim($_POST['jobContent']),
-            'company_property' =>trim($_POST['company_property']),
-            'company_size' =>trim($_POST['company_size']),
-            'company_cat' =>trim($_POST['company_cat']),
-            'work_cat' =>trim($_POST['work_cat']),
-            'department' =>trim($_POST['department']),
-            'work_city' =>trim($_POST['work_city']),
-            'workContent' =>trim($_POST['workContent']),
-            'salary_month' =>trim($_POST['salary_month']),
-            'reterence_name' =>trim($_POST['reterence_name']),
-            'reterence_relation' =>trim($_POST['reterence_relation']),
-            'reterence_company' =>trim($_POST['reterence_company']),
-            'reterence_position' =>trim($_POST['reterence_position']),
-            'reterence_phone' =>trim($_POST['reterence_phone']),
-            'reasons' => trim($_POST['reasons']),
-            'uid'=>$uid,
-            'createTime'=>time(),
-        );
+        // $data = array(
+        //     'companyName'=$data['companyName']),
+        //     'positionName'=>trim($_POST['positionName']),
+        //     'startDate'=>trim($_POST['startDate']),
+        //     'endDate'=>trim($_POST['endDate']),
+        //     'isUploadLogo'=>intval($_POST['isUploadLogo']),
+        //     'companyLogo'=>trim($_POST['companyLogo']),
+        //     'jobContent'=>trim($_POST['jobContent']),
+        //     'company_property' =>trim($_POST['company_property']),
+        //     'company_size' =>trim($_POST['company_size']),
+        //     'company_cat' =>trim($_POST['company_cat']),
+        //     'work_cat' =>trim($_POST['work_cat']),
+        //     'department' =>trim($_POST['department']),
+        //     'work_city' =>trim($_POST['work_city']),
+        //     'workContent' =>trim($_POST['workContent']),
+        //     'salary_month' =>trim($_POST['salary_month']),
+        //     'reterence_name' =>trim($_POST['reterence_name']),
+        //     'reterence_relation' =>trim($_POST['reterence_relation']),
+        //     'reterence_company' =>trim($_POST['reterence_company']),
+        //     'reterence_position' =>trim($_POST['reterence_position']),
+        //     'reterence_phone' =>trim($_POST['reterence_phone']),
+        //     'reasons' => trim($_POST['reasons']),
+        //     'uid'=>$uid,
+        //     'createTime'=>time(),
+        // );
     
         //if( !$data['companyName'] || !$data['positionName'] || !$data['startDate'] || !$data['endDate'] || !$data['workContent'] ){
-         if( !$data['companyName'] ){
-            //$this->error("请填写完整！");
-            $this->ResumeJson(0,"请填写完整！");
-        }
-        else{
-            if(!$expid){
-                $expid = M("work_experience")->add($data);
-            }
-            else {
-                unset($data['uid']);
-                unset($data['createTime']);
-                M("work_experience")->where( array('uid'=>$uid,'id'=>$expid) )->save($data);
-            }
+        //  if( !$data['companyName'] ){
+        //     //$this->error("请填写完整！");
+        //     $this->ResumeJson(0,"请填写完整！");
+        // }
+        // else{
+        //     if(!$expid){
+        //         $expid = M("work_experience")->add($data);
+        //     }
+        //     else {
+        //         unset($data['uid']);
+        //         unset($data['createTime']);
+        //         M("work_experience")->where( array('uid'=>$uid,'id'=>$expid) )->save($data);
+        //     }
     
-            if($expid){
-                $data = array();
-                $data['score_jingyan'] = getResumeStepScore('score_jingyan');
-                M("member")->where( array('uid'=>$uid) )->save($data);
-            }
-            $this->ResumeJson(1,"操作成功！",'jingyan');
-        }
+        //     if($expid){
+        //         $data = array();
+        //         $data['score_jingyan'] = getResumeStepScore('score_jingyan');
+        //         M("member")->where( array('uid'=>$uid) )->save($data);
+        //     }
+        //     $this->ResumeJson(1,"操作成功！",'jingyan');
+        // }
     
     }
     
@@ -1064,24 +1111,18 @@ class ResumeController extends UserController {
         if( !$id || !$uid ){
             $this->ResumeJson(0,"参数无效！");
         }
-         
+    
         M("work_experience")->where( array('uid'=>$uid,'id'=>$id) )->delete();
-         
-        $ext = array();
-        $check = M("work_experience")->where( array('uid'=>$uid) )->find();
-        if(!$check){
-            $ext['last'] = 1;
-            M("member_info")->where( array('uid'=>$uid) )->save( array('score_jingyan'=>0) );
-        }        
-         
-        $this->ResumeJson(1,"操作成功！",'jingyan',0,$ext);
-         
+    
+       $this->ResumeJson(1,"操作成功！",'jingyan',0,$ext);   
     }
     
     //添加更新教育经验
+
     public function educationExperience() {
         $uid = $this->uid;
-    
+        $data = $_POST;
+       
         if(!$uid){
             $this->ResumeJson(0,"请先登陆。");
         }
@@ -1089,61 +1130,86 @@ class ResumeController extends UserController {
         if($_GET['access'] == 1){
             $_POST = $_GET;
         }
+        if ($data) {
+      
+            for ($i=0; $i < count($data['schoolName']); $i++) { 
 
-        //$data = json_decode(stripslashes($_POST),true);
-        //$data = unserialize($_POST);
-        // $data = array();
-        // $data = array_chunk($_POST, 17);
-        // for ($i=0; $i <count($data) ; $i++) { 
-           
-        $eduid = intval($_POST['eduid']);
-    
-        $data = array(
-            'education'=>trim($_POST['education']),
-            'endYear'=>trim($_POST['endYear']),
-            'professional'=>trim($_POST['professional']),
-            'schoolName'=>trim($_POST['schoolName']),
-            'startYear'=>trim($_POST['startYear']),
-            'school_city'=>trim($_POST['school_city']),
-            'school_city_city'=>trim($_POST['school_city_city']),
-            'degree'=>trim($_POST['degree']),
-            'academy'=>trim($_POST['academy']),
-            'major'=>trim($_POST['major']),
-            'gpa_score'=>trim($_POST['gpa_score']),
-            'professional_ranking'=>trim($_POST['professional_ranking']),
-            'class_ranking'=>trim($_POST['class_ranking']),
-            'professional_describe'=>trim($_POST['professional_describe']),
-            'tutor_name'=>trim($_POST['tutor_name']),
-            'tutor_phone'=>trim($_POST['tutor_phone']),
-                       
-           // 'reward_punish'=>trim($_POST['reward_punish']),
-            'uid'=>$uid,
-            'createTime'=>time(),
-        );
-         
-        // if( !$data['schoolName'] ){
-            
-        //     $this->ResumeJson(0,"请填写完整！");
-        // }
-        // else{
-            if(!$eduid){
-                $eduid = M("edu_experience")->add($data);
+                $database["uid"] = $uid;
+                $database['education'] = $data['degree_text'][$i];
+                $database['endYear'] = $data['graduate'][$i];
+                $database['professional'] = $data['positionName'][$i];
+                $database['schoolName'] = $data['schoolName'][$i];
+                $database['startYear'] = $data['startYear'][$i];
+                // $database['school_city'] = $data['school_city'][$i];
+                // $database['school_city_city'] = $data['school_city_city'][$i];
+                $database['degree'] = $data['degree_t'][$i];
+                $database['academy'] = $data['academy'][$i];
+                $database['major'] = $data['major'][$i];
+                $database['gpa_score'] = $data['gpa_score'][$i];
+                $database['professional_ranking'] = $data['professional_ranking_text'][$i];
+                $database['class_ranking'] = $data['class_ranking_text'][$i];
+                $database['professional_describe'] = $data['professional_describe'][$i];
+                $database['tutor_name'] = $data['tutor_name'][$i];
+                $database['tutor_phone'] = $data['tutor_phone'][$i];
+                $database['createTime'] = time();   
+                $database['eduid'] = $data['eduid'][$i];
+                if(!$database['eduid']){
+                    $database['eduid'] = M("edu_experience")->add($database);
+                }
+                else {
+                    unset($database['uid']);
+                    unset($database['createTime']);
+                    M("edu_experience")->where( array('uid'=>$uid,'id'=>$database['eduid']) )->save($database);
+                }
             }
-            else {
-                unset($data['uid']);
-                unset($data['createTime']);
-                M("edu_experience")->where( array('uid'=>$uid,'id'=>$eduid) )->save($data);
-            }
-    
-            if($eduid){
-                $data = array();
-                $data['score_jiaoyu'] = getResumeStepScore('score_jiaoyu');
-                M("member")->where( array('uid'=>$uid) )->save($data);
-            }
+       
             $this->ResumeJson(1,"教育背景更新成功!",'jiaoyu');
-       // }
+                
+        }else{
+            echo 0;
+        }
+        // $eduid = intval($_POST['eduid']);
+    
+        // $data = array(
+        //     'education'=>trim($_POST['education']),
+        //     'endYear'=>trim($_POST['endYear']),
+        //     'professional'=>trim($_POST['professional']),
+        //     'schoolName'=>trim($_POST['schoolName']),
+        //     'startYear'=>trim($_POST['startYear']),
+        //     'school_city'=>trim($_POST['school_city']),
+        //     'school_city_city'=>trim($_POST['school_city_city']),
+        //     'degree'=>trim($_POST['degree']),
+        //     'academy'=>trim($_POST['academy']),
+        //     'major'=>trim($_POST['major']),
+        //     'gpa_score'=>trim($_POST['gpa_score']),
+        //     'professional_ranking'=>trim($_POST['professional_ranking']),
+        //     'class_ranking'=>trim($_POST['class_ranking']),
+        //     'professional_describe'=>trim($_POST['professional_describe']),
+        //     'tutor_name'=>trim($_POST['tutor_name']),
+        //     'tutor_phone'=>trim($_POST['tutor_phone']),
+                       
+        //    // 'reward_punish'=>trim($_POST['reward_punish']),
+        //     'uid'=>$uid,
+        //     'createTime'=>time(),
+        // );
+         
+ 
+            // if(!$eduid){
+            //     $eduid = M("edu_experience")->add($data);
+            // }
+            // else {
+            //     unset($data['uid']);
+            //     unset($data['createTime']);
+            //     M("edu_experience")->where( array('uid'=>$uid,'id'=>$eduid) )->save($data);
+            // }
+    
+            // if($eduid){
+            //     $data = array();
+            //     $data['score_jiaoyu'] = getResumeStepScore('score_jiaoyu');
+            //     M("member")->where( array('uid'=>$uid) )->save($data);
+            // }
+            // $this->ResumeJson(1,"教育背景更新成功!",'jiaoyu');
 
-        //}//for循环
     
     }
     
@@ -1160,10 +1226,10 @@ class ResumeController extends UserController {
     
         M("edu_experience")->where( array('uid'=>$uid,'id'=>$id) )->delete();
          
-        $check = M("edu_experience")->where( array('uid'=>$uid) )->find();
-        if(!$check){
-            M("member")->where( array('uid'=>$uid) )->save( array('score_jiaoyu'=>0) );
-        }
+        // $check = M("edu_experience")->where( array('uid'=>$uid) )->find();
+        // if(!$check){
+        //     M("member")->where( array('uid'=>$uid) )->save( array('score_jiaoyu'=>0) );
+        // }
     
         $this->ResumeJson(1,"操作成功！",'jiaoyu',0,$ext);
     
@@ -1172,61 +1238,47 @@ class ResumeController extends UserController {
     //添加更新项目经验
     public function projectExperience() {
         $uid = $this->uid;
-    
+        $data = $_POST;
+       
         if(!$uid){
             $this->ResumeJson(0,"请先登陆。");
         }
-        
+    
         if($_GET['access'] == 1){
             $_POST = $_GET;
-        } 
-
-        $projectid = intval($_POST['projectid']);
-    
-        $data = array(
-            // 'startYear'=>trim($_POST['startYear']),
-            // 'startMonth'=>trim($_POST['startMonth']),
-            // 'endYear'=>trim($_POST['endYear']),
-            // 'endMonth'=>trim($_POST['endMonth']),
-            
-            'startDate'=>trim($_POST['startDate']),
-            'endDate'=>trim($_POST['endDate']),
-            'dutyRemark'=>trim($_POST['dutyRemark']),
-            // 'projectUrl'=>trim($_POST['projectUrl']),
-            
-            'positionName'=>trim($_POST['positionName']),
-            'projectName'=>trim($_POST['projectName']),
-            'projectRemark'=>trim($_POST['projectRemark']),
-
-            'projectNumber'=>trim($_POST['projectNumber']),
-            'projectDuty'=>trim($_POST['projectDuty']),
-            'reterenceName'=>trim($_POST['reterenceName']),
-            'reterencePhone'=>trim($_POST['reterencePhone']),
+        }
+        if ($data) {
       
-            'uid'=>$uid,
-            'createTime'=>time(),
-        );
-    
-        if(  !$data['positionName'] || !$data['projectName'] ){
-            $this->ResumeJson(0,"请填写完整！");
-        }
-        else{
-            if(!$projectid){
-                $projectid = M("pro_experience")->add($data);
+            for ($i=0; $i < count($data['projectName']); $i++) { 
+
+                $database["uid"] = $uid;
+                $database['projectName'] = $data['projectName'][$i];
+                $database['projectNumber'] = $data['projectNumber'][$i];
+                $database['projectRemark'] = $data['projectRemark'][$i];
+                $database['positionName'] = $data['positionName'][$i];
+                $database['projectDuty'] = $data['projectDuty'][$i];
+                $database['startDate'] = $data['startDate'][$i];
+                $database['endDate'] = $data['endDate'][$i];
+                $database['reterenceName'] = $data['reterenceName'][$i];
+                $database['reterencePhone'] = $data['reterencePhone'][$i];
+                $database['createTime'] = time();   
+                $database['proid'] = $data['proid'][$i];
+                if(!$database['proid']){
+                    $database['proid'] = M("pro_experience")->add($database);
+                }
+                else {
+                    unset($database['uid']);
+                    unset($database['createTime']);
+                    M("pro_experience")->where( array('uid'=>$uid,'id'=>$database['proid']) )->save($database);
+                }
             }
-            else {
-                unset($data['uid']);
-                unset($data['createTime']);
-                M("pro_experience")->where( array('uid'=>$uid,'id'=>$projectid) )->save($data);
-            }
-    
-            if($projectid){
-                $data = array();
-                $data['score_xiangmu'] = getResumeStepScore('score_xiangmu');
-                M("member")->where( array('uid'=>$uid) )->save($data);
-            }
+       
             $this->ResumeJson(1,"项目经验更新成功!",'xiangmu');
+                
+        }else{
+            echo 0;
         }
+ 
     
     }
     
@@ -1235,6 +1287,7 @@ class ResumeController extends UserController {
         if($_GET['access'] == 1){
             $_POST = $_GET;
         } 
+
         $id = $_POST['id'];
         $uid = $this->uid;
         if( !$id || !$uid ){
@@ -1243,11 +1296,6 @@ class ResumeController extends UserController {
     
         M("pro_experience")->where( array('uid'=>$uid,'id'=>$id) )->delete();
     
-        $check = M("pro_experience")->where( array('uid'=>$uid) )->find();
-        if(!$check){
-            M("member")->where( array('uid'=>$uid) )->save( array('score_xiangmu'=>0) );
-        }
-         
         $this->ResumeJson(1,"删除成功！",'xiangmu',0,$ext);
     
     }
@@ -1271,50 +1319,41 @@ class ResumeController extends UserController {
     //添加更新在校实践
     public function schoolPractice() {
         $uid = $this->uid;
-    
+        $data = $_POST;
+       
         if(!$uid){
             $this->ResumeJson(0,"请先登陆。");
         }
-        
+    
         if($_GET['access'] == 1){
             $_POST = $_GET;
-        } 
+        }
+        if ($data) {
+      
+            for ($i=0; $i < count($data['praCompanyName']); $i++) { 
 
-        $schoolpracticeid = intval($_POST['schoolpracticeid']);
-    
-        $data = array(
-           
-            'startDate'=>trim($_POST['startTime']),
-            'endDate'=>trim($_POST['endTime']),
-            'practiceDes'=>trim($_POST['practiceDes']),
-            'practicePosition'=>trim($_POST['practicePosition']),
-            'practiceDuty'=>trim($_POST['practiceDuty']),
-            'praCompanyName'=>trim($_POST['praCompanyName']),
-            'uid'=>$uid,
-            'createTime'=>time(),
-        );
-    
-        // if(  !$data['praCompanyName'] ){
-        //     $this->ResumeJson(0,"请填写完整！");
-        // }
-        // else{
-            if(!$schoolpracticeid){
-                $schoolpracticeid = M("school_practice")->add($data);
+                $database["uid"] = $uid;
+                $database['praCompanyName'] = $data['praCompanyName'][$i];
+                $database['practiceDes'] = $data['practiceDes'][$i];
+                $database['practicePosition'] = $data['practicePosition'][$i];
+                $database['practiceDuty'] = $data['practiceDuty'][$i];
+                $database['startDate'] = $data['startDate'][$i];
+                $database['endDate'] = $data['endDate'][$i];
+                $database['createTime'] = time();   
+                $database['schpraid'] = $data['schpraid'][$i];
+                if(!$database['schpraid']){
+                    $database['schpraid'] = M("school_practice")->add($database);
+                }
+                else {
+                    unset($database['uid']);
+                    unset($database['createTime']);
+                    M("school_practice")->where( array('uid'=>$uid,'id'=>$database['schpraid']) )->save($database);
+                }
             }
-            else {
-                unset($data['uid']);
-                unset($data['createTime']);
-                M("school_practice")->where( array('uid'=>$uid,'id'=>$schoolpracticeid) )->save($data);
-            }
-    
-            if($schoolpracticeid){
-                $data = array();
-                $data['score_xiangmu'] = getResumeStepScore('score_xiangmu');
-                M("member")->where( array('uid'=>$uid) )->save($data);
-            }
-            $this->ResumeJson(1,"在校实践更新成功!",'zaixiaoshijian');
-       // }
-    
+            $this->ResumeJson(1,"在校实践更新成功!",'zaixiaoshijian');    
+        }else{
+            echo 0;
+        }
     }
 
    
@@ -1323,6 +1362,7 @@ class ResumeController extends UserController {
         if($_GET['access'] == 1){
             $_POST = $_GET;
         } 
+
         $id = $_POST['id'];
         $uid = $this->uid;
         if( !$id || !$uid ){
@@ -1330,63 +1370,57 @@ class ResumeController extends UserController {
         }
     
         M("school_practice")->where( array('uid'=>$uid,'id'=>$id) )->delete();
-         
-        $check = M("school_practice")->where( array('uid'=>$uid) )->find();
-        if(!$check){
-            M("member")->where( array('uid'=>$uid) )->save( array('score_jiaoyu'=>0) );
-        }
     
         $this->ResumeJson(1,"操作成功！",'zaixiaoshijian',0,$ext);
+
+        // M("school_practice")->where( array('uid'=>$uid,'id'=>$id) )->delete();
+         
+        // $check = M("school_practice")->where( array('uid'=>$uid) )->find();
+        // if(!$check){
+        //     M("member")->where( array('uid'=>$uid) )->save( array('score_jiaoyu'=>0) );
+        // }
+    
+        // $this->ResumeJson(1,"操作成功！",'zaixiaoshijian',0,$ext);
     
     }
          //添加更新社团
     public function schoolClub() {
         $uid = $this->uid;
-    
+        $data = $_POST;
+       
         if(!$uid){
             $this->ResumeJson(0,"请先登陆。");
         }
-        
+    
         if($_GET['access'] == 1){
             $_POST = $_GET;
-        } 
-
-        $schoolclubid = intval($_POST['schoolclubid']);
-        $data = array(
-            'schoolName' =>trim($_POST['schoolName']),
-            'schClubName' =>trim($_POST['schClubName']),
-            'schClubLevel' =>trim($_POST['schClubLevel']),
-            'positionName' =>trim($_POST['positionName']),
-            'workDes' =>trim($_POST['workDes']),
-            'startDate' =>trim($_POST['startDate']),
-            'endDate' =>trim($_POST['endDate']),
-
-            'uid'=>$uid,
-            //'createTime'=>time(),
-        );
-    
-        if(  !$data['schClubName'] ){
-            $this->ResumeJson(0,"请填写完整！");
         }
-        else{
-            if(!$schoolclubid){
-                $schoolclubid = M("school_club")->add($data);
+        if ($data) {
+      
+            for ($i=0; $i < count($data['schClubName']); $i++) { 
+
+                $database["uid"] = $uid;
+                $database['schClubName'] = $data['schClubName'][$i];
+                $database['schClubLevel'] = $data['schClubLevel'][$i];
+                $database['positionName'] = $data['positionName'][$i];
+                $database['workDes'] = $data['workDes'][$i];
+                $database['startDate'] = $data['startDate'][$i];
+                $database['endDate'] = $data['endDate'][$i];
+                $database['createTime'] = time();   
+                $database['schclubid'] = $data['schclubid'][$i];
+                if(!$database['schclubid']){
+                    $database['schclubid'] = M("school_club")->add($database);
+                }
+                else {
+                    unset($database['uid']);
+                    unset($database['createTime']);
+                    M("school_club")->where( array('uid'=>$uid,'id'=>$database['schclubid']) )->save($database);
+                }
             }
-            else {
-                unset($data['uid']);
-                unset($data['createTime']);
-                M("school_club")->where( array('uid'=>$uid,'id'=>$schoolclubid) )->save($data);
-            }
-    
-            if($schoolclubid){
-                $data = array();
-                $data['score_shetuan'] = getResumeStepScore('score_shetuan');
-                M("member")->where( array('uid'=>$uid) )->save($data);
-            }
-            $this->ResumeJson(1,"更新成功!",'shetuan');
+            $this->ResumeJson(1,"更新成功!",'shetuan');    
+        }else{
+            echo 0;
         }
-    
-	
     }
 
 
@@ -1402,21 +1436,17 @@ class ResumeController extends UserController {
         }
     
         M("school_club")->where( array('uid'=>$uid,'id'=>$id) )->delete();
-         
-        $check = M("school_club")->where( array('uid'=>$uid) )->find();
-        if(!$check){
-            M("member")->where( array('uid'=>$uid) )->save( array('score_shetuan'=>0) );
-        }
     
         $this->ResumeJson(1,"操作成功！",'shetuan',0,$ext);
-    
+ 
     }
 
 
     //添加更新获奖经验
     public function schoolAwards() {
         $uid = $this->uid;
-    
+          $data = $_POST;
+       
         if(!$uid){
             $this->ResumeJson(0,"请先登陆。");
         }
@@ -1424,41 +1454,74 @@ class ResumeController extends UserController {
         if($_GET['access'] == 1){
             $_POST = $_GET;
         }
+        if ($data) {
+      
+            for ($i=0; $i < count($data['awardsName']); $i++) { 
 
-        $schoolawardsid = intval($_POST['schoolawardsid']);
+                $database["uid"] = $uid;
+                $database['awardsName'] = $data['awardsName'][$i];
+                $database['awardsType'] = $data['awardsType'][$i];
+                $database['awardsLevel'] = $data['awardsLevel'][$i];
+                $database['awardsDate'] = $data['awardsDate'][$i];
+                $database['awardsDes'] = $data['awardsDes'][$i];
+                $database['createTime'] = time();   
+                $database['schawid'] = $data['schawid'][$i];
+                if(!$database['schawid']){
+                    $database['schawid'] = M("school_awards")->add($database);
+                }
+                else {
+                    unset($database['uid']);
+                    unset($database['createTime']);
+                    M("school_awards")->where( array('uid'=>$uid,'id'=>$database['schawid']) )->save($database);
+                }
+            }
+            $this->ResumeJson(1,"更新成功!",'huojiang');    
+        }else{
+            echo 0;
+        }
+
+        // if(!$uid){
+        //     $this->ResumeJson(0,"请先登陆。");
+        // }
     
-        $data = array(
-            'awardsName'=>trim($_POST['awardsName']),
-            'awardsType'=>trim($_POST['awardsType']),
-            'awardsLevel'=>trim($_POST['awardsLevel']),
-            'awardsDate'=>trim($_POST['awardsDate']),
-            'awardsDes'=>trim($_POST['awardsDes']),
+        // if($_GET['access'] == 1){
+        //     $_POST = $_GET;
+        // }
+
+        // $schoolawardsid = intval($_POST['schoolawardsid']);
+    
+        // $data = array(
+        //     'awardsName'=>trim($_POST['awardsName']),
+        //     'awardsType'=>trim($_POST['awardsType']),
+        //     'awardsLevel'=>trim($_POST['awardsLevel']),
+        //     'awardsDate'=>trim($_POST['awardsDate']),
+        //     'awardsDes'=>trim($_POST['awardsDes']),
         
-            'uid'=>$uid,
-            //'createTime'=>time(),
-        );
+        //     'uid'=>$uid,
+        //     //'createTime'=>time(),
+        // );
          
-        if( !$data['awardsName'] ){
+        // if( !$data['awardsName'] ){
             
-            $this->ResumeJson(0,"请填写完整！");
-        }
-        else{
-            if(!$schoolawardsid){
-                $schoolawardsid = M("school_awards")->add($data);
-            }
-            else {
-                unset($data['uid']);
-                unset($data['createTime']);
-                M("school_awards")->where( array('uid'=>$uid,'id'=>$schoolawardsid) )->save($data);
-            }
+        //     $this->ResumeJson(0,"请填写完整！");
+        // }
+        // else{
+        //     if(!$schoolawardsid){
+        //         $schoolawardsid = M("school_awards")->add($data);
+        //     }
+        //     else {
+        //         unset($data['uid']);
+        //         unset($data['createTime']);
+        //         M("school_awards")->where( array('uid'=>$uid,'id'=>$schoolawardsid) )->save($data);
+        //     }
     
-            if($schoolawardsid){
-                $data = array();
-                $data['score_huojiang'] = getResumeStepScore('score_huojiang');
-                M("member")->where( array('uid'=>$uid) )->save($data);
-            }
-            $this->ResumeJson(1,"更新成功!",'huojiang');
-        }
+        //     if($schoolawardsid){
+        //         $data = array();
+        //         $data['score_huojiang'] = getResumeStepScore('score_huojiang');
+        //         M("member")->where( array('uid'=>$uid) )->save($data);
+        //     }
+        //     $this->ResumeJson(1,"更新成功!",'huojiang');
+        // }
     
     }
     
@@ -1487,7 +1550,8 @@ class ResumeController extends UserController {
     //添加更新证书
     public function certificate() {
         $uid = $this->uid;
-    
+        $data = $_POST;
+     
         if(!$uid){
             $this->ResumeJson(0,"请先登陆。");
         }
@@ -1495,40 +1559,33 @@ class ResumeController extends UserController {
         if($_GET['access'] == 1){
             $_POST = $_GET;
         }
+        if ($data) {
+      
+            for ($i=0; $i < count($data['certificateName']); $i++) { 
 
-        $certificateid = intval($_POST['certificateId']);
-    
-        $data = array(
-            'certificateName'=>trim($_POST['certificateName']),
-            'getDate'=>trim($_POST['getDate']),
-            'certificateDes'=>trim($_POST['certificateDes']),
-            'issuing'=>trim($_POST['issuing']),
-           
-            'uid'=>$uid,
-            //'createTime'=>time(),
-        );
-         
-        if( !$data['certificateName'] ){
-            
-            $this->ResumeJson(0,"请填写完整！");
-        }
-        else{
-            if(!$certificateid){
-                $certificateid = M("certificate")->add($data);
+                $database["uid"] = $uid;
+                $database['certificateName'] = $data['certificateName'][$i];
+                $database['getDate'] = $data['getDate'][$i];
+                $database['certificateDes'] = $data['certificateDes'][$i];
+                $database['issuing'] = $data['issuing'][$i];
+                $database['createTime'] = time();   
+                $database['certiid'] = $data['certiid'][$i];
+                if(!$database['certiid']){
+                    $database['certiid'] = M("certificate")->add($database);
+                }
+                else {
+                    unset($database['uid']);
+                    unset($database['createTime']);
+                    M("certificate")->where( array('uid'=>$uid,'id'=>$database['certiid']) )->save($database);
+                }
             }
-            else {
-                unset($data['uid']);
-                unset($data['createTime']);
-                M("certificate")->where( array('uid'=>$uid,'id'=>$certificateid) )->save($data);
-            }
-    
-            if($certificateid){
-                $data = array();
-                $data['score_zhengshu'] = getResumeStepScore('score_zhengshu');
-                M("member")->where( array('uid'=>$uid) )->save($data);
-            }
+       
             $this->ResumeJson(1,"更新成功!",'zhengshu');
+                
+        }else{
+            echo 0;
         }
+
     
     }
     
@@ -1544,20 +1601,16 @@ class ResumeController extends UserController {
         }
     
         M("certificate")->where( array('uid'=>$uid,'id'=>$id) )->delete();
-         
-        $check = M("certificate")->where( array('uid'=>$uid) )->find();
-        if(!$check){
-            M("member")->where( array('uid'=>$uid) )->save( array('score_jiaoyu'=>0) );
-        }
     
         $this->ResumeJson(1,"操作成功！",'zhengshu',0,$ext);
-    
+
     }
 
         //添加更新证书
     public function trainingExperience() {
         $uid = $this->uid;
-    
+        $data = $_POST;
+     
         if(!$uid){
             $this->ResumeJson(0,"请先登陆。");
         }
@@ -1565,43 +1618,80 @@ class ResumeController extends UserController {
         if($_GET['access'] == 1){
             $_POST = $_GET;
         }
+        if ($data) {
+      
+            for ($i=0; $i < count($data['trainingName']); $i++) { 
 
-        $trainingid = intval($_POST['trainingid']);
+                $database["uid"] = $uid;
+                $database['trainingName'] = $data['trainingName'][$i];
+                $database['trainingDes'] = $data['trainingDes'][$i];
+                $database['trainingCompany'] = $data['trainingCompany'][$i];
+                $database['trainingPlace'] = $data['trainingPlace'][$i];
+                $database['startDate'] = $data['startDate'][$i];
+                $database['endDate'] = $data['endDate'][$i];
+                $database['certificateName'] = $data['certificateName'][$i];
+                $database['createTime'] = time();   
+                $database['trainid'] = $data['trainid'][$i];
+                if(!$database['trainid']){
+                    $database['trainid'] = M("training_experience")->add($database);
+                }
+                else {
+                    unset($database['uid']);
+                    unset($database['createTime']);
+                    M("training_experience")->where( array('uid'=>$uid,'id'=>$database['trainid']) )->save($database);
+                }
+            }
+       
+            $this->ResumeJson(1,"更新成功!",'trainingexp');
+                
+        }else{
+            echo 0;
+        }
+
+        // if(!$uid){
+        //     $this->ResumeJson(0,"请先登陆。");
+        // }
     
-        $data = array(
-            'trainingName'=>trim($_POST['trainingName']),
-            'trainingDes'=>trim($_POST['trainingDes']),
-            'trainingCompany'=>trim($_POST['trainingCompany']),
-            'trainingPlace'=>trim($_POST['trainingPlace']),
-            'startDate'=>trim($_POST['startDate']),
-            'endDate'=>trim($_POST['endDate']),
-            'certificateName'=>trim($_POST['certificateName']),
-            'uid'=>$uid,
-            //'createTime'=>time(),
-        );
+        // if($_GET['access'] == 1){
+        //     $_POST = $_GET;
+        // }
+
+        // $trainingid = intval($_POST['trainingid']);
+    
+        // $data = array(
+        //     'trainingName'=>trim($_POST['trainingName']),
+        //     'trainingDes'=>trim($_POST['trainingDes']),
+        //     'trainingCompany'=>trim($_POST['trainingCompany']),
+        //     'trainingPlace'=>trim($_POST['trainingPlace']),
+        //     'startDate'=>trim($_POST['startDate']),
+        //     'endDate'=>trim($_POST['endDate']),
+        //     'certificateName'=>trim($_POST['certificateName']),
+        //     'uid'=>$uid,
+        //     //'createTime'=>time(),
+        // );
          
 		 
-        if( !$data['trainingName'] ){
+        // if( !$data['trainingName'] ){
             
-            $this->ResumeJson(0,"请填写完整！");
-        }
-        else{
-            if(!$trainingid){
-                $trainingid = M("training_experience")->add($data);
-            }
-            else {
-                unset($data['uid']);
-                unset($data['createTime']);
-                M("training_experience")->where( array('uid'=>$uid,'id'=>$trainingid) )->save($data);
-            }
+        //     $this->ResumeJson(0,"请填写完整！");
+        // }
+        // else{
+        //     if(!$trainingid){
+        //         $trainingid = M("training_experience")->add($data);
+        //     }
+        //     else {
+        //         unset($data['uid']);
+        //         unset($data['createTime']);
+        //         M("training_experience")->where( array('uid'=>$uid,'id'=>$trainingid) )->save($data);
+        //     }
     
-            if($trainingid){
-                $data = array();
-                $data['score_trainingexp'] = getResumeStepScore('score_trainingexp');
-                M("member")->where( array('uid'=>$uid) )->save($data);
-            }
-            $this->ResumeJson(1,"更新成功!",'trainingexp');
-        }
+        //     if($trainingid){
+        //         $data = array();
+        //         $data['score_trainingexp'] = getResumeStepScore('score_trainingexp');
+        //         M("member")->where( array('uid'=>$uid) )->save($data);
+        //     }
+        //     $this->ResumeJson(1,"更新成功!",'trainingexp');
+        // }
     
     }
     
@@ -1610,6 +1700,7 @@ class ResumeController extends UserController {
         if($_GET['access'] == 1){
             $_POST = $_GET;
         } 
+
         $id = $_POST['id'];
         $uid = $this->uid;
         if( !$id || !$uid ){
@@ -1617,13 +1708,8 @@ class ResumeController extends UserController {
         }
     
         M("training_experience")->where( array('uid'=>$uid,'id'=>$id) )->delete();
-         
-        $check = M("training_experience")->where( array('uid'=>$uid) )->find();
-        if(!$check){
-            M("member")->where( array('uid'=>$uid) )->save( array('score_jiaoyu'=>0) );
-        }
     
-        $this->ResumeJson(1,"操作成功！",'trainingexp',0,$ext);
+        $this->ResumeJson(1,"操作成功！",'trainingexp',0,$ext);   
     
     }
 
@@ -1652,36 +1738,134 @@ class ResumeController extends UserController {
             //'createTime'=>time(),
         );
          
-        if( !$data['selfIntro'] ){
-            
-            $this->ResumeJson(0,"请填写完整！");
+      
+        if(!$otherinfoid){
+            $otherinfoid = M("other_info")->add($data);
         }
-        else{
-            if(!$otherinfoid){
-                $otherinfoid = M("other_info")->add($data);
-            }
-            else {
-                unset($data['uid']);
-                unset($data['createTime']);
-                M("other_info")->where( array('uid'=>$uid,'id'=>$otherinfoid) )->save($data);
-            }
-    
-            if($otherinfoid){
-                $data = array();
-                $data['score_otherinfo'] = getResumeStepScore('score_otherinfo');
-                M("member")->where( array('uid'=>$uid) )->save($data);
-            }
-            $this->ResumeJson(1,"更新成功!",'otherinfo');
+        else {
+            unset($data['uid']);
+            unset($data['createTime']);
+            M("other_info")->where( array('uid'=>$uid,'id'=>$otherinfoid) )->save($data);
         }
+
+        if($otherinfoid){
+            $data = array();
+            $data['score_otherinfo'] = getResumeStepScore('score_otherinfo');
+            M("member")->where( array('uid'=>$uid) )->save($data);
+        }
+        $this->ResumeJson(1,"更新成功!",'otherinfo');
+       
     
     }
 
     function skill(){
+        $uid = $this->uid;
         $data = $_POST;
-        print_r($data);
-        // var_dump($data);
-        // exit();
+        $sel_db = M('skill_englang');
+        $osel_db = M('skill_otherenglang');
+        $ol_db = M('skill_otherlang');
+ 
+        if ($data) {
+           for ($i=0; $i < count($data['skillEngLevel']); $i++) { 
+
+                $sel_database["uid"] = $uid;
+                $sel_database["skillEngLevel"] = $data['skillEngLevel'][$i];
+                $sel_database["skillEngSorce"] = $data['skillEngSorce'][$i];
+                $sel_database["selid"] = $data['selid'][$i];
+
+                if ($sel_database["selid"]) {
+                    $sel_db->where( array('id'=>$sel_database["selid"]) )->save($sel_database);  
+                }
+                elseif (!empty($sel_database["skillEngLevel"])) {
+                    $sel_db->add($sel_database);  
+                } 
+            }
+
+            for ($i=0; $i < count($data['otherSkillEngLevel']); $i++) { 
+                $osel_database["uid"] = $uid;
+                $osel_database["otherSkillEngLevel"] = $data['otherSkillEngLevel'][$i];
+                $osel_database["otherSkillEngSorce"] = $data['otherSkillEngSorce'][$i];
+                $osel_database["oselid"] = $data['oselid'][$i];
+
+                if ($osel_database["oselid"]) {
+                    $osel_db->where( array('id'=>$osel_database["oselid"]) )->save($osel_database);  
+                }
+                elseif (!empty($osel_database["otherSkillEngLevel"])) {
+                    $osel_db->add($osel_database);  
+                } 
+                 
+            }
+
+            for ($i=0; $i < count($data['otherLang']); $i++) { 
+                $ol_database["uid"] = $uid;
+                $ol_database["otherLang"] = $data['otherLang'][$i];
+                $ol_database["graspLevel"] = $data['graspLevel'][$i];
+                $ol_database["listenLevel"] = $data['listenLevel'][$i];
+                $ol_database["writeLevel"] = $data['writeLevel'][$i];
+
+                $ol_database["oslid"] = $data['oslid'][$i];
+
+                if ($ol_database["oslid"]) {
+                    $ol_db->where( array('id'=>$ol_database["oslid"]) )->save($ol_database);  
+                }
+                elseif (!empty($ol_database["otherLang"])) {
+                    $ol_db->add($ol_database);  
+                } 
+                //$ol_db->add($ol_database);  
+            }
+            $this->ResumeJson(1,"操作成功！",'allskill',0,$ext);
+        }else{
+            echo 0;
+        }
+        //print_r($data['skillEngLevel']);      
     }
+
+    function delEngSkill(){
+        if($_GET['access'] == 1){
+            $_POST = $_GET;
+        } 
+        $id = $_POST['id'];
+        $uid = $this->uid;
+        if( !$id || !$uid ){
+            $this->ResumeJson(0,"参数无效！");
+        }
+    
+        M("skill_englang")->where( array('uid'=>$uid,'id'=>$id) )->delete();
+    
+        $this->ResumeJson(1,"操作成功！",'engskill',0,$ext);
+    }
+
+      function delOtherEngSkill(){
+        if($_GET['access'] == 1){
+            $_POST = $_GET;
+        } 
+        $id = $_POST['id'];
+        $uid = $this->uid;
+        if( !$id || !$uid ){
+            $this->ResumeJson(0,"参数无效！");
+        }
+    
+        M("skill_otherenglang")->where( array('uid'=>$uid,'id'=>$id) )->delete();
+         
+        $this->ResumeJson(1,"操作成功！",'otherengskill',0,$ext);
+    }
+
+
+      function delOtherSkill(){
+        if($_GET['access'] == 1){
+            $_POST = $_GET;
+        } 
+        $id = $_POST['id'];
+        $uid = $this->uid;
+        if( !$id || !$uid ){
+            $this->ResumeJson(0,"参数无效！");
+        }
+    
+        M("skill_otherlang")->where( array('uid'=>$uid,'id'=>$id) )->delete();
+    
+        $this->ResumeJson(1,"操作成功！",'otherskill',0,$ext);
+    }
+
     
     //删除教育程度
     function delOtherInfo(){

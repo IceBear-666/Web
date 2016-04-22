@@ -13,6 +13,7 @@
  */
 return array(
     /* 模块相关配置 */
+    'LOG_RECORD' => false,    // 关闭日志记录 2016.04.22
     'AUTOLOAD_NAMESPACE' => array('Addons' => ONETHINK_ADDON_PATH), //扩展模块列表
     'DEFAULT_MODULE'     => 'Home',
     'MODULE_DENY_LIST'   => array('Common', 'User'),
